@@ -6,7 +6,7 @@
 
 <head>
 	<!-- css링크들 임포트 -->
-    <c:import url="import/csslink.jsp" charEncoding="UTF-8" >
+    <c:import url="../import/csslink.jsp" charEncoding="UTF-8" >
     </c:import>
     
     <!-- TOAST UI CHART CDN LINK -->
@@ -80,7 +80,7 @@
                 <!-- End Logo -->
                 <!-- ============================================================== -->
                 <!-- 상단 네비게이션바 임포트  -->
-                <c:import url="import/navigationbar.jsp" charEncoding="UTF-8" >
+                <c:import url="../import/navigationbar.jsp" charEncoding="UTF-8" >
     			</c:import>
             </nav>
         </header>
@@ -92,7 +92,7 @@
         <!-- ============================================================== -->
         
         <!-- 하단 네비게이션바 임포트 -->
-        <c:import url="import/sidebar.jsp" charEncoding="UTF-8" >
+        <c:import url="../import/sidebar.jsp" charEncoding="UTF-8" >
     	</c:import>
         
         <!-- ============================================================== -->
@@ -208,7 +208,7 @@
                 <!-- *************************************************************** -->
                 <!-- Start GRADE GRID  -->            
                 <!-- *************************************************************** -->
-                <c:import url="import/gradeStandard.jsp" charEncoding="UTF-8" >
+                <c:import url="../import/gradeStandard.jsp" charEncoding="UTF-8" >
     			</c:import>
                 <!-- *************************************************************** -->
                 <!-- End GRADE GRID  -->
@@ -240,7 +240,7 @@
     <!-- All Jquery -->
     <!-- ============================================================== -->
     </body>
-	<c:import url="import/javascript.jsp" charEncoding="UTF-8" >
+	<c:import url="../import/javascript.jsp" charEncoding="UTF-8" >
     </c:import>
    
 	<!-- Toast Bar Chart  -->
