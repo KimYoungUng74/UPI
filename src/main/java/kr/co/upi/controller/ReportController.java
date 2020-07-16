@@ -19,33 +19,15 @@ import kr.co.upi.Service.TestService;
  * Handles requests for the application home page.
  */
 @Controller
-public class HomeController {
+public class ReportController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	@Autowired
-	TestService testSer;
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String index(Locale locale, Model model) {
-		
-		return "index";
-	}
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		
-		return "home";
-	}
-	
-		@RequestMapping(value = "test.do")
-		public ModelAndView test(Locale locale, Model model) {
+		@RequestMapping(value = "report_view_list.do")
+		public ModelAndView report_view_list(Locale locale, Model model) {
 			
-			System.out.println(testSer.DBTest());
 
 			ModelAndView mav = new ModelAndView();
-			mav.setViewName("home");
+			mav.setViewName("report_view/list");
 			return mav;
 		}
 	

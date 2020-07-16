@@ -6,7 +6,7 @@
 
 <head>
 	<!-- css링크들 임포트 -->
-    <c:import url="import/csslink.jsp" charEncoding="UTF-8" >
+    <c:import url="../import/csslink.jsp" charEncoding="UTF-8" >
     </c:import>
 </head>
 
@@ -71,7 +71,7 @@
                 <!-- End Logo -->
                 <!-- ============================================================== -->
                 <!-- 상단 네비게이션바 임포트  -->
-                <c:import url="import/navigationbar.jsp" charEncoding="UTF-8" >
+                <c:import url="../import/navigationbar.jsp" charEncoding="UTF-8" >
     			</c:import>
             </nav>
         </header>
@@ -82,8 +82,8 @@
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
         
-        <!-- 하단 네비게이션바 임포트 -->
-        <c:import url="import/sidebar.jsp" charEncoding="UTF-8" >
+        <!-- 왼쪽 사이드바 임포트 -->
+        <c:import url="../import/sidebar.jsp" charEncoding="UTF-8" >
     	</c:import>
         
         <!-- ============================================================== -->
@@ -99,23 +99,14 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Good Morning Jason!</h3>
+                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">성과 지표 정의서</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
+                                    <li class="breadcrumb-item"><a href="index.html">지표 정의서 선택</a>
                                     </li>
                                 </ol>
                             </nav>
-                        </div>
-                    </div>
-                    <div class="col-5 align-self-center">
-                        <div class="customize-input float-right">
-                            <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
-                                <option selected>Aug 19</option>
-                                <option value="1">July 19</option>
-                                <option value="2">Jun 19</option>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -128,98 +119,103 @@
             <!-- ============================================================== -->
             <div class="container-fluid">
                 <!-- *************************************************************** -->
-                <!-- Start First Cards -->
-                <!-- *************************************************************** -->
-                <div class="card-group">
-                    <div class="card border-right">
-                        <div class="card-body">
-                            <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                <div>
-                                    <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">236</h2>
-                                        <span
-                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none">+18.33%</span>
-                                    </div>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">New Clients</h6>
-                                </div>
-                                <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="user-plus"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card border-right">
-                        <div class="card-body">
-                            <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                <div>
-                                    <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium"><sup
-                                            class="set-doller">$</sup>18,306</h2>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Earnings of Month
-                                    </h6>
-                                </div>
-                                <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="dollar-sign"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card border-right">
-                        <div class="card-body">
-                            <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                <div>
-                                    <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">1538</h2>
-                                        <span
-                                            class="badge bg-danger font-12 text-white font-weight-medium badge-pill ml-2 d-md-none d-lg-block">-18.33%</span>
-                                    </div>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">New Projects</h6>
-                                </div>
-                                <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                <div>
-                                    <h2 class="text-dark mb-1 font-weight-medium">864</h2>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Projects</h6>
-                                </div>
-                                <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- *************************************************************** -->
-                <!-- End First Cards -->
-                <!-- *************************************************************** -->
-                <!-- *************************************************************** -->
                 <!-- Start Sales Charts Section -->
                 <!-- *************************************************************** -->
                 <div class="row">
-                    <div class="col-lg-4 col-md-12">
+                    <div class="col-lg-12 col-md-12">
                         <div class="card">
                             <div class="card-body">
-                                <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                                	<h4>카테고리 별 보기 </h4><br>
+                                	
+                                	<div class="row">
+                                	<div class="col-md-6">
+                                		<div class="col-md-6"  style="padding-bottom: 20px;">
+                                			<span>활용 사업</span>
+                                		</div>
+                                		<div class="col-md-12" style="padding: 5px;">
+                                			<div class="custom-control custom-checkbox">
+                                    			<input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    			<label class="custom-control-label" for="customCheck1">
+                                					<a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">BS</a>
+                                					대학중장기 발전계획 BEST
+                                				</label>
+                                			</div>
+                                		</div>
+                                		<div class="col-md-12"  style="padding: 5px;" >
+                                		
+                                			<div class="custom-control custom-checkbox">
+                                    			<input type="checkbox" class="custom-control-input" id="customCheck2">
+                                    			<label class="custom-control-label" for="customCheck2">
+                                			<a class="btn btn-danger rounded-circle btn-circle font-12"href="javascript:void(0)">OR</a>
+                                            	기관평가인증</label>
+                                            </div>           
+                                         </div>
+                                         <div class="col-md-12"  style="padding: 5px;">
+                                         	<div class="custom-control custom-checkbox">
+                                    			<input type="checkbox" class="custom-control-input" id="customCheck3">
+                                    			<label class="custom-control-label" for="customCheck3">
+                                			<a class="btn btn-warning rounded-circle btn-circle font-12"
+                                                            href="javascript:void(0)">AH</a>
+                                   				혁신지원 AHA</label>
+                                			</div>
+                                         </div>
+                                         <div class="col-md-12"  style="padding: 5px;">
+                                         	<div class="custom-control custom-checkbox">
+                                    			<input type="checkbox" class="custom-control-input" id="customCheck4">
+                                    			<label class="custom-control-label" for="customCheck4">
+                                			<a class="btn btn-success rounded-circle btn-circle font-12"
+                                                            href="javascript:void(0)">LN</a>
+                                                                                    사회맞춤형 LINC+</label>
+                                			</div>
+                                            
+                                         </div>
+                                         <div class="col-md-12"  style="padding: 5px;">
+                                         	<div class="custom-control custom-checkbox">
+                                    			<input type="checkbox" class="custom-control-input" id="customCheck5">
+                                    			<label class="custom-control-label" for="customCheck5">
+                                			<a class="btn btn-secondary rounded-circle btn-circle font-12"
+                                                            href="javascript:void(0)">T3</a>
+                                                 3유형</label>
+                                			</div>
+                                            
+                                         </div>
+                                	
+                                	</div>
+                                	<div class="col-md-6">
+                                		<div class="col-md-12"  style="padding: 10px;">
+                                			<span>담당 부서</span>
+                                		</div>
+                                		<div class="col-md-12">
+                                			<select class="custom-select" id="inputGroupSelect04" >
+                                           		<option selected="">모두 보기</option>
+                                            	<option value="1">입학취업처</option>
+                                            	<option value="2">교무학생처</option>
+                                            	<option value="3">행정지원처</option>
+                                            	<option value="4">대학발전운영실</option>
+                                            	<option value="5">산학협력처</option>
+                                        	</select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                    	<button class="btn btn-secondary waves-effect waves-light" type="button" style="float: right;"><span class="btn-label"><i class="fas fa-search"></i></span> 검색</button>
+                                	</div>              
                             </div>
                         </div>
                     </div>
                     
-                    <div class="col-lg-8" id="a_grade">
+                    
+                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex align-items-center mb-4">
-                                    <h4 class="card-title">성과지표 A등급</h4>
+                                    <h4 class="card-title">성과지표 정의서</h4>
                                     
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table no-wrap v-middle mb-0">
                                         <thead>
                                             <tr class="border-0">
+                                            	<th class="font-14 font-weight-medium text-muted px-2">관리번호</th>
                                                 <th class="font-14 font-weight-medium text-muted px-2">성과지표명</th>
                                                 <th class="font-14 font-weight-medium text-muted px-2">관련부서</th>
                                                 <th class="font-14 font-weight-medium text-muted px-2">활용사업</th>
@@ -228,6 +224,7 @@
                                         </thead>
                                         <tbody>
                                             <tr>
+                                            	<td class="border-top-0 text-muted px-2 py-4 font-14">1</td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
@@ -242,6 +239,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
+                                            	<td class="border-top-0 text-muted px-2 py-4 font-14">2</td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
@@ -256,6 +254,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
+                                            	<td class="border-top-0 text-muted px-2 py-4 font-14">3</td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
@@ -269,43 +268,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8" id="b_grade" style="display: none;">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center mb-4">
-                                    <h4 class="card-title">성과지표 B등급</h4>
-                                    
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table no-wrap v-middle mb-0">
-                                        <thead>
-                                            <tr class="border-0">
-                                                <th class="border-0 font-14 font-weight-medium text-muted px-2">성과지표명</th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted px-2">관련부서</th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted px-2">활용사업</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
-                                                 <td class="px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">DS</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">SS</a>
-                                                        <a class="btn btn-success text-white rounded-circle btn-circle font-20"
-                                                            href="javascript:void(0)">+</a>
-                                                     </div>
-                                                </td>
-                                            </tr>
+                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -345,68 +308,7 @@
     <!-- All Jquery -->
     <!-- ============================================================== -->
     </body>
-	<c:import url="import/javascript.jsp" charEncoding="UTF-8" >
+	<c:import url="../import/javascript.jsp" charEncoding="UTF-8" >
     </c:import>
-    
-    <script type="text/javascript">
-    Highcharts.chart('container', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: '등급별 성과지표, 2020'
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: false
-                },
-                showInLegend: true
-            }
-        },
-        series: [{
-            name: '비율',
-            colorByPoint: true,
-            data: [{
-                name: 'A등급',
-                y: 61.41,
-                sliced: true,
-                selected: true
-            }, {
-                name: 'B등급',
-                y: 11.84
-            }, {
-                name: 'D등급',
-                y: 10.85
-            }, {
-                name: '기타',
-                y: 15.9
-            }]
-        }]
-    });
-    
-    $('.highcharts-color-0').click(function(){
-  	  $('#b_grade').hide();
-  	  $('#a_grade').show();
-  });
-    $('.highcharts-color-1').click(function(){
-    	  $('#a_grade').hide();
-    	  $('#b_grade').show();
-    });
-    
-    </script>
     
 </html>
