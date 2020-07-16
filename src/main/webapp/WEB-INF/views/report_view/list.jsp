@@ -129,45 +129,76 @@
                                 	
                                 	<div class="row">
                                 	<div class="col-md-6">
-                                		<div class="col-md-6">
+                                		<div class="col-md-6"  style="padding-bottom: 20px;">
                                 			<span>활용 사업</span>
                                 		</div>
-                                		<div class="col-md-6">
-                                			<a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">BS</a>
-                                			대학중장기 발전계획 BEST
+                                		<div class="col-md-12" style="padding: 5px;">
+                                			<div class="custom-control custom-checkbox">
+                                    			<input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    			<label class="custom-control-label" for="customCheck1">
+                                					<a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">BS</a>
+                                					대학중장기 발전계획 BEST
+                                				</label>
+                                			</div>
                                 		</div>
-                                		<div class="col-md-6">
-                                            <a class="btn btn-danger rounded-circle btn-circle font-12"href="javascript:void(0)">OR</a>
-                                            	기관평가인증
-                                                            
+                                		<div class="col-md-12"  style="padding: 5px;" >
+                                		
+                                			<div class="custom-control custom-checkbox">
+                                    			<input type="checkbox" class="custom-control-input" id="customCheck2">
+                                    			<label class="custom-control-label" for="customCheck2">
+                                			<a class="btn btn-danger rounded-circle btn-circle font-12"href="javascript:void(0)">OR</a>
+                                            	기관평가인증</label>
+                                            </div>           
                                          </div>
-                                         <div class="col-md-6">
-                                            <a class="btn btn-warning rounded-circle btn-circle font-12"
+                                         <div class="col-md-12"  style="padding: 5px;">
+                                         	<div class="custom-control custom-checkbox">
+                                    			<input type="checkbox" class="custom-control-input" id="customCheck3">
+                                    			<label class="custom-control-label" for="customCheck3">
+                                			<a class="btn btn-warning rounded-circle btn-circle font-12"
                                                             href="javascript:void(0)">AH</a>
-                                   				혁신지원 AHA
+                                   				혁신지원 AHA</label>
+                                			</div>
                                          </div>
-                                         <div class="col-md-6">
-                                            <a class="btn btn-success rounded-circle btn-circle font-12"
+                                         <div class="col-md-12"  style="padding: 5px;">
+                                         	<div class="custom-control custom-checkbox">
+                                    			<input type="checkbox" class="custom-control-input" id="customCheck4">
+                                    			<label class="custom-control-label" for="customCheck4">
+                                			<a class="btn btn-success rounded-circle btn-circle font-12"
                                                             href="javascript:void(0)">LN</a>
-                                                                                    사회맞춤형 LINC+
+                                                                                    사회맞춤형 LINC+</label>
+                                			</div>
+                                            
                                          </div>
-                                         <div class="col-md-6">
-                                            <a class="btn btn-secondary rounded-circle btn-circle font-12"
+                                         <div class="col-md-12"  style="padding: 5px;">
+                                         	<div class="custom-control custom-checkbox">
+                                    			<input type="checkbox" class="custom-control-input" id="customCheck5">
+                                    			<label class="custom-control-label" for="customCheck5">
+                                			<a class="btn btn-secondary rounded-circle btn-circle font-12"
                                                             href="javascript:void(0)">T3</a>
-                                                 3유형
+                                                 3유형</label>
+                                			</div>
+                                            
                                          </div>
                                 	
                                 	</div>
                                 	<div class="col-md-6">
-                                		담당 부서
-                                		<select class="custom-select" id="inputGroupSelect04">
-                                            <option selected="">모두 보기</option>
-                                            <option value="1">입학취업처</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                	</div>
-                                                        
+                                		<div class="col-md-12"  style="padding: 10px;">
+                                			<span>담당 부서</span>
+                                		</div>
+                                		<div class="col-md-12">
+                                			<select class="custom-select" id="inputGroupSelect04" >
+                                           		<option selected="">모두 보기</option>
+                                            	<option value="1">입학취업처</option>
+                                            	<option value="2">교무학생처</option>
+                                            	<option value="3">행정지원처</option>
+                                            	<option value="4">대학발전운영실</option>
+                                            	<option value="5">산학협력처</option>
+                                        	</select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                    	<button class="btn btn-secondary waves-effect waves-light" type="button" style="float: right;"><span class="btn-label"><i class="fas fa-search"></i></span> 검색</button>
+                                	</div>              
                             </div>
                         </div>
                     </div>
@@ -184,6 +215,7 @@
                                     <table class="table no-wrap v-middle mb-0">
                                         <thead>
                                             <tr class="border-0">
+                                            	<th class="font-14 font-weight-medium text-muted px-2">관리번호</th>
                                                 <th class="font-14 font-weight-medium text-muted px-2">성과지표명</th>
                                                 <th class="font-14 font-weight-medium text-muted px-2">관련부서</th>
                                                 <th class="font-14 font-weight-medium text-muted px-2">활용사업</th>
@@ -192,6 +224,7 @@
                                         </thead>
                                         <tbody>
                                             <tr>
+                                            	<td class="border-top-0 text-muted px-2 py-4 font-14">1</td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
@@ -206,6 +239,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
+                                            	<td class="border-top-0 text-muted px-2 py-4 font-14">2</td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
@@ -220,6 +254,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
+                                            	<td class="border-top-0 text-muted px-2 py-4 font-14">3</td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
