@@ -14,9 +14,10 @@ public class TestService {
 		@Autowired
 		public TestDao dao;
 		
-		// È¸¿ø Á¤º¸ Á¶È¸
+		// È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
 		public TestDTO DBTest() {
 			// TODO Auto-generated method stub
 			return dao.DBTest();
+
 		}
 }

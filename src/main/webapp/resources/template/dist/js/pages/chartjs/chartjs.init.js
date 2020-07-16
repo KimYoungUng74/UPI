@@ -1,7 +1,68 @@
 $(function () {
     "use strict";
 	// Bar chart
-	new Chart(document.getElementById("bar-chart"), {
+	new Chart(document.getElementById("bar-chart1"), {
+		type: 'bar',
+		data: {
+		  labels: ["2018", "2019", "2020"],
+		  datasets: [
+			{
+			  label: "연도별 A등급 수치 (퍼센트)",
+			  backgroundColor: ["#6174d5", "#5f76e8", "#768bf4"],
+			  data: [71.7,54.3,50.9]
+			}
+		  ]
+		},
+		options: {
+		  legend: { display: false },
+		  title: {
+			display: true, 
+			text: '연도별 A등급 수치(%)'
+		  },
+		  scales: {
+		        yAxes: [{
+		            ticks: {
+		                max: 100,
+		                min: 0,
+		                stepSize: 10
+		            }
+		        }]
+		    }
+		 
+		}
+	});
+	
+	new Chart(document.getElementById("bar-chart2"), {
+		type: 'bar',
+		data: {
+		  labels: ["2018", "2019", "2020"],
+		  datasets: [
+			{
+			  label: "연도별 B등급 수치(%)",
+			  backgroundColor: ["#6174d5", "#5f76e8", "#768bf4"],
+			  data: [28.3, 43.5, 36.4]
+			}
+		  ]
+		},
+		options: {
+		  legend: { display: false },
+		  title: {
+			display: true, 
+			text: '연도별 B등급 수치(%)'
+		  },
+		  scales: {
+		        yAxes: [{
+		            ticks: {
+		                max: 100,
+		                min: 0,
+		                stepSize: 10
+		            }
+		        }]
+		    }
+		}
+	});
+	
+	new Chart(document.getElementById("bar-chart3"), {
 		type: 'bar',
 		data: {
 		  labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
@@ -18,7 +79,16 @@ $(function () {
 		  title: {
 			display: true, 
 			text: 'Predicted world population (millions) in 2050'
-		  }
+		  },
+		  scales: {
+		        yAxes: [{
+		            ticks: {
+		                max: 100,
+		                min: 0,
+		                stepSize: 10
+		            }
+		        }]
+		    }
 		}
 	});
 
