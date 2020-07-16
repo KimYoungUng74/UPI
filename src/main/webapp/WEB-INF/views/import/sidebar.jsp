@@ -23,23 +23,23 @@
                                 aria-expanded="false"><i data-feather="bar-chart" class="feather-icon"></i><span
                                     class="hide-menu">성과지표 총괄 </span></a>
                             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                                <li class="sidebar-item"><a href="form-inputs.html" class="sidebar-link"><span
+                                <li class="sidebar-item"><a href="yearly_result_view.do" class="sidebar-link"><span
                                             class="hide-menu"> 전년도 대비 평가비교
                                         </span></a>
                                 </li>
-                                <li class="sidebar-item"><a href="form-input-grid.html" class="sidebar-link"><span
+                                <li class="sidebar-item"><a href="yearly_grade_view.do" class="sidebar-link"><span
                                             class="hide-menu"> 연도별 평가등급표
                                         </span></a>
                                 </li>
-                                <li class="sidebar-item"><a href="form-checkbox-radio.html" class="sidebar-link"><span
+                                <li class="sidebar-item"><a href="result_grid_view.do" class="sidebar-link"><span
                                             class="hide-menu"> 총괄 결과표
                                         </span></a>
                                 </li>
-                                <li class="sidebar-item"><a href="form-checkbox-radio.html" class="sidebar-link"><span
+                                <li class="sidebar-item"><a href="business_grade_view.do" class="sidebar-link"><span
                                             class="hide-menu"> 사업별 지표 등급표
                                         </span></a>
                                 </li>
-                                <li class="sidebar-item"><a href="form-checkbox-radio.html" class="sidebar-link"><span
+                                <li class="sidebar-item"><a href="indicator_formula_view.do" class="sidebar-link"><span
                                             class="hide-menu"> 지표별 산출식
                                         </span></a>
                                 </li>
