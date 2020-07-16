@@ -34,3 +34,5 @@
 	src="<c:url value='/resources/template/assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js'/>"></script>
 <script
 	src="<c:url value='/resources/template/dist/js/pages/dashboards/dashboard1.min.js'/>"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script src="http://code.highcharts.com/modules/exporting.js"></script>	
