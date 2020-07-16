@@ -103,7 +103,7 @@
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="index.html">지표 정의서 선택</a>
+                                    <li class="breadcrumb-item"><a href="index.html">지표 정의서 출력</a>
                                     </li>
                                 </ol>
                             </nav>
@@ -122,88 +122,6 @@
                 <!-- Start Sales Charts Section -->
                 <!-- *************************************************************** -->
                 <div class="row">
-                    <div class="col-lg-12 col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                	<h4>카테고리 별 보기 </h4><br>
-                                	
-                                	<div class="row">
-                                	<div class="col-md-6">
-                                		<div class="col-md-6"  style="padding-bottom: 20px;">
-                                			<span>활용 사업</span>
-                                		</div>
-                                		<div class="col-md-12" style="padding: 5px;">
-                                			<div class="custom-control custom-checkbox">
-                                    			<input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    			<label class="custom-control-label" for="customCheck1">
-                                					<a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">BS</a>
-                                					대학중장기 발전계획 BEST
-                                				</label>
-                                			</div>
-                                		</div>
-                                		<div class="col-md-12"  style="padding: 5px;" >
-                                		
-                                			<div class="custom-control custom-checkbox">
-                                    			<input type="checkbox" class="custom-control-input" id="customCheck2">
-                                    			<label class="custom-control-label" for="customCheck2">
-                                			<a class="btn btn-danger rounded-circle btn-circle font-12"href="javascript:void(0)">OR</a>
-                                            	기관평가인증</label>
-                                            </div>           
-                                         </div>
-                                         <div class="col-md-12"  style="padding: 5px;">
-                                         	<div class="custom-control custom-checkbox">
-                                    			<input type="checkbox" class="custom-control-input" id="customCheck3">
-                                    			<label class="custom-control-label" for="customCheck3">
-                                			<a class="btn btn-warning rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">AH</a>
-                                   				혁신지원 AHA</label>
-                                			</div>
-                                         </div>
-                                         <div class="col-md-12"  style="padding: 5px;">
-                                         	<div class="custom-control custom-checkbox">
-                                    			<input type="checkbox" class="custom-control-input" id="customCheck4">
-                                    			<label class="custom-control-label" for="customCheck4">
-                                			<a class="btn btn-success rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">LN</a>
-                                                                                    사회맞춤형 LINC+</label>
-                                			</div>
-                                            
-                                         </div>
-                                         <div class="col-md-12"  style="padding: 5px;">
-                                         	<div class="custom-control custom-checkbox">
-                                    			<input type="checkbox" class="custom-control-input" id="customCheck5">
-                                    			<label class="custom-control-label" for="customCheck5">
-                                			<a class="btn btn-secondary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">T3</a>
-                                                 3유형</label>
-                                			</div>
-                                            
-                                         </div>
-                                	
-                                	</div>
-                                	<div class="col-md-6">
-                                		<div class="col-md-12"  style="padding: 10px;">
-                                			<span>담당 부서</span>
-                                		</div>
-                                		<div class="col-md-12">
-                                			<select class="custom-select" id="inputGroupSelect04" >
-                                           		<option selected="">모두 보기</option>
-                                            	<option value="1">입학취업처</option>
-                                            	<option value="2">교무학생처</option>
-                                            	<option value="3">행정지원처</option>
-                                            	<option value="4">대학발전운영실</option>
-                                            	<option value="5">산학협력처</option>
-                                        	</select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                    	<button class="btn btn-secondary waves-effect waves-light" type="button" style="float: right;"><span class="btn-label"><i class="fas fa-search"></i></span> 검색</button>
-                                	</div>              
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
@@ -211,64 +129,128 @@
                                     <h4 class="card-title">성과지표 정의서</h4>
                                     
                                 </div>
-                                <div class="table-responsive">
-                                    <table class="table no-wrap v-middle mb-0">
-                                        <thead>
-                                            <tr class="border-0">
-                                            	<th class="font-14 font-weight-medium text-muted px-2">관리번호</th>
-                                                <th class="font-14 font-weight-medium text-muted px-2">성과지표명</th>
-                                                <th class="font-14 font-weight-medium text-muted px-2">관련부서</th>
-                                                <th class="font-14 font-weight-medium text-muted px-2">활용사업</th>
-                                                
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+                                    <table class="table" border="1" style="text-align: center;">
+                                        
                                             <tr>
-                                            	<td class="border-top-0 text-muted px-2 py-4 font-14">1</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
-                                                 <td class="border-top-0 px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">BS</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">or</a>
-                                                    </div>
+                                            	<td class="border-top-0 text-muted px-8 py-2 font-14">관리번호</td>
+                                                <td class="border-top-0 text-muted px-8 py-4 font-14">001</td>
+                                                <td class="border-top-0 text-muted px-8 py-4 font-14">지표명</td>
+                                                <td class="border-top-0 text-muted px-8 py-4 font-14" colspan="3">취업률</td>
+                                            </tr>
+                                            <tr>
+                                            	<td class="border-top-0 text-muted px-8 py-4 font-14" rowspan="2">활용</td>
+                                                <td class="border-top-0 text-muted px-8 py-4 font-14">BEST</td>
+                                                <td class="border-top-0 text-muted px-8 py-4 font-14">기관평가</td>
+                                                <td class="border-top-0 text-muted px-8 py-4 font-14">AHA</td>
+                                                <td class="border-top-0 text-muted px-8 py-4 font-14">LINC+</td>
+                                                <td class="border-top-0 text-muted px-8 py-4 font-14">3유형</td>
+                                            </tr>
+                                            <tr>
+                                            	<td class="border-top-0 text-muted px-8 py-4 font-14">O</td>
+                                            	<td class="border-top-0 text-muted px-8 py-4 font-14">O</td>
+                                            	<td class="border-top-0 text-muted px-8 py-4 font-14">O</td>
+                                            	<td class="border-top-0 text-muted px-8 py-4 font-14">O</td>
+                                            	<td class="border-top-0 text-muted px-8 py-4 font-14">O</td>
+                                            </tr>
+                                            <tr>
+                                            	<td class="border-top-0 text-muted px-8 py-2 font-14">기준일</td>
+                                                <td class="border-top-0 text-muted px-8 py-4 font-14">2018년 12월</td>
+                                                <td class="border-top-0 text-muted px-8 py-4 font-14">평가방법</td>
+                                                <td class="border-top-0 text-muted px-8 py-4 font-14" colspan="3">정량</td>
+                                            </tr>
+                                            <tr>
+                                            	<td class="border-top-0 text-muted px-8 py-2 font-14">수집방법</td>
+                                                <td class="border-top-0 text-muted px-8 py-4 font-14">정보공시</td>
+                                                <td class="border-top-0 text-muted px-8 py-4 font-14">평가기준</td>
+                                                <td class="border-top-0 text-muted px-8 py-4 font-14" colspan="3">중장기발전계획 목표 측정값</td>
+                                            </tr>
+                                            <tr>
+                                            	<td class="border-top-0 text-muted px-8 py-2 font-14">관리부서</td>
+                                                <td class="border-top-0 text-muted px-8 py-4 font-14" colspan="5">입학취업처</td>
+                                            </tr>
+                                            <tr>
+                                            	<td class="border-top-0 text-muted px-8 py-2 font-14">산출식</td>
+                                                <td class="border-top-0 text-muted px-8 py-4 font-14" colspan="5">(취업자/취업대상자)/100</td>
+                                            </tr>
+                                            <tr>
+                                            	<td class="border-top-0 text-muted px-8 py-6 font-14">등급<br>기준</td>
+                                                <td class="border-top-0 text-muted px-8 py-6 font-14" colspan="5">
+                                                	<span>A(경민대학교 인증등급):평가지표별 목표 값 대비 달성도 100% 이상</span><br>
+                                                	<span>B(잠재적 인증등급): 평가지표별 목표값 대비 달성도 70% 이상</span><br>
+                                                	<span>D(부적합등급): 평가 지표별 목표값 대비 달성도 70% 이하</span><br>
+                                                	<span>달성도 : 실시년도 실적값 / 전년도 실적값</span>
                                                 </td>
                                             </tr>
                                             <tr>
-                                            	<td class="border-top-0 text-muted px-2 py-4 font-14">2</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
-                                                 <td class="border-top-0 px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">BS</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">or</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                            	<td class="border-top-0 text-muted px-2 py-4 font-14">3</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
-                                                 <td class="border-top-0 px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">BS</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">or</a>
-                                                    </div>
+                                                <td class="border-top-0 text-muted px-8 py-14 font-14" colspan="6" align="center">
+                                                	<table class="table"border="1">
+                                                		<tr>
+                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">목표값</td>
+                                                			<td class="border-top-0 text-muted px-4 py-2 font-14" colspan="3">75.6</td>
+                                                		</tr>
+                                                		<tr>
+                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">현재값</td>
+                                                			<td class="border-top-0 text-muted px-4 py-2 font-14" colspan="3">67.9</td>
+                                                		</tr>
+                                                		<tr>
+                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">평가년도</td>
+                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">2017년도</td>
+                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">2018년도</td>
+                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">2019년도</td>
+                                                		</tr>
+                                                		<tr>
+                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">등급</td>
+                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">A</td>
+                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">B</td>
+                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">B</td>
+                                                		</tr>
+                                                		<tr>
+                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">달성도</td>
+                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">100</td>
+                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">95</td>
+                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">89.81</td>
+                                                		</tr>
+                                                	</table>
                                                 </td>
                                             </tr>
                                             
-                                        </tbody>
+                                            <tr>
+                                                <td class="border-top-0 text-muted px-8 py-2 font-14" colspan="3">
+                                                	목표 및 현재 값 
+                                                </td>
+                                                <td class="border-top-0 text-muted px-8 py-2 font-14" colspan="3">
+                                                	달성도
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border-top-0 text-muted px-8 py-16 font-14" colspan="3">
+                                                	차트이미지
+                                                </td>
+                                                <td class="border-top-0 text-muted px-8 py-16 font-14" colspan="3">
+                                                	차트이미지
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border-top-0 text-muted px-8 py-2 font-14">
+                                                	비고 
+                                                </td>
+                                                <td class="border-top-0 text-muted px-8 py-2 font-14" colspan="5"></td>
+                                            </tr>
                                     </table>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        
+                        <div class="col-md-12">
+                        	<div class="card">
+                            	<div class="card-body">
+                           				<button class="btn btn-primary waves-effect waves-light" type="button" style="float: left;" onclick="location.href='report_view_list.do'"><span class="btn-label" ><i class="fas fa-align-justify"></i></span>목록으로</button>
+                        				<button class="btn btn-primary waves-effect waves-light" type="button" style="float: right;"><span class="btn-label"><i class="far fa-file-alt"></i></span>HWP로 저장</button>
+                        				<button class="btn btn-secondary waves-effect waves-light" type="button" style="float: right;"><span class="btn-label"><i class="fas fa-print"></i></span>인쇄</button>
+                        			
+                        		</div>
+                        	</div>
+                    	</div>
                 </div>
                 <!-- *************************************************************** -->
                 <!-- End Location and Earnings Charts Section -->

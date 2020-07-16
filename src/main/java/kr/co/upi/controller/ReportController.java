@@ -30,5 +30,14 @@ public class ReportController {
 			mav.setViewName("report_view/list");
 			return mav;
 		}
+		
+		@RequestMapping(value = "report_view.do")
+		public ModelAndView report_view(Locale locale, Model model) {
+			
+
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("report_view/view");
+			return mav;
+		}
 	
 }
