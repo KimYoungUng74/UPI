@@ -14,6 +14,7 @@ public class TestDao {
 
 	public TestDTO DBTest() {
 		// TODO Auto-generated method stub
+		 mybatis.insert("TestMapper.DBTestInsert");
 		return mybatis.selectOne("TestMapper.DBTest");
 	}
 

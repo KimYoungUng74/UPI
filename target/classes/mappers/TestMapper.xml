@@ -4,10 +4,15 @@
 
 <mapper namespace="TestMapper">
 
-<!-- 아이디 중복체크 -->
-	<select id="DBTest" resultType="TestDTO">
+	<!-- <select id="DBTest" resultType="TestDTO">
 		SELECT *
 		FROM GRADE_TB 
-	</select>
+	</select>  -->
+	
+	<!-- 지표등록1 -->
+	<insert id="IndicatorsInsert" parameterType="IndicatorsDTO">
+		INSERT INTO INDICATORS_TB
+		VALUES(get_ind_num(), '1', '1' ,'1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1')
+	</insert>
 
 </mapper>
