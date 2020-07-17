@@ -99,11 +99,11 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">성과 지표 관리</h3>
+                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">성과지표 관리</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="index.html">지표 선택</a>
+                                    <li class="breadcrumb-item">지표 선택
                                     </li>
                                 </ol>
                             </nav>
@@ -136,7 +136,7 @@
                                 			<div class="custom-control custom-checkbox">
                                     			<input type="checkbox" class="custom-control-input" id="customCheck1">
                                     			<label class="custom-control-label" for="customCheck1">
-                                					<a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">BS</a>
+                                					<a class="btn btn-primary rounded-circle btn-circle" style="width: 25px; height: 25px;" href="javascript:void(0)"></a>
                                 					대학중장기 발전계획 BEST
                                 				</label>
                                 			</div>
@@ -146,7 +146,7 @@
                                 			<div class="custom-control custom-checkbox">
                                     			<input type="checkbox" class="custom-control-input" id="customCheck2">
                                     			<label class="custom-control-label" for="customCheck2">
-                                			<a class="btn btn-danger rounded-circle btn-circle font-12"href="javascript:void(0)">OR</a>
+                                			<a class="btn btn-danger rounded-circle btn-circle " style="width: 25px; height: 25px;" href="javascript:void(0)"></a>
                                             	기관평가인증</label>
                                             </div>           
                                          </div>
@@ -154,8 +154,8 @@
                                          	<div class="custom-control custom-checkbox">
                                     			<input type="checkbox" class="custom-control-input" id="customCheck3">
                                     			<label class="custom-control-label" for="customCheck3">
-                                			<a class="btn btn-warning rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">AH</a>
+                                			<a class="btn btn-warning rounded-circle btn-circle " style="width: 25px; height: 25px;"
+                                                            href="javascript:void(0)"></a>
                                    				혁신지원 AHA</label>
                                 			</div>
                                          </div>
@@ -163,8 +163,8 @@
                                          	<div class="custom-control custom-checkbox">
                                     			<input type="checkbox" class="custom-control-input" id="customCheck4">
                                     			<label class="custom-control-label" for="customCheck4">
-                                			<a class="btn btn-success rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">LN</a>
+                                			<a class="btn btn-success rounded-circle btn-circle " style="width: 25px; height: 25px;"
+                                                            href="javascript:void(0)"></a>
                                                                                     사회맞춤형 LINC+</label>
                                 			</div>
                                             
@@ -173,8 +173,8 @@
                                          	<div class="custom-control custom-checkbox">
                                     			<input type="checkbox" class="custom-control-input" id="customCheck5">
                                     			<label class="custom-control-label" for="customCheck5">
-                                			<a class="btn btn-secondary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">T3</a>
+                                			<a class="btn btn-secondary rounded-circle btn-circle " style="width: 25px; height: 25px;"
+                                                            href="javascript:void(0)"></a>
                                                  3유형</label>
                                 			</div>
                                             
@@ -272,6 +272,7 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <button onclick="location.href='indicators_write.do'" class="btn btn-secondary waves-effect waves-light" type="button" style="float: right;">새 지표 등록</button>
                             </div>
                         </div>
                     </div>

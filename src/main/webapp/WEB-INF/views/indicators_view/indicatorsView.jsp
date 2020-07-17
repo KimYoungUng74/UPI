@@ -99,11 +99,11 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">성과 지표 정의서</h3>
+                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">성과지표 관리</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="index.html">지표 정의서 출력</a>
+                                    <li class="breadcrumb-item">지표 정의서 출력
                                     </li>
                                 </ol>
                             </nav>

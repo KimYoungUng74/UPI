@@ -99,11 +99,11 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">성과 지표 정의서</h3>
+                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">성과지표 관리</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="index.html">지표 정의서 선택</a>
+                                    <li class="breadcrumb-item">새 지표 추가
                                     </li>
                                 </ol>
                             </nav>
@@ -202,7 +202,7 @@
                             </div>
                         </div>
                     </div>
-                    </div>
+                    
                     
                     <div class="col-lg-12">
                         <div class="card">
@@ -230,9 +230,11 @@
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
                                                         <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">BS</a>
+                                                            href="javascript:void(0)">DS</a>
                                                         <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">or</a>
+                                                            href="javascript:void(0)">SS</a>
+                                                        <a class="btn btn-success text-white rounded-circle btn-circle font-20"
+                                                            href="javascript:void(0)">+</a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -243,9 +245,11 @@
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
                                                         <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">BS</a>
+                                                            href="javascript:void(0)">DS</a>
                                                         <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">or</a>
+                                                            href="javascript:void(0)">SS</a>
+                                                        <a class="btn btn-success text-white rounded-circle btn-circle font-20"
+                                                            href="javascript:void(0)">+</a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -256,9 +260,11 @@
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
                                                         <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">BS</a>
+                                                            href="javascript:void(0)">DS</a>
                                                         <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">or</a>
+                                                            href="javascript:void(0)">SS</a>
+                                                        <a class="btn btn-success text-white rounded-circle btn-circle font-20"
+                                                            href="javascript:void(0)">+</a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -266,6 +272,7 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <button onclick="location.href='indicators_write.do'" class="btn btn-secondary waves-effect waves-light" type="button" style="float: right;">새 지표 등록</button>
                             </div>
                         </div>
                     </div>
@@ -276,6 +283,20 @@
                 <!-- *************************************************************** -->
                 
             </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center text-muted">
+                All Rights Reserved by Adminmart. Designed and Developed by <a
+                    href="https://wrappixel.com">WrapPixel</a>.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
             <!-- ============================================================== -->

@@ -37,5 +37,13 @@ public class IndicatorsController {
 			mav.setViewName("indicators_view/indicatorsView");
 			return mav;
 		}
+		
+		@RequestMapping(value = "indicators_write.do")
+		public ModelAndView indicators_write(Locale locale, Model model) {
+		
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("indicators_view/indicatorsWrite");
+			return mav;
+		}
 	
 }
