@@ -122,8 +122,7 @@
             <!-- *************************************************************** -->
 			<!-- Start Scroll AND Grid  -->            
 			<!-- *************************************************************** -->
-             <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="position-relative mt-2" style="height: 70%; overflow: auto;">
-                           <div class="row">
+             	<div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
@@ -138,17 +137,17 @@
                                             <tr>
                                                 <th class="text-center" rowspan="2">연번<br><br><br></th>
                                                 <th class="text-center" rowspan="2">
-                                                    	지표명<br><br><br>
+                                                    	지 표 명<br><br><br>
                                                     
                                                 </th>
                                                 <th class="text-center" colspan="3">
-                                                    	등급<br>
+                                                    	등 급<br>
                                                     
                                                 </th>
                                                 
-                                                <th class="text-center" colspan="3">달성도</th>
+                                                <th class="text-center" colspan="3">달 성 도</th>
                                                 
-                                                <th class="text-center" rowspan="2">관련 사업<br><br><br></th>
+                                                <th class="text-center" rowspan="2">관 련 사 업<br><br><br></th>
                                                 
                                                 
                                                 
@@ -326,7 +325,6 @@
                         </div> <!-- end card-->
                     </div> <!-- end col-->
                 </div>
-              </div>
 			 <!-- *************************************************************** -->
 			<!-- END Scroll AND Grid  -->            
 			<!-- *************************************************************** -->
