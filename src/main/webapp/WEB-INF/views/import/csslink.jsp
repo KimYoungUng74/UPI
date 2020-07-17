@@ -8,8 +8,10 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <!-- Favicon icon -->
-<link rel="icon" type="image/png" sizes="16x16"
-	href="assets/images/favicon.png">
+<link rel="shortcut icon" type="image/x-icon"
+	href="<c:url value='resources/images/favicon.ico'/>">
+<link rel="apple-touch-icon"
+	href="<c:url value='resources/images/favicon.ico'/>">
 <title>경민대학교 성과지표관리시스템</title>
 <!-- Custom CSS -->
 <link
@@ -24,6 +26,7 @@
 <!-- Custom CSS -->
 <link href="<c:url value='/resources/template/dist/css/style.min.css'/>"
 	rel="stylesheet">
+
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>

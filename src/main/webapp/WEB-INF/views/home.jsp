@@ -3,6 +3,10 @@
 <html>
 <head>
 	<title>Home</title>
+	<link rel="shortcut icon" type="image/x-icon"
+	href="<c:url value='resources/images/favicon.ico'/>">
+<link rel="apple-touch-icon"
+	href="<c:url value='resources/images/favicon.ico'/>">
 </head>
 <body>
 <h1>

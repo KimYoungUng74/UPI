@@ -29,5 +29,13 @@ public class IndicatorsController {
 			mav.setViewName("indicators_view/indicatorsList");
 			return mav;
 		}
+		
+		@RequestMapping(value = "indicators_view.do")
+		public ModelAndView indicators_view(Locale locale, Model model) {
+		
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("indicators_view/indicatorsView");
+			return mav;
+		}
 	
 }
