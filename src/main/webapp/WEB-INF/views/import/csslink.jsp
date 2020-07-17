@@ -10,8 +10,7 @@
 <!-- Favicon icon -->
 <link rel="shortcut icon" type="image/x-icon"
 	href="<c:url value='resources/images/favicon.ico'/>">
-<link rel="apple-touch-icon"
-	href="<c:url value='resources/images/favicon.ico'/>">
+<link rel="icon" type="image/gif" href="<c:url value='resources/images/animated_favicon1.gif'/>">
 <title>경민대학교 성과지표관리시스템</title>
 <!-- Custom CSS -->
 <link
