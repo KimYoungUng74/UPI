@@ -131,49 +131,49 @@
                                     <table class="table" border="1" style="text-align: center;">
                                         
                                             <tr>
-                                            	<td class="border-top-0 text-muted px-8 py-2 font-14">관리번호</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">001</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">지표명</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14" colspan="3">취업률</td>
+                                            	<td class="border-top-0 px-8 py-2 font-14 table-active">관리번호</td>
+                                                <td class="border-top-0  px-8 py-4 font-14">001</td>
+                                                <td class="border-top-0  px-8 py-4 font-14 table-active">지표명</td>
+                                                <td class="border-top-0  px-8 py-4 font-14" colspan="3">취업률</td>
                                             </tr>
                                             <tr>
-                                            	<td class="border-top-0 text-muted px-8 py-4 font-14" rowspan="2">활용</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">BEST</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">기관평가</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">AHA</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">LINC+</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">3유형</td>
+                                            	<td class="border-top-0  px-8 py-4 font-14 table-active" rowspan="2">활용</td>
+                                                <td class="border-top-0  px-8 py-4 font-14 table-active">BEST</td>
+                                                <td class="border-top-0  px-8 py-4 font-14 table-active">기관평가</td>
+                                                <td class="border-top-0  px-8 py-4 font-14 table-active">AHA</td>
+                                                <td class="border-top-0  px-8 py-4 font-14 table-active">LINC+</td>
+                                                <td class="border-top-0  px-8 py-4 font-14 table-active">3유형</td>
                                             </tr>
                                             <tr>
-                                            	<td class="border-top-0 text-muted px-8 py-4 font-14">O</td>
-                                            	<td class="border-top-0 text-muted px-8 py-4 font-14">O</td>
-                                            	<td class="border-top-0 text-muted px-8 py-4 font-14">O</td>
-                                            	<td class="border-top-0 text-muted px-8 py-4 font-14">O</td>
-                                            	<td class="border-top-0 text-muted px-8 py-4 font-14">O</td>
+                                            	<td class="border-top-0  px-8 py-4 font-14">O</td>
+                                            	<td class="border-top-0  px-8 py-4 font-14">O</td>
+                                            	<td class="border-top-0  px-8 py-4 font-14">O</td>
+                                            	<td class="border-top-0  px-8 py-4 font-14">O</td>
+                                            	<td class="border-top-0  px-8 py-4 font-14">O</td>
                                             </tr>
                                             <tr>
-                                            	<td class="border-top-0 text-muted px-8 py-2 font-14">기준일</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">2018년 12월</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">평가방법</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14" colspan="3">정량</td>
+                                            	<td class="border-top-0  px-8 py-2 font-14 table-active">기준일</td>
+                                                <td class="border-top-0  px-8 py-4 font-14">2018년 12월</td>
+                                                <td class="border-top-0  px-8 py-4 font-14 table-active">평가방법</td>
+                                                <td class="border-top-0  px-8 py-4 font-14" colspan="3">정량</td>
                                             </tr>
                                             <tr>
-                                            	<td class="border-top-0 text-muted px-8 py-2 font-14">수집방법</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">정보공시</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">평가기준</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14" colspan="3">중장기발전계획 목표 측정값</td>
+                                            	<td class="border-top-0  px-8 py-2 font-14 table-active">수집방법</td>
+                                                <td class="border-top-0  px-8 py-4 font-14">정보공시</td>
+                                                <td class="border-top-0  px-8 py-4 font-14 table-active">평가기준</td>
+                                                <td class="border-top-0  px-8 py-4 font-14" colspan="3">중장기발전계획 목표 측정값</td>
                                             </tr>
                                             <tr>
-                                            	<td class="border-top-0 text-muted px-8 py-2 font-14">관리부서</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14" colspan="5">입학취업처</td>
+                                            	<td class="border-top-0  px-8 py-2 font-14 table-active">관리부서</td>
+                                                <td class="border-top-0  px-8 py-4 font-14" colspan="5">입학취업처</td>
                                             </tr>
                                             <tr>
-                                            	<td class="border-top-0 text-muted px-8 py-2 font-14">산출식</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14" colspan="5">(취업자/취업대상자)/100</td>
+                                            	<td class="border-top-0  px-8 py-2 font-14 table-active">산출식</td>
+                                                <td class="border-top-0  px-8 py-4 font-14" colspan="5">(취업자/취업대상자)/100</td>
                                             </tr>
                                             <tr>
-                                            	<td class="border-top-0 text-muted px-8 py-6 font-14">등급<br>기준</td>
-                                                <td class="border-top-0 text-muted px-8 py-6 font-14" colspan="5">
+                                            	<td class="border-top-0  px-8 py-6 font-14 table-active">등급<br>기준</td>
+                                                <td class="border-top-0  px-8 py-6 font-14" colspan="5">
                                                 	<span>A(경민대학교 인증등급):평가지표별 목표 값 대비 달성도 100% 이상</span><br>
                                                 	<span>B(잠재적 인증등급): 평가지표별 목표값 대비 달성도 70% 이상</span><br>
                                                 	<span>D(부적합등급): 평가 지표별 목표값 대비 달성도 70% 이하</span><br>
@@ -181,59 +181,59 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="border-top-0 text-muted px-8 py-14 font-14" colspan="6" align="center">
+                                                <td class="border-top-0  px-8 py-14 font-14" colspan="6" align="center">
                                                 	<table class="table"border="1">
                                                 		<tr>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">목표값</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14" colspan="3">75.6</td>
+                                                			<td class="border-top-0  px-4 py-2 font-14 table-active">목표값</td>
+                                                			<td class="border-top-0  px-4 py-2 font-14" colspan="3">75.6</td>
                                                 		</tr>
                                                 		<tr>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">현재값</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14" colspan="3">67.9</td>
+                                                			<td class="border-top-0  px-4 py-2 font-14 table-active">현재값</td>
+                                                			<td class="border-top-0  px-4 py-2 font-14" colspan="3">67.9</td>
                                                 		</tr>
                                                 		<tr>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">평가년도</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">2017년도</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">2018년도</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">2019년도</td>
+                                                			<td class="border-top-0  px-4 py-2 font-14 table-active">평가년도</td>
+                                                			<td class="border-top-0  px-4 py-2 font-14">2017년도</td>
+                                                			<td class="border-top-0  px-4 py-2 font-14">2018년도</td>
+                                                			<td class="border-top-0  px-4 py-2 font-14">2019년도</td>
                                                 		</tr>
                                                 		<tr>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">등급</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">A</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">B</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">B</td>
+                                                			<td class="border-top-0  px-4 py-2 font-14 table-active">등급</td>
+                                                			<td class="border-top-0  px-4 py-2 font-14">A</td>
+                                                			<td class="border-top-0  px-4 py-2 font-14">B</td>
+                                                			<td class="border-top-0  px-4 py-2 font-14">B</td>
                                                 		</tr>
                                                 		<tr>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">달성도</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">100</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">95</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">89.81</td>
+                                                			<td class="border-top-0  px-4 py-2 font-14 table-active">달성도</td>
+                                                			<td class="border-top-0  px-4 py-2 font-14">100</td>
+                                                			<td class="border-top-0  px-4 py-2 font-14">95</td>
+                                                			<td class="border-top-0  px-4 py-2 font-14">89.81</td>
                                                 		</tr>
                                                 	</table>
                                                 </td>
                                             </tr>
                                             
                                             <tr>
-                                                <td class="border-top-0 text-muted px-8 py-2 font-14" colspan="3">
+                                                <td class="border-top-0  px-8 py-2 font-14 table-active" colspan="3">
                                                 	목표 및 현재 값 
                                                 </td>
-                                                <td class="border-top-0 text-muted px-8 py-2 font-14" colspan="3">
+                                                <td class="border-top-0  px-8 py-2 font-14 table-active" colspan="3">
                                                 	달성도
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="border-top-0 text-muted px-8 py-16 font-14" colspan="3">
+                                                <td class="border-top-0  px-8 py-16 font-14" colspan="3">
                                                 	<img width="50%" height="20%" src="<c:url value='http://localhost:8181/img/chart1.png'/>" alt="차트">
                                                 </td>
-                                                <td class="border-top-0 text-muted px-8 py-16 font-14" colspan="3">
+                                                <td class="border-top-0  px-8 py-16 font-14" colspan="3">
                                                 	<img width="50%" height="20%" src="<c:url value='http://localhost:8181/img/chart1.png'/>" alt="차트">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="border-top-0 text-muted px-8 py-2 font-14">
+                                                <td class="border-top-0  px-8 py-2 font-14 table-active">
                                                 	비고 
                                                 </td>
-                                                <td class="border-top-0 text-muted px-8 py-2 font-14" colspan="5"></td>
+                                                <td class="border-top-0  px-8 py-2 font-14" colspan="5"></td>
                                             </tr>
                                     </table>
                                 </div>

@@ -99,23 +99,14 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Good Morning Jason!</h3>
+                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">경민대학교 성과지표 관리 시스템</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
+                                    <li class="breadcrumb-item"><a href="index.do">메인페이지</a>
                                     </li>
                                 </ol>
                             </nav>
-                        </div>
-                    </div>
-                    <div class="col-5 align-self-center">
-                        <div class="customize-input float-right">
-                            <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
-                                <option selected>Aug 19</option>
-                                <option value="1">July 19</option>
-                                <option value="2">Jun 19</option>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -136,29 +127,12 @@
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">236</h2>
-                                        <span
-                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none">+18.33%</span>
+                                        <h2 class="text-dark mb-1 font-weight-medium">38개</h2>
                                     </div>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">New Clients</h6>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">대학중장기발전계획 BEST</h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="user-plus"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card border-right">
-                        <div class="card-body">
-                            <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                <div>
-                                    <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium"><sup
-                                            class="set-doller">$</sup>18,306</h2>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Earnings of Month
-                                    </h6>
-                                </div>
-                                <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="dollar-sign"></i></span>
+                                    <a class="btn btn-primary rounded-circle btn-circle" style="width: 25px; height: 25px;" href="javascript:void(0)"></a>
                                 </div>
                             </div>
                         </div>
@@ -168,27 +142,60 @@
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">1538</h2>
-                                        <span
-                                            class="badge bg-danger font-12 text-white font-weight-medium badge-pill ml-2 d-md-none d-lg-block">-18.33%</span>
+                                        <h2 class="text-dark mb-1 font-weight-medium">18개</h2>
                                     </div>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">New Projects</h6>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">기관 평가 인증</h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
+                                    <a class="btn btn-danger rounded-circle btn-circle " style="width: 25px; height: 25px;" href="javascript:void(0)"></a> 
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card border-right">
                         <div class="card-body">
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
-                                    <h2 class="text-dark mb-1 font-weight-medium">864</h2>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Projects</h6>
+                                    <div class="d-inline-flex align-items-center">
+                                        <h2 class="text-dark mb-1 font-weight-medium">9개</h2>
+                                    </div>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">혁신 지원 AHA</h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
+                                    <a class="btn btn-warning rounded-circle btn-circle " style="width: 25px; height: 25px;"
+                                                            href="javascript:void(0)"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-right">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <div class="d-inline-flex align-items-center">
+                                        <h2 class="text-dark mb-1 font-weight-medium">5개</h2>
+                                    </div>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">사회 맞춤형 LINC+</h6>
+                                </div>
+                                <div class="ml-auto mt-md-3 mt-lg-0">
+                                    <a class="btn btn-success rounded-circle btn-circle " style="width: 25px; height: 25px;"
+                                                            href="javascript:void(0)"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-right">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <div class="d-inline-flex align-items-center">
+                                        <h2 class="text-dark mb-1 font-weight-medium">5개</h2>
+                                    </div>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">3유형</h6>
+                                </div>
+                                <div class="ml-auto mt-md-3 mt-lg-0">
+                                    <a class="btn btn-secondary rounded-circle btn-circle " style="width: 25px; height: 25px;"
+                                                            href="javascript:void(0)"></a>
                                 </div>
                             </div>
                         </div>
@@ -209,20 +216,20 @@
                         </div>
                     </div>
                     
-                    <div class="col-lg-8" id="a_grade">
+                    <div class="col-lg-8" id="a_grade" >
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex align-items-center mb-4">
-                                    <h4 class="card-title">성과지표 A등급</h4>
+                                    <h4 class="card-title">A등급 성과지표</h4>
                                     
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table no-wrap v-middle mb-0">
-                                        <thead>
-                                            <tr class="border-0">
-                                                <th class="font-14 font-weight-medium text-muted px-2">성과지표명</th>
-                                                <th class="font-14 font-weight-medium text-muted px-2">관련부서</th>
-                                                <th class="font-14 font-weight-medium text-muted px-2">활용사업</th>
+                                        <thead style="background-color: rgb(124, 181, 236);">
+                                            <tr class="border-0 text-white">
+                                                <th class="font-14">성과지표명</th>
+                                                <th class="font-14">관련부서</th>
+                                                <th class="font-14">활용사업</th>
                                                 
                                             </tr>
                                         </thead>
@@ -232,12 +239,11 @@
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">DS</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">SS</a>
-                                                        <a class="btn btn-success text-white rounded-circle btn-circle font-20"
-                                                            href="javascript:void(0)">+</a>
+                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
+                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
+                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
+                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
+                                                        <a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -246,12 +252,11 @@
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">DS</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">SS</a>
-                                                        <a class="btn btn-success text-white rounded-circle btn-circle font-20"
-                                                            href="javascript:void(0)">+</a>
+                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
+                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
+                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
+                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
+                                                        <a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -260,12 +265,11 @@
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">DS</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">SS</a>
-                                                        <a class="btn btn-success text-white rounded-circle btn-circle font-20"
-                                                            href="javascript:void(0)">+</a>
+                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
+                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
+                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
+                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
+                                                        <a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -279,31 +283,120 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex align-items-center mb-4">
-                                    <h4 class="card-title">성과지표 B등급</h4>
+                                    <h4 class="card-title">B등급 성과지표</h4>
                                     
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table no-wrap v-middle mb-0">
-                                        <thead>
-                                            <tr class="border-0">
-                                                <th class="border-0 font-14 font-weight-medium text-muted px-2">성과지표명</th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted px-2">관련부서</th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted px-2">활용사업</th>
+                                        <thead style="background-color: rgb(67, 67, 72);">
+                                            <tr class="border-0 text-white">
+                                                <th class="font-14">성과지표명</th>
+                                                <th class="font-14">관련부서</th>
+                                                <th class="font-14">활용사업</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
-                                                 <td class="px-2 py-4">
+                                                 <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">DS</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">SS</a>
-                                                        <a class="btn btn-success text-white rounded-circle btn-circle font-20"
-                                                            href="javascript:void(0)">+</a>
-                                                     </div>
+                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
+                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
+                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
+                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
+                                                        <a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
+                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
+                                                 <td class="border-top-0 px-2 py-4">
+                                                    <div class="popover-icon">
+                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
+                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
+                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
+                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
+                                                        <a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
+                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
+                                                 <td class="border-top-0 px-2 py-4">
+                                                    <div class="popover-icon">
+                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
+                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
+                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
+                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
+                                                        <a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8" id="d_grade" style="display: none;">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-4">
+                                    <h4 class="card-title">D등급 성과지표</h4>
+                                    
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table no-wrap v-middle mb-0">
+                                        <thead style="background-color: rgb(144, 237, 125); ">
+                                            <tr class="border-0">
+                                                <th class="font-14">성과지표명</th>
+                                                <th class="font-14">관련부서</th>
+                                                <th class="font-14">활용사업</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
+                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
+                                                 <td class="border-top-0 px-2 py-4">
+                                                    <div class="popover-icon">
+                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
+                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
+                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
+                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
+                                                        <a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
+                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
+                                                 <td class="border-top-0 px-2 py-4">
+                                                    <div class="popover-icon">
+                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
+                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
+                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
+                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
+                                                        <a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
+                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
+                                                 <td class="border-top-0 px-2 py-4">
+                                                    <div class="popover-icon">
+                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
+                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
+                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
+                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
+                                                        <a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -399,12 +492,20 @@
     });
     
     $('.highcharts-color-0').click(function(){
-  	  $('#b_grade').hide();
-  	  $('#a_grade').show();
-  });
+      
+    	$('#d_grade').hide();
+  	  	$('#b_grade').hide();
+  	  	$('#a_grade').show();
+  	});
     $('.highcharts-color-1').click(function(){
-    	  $('#a_grade').hide();
-    	  $('#b_grade').show();
+    	$('#d_grade').hide();
+    	$('#a_grade').hide();
+    	$('#b_grade').show();
+    });
+    $('.highcharts-color-2').click(function(){
+    	$('#d_grade').show();
+    	$('#a_grade').hide();
+    	$('#b_grade').hide();
     });
     
     </script>

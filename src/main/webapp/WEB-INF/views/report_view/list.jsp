@@ -225,7 +225,7 @@
                                         <tbody>
                                             <tr>
                                             	<td class="border-top-0 text-muted px-2 py-4 font-14">1</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
+                                                <td class="border-top-0 text-muted px-2 py-4 font-14" onclick="location.href='report_view.do'">취업률</td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
@@ -238,7 +238,7 @@
                                             </tr>
                                             <tr>
                                             	<td class="border-top-0 text-muted px-2 py-4 font-14">2</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
+                                                <td class="border-top-0 text-muted px-2 py-4 font-14" onclick="location.href='report_view2.do'">취업률</td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">

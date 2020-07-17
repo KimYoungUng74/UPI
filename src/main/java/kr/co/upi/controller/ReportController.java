@@ -4,9 +4,13 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +25,11 @@ import kr.co.upi.utill.hwp_library;
  */
 @Controller
 public class ReportController {
+	
+	
+
+
+
 		@RequestMapping(value = "report_view_list.do")
 		public ModelAndView report_view_list(Locale locale, Model model) {
 			ModelAndView mav = new ModelAndView();
@@ -41,10 +50,10 @@ public class ReportController {
 			mav.setViewName("report_view/view2");
 			return mav;
 		}
-		
 		@RequestMapping(value = "report_hwp_viewer.hwp")
-		public ModelAndView report_view3(Locale locale, Model model) throws Exception {
+		public ModelAndView report_view3(Locale locale, Model model,HttpServletRequest request) throws Exception {
 			ModelAndView mav = new ModelAndView();
+			
 			//한글파일 저장
 			hwp_library.hwpsave();
 			mav.setViewName("report_view/hwp_viewer");
