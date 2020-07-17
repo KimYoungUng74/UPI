@@ -20,12 +20,8 @@ import kr.co.upi.Service.TestService;
  */
 @Controller
 public class ReportController {
-	
-	
 		@RequestMapping(value = "report_view_list.do")
 		public ModelAndView report_view_list(Locale locale, Model model) {
-			
-
 			ModelAndView mav = new ModelAndView();
 			mav.setViewName("report_view/list");
 			return mav;
@@ -33,10 +29,22 @@ public class ReportController {
 		
 		@RequestMapping(value = "report_view.do")
 		public ModelAndView report_view(Locale locale, Model model) {
-			
-
 			ModelAndView mav = new ModelAndView();
 			mav.setViewName("report_view/view");
+			return mav;
+		}
+		
+		@RequestMapping(value = "report_view2.do")
+		public ModelAndView report_view2(Locale locale, Model model) {
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("report_view/view2");
+			return mav;
+		}
+		
+		@RequestMapping(value = "report_hwp_viewer.hwp")
+		public ModelAndView report_view3(Locale locale, Model model) {
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("report_view/hwp_viewer");
 			return mav;
 		}
 	

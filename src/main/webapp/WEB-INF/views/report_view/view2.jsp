@@ -128,114 +128,8 @@
                                 <div class="d-flex align-items-center mb-4">
                                     <h4 class="card-title">성과지표 정의서</h4>
                                 </div>
-                                    <table class="table" border="1" style="text-align: center;">
-                                        
-                                            <tr>
-                                            	<td class="border-top-0 text-muted px-8 py-2 font-14">관리번호</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">001</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">지표명</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14" colspan="3">취업률</td>
-                                            </tr>
-                                            <tr>
-                                            	<td class="border-top-0 text-muted px-8 py-4 font-14" rowspan="2">활용</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">BEST</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">기관평가</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">AHA</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">LINC+</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">3유형</td>
-                                            </tr>
-                                            <tr>
-                                            	<td class="border-top-0 text-muted px-8 py-4 font-14">O</td>
-                                            	<td class="border-top-0 text-muted px-8 py-4 font-14">O</td>
-                                            	<td class="border-top-0 text-muted px-8 py-4 font-14">O</td>
-                                            	<td class="border-top-0 text-muted px-8 py-4 font-14">O</td>
-                                            	<td class="border-top-0 text-muted px-8 py-4 font-14">O</td>
-                                            </tr>
-                                            <tr>
-                                            	<td class="border-top-0 text-muted px-8 py-2 font-14">기준일</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">2018년 12월</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">평가방법</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14" colspan="3">정량</td>
-                                            </tr>
-                                            <tr>
-                                            	<td class="border-top-0 text-muted px-8 py-2 font-14">수집방법</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">정보공시</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14">평가기준</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14" colspan="3">중장기발전계획 목표 측정값</td>
-                                            </tr>
-                                            <tr>
-                                            	<td class="border-top-0 text-muted px-8 py-2 font-14">관리부서</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14" colspan="5">입학취업처</td>
-                                            </tr>
-                                            <tr>
-                                            	<td class="border-top-0 text-muted px-8 py-2 font-14">산출식</td>
-                                                <td class="border-top-0 text-muted px-8 py-4 font-14" colspan="5">(취업자/취업대상자)/100</td>
-                                            </tr>
-                                            <tr>
-                                            	<td class="border-top-0 text-muted px-8 py-6 font-14">등급<br>기준</td>
-                                                <td class="border-top-0 text-muted px-8 py-6 font-14" colspan="5">
-                                                	<span>A(경민대학교 인증등급):평가지표별 목표 값 대비 달성도 100% 이상</span><br>
-                                                	<span>B(잠재적 인증등급): 평가지표별 목표값 대비 달성도 70% 이상</span><br>
-                                                	<span>D(부적합등급): 평가 지표별 목표값 대비 달성도 70% 이하</span><br>
-                                                	<span>달성도 : 실시년도 실적값 / 전년도 실적값</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="border-top-0 text-muted px-8 py-14 font-14" colspan="6" align="center">
-                                                	<table class="table"border="1">
-                                                		<tr>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">목표값</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14" colspan="3">75.6</td>
-                                                		</tr>
-                                                		<tr>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">현재값</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14" colspan="3">67.9</td>
-                                                		</tr>
-                                                		<tr>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">평가년도</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">2017년도</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">2018년도</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">2019년도</td>
-                                                		</tr>
-                                                		<tr>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">등급</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">A</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">B</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">B</td>
-                                                		</tr>
-                                                		<tr>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">달성도</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">100</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">95</td>
-                                                			<td class="border-top-0 text-muted px-4 py-2 font-14">89.81</td>
-                                                		</tr>
-                                                	</table>
-                                                </td>
-                                            </tr>
-                                            
-                                            <tr>
-                                                <td class="border-top-0 text-muted px-8 py-2 font-14" colspan="3">
-                                                	목표 및 현재 값 
-                                                </td>
-                                                <td class="border-top-0 text-muted px-8 py-2 font-14" colspan="3">
-                                                	달성도
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="border-top-0 text-muted px-8 py-16 font-14" colspan="3">
-                                                	차트이미지
-                                                </td>
-                                                <td class="border-top-0 text-muted px-8 py-16 font-14" colspan="3">
-                                                	차트이미지
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="border-top-0 text-muted px-8 py-2 font-14">
-                                                	비고 
-                                                </td>
-                                                <td class="border-top-0 text-muted px-8 py-2 font-14" colspan="5"></td>
-                                            </tr>
-                                    </table>
+                                    <c:import url="hwp_viewer.jsp" charEncoding="UTF-8" id="report">
+                                    </c:import>
                                 </div>
                             </div>
                         </div>
@@ -245,7 +139,7 @@
                             	<div class="card-body">
                            				<button class="btn btn-primary waves-effect waves-light" type="button" style="float: left;" onclick="location.href='report_view_list.do'"><span class="btn-label" ><i class="fas fa-align-justify"></i></span>목록으로</button>
                         				<button class="btn btn-primary waves-effect waves-light" type="button" style="float: right;" onclick="location.href='report_hwp_viewer.hwp'"><span class="btn-label"><i class="far fa-file-alt"></i></span>HWP로 저장</button>
-                        				<button class="btn btn-secondary waves-effect waves-light" type="button" style="float: right;"><span class="btn-label"><i class="fas fa-print"></i></span>인쇄</button>
+                        				<button class="btn btn-secondary waves-effect waves-light" type="button" style="float: right;" onclick="printing();"><span class="btn-label"><i class="fas fa-print"></i></span>인쇄</button>
                         			
                         		</div>
                         	</div>
@@ -285,5 +179,10 @@
     </body>
 	<c:import url="../import/javascript.jsp" charEncoding="UTF-8" >
     </c:import>
-    
+    <script>
+    function printing() {
+    	var doc = document.getElementsById('report');
+    	doc.print();
+    }
+    </script>
 </html>
