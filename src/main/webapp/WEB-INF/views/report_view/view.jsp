@@ -122,7 +122,7 @@
                 <!-- Start Sales Charts Section -->
                 <!-- *************************************************************** -->
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12" id="report">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex align-items-center mb-4">
@@ -223,10 +223,10 @@
                                             </tr>
                                             <tr>
                                                 <td class="border-top-0 text-muted px-8 py-16 font-14" colspan="3">
-                                                	차트이미지
+                                                	<img width="50%" height="20%" src="<c:url value='http://localhost:8181/img/chart1.png'/>" alt="차트">
                                                 </td>
                                                 <td class="border-top-0 text-muted px-8 py-16 font-14" colspan="3">
-                                                	차트이미지
+                                                	<img width="50%" height="20%" src="<c:url value='http://localhost:8181/img/chart1.png'/>" alt="차트">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -245,7 +245,7 @@
                             	<div class="card-body">
                            				<button class="btn btn-primary waves-effect waves-light" type="button" style="float: left;" onclick="location.href='report_view_list.do'"><span class="btn-label" ><i class="fas fa-align-justify"></i></span>목록으로</button>
                         				<button class="btn btn-primary waves-effect waves-light" type="button" style="float: right;" onclick="location.href='report_hwp_viewer.hwp'"><span class="btn-label"><i class="far fa-file-alt"></i></span>HWP로 저장</button>
-                        				<button class="btn btn-secondary waves-effect waves-light" type="button" style="float: right;"><span class="btn-label"><i class="fas fa-print"></i></span>인쇄</button>
+                        				<button class="btn btn-secondary waves-effect waves-light btn-print" type="button" style="float: right;"><span class="btn-label"><i class="fas fa-print"></i></span>인쇄</button>
                         			
                         		</div>
                         	</div>
@@ -285,5 +285,16 @@
     </body>
 	<c:import url="../import/javascript.jsp" charEncoding="UTF-8" >
     </c:import>
-    
+    <script type="text/javascript">
+    $('.btn-print').click(function(){
+    	  var initBody=document.body.innerHTML;
+    	  window.onbeforeprint = function(){
+    		  document.body.innerHTML = document.getElementById('report').innerHTML;
+    	  }
+    	  window.onafterprint = function(){
+    		  document.body.innerHTML = initBody;
+    	  }
+    	  window.print();
+    });
+    </script>
 </html>

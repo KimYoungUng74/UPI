@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.co.upi.Service.TestService;
+import kr.co.upi.utill.hwp_library;
 
 /**
  * Handles requests for the application home page.
@@ -42,8 +43,10 @@ public class ReportController {
 		}
 		
 		@RequestMapping(value = "report_hwp_viewer.hwp")
-		public ModelAndView report_view3(Locale locale, Model model) {
+		public ModelAndView report_view3(Locale locale, Model model) throws Exception {
 			ModelAndView mav = new ModelAndView();
+			//한글파일 저장
+			hwp_library.hwpsave();
 			mav.setViewName("report_view/hwp_viewer");
 			return mav;
 		}

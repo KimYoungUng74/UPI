@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="true"%>
 <html lang="kr">
-	<table border="1" width="560" style="text-align: center;">
+	<table border="1" width="560" style="text-align: center;" id="report">
                                         
                                             <tr height="50">
                                             	<td>관리번호</td>
@@ -97,10 +97,10 @@
                                             </tr>
                                             <tr height="150">
                                                 <td colspan="3">
-                                                	<img src="<c:url value='http://localhost:8181/img/chart1.PNG'/>" alt="차트">
+                                                	<img  width="200" height="200" src="<c:url value='http://localhost:8181/img/chart1.png'/>" alt="차트">
                                                	</td>
                                                 <td colspan="3">
-                                                	<img src="<c:url value='http://localhost:8181/img/chart1.PNG'/>" alt="차트">
+                                                	<img width="200" height="200" src="<c:url value='http://localhost:8181/img/chart1.png'/>" alt="차트">
                                                 </td>
                                             </tr>
                                             <tr height="25">
@@ -169,6 +169,5 @@
             }]
         }]
     });
-    
     </script>
 </html>

@@ -128,18 +128,20 @@
                                 <div class="d-flex align-items-center mb-4">
                                     <h4 class="card-title">성과지표 정의서</h4>
                                 </div>
-                                    <c:import url="hwp_viewer.jsp" charEncoding="UTF-8" id="report">
-                                    </c:import>
+                                <div id="report">
+                                <c:import url="hwp_viewer.jsp" charEncoding="UTF-8">
+                                </c:import>
                                 </div>
                             </div>
                         </div>
+                    </div>
                         
                         <div class="col-md-12">
                         	<div class="card">
                             	<div class="card-body">
                            				<button class="btn btn-primary waves-effect waves-light" type="button" style="float: left;" onclick="location.href='report_view_list.do'"><span class="btn-label" ><i class="fas fa-align-justify"></i></span>목록으로</button>
                         				<button class="btn btn-primary waves-effect waves-light" type="button" style="float: right;" onclick="location.href='report_hwp_viewer.hwp'"><span class="btn-label"><i class="far fa-file-alt"></i></span>HWP로 저장</button>
-                        				<button class="btn btn-secondary waves-effect waves-light" type="button" style="float: right;" onclick="printing();"><span class="btn-label"><i class="fas fa-print"></i></span>인쇄</button>
+                        				<button class="btn btn-secondary waves-effect waves-light btn-print" type="button" style="float: right;"><span class="btn-label"><i class="fas fa-print"></i></span>인쇄</button>
                         			
                         		</div>
                         	</div>
@@ -180,9 +182,15 @@
 	<c:import url="../import/javascript.jsp" charEncoding="UTF-8" >
     </c:import>
     <script>
-    function printing() {
-    	var doc = document.getElementsById('report');
-    	doc.print();
-    }
+    $('.btn-print').click(function(){
+    	  var initBody=document.body.innerHTML;
+    	  window.onbeforeprint = function(){
+    		  document.body.innerHTML = document.getElementById('report').innerHTML;
+    	  }
+    	  window.onafterprint = function(){
+    		  document.body.innerHTML = initBody;
+    	  }
+    	  window.print();
+    });
     </script>
 </html>
