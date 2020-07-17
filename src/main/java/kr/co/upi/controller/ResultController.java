@@ -54,5 +54,14 @@ public class ResultController {
 		mav.setViewName("result_view/indicator_formula_view");
 		return mav;
 	}
+	
+	// 지표별 평가등급기준 페이지
+	@RequestMapping(value = "indicator_grade_standard.do")
+	public ModelAndView indicatorGrade(Locale locale, Model model) {
+
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("result_view/indicator_grade_standard");
+		return mav;
+	}
 
 }

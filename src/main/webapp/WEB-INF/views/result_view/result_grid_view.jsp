@@ -122,8 +122,7 @@
             <!-- *************************************************************** -->
 			<!-- Start Scroll AND Grid  -->            
 			<!-- *************************************************************** -->
-             <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="position-relative mt-2" style="height: 70%; overflow: auto;">
-                           <div class="row">
+                 <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
@@ -138,15 +137,15 @@
                                             <tr>
                                                 <th class="text-center" rowspan="2">연번<br><br><br></th>
                                                 <th class="text-center" rowspan="2">
-                                                    	지표명<br><br><br> 
+                                                    	지 표 명<br><br><br> 
                                                 </th>
                                                 <th class="text-center" colspan="2">
-                                                    	평가지표<br>
+                                                    	평 가 지 표<br>
                                                 </th>
                                                 
-                                                <th class="text-center" colspan="2">평가결과</th>
+                                                <th class="text-center" colspan="2">평 가 결 과</th>
                                                 
-                                                <th class="text-center" rowspan="2">관련 사업<br><br><br></th>
+                                                <th class="text-center" rowspan="2">관 련 사 업<br><br><br></th>
                                                 
                                                 
                                                 
@@ -301,8 +300,7 @@
                             </div> <!-- end card-body-->
                         </div> <!-- end card-->
                     </div> <!-- end col-->
-                </div>
-              </div>
+                </div>            
 			 <!-- *************************************************************** -->
 			<!-- END Scroll AND Grid  -->            
 			<!-- *************************************************************** -->

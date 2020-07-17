@@ -43,7 +43,7 @@
                                             class="hide-menu"> 지표별 산출식
                                         </span></a>
                                 </li>
-                                <li class="sidebar-item"><a href="form-checkbox-radio.html" class="sidebar-link"><span
+                                <li class="sidebar-item"><a href="indicator_grade_standard.do" class="sidebar-link"><span
                                             class="hide-menu"> 지표별 평가등급기준
                                         </span></a>
                                 </li>
