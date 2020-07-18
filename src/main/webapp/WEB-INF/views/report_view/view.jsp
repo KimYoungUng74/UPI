@@ -8,6 +8,12 @@
 	<!-- css링크들 임포트 -->
     <c:import url="../import/csslink.jsp" charEncoding="UTF-8" >
     </c:import>
+    <!-- TOAST UI CHART CDN LINK -->
+     <link rel="stylesheet" href="https://uicdn.toast.com/tui.chart/latest/tui-chart.min.css">
+    <script type='text/javascript' src='https://uicdn.toast.com/tui.code-snippet/v1.5.0/tui-code-snippet.min.js'></script>
+    <script type='text/javascript' src='https://uicdn.toast.com/tui.chart/latest/raphael.js'></script>
+    <script src="https://uicdn.toast.com/tui.chart/latest/tui-chart.min.js"></script>
+	<!-- TOAST UI CHART CDN LINK END -->
 </head>
 
 <body>
@@ -128,16 +134,16 @@
                                 <div class="d-flex align-items-center mb-4">
                                     <h4 class="card-title">성과지표 정의서</h4>
                                 </div>
-                                    <table class="table" border="1" style="text-align: center;">
+                                    <table class="table" border="1" style="text-align: center; color:black;" >
                                         
                                             <tr>
-                                            	<td class="border-top-0 px-8 py-2 font-14 table-active">관리번호</td>
+                                            	<td class="border-top-0 px-8 py-4 font-14 table-active">관리번호</td>
                                                 <td class="border-top-0  px-8 py-4 font-14">001</td>
                                                 <td class="border-top-0  px-8 py-4 font-14 table-active">지표명</td>
                                                 <td class="border-top-0  px-8 py-4 font-14" colspan="3">취업률</td>
                                             </tr>
                                             <tr>
-                                            	<td class="border-top-0  px-8 py-4 font-14 table-active" rowspan="2">활용</td>
+                                            	<td class="border-top-0  px-8 py-5 font-14 table-active" rowspan="2">활용</td>
                                                 <td class="border-top-0  px-8 py-4 font-14 table-active">BEST</td>
                                                 <td class="border-top-0  px-8 py-4 font-14 table-active">기관평가</td>
                                                 <td class="border-top-0  px-8 py-4 font-14 table-active">AHA</td>
@@ -152,39 +158,40 @@
                                             	<td class="border-top-0  px-8 py-4 font-14">O</td>
                                             </tr>
                                             <tr>
-                                            	<td class="border-top-0  px-8 py-2 font-14 table-active">기준일</td>
+                                            	<td class="border-top-0  px-8 py-4 font-14 table-active">기준일</td>
                                                 <td class="border-top-0  px-8 py-4 font-14">2018년 12월</td>
                                                 <td class="border-top-0  px-8 py-4 font-14 table-active">평가방법</td>
                                                 <td class="border-top-0  px-8 py-4 font-14" colspan="3">정량</td>
                                             </tr>
                                             <tr>
-                                            	<td class="border-top-0  px-8 py-2 font-14 table-active">수집방법</td>
+                                            	<td class="border-top-0  px-8 py-4 font-14 table-active">수집방법</td>
                                                 <td class="border-top-0  px-8 py-4 font-14">정보공시</td>
                                                 <td class="border-top-0  px-8 py-4 font-14 table-active">평가기준</td>
                                                 <td class="border-top-0  px-8 py-4 font-14" colspan="3">중장기발전계획 목표 측정값</td>
                                             </tr>
                                             <tr>
-                                            	<td class="border-top-0  px-8 py-2 font-14 table-active">관리부서</td>
+                                            	<td class="border-top-0  px-8 py-4 font-14 table-active">관리부서</td>
                                                 <td class="border-top-0  px-8 py-4 font-14" colspan="5">입학취업처</td>
                                             </tr>
                                             <tr>
-                                            	<td class="border-top-0  px-8 py-2 font-14 table-active">산출식</td>
+                                            	<td class="border-top-0  px-8 py-4 font-14 table-active">산출식</td>
                                                 <td class="border-top-0  px-8 py-4 font-14" colspan="5">(취업자/취업대상자)/100</td>
                                             </tr>
                                             <tr>
-                                            	<td class="border-top-0  px-8 py-6 font-14 table-active">등급<br>기준</td>
+                                            	<td class="border-top-0  px-8 py-5 font-14 table-active">등급<br>기준</td>
                                                 <td class="border-top-0  px-8 py-6 font-14" colspan="5">
-                                                	<span>A(경민대학교 인증등급):평가지표별 목표 값 대비 달성도 100% 이상</span><br>
-                                                	<span>B(잠재적 인증등급): 평가지표별 목표값 대비 달성도 70% 이상</span><br>
-                                                	<span>D(부적합등급): 평가 지표별 목표값 대비 달성도 70% 이하</span><br>
-                                                	<span>달성도 : 실시년도 실적값 / 전년도 실적값</span>
+                                                	<br>
+                                                	A(경민대학교 인증등급):평가지표별 목표 값 대비 달성도 100% 이상<br>
+                                                	B(잠재적 인증등급): 평가지표별 목표값 대비 달성도 70% 이상<br>
+                                                	D(부적합등급): 평가 지표별 목표값 대비 달성도 70% 이하<br>
+                                                	달성도 : 실시년도 실적값 / 전년도 실적값
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="border-top-0  px-8 py-14 font-14" colspan="6" align="center">
-                                                	<table class="table"border="1">
+                                                	<table class="table"border="1" style="color:black;">
                                                 		<tr>
-                                                			<td class="border-top-0  px-4 py-2 font-14 table-active">목표값</td>
+                                                			<td class="border-top-0  px-4 py-2 font-14 table-active" >목표값</td>
                                                 			<td class="border-top-0  px-4 py-2 font-14" colspan="3">75.6</td>
                                                 		</tr>
                                                 		<tr>
@@ -222,11 +229,11 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="border-top-0  px-8 py-16 font-14" colspan="3">
-                                                	<img width="50%" height="20%" src="<c:url value='http://localhost:8181/img/chart1.png'/>" alt="차트">
-                                                </td>
-                                                <td class="border-top-0  px-8 py-16 font-14" colspan="3">
-                                                	<img width="50%" height="20%" src="<c:url value='http://localhost:8181/img/chart1.png'/>" alt="차트">
+                                                <td class="border-top-0  px-8 py-16 font-14" colspan="3" align="center">
+                                                	<div id="container1" style="margin: 0 auto; width:400px;"></div>
+                                                 </td>
+                                                <td class="border-top-0  px-8 py-16 font-14" colspan="3" align="center">
+                                                	<div id="container2" style="margin: 0 auto; width:400px;"></div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -286,6 +293,82 @@
 	<c:import url="../import/javascript.jsp" charEncoding="UTF-8" >
     </c:import>
     <script type="text/javascript">
+    Highcharts.chart('container1', {
+
+        chart: {
+            type: 'column'
+        },
+
+        title: {
+            text: '목표 현재 값 차트'
+        },
+
+
+        legend: {
+            align: 'right',
+            verticalAlign: 'middle',
+            layout: 'vertical'
+        },
+
+        xAxis: {
+            categories: ['2018', '2019', '2020'],
+            labels: {
+                x: -10
+            }
+        },
+
+        yAxis: {
+            allowDecimals: false,
+            title: {
+                text: 'Amount'
+            }
+        },
+
+        series: [{
+            name: '목표값',
+            data: [100, 95, 89]
+        }, {
+            name: '현재값',
+            data: [120, 90, 88]
+        }]
+    });
+    Highcharts.chart('container2', {
+
+        chart: {
+            type: 'column'
+        },
+
+        title: {
+            text: '달성도 차트'
+        },
+
+
+        legend: {
+            align: 'right',
+            verticalAlign: 'middle',
+            layout: 'vertical'
+        },
+
+        xAxis: {
+            categories: ['2018', '2019', '2020'],
+            labels: {
+                x: -10
+            }
+        },
+
+        yAxis: {
+            allowDecimals: false,
+            title: {
+                text: 'Amount'
+            }
+        },
+
+        series: [{
+            name: '달성도',
+            data: [120,90, 92]
+        }]
+    });
+    
     $('.btn-print').click(function(){
     	  var initBody=document.body.innerHTML;
     	  window.onbeforeprint = function(){

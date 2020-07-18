@@ -129,7 +129,7 @@
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">38개</h2>
                                     </div>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">대학중장기발전계획 BEST</h6>
+                                    <h6 class=" font-weight-normal mb-0 w-100 text-truncate">대학중장기발전계획 BEST</h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
                                     <a class="btn btn-primary rounded-circle btn-circle" style="width: 25px; height: 25px;" href="javascript:void(0)"></a>
@@ -144,7 +144,7 @@
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">18개</h2>
                                     </div>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">기관 평가 인증</h6>
+                                    <h6 class=" font-weight-normal mb-0 w-100 text-truncate">기관 평가 인증</h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
                                     <a class="btn btn-danger rounded-circle btn-circle " style="width: 25px; height: 25px;" href="javascript:void(0)"></a> 
@@ -159,7 +159,7 @@
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">9개</h2>
                                     </div>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">혁신 지원 AHA</h6>
+                                    <h6 class=" font-weight-normal mb-0 w-100 text-truncate">혁신 지원 AHA</h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
                                     <a class="btn btn-warning rounded-circle btn-circle " style="width: 25px; height: 25px;"
@@ -175,7 +175,7 @@
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">5개</h2>
                                     </div>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">사회 맞춤형 LINC+</h6>
+                                    <h6 class=" font-weight-normal mb-0 w-100 text-truncate">사회 맞춤형 LINC+</h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
                                     <a class="btn btn-success rounded-circle btn-circle " style="width: 25px; height: 25px;"
@@ -191,7 +191,7 @@
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">5개</h2>
                                     </div>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">3유형</h6>
+                                    <h6 class=" font-weight-normal mb-0 w-100 text-truncate">3유형</h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
                                     <a class="btn btn-secondary rounded-circle btn-circle " style="width: 25px; height: 25px;"
@@ -235,8 +235,8 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
+                                                <td class="border-top-0 px-2 py-4 font-14">취업률</td>
+                                                <td class="border-top-0 px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
                                                         <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
@@ -248,8 +248,8 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
+                                                <td class="border-top-0  px-2 py-4 font-14">취업률</td>
+                                                <td class="border-top-0  px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
                                                         <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
@@ -261,8 +261,8 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
+                                                <td class="border-top-0  px-2 py-4 font-14">취업률</td>
+                                                <td class="border-top-0  px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
                                                         <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
@@ -298,8 +298,8 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
+                                                <td class="border-top-0  px-2 py-4 font-14">취업률</td>
+                                                <td class="border-top-0  px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
                                                         <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
@@ -311,8 +311,8 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
+                                                <td class="border-top-0  px-2 py-4 font-14">취업률</td>
+                                                <td class="border-top-0  px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
                                                         <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
@@ -324,8 +324,8 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
+                                                <td class="border-top-0  px-2 py-4 font-14">취업률</td>
+                                                <td class="border-top-0  px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
                                                         <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
@@ -351,7 +351,7 @@
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table no-wrap v-middle mb-0">
-                                        <thead style="background-color: rgb(144, 237, 125); ">
+                                        <thead style="background-color: rgb(144, 237, 125); color:black; ">
                                             <tr class="border-0">
                                                 <th class="font-14">성과지표명</th>
                                                 <th class="font-14">관련부서</th>
@@ -361,8 +361,8 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
+                                                <td class="border-top-0  px-2 py-4 font-14">취업률</td>
+                                                <td class="border-top-0  px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
                                                         <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
@@ -374,8 +374,8 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
+                                                <td class="border-top-0  px-2 py-4 font-14">취업률</td>
+                                                <td class="border-top-0  px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
                                                         <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
@@ -387,8 +387,8 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
+                                                <td class="border-top-0  px-2 py-4 font-14">취업률</td>
+                                                <td class="border-top-0  px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
                                                         <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
