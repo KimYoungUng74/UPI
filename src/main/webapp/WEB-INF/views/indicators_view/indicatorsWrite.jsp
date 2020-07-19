@@ -138,7 +138,8 @@
 												<span>지표명</span>
 											</div>
 											<div class="col-md-12" style="padding-bottom: 10px;">
-												<input type="text" name="INDICATORS_NAME" class="form-control">
+												<input type="text" name="INDICATORS_NAME"
+													class="form-control">
 											</div>
 										</div>
 									</div>
@@ -149,7 +150,8 @@
 												<span>관리부서</span>
 											</div>
 											<div class="col-md-12" style="padding-bottom: 10px;">
-												<select class="custom-select" id="DIVISION_NAME" name="DIVISION_NAME">
+												<select class="custom-select" id="DIVISION_NAME"
+													name="DIVISION_NAME">
 													<option value="0">모두 보기</option>
 													<option value="1">입학취업처</option>
 													<option value="2">교무학생처</option>
@@ -169,8 +171,8 @@
 											<div class="col-md-4"
 												style="padding: 5px; padding-left: 15px;">
 												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input" name="IS_BEST"
-														id="customCheck1"> <label
+													<input type="checkbox" class="custom-control-input"
+														name="IS_BEST" id="customCheck1"> <label
 														class="custom-control-label" for="customCheck1"> <a
 														class="btn btn-primary rounded-circle btn-circle"
 														style="width: 25px; height: 25px;"
@@ -182,8 +184,8 @@
 												style="padding: 5px; padding-left: 15px;">
 
 												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input" name="IS_AGENCY"
-														id="customCheck2"> <label
+													<input type="checkbox" class="custom-control-input"
+														name="IS_AGENCY" id="customCheck2"> <label
 														class="custom-control-label" for="customCheck2"> <a
 														class="btn btn-danger rounded-circle btn-circle "
 														style="width: 25px; height: 25px;"
@@ -194,8 +196,8 @@
 											<div class="col-md-4"
 												style="padding: 5px; padding-left: 15px;">
 												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input" name="IS_AHA"
-														id="customCheck3"> <label
+													<input type="checkbox" class="custom-control-input"
+														name="IS_AHA" id="customCheck3"> <label
 														class="custom-control-label" for="customCheck3"> <a
 														class="btn btn-warning rounded-circle btn-circle "
 														style="width: 25px; height: 25px;"
@@ -206,8 +208,8 @@
 											<div class="col-md-4"
 												style="padding: 5px; padding-left: 15px;">
 												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input" name="IS_LINC"
-														id="customCheck4"> <label
+													<input type="checkbox" class="custom-control-input"
+														name="IS_LINC" id="customCheck4"> <label
 														class="custom-control-label" for="customCheck4"> <a
 														class="btn btn-success rounded-circle btn-circle "
 														style="width: 25px; height: 25px;"
@@ -218,8 +220,8 @@
 											<div class="col-md-4"
 												style="padding: 5px; padding-left: 15px;">
 												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input" name="IS_TYPE3"
-														id="customCheck5"> <label
+													<input type="checkbox" class="custom-control-input"
+														name="IS_TYPE3" id="customCheck5"> <label
 														class="custom-control-label" for="customCheck5"> <a
 														class="btn btn-secondary rounded-circle btn-circle "
 														style="width: 25px; height: 25px;"
@@ -236,7 +238,8 @@
 												<span>수집방법</span>
 											</div>
 											<div class="col-md-12" style="padding-bottom: 10px;">
-												<select class="custom-select" id="inputGroupSelect04" name="COL_METHOD">
+												<select class="custom-select" id="inputGroupSelect04"
+													name="COL_METHOD">
 													<option value="0">수집방법 선택</option>
 													<option value="정보공시">정보공시</option>
 													<option value="대학자료">대학자료</option>
@@ -252,7 +255,8 @@
 												<span>평가방법</span>
 											</div>
 											<div class="col-md-12" style="padding-bottom: 10px;">
-												<select class="custom-select" id="inputGroupSelect04" name="EVAL_METHOD">
+												<select class="custom-select" id="inputGroupSelect04"
+													name="EVAL_METHOD">
 													<option value="0">평가방법 선택</option>
 													<option value="정량">정량</option>
 													<option value="정성">정성</option>
@@ -283,17 +287,17 @@
 											<div class="col-md-4" style="padding-bottom: 5px;">
 												<span>D등급</span>
 											</div>
-											<div class="col-md-4" style="padding-bottom: 10px;" >
-												<input type="number" class="form-control" placeholder="A" name="A_GRADE"
-													value="100">
+											<div class="col-md-4" style="padding-bottom: 10px;">
+												<input type="number" class="form-control" placeholder="A"
+													name="A_GRADE" value="100">
 											</div>
 											<div class="col-md-4" style="padding-bottom: 10px;">
-												<input type="number" class="form-control" placeholder="B" name="B_GRADE"
-													value="70">
+												<input type="number" class="form-control" placeholder="B"
+													name="B_GRADE" value="70">
 											</div>
 											<div class="col-md-4" style="padding-bottom: 10px;">
-												<input type="number" class="form-control" placeholder="D" name="D_GRADE"
-													value="0">
+												<input type="number" class="form-control" placeholder="D"
+													name="D_GRADE" value="0">
 											</div>
 										</div>
 									</div>
@@ -307,8 +311,8 @@
 												<span>요소 입력</span>
 											</div>
 											<div class="col-md-5" style="padding-bottom: 10px;">
-												<input type="text" class="form-control" readonly="readonly" name="ELEMENTS"
-													value="">
+												<input type="text" class="form-control" readonly="readonly"
+													name="ELEMENTS" value="">
 											</div>
 											<div class="col-md-4" style="padding-bottom: 10px;">
 												<input type="text" class="form-control" id="input_ele">
@@ -320,7 +324,8 @@
 
 												<button onclick="location.href='indicators_write.do'"
 													class="btn btn-primary waves-effect waves-light"
-													type="button" style="float: left; margin-left: 5px;" id="delEleBtn">삭제</button>
+													type="button" style="float: left; margin-left: 5px;"
+													id="delEleBtn">삭제</button>
 											</div>
 										</div>
 									</div>
@@ -331,12 +336,13 @@
 												<span>산출식 </span>
 											</div>
 											<div class="col-md-9" style="padding-bottom: 10px;">
-												<input type="text" class="form-control" readonly="readonly" name="FORMULA"
-													value=""> 
+												<input type="text" class="form-control" readonly="readonly"
+													name="FORMULA" value="">
 											</div>
 											<div class="col-md-2" style="padding-bottom: 10px;">
 												<button type="button" class="btn btn-primary"
-													data-toggle="modal" data-target="#myModal" id="formulaReg">산술식 등록</button>
+													data-toggle="modal" data-target="#myModal" id="formulaReg">산출식
+													등록</button>
 											</div>
 										</div>
 
@@ -345,7 +351,13 @@
 									<div class="col-md-12">
 										<div class="row">
 											<div class="col-md-12" style="padding-top: 5px;">
-											<hr>
+												<hr>
+												<button class="btn btn-primary waves-effect waves-light"
+													type="button" style="float: left;"
+													onclick="location.href='indicators_view_list.do'">
+													<span class="btn-label"><i
+														class="fas fa-align-justify"></i></span>목록으로
+												</button>
 												<button onclick="location.href='indicators_write.do'"
 													class="btn btn-primary waves-effect waves-light"
 													type="button" style="float: right;">지표 등록</button>
@@ -474,7 +486,7 @@
 							<div class="row">
 								<div class="col-md-12"
 									style="padding-bottom: 15px; text-align: center;">
-									<span>산술식 요소 </span>
+									<span>산출식 요소 </span>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
 									<button type="button" class="btn btn-block btn-primary">취업자</button>

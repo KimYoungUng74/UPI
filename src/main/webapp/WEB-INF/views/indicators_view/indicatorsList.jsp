@@ -211,7 +211,7 @@
 										</div>
 									</div>
 									<div class="col-md-12">
-										<button class="btn btn-secondary waves-effect waves-light"
+										<button class="btn btn-primary waves-effect waves-light"
 											type="button" style="float: right;">
 											<span class="btn-label"><i class="fas fa-search"></i></span>
 											검색
@@ -295,7 +295,7 @@
 									</table>
 								</div>
 								<button onclick="location.href='indicators_write.do'"
-									class="btn btn-secondary waves-effect waves-light"
+									class="btn btn-primary waves-effect waves-light"
 									type="button" style="float: right;">새 지표 등록</button>
 							</div>
 						</div>

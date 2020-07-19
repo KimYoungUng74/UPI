@@ -341,7 +341,7 @@
 											</div>
 											<div class="col-md-2" style="padding-bottom: 10px;">
 												<button type="button" class="btn btn-primary"
-													data-toggle="modal" data-target="#myModal" id="formulaReg">산술식
+													data-toggle="modal" data-target="#myModal" id="formulaReg">산출식
 													등록</button>
 											</div>
 										</div>
@@ -487,7 +487,7 @@
 							<div class="row">
 								<div class="col-md-12"
 									style="padding-bottom: 15px; text-align: center;">
-									<span>산술식 요소 </span>
+									<span>산출식 요소 </span>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
 									<button type="button" class="btn btn-block btn-primary">취업자</button>

@@ -388,7 +388,12 @@
 											</div>
 											<div class="col-md-12" style="padding-top: 5px;">
 												<hr>
-
+												<button class="btn btn-primary waves-effect waves-light"
+													type="button" style="float: left;"
+													onclick="location.href='indicators_view_list.do'">
+													<span class="btn-label"><i
+														class="fas fa-align-justify"></i></span>목록으로
+												</button>
 												<button onclick="location.href='indicators_modify.do'"
 													class="btn btn-primary waves-effect waves-light"
 													type="button" style="float: right; margin-left: 5px;">보고서
