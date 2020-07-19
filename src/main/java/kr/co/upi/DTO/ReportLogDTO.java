@@ -4,16 +4,16 @@ import java.sql.Date;
 
 public class ReportLogDTO {
 	
-	private int LOG_NUM;			// ·Î±× ¹øÈ£ PK
-	private int REPORT_NUM;			// º¸°í¼­ ¹øÈ£ FK
-    private int INDICATORS_NUM;		// °ü¸®¹øÈ£ FK
-    private String ELEMENT_VAL;		// ¿ä¼Ò °ª
-    private int TARGET_VAL;			// ¸ñÇ¥ °ª
-    private int PRESENT_VAL;		// ÇöÀç °ª
-    private Date RECORD_DATE;		// ±âÁØÀÏ
-    private String USER_ID;			// À¯Àú¾ÆÀÌµğ
-    private int ACTION_CODE;		// ÇàÀ§ ÄÚµå
-    private Date LOG_DATE;			// ·Î±× ³¯Â¥
+	private int LOG_NUM;			// ë¡œê·¸ ë²ˆí˜¸ PK
+	private int REPORT_NUM;			// ë³´ê³ ì„œ ë²ˆí˜¸ FK
+    private int INDICATORS_NUM;		// ê´€ë¦¬ë²ˆí˜¸ FK
+    private String ELEMENT_VAL;		// ìš”ì†Œ ê°’
+    private int TARGET_VAL;			// ëª©í‘œ ê°’
+    private int PRESENT_VAL;		// í˜„ì¬ ê°’
+    private Date RECORD_DATE;		// ê¸°ì¤€ì¼
+    private String USER_ID;			// ìœ ì €ì•„ì´ë””
+    private int ACTION_CODE;		// í–‰ìœ„ ì½”ë“œ
+    private Date LOG_DATE;			// ë¡œê·¸ ë‚ ì§œ
     
 	public int getLOG_NUM() {
 		return LOG_NUM;

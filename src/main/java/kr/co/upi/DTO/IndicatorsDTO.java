@@ -2,21 +2,21 @@ package kr.co.upi.DTO;
 
 public class IndicatorsDTO {
 	
-	private int INDICATORS_NUM;		// °ü¸®¹øÈ£ PK
-	private String INDICATORS_NAME;	// ¼º°úÁöÇ¥¸í
-	private int IS_BEST;			// ´ëÇĞÁßÀå±â ¹ßÀü°èÈ¹
-	private int IS_AGENCY;			// ±â°£Æò°¡ ÀÎÁõ
-	private int IS_AHA;				// Çõ½ÅÁö¿ø AHA
-	private int IS_LINC;			// »çÈ¸¸ÂÃãÇü LINC+
-	private int IS_TYPE3;			// 3À¯Çü
-	private String ELEMENTS;		// ¿ä¼ÒÀÌ¸§ (±¸ºĞÀÚ»ç¿ë ex: Ãë¾÷ÀÚ,Ãë¾÷´ë»óÀÚ)
-	private String COL_METHOD;		// ¼öÁı¹æ¹ı
-	private String EVAL_METHOD;		// Æò°¡¹æ¹ı
-	private String EVAL_STANDARD;	// Æò°¢±âÁØ
-	private String DIVISION_NAME;	// °ü¸®ºÎ¼­¸í
-	private String FORMULA;			// »êÃâ½Ä
-	private int IS_CORE;			// ÇÙ½É ¿©ºÎ
-	private int IS_USE;				// »ç¿ë ¿©ºÎ
+	private int INDICATORS_NUM;		// ê´€ë¦¬ë²ˆí˜¸ PK
+	private String INDICATORS_NAME;	// ì„±ê³¼ì§€í‘œëª…
+	private int IS_BEST;			// ëŒ€í•™ì¤‘ì¥ê¸° ë°œì „ê³„íš
+	private int IS_AGENCY;			// ê¸°ê°„í‰ê°€ ì¸ì¦
+	private int IS_AHA;				// í˜ì‹ ì§€ì› AHA
+	private int IS_LINC;			// ì‚¬íšŒë§ì¶¤í˜• LINC+
+	private int IS_TYPE3;			// 3ìœ í˜•
+	private String ELEMENTS;		// ìš”ì†Œì´ë¦„ (êµ¬ë¶„ìì‚¬ìš© ex: ì·¨ì—…ì,ì·¨ì—…ëŒ€ìƒì)
+	private String COL_METHOD;		// ìˆ˜ì§‘ë°©ë²•
+	private String EVAL_METHOD;		// í‰ê°€ë°©ë²•
+	private String EVAL_STANDARD;	// í‰ê°€ê¸°ì¤€
+	private String DIVISION_NAME;	// ê´€ë¦¬ë¶€ì„œëª…
+	private String FORMULA;			// ì‚°ì¶œì‹
+	private int IS_CORE;			// í•µì‹¬ ì—¬ë¶€
+	private int IS_USE;				// ì‚¬ìš© ì—¬ë¶€
 	
 	public int getINDICATORS_NUM() {
 		return INDICATORS_NUM;
