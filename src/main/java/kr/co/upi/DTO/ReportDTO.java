@@ -4,12 +4,12 @@ import java.sql.Date;
 
 public class ReportDTO {
 	
-	private int REPORT_NUM;			// º¸°í¼­ ¹øÈ£ PK
-    private int INDICATORS_NUM;		// °ü¸®¹øÈ£ FK
-    private String ELEMENT_VAL;		// ¿ä¼Ò °ª
-    private int PRESENT_VAL;		// ÇöÀç °ª
-    private int TARGET_VAL;			// ¸ñÇ¥ °ª
-    private Date RECORD_DATE;		// ±âÁØÀÏ
+	private int REPORT_NUM;			// ë³´ê³ ì„œ ë²ˆí˜¸ PK
+    private int INDICATORS_NUM;		// ê´€ë¦¬ë²ˆí˜¸ FK
+    private String ELEMENT_VAL;		// ìš”ì†Œ ê°’
+    private int PRESENT_VAL;		// í˜„ì¬ ê°’
+    private int TARGET_VAL;			// ëª©í‘œ ê°’
+    private Date RECORD_DATE;		// ê¸°ì¤€ì¼
 	public int getREPORT_NUM() {
 		return REPORT_NUM;
 	}

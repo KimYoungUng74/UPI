@@ -20,30 +20,41 @@ import kr.co.upi.Service.TestService;
  */
 @Controller
 public class IndicatorsController {
-	
-	
-		@RequestMapping(value = "indicators_view_list.do")
-		public ModelAndView report_view_list(Locale locale, Model model) {
-		
-			ModelAndView mav = new ModelAndView();
-			mav.setViewName("indicators_view/indicatorsList");
-			return mav;
-		}
-		
-		@RequestMapping(value = "indicators_view.do")
-		public ModelAndView indicators_view(Locale locale, Model model) {
-		
-			ModelAndView mav = new ModelAndView();
-			mav.setViewName("indicators_view/indicatorsView");
-			return mav;
-		}
-		
-		@RequestMapping(value = "indicators_write.do")
-		public ModelAndView indicators_write(Locale locale, Model model) {
-		
-			ModelAndView mav = new ModelAndView();
-			mav.setViewName("indicators_view/indicatorsWrite");
-			return mav;
-		}
-	
+
+	// 지표관리 리스트
+	@RequestMapping(value = "indicators_view_list.do")
+	public ModelAndView report_view_list(Locale locale, Model model) {
+
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("indicators_view/indicatorsList");
+		return mav;
+	}
+
+	// 보고서 등록 페이지
+	@RequestMapping(value = "indicators_view.do")
+	public ModelAndView indicators_view(Locale locale, Model model) {
+
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("indicators_view/indicatorsView");
+		return mav;
+	}
+
+	// 새 지표 등록 페이지
+	@RequestMapping(value = "indicators_write.do")
+	public ModelAndView indicators_write(Locale locale, Model model) {
+
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("indicators_view/indicatorsWrite");
+		return mav;
+	}
+
+	// 지표 수정 페이지
+	@RequestMapping(value = "indicators_modify.do")
+	public ModelAndView indicators_modify(Locale locale, Model model) {
+
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("indicators_view/indicatorsModify");
+		return mav;
+	}
+
 }

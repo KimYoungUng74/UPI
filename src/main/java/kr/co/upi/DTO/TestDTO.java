@@ -4,12 +4,12 @@ import java.sql.Date;
 
 public class TestDTO {
 	
-	private int GRADE_NUM;		// µî±Ş ¹øÈ£
-    private int INDICATORS_NUM;		// °ü¸®¹øÈ£
-    private int A_GRADE;		// Aµî±Ş ÆÛ¼¾Æ®
-    private int B_GRADE;		// Bµî±Ş ÆÛ¼¾Æ®
-    private int D_GRADE;		// Dµî±Ş ÆÛ¼¾Æ®
-    private Date RECORD_DATE;		// ·Î±× ³¯Â¥
+	private int GRADE_NUM;		// ë“±ê¸‰ ë²ˆí˜¸
+    private int INDICATORS_NUM;		// ê´€ë¦¬ë²ˆí˜¸
+    private int A_GRADE;		// Aë“±ê¸‰ í¼ì„¼íŠ¸
+    private int B_GRADE;		// Bë“±ê¸‰ í¼ì„¼íŠ¸
+    private int D_GRADE;		// Dë“±ê¸‰ í¼ì„¼íŠ¸
+    private Date RECORD_DATE;		// ë¡œê·¸ ë‚ ì§œ
 	
     
 }
