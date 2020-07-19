@@ -197,7 +197,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                    	<button class="btn btn-secondary waves-effect waves-light" type="button" style="float: right;"><span class="btn-label"><i class="fas fa-search"></i></span> 검색</button>
+                                    	<button class="btn btn-info waves-effect waves-light" type="button" style="float: right;"><span class="btn-label"><i class="fas fa-search"></i></span> 검색</button>
                                 	</div>              
                             </div>
                         </div>

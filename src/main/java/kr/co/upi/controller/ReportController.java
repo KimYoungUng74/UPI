@@ -54,8 +54,13 @@ public class ReportController {
 		public ModelAndView report_view3(Locale locale, Model model,HttpServletRequest request) throws Exception {
 			ModelAndView mav = new ModelAndView();
 			
+			//highchart 이미지화
+			
 			//한글파일 저장
-			hwp_library.hwpsave();
+			//hwp_library.hwpsave();
+			
+			
+			
 			mav.setViewName("report_view/hwp_viewer");
 			return mav;
 		}

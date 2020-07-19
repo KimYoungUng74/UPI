@@ -8,12 +8,6 @@
 	<!-- css링크들 임포트 -->
     <c:import url="../import/csslink.jsp" charEncoding="UTF-8" >
     </c:import>
-    <!-- TOAST UI CHART CDN LINK -->
-     <link rel="stylesheet" href="https://uicdn.toast.com/tui.chart/latest/tui-chart.min.css">
-    <script type='text/javascript' src='https://uicdn.toast.com/tui.code-snippet/v1.5.0/tui-code-snippet.min.js'></script>
-    <script type='text/javascript' src='https://uicdn.toast.com/tui.chart/latest/raphael.js'></script>
-    <script src="https://uicdn.toast.com/tui.chart/latest/tui-chart.min.js"></script>
-	<!-- TOAST UI CHART CDN LINK END -->
 </head>
 
 <body>
@@ -129,6 +123,9 @@
                 <!-- *************************************************************** -->
                 <div class="row">
                     <div class="col-lg-12" id="report">
+                    	<!-- css링크들 임포트 -->
+    					<c:import url="../import/csslink.jsp" charEncoding="UTF-8" >
+    					</c:import>
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex align-items-center mb-4">
@@ -252,7 +249,7 @@
                             	<div class="card-body">
                            				<button class="btn btn-primary waves-effect waves-light" type="button" style="float: left;" onclick="location.href='report_view_list.do'"><span class="btn-label" ><i class="fas fa-align-justify"></i></span>목록으로</button>
                         				<button class="btn btn-primary waves-effect waves-light" type="button" style="float: right;" onclick="location.href='report_hwp_viewer.hwp'"><span class="btn-label"><i class="far fa-file-alt"></i></span>HWP로 저장</button>
-                        				<button class="btn btn-secondary waves-effect waves-light btn-print" type="button" style="float: right;"><span class="btn-label"><i class="fas fa-print"></i></span>인쇄</button>
+                        				<button class="btn btn-secondary waves-effect waves-light btn-print" type="button" style="float: right;"><span class="btn-label"><i class="fas fa-print"></i></span>PDF저장/인쇄</button>
                         			
                         		</div>
                         	</div>
@@ -300,7 +297,7 @@
         },
 
         title: {
-            text: '목표 현재 값 차트'
+            text: ''
         },
 
 
@@ -339,7 +336,7 @@
         },
 
         title: {
-            text: '달성도 차트'
+            text: ''
         },
 
 
@@ -359,7 +356,7 @@
         yAxis: {
             allowDecimals: false,
             title: {
-                text: 'Amount'
+                text: '%'
             }
         },
 
@@ -369,7 +366,7 @@
         }]
     });
     
-    $('.btn-print').click(function(){
+    /* $('.btn-print').click(function(){
     	  var initBody=document.body.innerHTML;
     	  window.onbeforeprint = function(){
     		  document.body.innerHTML = document.getElementById('report').innerHTML;
@@ -378,6 +375,15 @@
     		  document.body.innerHTML = initBody;
     	  }
     	  window.print();
-    });
+    }); */
+    
+    $('.btn-print').click(function(){
+      var win = window.open();
+      self.focus();
+      win.document.open();
+      win.document.write(document.getElementById('report').innerHTML);
+  	  win.print();
+  	  win.close();
+  	});
     </script>
 </html>

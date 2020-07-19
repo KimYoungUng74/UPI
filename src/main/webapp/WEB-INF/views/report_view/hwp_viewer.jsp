@@ -1,22 +1,22 @@
-<%@ page language="java" contentType="application/hwp;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="application/hwp;charset=EUC-KR" pageEncoding="EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="true"%>
 <html lang="kr">
+
 	<table border="1" width="560" style="text-align: center;" id="report">
-                                        
                                             <tr height="50">
-                                            	<td>Í¥ÄÎ¶¨Î≤àÌò∏</td>
+                                            	<td>∞¸∏Æπ¯»£</td>
                                                 <td>001</td>
-                                                <td>ÏßÄÌëúÎ™Ö</td>
-                                                <td colspan="3">Ï∑®ÏóÖÎ•†</td>
+                                                <td>¡ˆ«•∏Ì</td>
+                                                <td colspan="3">√Îæ˜∑¸</td>
                                             </tr>
                                             <tr>
-                                            	<td rowspan="2" height="50">ÌôúÏö©</td>
+                                            	<td rowspan="2" height="50">»∞øÎ</td>
                                                 <td height="25">BEST</td>
-                                                <td height="25">Í∏∞Í¥ÄÌèâÍ∞Ä</td>
+                                                <td height="25">±‚∞¸∆Ú∞°</td>
                                                 <td height="25">AHA</td>
                                                 <td height="25">LINC+</td>
-                                                <td height="25">3Ïú†Ìòï</td>
+                                                <td height="25">3¿Ø«¸</td>
                                             </tr>
                                             <tr height="25">
                                             	<td>O</td>
@@ -26,59 +26,59 @@
                                             	<td>O</td>
                                             </tr>
                                             <tr height="50">
-                                            	<td>Í∏∞Ï§ÄÏùº</td>
-                                                <td>2018ÎÖÑ 12Ïõî</td>
-                                                <td>ÌèâÍ∞ÄÎ∞©Î≤ï</td>
-                                                <td colspan="3">Ï†ïÎüâ</td>
+                                            	<td>±‚¡ÿ¿œ</td>
+                                                <td>2018≥‚ 12ø˘</td>
+                                                <td>∆Ú∞°πÊπ˝</td>
+                                                <td colspan="3">¡§∑Æ</td>
                                             </tr>
                                             <tr height="50">
-                                            	<td>ÏàòÏßëÎ∞©Î≤ï</td>
-                                                <td>Ï†ïÎ≥¥Í≥µÏãú</td>
-                                                <td>ÌèâÍ∞ÄÍ∏∞Ï§Ä</td>
-                                                <td colspan="3">Ï§ëÏû•Í∏∞Î∞úÏ†ÑÍ≥ÑÌöç Î™©Ìëú Ï∏°Ï†ïÍ∞í</td>
+                                            	<td>ºˆ¡˝πÊπ˝</td>
+                                                <td>¡§∫∏∞¯Ω√</td>
+                                                <td>∆Ú∞°±‚¡ÿ</td>
+                                                <td colspan="3">¡ﬂ¿Â±‚πﬂ¿¸∞Ë»π ∏Ò«• √¯¡§∞™</td>
                                             </tr>
                                             <tr height="50">
-                                            	<td>Í¥ÄÎ¶¨Î∂ÄÏÑú</td>
-                                                <td colspan="5">ÏûÖÌïôÏ∑®ÏóÖÏ≤ò</td>
+                                            	<td>∞¸∏Æ∫Œº≠</td>
+                                                <td colspan="5">¿‘«–√Îæ˜√≥</td>
                                             </tr>
                                             <tr height="50">
-                                            	<td>ÏÇ∞Ï∂úÏãù</td>
-                                                <td colspan="5">(Ï∑®ÏóÖÏûê/Ï∑®ÏóÖÎåÄÏÉÅÏûê)/100</td>
+                                            	<td>ªÍ√‚Ωƒ</td>
+                                                <td colspan="5">(√Îæ˜¿⁄/√Îæ˜¥ÎªÛ¿⁄)/100</td>
                                             </tr>
                                             <tr height="150">
-                                            	<td>Îì±Í∏â<br>Í∏∞Ï§Ä</td>
+                                            	<td>µÓ±ﬁ<br>±‚¡ÿ</td>
                                                 <td colspan="5">
-                                                	<span>A(Í≤ΩÎØºÎåÄÌïôÍµê Ïù∏Ï¶ùÎì±Í∏â):ÌèâÍ∞ÄÏßÄÌëúÎ≥Ñ Î™©Ìëú Í∞í ÎåÄÎπÑ Îã¨ÏÑ±ÎèÑ 100% Ïù¥ÏÉÅ</span><br>
-                                                	<span>B(Ïû†Ïû¨Ï†Å Ïù∏Ï¶ùÎì±Í∏â): ÌèâÍ∞ÄÏßÄÌëúÎ≥Ñ Î™©ÌëúÍ∞í ÎåÄÎπÑ Îã¨ÏÑ±ÎèÑ 70% Ïù¥ÏÉÅ</span><br>
-                                                	<span>D(Î∂ÄÏ†ÅÌï©Îì±Í∏â): ÌèâÍ∞Ä ÏßÄÌëúÎ≥Ñ Î™©ÌëúÍ∞í ÎåÄÎπÑ Îã¨ÏÑ±ÎèÑ 70% Ïù¥Ìïò</span><br>
-                                                	<span>Îã¨ÏÑ±ÎèÑ : Ïã§ÏãúÎÖÑÎèÑ Ïã§Ï†ÅÍ∞í / Ï†ÑÎÖÑÎèÑ Ïã§Ï†ÅÍ∞í</span>
+                                                	<span>A(∞ÊπŒ¥Î«–±≥ ¿Œ¡ıµÓ±ﬁ):∆Ú∞°¡ˆ«•∫∞ ∏Ò«• ∞™ ¥Î∫Ò ¥ﬁº∫µµ 100% ¿ÃªÛ</span><br>
+                                                	<span>B(¿·¿Á¿˚ ¿Œ¡ıµÓ±ﬁ): ∆Ú∞°¡ˆ«•∫∞ ∏Ò«•∞™ ¥Î∫Ò ¥ﬁº∫µµ 70% ¿ÃªÛ</span><br>
+                                                	<span>D(∫Œ¿˚«’µÓ±ﬁ): ∆Ú∞° ¡ˆ«•∫∞ ∏Ò«•∞™ ¥Î∫Ò ¥ﬁº∫µµ 70% ¿Ã«œ</span><br>
+                                                	<span>¥ﬁº∫µµ : Ω«Ω√≥‚µµ Ω«¿˚∞™ / ¿¸≥‚µµ Ω«¿˚∞™</span>
                                                 </td>
                                             </tr>
                                             <tr height="150">
                                                 <td colspan="6" align="center">
-                                                	<table border="1" width="550">
+                                                	<table border="1" width="550" id="report_grade">
                                                 		<tr height="25">
-                                                			<td>Î™©ÌëúÍ∞í</td>
+                                                			<td>∏Ò«•∞™</td>
                                                 			<td colspan="3">75.6</td>
                                                 		</tr>
                                                 		<tr height="25">
-                                                			<td>ÌòÑÏû¨Í∞í</td>
+                                                			<td>«ˆ¿Á∞™</td>
                                                 			<td colspan="3">67.9</td>
                                                 		</tr>
                                                 		<tr height="25">
-                                                			<td>ÌèâÍ∞ÄÎÖÑÎèÑ</td>
-                                                			<td>2017ÎÖÑÎèÑ</td>
-                                                			<td>2018ÎÖÑÎèÑ</td>
-                                                			<td>2019ÎÖÑÎèÑ</td>
+                                                			<td>∆Ú∞°≥‚µµ</td>
+                                                			<td>2017≥‚µµ</td>
+                                                			<td>2018≥‚µµ</td>
+                                                			<td>2019≥‚µµ</td>
                                                 		</tr>
                                                 		<tr height="25">
-                                                			<td>Îì±Í∏â</td>
+                                                			<td>µÓ±ﬁ</td>
                                                 			<td>A</td>
                                                 			<td>B</td>
                                                 			<td>B</td>
                                                 		</tr>
                                                 		<tr height="25">
-                                                			<td>Îã¨ÏÑ±ÎèÑ</td>
+                                                			<td>¥ﬁº∫µµ</td>
                                                 			<td>100</td>
                                                 			<td>95</td>
                                                 			<td>89.81</td>
@@ -89,85 +89,109 @@
                                             
                                             <tr height="50">
                                                 <td colspan="3">
-                                                	Î™©Ìëú Î∞è ÌòÑÏû¨ Í∞í 
+                                                	∏Ò«• π◊ «ˆ¿Á ∞™ 
                                                 </td>
                                                 <td colspan="3">
-                                                	Îã¨ÏÑ±ÎèÑ
+                                                	¥ﬁº∫µµ
                                                 </td>
                                             </tr>
                                             <tr height="150">
-                                                <td colspan="3">
-                                                	<img  width="200" height="200" src="<c:url value='http://localhost:8181/img/chart1.png'/>" alt="Ï∞®Ìä∏">
-                                               	</td>
-                                                <td colspan="3">
-                                                	<img width="200" height="200" src="<c:url value='http://localhost:8181/img/chart1.png'/>" alt="Ï∞®Ìä∏">
+                                                <td class="border-top-0  px-8 py-16 font-14" colspan="3" align="center">
+                                                	<img width="300" height="200" src="<c:url value='http://localhost:8181/img/chart1.png'/>" alt="¬˜∆Æ">
+                                                 </td>
+                                                <td class="border-top-0  px-8 py-16 font-14" colspan="3" align="center">
+                                                	<img width="300" height="200" src="<c:url value='http://localhost:8181/img/chart1.png'/>" alt="¬˜∆Æ">
                                                 </td>
                                             </tr>
                                             <tr height="25">
                                                 <td>
-                                                	ÎπÑÍ≥† 
+                                                	∫Ò∞Ì 
                                                 </td>
-                                                <td colspan="5"></td>
+                                                <td colspan="5" id="container3"></td>
                                             </tr>
                                     </table>
                       
-                      
-<script
-	src="<c:url value='/resources/template/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js'/>"></script>
-<script
-	src="<c:url value='/resources/template/assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js'/>"></script>
-<script
-	src="<c:url value='/resources/template/dist/js/pages/dashboards/dashboard1.min.js'/>"></script>
+
 <script src="http://code.highcharts.com/highcharts.js"></script>
-	<script src="http://code.highcharts.com/modules/exporting.js"></script>	              
+	<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <script type="text/javascript">
-    Highcharts.chart('container', {
+    Highcharts.chart('container1', {
+
         chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
+            type: 'column'
         },
+
         title: {
-            text: 'Îì±Í∏âÎ≥Ñ ÏÑ±Í≥ºÏßÄÌëú, 2020'
+            text: '∏Ò«• «ˆ¿Á ∞™ ¬˜∆Æ'
         },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+
+
+        legend: {
+            align: 'right',
+            verticalAlign: 'middle',
+            layout: 'vertical'
         },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
+
+        xAxis: {
+            categories: ['2018', '2019', '2020'],
+            labels: {
+                x: -10
             }
         },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: false
-                },
-                showInLegend: true
+
+        yAxis: {
+            allowDecimals: false,
+            title: {
+                text: 'Amount'
             }
         },
+
         series: [{
-            name: 'ÎπÑÏú®',
-            colorByPoint: true,
-            data: [{
-                name: 'AÎì±Í∏â',
-                y: 61.41,
-                sliced: true,
-                selected: true
-            }, {
-                name: 'BÎì±Í∏â',
-                y: 11.84
-            }, {
-                name: 'DÎì±Í∏â',
-                y: 10.85
-            }, {
-                name: 'Í∏∞ÌÉÄ',
-                y: 15.9
-            }]
+            name: '∏Ò«•∞™',
+            data: [100, 95, 89]
+        }, {
+            name: '«ˆ¿Á∞™',
+            data: [120, 90, 88]
         }]
     });
+    Highcharts.chart('container2', {
+
+        chart: {
+            type: 'column'
+        },
+
+        title: {
+            text: '¥ﬁº∫µµ ¬˜∆Æ'
+        },
+
+
+        legend: {
+            align: 'right',
+            verticalAlign: 'middle',
+            layout: 'vertical'
+        },
+
+        xAxis: {
+            categories: ['2018', '2019', '2020'],
+            labels: {
+                x: -10
+            }
+        },
+
+        yAxis: {
+            allowDecimals: false,
+            title: {
+                text: '%'
+            }
+        },
+
+        series: [{
+            name: '¥ﬁº∫µµ',
+            data: [120,90, 92]
+        }]
+    });
+    
     </script>
 </html>
