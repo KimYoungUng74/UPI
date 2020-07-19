@@ -106,7 +106,7 @@
 						<div class="d-flex align-items-center">
 							<nav aria-label="breadcrumb">
 								<ol class="breadcrumb m-0 p-0">
-									<li class="breadcrumb-item">새 지표 추가</li>
+									<li class="breadcrumb-item">새 지표 등록</li>
 								</ol>
 							</nav>
 						</div>
@@ -127,10 +127,11 @@
 					<div class="col-lg-12 col-md-12">
 						<div class="card">
 							<div class="card-body">
-								<h4>카테고리 별 보기</h4>
+								<h4>새 지표 등록</h4>
 								<br>
 
 								<div class="row">
+									<!-- 지표명 -->
 									<div class="col-md-7" style="padding-bottom: 5px;">
 										<div class="row">
 											<div class="col-md-12" style="padding-bottom: 5px;">
@@ -141,6 +142,7 @@
 											</div>
 										</div>
 									</div>
+									<!-- 담당 부서 -->
 									<div class="col-md-5">
 										<div class="row">
 											<div class="col-md-12" style="padding-bottom: 5px;">
@@ -158,6 +160,7 @@
 											</div>
 										</div>
 									</div>
+									<!-- 활용 사업 -->
 									<div class="col-md-7" style="padding-bottom: 5px;">
 										<div class="row">
 											<div class="col-md-12" style="padding-bottom: 5px;">
@@ -226,6 +229,7 @@
 											</div>
 										</div>
 									</div>
+									<!-- 평가 방법 -->
 									<div class="col-md-5" style="padding-bottom: 5px;">
 										<div class="row">
 											<div class="col-md-12" style="padding-bottom: 5px;">
@@ -240,6 +244,7 @@
 											</div>
 										</div>
 									</div>
+									<!-- 지표 기준 -->
 									<div class="col-md-7" style="padding-bottom: 5px;">
 										<div class="row">
 											<div class="col-md-12" style="padding-bottom: 5px;">
@@ -250,6 +255,7 @@
 											</div>
 										</div>
 									</div>
+									<!-- 등급 -->
 									<div class="col-md-5" style="padding-bottom: 5px;">
 										<div class="row">
 											<div class="col-md-4" style="padding-bottom: 5px;">
@@ -275,6 +281,63 @@
 											</div>
 										</div>
 									</div>
+									<!-- 요소값 리스트 입력 -->
+									<div class="col-md-12" style="padding-bottom: 5px;">
+										<div class="row">
+											<div class="col-md-5" style="padding-bottom: 5px;">
+												<span>요소 리스트 </span>
+											</div>
+											<div class="col-md-7" style="padding-bottom: 5px;">
+												<span>요소 입력</span>
+											</div>
+											<div class="col-md-5" style="padding-bottom: 10px;">
+												<input type="text" class="form-control" readonly="readonly"
+													value="">
+											</div>
+											<div class="col-md-4" style="padding-bottom: 10px;">
+												<input type="text" class="form-control">
+											</div>
+											<div class="col-md-3" style="padding-bottom: 10px;">
+												<button onclick="location.href='indicators_write.do'"
+													class="btn btn-primary waves-effect waves-light"
+													type="button" style="float: left;">등록</button>
+
+												<button onclick="location.href='indicators_write.do'"
+													class="btn btn-primary waves-effect waves-light"
+													type="button" style="float: left; margin-left: 5px;">삭제</button>
+											</div>
+										</div>
+									</div>
+									<!-- 산출 식 입력 -->
+									<div class="col-md-12" style="padding-bottom: 5px;">
+										<div class="row">
+											<div class="col-md-12" style="padding-bottom: 5px;">
+												<span>산술식 </span>
+											</div>
+											<div class="col-md-9" style="padding-bottom: 10px;">
+												<input type="text" class="form-control" readonly="readonly"
+													value="">
+											</div>
+											<div class="col-md-2" style="padding-bottom: 10px;">
+												<button type="button" class="btn btn-primary"
+													data-toggle="modal" data-target="#myModal">산술식 등록</button>
+											</div>
+										</div>
+
+									</div>
+									<!-- 산출 식 입력 -->
+									<div class="col-md-12">
+										<div class="row">
+											<div class="col-md-12" style="padding-bottom: 5px;">
+												<button onclick="location.href='indicators_write.do'"
+													class="btn btn-primary waves-effect waves-light"
+													type="button" style="float: right;">지표 등록</button>
+											</div>
+										</div>
+
+									</div>
+
+
 								</div>
 							</div>
 						</div>
@@ -310,6 +373,113 @@
 	<!-- ============================================================== -->
 	<!-- All Jquery -->
 	<!-- ============================================================== -->
+
+	<!-- sample modal content -->
+	<div id="myModal" class="modal fade" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg ">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">산술식 등록</h4>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">×</button>
+				</div>
+				<div class="modal-body">
+
+					<p>
+						<span style="float: center;">산술식</span>
+					</p>
+					<p>
+						<input type="text" class="form-control" readonly="readonly"
+							value="">
+					</p>
+					<hr>
+
+					<div class="row">
+
+
+						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
+							<button type="button" class="btn btn-block btn-primary">(</button>
+						</div>
+						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
+							<button type="button" class="btn btn-block btn-primary">)</button>
+						</div>
+						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
+							<button type="button" class="btn btn-block btn-primary">+</button>
+						</div>
+						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
+							<button type="button" class="btn btn-block btn-primary">-</button>
+						</div>
+						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
+							<button type="button" class="btn btn-block btn-primary">*</button>
+						</div>
+						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
+							<button type="button" class="btn btn-block btn-primary">/</button>
+						</div>
+						<div class="col-md-8" style="padding-bottom: 10px; width: 100%">
+							<div class="row">
+								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary">1</button>
+								</div>
+								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary">2</button>
+								</div>
+								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary">3</button>
+								</div>
+								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary">4</button>
+								</div>
+								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary">5</button>
+								</div>
+								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary">6</button>
+								</div>
+								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary">7</button>
+								</div>
+								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary">8</button>
+								</div>
+								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary">9</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
+							<button type="button" class="btn btn-block btn-primary"
+								style="height: 63px;">←</button>
+							<button type="button" class="btn btn-block btn-primary"
+								style="height: 63px;">0</button>
+						</div>
+						<div class="col-md-12" style="padding-bottom: 10px; width: 100%">
+							<div class="row">
+								<div class="col-md-12"
+									style="padding-bottom: 15px; text-align: center;">
+									<span>산술식 요소 </span>
+								</div>
+								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary">취업자</button>
+								</div>
+								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary">취업대상자</button>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
+						<button type="button" class="btn btn-primary">산술식 등록</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!-- /.modal -->
 </body>
 <c:import url="../import/javascript.jsp" charEncoding="UTF-8">
 </c:import>

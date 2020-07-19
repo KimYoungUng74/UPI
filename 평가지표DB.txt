@@ -94,3 +94,9 @@ PRESENT_VAL - 현재 값			NUMBER(6,2)
 GRADE - 등급				VARCHAR2(3 BYTE) A B D임으로 3btye만 잡음
 ACHIEVE_VAL - 달성 도 			NUMBER(6,2) <- 꺼내서 편하게 쓸 수 있게 컬럼 추가
 RECORD_DATE - 기록 연도			DATE <- 보고서입력, 수정 할때 해당 연도 테이블에 마지막 컬럼 정보를 참고
+
+
+-----------------------------------------------------------------------------------------
+USER_TB(유저 테이블) 	<-테스트용 테이블
+USER_ID	- 유저 아이디			VARCHAR2(30 BYTE) 
+USER_PW	- 유저 비번			VARCHAR2(30 BYTE)	테스트용으로 암호화 안했음 
