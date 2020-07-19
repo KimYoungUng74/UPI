@@ -106,7 +106,7 @@
 						<div class="d-flex align-items-center">
 							<nav aria-label="breadcrumb">
 								<ol class="breadcrumb m-0 p-0">
-									<li class="breadcrumb-item">새 지표 등록</li>
+									<li class="breadcrumb-item">지표 수정</li>
 								</ol>
 							</nav>
 						</div>
@@ -127,7 +127,7 @@
 					<div class="col-lg-12 col-md-12">
 						<div class="card">
 							<div class="card-body">
-								<h4>새 지표 등록</h4>
+								<h4>지표 수정</h4>
 								<br>
 
 								<div class="row">
@@ -135,10 +135,10 @@
 									<div class="col-md-7" style="padding-bottom: 5px;">
 										<div class="row">
 											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>지표명</span>
+												<span>지표 명</span>
 											</div>
 											<div class="col-md-12" style="padding-bottom: 10px;">
-												<input type="text" name="INDICATORS_NAME" class="form-control">
+												<input type="text" class="form-control">
 											</div>
 										</div>
 									</div>
@@ -146,10 +146,10 @@
 									<div class="col-md-5">
 										<div class="row">
 											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>관리부서</span>
+												<span>담당 부서</span>
 											</div>
 											<div class="col-md-12" style="padding-bottom: 10px;">
-												<select class="custom-select" id="DIVISION_NAME" name="DIVISION_NAME">
+												<select class="custom-select" id="inputGroupSelect04">
 													<option value="0">모두 보기</option>
 													<option value="1">입학취업처</option>
 													<option value="2">교무학생처</option>
@@ -169,7 +169,7 @@
 											<div class="col-md-4"
 												style="padding: 5px; padding-left: 15px;">
 												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input" name="IS_BEST"
+													<input type="checkbox" class="custom-control-input"
 														id="customCheck1"> <label
 														class="custom-control-label" for="customCheck1"> <a
 														class="btn btn-primary rounded-circle btn-circle"
@@ -182,7 +182,7 @@
 												style="padding: 5px; padding-left: 15px;">
 
 												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input" name="IS_AGENCY"
+													<input type="checkbox" class="custom-control-input"
 														id="customCheck2"> <label
 														class="custom-control-label" for="customCheck2"> <a
 														class="btn btn-danger rounded-circle btn-circle "
@@ -194,7 +194,7 @@
 											<div class="col-md-4"
 												style="padding: 5px; padding-left: 15px;">
 												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input" name="IS_AHA"
+													<input type="checkbox" class="custom-control-input"
 														id="customCheck3"> <label
 														class="custom-control-label" for="customCheck3"> <a
 														class="btn btn-warning rounded-circle btn-circle "
@@ -206,7 +206,7 @@
 											<div class="col-md-4"
 												style="padding: 5px; padding-left: 15px;">
 												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input" name="IS_LINC"
+													<input type="checkbox" class="custom-control-input"
 														id="customCheck4"> <label
 														class="custom-control-label" for="customCheck4"> <a
 														class="btn btn-success rounded-circle btn-circle "
@@ -218,7 +218,7 @@
 											<div class="col-md-4"
 												style="padding: 5px; padding-left: 15px;">
 												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input" name="IS_TYPE3"
+													<input type="checkbox" class="custom-control-input"
 														id="customCheck5"> <label
 														class="custom-control-label" for="customCheck5"> <a
 														class="btn btn-secondary rounded-circle btn-circle "
@@ -233,13 +233,13 @@
 									<div class="col-md-5" style="padding-bottom: 5px;">
 										<div class="row">
 											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>평가방법</span>
+												<span>평가 방법</span>
 											</div>
 											<div class="col-md-12" style="padding-bottom: 10px;">
-												<select class="custom-select" id="inputGroupSelect04" name="EVAL_METHOD">
-													<option value="0">평가방법 선택</option>
-													<option value="정량">정량</option>
-													<option value="정성">정성</option>
+												<select class="custom-select" id="inputGroupSelect04">
+													<option value="0">평가 방법 선택</option>
+													<option value="1">정량</option>
+													<option value="2">정성</option>
 												</select>
 											</div>
 										</div>
@@ -248,10 +248,10 @@
 									<div class="col-md-7" style="padding-bottom: 5px;">
 										<div class="row">
 											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>평가기준</span>
+												<span>지표 기준</span>
 											</div>
 											<div class="col-md-12" style="padding-bottom: 10px;">
-												<input type="text" class="form-control" name="EVAL_STANDARD">
+												<input type="text" class="form-control">
 											</div>
 										</div>
 									</div>
@@ -267,16 +267,16 @@
 											<div class="col-md-4" style="padding-bottom: 5px;">
 												<span>D등급</span>
 											</div>
-											<div class="col-md-4" style="padding-bottom: 10px;" >
-												<input type="number" class="form-control" placeholder="A" name="A_GRADE"
+											<div class="col-md-4" style="padding-bottom: 10px;">
+												<input type="number" class="form-control" placeholder="A"
 													value="100">
 											</div>
 											<div class="col-md-4" style="padding-bottom: 10px;">
-												<input type="number" class="form-control" placeholder="B" name="B_GRADE"
+												<input type="number" class="form-control" placeholder="B"
 													value="70">
 											</div>
 											<div class="col-md-4" style="padding-bottom: 10px;">
-												<input type="number" class="form-control" placeholder="D" name="D_GRADE"
+												<input type="number" class="form-control" placeholder="D"
 													value="0">
 											</div>
 										</div>
@@ -291,20 +291,20 @@
 												<span>요소 입력</span>
 											</div>
 											<div class="col-md-5" style="padding-bottom: 10px;">
-												<input type="text" class="form-control" readonly="readonly" name="ELEMENTS"
+												<input type="text" class="form-control" readonly="readonly"
 													value="">
 											</div>
 											<div class="col-md-4" style="padding-bottom: 10px;">
-												<input type="text" class="form-control" id="input_ele">
+												<input type="text" class="form-control">
 											</div>
 											<div class="col-md-3" style="padding-bottom: 10px;">
 												<button onclick="location.href='indicators_write.do'"
 													class="btn btn-primary waves-effect waves-light"
-													type="button" style="float: left;" id="regEleBtn">등록</button>
+													type="button" style="float: left;">등록</button>
 
 												<button onclick="location.href='indicators_write.do'"
 													class="btn btn-primary waves-effect waves-light"
-													type="button" style="float: left; margin-left: 5px;" id="delEleBtn">삭제</button>
+													type="button" style="float: left; margin-left: 5px;">삭제</button>
 											</div>
 										</div>
 									</div>
@@ -312,15 +312,15 @@
 									<div class="col-md-12" style="padding-bottom: 5px;">
 										<div class="row">
 											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>산출식 </span>
+												<span>산술식 </span>
 											</div>
 											<div class="col-md-9" style="padding-bottom: 10px;">
-												<input type="text" class="form-control" readonly="readonly" name="FORMULA"
-													value=""> 
+												<input type="text" class="form-control" readonly="readonly"
+													value="">
 											</div>
 											<div class="col-md-2" style="padding-bottom: 10px;">
 												<button type="button" class="btn btn-primary"
-													data-toggle="modal" data-target="#myModal" id="formulaReg">산술식 등록</button>
+													data-toggle="modal" data-target="#myModal">산술식 등록</button>
 											</div>
 										</div>
 
@@ -331,7 +331,13 @@
 											<div class="col-md-12" style="padding-bottom: 5px;">
 												<button onclick="location.href='indicators_write.do'"
 													class="btn btn-primary waves-effect waves-light"
-													type="button" style="float: right;">지표 등록</button>
+													type="button" style="float: right; margin-left: 5px;">지표
+													수정</button>
+
+
+												<button onclick="javascript:history.back();"
+													class="btn btn-light waves-effect waves-light"
+													type="button" style="float: right;">뒤로 가기</button>
 											</div>
 										</div>
 
@@ -380,14 +386,14 @@
 		<div class="modal-dialog modal-lg ">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="myModalLabel">산출식 등록</h4>
+					<h4 class="modal-title" id="myModalLabel">산술식 등록</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">×</button>
 				</div>
 				<div class="modal-body">
 
 					<p>
-						<span style="float: center;">산출식</span>
+						<span style="float: center;">산술식</span>
 					</p>
 					<p>
 						<input type="text" class="form-control" readonly="readonly"
@@ -471,7 +477,7 @@
 
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-primary">산출식 등록</button>
+						<button type="button" class="btn btn-primary">산술식 등록</button>
 						<button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
 					</div>
 				</div>

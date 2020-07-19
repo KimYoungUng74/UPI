@@ -12,7 +12,7 @@ public class IndicatorsDTO {
 	private String ELEMENTS;		// 요소이름 (구분자사용 ex: 취업자,취업대상자)
 	private String COL_METHOD;		// 수집방법
 	private String EVAL_METHOD;		// 평가방법
-	private String EVAL_STANDARD;	// 평각기준
+	private String EVAL_STANDARD;	// 평가기준
 	private String DIVISION_NAME;	// 관리부서명
 	private String FORMULA;			// 산출식
 	private int IS_CORE;			// 핵심 여부
