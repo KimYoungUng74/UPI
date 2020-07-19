@@ -30,15 +30,6 @@ public class IndicatorsController {
 		return mav;
 	}
 
-	// 보고서 등록 페이지
-	@RequestMapping(value = "indicators_view.do")
-	public ModelAndView indicators_view(Locale locale, Model model) {
-
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("indicators_view/indicatorsView");
-		return mav;
-	}
-
 	// 새 지표 등록 페이지
 	@RequestMapping(value = "indicators_write.do")
 	public ModelAndView indicators_write(Locale locale, Model model) {
@@ -56,5 +47,14 @@ public class IndicatorsController {
 		mav.setViewName("indicators_view/indicatorsModify");
 		return mav;
 	}
+	
+	// 보고서 등록 페이지
+		@RequestMapping(value = "report_write.do")
+		public ModelAndView report_write(Locale locale, Model model) {
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("report_view/reportWrite");
+			return mav;
+		}
+	
 
 }

@@ -244,7 +244,7 @@
 										<tbody>
 											<tr>
 												<td class="border-top-0 text-muted px-2 py-4 font-14">1</td>
-												<td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
+												<td class="border-top-0 text-muted px-2 py-4 font-14"><a href="report_write.do">취업률</a></td>
 												<td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
 												<td class="border-top-0 px-2 py-4">
 													<div class="popover-icon">
