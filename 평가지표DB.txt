@@ -4,7 +4,7 @@ GRANT connect, resource, dba TO SYS_UPI
 INDICATORS_TB (지표 테이블)
 
 INDICATORS_NUM - 관리번호 PK		NUMBER(3) -> 최대 999개 
-INDICATORS_NAME -  성과지표명 		VARCHAR2(40 BYTE) BEST가 26byte
+INDICATORS_NAME -  성과지표명 		VARCHAR2(100 BYTE) NCS~ 80byte로 예상됨
 IS_BEST - 대학중장기발전계획 BEST지표 	NUMBER(1) (1-True, 0-False) 
 IS_AGENCY -기간평가 인증			NUMBER(1) (1-True, 0-False)
 IS_AHA - 혁신지원 AHA			NUMBER(1) (1-True, 0-False)
@@ -47,7 +47,7 @@ INDICATORS_LOG_TB (지표 로그 테이블)
 
 LOG_NUM - 로그 번호 PK			NUMBER(10) <- 시퀀스사용해서 자동증가
 INDICATORS_NUM - 관리번호 FK		NUMBER(3) -> 최대 999개 
-INDICATORS_NAME -  성과지표명 		VARCHAR2(40 BYTE) BEST가 26byte
+INDICATORS_NAME -  성과지표명 		VARCHAR2(100 BYTE) NCS~ 80byte로 예상됨1000
 IS_BEST - 대학중장기발전계획 BEST지표 	NUMBER(1) (1-True, 0-False) 
 IS_AGENCY -기간평가 인증			NUMBER(1) (1-True, 0-False)
 IS_AHA - 혁신지원 AHA			NUMBER(1) (1-True, 0-False)
@@ -77,3 +77,20 @@ A_GRADE	- A등급 				NUMBER(3) <- 최대 999%
 B_GRADE	- B등급 				NUMBER(3)
 D_GRADE	- D등급 				NUMBER(3)
 RECORD_DATE - 기준일			DATE
+
+-----------------------------------------------------------------------------------------
+RECORD_TB(기록 테이블) 	<- 연도별 지표별 정보 저장 테이블 해당관리번호에 현재 연도가 없을 시 insert 있을 시 update
+
+RECORD_NUM - 기록 번호			NUMBER(10)
+INDICATORS_NUM - 관리번호 FK		NUMBER(3) -> 최대 999개 
+INDICATORS_NAME -  성과지표명 		VARCHAR2(100 BYTE) NCS~ 80byte로 예상됨1000
+IS_BEST - 대학중장기발전계획 BEST지표 	NUMBER(1) (1-True, 0-False) 
+IS_AGENCY -기간평가 인증			NUMBER(1) (1-True, 0-False)
+IS_AHA - 혁신지원 AHA			NUMBER(1) (1-True, 0-False)
+IS_LINC - 사회맞춤형 LINC+			NUMBER(1) (1-True, 0-False)
+IS_TYPE3 - 3유형 				NUMBER(1) (1-True, 0-False) DEPT (Department) 
+TARGET_VAL - 목표 값 			NUMBER(6,2)  <- 숫자 4자리까지 표현 9999%
+PRESENT_VAL - 현재 값			NUMBER(6,2) 
+GRADE - 등급				VARCHAR2(3 BYTE) A B D임으로 3btye만 잡음
+ACHIEVE_VAL - 달성 도 			NUMBER(6,2) <- 꺼내서 편하게 쓸 수 있게 컬럼 추가
+RECORD_DATE - 기록 연도			DATE <- 보고서입력, 수정 할때 해당 연도 테이블에 마지막 컬럼 정보를 참고
