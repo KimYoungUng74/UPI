@@ -21,7 +21,7 @@ import kr.co.upi.Service.TestService;
 @Controller
 public class IndicatorsController {
 
-	// ÁöÇ¥°ü¸® ¸®½ºÆ®
+	// ì§€í‘œê´€ë¦¬ ë¦¬ìŠ¤íŠ¸
 	@RequestMapping(value = "indicators_view_list.do")
 	public ModelAndView report_view_list(Locale locale, Model model) {
 
@@ -30,16 +30,7 @@ public class IndicatorsController {
 		return mav;
 	}
 
-	// º¸°í¼­ µî·Ï ÆäÀÌÁö
-	@RequestMapping(value = "indicators_view.do")
-	public ModelAndView indicators_view(Locale locale, Model model) {
-
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("indicators_view/indicatorsView");
-		return mav;
-	}
-
-	// »õ ÁöÇ¥ µî·Ï ÆäÀÌÁö
+	// ìƒˆ ì§€í‘œ ë“±ë¡ í˜ì´ì§€
 	@RequestMapping(value = "indicators_write.do")
 	public ModelAndView indicators_write(Locale locale, Model model) {
 
@@ -48,7 +39,7 @@ public class IndicatorsController {
 		return mav;
 	}
 
-	// ÁöÇ¥ ¼öÁ¤ ÆäÀÌÁö
+	// ì§€í‘œ ìˆ˜ì • í˜ì´ì§€
 	@RequestMapping(value = "indicators_modify.do")
 	public ModelAndView indicators_modify(Locale locale, Model model) {
 
@@ -56,5 +47,14 @@ public class IndicatorsController {
 		mav.setViewName("indicators_view/indicatorsModify");
 		return mav;
 	}
+	
+	// ë³´ê³ ì„œ ë“±ë¡ í˜ì´ì§€
+		@RequestMapping(value = "report_write.do")
+		public ModelAndView report_write(Locale locale, Model model) {
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("report_view/reportWrite");
+			return mav;
+		}
+	
 
 }

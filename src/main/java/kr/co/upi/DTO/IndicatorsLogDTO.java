@@ -4,28 +4,28 @@ import java.sql.Date;
 
 public class IndicatorsLogDTO {
 	
-	private int LOG_NUM;			// ·Î±× ¹øÈ£ PK
-	private int INDICATORS_NUM;		// °ü¸®¹øÈ£ FK
-	private String INDICATORS_NAME;	// ¼º°úÁöÇ¥¸í
-	private int IS_BEST;			// ´ëÇĞÁßÀå±â ¹ßÀü°èÈ¹
-	private int IS_AGENCY;			// ±â°£Æò°¡ ÀÎÁõ
-	private int IS_AHA;				// Çõ½ÅÁö¿ø AHA
-	private int IS_LINC;			// »çÈ¸¸ÂÃãÇü LINC+
-	private int IS_TYPE3;			// 3À¯Çü
-	private String ELEMENTS;		// ¿ä¼ÒÀÌ¸§ (±¸ºĞÀÚ»ç¿ë ex: Ãë¾÷ÀÚ,Ãë¾÷´ë»óÀÚ)
-	private String COL_METHOD;		// ¼öÁı¹æ¹ı
-	private String EVAL_METHOD;		// Æò°¡¹æ¹ı
-	private String EVAL_STANDARD;	// Æò°¢±âÁØ
-	private String DIVISION_NAME;	// °ü¸®ºÎ¼­¸í
-	private String FORMULA;			// »êÃâ½Ä
-	private int IS_CORE;			// ÇÙ½É ¿©ºÎ
-	private int IS_USE;				// »ç¿ë ¿©ºÎ
-	private int A_GRADE;			// Aµî±Ş ÆÛ¼¾Æ®
-    private int B_GRADE;			// Bµî±Ş ÆÛ¼¾Æ®
-    private int D_GRADE;			// Dµî±Ş ÆÛ¼¾Æ®
-    private String USER_ID;			// À¯Àú¾ÆÀÌµğ
-    private int ACTION_CODE;		// ÇàÀ§ ÄÚµå
-    private Date LOG_DATE;			// ·Î±× ³¯Â¥
+	private int LOG_NUM;			// ë¡œê·¸ ë²ˆí˜¸ PK
+	private int INDICATORS_NUM;		// ê´€ë¦¬ë²ˆí˜¸ FK
+	private String INDICATORS_NAME;	// ì„±ê³¼ì§€í‘œëª…
+	private int IS_BEST;			// ëŒ€í•™ì¤‘ì¥ê¸° ë°œì „ê³„íš
+	private int IS_AGENCY;			// ê¸°ê°„í‰ê°€ ì¸ì¦
+	private int IS_AHA;				// í˜ì‹ ì§€ì› AHA
+	private int IS_LINC;			// ì‚¬íšŒë§ì¶¤í˜• LINC+
+	private int IS_TYPE3;			// 3ìœ í˜•
+	private String ELEMENTS;		// ìš”ì†Œì´ë¦„ (êµ¬ë¶„ìì‚¬ìš© ex: ì·¨ì—…ì,ì·¨ì—…ëŒ€ìƒì)
+	private String COL_METHOD;		// ìˆ˜ì§‘ë°©ë²•
+	private String EVAL_METHOD;		// í‰ê°€ë°©ë²•
+	private String EVAL_STANDARD;	// í‰ê°ê¸°ì¤€
+	private String DIVISION_NAME;	// ê´€ë¦¬ë¶€ì„œëª…
+	private String FORMULA;			// ì‚°ì¶œì‹
+	private int IS_CORE;			// í•µì‹¬ ì—¬ë¶€
+	private int IS_USE;				// ì‚¬ìš© ì—¬ë¶€
+	private int A_GRADE;			// Aë“±ê¸‰ í¼ì„¼íŠ¸
+    private int B_GRADE;			// Bë“±ê¸‰ í¼ì„¼íŠ¸
+    private int D_GRADE;			// Dë“±ê¸‰ í¼ì„¼íŠ¸
+    private String USER_ID;			// ìœ ì €ì•„ì´ë””
+    private int ACTION_CODE;		// í–‰ìœ„ ì½”ë“œ
+    private Date LOG_DATE;			// ë¡œê·¸ ë‚ ì§œ
     
     
 	public int getLOG_NUM() {

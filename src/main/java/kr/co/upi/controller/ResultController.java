@@ -1,15 +1,23 @@
 package kr.co.upi.controller;
 
+import java.util.List;
 import java.util.Locale;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.co.upi.DTO.RecordDTO;
+import kr.co.upi.Service.ResultService;
+
 @Controller
 public class ResultController {
 
+	@Autowired
+	ResultService resultSer;
+	
 	// 전년도 대비 평가비교 페이지
 	@RequestMapping(value = "yearly_result_view.do")
 	public ModelAndView yearlyResult(Locale locale, Model model) {
@@ -31,6 +39,8 @@ public class ResultController {
 	// 총괄 결과표 페이지
 	@RequestMapping(value = "result_grid_view.do")
 	public ModelAndView resultGrid(Locale locale, Model model) {
+		
+		List<RecordDTO> dto = resultSer.selectResultListAll();
 
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("result_view/result_grid_view");
