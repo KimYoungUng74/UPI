@@ -16,5 +16,6 @@
 	<mappers>
 		<!-- <mapper resource="mappers/UserMapper.xml" /> -->
 		<mapper resource="mappers/TestMapper.xml" />
+		<mapper resource="mappers/ResultMapper.xml" />
 	</mappers>
 </configuration>

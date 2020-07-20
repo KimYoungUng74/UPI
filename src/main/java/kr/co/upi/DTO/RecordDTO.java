@@ -2,7 +2,7 @@ package kr.co.upi.DTO;
 
 import java.sql.Date;
 
-public class RecodeDTO {
+public class RecordDTO {
 
 	private int RECORD_NUM;
 	private String INDICATORS_NUM;
@@ -99,12 +99,13 @@ public class RecodeDTO {
 	
 	@Override
 	public String toString() {
-		return "RecodeDTO [RECORD_NUM=" + RECORD_NUM + ", INDICATORS_NUM=" + INDICATORS_NUM + ", INDICATORS_NAME="
+		return "RecordDTO [RECORD_NUM=" + RECORD_NUM + ", INDICATORS_NUM=" + INDICATORS_NUM + ", INDICATORS_NAME="
 				+ INDICATORS_NAME + ", IS_BEST=" + IS_BEST + ", IS_AGENCY=" + IS_AGENCY + ", IS_AHA=" + IS_AHA
 				+ ", IS_LINC=" + IS_LINC + ", IS_TYPE3=" + IS_TYPE3 + ", TARGET_VAL=" + TARGET_VAL + ", PRESSENT_VAL="
 				+ PRESSENT_VAL + ", GRADE=" + GRADE + ", ACHIEVE_VAL=" + ACHIEVE_VAL + ", RECORD_DATE=" + RECORD_DATE
 				+ "]";
 	}
+	
 	
 	
 	
