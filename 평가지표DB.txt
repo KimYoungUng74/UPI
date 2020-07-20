@@ -75,7 +75,7 @@ GRADE_NUM - 등급번호 PK			NUMBER(10)
 INDICATORS_NUM - 관리번호 FK		NUMBER(3)
 A_GRADE	- A등급 				NUMBER(3) <- 최대 999%
 B_GRADE	- B등급 				NUMBER(3)
-D_GRADE	- D등급 				NUMBER(3)
+D_GRADE	- D등급 				NUMBER(3
 RECORD_DATE - 기준일			DATE
 
 -----------------------------------------------------------------------------------------
