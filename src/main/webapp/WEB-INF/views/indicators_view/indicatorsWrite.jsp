@@ -249,7 +249,7 @@
 										</div>
 									</div>
 									<!-- 평가 방법 -->
-									<div class="col-md-3" style="padding-bottom: 5px;">
+									<div class="col-md-5" style="padding-bottom: 5px;">
 										<div class="row">
 											<div class="col-md-12" style="padding-bottom: 5px;">
 												<span>평가방법</span>
@@ -265,39 +265,13 @@
 										</div>
 									</div>
 									<!-- 지표 기준 -->
-									<div class="col-md-4" style="padding-bottom: 5px;">
+									<div class="col-md-7" style="padding-bottom: 5px;">
 										<div class="row">
 											<div class="col-md-12" style="padding-bottom: 5px;">
 												<span>평가기준</span>
 											</div>
 											<div class="col-md-12" style="padding-bottom: 10px;">
 												<input type="text" class="form-control" name="EVAL_STANDARD">
-											</div>
-										</div>
-									</div>
-									<!-- 등급 -->
-									<div class="col-md-5" style="padding-bottom: 5px;">
-										<div class="row">
-											<div class="col-md-4" style="padding-bottom: 5px;">
-												<span>A등급</span>
-											</div>
-											<div class="col-md-4" style="padding-bottom: 5px;">
-												<span>B등급</span>
-											</div>
-											<div class="col-md-4" style="padding-bottom: 5px;">
-												<span>D등급</span>
-											</div>
-											<div class="col-md-4" style="padding-bottom: 10px;">
-												<input type="number" class="form-control" placeholder="A"
-													name="A_GRADE" value="100">
-											</div>
-											<div class="col-md-4" style="padding-bottom: 10px;">
-												<input type="number" class="form-control" placeholder="B"
-													name="B_GRADE" value="70">
-											</div>
-											<div class="col-md-4" style="padding-bottom: 10px;">
-												<input type="number" class="form-control" placeholder="D"
-													name="D_GRADE" value="0">
 											</div>
 										</div>
 									</div>

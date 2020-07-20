@@ -236,7 +236,7 @@
 										</div>
 									</div>
 									<!-- 평가 방법 -->
-									<div class="col-md-3" style="padding-bottom: 5px;">
+									<div class="col-md-5" style="padding-bottom: 5px;">
 										<div class="row">
 											<div class="col-md-12" style="padding-bottom: 5px;">
 												<span>평가방법</span>
@@ -248,7 +248,7 @@
 										</div>
 									</div>
 									<!-- 지표 기준 -->
-									<div class="col-md-4" style="padding-bottom: 5px;">
+									<div class="col-md-7" style="padding-bottom: 5px;">
 										<div class="row">
 											<div class="col-md-12" style="padding-bottom: 5px;">
 												<span>평가기준</span>
@@ -260,32 +260,7 @@
 											</div>
 										</div>
 									</div>
-									<!-- 등급 -->
-									<div class="col-md-5" style="padding-bottom: 5px;">
-										<div class="row">
-											<div class="col-md-4" style="padding-bottom: 5px;">
-												<span>A등급</span>
-											</div>
-											<div class="col-md-4" style="padding-bottom: 5px;">
-												<span>B등급</span>
-											</div>
-											<div class="col-md-4" style="padding-bottom: 5px;">
-												<span>D등급</span>
-											</div>
-											<div class="col-md-4" style="padding-bottom: 10px;">
-												<label
-													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">100</label>
-											</div>
-											<div class="col-md-4" style="padding-bottom: 10px;">
-												<label
-													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">70</label>
-											</div>
-											<div class="col-md-4" style="padding-bottom: 10px;">
-												<label
-													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">0</label>
-											</div>
-										</div>
-									</div>
+									
 									<!-- 요소값 리스트 입력 -->
 									<div class="col-md-12" style="padding-bottom: 5px;">
 										<div class="row">
