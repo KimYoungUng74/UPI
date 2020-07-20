@@ -11,6 +11,7 @@
 		<typeAlias type="kr.co.upi.DTO.ReportDTO" alias="ReportDTO"></typeAlias>
 		<typeAlias type="kr.co.upi.DTO.ReportLogDTO" alias="ReportLogDTO"></typeAlias>
 		<typeAlias type="kr.co.upi.DTO.GradeDTO" alias="GradeDTO"></typeAlias>
+		<typeAlias type="kr.co.upi.DTO.GradeDTO" alias="RecordDTO"></typeAlias>
 	</typeAliases>
 
 	<mappers>

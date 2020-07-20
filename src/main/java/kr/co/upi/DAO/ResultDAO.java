@@ -25,7 +25,7 @@ public class ResultDAO {
 	// ������Ʈ ��� ��ȸ
 	public List<RecordDTO> selectResultListAll() {
 
-		return mybatis.selectList("ResultMapper.projectListAll");
+		return mybatis.selectList("ResultMapper.ResultGridList");
 	}
 
 }
