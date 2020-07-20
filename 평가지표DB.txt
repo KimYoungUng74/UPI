@@ -24,8 +24,8 @@ REPORT_TB (보고서 테이블)
 REPORT_NUM - 보고서 번호 PK		NUMBER(10)  <- 시퀀스사용해서 자동증가
 INDICATORS_NUM - 관리번호 FK		NUMBER(3) 
 ELEMENT_VAL - 요소 값			VARCHAR2(100 BYTE)  <- 요소값 구분자를 사용 ex) 100,200
-PRESENT_VAL - 현재 값			NUMBER(6,2) 
-TARGET_VAL - 목표 값 			NUMBER(6,2)  <- 숫자 4자리까지 표현 9999%
+PRESENT_VAL - 현재 값			VARCHAR2(100 BYTE) 
+TARGET_VAL - 목표 값 			VARCHAR2(100 BYTE)  <- 숫자 4자리까지 표현 9999%
 RECORD_DATE - 기준일			DATE 
 
 -----------------------------------------------------------------------------------------
