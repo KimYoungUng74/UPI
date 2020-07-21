@@ -15,8 +15,10 @@ public class IndicatorsDTO {
 	private String EVAL_STANDARD;	// 평가기준
 	private String DIVISION_NAME;	// 관리부서명
 	private String FORMULA;			// 산출식
+    private int TARGET_VAL;			// 목표 값
 	private int IS_CORE;			// 핵심 여부
 	private int IS_USE;				// 사용 여부
+	private int LOG_NUM;		// 로그 번호 FK
 	
 	public int getINDICATORS_NUM() {
 		return INDICATORS_NUM;
@@ -108,14 +110,36 @@ public class IndicatorsDTO {
 	public void setIS_USE(int iS_USE) {
 		IS_USE = iS_USE;
 	}
+	
+	
+	public int getLOG_NUM() {
+		return LOG_NUM;
+	}
+	public void setLOG_NUM(int lOG_NUM) {
+		LOG_NUM = lOG_NUM;
+	}
+	
+	
+	public int getTARGET_VAL() {
+		return TARGET_VAL;
+	}
+	public void setTARGET_VAL(int tARGET_VAL) {
+		TARGET_VAL = tARGET_VAL;
+	}
+	
 	@Override
 	public String toString() {
 		return "IndicatorsDTO [INDICATORS_NUM=" + INDICATORS_NUM + ", INDICATORS_NAME=" + INDICATORS_NAME + ", IS_BEST="
 				+ IS_BEST + ", IS_AGENCY=" + IS_AGENCY + ", IS_AHA=" + IS_AHA + ", IS_LINC=" + IS_LINC + ", IS_TYPE3="
-				+ IS_TYPE3 + ", COL_METHOD=" + COL_METHOD + ", EVAL_METHOD=" + EVAL_METHOD + ", EVAL_STANDARD="
-				+ EVAL_STANDARD + ", DIVISION_NAME=" + DIVISION_NAME + ", FORMULA=" + FORMULA + ", IS_CORE=" + IS_CORE
-				+ ", ELEMENTS=" + ELEMENTS + ", IS_USE=" + IS_USE + "]";
+				+ IS_TYPE3 + ", ELEMENTS=" + ELEMENTS + ", COL_METHOD=" + COL_METHOD + ", EVAL_METHOD=" + EVAL_METHOD
+				+ ", EVAL_STANDARD=" + EVAL_STANDARD + ", DIVISION_NAME=" + DIVISION_NAME + ", FORMULA=" + FORMULA
+				+ ", TARGET_VAL=" + TARGET_VAL + ", IS_CORE=" + IS_CORE + ", IS_USE=" + IS_USE + ", LOG_NUM=" + LOG_NUM
+				+ "]";
 	}
+	
+	
+	
+	
 	
 	
 	
