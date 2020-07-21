@@ -179,8 +179,8 @@
 									<tr>
 										<td class="border-top-0  px-8 py-4 font-14"><c:if test="${Indicators.getIS_BEST()==1}">O</c:if></td>
 										<td class="border-top-0  px-8 py-4 font-14"><c:if test="${Indicators.getIS_AGENCY()==1}">O</c:if></td>
-										<td class="border-top-0  px-8 py-4 font-14"><c:if test="${Indicators.getIS_AGENCY()==1}">O</c:if></td>
-										<td class="border-top-0  px-8 py-4 font-14"><c:if test="${Indicators.getIS_AGENCY()==1}">O</c:if></td>
+										<td class="border-top-0  px-8 py-4 font-14"><c:if test="${Indicators.getIS_AHA()==1}">O</c:if></td>
+										<td class="border-top-0  px-8 py-4 font-14"><c:if test="${Indicators.getIS_LINC()==1}">O</c:if></td>
 										<td class="border-top-0  px-8 py-4 font-14"><c:if test="${Indicators.getIS_TYPE3()==1}">O</c:if></td>
 									</tr>
 									<tr>
