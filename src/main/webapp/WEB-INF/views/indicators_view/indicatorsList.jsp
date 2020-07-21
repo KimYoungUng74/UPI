@@ -405,28 +405,28 @@
 							<span>기존 등급기준</span>
 						</div>
 						<div class="col-md-6" style="padding-bottom: 5px;">
-							<span>A등급%</span> <input type="text" name="INDICATORS_NAME"
-								class="form-control">
+							<span>A등급%</span> <label
+													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">100</label>
 						</div>
 						<div class="col-md-6" style="padding-bottom: 5px;">
-							<span>A등급 조치</span> <input type="text" name="INDICATORS_NAME"
-								class="form-control">
+							<span>A등급 조치</span> <label
+													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">차년도 달성값 이상 유지</label>
 						</div>
 						<div class="col-md-6" style="padding-bottom: 5px;">
-							<span>B등급%</span> <input type="text" name="INDICATORS_NAME"
-								class="form-control">
+							<span>B등급%</span><label
+													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">70</label>
 						</div>
 						<div class="col-md-6" style="padding-bottom: 5px;">
-							<span>B등급 조치</span> <input type="text" name="INDICATORS_NAME"
-								class="form-control">
+							<span>B등급 조치</span> <label
+													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">문제점/개선사항 마련</label>
 						</div>
-						<div class="col-md-6" style="padding-bottom: 10px;">
-							<span>D등급%</span> <input type="text" name="INDICATORS_NAME"
-								class="form-control">
+						<div class="col-md-6" style="padding-bottom: 5px;">
+							<span>D등급%</span><label
+													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">70</label>
 						</div>
-						<div class="col-md-6" style="padding-bottom: 10px;">
-							<span>D등급 조치</span> <input type="text" name="INDICATORS_NAME"
-								class="form-control">
+						<div class="col-md-6" style="padding-bottom: 5px;">
+							<span>D등급 조치</span> <label
+													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">목표 값 및 문제/개성사항</label>
 						</div>
 						<div class="col-md-12" style="padding-bottom: 5px;">
 							<hr>
@@ -449,11 +449,11 @@
 							<span>B등급 조치</span> <input type="text" name="INDICATORS_NAME"
 								class="form-control">
 						</div>
-						<div class="col-md-6" style="padding-bottom: 10px;">
+						<div class="col-md-6" style="padding-bottom: 5px;">
 							<span>D등급%</span> <input type="text" name="INDICATORS_NAME"
 								class="form-control">
 						</div>
-						<div class="col-md-6" style="padding-bottom: 10px;">
+						<div class="col-md-6" style="padding-bottom: 5px;">
 							<span>D등급 조치</span> <input type="text" name="INDICATORS_NAME"
 								class="form-control">
 						</div>
