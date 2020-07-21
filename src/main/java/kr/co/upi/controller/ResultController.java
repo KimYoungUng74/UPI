@@ -50,6 +50,7 @@ public class ResultController {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("result_view/result_grid_view");
 		mav.addObject("viewAll", dto);
+		mav.addObject("year",YEAR);
 		return mav;
 	}
 
