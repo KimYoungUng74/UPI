@@ -242,7 +242,7 @@
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12"
+                                                        <a class="btn btn-primary rounded-circle btn-circle font-12 popover-item"
                                                             href="javascript:void(0)">BS</a>
                                                         <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
                                                             href="javascript:void(0)">or</a>
@@ -257,7 +257,7 @@
                                                     <div class="popover-icon">
                                                         <a class="btn btn-primary rounded-circle btn-circle font-12"
                                                             href="javascript:void(0)">BS</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
+                                                        <a class="btn btn-danger rounded-circle btn-circle font-12"
                                                             href="javascript:void(0)">or</a>
                                                     </div>
                                                 </td>
