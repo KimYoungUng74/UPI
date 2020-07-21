@@ -33,15 +33,8 @@ public class IndicatorsController {
 	@RequestMapping(value = "indicators_view_list.do")
 	public ModelAndView report_view_list(Locale locale, Model model) {
 
-		GradeDTO gradeDto = new GradeDTO();
-		gradeDto.setRECORD_DATE(time);
-		gradeDto = indicatorsSer.selectGrade(gradeDto);
-
-		System.out.println(gradeDto);
-
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("gradeDto", gradeDto);
-		mav.setViewName("indicators_view/indicatorsList");
+		mav = setIndicatorsList(mav);
 		return mav;
 	}
 
@@ -79,8 +72,21 @@ public class IndicatorsController {
 			mav.addObject("msg", "DB_ERROR");
 		};
 		
-		mav.setViewName("report_view/indicatorsList");
+		mav = setIndicatorsList(mav);
 		return mav;
 	}
+	
+	// 리스트로 가기
+	public ModelAndView setIndicatorsList(ModelAndView mav) {
+		GradeDTO gradeDto = new GradeDTO();
+		gradeDto.setRECORD_DATE(time);
+		gradeDto = indicatorsSer.selectGrade(gradeDto);
+
+		System.out.println(gradeDto);
+		mav.addObject("gradeDto", gradeDto);
+		mav.setViewName("indicators_view/indicatorsList");
+		return mav;
+	}
+	
 
 }
