@@ -12,8 +12,8 @@ public class RecordDTO {
 	private int IS_AHA;
 	private int IS_LINC;
 	private int IS_TYPE3;
-	private int TARGET_VAL;
-	private int PRESSENT_VAL;
+	private String TARGET_VAL;
+	private String PRESSENT_VAL;
 	private String GRADE;
 	private String ACHIEVE_VAL;
 	private Date RECORD_DATE;
@@ -66,16 +66,16 @@ public class RecordDTO {
 	public void setIS_TYPE3(int iS_TYPE3) {
 		IS_TYPE3 = iS_TYPE3;
 	}
-	public int getTARGET_VAL() {
+	public String getTARGET_VAL() {
 		return TARGET_VAL;
 	}
-	public void setTARGET_VAL(int tARGET_VAL) {
+	public void setTARGET_VAL(String tARGET_VAL) {
 		TARGET_VAL = tARGET_VAL;
 	}
-	public int getPRESSENT_VAL() {
+	public String getPRESSENT_VAL() {
 		return PRESSENT_VAL;
 	}
-	public void setPRESSENT_VAL(int pRESSENT_VAL) {
+	public void setPRESSENT_VAL(String pRESSENT_VAL) {
 		PRESSENT_VAL = pRESSENT_VAL;
 	}
 	public String getGRADE() {
@@ -105,6 +105,10 @@ public class RecordDTO {
 				+ PRESSENT_VAL + ", GRADE=" + GRADE + ", ACHIEVE_VAL=" + ACHIEVE_VAL + ", RECORD_DATE=" + RECORD_DATE
 				+ "]";
 	}
+	
+	
+	
+
 	
 	
 	

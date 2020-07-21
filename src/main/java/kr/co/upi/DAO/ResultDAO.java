@@ -14,18 +14,17 @@ import org.springframework.stereotype.Repository;
 
 import kr.co.upi.DTO.RecordDTO;
 
-//[DB���� ����] 3. �������̽� �޾Ƽ� Ŭ���� ����
 @Repository
 public class ResultDAO {
-	// �����̳ʰ� ��ü�� �ڵ����� ���� Autowired
+	
 
 	@Autowired
 	public SqlSessionTemplate mybatis;
 
-	// ������Ʈ ��� ��ȸ
-	public List<RecordDTO> selectResultListAll() {
+	// 총괄결과표
+	public List<RecordDTO> selectResultListAll(String YEAR) {
 
-		return mybatis.selectList("ResultMapper.ResultGridList");
+		return mybatis.selectList("ResultMapper.ResultGridList",YEAR);
 	}
 
 }

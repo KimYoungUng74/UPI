@@ -1,5 +1,6 @@
 package kr.co.upi.controller;
 
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
@@ -18,7 +19,7 @@ public class ResultController {
 	@Autowired
 	ResultService resultSer;
 	
-	// Àü³âµµ ´ëºñ Æò°¡ºñ±³ ÆäÀÌÁö
+	// ì „ë…„ë„ ëŒ€ë¹„ í‰ê°€ ë¹„êµ í˜ì´ì§€
 	@RequestMapping(value = "yearly_result_view.do")
 	public ModelAndView yearlyResult(Locale locale, Model model) {
 
@@ -27,7 +28,7 @@ public class ResultController {
 		return mav;
 	}
 
-	// ¿¬µµº° µî±Ş ÆäÀÌÁö
+	// ì—°ë„ë³„ ë“±ê¸‰ í‘œ í˜ì´ì§€
 	@RequestMapping(value = "yearly_grade_view.do")
 	public ModelAndView yearlyGrad(Locale locale, Model model) {
 
@@ -36,18 +37,23 @@ public class ResultController {
 		return mav;
 	}
 
-	// ÃÑ°ı °á°úÇ¥ ÆäÀÌÁö
+	// ì´ê´„ ê²°ê³¼í‘œ í˜ì´ì§€
 	@RequestMapping(value = "result_grid_view.do")
 	public ModelAndView resultGrid(Locale locale, Model model) {
 		
-		List<RecordDTO> dto = resultSer.selectResultListAll();
-
+		Calendar cal = Calendar.getInstance(); 
+		String YEAR = Integer.toString(cal.get(Calendar.YEAR)); // í˜„ì¬ ë…„ë„ ê³„ì‚°
+		
+		List<RecordDTO> dto = resultSer.selectResultListAll(YEAR);
+				
+		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("result_view/result_grid_view");
+		mav.addObject("viewAll", dto);
 		return mav;
 	}
 
-	// »ç¾÷º° ÁöÇ¥ µî±Ş ÆäÀÌÁö
+	// ì‚¬ì—…ë³„ ë“±ê¸‰ í‘œ í˜ì´ì§€
 	@RequestMapping(value = "business_grade_view.do")
 	public ModelAndView businessGrade(Locale locale, Model model) {
 
@@ -56,7 +62,7 @@ public class ResultController {
 		return mav;
 	}
 
-	// ÁöÇ¥ »êÃâ½Ä ÆäÀÌÁö
+	// ì§€í‘œë³„ ì‚°ì¶œì‹ í‘œ í˜ì´ì§€
 	@RequestMapping(value = "indicator_formula_view.do")
 	public ModelAndView indicatorFomula(Locale locale, Model model) {
 
@@ -65,7 +71,7 @@ public class ResultController {
 		return mav;
 	}
 	
-	// ÁöÇ¥º° Æò°¡µî±Ş±âÁØ ÆäÀÌÁö
+	// ì§€í‘œë³„ ë“±ê¸‰ ê¸°ì¤€ í˜ì´ì§€
 	@RequestMapping(value = "indicator_grade_standard.do")
 	public ModelAndView indicatorGrade(Locale locale, Model model) {
 

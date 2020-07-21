@@ -14,9 +14,8 @@ public class ResultService {
 	@Autowired
 	public ResultDAO dao;
 	
-	public List<RecordDTO> selectResultListAll() {
+	public List<RecordDTO> selectResultListAll(String YEAR) {
 		
-		dao.selectResultListAll();
-		return null;
+		return 	dao.selectResultListAll(YEAR);
 	}
 }

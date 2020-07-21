@@ -145,7 +145,7 @@
                                                 
                                                 <th class="text-center" colspan="2">평 가 결 과</th>
                                                 
-                                                <th class="text-center" rowspan="2">관 련 사 업<br><br><br></th>
+                                                <!-- <th class="text-center" rowspan="2">관 련 사 업<br><br><br></th> -->
                                                 
                                                 
                                                 
@@ -174,125 +174,24 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <c:forEach var="row" items="${viewAll }">
                                             <tr class="font-20">
-                                                <th class="text-center" scope="row">1</th>
-                                                <td>취업률</td>
-                                                <td class="text-center" >75.60</td>
-                                                <td class="text-center" >67.90</td>                                                
-                                                <td class="text-center" >B</td>
-                                                <td class="text-center" >89.81</td>
-                                                <td class="text-center"><div class="popover-icon">
+                                                <th class="text-center" scope="row">${row.INDICATORS_NUM }</th>
+                                                <td>${row.INDICATORS_NAME }</td>
+                                                <td class="text-center" >${row.TARGET_VAL }</td>
+                                                <td class="text-center"> ${row.PRESSENT_VAL}</td>                                                
+                                                <td class="text-center" > ${row.GRADE }</td>
+                                                <td class="text-center" > ${row.ACHIEVE_VAL}</td>
+                                                <!-- <td class="text-center"><div class="popover-icon">
                                                         <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
                                                         <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
                                                         <a class="btn btn-cyan rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
                                                         <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
                                                         <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
                         
-                                                    </div></td>
-                                            </tr>
-                                            
-                                            <tr class="font-20">
-                                                <th class="text-center" scope="row">2</th>
-                                                <td>유지취업률</td>
-                                                <td class="text-center" >72.00</td>
-                                                <td class="text-center" >72.21</td>
-                                                <td class="text-center" >A</td>
-                                                <td class="text-center" >100.29</td>
-                                                <td class="text-center"><div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
-                                                        <a class="btn btn-cyan rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
-                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
-                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
-                        
-                                                    </div></td>
-                                            </tr>
-                                            
-                                            <tr class="font-20">
-                                                <th class="text-center" scope="row">3</th>
-                                                <td>NCS/직무분석기반 교육여건 예산 집행률</td>
-                                                <td class="text-center" >100.00</td>
-                                                <td class="text-center" >99.90</td>
-                                                <td class="text-center" >B</td>
-                                                <td class="text-center" >99.99</td>
-                                                <td class="text-center"><div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
-                                                        <a class="btn btn-cyan rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
-                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
-                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
-                        
-                                                    </div></td>
-                                            </tr>
-                                            
-                                            <tr class="font-20">
-                                                <th class="text-center" scope="row">4</th>
-                                                <td>신입생충원률</td>
-                                                <td class="text-center" >100.00</td>
-                                                <td class="text-center" >100.00</td>
-                                                <td class="text-center" >A</td>
-                                                <td class="text-center" >100.00</td>
-                                                <td class="text-center"><div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
-                                                        <a class="btn btn-cyan rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
-                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
-                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
-                        
-                                                    </div></td>
-                                            </tr>
-                                            
-                                            <tr class="font-20">
-                                                <th class="text-center" scope="row">5</th>
-                                                <td>재학생충원률</td>
-                                                <td class="text-center" >93.90</td>
-                                                <td class="text-center" >93.30</td>
-                                                <td class="text-center" >B</td>
-                                                <td class="text-center" >99.36</td>
-                                                <td class="text-center"><div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
-                                                        <a class="btn btn-cyan rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
-                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
-                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
-                        
-                                                    </div></td>
-                                            </tr>
-                                            
-                                            <tr class="font-20">
-                                                <th class="text-center" scope="row">6</th>
-                                                <td>중도탈락률</td>
-                                                <td class="text-center" >5.20</td>
-                                                <td class="text-center" >5.78</td>
-                                                <td class="text-center" >B</td>
-                                                <td class="text-center" >89.97</td>
-                                                <td class="text-center"><div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
-                                                        <a class="btn btn-cyan rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
-                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
-                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
-                        
-                                                    </div></td>
-                                            </tr>
-                                            
-                                            <tr class="font-20">
-                                                <th class="text-center" scope="row">7</th>
-                                                <td>전임교원확보율</td>
-                                                <td class="text-center" >57.76</td>
-                                                <td class="text-center" >62.07</td>
-                                                <td class="text-center" >A</td>
-                                                <td class="text-center" >107.46</td>
-                                                <td class="text-center"><div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
-                                                        <a class="btn btn-cyan rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
-                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
-                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
-                        
-                                                    </div></td>
-                                            </tr>
-                                           
+                                                    </div></td> -->
+                                            </tr>    
+                                         </c:forEach>                                
                                         </tbody>
                                     </table>
                                 </div> <!-- end table-responsive-->
