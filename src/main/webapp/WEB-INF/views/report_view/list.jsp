@@ -127,33 +127,56 @@
                             <div class="card-body">
                                 	<h4>카테고리 별 보기 </h4><br>
                                 	
-                                	<div class="row">
+                                	<form class="row" action="report_view_list.do">
                                 	<div class="col-md-6">
                                 		<div class="col-md-6"  style="padding-bottom: 20px;">
                                 			<span>활용 사업</span>
                                 		</div>
                                 		<div class="col-md-12" style="padding: 5px;">
                                 			<div class="custom-control custom-checkbox">
-                                    			<input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    			<label class="custom-control-label" for="customCheck1">
+                                				<c:choose>
+                                					<c:when test="${kategorie.IS_BEST == 1}">
+                                						<input type="checkbox" class="custom-control-input" id="IS_BEST" name="IS_BEST" value="1" checked="checked">
+                                					</c:when>
+                                					<c:otherwise>
+                                						<input type="checkbox" class="custom-control-input" id="IS_BEST" name="IS_BEST" value="1">
+                                					</c:otherwise>
+                                				</c:choose>
+                                    			
+                                    			<label class="custom-control-label" for="IS_BEST">
                                 					<a class="btn btn-primary rounded-circle btn-circle" style="width: 25px; height: 25px;" href="javascript:void(0)"></a>
                                 					대학중장기 발전계획 BEST
                                 				</label>
                                 			</div>
                                 		</div>
                                 		<div class="col-md-12"  style="padding: 5px;" >
-                                		
                                 			<div class="custom-control custom-checkbox">
-                                    			<input type="checkbox" class="custom-control-input" id="customCheck2">
-                                    			<label class="custom-control-label" for="customCheck2">
+                                				<c:choose>
+                                					<c:when test="${kategorie.IS_AGENCY == 1}">
+                                						<input type="checkbox" class="custom-control-input" id="IS_AGENCY" name="IS_AGENCY" value="1" checked="checked"> 
+                                					</c:when>
+                                					<c:otherwise>
+                                						<input type="checkbox" class="custom-control-input" id="IS_AGENCY" name="IS_AGENCY" value="1"> 
+                                					</c:otherwise>
+                                				</c:choose>
+                                    			<label class="custom-control-label" for="IS_AGENCY">
                                 			<a class="btn btn-danger rounded-circle btn-circle " style="width: 25px; height: 25px;" href="javascript:void(0)"></a>
                                             	기관평가인증</label>
                                             </div>           
                                          </div>
                                          <div class="col-md-12"  style="padding: 5px;">
                                          	<div class="custom-control custom-checkbox">
-                                    			<input type="checkbox" class="custom-control-input" id="customCheck3">
-                                    			<label class="custom-control-label" for="customCheck3">
+                                         		<c:choose>
+                                					<c:when test="${kategorie.IS_AHA == 1}">
+                                						
+                                    			<input type="checkbox" class="custom-control-input" id="IS_AHA" name="IS_AHA" value="1" checked="checked"> 
+                                					</c:when>
+                                					<c:otherwise>
+                                						
+                                    			<input type="checkbox" class="custom-control-input" id="IS_AHA" name="IS_AHA" value="1"> 
+                                					</c:otherwise>
+                                				</c:choose>
+                                    			<label class="custom-control-label" for="IS_AHA">
                                 			<a class="btn btn-warning rounded-circle btn-circle " style="width: 25px; height: 25px;"
                                                             href="javascript:void(0)"></a>
                                    				혁신지원 AHA</label>
@@ -161,8 +184,15 @@
                                          </div>
                                          <div class="col-md-12"  style="padding: 5px;">
                                          	<div class="custom-control custom-checkbox">
-                                    			<input type="checkbox" class="custom-control-input" id="customCheck4">
-                                    			<label class="custom-control-label" for="customCheck4">
+                                         		<c:choose>
+                                					<c:when test="${kategorie.IS_LINC == 1}">
+                                    					<input type="checkbox" class="custom-control-input" id="IS_LINC" name="IS_LINC" value="1" checked="checked">
+                                    				</c:when>
+                                					<c:otherwise>
+                                						<input type="checkbox" class="custom-control-input" id="IS_LINC" name="IS_LINC" value="1">
+                                					</c:otherwise>
+                                				</c:choose>
+                                    			<label class="custom-control-label" for="IS_LINC">
                                 			<a class="btn btn-success rounded-circle btn-circle " style="width: 25px; height: 25px;"
                                                             href="javascript:void(0)"></a>
                                                                                     사회맞춤형 LINC+</label>
@@ -171,8 +201,15 @@
                                          </div>
                                          <div class="col-md-12"  style="padding: 5px;">
                                          	<div class="custom-control custom-checkbox">
-                                    			<input type="checkbox" class="custom-control-input" id="customCheck5">
-                                    			<label class="custom-control-label" for="customCheck5">
+                                         		<c:choose>
+                                					<c:when test="${kategorie.IS_TYPE3 == 1}">
+                                    					<input type="checkbox" class="custom-control-input" id="IS_TYPE3" name="IS_TYPE3" value="1" checked="checked">
+                                    				</c:when>
+                                					<c:otherwise>
+                                    					<input type="checkbox" class="custom-control-input" id="IS_TYPE3" name="IS_TYPE3" value="1">
+                                					</c:otherwise>
+                                				</c:choose>
+                                    			<label class="custom-control-label" for="IS_TYPE3">
                                 			<a class="btn btn-secondary rounded-circle btn-circle " style="width: 25px; height: 25px;"
                                                             href="javascript:void(0)"></a>
                                                  3유형</label>
@@ -186,19 +223,28 @@
                                 			<span>담당 부서</span>
                                 		</div>
                                 		<div class="col-md-12">
-                                			<select class="custom-select" id="inputGroupSelect04" >
-                                           		<option selected="">모두 보기</option>
-                                            	<option value="1">입학취업처</option>
-                                            	<option value="2">교무학생처</option>
-                                            	<option value="3">행정지원처</option>
-                                            	<option value="4">대학발전운영실</option>
-                                            	<option value="5">산학협력처</option>
+                                			<select class="custom-select" name="DIVISION_NAME">
+                                			<c:choose>
+                                				<c:when test="${!kategorie.DIVISION_NAME.equals('모두 보기')}">
+                                           			<option selected="" value="${kategorie.DIVISION_NAME}">${kategorie.DIVISION_NAME}</option>
+                                           			<option>모두 보기</option>
+                                				</c:when>
+                                				<c:otherwise>
+                                					<option selected="">모두 보기</option>
+                                				</c:otherwise>
+                                			</c:choose>
+                                            	<option value="입학취업처">입학취업처</option>
+                                            	<option value="교무학생처">교무학생처</option>
+                                            	<option value="행정지원처">행정지원처</option>
+                                            	<option value="대학발전운영실">대학발전운영실</option>
+                                            	<option value="산학협력처">산학협력처</option>
                                         	</select>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                    	<button class="btn btn-info waves-effect waves-light" type="button" style="float: right;"><span class="btn-label"><i class="fas fa-search"></i></span> 검색</button>
-                                	</div>              
+                                    	<button class="btn btn-info waves-effect waves-light" type="submit" style="float: right;"><span class="btn-label"><i class="fas fa-search"></i></span> 검색</button>
+                                	</div>
+                                	              
                             </div>
                         </div>
                     </div>
@@ -223,46 +269,37 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <c:forEach items="${list}" var="list">
                                             <tr>
-                                            	<td class="border-top-0 text-muted px-2 py-4 font-14">1</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14" onclick="location.href='report_view.do'">취업률</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
+                                            	<td class="border-top-0 text-muted px-2 py-4 font-14">${list.INDICATORS_NUM}</td>
+                                                <td class="border-top-0 text-muted px-2 py-4 font-14">${list.INDICATORS_NAME}</td>
+                                                <td class="border-top-0 text-muted px-2 py-4 font-14">${list.DIVISION_NAME}</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">BS</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">or</a>
+                                                    	<c:if test="${list.IS_BEST == 1}">
+                                                    		<a class="btn btn-primary rounded-circle btn-circle font-12 popover-item"
+                                                            href="javascript:void(0)">B</a>
+                                                    	</c:if>
+                                                        <c:if test="${list.IS_AGENCY == 1}">
+                                                    		<a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
+                                                            href="javascript:void(0)">E</a>
+                                                    	</c:if>
+                                                        <c:if test="${list.IS_AHA == 1}">
+                                                    		<a class="btn btn-warning rounded-circle btn-circle font-12 popover-item"
+                                                            href="javascript:void(0)">A</a>
+                                                    	</c:if>
+                                                    	<c:if test="${list.IS_LINC == 1}">
+                                                    		<a class="btn btn-success rounded-circle btn-circle font-12 popover-item"
+                                                            href="javascript:void(0)">L</a>
+                                                    	</c:if>
+                                                    	<c:if test="${list.IS_TYPE3 == 1}">
+                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item"
+                                                            href="javascript:void(0)">3</a>
+                                                    	</c:if>
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                            	<td class="border-top-0 text-muted px-2 py-4 font-14">2</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14" onclick="location.href='report_view2.do'">취업률</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
-                                                 <td class="border-top-0 px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">BS</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">or</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                            	<td class="border-top-0 text-muted px-2 py-4 font-14">3</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">입학취업처</td>
-                                                 <td class="border-top-0 px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">BS</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">or</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            
+                                            </c:forEach>
                                         </tbody>
                                     </table>
                                 </div>
