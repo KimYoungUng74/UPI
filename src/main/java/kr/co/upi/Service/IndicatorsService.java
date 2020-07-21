@@ -16,13 +16,18 @@ public class IndicatorsService {
 
 	@Autowired
 	public IndicatorsDAO dao;
-	
+	// 리스트 전체 검색
 	public List<IndicatorsDTO> selectAll() {
 		return dao.selectAll();
 	}
-	
+	// 리스트 카테고리 검색
 	public List<IndicatorsDTO> selectKategorie(IndicatorsDTO dto) {
 		return dao.selectKategorie(dto);
+	}
+	
+	// 관리번호로 한개 검색
+	public IndicatorsDTO selectOne(IndicatorsDTO dto) {
+		return dao.selectOne(dto);
 	}
 	
 	// 현재 평가 등급 불러오기

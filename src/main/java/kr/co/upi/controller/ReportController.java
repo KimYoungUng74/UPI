@@ -20,7 +20,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import kr.co.upi.DTO.IndicatorsDTO;
 import kr.co.upi.DTO.RecordDTO;
+import kr.co.upi.DTO.ReportDTO;
 import kr.co.upi.Service.IndicatorsService;
+import kr.co.upi.Service.ReportService;
 import kr.co.upi.Service.ResultService;
 import kr.co.upi.Service.TestService;
 import kr.co.upi.utill.hwp_library;
@@ -34,6 +36,10 @@ public class ReportController {
 	@Autowired
 	IndicatorsService indcSer;
 	
+	@Autowired
+	ReportService reportSer;
+	
+	//보고서의 지표리스트 선택 페이지
 	@RequestMapping(value = "report_view_list.do")
 	public ModelAndView report_view_list(Locale locale, Model model, IndicatorsDTO dto) {
 		if(dto.getDIVISION_NAME() == null) {
@@ -47,21 +53,37 @@ public class ReportController {
 		mav.setViewName("report_view/list");
 		return mav;
 	}
-
+	
+	
+	//보고서 정보 보기 페이지 
 	@RequestMapping(value = "report_view.do")
-	public ModelAndView report_view(Locale locale, Model model) {
-		ModelAndView mav = new ModelAndView();
+	public ModelAndView report_view(Locale locale, Model model, ModelAndView mav,IndicatorsDTO idto) {
+		// 지표 기본정보 
+		model.addAttribute("Indicators", indcSer.selectOne(idto));
+		ReportDTO rdto = new ReportDTO();
+		rdto.setINDICATORS_NUM(idto.getINDICATORS_NUM());
+		
+		List<ReportDTO> reportDtos = reportSer.selectListIndc(rdto);
+		if(reportDtos.size() != 0) {
+			// 보고서 정보
+			model.addAttribute("Report1", reportDtos.get(0));
+			model.addAttribute("Report2", reportDtos.get(1));
+			model.addAttribute("Report3", reportDtos.get(2));
+		}
 		mav.setViewName("report_view/view");
 		return mav;
 	}
-
+	
+	
+	// 테스트 페이지
 	@RequestMapping(value = "report_view2.do")
 	public ModelAndView report_view2(Locale locale, Model model) {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("report_view/view2");
 		return mav;
 	}
-
+	
+	// 한글 저장 페이지
 	@RequestMapping(value = "report_hwp_viewer.hwp")
 	public ModelAndView report_view3(Locale locale, Model model, HttpServletRequest request) throws Exception {
 		ModelAndView mav = new ModelAndView();

@@ -245,7 +245,7 @@
                                     	<button class="btn btn-info waves-effect waves-light" type="submit" style="float: right;"><span class="btn-label"><i class="fas fa-search"></i></span> 검색</button>
                                 	</div>
                                 	              
-                            </div>
+                            </form>
                         </div>
                     </div>
                     </div>
@@ -270,7 +270,7 @@
                                         </thead>
                                         <tbody>
                                             <c:forEach items="${list}" var="list">
-                                            <tr>
+                                            <tr onclick="window.open('report_view.do?INDICATORS_NUM=${list.INDICATORS_NUM}')">
                                             	<td class="border-top-0 text-muted px-2 py-4 font-14">${list.INDICATORS_NUM}</td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">${list.INDICATORS_NAME}</td>
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">${list.DIVISION_NAME}</td>

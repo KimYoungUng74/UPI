@@ -139,6 +139,7 @@
 									<span class="btn-label"><i class="far fa-file-alt"></i></span>HWP로
 									저장
 								</button>
+								&nbsp;
 								<button
 									class="btn btn-secondary waves-effect waves-light btn-print"
 									type="button" style="float: right; " >
@@ -162,9 +163,9 @@
 
 									<tr>
 										<td class="border-top-0 px-8 py-4 font-14 table-active">관리번호</td>
-										<td class="border-top-0  px-8 py-4 font-14">001</td>
+										<td class="border-top-0  px-8 py-4 font-14">${Indicators.getINDICATORS_NUM()}</td>
 										<td class="border-top-0  px-8 py-4 font-14 table-active">지표명</td>
-										<td class="border-top-0  px-8 py-4 font-14" colspan="3">취업률</td>
+										<td class="border-top-0  px-8 py-4 font-14" colspan="3">${Indicators.getINDICATORS_NAME()}</td>
 									</tr>
 									<tr>
 										<td class="border-top-0  px-8 py-5 font-14 table-active"
@@ -176,32 +177,31 @@
 										<td class="border-top-0  px-8 py-4 font-14 table-active">3유형</td>
 									</tr>
 									<tr>
-										<td class="border-top-0  px-8 py-4 font-14">O</td>
-										<td class="border-top-0  px-8 py-4 font-14">O</td>
-										<td class="border-top-0  px-8 py-4 font-14">O</td>
-										<td class="border-top-0  px-8 py-4 font-14">O</td>
-										<td class="border-top-0  px-8 py-4 font-14">O</td>
+										<td class="border-top-0  px-8 py-4 font-14"><c:if test="${Indicators.getIS_BEST()==1}">O</c:if></td>
+										<td class="border-top-0  px-8 py-4 font-14"><c:if test="${Indicators.getIS_AGENCY()==1}">O</c:if></td>
+										<td class="border-top-0  px-8 py-4 font-14"><c:if test="${Indicators.getIS_AGENCY()==1}">O</c:if></td>
+										<td class="border-top-0  px-8 py-4 font-14"><c:if test="${Indicators.getIS_AGENCY()==1}">O</c:if></td>
+										<td class="border-top-0  px-8 py-4 font-14"><c:if test="${Indicators.getIS_TYPE3()==1}">O</c:if></td>
 									</tr>
 									<tr>
 										<td class="border-top-0  px-8 py-4 font-14 table-active">기준일</td>
-										<td class="border-top-0  px-8 py-4 font-14">2018년 12월</td>
+										<td class="border-top-0  px-8 py-4 font-14">${Report1.getRECORD_DATE().getYear()+1900}년 ${Report1.getRECORD_DATE().getMonth()+1}월</td>
 										<td class="border-top-0  px-8 py-4 font-14 table-active">평가방법</td>
-										<td class="border-top-0  px-8 py-4 font-14" colspan="3">정량</td>
+										<td class="border-top-0  px-8 py-4 font-14" colspan="3">${Indicators.getEVAL_METHOD()}</td>
 									</tr>
 									<tr>
 										<td class="border-top-0  px-8 py-4 font-14 table-active">수집방법</td>
-										<td class="border-top-0  px-8 py-4 font-14">정보공시</td>
+										<td class="border-top-0  px-8 py-4 font-14">${Indicators.getCOL_METHOD()}</td>
 										<td class="border-top-0  px-8 py-4 font-14 table-active">평가기준</td>
-										<td class="border-top-0  px-8 py-4 font-14" colspan="3">중장기발전계획
-											목표 측정값</td>
+										<td class="border-top-0  px-8 py-4 font-14" colspan="3">${Indicators.getEVAL_STANDARD()}</td>
 									</tr>
 									<tr>
 										<td class="border-top-0  px-8 py-4 font-14 table-active">관리부서</td>
-										<td class="border-top-0  px-8 py-4 font-14" colspan="5">입학취업처</td>
+										<td class="border-top-0  px-8 py-4 font-14" colspan="5">${Indicators.getDIVISION_NAME()}</td>
 									</tr>
 									<tr>
 										<td class="border-top-0  px-8 py-4 font-14 table-active">산출식</td>
-										<td class="border-top-0  px-8 py-4 font-14" colspan="5">(취업자/취업대상자)/100</td>
+										<td class="border-top-0  px-8 py-4 font-14" colspan="5">${Indicators.getFORMULA()}</td>
 									</tr>
 									<tr>
 										<td class="border-top-0  px-8 py-5 font-14 table-active">등급<br>기준
@@ -218,29 +218,29 @@
 											<table class="table" border="1" style="color: black;">
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">목표값</td>
-													<td class="border-top-0  px-4 py-2 font-14" colspan="3">75.6</td>
+													<td class="border-top-0  px-4 py-2 font-14" colspan="3">${Indicators.getTARGET_VAL()}</td>
 												</tr>
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">현재값</td>
-													<td class="border-top-0  px-4 py-2 font-14" colspan="3">67.9</td>
+													<td class="border-top-0  px-4 py-2 font-14" colspan="3">${Report1.getPRESENT_VAL()}</td>
 												</tr>
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">평가년도</td>
-													<td class="border-top-0  px-4 py-2 font-14">2017년도</td>
-													<td class="border-top-0  px-4 py-2 font-14">2018년도</td>
-													<td class="border-top-0  px-4 py-2 font-14">2019년도</td>
+													<td class="border-top-0  px-4 py-2 font-14">${Report3.getRECORD_DATE().getYear()+1900}년도</td>
+													<td class="border-top-0  px-4 py-2 font-14">${Report2.getRECORD_DATE().getYear()+1900}년도</td>
+													<td class="border-top-0  px-4 py-2 font-14">${Report1.getRECORD_DATE().getYear()+1900}년도</td>
 												</tr>
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">등급</td>
-													<td class="border-top-0  px-4 py-2 font-14">A</td>
-													<td class="border-top-0  px-4 py-2 font-14">B</td>
-													<td class="border-top-0  px-4 py-2 font-14">B</td>
+													<td class="border-top-0  px-4 py-2 font-14">?</td>
+													<td class="border-top-0  px-4 py-2 font-14">?</td>
+													<td class="border-top-0  px-4 py-2 font-14">?</td>
 												</tr>
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">달성도</td>
-													<td class="border-top-0  px-4 py-2 font-14">100</td>
-													<td class="border-top-0  px-4 py-2 font-14">95</td>
-													<td class="border-top-0  px-4 py-2 font-14">89.81</td>
+													<td class="border-top-0  px-4 py-2 font-14">${Math.round(Report3.getPRESENT_VAL()/Indicators.getTARGET_VAL()*1000)/10}</td>
+													<td class="border-top-0  px-4 py-2 font-14">${Math.round(Report2.getPRESENT_VAL()/Indicators.getTARGET_VAL()*1000)/10}</td>
+													<td class="border-top-0  px-4 py-2 font-14">${Math.round(Report1.getPRESENT_VAL()/Indicators.getTARGET_VAL()*1000)/10}</td>
 												</tr>
 											</table>
 										</td>

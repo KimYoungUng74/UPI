@@ -14,15 +14,21 @@ import kr.co.upi.DTO.RecordDTO;
 public class IndicatorsDAO {
 	@Autowired
 	public SqlSessionTemplate mybatis;
-	
+	// 리스트 전체 검색
 	public List<IndicatorsDTO> selectAll() {
 		return mybatis.selectList("IndicatorsMapper.IndicatorsListAll");
 	}
-	
+	// 리스트 카테고리 검색 
 	public List<IndicatorsDTO> selectKategorie(IndicatorsDTO dto) {
 		return mybatis.selectList("IndicatorsMapper.IndicatorsListKategorie",dto);
 	}
-
+	
+	// 관리번호로 한개 검색
+	public IndicatorsDTO selectOne(IndicatorsDTO dto) {
+		return mybatis.selectOne("IndicatorsMapper.IndicatorsOne",dto);
+	}
+	
+	
 	// 평가 등급 기준 
 	public GradeDTO selectGrade(GradeDTO gradeDto) {
 		// TODO Auto-generated method stub
