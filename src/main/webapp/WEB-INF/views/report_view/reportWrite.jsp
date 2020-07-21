@@ -235,8 +235,21 @@
 											</div>
 										</div>
 									</div>
+									<!-- 목표 값 -->
+									<div class="col-md-2" style="padding-bottom: 5px;">
+										<div class="row">
+											<div class="col-md-12" style="padding-bottom: 5px;">
+												<span>목표 값</span>
+											</div>
+											<div class="col-md-12" style="padding-bottom: 10px;">
+												<label
+													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">100</label>
+											</div>
+										</div>
+									</div>
+
 									<!-- 평가 방법 -->
-									<div class="col-md-5" style="padding-bottom: 5px;">
+									<div class="col-md-3" style="padding-bottom: 5px;">
 										<div class="row">
 											<div class="col-md-12" style="padding-bottom: 5px;">
 												<span>평가방법</span>
@@ -260,7 +273,7 @@
 											</div>
 										</div>
 									</div>
-									
+
 									<!-- 요소값 리스트 입력 -->
 									<div class="col-md-12" style="padding-bottom: 5px;">
 										<div class="row">
@@ -345,17 +358,12 @@
 											<div class="col-md-1" style="padding-top: 5px;"></div>
 											<div class="col-md-5" style="padding-top: 5px;">
 												<div class="row">
-													<div class="col-md-6">
-														<span>목표값</span>
-													</div>
-													<div class="col-md-6">
+													
+													<div class="col-md-12">
 														<span>현재값</span>
 													</div>
-													<div class="col-md-6">
-														<input type="text" name="INDICATORS_NAME"
-															class="form-control">
-													</div>
-													<div class="col-md-6">
+													
+													<div class="col-md-12">
 														<input type="text" name="INDICATORS_NAME"
 															class="form-control">
 													</div>

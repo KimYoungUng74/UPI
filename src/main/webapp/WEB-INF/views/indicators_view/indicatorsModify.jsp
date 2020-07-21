@@ -248,8 +248,19 @@
 											</div>
 										</div>
 									</div>
+									<!-- 목표 값 -->
+									<div class="col-md-2" style="padding-bottom: 5px;">
+										<div class="row">
+											<div class="col-md-12" style="padding-bottom: 5px;">
+												<span>목표 값</span>
+											</div>
+											<div class="col-md-12" style="padding-bottom: 10px;">
+												<input type="text" value="100" name="TARGET_VAL">
+											</div>
+										</div>
+									</div>
 									<!-- 평가 방법 -->
-									<div class="col-md-5" style="padding-bottom: 5px;">
+									<div class="col-md-3" style="padding-bottom: 5px;">
 										<div class="row">
 											<div class="col-md-12" style="padding-bottom: 5px;">
 												<span>평가방법</span>

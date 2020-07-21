@@ -307,9 +307,8 @@
 										<h4 class="card-title">
 											<b>평가 등급 기준</b>
 											<button class="btn btn-primary waves-effect waves-light"
-												type="button" style="float: right;">
-												등급기준 변경
-											</button>
+												type="button" data-toggle="modal" data-target="#myModal"
+												id="formulaReg" style="float: right;">등급기준 변경</button>
 										</h4>
 										<p class="text-muted font-13">각 등급의 평가 기준을 확인하실 수 있습니다.</p>
 
@@ -389,6 +388,88 @@
 	<!-- ============================================================== -->
 	<!-- All Jquery -->
 	<!-- ============================================================== -->
+
+	<!-- sample modal content -->
+	<div id="myModal" class="modal fade" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg ">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">등급기준 변경</h4>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">×</button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-12" style="padding-bottom: 5px;">
+							<span>기존 등급기준</span>
+						</div>
+						<div class="col-md-6" style="padding-bottom: 5px;">
+							<span>A등급%</span> <input type="text" name="INDICATORS_NAME"
+								class="form-control">
+						</div>
+						<div class="col-md-6" style="padding-bottom: 5px;">
+							<span>A등급 조치</span> <input type="text" name="INDICATORS_NAME"
+								class="form-control">
+						</div>
+						<div class="col-md-6" style="padding-bottom: 5px;">
+							<span>B등급%</span> <input type="text" name="INDICATORS_NAME"
+								class="form-control">
+						</div>
+						<div class="col-md-6" style="padding-bottom: 5px;">
+							<span>B등급 조치</span> <input type="text" name="INDICATORS_NAME"
+								class="form-control">
+						</div>
+						<div class="col-md-6" style="padding-bottom: 10px;">
+							<span>D등급%</span> <input type="text" name="INDICATORS_NAME"
+								class="form-control">
+						</div>
+						<div class="col-md-6" style="padding-bottom: 10px;">
+							<span>D등급 조치</span> <input type="text" name="INDICATORS_NAME"
+								class="form-control">
+						</div>
+						<div class="col-md-12" style="padding-bottom: 5px;">
+							<hr>
+							<span>변경 등급기준</span>
+						</div>
+
+						<div class="col-md-6" style="padding-bottom: 5px;">
+							<span>A등급%</span> <input type="text" name="INDICATORS_NAME"
+								class="form-control">
+						</div>
+						<div class="col-md-6" style="padding-bottom: 5px;">
+							<span>A등급 조치</span> <input type="text" name="INDICATORS_NAME"
+								class="form-control">
+						</div>
+						<div class="col-md-6" style="padding-bottom: 5px;">
+							<span>B등급%</span> <input type="text" name="INDICATORS_NAME"
+								class="form-control">
+						</div>
+						<div class="col-md-6" style="padding-bottom: 5px;">
+							<span>B등급 조치</span> <input type="text" name="INDICATORS_NAME"
+								class="form-control">
+						</div>
+						<div class="col-md-6" style="padding-bottom: 10px;">
+							<span>D등급%</span> <input type="text" name="INDICATORS_NAME"
+								class="form-control">
+						</div>
+						<div class="col-md-6" style="padding-bottom: 10px;">
+							<span>D등급 조치</span> <input type="text" name="INDICATORS_NAME"
+								class="form-control">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary">등급기준 변경</button>
+						<button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!-- /.modal -->
+	</div>
+
 </body>
 <c:import url="../import/javascript.jsp" charEncoding="UTF-8">
 </c:import>
