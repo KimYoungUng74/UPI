@@ -37,11 +37,13 @@ public class ReportController {
 		
 		@RequestMapping(value = "report_view_list.do")
 		public ModelAndView report_view_list(Locale locale, Model model, IndicatorsDTO dto) {
-			/*
-			 * if(dto == null) { model.addAttribute("kategorie", dto);
-			 * model.addAttribute("list",indcSer.selectKategorie(dto)); }else {
-			 * model.addAttribute("list", indcSer.selectAll()); }
-			 */
+			if(dto == null) { 
+				model.addAttribute("kategorie", dto);
+				model.addAttribute("list",indcSer.selectKategorie(dto)); 
+			}else{
+				model.addAttribute("list", indcSer.selectAll()); 
+			}
+			
 			ModelAndView mav = new ModelAndView();
 			mav.setViewName("report_view/list");
 			return mav;
