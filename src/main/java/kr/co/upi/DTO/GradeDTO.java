@@ -10,6 +10,8 @@ public class GradeDTO {
     private int D_GRADE;		// D등급 퍼센트
     private Date RECORD_DATE;		// 기준일
     private int LOG_NUM;		// 로그 번호 FK
+    
+    
 	public int getGRADE_NUM() {
 		return GRADE_NUM;
 	}

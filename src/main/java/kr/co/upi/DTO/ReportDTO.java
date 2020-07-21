@@ -8,7 +8,6 @@ public class ReportDTO {
     private int INDICATORS_NUM;		// 관리번호 FK
     private String ELEMENT_VAL;		// 요소 값
     private int PRESENT_VAL;		// 현재 값
-    private int TARGET_VAL;			// 목표 값
     private Date RECORD_DATE;		// 기준일
     private int LOG_NUM;		// 로그 번호 FK
 
@@ -36,12 +35,6 @@ public class ReportDTO {
 	public void setPRESENT_VAL(int pRESENT_VAL) {
 		PRESENT_VAL = pRESENT_VAL;
 	}
-	public int getTARGET_VAL() {
-		return TARGET_VAL;
-	}
-	public void setTARGET_VAL(int tARGET_VAL) {
-		TARGET_VAL = tARGET_VAL;
-	}
 	public Date getRECORD_DATE() {
 		return RECORD_DATE;
 	}
@@ -55,17 +48,13 @@ public class ReportDTO {
 	public void setLOG_NUM(int lOG_NUM) {
 		LOG_NUM = lOG_NUM;
 	}
+	
 	@Override
 	public String toString() {
 		return "ReportDTO [REPORT_NUM=" + REPORT_NUM + ", INDICATORS_NUM=" + INDICATORS_NUM + ", ELEMENT_VAL="
-				+ ELEMENT_VAL + ", PRESENT_VAL=" + PRESENT_VAL + ", TARGET_VAL=" + TARGET_VAL + ", RECORD_DATE="
-				+ RECORD_DATE + ", LOG_NUM=" + LOG_NUM + "]";
+				+ ELEMENT_VAL + ", PRESENT_VAL=" + PRESENT_VAL + ", RECORD_DATE=" + RECORD_DATE + ", LOG_NUM=" + LOG_NUM
+				+ "]";
 	}
-	
-	
-	
 
-	
-    
-    
+
 }
