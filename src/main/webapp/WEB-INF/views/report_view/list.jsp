@@ -227,6 +227,7 @@
                                 			<c:choose>
                                 				<c:when test="${!kategorie.DIVISION_NAME.equals('모두 보기')}">
                                            			<option selected="" value="${kategorie.DIVISION_NAME}">${kategorie.DIVISION_NAME}</option>
+                                           			<option>모두 보기</option>
                                 				</c:when>
                                 				<c:otherwise>
                                 					<option selected="">모두 보기</option>
