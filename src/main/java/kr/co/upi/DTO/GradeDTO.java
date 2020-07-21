@@ -5,23 +5,16 @@ import java.sql.Date;
 public class GradeDTO {
 	
 	private int GRADE_NUM;		// 등급 번호 PK
-    private int INDICATORS_NUM;		// 관리번호 FK
     private int A_GRADE;		// A등급 퍼센트
     private int B_GRADE;		// B등급 퍼센트
     private int D_GRADE;		// D등급 퍼센트
     private Date RECORD_DATE;		// 기준일
-    
+    private int LOG_NUM;		// 로그 번호 FK
 	public int getGRADE_NUM() {
 		return GRADE_NUM;
 	}
 	public void setGRADE_NUM(int gRADE_NUM) {
 		GRADE_NUM = gRADE_NUM;
-	}
-	public int getINDICATORS_NUM() {
-		return INDICATORS_NUM;
-	}
-	public void setINDICATORS_NUM(int iNDICATORS_NUM) {
-		INDICATORS_NUM = iNDICATORS_NUM;
 	}
 	public int getA_GRADE() {
 		return A_GRADE;
@@ -47,13 +40,19 @@ public class GradeDTO {
 	public void setRECORD_DATE(Date rECORD_DATE) {
 		RECORD_DATE = rECORD_DATE;
 	}
+	public int getLOG_NUM() {
+		return LOG_NUM;
+	}
+	public void setLOG_NUM(int lOG_NUM) {
+		LOG_NUM = lOG_NUM;
+	}
 	@Override
 	public String toString() {
-		return "GradeDTO [GRADE_NUM=" + GRADE_NUM + ", INDICATORS_NUM=" + INDICATORS_NUM + ", A_GRADE=" + A_GRADE
-				+ ", B_GRADE=" + B_GRADE + ", D_GRADE=" + D_GRADE + ", RECORD_DATE=" + RECORD_DATE + "]";
+		return "GradeDTO [GRADE_NUM=" + GRADE_NUM + ", A_GRADE=" + A_GRADE + ", B_GRADE=" + B_GRADE + ", D_GRADE="
+				+ D_GRADE + ", RECORD_DATE=" + RECORD_DATE + ", LOG_NUM=" + LOG_NUM + "]";
 	}
     
-    
+	
 	
     
 }
