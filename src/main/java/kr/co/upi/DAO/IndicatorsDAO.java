@@ -28,4 +28,11 @@ public class IndicatorsDAO {
 		// TODO Auto-generated method stub
 		return mybatis.selectOne("IndicatorsMapper.NowGradeSelect",gradeDto);
 	}
+
+	// 평가 등급 수정
+	public int modifyGrade(GradeDTO dto) {
+		// TODO Auto-generated method stub
+		return mybatis.insert("IndicatorsMapper.GradeModify",dto);
+	}
+
 }

@@ -402,34 +402,67 @@
 				<form action="gradeModify.do" method="post">
 					<div class="modal-body">
 						<div class="row">
+							<c:choose>
+								<c:when test="${gradeDto==null}">
+									<div class="col-md-12" style="padding-bottom: 5px;">
+										<span>기존 등급기준</span>
+									</div>
+									<div class="col-md-6" style="padding-bottom: 5px;">
+										<span>A등급%</span> <label
+											style="border: 1px solid #5a6268; width: 100%; padding: 5px;">이번년도 등록된 데이터가 없습니다.</label>
+									</div>
+									<div class="col-md-6" style="padding-bottom: 5px;">
+										<span>A등급 조치</span> <label
+											style="border: 1px solid #5a6268; width: 100%; padding: 5px;">이번년도 등록된 데이터가 없습니다.</label>
+									</div>
+									<div class="col-md-6" style="padding-bottom: 5px;">
+										<span>B등급%</span><label
+											style="border: 1px solid #5a6268; width: 100%; padding: 5px;">이번년도 등록된 데이터가 없습니다.</label>
+									</div>
+									<div class="col-md-6" style="padding-bottom: 5px;">
+										<span>B등급 조치</span> <label
+											style="border: 1px solid #5a6268; width: 100%; padding: 5px;">이번년도 등록된 데이터가 없습니다.</label>
+									</div>
+									<div class="col-md-6" style="padding-bottom: 5px;">
+										<span>D등급%</span><label
+											style="border: 1px solid #5a6268; width: 100%; padding: 5px;">이번년도 등록된 데이터가 없습니다.</label>
+									</div>
+									<div class="col-md-6" style="padding-bottom: 5px;">
+										<span>D등급 조치</span> <label
+											style="border: 1px solid #5a6268; width: 100%; padding: 5px;">이번년도 등록된 데이터가 없습니다.</label>
+									</div>
+								</c:when>
+								<c:otherwise>
+									<div class="col-md-12" style="padding-bottom: 5px;">
+										<span>기존 등급기준</span>
+									</div>
+									<div class="col-md-6" style="padding-bottom: 5px;">
+										<span>A등급%</span> <label
+											style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${gradeDto.getA_GRADE()}</label>
+									</div>
+									<div class="col-md-6" style="padding-bottom: 5px;">
+										<span>A등급 조치</span> <label
+											style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${gradeDto.getA_MEASURE()}</label>
+									</div>
+									<div class="col-md-6" style="padding-bottom: 5px;">
+										<span>B등급%</span><label
+											style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${gradeDto.getB_GRADE()}</label>
+									</div>
+									<div class="col-md-6" style="padding-bottom: 5px;">
+										<span>B등급 조치</span> <label
+											style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${gradeDto.getB_MEASURE()}</label>
+									</div>
+									<div class="col-md-6" style="padding-bottom: 5px;">
+										<span>D등급%</span><label
+											style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${gradeDto.getD_GRADE()}</label>
+									</div>
+									<div class="col-md-6" style="padding-bottom: 5px;">
+										<span>D등급 조치</span> <label
+											style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${gradeDto.getD_MEASURE()}</label>
+									</div>
+								</c:otherwise>
+							</c:choose>
 
-							<div class="col-md-12" style="padding-bottom: 5px;">
-								<span>기존 등급기준</span>
-							</div>
-							<div class="col-md-6" style="padding-bottom: 5px;">
-								<span>A등급%</span> <label
-									style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${gradeDto.getA_GRADE()}</label>
-							</div>
-							<div class="col-md-6" style="padding-bottom: 5px;">
-								<span>A등급 조치</span> <label
-									style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${gradeDto.getA_MEASURE()}</label>
-							</div>
-							<div class="col-md-6" style="padding-bottom: 5px;">
-								<span>B등급%</span><label
-									style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${gradeDto.getB_GRADE()}</label>
-							</div>
-							<div class="col-md-6" style="padding-bottom: 5px;">
-								<span>B등급 조치</span> <label
-									style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${gradeDto.getB_MEASURE()}</label>
-							</div>
-							<div class="col-md-6" style="padding-bottom: 5px;">
-								<span>D등급%</span><label
-									style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${gradeDto.getD_GRADE()}</label>
-							</div>
-							<div class="col-md-6" style="padding-bottom: 5px;">
-								<span>D등급 조치</span> <label
-									style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${gradeDto.getD_MEASURE()}</label>
-							</div>
 							<div class="col-md-12" style="padding-bottom: 5px;">
 								<hr>
 								<span>변경 등급기준</span>

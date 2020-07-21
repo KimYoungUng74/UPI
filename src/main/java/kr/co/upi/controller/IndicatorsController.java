@@ -75,7 +75,11 @@ public class IndicatorsController {
 	@RequestMapping(value = "gradeModify.do")
 	public ModelAndView gradeModify(Locale local, GradeDTO dto, HttpServletRequest request, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("report_view/reportWrite");
+		if(indicatorsSer.modifyGrade(dto)!=1) {
+			mav.addObject("msg", "DB_ERROR");
+		};
+		
+		mav.setViewName("report_view/indicatorsList");
 		return mav;
 	}
 
