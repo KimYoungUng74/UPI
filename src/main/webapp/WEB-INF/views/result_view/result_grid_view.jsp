@@ -174,8 +174,9 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <!-- 출력 부분 -->
                                         <c:forEach var="row" items="${viewAll }">
-                                            <tr class="font-20">
+                                            <tr>
                                                 <th class="text-center" scope="row">${row.INDICATORS_NUM }</th>
                                                 <td>${row.INDICATORS_NAME }</td>
                                                 <td class="text-center" >${row.TARGET_VAL }</td>

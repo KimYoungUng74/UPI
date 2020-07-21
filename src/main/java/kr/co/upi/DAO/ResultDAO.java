@@ -27,4 +27,5 @@ public class ResultDAO {
 		return mybatis.selectList("ResultMapper.ResultGridList",YEAR);
 	}
 
+
 }
