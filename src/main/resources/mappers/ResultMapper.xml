@@ -8,8 +8,8 @@
 	<!-- 총괄 결과 리스트 보기 -->
 	<select id="ResultGridList" resultType="RecordDTO">
 		SELECT *
-		FROM RECODE_TB
-		ORDER BY RECODE_NUM
+		FROM RECORD_TB
+		ORDER BY RECORD_NUM
 	</select>
 
 </mapper>
