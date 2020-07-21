@@ -34,47 +34,45 @@ public class ReportController {
 	@Autowired
 	IndicatorsService indcSer;
 	
+	@RequestMapping(value = "report_view_list.do")
+	public ModelAndView report_view_list(Locale locale, Model model, IndicatorsDTO dto) {
+		if(dto.getDIVISION_NAME() == null) {
+			dto.setDIVISION_NAME("모두 보기");
+		}
+		model.addAttribute("kategorie", dto);
+		model.addAttribute("list", indcSer.selectKategorie(dto));
 		
-		@RequestMapping(value = "report_view_list.do")
-		public ModelAndView report_view_list(Locale locale, Model model, IndicatorsDTO dto) {
-			if(dto == null) { 
-				model.addAttribute("kategorie", dto);
-				model.addAttribute("list",indcSer.selectKategorie(dto)); 
-			}else{
-				model.addAttribute("list", indcSer.selectAll()); 
-			}
-			
-			ModelAndView mav = new ModelAndView();
-			mav.setViewName("report_view/list");
-			return mav;
-		}
-		
-		@RequestMapping(value = "report_view.do")
-		public ModelAndView report_view(Locale locale, Model model) {
-			ModelAndView mav = new ModelAndView();
-			mav.setViewName("report_view/view");
-			return mav;
-		}
-		
-		@RequestMapping(value = "report_view2.do")
-		public ModelAndView report_view2(Locale locale, Model model) {
-			ModelAndView mav = new ModelAndView();
-			mav.setViewName("report_view/view2");
-			return mav;
-		}
-		@RequestMapping(value = "report_hwp_viewer.hwp")
-		public ModelAndView report_view3(Locale locale, Model model,HttpServletRequest request) throws Exception {
-			ModelAndView mav = new ModelAndView();
-			
-			//highchart 이미지화
-			
-			//한글파일 저장
-			//hwp_library.hwpsave();
-			
-			
-			
-			mav.setViewName("report_view/hwp_viewer");
-			return mav;
-		}
+
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("report_view/list");
+		return mav;
+	}
+
+	@RequestMapping(value = "report_view.do")
+	public ModelAndView report_view(Locale locale, Model model) {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("report_view/view");
+		return mav;
+	}
+
+	@RequestMapping(value = "report_view2.do")
+	public ModelAndView report_view2(Locale locale, Model model) {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("report_view/view2");
+		return mav;
+	}
+
+	@RequestMapping(value = "report_hwp_viewer.hwp")
+	public ModelAndView report_view3(Locale locale, Model model, HttpServletRequest request) throws Exception {
+		ModelAndView mav = new ModelAndView();
+
+		// highchart 이미지화
+
+		// 한글파일 저장
+		// hwp_library.hwpsave();
+
+		mav.setViewName("report_view/hwp_viewer");
+		return mav;
+	}
 	
 }
