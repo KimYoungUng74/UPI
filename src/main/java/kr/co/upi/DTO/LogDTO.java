@@ -10,6 +10,7 @@ public class LogDTO {
     private int TB_CODE;		// D등급 퍼센트
     private int ACTION_CODE;	// 로그 번호 FK
     private Date LOG_DATE;		// 로그 날짜
+    
 	public int getLOG_NUM() {
 		return LOG_NUM;
 	}

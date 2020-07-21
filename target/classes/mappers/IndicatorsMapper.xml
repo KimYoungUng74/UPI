@@ -4,31 +4,78 @@
 
 <mapper namespace="IndicatorsMapper">
 	<!-- id는 마음대로 작성 prarameter는 실제DTO클래스 -->
-	
+
 	<!-- 모든 지표 리스트 보기 -->
 	<select id="IndicatorsListAll" resultType="IndicatorsDTO">
 		SELECT *
-		FROM INDICATORS_TB
+		FROM
+		INDICATORS_TB
 		ORDER BY INDICATORS_NUM
 	</select>
-	
+
 	<!-- 카테고리 선택 지표 리스트 보기 -->
-	<select id="IndicatorsListKategorie" parameterType="IndicatorsDTO" resultType="IndicatorsDTO">
+	<select id="IndicatorsListKategorie"
+		parameterType="IndicatorsDTO" resultType="IndicatorsDTO">
 		SELECT *
 		FROM INDICATORS_TB
-		WHERE IS_BEST = #{IS_BEST} 
-			AND IS_AGENCY = #{IS_AGENCY} 
-			AND IS_AHA = #{IS_AHA} 
-			AND IS_LINC = #{IS_LINC}
-			AND IS_TYPE3 = #{IS_TYPE3}
-			AND DIVISION_NAME = #{DIVISION_NAME}
+		WHERE IS_BEST = #{IS_BEST}
+		AND IS_AGENCY = #{IS_AGENCY}
+		AND IS_AHA = #{IS_AHA}
+		AND IS_LINC = #{IS_LINC}
+		AND IS_TYPE3 = #{IS_TYPE3}
+		AND DIVISION_NAME = #{DIVISION_NAME}
 		ORDER BY INDICATORS_NUM
 	</select>
-	
+
 	<!-- 특정 지표 보기 -->
-	<select id="IndicatorsOne" parameterType="IndicatorsDTO" resultType="IndicatorsDTO">
+	<select id="IndicatorsOne" parameterType="IndicatorsDTO"
+		resultType="IndicatorsDTO">
 		SELECT *
 		FROM INDICATORS_TB
-		WHERE INDICATORS_NUM = #{INDICATORS_NUM}
+		WHERE INDICATORS_NUM =
+		#{INDICATORS_NUM}
 	</select>
+
+	<!-- 현재 등급기준 보기 -->
+	<select id="NowGradeSelect" parameterType="GradeDTO"
+		resultType="GradeDTO">
+		SELECT *
+		FROM GRADE_TB
+		WHERE to_char(RECORD_DATE, 'yy') = to_char(#{RECORD_DATE}, 'yy')
+	</select>
+
+	<!-- 현재 등급기준 변경 -->
+	<insert id="GradeModify" parameterType="GradeDTO">
+		MERGE INTO GRADE_TB G
+		USING DUAL
+		ON (to_char(RECORD_DATE, 'yy') = to_char(sysdate, 'yy'))
+		WHEN MATCHED THEN
+		UPDATE SET 
+			G.A_GRADE = #{A_GRADE},
+			G.B_GRADE = #{B_GRADE},
+			G.D_GRADE = #{D_GRADE},
+			G.A_MEASURE = #{A_MEASURE},
+			G.B_MEASURE = #{B_MEASURE},
+			G.D_MEASURE = #{D_MEASURE},
+		WHEN NOT MATCHED THEN
+			INSERT (G.GRADE_NUM, 
+			G.A_GRADE, 
+			G.B_GRADE, 
+			G.D_GRADE, 
+			G.A_MEASURE,
+			G.B_MEASURE, 
+			G.D_MEASURE, 
+			G.RECORD_DATE, 
+			G.LOG_NUM)
+			VALUES (GRADE_NUM.nextval, 
+			#{A_GRADE}, 
+			#{B_GRADE}, 
+			#{D_GRADE}, 
+			#{A_MEASURE}, 
+			#{B_MEASURE}, 
+			#{D_MEASURE}, 
+			sysdate, 
+			LOG_NUM.nextval);
+	</insert>
+
 </mapper>

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.co.upi.DAO.IndicatorsDAO;
 import kr.co.upi.DAO.ResultDAO;
+import kr.co.upi.DTO.GradeDTO;
 import kr.co.upi.DTO.IndicatorsDTO;
 import kr.co.upi.DTO.RecordDTO;
 
@@ -23,4 +24,10 @@ public class IndicatorsService {
 	public List<IndicatorsDTO> selectKategorie(IndicatorsDTO dto) {
 		return dao.selectKategorie(dto);
 	}
+
+	public GradeDTO selectGrade(GradeDTO gradeDto) {
+		// TODO Auto-generated method stub
+		return dao.selectGrade(gradeDto);
+	}
+
 }

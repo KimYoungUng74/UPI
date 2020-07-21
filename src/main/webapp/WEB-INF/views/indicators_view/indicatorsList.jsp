@@ -399,70 +399,75 @@
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">×</button>
 				</div>
-				<div class="modal-body">
-					<div class="row">
-						<div class="col-md-12" style="padding-bottom: 5px;">
-							<span>기존 등급기준</span>
+				<form action="gradeModify.do" method="post">
+					<div class="modal-body">
+						<div class="row">
+
+							<div class="col-md-12" style="padding-bottom: 5px;">
+								<span>기존 등급기준</span>
+							</div>
+							<div class="col-md-6" style="padding-bottom: 5px;">
+								<span>A등급%</span> <label
+									style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${gradeDto.getA_GRADE()}</label>
+							</div>
+							<div class="col-md-6" style="padding-bottom: 5px;">
+								<span>A등급 조치</span> <label
+									style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${gradeDto.getA_MEASURE()}</label>
+							</div>
+							<div class="col-md-6" style="padding-bottom: 5px;">
+								<span>B등급%</span><label
+									style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${gradeDto.getB_GRADE()}</label>
+							</div>
+							<div class="col-md-6" style="padding-bottom: 5px;">
+								<span>B등급 조치</span> <label
+									style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${gradeDto.getB_MEASURE()}</label>
+							</div>
+							<div class="col-md-6" style="padding-bottom: 5px;">
+								<span>D등급%</span><label
+									style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${gradeDto.getD_GRADE()}</label>
+							</div>
+							<div class="col-md-6" style="padding-bottom: 5px;">
+								<span>D등급 조치</span> <label
+									style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${gradeDto.getD_MEASURE()}</label>
+							</div>
+							<div class="col-md-12" style="padding-bottom: 5px;">
+								<hr>
+								<span>변경 등급기준</span>
+							</div>
+
+							<div class="col-md-6" style="padding-bottom: 5px;">
+								<span>A등급%</span> <input type="text" name="A_GRADE"
+									class="form-control">
+							</div>
+							<div class="col-md-6" style="padding-bottom: 5px;">
+								<span>A등급 조치</span> <input type="text" name="A_MEASURE"
+									class="form-control">
+							</div>
+							<div class="col-md-6" style="padding-bottom: 5px;">
+								<span>B등급%</span> <input type="text" name="B_GRADE"
+									class="form-control">
+							</div>
+							<div class="col-md-6" style="padding-bottom: 5px;">
+								<span>B등급 조치</span> <input type="text" name="B_MEASURE"
+									class="form-control">
+							</div>
+							<div class="col-md-6" style="padding-bottom: 5px;">
+								<span>D등급%</span> <input type="text" name="D_GRADE"
+									class="form-control" style="margin-bottom: 10px;">
+							</div>
+							<div class="col-md-6" style="padding-bottom: 5px;">
+								<span>D등급 조치</span> <input type="text" name="D_MEASURE"
+									class="form-control" style="margin-bottom: 10px;">
+							</div>
+
 						</div>
-						<div class="col-md-6" style="padding-bottom: 5px;">
-							<span>A등급%</span> <label
-													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">100</label>
-						</div>
-						<div class="col-md-6" style="padding-bottom: 5px;">
-							<span>A등급 조치</span> <label
-													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">차년도 달성값 이상 유지</label>
-						</div>
-						<div class="col-md-6" style="padding-bottom: 5px;">
-							<span>B등급%</span><label
-													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">70</label>
-						</div>
-						<div class="col-md-6" style="padding-bottom: 5px;">
-							<span>B등급 조치</span> <label
-													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">문제점/개선사항 마련</label>
-						</div>
-						<div class="col-md-6" style="padding-bottom: 5px;">
-							<span>D등급%</span><label
-													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">70</label>
-						</div>
-						<div class="col-md-6" style="padding-bottom: 5px;">
-							<span>D등급 조치</span> <label
-													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">목표 값 및 문제/개성사항</label>
-						</div>
-						<div class="col-md-12" style="padding-bottom: 5px;">
-							<hr>
-							<span>변경 등급기준</span>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary">등급기준 변경</button>
+							<button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
 						</div>
 
-						<div class="col-md-6" style="padding-bottom: 5px;">
-							<span>A등급%</span> <input type="text" name="INDICATORS_NAME"
-								class="form-control">
-						</div>
-						<div class="col-md-6" style="padding-bottom: 5px;">
-							<span>A등급 조치</span> <input type="text" name="INDICATORS_NAME"
-								class="form-control">
-						</div>
-						<div class="col-md-6" style="padding-bottom: 5px;">
-							<span>B등급%</span> <input type="text" name="INDICATORS_NAME"
-								class="form-control">
-						</div>
-						<div class="col-md-6" style="padding-bottom: 5px;">
-							<span>B등급 조치</span> <input type="text" name="INDICATORS_NAME"
-								class="form-control">
-						</div>
-						<div class="col-md-6" style="padding-bottom: 5px;">
-							<span>D등급%</span> <input type="text" name="INDICATORS_NAME"
-								class="form-control">
-						</div>
-						<div class="col-md-6" style="padding-bottom: 5px;">
-							<span>D등급 조치</span> <input type="text" name="INDICATORS_NAME"
-								class="form-control">
-						</div>
 					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary">등급기준 변경</button>
-						<button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
-					</div>
-				</div>
+				</form>
 				<!-- /.modal-content -->
 			</div>
 			<!-- /.modal-dialog -->

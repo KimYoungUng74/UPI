@@ -17,7 +17,8 @@ EVAL_STANDARD - 평가기준 		VARCHAR2(50 BYTE) 지표정의서 예에 있는 �
 DIVISION_NAME - 관리부서 명		VARCHAR2(20 BYTE) DEPT보다 DIV가 더 큰 개념(둘다 회사에서 부서라고 씀) 
 FORMULA - 산출 식			VARCHAR2(200 BYTE) 길이가 길 수 있어 크게 잡음
 IS_CORE - 핵심 여부			NUMBER(1) (1-True, 0-False)
-IS_USE - 사용여부				NUMBER(1) (0-사용, 1-미사용)	
+IS_USE - 사용여부				NUMBER(1) (0-사용, 1-미사용)
+LOG_NUM	
 -----------------------------------------------------------------------------------------
 REPORT_TB (보고서 테이블)
 
@@ -35,7 +36,9 @@ GRADE_NUM - 등급번호 PK			NUMBER(10)
 A_GRADE	- A등급 				NUMBER(3) <- 최대 999%
 B_GRADE	- B등급 				NUMBER(3)
 D_GRADE	- D등급 				NUMBER(3)
-MEASURE - 등급별 조치			VARCHAR2(100 BYTE)
+A_MEASURE - 등급별 조치			VARCHAR2(50 BYTE)
+B_MEASURE 				VARCHAR2(50 BYTE)
+D_MEASURE 				VARCHAR2(50 BYTE)
 RECORD_DATE - 기준일			DATE
 
 -----------------------------------------------------------------------------------------

@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import kr.co.upi.DTO.GradeDTO;
 import kr.co.upi.DTO.IndicatorsDTO;
 import kr.co.upi.DTO.RecordDTO;
 
@@ -20,5 +21,11 @@ public class IndicatorsDAO {
 	
 	public List<IndicatorsDTO> selectKategorie(IndicatorsDTO dto) {
 		return mybatis.selectList("IndicatorsMapper.IndicatorsListKategorie",dto);
+	}
+
+	// 평가 등급 기준 
+	public GradeDTO selectGrade(GradeDTO gradeDto) {
+		// TODO Auto-generated method stub
+		return mybatis.selectOne("IndicatorsMapper.NowGradeSelect",gradeDto);
 	}
 }

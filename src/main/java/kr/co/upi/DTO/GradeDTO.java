@@ -6,13 +6,14 @@ public class GradeDTO {
 	
 	private int GRADE_NUM;		// 등급 번호 PK
     private int A_GRADE;		// A등급 퍼센트
-    private int B_GRADE;		// B등급 퍼센트
+    private int B_GRADE;		// B등급 퍼센트 
     private int D_GRADE;		// D등급 퍼센트
     private String A_MEASURE; 	// A등급 조치
     private String B_MEASURE; 	// B등급 조치
     private String D_MEASURE; 	// D등급 조치
     private Date RECORD_DATE;		// 기준일
     private int LOG_NUM;		// 로그 번호 FK
+    
 	public int getGRADE_NUM() {
 		return GRADE_NUM;
 	}
