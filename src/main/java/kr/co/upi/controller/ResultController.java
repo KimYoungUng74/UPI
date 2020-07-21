@@ -74,7 +74,7 @@ public class ResultController {
 	public ModelAndView resultGrid(Locale locale, Model model) {
 		
 		
-		String YEAR = Integer.toString(cal.get(Calendar.YEAR)-1); // 현재 년도 계산
+		String YEAR = Integer.toString(cal.get(Calendar.YEAR)); // 현재 년도 계산
 		
 		List<RecordDTO> dto = resultSer.selectResultListAll(YEAR);
 				
