@@ -8,6 +8,8 @@
 <!-- css링크들 임포트 -->
 <c:import url="../import/csslink.jsp" charEncoding="UTF-8">
 </c:import>
+
+
 </head>
 
 <body>
@@ -255,7 +257,7 @@
 												<span>목표 값</span>
 											</div>
 											<div class="col-md-12" style="padding-bottom: 10px;">
-												<input type="text" value="100" name="TARGET_VAL">
+												<input type="text" class="form-control"  value="100" name="TARGET_VAL">
 											</div>
 										</div>
 									</div>
@@ -297,17 +299,17 @@
 											</div>
 											<div class="col-md-5" style="padding-bottom: 10px;">
 												<input type="text" class="form-control" readonly="readonly"
-													name="ELEMENTS" value="">
+													id="ELEMENTS" name="ELEMENTS" value="">
 											</div>
 											<div class="col-md-4" style="padding-bottom: 10px;">
 												<input type="text" class="form-control" id="input_ele">
 											</div>
 											<div class="col-md-3" style="padding-bottom: 10px;">
-												<button onclick="location.href='indicators_write.do'"
+												<button
 													class="btn btn-primary waves-effect waves-light"
 													type="button" style="float: left;" id="regEleBtn">등록</button>
 
-												<button onclick="location.href='indicators_write.do'"
+												<button
 													class="btn btn-primary waves-effect waves-light"
 													type="button" style="float: left; margin-left: 5px;"
 													id="delEleBtn">삭제</button>
@@ -468,17 +470,7 @@
 								style="height: 63px;">0</button>
 						</div>
 						<div class="col-md-12" style="padding-bottom: 10px; width: 100%">
-							<div class="row">
-								<div class="col-md-12"
-									style="padding-bottom: 15px; text-align: center;">
-									<span>산출식 요소 </span>
-								</div>
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">취업자</button>
-								</div>
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">취업대상자</button>
-								</div>
+							<div class="row FORMULA_Dialog">
 							</div>
 						</div>
 
@@ -498,5 +490,75 @@
 </body>
 <c:import url="../import/javascript.jsp" charEncoding="UTF-8">
 </c:import>
+<script type="text/javascript">
+	$(function() {
+		$('#regEleBtn').click(
+				function() {
+					if ($('#ELEMENTS').val() == ""
+							&& !($('#input_ele').val() == "")) {
+						$('#ELEMENTS').val($('#input_ele').val());
+						$('#input_ele').val("");
+					} else {
 
+						var oldMySkill = $('#ELEMENTS').val();
+						var newMySkill = oldMySkill.split(',');
+						for ( var i in newMySkill) {
+							if ($('#input_ele').val() == newMySkill[i]) {
+								alert("이미 등록된 요소입니다.");
+								return;
+							}
+						}
+						$('#ELEMENTS').val(
+								$('#ELEMENTS').val() + ","
+										+ $('#input_ele').val());
+						$('#input_ele').val("");
+					}
+				});
+		$('#delEleBtn').click(
+				function() {
+					if ($('#ELEMENTS').val() == "") {
+						alert("제거할 요소가 없습니다.");
+					} else {
+						var oldELEMENTS = $('#ELEMENTS').val();
+						var newELEMENTS = oldELEMENTS.split(',');
+						$('#ELEMENTS').val("");
+						for ( var i in newELEMENTS) {
+							if ($('#input_ele').val() == newELEMENTS[i]) {
+								continue;
+							} else {
+								if ($('#ELEMENTS').val() == "") {
+									$('#ELEMENTS').val(newELEMENTS[i]);
+								} else {
+									$('#ELEMENTS').val(
+											$('#ELEMENTS').val() + ","
+													+ newELEMENTS[i]);
+								}
+
+							}
+						}
+						$('#input_ele').val("");
+					}
+				});
+		$('#formulaReg').click(function() {
+			var str = "<div class=\"col-md-12\"style=\"padding-bottom: 15px; text-align: center;\"><span>산출식 요소 </span></div>";
+			$(".FORMULA_Dialog").html(str);
+			str="";
+			var ELEMENTS = $('#ELEMENTS').val();
+			if(ELEMENTS != "") {
+				var ELEMENTS_List = ELEMENTS.split(',');
+				
+				for ( var i in ELEMENTS_List) {
+					str += "<div class=\"col-md-4\" style=\"padding-bottom: 10px; width: 100%\"><button type=\"button\" class=\"btn btn-block btn-primary\" value=\"";
+					str += ELEMENTS_List[i];
+					str +="\">"
+					str += ELEMENTS_List[i];
+					str += "</button></div>";
+					
+				}
+			}
+			
+			$(".FORMULA_Dialog").append(str);
+		});
+	});
+</script>
 </html>

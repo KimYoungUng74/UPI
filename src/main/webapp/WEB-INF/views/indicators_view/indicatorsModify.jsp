@@ -255,7 +255,7 @@
 												<span>목표 값</span>
 											</div>
 											<div class="col-md-12" style="padding-bottom: 10px;">
-												<input type="text" value="100" name="TARGET_VAL">
+												<input type="text" class="form-control" value="100" name="TARGET_VAL">
 											</div>
 										</div>
 									</div>
