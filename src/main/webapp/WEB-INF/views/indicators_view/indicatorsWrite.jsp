@@ -257,7 +257,8 @@
 												<span>목표 값</span>
 											</div>
 											<div class="col-md-12" style="padding-bottom: 10px;">
-												<input type="text" class="form-control"  value="100" name="TARGET_VAL">
+												<input type="text" class="form-control" value="100"
+													name="TARGET_VAL">
 											</div>
 										</div>
 									</div>
@@ -305,12 +306,10 @@
 												<input type="text" class="form-control" id="input_ele">
 											</div>
 											<div class="col-md-3" style="padding-bottom: 10px;">
-												<button
-													class="btn btn-primary waves-effect waves-light"
+												<button class="btn btn-primary waves-effect waves-light"
 													type="button" style="float: left;" id="regEleBtn">등록</button>
 
-												<button
-													class="btn btn-primary waves-effect waves-light"
+												<button class="btn btn-primary waves-effect waves-light"
 													type="button" style="float: left; margin-left: 5px;"
 													id="delEleBtn">삭제</button>
 											</div>
@@ -323,7 +322,7 @@
 												<span>산출식 </span>
 											</div>
 											<div class="col-md-9" style="padding-bottom: 10px;">
-												<input type="text" class="form-control" readonly="readonly"
+												<input type="text" class="form-control" readonly="readonly" id="FORMULA_input"
 													name="FORMULA" value="">
 											</div>
 											<div class="col-md-2" style="padding-bottom: 10px;">
@@ -406,8 +405,8 @@
 						<span style="float: center;">산출식</span>
 					</p>
 					<p>
-						<input type="text" class="form-control" readonly="readonly"
-							value="">
+						<input type="text" id="FORMULA_INPUT" class="form-control"
+							readonly="readonly" value="">
 					</p>
 					<hr>
 
@@ -415,70 +414,84 @@
 
 
 						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary">(</button>
+							<button type="button" class="btn btn-block btn-primary"
+							onclick="FORMULA_BTN('(');"	name="FORMULA_BTN" value="(">(</button>
 						</div>
 						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary">)</button>
+							<button type="button" class="btn btn-block btn-primary"
+							onclick="FORMULA_BTN(')');"	name="FORMULA_BTN" value=")">)</button>
 						</div>
 						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary">+</button>
+							<button type="button" class="btn btn-block btn-primary"
+							onclick="FORMULA_BTN('+');"	name="FORMULA_BTN" value="+">+</button>
 						</div>
 						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary">-</button>
+							<button type="button" class="btn btn-block btn-primary"
+							onclick="FORMULA_BTN('-');"	name="FORMULA_BTN" value="-">-</button>
 						</div>
 						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary">*</button>
+							<button type="button" class="btn btn-block btn-primary"
+							onclick="FORMULA_BTN('*');"	name="FORMULA_BTN" value="*">*</button>
 						</div>
 						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary">/</button>
+							<button type="button" class="btn btn-block btn-primary"
+							onclick="FORMULA_BTN('/');"	name="FORMULA_BTN" value="/">/</button>
 						</div>
 						<div class="col-md-8" style="padding-bottom: 10px; width: 100%">
 							<div class="row">
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">1</button>
+									<button type="button" class="btn btn-block btn-primary"
+									onclick="FORMULA_BTN('1');" value="1">1</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">2</button>
+									<button type="button" class="btn btn-block btn-primary"
+									onclick="FORMULA_BTN('2');"	name="FORMULA_BTN" value="2">2</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">3</button>
+									<button type="button" class="btn btn-block btn-primary"
+									onclick="FORMULA_BTN('3');"	name="FORMULA_BTN" value="3">3</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">4</button>
+									<button type="button" class="btn btn-block btn-primary"
+									onclick="FORMULA_BTN('4');"	name="FORMULA_BTN" value="4">4</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">5</button>
+									<button type="button" class="btn btn-block btn-primary"
+									onclick="FORMULA_BTN('5');"	name="FORMULA_BTN" value="5">5</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">6</button>
+									<button type="button" class="btn btn-block btn-primary"
+									onclick="FORMULA_BTN('6');"	name="FORMULA_BTN" value="6">6</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">7</button>
+									<button type="button" class="btn btn-block btn-primary"
+									onclick="FORMULA_BTN('7');"	name="FORMULA_BTN" value="7">7</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">8</button>
+									<button type="button" class="btn btn-block btn-primary"
+									onclick="FORMULA_BTN('8');"	name="FORMULA_BTN" value="8">8</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">9</button>
+									<button type="button" class="btn btn-block btn-primary"
+									onclick="FORMULA_BTN('9');"	name="FORMULA_BTN" value="9">9</button>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
 							<button type="button" class="btn btn-block btn-primary"
-								style="height: 63px;">←</button>
+								style="height: 63px;" onclick="FORMULA_DELET_BTN();" id="FORMULA_BACK_BTN">←</button>
 							<button type="button" class="btn btn-block btn-primary"
-								style="height: 63px;">0</button>
+							onclick="FORMULA_BTN('0');"	name="FORMULA_BTN" style="height: 63px;" value="0">0</button>
 						</div>
 						<div class="col-md-12" style="padding-bottom: 10px; width: 100%">
-							<div class="row FORMULA_Dialog">
-							</div>
+							<div class="row FORMULA_Dialog"></div>
 						</div>
 
 
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-primary">산출식 등록</button>
-						<button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
+						<button type="button" class="btn btn-primary" onclick="Reg_FORMULA();">산출식 등록</button>
+						<button id="Close_Formula" type="button" class="btn btn-light" data-dismiss="modal" >닫기</button>
 					</div>
 				</div>
 				<!-- /.modal-content -->
@@ -491,7 +504,34 @@
 <c:import url="../import/javascript.jsp" charEncoding="UTF-8">
 </c:import>
 <script type="text/javascript">
+	
+	/*요소 길이*/
+	var ELEMENT_LEN = 0;	
+	
+	/* 요소 버튼 클릭 */
+	function FORMULA_BTN(element_val) {
+		ELEMENT_LEN = Number(element_val.length);
+		$('#FORMULA_INPUT').val($('#FORMULA_INPUT').val() + element_val);
+	};
+	
+	/* <- 버튼 클릭 */
+	function FORMULA_DELET_BTN() {
+		TEMP = $('#FORMULA_INPUT').val();
+		TEMP = TEMP.substr(0,Number(TEMP.length)-ELEMENT_LEN);
+		ELEMENT_LEN=1;
+		$('#FORMULA_INPUT').val(TEMP);
+	};
+	
+	/* 산술식 등록 버튼 클릭 */
+	function Reg_FORMULA() {
+		$('#FORMULA_input').val($('#FORMULA_INPUT').val().trim());
+		$('#FORMULA_INPUT').val('');
+		
+		$('#Close_Formula').click();
+	};
+	
 	$(function() {
+		/* 요소 추가 버튼 클릭 */
 		$('#regEleBtn').click(
 				function() {
 					if ($('#ELEMENTS').val() == ""
@@ -514,6 +554,8 @@
 						$('#input_ele').val("");
 					}
 				});
+
+		/* 요소 삭제 버튼 클릭 */
 		$('#delEleBtn').click(
 				function() {
 					if ($('#ELEMENTS').val() == "") {
@@ -539,26 +581,34 @@
 						$('#input_ele').val("");
 					}
 				});
-		$('#formulaReg').click(function() {
-			var str = "<div class=\"col-md-12\"style=\"padding-bottom: 15px; text-align: center;\"><span>산출식 요소 </span></div>";
-			$(".FORMULA_Dialog").html(str);
-			str="";
-			var ELEMENTS = $('#ELEMENTS').val();
-			if(ELEMENTS != "") {
-				var ELEMENTS_List = ELEMENTS.split(',');
-				
-				for ( var i in ELEMENTS_List) {
-					str += "<div class=\"col-md-4\" style=\"padding-bottom: 10px; width: 100%\"><button type=\"button\" class=\"btn btn-block btn-primary\" value=\"";
-					str += ELEMENTS_List[i];
-					str +="\">"
-					str += ELEMENTS_List[i];
-					str += "</button></div>";
-					
-				}
-			}
-			
-			$(".FORMULA_Dialog").append(str);
-		});
+
+		/* 산출식 등록 버튼 클릭 */
+		$('#formulaReg')
+				.click(
+						function() {
+							var str = "<div class=\"col-md-12\"style=\"padding-bottom: 15px; text-align: center;\"><span>산출식 요소 </span></div>";
+							$(".FORMULA_Dialog").html(str);
+							str = "";
+							var ELEMENTS = $('#ELEMENTS').val();
+							if (ELEMENTS != "") {
+								var ELEMENTS_List = ELEMENTS.split(',');
+
+								for ( var i in ELEMENTS_List) {
+									str += "<div class=\"col-md-4\" style=\"padding-bottom: 10px; width: 100%\"><button type=\"button\" class=\"btn btn-block btn-primary\" onclick=\"FORMULA_BTN(\'"
+									str += ELEMENTS_List[i];
+									str += "\');\" value=\"";
+									str += ELEMENTS_List[i];
+									str +="\">"
+									str += ELEMENTS_List[i];
+									str += "</button></div>";
+
+								}
+							}
+
+							$(".FORMULA_Dialog").append(str);
+						});
 	});
+
+	
 </script>
 </html>

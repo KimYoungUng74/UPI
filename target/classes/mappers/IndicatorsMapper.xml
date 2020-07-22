@@ -112,7 +112,6 @@
 
 	<!-- 현재 등급기준 변경 -->
 	<insert id="GradeModify" parameterType="GradeDTO">
-
 		INSERT INTO GRADE_TB(GRADE_NUM,
 		A_GRADE,
 		B_GRADE,
