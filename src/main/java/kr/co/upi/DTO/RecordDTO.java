@@ -13,6 +13,7 @@ public class RecordDTO {
 	private int IS_LINC;
 	private int IS_TYPE3;
 	private String TARGET_VAL;
+    private String ELEMENT_VAL;		// 현재 값
 	private String PRESENT_VAL;
 	private String GRADE;
 	private String ACHIEVE_VAL;
@@ -98,14 +99,24 @@ public class RecordDTO {
 		RECORD_DATE = rECORD_DATE;
 	}
 	
+	
+	public String getELEMENT_VAL() {
+		return ELEMENT_VAL;
+	}
+	public void setELEMENT_VAL(String eLEMENT_VAL) {
+		ELEMENT_VAL = eLEMENT_VAL;
+	}
 	@Override
 	public String toString() {
 		return "RecordDTO [RECORD_NUM=" + RECORD_NUM + ", INDICATORS_NUM=" + INDICATORS_NUM + ", INDICATORS_NAME="
 				+ INDICATORS_NAME + ", IS_BEST=" + IS_BEST + ", IS_AGENCY=" + IS_AGENCY + ", IS_AHA=" + IS_AHA
-				+ ", IS_LINC=" + IS_LINC + ", IS_TYPE3=" + IS_TYPE3 + ", TARGET_VAL=" + TARGET_VAL + ", PRESENT_VAL="
-				+ PRESENT_VAL + ", GRADE=" + GRADE + ", ACHIEVE_VAL=" + ACHIEVE_VAL + ", RECORD_DATE=" + RECORD_DATE
-				+ "]";
+				+ ", IS_LINC=" + IS_LINC + ", IS_TYPE3=" + IS_TYPE3 + ", TARGET_VAL=" + TARGET_VAL + ", ELEMENT_VAL="
+				+ ELEMENT_VAL + ", PRESENT_VAL=" + PRESENT_VAL + ", GRADE=" + GRADE + ", ACHIEVE_VAL=" + ACHIEVE_VAL
+				+ ", RECORD_DATE=" + RECORD_DATE + "]";
 	}
+	
+	
+	
 	
 	
 	
