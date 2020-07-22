@@ -33,7 +33,10 @@ public class ResultDAO {
 		return mybatis.selectList("ResultMapper.ResultYearList",YEAR);
 	}
 	
-	
+	// 특정 지표의 최신값 가져오기
+	public List<RecordDTO> selectListIncd(int INDICATORS_NUM) {
 
+		return mybatis.selectList("ResultMapper.ResultListIncd",INDICATORS_NUM);
+	}
 
 }

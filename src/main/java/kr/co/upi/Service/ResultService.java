@@ -23,5 +23,10 @@ public class ResultService {
 
 		return dao.selectYearList(YEAR);
 	}
+	
+	// 특정 지표의 최신값 가져오기
+	public List<RecordDTO> selectListIncd(int INDICATORS_NUM) {
 
+		return dao.selectListIncd(INDICATORS_NUM);
+	}
 }

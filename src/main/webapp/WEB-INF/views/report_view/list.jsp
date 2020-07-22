@@ -261,19 +261,19 @@
                                     <table class="table no-wrap v-middle mb-0">
                                         <thead>
                                             <tr class="border-0">
-                                            	<th class="font-14 font-weight-medium text-muted px-2">관리번호</th>
-                                                <th class="font-14 font-weight-medium text-muted px-2">성과지표명</th>
-                                                <th class="font-14 font-weight-medium text-muted px-2">관련부서</th>
-                                                <th class="font-14 font-weight-medium text-muted px-2">활용사업</th>
+                                            	<th class="font-14 font-weight-medium  px-2">관리번호</th>
+                                                <th class="font-14 font-weight-medium  px-2">성과지표명</th>
+                                                <th class="font-14 font-weight-medium  px-2">관련부서</th>
+                                                <th class="font-14 font-weight-medium  px-2">활용사업</th>
                                                 
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <c:forEach items="${list}" var="list">
                                             <tr onclick="location.href='report_view.do?INDICATORS_NUM=${list.INDICATORS_NUM}'">
-                                            	<td class="border-top-0 text-muted px-2 py-4 font-14">${list.INDICATORS_NUM}</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">${list.INDICATORS_NAME}</td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">${list.DIVISION_NAME}</td>
+                                            	<td class="border-top-0  px-2 py-4 font-14">${list.INDICATORS_NUM}</td>
+                                                <td class="border-top-0  px-2 py-4 font-14">${list.INDICATORS_NAME}</td>
+                                                <td class="border-top-0  px-2 py-4 font-14">${list.DIVISION_NAME}</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
                                                     	<c:if test="${list.IS_BEST == 1}">

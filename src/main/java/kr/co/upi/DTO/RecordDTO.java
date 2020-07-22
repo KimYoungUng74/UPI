@@ -4,23 +4,23 @@ import java.sql.Date;
 
 public class RecordDTO {
 
-	private int RECORD_NUM;
-	private String INDICATORS_NUM;
-	private String INDICATORS_NAME;
-	private int IS_BEST;
-	private int IS_AGENCY;
-	private int IS_AHA;
-	private int IS_LINC;
-	private int IS_TYPE3;
-	private String TARGET_VAL;
-    private String ELEMENT_VAL;		// 현재 값
-	private String PRESENT_VAL;
-	private String GRADE;
-	private String ACHIEVE_VAL;
-    private String USER_ID;		// 유저 아이디
-    private String USER_NAME;	// 유저 이름
-    private String ACTION_CODE;	// 행위 코드
-	private Date RECORD_DATE;
+	private int RECORD_NUM;			//기록 번호
+	private int INDICATORS_NUM;		//관리번호(지표번호)
+	private String INDICATORS_NAME;	//성과지표명
+	private int IS_BEST;			//BEST
+	private int IS_AGENCY;			//기관평가 인증
+	private int IS_AHA;				//혁신지원AHA
+	private int IS_LINC;			//사회맞춤형 LINC+
+	private int IS_TYPE3;			//3유형
+	private String TARGET_VAL;		//목표 값
+    private String ELEMENT_VAL;		//요소 값
+	private String PRESENT_VAL;		//현재 값
+	private String GRADE;			//등급
+	private String ACHIEVE_VAL;		//달성도
+    private String USER_ID;			//유저 아이디
+    private String USER_NAME;		//유저 이름
+    private String ACTION_CODE;		//행위 코드
+	private Date RECORD_DATE;		//기준일
 	
 	public int getRECORD_NUM() {
 		return RECORD_NUM;
@@ -28,10 +28,10 @@ public class RecordDTO {
 	public void setRECORD_NUM(int rECORD_NUM) {
 		RECORD_NUM = rECORD_NUM;
 	}
-	public String getINDICATORS_NUM() {
+	public int getINDICATORS_NUM() {
 		return INDICATORS_NUM;
 	}
-	public void setINDICATORS_NUM(String iNDICATORS_NUM) {
+	public void setINDICATORS_NUM(int iNDICATORS_NUM) {
 		INDICATORS_NUM = iNDICATORS_NUM;
 	}
 	public String getINDICATORS_NAME() {

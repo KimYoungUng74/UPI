@@ -185,7 +185,7 @@
 									</tr>
 									<tr>
 										<td class="border-top-0  px-8 py-4 font-14 table-active">기준일</td>
-										<td class="border-top-0  px-8 py-4 font-14">${Report1.getRECORD_DATE().getYear()+1900}년 ${Report1.getRECORD_DATE().getMonth()+1}월</td>
+										<td class="border-top-0  px-8 py-4 font-14">${Record_1.getRECORD_DATE().getYear()+1900}년 ${Record_1.getRECORD_DATE().getMonth()+1}월</td>
 										<td class="border-top-0  px-8 py-4 font-14 table-active">평가방법</td>
 										<td class="border-top-0  px-8 py-4 font-14" colspan="3">${Indicators.getEVAL_METHOD()}</td>
 									</tr>
@@ -222,25 +222,25 @@
 												</tr>
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">현재값</td>
-													<td class="border-top-0  px-4 py-2 font-14" colspan="3">${Report1.getPRESENT_VAL()}</td>
+													<td class="border-top-0  px-4 py-2 font-14" colspan="3">${Record_1.getPRESENT_VAL()}</td>
 												</tr>
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">평가년도</td>
-													<td class="border-top-0  px-4 py-2 font-14">${Report3.getRECORD_DATE().getYear()+1900}년도</td>
-													<td class="border-top-0  px-4 py-2 font-14">${Report2.getRECORD_DATE().getYear()+1900}년도</td>
-													<td class="border-top-0  px-4 py-2 font-14">${Report1.getRECORD_DATE().getYear()+1900}년도</td>
+													<td class="border-top-0  px-4 py-2 font-14">${Record_3.getRECORD_DATE().getYear()+1900}년도</td>
+													<td class="border-top-0  px-4 py-2 font-14">${Record_2.getRECORD_DATE().getYear()+1900}년도</td>
+													<td class="border-top-0  px-4 py-2 font-14">${Record_1.getRECORD_DATE().getYear()+1900}년도</td>
 												</tr>
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">등급</td>
-													<td class="border-top-0  px-4 py-2 font-14">?</td>
-													<td class="border-top-0  px-4 py-2 font-14">?</td>
-													<td class="border-top-0  px-4 py-2 font-14">?</td>
+													<td class="border-top-0  px-4 py-2 font-14">${Record_3.getGRADE()}</td>
+													<td class="border-top-0  px-4 py-2 font-14">${Record_2.getGRADE()}</td>
+													<td class="border-top-0  px-4 py-2 font-14">${Record_1.getGRADE()}</td>
 												</tr>
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">달성도</td>
-													<td class="border-top-0  px-4 py-2 font-14">${Math.round(Report3.getPRESENT_VAL()/Indicators.getTARGET_VAL()*1000)/10}</td>
-													<td class="border-top-0  px-4 py-2 font-14">${Math.round(Report2.getPRESENT_VAL()/Indicators.getTARGET_VAL()*1000)/10}</td>
-													<td class="border-top-0  px-4 py-2 font-14">${Math.round(Report1.getPRESENT_VAL()/Indicators.getTARGET_VAL()*1000)/10}</td>
+													<td class="border-top-0  px-4 py-2 font-14">${Record_3.getACHIEVE_VAL()}</td>
+													<td class="border-top-0  px-4 py-2 font-14">${Record_2.getACHIEVE_VAL()}</td>
+													<td class="border-top-0  px-4 py-2 font-14">${Record_1.getACHIEVE_VAL()}</td>
 												</tr>
 											</table>
 										</td>
@@ -326,7 +326,7 @@
 		},
 
 		xAxis : {
-			categories : [ '2018', '2019', '2020' ],
+			categories : ['${Record_3.getRECORD_DATE().getYear()+1900}', '${Record_2.getRECORD_DATE().getYear()+1900}', '${Record_1.getRECORD_DATE().getYear()+1900}' ],
 			labels : {
 				x : -10
 			}
@@ -341,10 +341,10 @@
 
 		series : [ {
 			name : '목표값',
-			data : [ 100, 95, 89 ]
+			data : [ ${Indicators.getTARGET_VAL()}, ${Indicators.getTARGET_VAL()}, ${Indicators.getTARGET_VAL()} ]
 		}, {
 			name : '현재값',
-			data : [ 120, 90, 88 ]
+			data : [ ${Record_3.getPRESENT_VAL()+0}, ${Record_2.getPRESENT_VAL()+0}, ${Record_1.getPRESENT_VAL()+0} ]
 		} ]
 	});
 	Highcharts.chart('container2', {
@@ -364,7 +364,7 @@
 		},
 
 		xAxis : {
-			categories : [ '2018', '2019', '2020' ],
+			categories : [ '${Record_3.getRECORD_DATE().getYear()+1900}', '${Record_2.getRECORD_DATE().getYear()+1900}', '${Record_1.getRECORD_DATE().getYear()+1900}' ],
 			labels : {
 				x : -10
 			}
@@ -379,7 +379,7 @@
 
 		series : [ {
 			name : '달성도',
-			data : [ 120, 90, 92 ]
+			data : [ ${Record_3.getACHIEVE_VAL()}, ${Record_2.getACHIEVE_VAL()}, ${Record_1.getACHIEVE_VAL()} ]
 		} ]
 	});
 

@@ -34,6 +34,8 @@ public class ReportController {
 	@Autowired
 	IndicatorsService indcSer;
 	
+	@Autowired
+	ResultService resultSer;
 	
 	//보고서의 지표리스트 선택 페이지
 	@RequestMapping(value = "report_view_list.do")
@@ -56,6 +58,22 @@ public class ReportController {
 	public ModelAndView report_view(Locale locale, Model model, ModelAndView mav,IndicatorsDTO idto) {
 		// 지표 기본정보 
 		model.addAttribute("Indicators", indcSer.selectOne(idto));
+		
+		// 년도별 보고서
+		
+		List<RecordDTO> recordDTOs = resultSer.selectListIncd(idto.getINDICATORS_NUM());
+		int cnt = 0;
+		cnt += recordDTOs.size();
+		if(cnt > 0) {
+			model.addAttribute("Record_1", recordDTOs.get(0));
+		}
+		if(cnt > 1) {
+			model.addAttribute("Record_2", recordDTOs.get(1));
+		}
+		if(cnt > 2) {
+			model.addAttribute("Record_3", recordDTOs.get(2));
+		}
+		
 		
 		mav.setViewName("report_view/view");
 		return mav;
