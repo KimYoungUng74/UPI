@@ -7,7 +7,6 @@
 	<typeAliases>
 		<!-- <typeAlias type="com.spring.travel.dto.UserDTO" alias="UserDTO"></typeAlias> -->
 		<typeAlias type="kr.co.upi.DTO.IndicatorsDTO" alias="IndicatorsDTO"></typeAlias>
-		<typeAlias type="kr.co.upi.DTO.ReportDTO" alias="ReportDTO"></typeAlias>
 		<typeAlias type="kr.co.upi.DTO.GradeDTO" alias="GradeDTO"></typeAlias>
 		<typeAlias type="kr.co.upi.DTO.RecordDTO" alias="RecordDTO"></typeAlias>
 	</typeAliases>
