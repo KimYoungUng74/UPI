@@ -11,8 +11,11 @@ public class GradeDTO {
     private String A_MEASURE; 	// A등급 조치
     private String B_MEASURE; 	// B등급 조치
     private String D_MEASURE; 	// D등급 조치
+    private String USER_ID;		// 유저 아이디
+    private String USER_NAME;	// 유저 이름
+    private String ACTION_CODE;	// 행위 코드
     private Date RECORD_DATE;		// 기준일
-    private int LOG_NUM;		// 로그 번호 FK
+    
     
 	public int getGRADE_NUM() {
 		return GRADE_NUM;
@@ -62,18 +65,35 @@ public class GradeDTO {
 	public void setRECORD_DATE(Date rECORD_DATE) {
 		RECORD_DATE = rECORD_DATE;
 	}
-	public int getLOG_NUM() {
-		return LOG_NUM;
-	}
-	public void setLOG_NUM(int lOG_NUM) {
-		LOG_NUM = lOG_NUM;
-	}
+
 	
+	public String getUSER_ID() {
+		return USER_ID;
+	}
+	public void setUSER_ID(String uSER_ID) {
+		USER_ID = uSER_ID;
+	}
+	public String getUSER_NAME() {
+		return USER_NAME;
+	}
+	public void setUSER_NAME(String uSER_NAME) {
+		USER_NAME = uSER_NAME;
+	}
+	public String getACTION_CODE() {
+		return ACTION_CODE;
+	}
+	public void setACTION_CODE(String aCTION_CODE) {
+		ACTION_CODE = aCTION_CODE;
+	}
 	@Override
 	public String toString() {
 		return "GradeDTO [GRADE_NUM=" + GRADE_NUM + ", A_GRADE=" + A_GRADE + ", B_GRADE=" + B_GRADE + ", D_GRADE="
 				+ D_GRADE + ", A_MEASURE=" + A_MEASURE + ", B_MEASURE=" + B_MEASURE + ", D_MEASURE=" + D_MEASURE
-				+ ", RECORD_DATE=" + RECORD_DATE + ", LOG_NUM=" + LOG_NUM + "]";
+				+ ", USER_ID=" + USER_ID + ", USER_NAME=" + USER_NAME + ", ACTION_CODE=" + ACTION_CODE
+				+ ", RECORD_DATE=" + RECORD_DATE + "]";
 	}
+
+	
+	
     
 }

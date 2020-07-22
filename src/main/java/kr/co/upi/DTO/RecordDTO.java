@@ -17,6 +17,9 @@ public class RecordDTO {
 	private String PRESENT_VAL;
 	private String GRADE;
 	private String ACHIEVE_VAL;
+    private String USER_ID;		// 유저 아이디
+    private String USER_NAME;	// 유저 이름
+    private String ACTION_CODE;	// 행위 코드
 	private Date RECORD_DATE;
 	
 	public int getRECORD_NUM() {
@@ -105,6 +108,26 @@ public class RecordDTO {
 	}
 	public void setELEMENT_VAL(String eLEMENT_VAL) {
 		ELEMENT_VAL = eLEMENT_VAL;
+	}
+	
+	
+	public String getUSER_ID() {
+		return USER_ID;
+	}
+	public void setUSER_ID(String uSER_ID) {
+		USER_ID = uSER_ID;
+	}
+	public String getUSER_NAME() {
+		return USER_NAME;
+	}
+	public void setUSER_NAME(String uSER_NAME) {
+		USER_NAME = uSER_NAME;
+	}
+	public String getACTION_CODE() {
+		return ACTION_CODE;
+	}
+	public void setACTION_CODE(String aCTION_CODE) {
+		ACTION_CODE = aCTION_CODE;
 	}
 	@Override
 	public String toString() {
