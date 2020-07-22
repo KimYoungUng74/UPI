@@ -254,8 +254,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex align-items-center mb-4">
-                                    <h4 class="card-title">성과지표 정의서</h4>
-                                    
+                                    <h4 class="card-title">성과지표 정의서 목록</h4>
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table no-wrap v-middle mb-0">

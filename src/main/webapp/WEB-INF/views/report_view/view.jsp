@@ -218,11 +218,11 @@
 											<table class="table" border="1" style="color: black;">
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">목표값</td>
-													<td class="border-top-0  px-4 py-2 font-14" colspan="3">${Indicators.getTARGET_VAL()}</td>
+													<td class="border-top-0  px-4 py-2 font-14" colspan="3">${Record_1.getTARGET_VAL().split(":")[0]+0}</td>
 												</tr>
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">현재값</td>
-													<td class="border-top-0  px-4 py-2 font-14" colspan="3">${Record_1.getPRESENT_VAL()}</td>
+													<td class="border-top-0  px-4 py-2 font-14" colspan="3">${Record_1.getPRESENT_VAL().split(":")[0]+0}</td>
 												</tr>
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">평가년도</td>
@@ -341,10 +341,10 @@
 
 		series : [ {
 			name : '목표값',
-			data : [ ${Indicators.getTARGET_VAL()}, ${Indicators.getTARGET_VAL()}, ${Indicators.getTARGET_VAL()} ]
+			data : [ ${Record_3.getTARGET_VAL().split(":")[0]+0}, ${Record_2.getTARGET_VAL().split(":")[0]+0}, ${Record_1.getTARGET_VAL().split(":")[0]+0} ]
 		}, {
 			name : '현재값',
-			data : [ ${Record_3.getPRESENT_VAL()+0}, ${Record_2.getPRESENT_VAL()+0}, ${Record_1.getPRESENT_VAL()+0} ]
+			data : [ ${Record_3.getPRESENT_VAL().split(":")[0]+0}, ${Record_2.getPRESENT_VAL().split(":")[0]+0}, ${Record_1.getPRESENT_VAL().split(":")[0]+0} ]
 		} ]
 	});
 	Highcharts.chart('container2', {

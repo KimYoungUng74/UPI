@@ -62,16 +62,8 @@ public class ReportController {
 		// 년도별 보고서
 		
 		List<RecordDTO> recordDTOs = resultSer.selectListIncd(idto.getINDICATORS_NUM());
-		int cnt = 0;
-		cnt += recordDTOs.size();
-		if(cnt > 0) {
-			model.addAttribute("Record_1", recordDTOs.get(0));
-		}
-		if(cnt > 1) {
-			model.addAttribute("Record_2", recordDTOs.get(1));
-		}
-		if(cnt > 2) {
-			model.addAttribute("Record_3", recordDTOs.get(2));
+		for(int i=0; i<recordDTOs.size();i++) {
+			model.addAttribute("Record_"+(i+1), recordDTOs.get(i));
 		}
 		
 		
