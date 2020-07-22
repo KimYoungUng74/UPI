@@ -218,11 +218,11 @@
 											<table class="table" border="1" style="color: black;">
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">목표값</td>
-													<td class="border-top-0  px-4 py-2 font-14" colspan="3">${Record_1.getTARGET_VAL().split(":")[0]+0}</td>
+													<td class="border-top-0  px-4 py-2 font-14" colspan="3">${Record_1.getTARGET_VAL()}</td>
 												</tr>
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">현재값</td>
-													<td class="border-top-0  px-4 py-2 font-14" colspan="3">${Record_1.getPRESENT_VAL().split(":")[0]+0}</td>
+													<td class="border-top-0  px-4 py-2 font-14" colspan="3">${Record_1.getPRESENT_VAL()}</td>
 												</tr>
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">평가년도</td>
