@@ -73,6 +73,7 @@ public class IndicatorsController {
 		userDto = setUser(userDto, session);
 		if(indicatorsSer.modifyGrade(dto, userDto)!=1) {
 			mav.addObject("msg", "DB_ERROR");
+			System.out.println("뿌뿌 에러남");
 		};
 		
 		mav = setIndicatorsList(mav);

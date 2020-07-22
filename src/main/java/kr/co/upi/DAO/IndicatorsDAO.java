@@ -40,9 +40,11 @@ public class IndicatorsDAO {
 	// 평가 등급 수정
 	public int modifyGrade(GradeDTO dto, UserDTO userDto) {
 		try {
+			
 			dto.setUSER_ID(userDto.getUSER_ID());
 			dto.setUSER_NAME(userDto.getUSER_NAME());
 			dto.setACTION_CODE(2);
+			System.out.println(dto);
 			mybatis.insert("IndicatorsMapper.GradeModify",dto);
 		} catch(Exception e) {
 			return 0;

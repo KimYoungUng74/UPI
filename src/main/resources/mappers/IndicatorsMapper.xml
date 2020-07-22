@@ -78,8 +78,7 @@
 		USER_ID,
 		USER_NAME,
 		ACTION_CODE,
-		RECORD_DATE,
-		LOG_NUM)
+		RECORD_DATE)
 		VALUES (GRADE_NUM.nextval,
 		#{A_GRADE},
 		#{B_GRADE},
@@ -90,8 +89,7 @@
 		#{USER_ID},
 		#{USER_NAME},
 		#{ACTION_CODE},
-		sysdate,
-		LOG_NUM.nextval)
+		sysdate)
 	</insert>
 
 </mapper>
