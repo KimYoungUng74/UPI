@@ -18,5 +18,10 @@ public class ResultService {
 
 		return dao.selectResultListAll(YEAR);
 	}
+	
+	public List<RecordDTO> selectYearList(String YEAR) {
+
+		return dao.selectYearList(YEAR);
+	}
 
 }

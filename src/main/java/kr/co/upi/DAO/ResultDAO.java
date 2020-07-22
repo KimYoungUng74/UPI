@@ -26,6 +26,14 @@ public class ResultDAO {
 
 		return mybatis.selectList("ResultMapper.ResultGridList",YEAR);
 	}
+	
+
+	public List<RecordDTO> selectYearList(String YEAR) {
+
+		return mybatis.selectList("ResultMapper.ResultYearList",YEAR);
+	}
+	
+	
 
 
 }
