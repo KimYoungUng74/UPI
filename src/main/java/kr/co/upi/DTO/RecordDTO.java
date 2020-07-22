@@ -13,7 +13,7 @@ public class RecordDTO {
 	private int IS_LINC;
 	private int IS_TYPE3;
 	private String TARGET_VAL;
-	private String PRESSENT_VAL;
+	private String PRESENT_VAL;
 	private String GRADE;
 	private String ACHIEVE_VAL;
 	private Date RECORD_DATE;
@@ -72,11 +72,12 @@ public class RecordDTO {
 	public void setTARGET_VAL(String tARGET_VAL) {
 		TARGET_VAL = tARGET_VAL;
 	}
-	public String getPRESSENT_VAL() {
-		return PRESSENT_VAL;
+	
+	public String getPRESENT_VAL() {
+		return PRESENT_VAL;
 	}
-	public void setPRESSENT_VAL(String pRESSENT_VAL) {
-		PRESSENT_VAL = pRESSENT_VAL;
+	public void setPRESENT_VAL(String pRESENT_VAL) {
+		PRESENT_VAL = pRESENT_VAL;
 	}
 	public String getGRADE() {
 		return GRADE;
@@ -101,10 +102,11 @@ public class RecordDTO {
 	public String toString() {
 		return "RecordDTO [RECORD_NUM=" + RECORD_NUM + ", INDICATORS_NUM=" + INDICATORS_NUM + ", INDICATORS_NAME="
 				+ INDICATORS_NAME + ", IS_BEST=" + IS_BEST + ", IS_AGENCY=" + IS_AGENCY + ", IS_AHA=" + IS_AHA
-				+ ", IS_LINC=" + IS_LINC + ", IS_TYPE3=" + IS_TYPE3 + ", TARGET_VAL=" + TARGET_VAL + ", PRESSENT_VAL="
-				+ PRESSENT_VAL + ", GRADE=" + GRADE + ", ACHIEVE_VAL=" + ACHIEVE_VAL + ", RECORD_DATE=" + RECORD_DATE
+				+ ", IS_LINC=" + IS_LINC + ", IS_TYPE3=" + IS_TYPE3 + ", TARGET_VAL=" + TARGET_VAL + ", PRESENT_VAL="
+				+ PRESENT_VAL + ", GRADE=" + GRADE + ", ACHIEVE_VAL=" + ACHIEVE_VAL + ", RECORD_DATE=" + RECORD_DATE
 				+ "]";
 	}
+	
 	
 	
 	
