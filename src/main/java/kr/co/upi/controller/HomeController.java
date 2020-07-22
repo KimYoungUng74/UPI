@@ -20,35 +20,36 @@ import kr.co.upi.Service.TestService;
  */
 @Controller
 public class HomeController {
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
+
 	@Autowired
 	TestService testSer;
+
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	
+
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(Locale locale, Model model) {
-		
+
 		return "index";
 	}
-	
+
 	@RequestMapping(value = "index.do", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		
+
 		return "index";
 	}
-	
-		@RequestMapping(value = "test.do")
-		public ModelAndView test(Locale locale, Model model) {
-			
-			System.out.println(testSer.DBTest());
 
-			ModelAndView mav = new ModelAndView();
-			mav.setViewName("home");
-			return mav;
-		}
-	
+	@RequestMapping(value = "test.do")
+	public ModelAndView test(Locale locale, Model model) {
+
+		System.out.println(testSer.DBTest());
+
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("home");
+		return mav;
+	}
+
 }
