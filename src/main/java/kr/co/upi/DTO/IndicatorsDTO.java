@@ -1,8 +1,8 @@
 package kr.co.upi.DTO;
 
 public class IndicatorsDTO {
-	
-	private int INDICATORS_NUM;		// 관리번호 PK
+	private int CONTROL_NUM;		// 지표 번호 PK
+	private int INDICATORS_NUM;		// 관리번호
 	private String INDICATORS_NAME;	// 성과지표명
 	private int IS_BEST;			// 대학중장기 발전계획
 	private int IS_AGENCY;			// 기간평가 인증
@@ -18,8 +18,17 @@ public class IndicatorsDTO {
     private int TARGET_VAL;			// 목표 값
 	private int IS_CORE;			// 핵심 여부
 	private int IS_USE;				// 사용 여부
-	private int LOG_NUM;		// 로그 번호 FK
+	private String USER_ID;			// 유저 아이디
+	private String USER_NAME;		// 유저 이름
+	private int ACTION_CODE;		// 행위 코드
+	private java.sql.Date RECODE_DATE; // 기록 날짜
 	
+	public int getCONTROL_NUM() {
+		return CONTROL_NUM;
+	}
+	public void setCONTROL_NUM(int cONTROL_NUM) {
+		CONTROL_NUM = cONTROL_NUM;
+	}
 	public int getINDICATORS_NUM() {
 		return INDICATORS_NUM;
 	}
@@ -111,15 +120,6 @@ public class IndicatorsDTO {
 		IS_USE = iS_USE;
 	}
 	
-	
-	public int getLOG_NUM() {
-		return LOG_NUM;
-	}
-	public void setLOG_NUM(int lOG_NUM) {
-		LOG_NUM = lOG_NUM;
-	}
-	
-	
 	public int getTARGET_VAL() {
 		return TARGET_VAL;
 	}
@@ -127,16 +127,40 @@ public class IndicatorsDTO {
 		TARGET_VAL = tARGET_VAL;
 	}
 	
-	@Override
-	public String toString() {
-		return "IndicatorsDTO [INDICATORS_NUM=" + INDICATORS_NUM + ", INDICATORS_NAME=" + INDICATORS_NAME + ", IS_BEST="
-				+ IS_BEST + ", IS_AGENCY=" + IS_AGENCY + ", IS_AHA=" + IS_AHA + ", IS_LINC=" + IS_LINC + ", IS_TYPE3="
-				+ IS_TYPE3 + ", ELEMENTS=" + ELEMENTS + ", COL_METHOD=" + COL_METHOD + ", EVAL_METHOD=" + EVAL_METHOD
-				+ ", EVAL_STANDARD=" + EVAL_STANDARD + ", DIVISION_NAME=" + DIVISION_NAME + ", FORMULA=" + FORMULA
-				+ ", TARGET_VAL=" + TARGET_VAL + ", IS_CORE=" + IS_CORE + ", IS_USE=" + IS_USE + ", LOG_NUM=" + LOG_NUM
-				+ "]";
+	public String getUSER_ID() {
+		return USER_ID;
 	}
-	
+	public void setUSER_ID(String uSER_ID) {
+		USER_ID = uSER_ID;
+	}
+   	public String getUSER_NAME() {
+   		return USER_NAME;
+   	}
+   	public void setUSER_NAME(String uSER_NAME) {
+   		USER_NAME = uSER_NAME;
+   	}
+   	public int getACTION_CODE() {
+   		return ACTION_CODE;
+   	}
+   	public void setACTION_CODE(int aCTION_CODE) {
+   		ACTION_CODE = aCTION_CODE;
+   	}
+   	public java.sql.Date getRECODE_DATE() {
+   		return RECODE_DATE;
+   	}
+   	public void setRECODE_DATE(java.sql.Date rECODE_DATE) {
+   		RECODE_DATE = rECODE_DATE;
+   	}
+   	@Override
+   	public String toString() {
+   		return "IndicatorsDTO [CONTROL_NUM=" + CONTROL_NUM + ", INDICATORS_NUM=" + INDICATORS_NUM + ", INDICATORS_NAME="
+   				+ INDICATORS_NAME + ", IS_BEST=" + IS_BEST + ", IS_AGENCY=" + IS_AGENCY + ", IS_AHA=" + IS_AHA
+   				+ ", IS_LINC=" + IS_LINC + ", IS_TYPE3=" + IS_TYPE3 + ", ELEMENTS=" + ELEMENTS + ", COL_METHOD="
+				+ COL_METHOD + ", EVAL_METHOD=" + EVAL_METHOD + ", EVAL_STANDARD=" + EVAL_STANDARD + ", DIVISION_NAME="
+				+ DIVISION_NAME + ", FORMULA=" + FORMULA + ", TARGET_VAL=" + TARGET_VAL + ", IS_CORE=" + IS_CORE
+				+ ", IS_USE=" + IS_USE + ", USER_ID=" + USER_ID + ", USER_NAME=" + USER_NAME + ", ACTION_CODE="
+				+ ACTION_CODE + ", RECODE_DATE=" + RECODE_DATE + "]";
+	}
 	
 	
 	
