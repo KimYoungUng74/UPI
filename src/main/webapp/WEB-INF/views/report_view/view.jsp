@@ -238,9 +238,9 @@
 												</tr>
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">달성도</td>
-													<td class="border-top-0  px-4 py-2 font-14">${Record_3.getACHIEVE_VAL()}</td>
-													<td class="border-top-0  px-4 py-2 font-14">${Record_2.getACHIEVE_VAL()}</td>
-													<td class="border-top-0  px-4 py-2 font-14">${Record_1.getACHIEVE_VAL()}</td>
+													<td class="border-top-0  px-4 py-2 font-14">${Record_3.getACHIEVE_VAL()+0}</td>
+													<td class="border-top-0  px-4 py-2 font-14">${Record_2.getACHIEVE_VAL()+0}</td>
+													<td class="border-top-0  px-4 py-2 font-14">${Record_1.getACHIEVE_VAL()+0}</td>
 												</tr>
 											</table>
 										</td>
@@ -379,7 +379,7 @@
 
 		series : [ {
 			name : '달성도',
-			data : [ ${Record_3.getACHIEVE_VAL()}, ${Record_2.getACHIEVE_VAL()}, ${Record_1.getACHIEVE_VAL()} ]
+			data : [ ${Record_3.getACHIEVE_VAL()+0}, ${Record_2.getACHIEVE_VAL()+0}, ${Record_1.getACHIEVE_VAL()+0} ]
 		} ]
 	});
 
