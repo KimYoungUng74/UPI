@@ -71,7 +71,7 @@ public class IndicatorsController {
 		ModelAndView mav = new ModelAndView();
 		UserDTO userDto = new UserDTO();
 		userDto = setUser(userDto, session);
-		if(indicatorsSer.modifyGrade(dto)!=1) {
+		if(indicatorsSer.modifyGrade(dto, userDto)!=1) {
 			mav.addObject("msg", "DB_ERROR");
 		};
 		
@@ -81,9 +81,13 @@ public class IndicatorsController {
 	
 	//유저 정보 저장
 	private UserDTO setUser(UserDTO userDto, HttpSession session) {
-		userDto.setUSER_ID(session.getAttribute("userId").toString());
-		userDto.setUSER_ID(session.getAttribute("userName").toString());
-		return null;
+		/*
+		 * userDto.setUSER_ID(session.getAttribute("userId").toString());
+		 * userDto.setUSER_ID(session.getAttribute("userName").toString());
+		 */
+		userDto.setUSER_ID("9703007");
+		userDto.setUSER_NAME("관리자");
+		return userDto;
 	}
 
 	// 리스트로 가기

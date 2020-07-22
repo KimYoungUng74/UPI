@@ -10,6 +10,7 @@ import kr.co.upi.DAO.ResultDAO;
 import kr.co.upi.DTO.GradeDTO;
 import kr.co.upi.DTO.IndicatorsDTO;
 import kr.co.upi.DTO.RecordDTO;
+import kr.co.upi.DTO.UserDTO;
 
 @Service("IIndicatiorsService")
 public class IndicatorsService {
@@ -37,9 +38,8 @@ public class IndicatorsService {
 	}
 
 	// 평가 등급 수정
-	public int modifyGrade(GradeDTO dto) {
-		// TODO Auto-generated method stub
-		return dao.modifyGrade(dto);
+	public int modifyGrade(GradeDTO dto, UserDTO userDto) {
+		return dao.modifyGrade(dto, userDto);
 	}
 
 }

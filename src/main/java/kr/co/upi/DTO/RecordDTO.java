@@ -129,6 +129,7 @@ public class RecordDTO {
 	public void setACTION_CODE(String aCTION_CODE) {
 		ACTION_CODE = aCTION_CODE;
 	}
+	
 	@Override
 	public String toString() {
 		return "RecordDTO [RECORD_NUM=" + RECORD_NUM + ", INDICATORS_NUM=" + INDICATORS_NUM + ", INDICATORS_NAME="
@@ -137,16 +138,6 @@ public class RecordDTO {
 				+ ELEMENT_VAL + ", PRESENT_VAL=" + PRESENT_VAL + ", GRADE=" + GRADE + ", ACHIEVE_VAL=" + ACHIEVE_VAL
 				+ ", RECORD_DATE=" + RECORD_DATE + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
 
-	
-	
-	
 	
 }

@@ -75,6 +75,9 @@
 		A_MEASURE,
 		B_MEASURE,
 		D_MEASURE,
+		USER_ID,
+		USER_NAME,
+		ACTION_CODE,
 		RECORD_DATE,
 		LOG_NUM)
 		VALUES (GRADE_NUM.nextval,
@@ -84,6 +87,9 @@
 		#{A_MEASURE},
 		#{B_MEASURE},
 		#{D_MEASURE},
+		#{USER_ID},
+		#{USER_NAME},
+		#{ACTION_CODE},
 		sysdate,
 		LOG_NUM.nextval)
 	</insert>

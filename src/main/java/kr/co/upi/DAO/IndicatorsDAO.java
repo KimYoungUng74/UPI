@@ -1,5 +1,6 @@
 package kr.co.upi.DAO;
 
+import java.sql.SQLDataException;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import kr.co.upi.DTO.GradeDTO;
 import kr.co.upi.DTO.IndicatorsDTO;
 import kr.co.upi.DTO.RecordDTO;
+import kr.co.upi.DTO.UserDTO;
 
 @Repository
 public class IndicatorsDAO {
@@ -36,9 +38,15 @@ public class IndicatorsDAO {
 	}
 
 	// 평가 등급 수정
-	public int modifyGrade(GradeDTO dto) {
-		// TODO Auto-generated method stub
-		return mybatis.insert("IndicatorsMapper.GradeModify",dto);
+	public int modifyGrade(GradeDTO dto, UserDTO userDto) {
+		try {
+			dto.setUSER_ID(userDto.getUSER_ID());
+			dto.setUSER_NAME(userDto.getUSER_NAME());
+			dto.setACTION_CODE(2);
+			mybatis.insert("IndicatorsMapper.GradeModify",dto);
+		} catch(Exception e) {
+			return 0;
+		}
+		return 1;
 	}
-
 }
