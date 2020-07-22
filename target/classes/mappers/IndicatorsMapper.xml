@@ -16,7 +16,7 @@
 	<!-- 카테고리 선택 지표 리스트 보기 -->
 	<select id="IndicatorsListKategorie"
 		parameterType="IndicatorsDTO" resultType="IndicatorsDTO">
-		SELECT *
+		SELECT MAX(GRADE_NUM) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) GRADE_NUM
 		FROM INDICATORS_TB
 		WHERE
 		INDICATORS_NUM not like 0

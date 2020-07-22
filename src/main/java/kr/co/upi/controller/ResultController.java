@@ -29,9 +29,9 @@ public class ResultController {
 	@RequestMapping(value = "yearly_result_view.do")
 	public ModelAndView yearlyResult(Locale locale, Model model) {
 
-		String YEAR = Integer.toString(cal.get(Calendar.YEAR)); // 현재 년도 계산
-		String ONE_YEAR_AGO = Integer.toString(cal.get(Calendar.YEAR)-1); // 1년전 계산
-		String TWO_YEAR_AGO = Integer.toString(cal.get(Calendar.YEAR)-2); // 2년전 계산
+		String YEAR = Integer.toString(cal.get(Calendar.YEAR)-2000); // 현재 년도 계산
+		String ONE_YEAR_AGO = Integer.toString(cal.get(Calendar.YEAR)-2001); // 1년전 계산
+		String TWO_YEAR_AGO = Integer.toString(cal.get(Calendar.YEAR)-2002); // 2년전 계산
 		
 		/*
 		 * HashMap<String,List<RecordDTO>> map=new HashMap<String,List<RecordDTO>>();
@@ -74,7 +74,7 @@ public class ResultController {
 	public ModelAndView resultGrid(Locale locale, Model model) {
 		
 		
-		String YEAR = Integer.toString(cal.get(Calendar.YEAR)); // 현재 년도 계산
+		String YEAR = Integer.toString(cal.get(Calendar.YEAR)-2000); // 현재 년도 계산
 		
 		List<RecordDTO> dto = resultSer.selectResultListAll(YEAR);
 				

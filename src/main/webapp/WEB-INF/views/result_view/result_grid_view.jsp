@@ -180,7 +180,7 @@
                                                 <th class="text-center" scope="row">${row.INDICATORS_NUM }</th>
                                                 <td>${row.INDICATORS_NAME }</td>
                                                 <td class="text-center" >${row.TARGET_VAL }</td>
-                                                <td class="text-center"> ${row.PRESSENT_VAL}</td>                                                
+                                                <td class="text-center"> ${row.PRESENT_VAL}</td>                                                
                                                 <td class="text-center" > ${row.GRADE }</td>
                                                 <td class="text-center" > ${row.ACHIEVE_VAL}</td>
                                                 <!-- <td class="text-center"><div class="popover-icon">
