@@ -46,5 +46,9 @@ public class IndicatorsService {
 	public int indicators_write(IndicatorsDTO dto) {
 		return dao.indicators_write(dto);
 	}
+	public int indicators_modify(IndicatorsDTO dto) {
+		// TODO Auto-generated method stub
+		return dao.indicators_modify(dto);
+	}
 
 }

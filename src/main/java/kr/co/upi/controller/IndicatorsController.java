@@ -51,20 +51,20 @@ public class IndicatorsController {
 	// 새 지표 등록
 	@RequestMapping(value = "indicators_writeOk.do")
 	public ModelAndView indicators_writeOk(IndicatorsDTO dto, Locale locale, Model model, HttpSession session) {
-		
+
 		ModelAndView mav = new ModelAndView();
 		dto.setUSER_ID("9703007");
 		dto.setUSER_NAME("관리자");
 		dto.setACTION_CODE(1);
-		
+
 		System.out.println(dto);
-		
+
 		if (1 != indicatorsSer.indicators_write(dto)) {
 			mav.addObject("msg", "DB_ERROR");
 			System.out.println("에러");
 		}
-		
-		mav.setViewName("indicators_view/indicatorsWrite");
+
+		mav = setIndicatorsList(mav);
 		return mav;
 	}
 
@@ -74,6 +74,26 @@ public class IndicatorsController {
 
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("indicators_view/indicatorsModify");
+		return mav;
+	}
+
+	// 지표 수정
+	@RequestMapping(value = "indicators_modifyOk.do")
+	public ModelAndView indicators_modifyOk(IndicatorsDTO dto, Locale locale, Model model, HttpSession session) {
+
+		ModelAndView mav = new ModelAndView();
+		dto.setUSER_ID("9703007");
+		dto.setUSER_NAME("관리자");
+		dto.setACTION_CODE(2);
+		dto.setINDICATORS_NUM(2);
+		System.out.println(dto);
+
+		if (1 != indicatorsSer.indicators_modify(dto)) {
+			mav.addObject("msg", "DB_ERROR");
+			System.out.println("에러");
+		}
+
+		mav = setIndicatorsList(mav);
 		return mav;
 	}
 

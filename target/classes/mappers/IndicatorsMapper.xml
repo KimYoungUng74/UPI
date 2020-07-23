@@ -94,7 +94,7 @@
 	</insert>
 	
 	<!-- 새 지표 등록 -->
-	<insert id="Indicators_write" parameterType="GradeDTO">
+	<insert id="Indicators_write" parameterType="IndicatorsDTO">
 		INSERT INTO INDICATORS_TB(CONTROL_NUM,
 			INDICATORS_NUM,
 			INDICATORS_NAME,
@@ -118,6 +118,53 @@
 			RECORD_DATE)
 		VALUES (CONTROL_NUM.nextval,
 			INDICATORS_NUM.nextval,
+			#{INDICATORS_NAME},
+			#{IS_BEST},
+			#{IS_AGENCY},
+			#{IS_AHA},
+			#{IS_LINC},
+			#{IS_TYPE3},
+			#{ELEMENTS},
+			#{COL_METHOD},
+			#{EVAL_METHOD},
+			#{EVAL_STANDARD},
+			#{DIVISION_NAME},
+			#{TARGET_VAL},
+			#{FORMULA},
+			1,
+			0,
+			#{USER_ID},
+			#{USER_NAME},
+			#{ACTION_CODE},
+			sysdate)
+	</insert>
+	
+
+	<!-- 지표 변경 -->
+	<insert id="Indicators_modify" parameterType="IndicatorsDTO">
+		INSERT INTO INDICATORS_TB(CONTROL_NUM,
+			INDICATORS_NUM,
+			INDICATORS_NAME,
+			IS_BEST,
+			IS_AGENCY,
+			IS_AHA,
+			IS_LINC,
+			IS_TYPE3,
+			ELEMENTS,
+			COL_METHOD,
+			EVAL_METHOD,
+			EVAL_STANDARD,
+			DIVISION_NAME,
+			TARGET_VAL,
+			FORMULA,
+			IS_CORE,
+			IS_USE,
+			USER_ID,
+			USER_NAME,
+			ACTION_CODE,
+			RECORD_DATE)
+		VALUES (CONTROL_NUM.nextval,
+			#{INDICATORS_NUM},
 			#{INDICATORS_NAME},
 			#{IS_BEST},
 			#{IS_AGENCY},

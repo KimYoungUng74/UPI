@@ -123,243 +123,249 @@
 				<!-- *************************************************************** -->
 				<!-- Start Sales Charts Section -->
 				<!-- *************************************************************** -->
-				<div class="row">
-					<div class="col-lg-12 col-md-12">
-						<div class="card">
-							<div class="card-body">
-								<h4>지표 수정</h4>
-								<br>
+				<form action="indicators_modifyOk.do" method="post">
+					<div class="row">
+						<div class="col-lg-12 col-md-12">
+							<div class="card">
+								<div class="card-body">
+									<h4>지표 수정</h4>
+									<br>
 
-								<div class="row">
-									<!-- 지표명 -->
-									<div class="col-md-7" style="padding-bottom: 5px;">
-										<div class="row">
-											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>지표명</span>
-											</div>
-											<div class="col-md-12" style="padding-bottom: 10px;">
-												<input type="text" name="INDICATORS_NAME"
-													class="form-control">
-											</div>
-										</div>
-									</div>
-									<!-- 담당 부서 -->
-									<div class="col-md-5">
-										<div class="row">
-											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>관리부서</span>
-											</div>
-											<div class="col-md-12" style="padding-bottom: 10px;">
-												<select class="custom-select" id="DIVISION_NAME"
-													name="DIVISION_NAME">
-													<option value="0">모두 보기</option>
-													<option value="1">입학취업처</option>
-													<option value="2">교무학생처</option>
-													<option value="3">행정지원처</option>
-													<option value="4">대학발전운영실</option>
-													<option value="5">산학협력처</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<!-- 활용 사업 -->
-									<div class="col-md-7" style="padding-bottom: 5px;">
-										<div class="row">
-											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>활용 사업</span>
-											</div>
-											<div class="col-md-4"
-												style="padding: 5px; padding-left: 15px;">
-												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input"
-														name="IS_BEST" id="customCheck1"> <label
-														class="custom-control-label" for="customCheck1"> <a
-														class="btn btn-primary rounded-circle btn-circle"
-														style="width: 25px; height: 25px;"
-														href="javascript:void(0)"></a> 대학중장기 발전계획 BEST
-													</label>
+									<div class="row">
+										<!-- 지표명 -->
+										<div class="col-md-7" style="padding-bottom: 5px;">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>지표명</span>
 												</div>
-											</div>
-											<div class="col-md-4"
-												style="padding: 5px; padding-left: 15px;">
-
-												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input"
-														name="IS_AGENCY" id="customCheck2"> <label
-														class="custom-control-label" for="customCheck2"> <a
-														class="btn btn-danger rounded-circle btn-circle "
-														style="width: 25px; height: 25px;"
-														href="javascript:void(0)"></a> 기관평가인증
-													</label>
-												</div>
-											</div>
-											<div class="col-md-4"
-												style="padding: 5px; padding-left: 15px;">
-												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input"
-														name="IS_AHA" id="customCheck3"> <label
-														class="custom-control-label" for="customCheck3"> <a
-														class="btn btn-warning rounded-circle btn-circle "
-														style="width: 25px; height: 25px;"
-														href="javascript:void(0)"></a> 혁신지원 AHA
-													</label>
-												</div>
-											</div>
-											<div class="col-md-4"
-												style="padding: 5px; padding-left: 15px;">
-												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input"
-														name="IS_LINC" id="customCheck4"> <label
-														class="custom-control-label" for="customCheck4"> <a
-														class="btn btn-success rounded-circle btn-circle "
-														style="width: 25px; height: 25px;"
-														href="javascript:void(0)"></a> 사회맞춤형 LINC+
-													</label>
-												</div>
-											</div>
-											<div class="col-md-4"
-												style="padding: 5px; padding-left: 15px;">
-												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input"
-														name="IS_TYPE3" id="customCheck5"> <label
-														class="custom-control-label" for="customCheck5"> <a
-														class="btn btn-secondary rounded-circle btn-circle "
-														style="width: 25px; height: 25px;"
-														href="javascript:void(0)"></a> 3유형
-													</label>
+												<div class="col-md-12" style="padding-bottom: 10px;">
+													<input type="text" name="INDICATORS_NAME"
+														class="form-control">
 												</div>
 											</div>
 										</div>
-									</div>
-									<!-- 수집 방법 -->
-									<div class="col-md-5" style="padding-bottom: 5px;">
-										<div class="row">
-											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>수집방법</span>
-											</div>
-											<div class="col-md-12" style="padding-bottom: 10px;">
-												<select class="custom-select" id="inputGroupSelect04"
-													name="COL_METHOD">
-													<option value="0">수집방법 선택</option>
-													<option value="정보공시">정보공시</option>
-													<option value="대학자료">대학자료</option>
-													<option value="대학자료">외부의뢰</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<!-- 목표 값 -->
-									<div class="col-md-2" style="padding-bottom: 5px;">
-										<div class="row">
-											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>목표 값</span>
-											</div>
-											<div class="col-md-12" style="padding-bottom: 10px;">
-												<input type="text" class="form-control" value="100" name="TARGET_VAL">
+										<!-- 담당 부서 -->
+										<div class="col-md-5">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>관리부서</span>
+												</div>
+												<div class="col-md-12" style="padding-bottom: 10px;">
+													<select class="custom-select" id="DIVISION_NAME"
+														name="DIVISION_NAME">
+														<option value="0">모두 보기</option>
+														<option value="1">입학취업처</option>
+														<option value="2">교무학생처</option>
+														<option value="3">행정지원처</option>
+														<option value="4">대학발전운영실</option>
+														<option value="5">산학협력처</option>
+													</select>
+												</div>
 											</div>
 										</div>
-									</div>
-									<!-- 평가 방법 -->
-									<div class="col-md-3" style="padding-bottom: 5px;">
-										<div class="row">
-											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>평가방법</span>
-											</div>
-											<div class="col-md-12" style="padding-bottom: 10px;">
-												<select class="custom-select" id="inputGroupSelect04"
-													name="EVAL_METHOD">
-													<option value="0">평가방법 선택</option>
-													<option value="정량">정량</option>
-													<option value="정성">정성</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<!-- 지표 기준 -->
-									<div class="col-md-7" style="padding-bottom: 5px;">
-										<div class="row">
-											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>평가기준</span>
-											</div>
-											<div class="col-md-12" style="padding-bottom: 10px;">
-												<input type="text" class="form-control" name="EVAL_STANDARD">
-											</div>
-										</div>
-									</div>
-								
-									<!-- 요소값 리스트 입력 -->
-									<div class="col-md-12" style="padding-bottom: 5px;">
-										<div class="row">
-											<div class="col-md-5" style="padding-bottom: 5px;">
-												<span>요소 리스트 </span>
-											</div>
-											<div class="col-md-7" style="padding-bottom: 5px;">
-												<span>요소 입력</span>
-											</div>
-											<div class="col-md-5" style="padding-bottom: 10px;">
-												<input type="text" class="form-control" readonly="readonly"
-													name="ELEMENTS" value="">
-											</div>
-											<div class="col-md-4" style="padding-bottom: 10px;">
-												<input type="text" class="form-control" id="input_ele">
-											</div>
-											<div class="col-md-3" style="padding-bottom: 10px;">
-												<button onclick="location.href='indicators_write.do'"
-													class="btn btn-primary waves-effect waves-light"
-													type="button" style="float: left;" id="regEleBtn">등록</button>
+										<!-- 활용 사업 -->
+										<div class="col-md-7" style="padding-bottom: 5px;">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>활용 사업</span>
+												</div>
+												<div class="col-md-4"
+													style="padding: 5px; padding-left: 15px;">
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox"
+															class="custom-control-input cuscheck" value=1
+															name="IS_BEST" id="customCheck1"> <label
+															class="custom-control-label" for="customCheck1">
+															<a class="btn btn-primary rounded-circle btn-circle"
+															style="width: 25px; height: 25px;"
+															href="javascript:void(0)"></a> 대학중장기 발전계획 BEST
+														</label>
+													</div>
+												</div>
+												<div class="col-md-4"
+													style="padding: 5px; padding-left: 15px;">
 
-												<button onclick="location.href='indicators_write.do'"
-													class="btn btn-primary waves-effect waves-light"
-													type="button" style="float: left; margin-left: 5px;"
-													id="delEleBtn">삭제</button>
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox"
+															class="custom-control-input cuscheck" value=1
+															name="IS_AGENCY" id="customCheck2"> <label
+															class="custom-control-label" for="customCheck2">
+															<a class="btn btn-danger rounded-circle btn-circle "
+															style="width: 25px; height: 25px;"
+															href="javascript:void(0)"></a> 기관평가인증
+														</label>
+													</div>
+												</div>
+												<div class="col-md-4"
+													style="padding: 5px; padding-left: 15px;">
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox"
+															class="custom-control-input cuscheck" value=1
+															name="IS_AHA" id="customCheck3"> <label
+															class="custom-control-label" for="customCheck3">
+															<a class="btn btn-warning rounded-circle btn-circle "
+															style="width: 25px; height: 25px;"
+															href="javascript:void(0)"></a> 혁신지원 AHA
+														</label>
+													</div>
+												</div>
+												<div class="col-md-4"
+													style="padding: 5px; padding-left: 15px;">
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox"
+															class="custom-control-input cuscheck" value=1
+															name="IS_LINC" id="customCheck4"> <label
+															class="custom-control-label" for="customCheck4">
+															<a class="btn btn-success rounded-circle btn-circle "
+															style="width: 25px; height: 25px;"
+															href="javascript:void(0)"></a> 사회맞춤형 LINC+
+														</label>
+													</div>
+												</div>
+												<div class="col-md-4"
+													style="padding: 5px; padding-left: 15px;">
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox"
+															class="custom-control-input cuscheck" value=1
+															name="IS_TYPE3" id="customCheck5"> <label
+															class="custom-control-label" for="customCheck5">
+															<a class="btn btn-secondary rounded-circle btn-circle "
+															style="width: 25px; height: 25px;"
+															href="javascript:void(0)"></a> 3유형
+														</label>
+													</div>
+												</div>
 											</div>
 										</div>
-									</div>
-									<!-- 산출 식 입력 -->
-									<div class="col-md-12" style="padding-bottom: 5px;">
-										<div class="row">
-											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>산출식 </span>
-											</div>
-											<div class="col-md-9" style="padding-bottom: 10px;">
-												<input type="text" class="form-control" readonly="readonly"
-													name="FORMULA" value="">
-											</div>
-											<div class="col-md-2" style="padding-bottom: 10px;">
-												<button type="button" class="btn btn-primary"
-													data-toggle="modal" data-target="#myModal" id="formulaReg">산출식
-													등록</button>
+										<!-- 수집 방법 -->
+										<div class="col-md-5" style="padding-bottom: 5px;">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>수집방법</span>
+												</div>
+												<div class="col-md-12" style="padding-bottom: 10px;">
+													<select class="custom-select" id="inputGroupSelect04"
+														name="COL_METHOD">
+														<option value="0">수집방법 선택</option>
+														<option value="정보공시">정보공시</option>
+														<option value="대학자료">대학자료</option>
+														<option value="대학자료">외부의뢰</option>
+													</select>
+												</div>
 											</div>
 										</div>
+										<!-- 목표 값 -->
+										<div class="col-md-2" style="padding-bottom: 5px;">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>목표 값</span>
+												</div>
+												<div class="col-md-12" style="padding-bottom: 10px;">
+													<input type="text" class="form-control" value="100"
+														name="TARGET_VAL">
+												</div>
+											</div>
+										</div>
+										<!-- 평가 방법 -->
+										<div class="col-md-3" style="padding-bottom: 5px;">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>평가방법</span>
+												</div>
+												<div class="col-md-12" style="padding-bottom: 10px;">
+													<select class="custom-select" id="inputGroupSelect04"
+														name="EVAL_METHOD">
+														<option value="0">평가방법 선택</option>
+														<option value="정량">정량</option>
+														<option value="정성">정성</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<!-- 지표 기준 -->
+										<div class="col-md-7" style="padding-bottom: 5px;">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>평가기준</span>
+												</div>
+												<div class="col-md-12" style="padding-bottom: 10px;">
+													<input type="text" class="form-control"
+														name="EVAL_STANDARD">
+												</div>
+											</div>
+										</div>
+										<!-- 요소값 리스트 입력 -->
+										<div class="col-md-12" style="padding-bottom: 5px;">
+											<div class="row">
+												<div class="col-md-5" style="padding-bottom: 5px;">
+													<span>요소 리스트 </span>
+												</div>
+												<div class="col-md-7" style="padding-bottom: 5px;">
+													<span>요소 입력</span>
+												</div>
+												<div class="col-md-5" style="padding-bottom: 10px;">
+													<input type="text" class="form-control" readonly="readonly"
+														id="ELEMENTS" name="ELEMENTS" value="">
+												</div>
+												<div class="col-md-4" style="padding-bottom: 10px;">
+													<input type="text" class="form-control" id="input_ele">
+												</div>
+												<div class="col-md-3" style="padding-bottom: 10px;">
+													<button class="btn btn-primary waves-effect waves-light"
+														type="button" style="float: left;" id="regEleBtn">등록</button>
 
-									</div>
-									<!-- 버튼-->
-									<div class="col-md-12">
-										<div class="row">
-											<div class="col-md-12" style="padding-top: 5px;">
-												<hr>
-												<button onclick="location.href='indicators_delete.do'"
-													class="btn btn-danger waves-effect waves-light"
-													type="button" style="float: left; margin-left: 5px;">지표
-													사용중지</button>
-												<button onclick="location.href='indicators_modify_ok.do'"
-													class="btn btn-primary waves-effect waves-light"
-													type="button" style="float: right; margin-left: 5px;">지표
-													수정</button>
-												<button onclick="history.back(-1);"
-													class="btn btn-light waves-effect waves-light"
-													type="button" style="float: right;">뒤로가기</button>
+													<button class="btn btn-primary waves-effect waves-light"
+														type="button" style="float: left; margin-left: 5px;"
+														id="delEleBtn">삭제</button>
+												</div>
+											</div>
+										</div>
+										<!-- 산출 식 입력 -->
+										<div class="col-md-12" style="padding-bottom: 5px;">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>산출식 </span>
+												</div>
+												<div class="col-md-9" style="padding-bottom: 10px;">
+													<input type="text" class="form-control" readonly="readonly"
+														id="FORMULA_input" name="FORMULA" value="">
+												</div>
+												<div class="col-md-2" style="padding-bottom: 10px;">
+													<button type="button" class="btn btn-primary"
+														data-toggle="modal" data-target="#myModal" id="formulaReg">산출식
+														등록</button>
+												</div>
 											</div>
 
 										</div>
+										<!-- 버튼-->
+										<div class="col-md-12">
+											<div class="row">
+												<div class="col-md-12" style="padding-top: 5px;">
+													<hr>
+													<button onclick="location.href='indicators_delete.do'"
+														class="btn btn-danger waves-effect waves-light"
+														type="button" style="float: left; margin-left: 5px;">지표
+														사용중지</button>
+													<button onclick="location.href='indicators_modify_ok.do'"
+														class="btn btn-primary waves-effect waves-light"
+														type="button" style="float: right; margin-left: 5px;">지표
+														수정</button>
+													<button onclick="history.back(-1);"
+														class="btn btn-light waves-effect waves-light"
+														type="button" style="float: right;">뒤로가기</button>
+												</div>
 
+											</div>
+
+										</div>
 									</div>
 								</div>
 							</div>
+
 						</div>
 					</div>
-
-				</div>
+				</form>
 				<!-- *************************************************************** -->
 				<!-- End Location and Earnings Charts Section -->
 				<!-- *************************************************************** -->
@@ -406,8 +412,8 @@
 						<span style="float: center;">산출식</span>
 					</p>
 					<p>
-						<input type="text" class="form-control" readonly="readonly"
-							value="">
+						<input type="text" id="FORMULA_INPUT" class="form-control"
+							readonly="readonly" value="">
 					</p>
 					<hr>
 
@@ -415,80 +421,88 @@
 
 
 						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary">(</button>
+							<button type="button" class="btn btn-block btn-primary"
+								onclick="FORMULA_BTN('(');" name="FORMULA_BTN" value="(">(</button>
 						</div>
 						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary">)</button>
+							<button type="button" class="btn btn-block btn-primary"
+								onclick="FORMULA_BTN(')');" name="FORMULA_BTN" value=")">)</button>
 						</div>
 						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary">+</button>
+							<button type="button" class="btn btn-block btn-primary"
+								onclick="FORMULA_BTN('+');" name="FORMULA_BTN" value="+">+</button>
 						</div>
 						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary">-</button>
+							<button type="button" class="btn btn-block btn-primary"
+								onclick="FORMULA_BTN('-');" name="FORMULA_BTN" value="-">-</button>
 						</div>
 						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary">*</button>
+							<button type="button" class="btn btn-block btn-primary"
+								onclick="FORMULA_BTN('*');" name="FORMULA_BTN" value="*">*</button>
 						</div>
 						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary">/</button>
+							<button type="button" class="btn btn-block btn-primary"
+								onclick="FORMULA_BTN('/');" name="FORMULA_BTN" value="/">/</button>
 						</div>
 						<div class="col-md-8" style="padding-bottom: 10px; width: 100%">
 							<div class="row">
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">1</button>
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('1');" value="1">1</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">2</button>
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('2');" name="FORMULA_BTN" value="2">2</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">3</button>
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('3');" name="FORMULA_BTN" value="3">3</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">4</button>
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('4');" name="FORMULA_BTN" value="4">4</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">5</button>
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('5');" name="FORMULA_BTN" value="5">5</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">6</button>
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('6');" name="FORMULA_BTN" value="6">6</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">7</button>
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('7');" name="FORMULA_BTN" value="7">7</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">8</button>
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('8');" name="FORMULA_BTN" value="8">8</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">9</button>
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('9');" name="FORMULA_BTN" value="9">9</button>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
 							<button type="button" class="btn btn-block btn-primary"
-								style="height: 63px;">←</button>
+								style="height: 63px;" onclick="FORMULA_DELET_BTN();"
+								id="FORMULA_BACK_BTN">←</button>
 							<button type="button" class="btn btn-block btn-primary"
-								style="height: 63px;">0</button>
+								onclick="FORMULA_BTN('0');" name="FORMULA_BTN"
+								style="height: 63px;" value="0">0</button>
 						</div>
 						<div class="col-md-12" style="padding-bottom: 10px; width: 100%">
-							<div class="row">
-								<div class="col-md-12"
-									style="padding-bottom: 15px; text-align: center;">
-									<span>산출식 요소 </span>
-								</div>
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">취업자</button>
-								</div>
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary">취업대상자</button>
-								</div>
-							</div>
+							<div class="row FORMULA_Dialog"></div>
 						</div>
 
 
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-primary">산출식 등록</button>
-						<button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
+						<button type="button" class="btn btn-primary"
+							onclick="Reg_FORMULA();">산출식 등록</button>
+						<button id="Close_Formula" type="button" class="btn btn-light"
+							data-dismiss="modal">닫기</button>
 					</div>
 				</div>
 				<!-- /.modal-content -->
@@ -500,5 +514,110 @@
 </body>
 <c:import url="../import/javascript.jsp" charEncoding="UTF-8">
 </c:import>
+<script type="text/javascript">
+	/*요소 길이*/
+	var ELEMENT_LEN = 0;
 
+	/* 요소 버튼 클릭 */
+	function FORMULA_BTN(element_val) {
+		ELEMENT_LEN = Number(element_val.length);
+		$('#FORMULA_INPUT').val($('#FORMULA_INPUT').val() + element_val);
+	};
+
+	/* <- 버튼 클릭 */
+	function FORMULA_DELET_BTN() {
+		TEMP = $('#FORMULA_INPUT').val();
+		TEMP = TEMP.substr(0, Number(TEMP.length) - ELEMENT_LEN);
+		ELEMENT_LEN = 1;
+		$('#FORMULA_INPUT').val(TEMP);
+	};
+
+	/* 산술식 등록 버튼 클릭 */
+	function Reg_FORMULA() {
+		$('#FORMULA_input').val($('#FORMULA_INPUT').val().trim());
+		$('#FORMULA_INPUT').val('');
+
+		$('#Close_Formula').click();
+	};
+
+	$(function() {
+		/* 요소 추가 버튼 클릭 */
+		$('#regEleBtn').click(
+				function() {
+					if ($('#ELEMENTS').val() == ""
+							&& !($('#input_ele').val() == "")) {
+						$('#ELEMENTS').val($('#input_ele').val());
+						$('#input_ele').val("");
+					} else {
+
+						var oldMySkill = $('#ELEMENTS').val();
+						var newMySkill = oldMySkill.split(',');
+						for ( var i in newMySkill) {
+							if ($('#input_ele').val() == newMySkill[i]) {
+								alert("이미 등록된 요소입니다.");
+								return;
+							}
+						}
+						$('#ELEMENTS').val(
+								$('#ELEMENTS').val() + ","
+										+ $('#input_ele').val());
+						$('#input_ele').val("");
+					}
+				});
+
+		/* 요소 삭제 버튼 클릭 */
+		$('#delEleBtn').click(
+				function() {
+					if ($('#ELEMENTS').val() == "") {
+						alert("제거할 요소가 없습니다.");
+					} else {
+						var oldELEMENTS = $('#ELEMENTS').val();
+						var newELEMENTS = oldELEMENTS.split(',');
+						$('#ELEMENTS').val("");
+						for ( var i in newELEMENTS) {
+							if ($('#input_ele').val() == newELEMENTS[i]) {
+								continue;
+							} else {
+								if ($('#ELEMENTS').val() == "") {
+									$('#ELEMENTS').val(newELEMENTS[i]);
+								} else {
+									$('#ELEMENTS').val(
+											$('#ELEMENTS').val() + ","
+													+ newELEMENTS[i]);
+								}
+
+							}
+						}
+						$('#input_ele').val("");
+					}
+				});
+
+		/* 산출식 등록 버튼 클릭 */
+		$('#formulaReg')
+				.click(
+						function() {
+							var str = "<div class=\"col-md-12\"style=\"padding-bottom: 15px; text-align: center;\"><span>산출식 요소 </span></div>";
+							$(".FORMULA_Dialog").html(str);
+							str = "";
+							var ELEMENTS = $('#ELEMENTS').val();
+							if (ELEMENTS != "") {
+								var ELEMENTS_List = ELEMENTS.split(',');
+
+								for ( var i in ELEMENTS_List) {
+									str += "<div class=\"col-md-4\" style=\"padding-bottom: 10px; width: 100%\"><button type=\"button\" class=\"btn btn-block btn-primary\" onclick=\"FORMULA_BTN(\'"
+									str += ELEMENTS_List[i];
+									str += "\');\" value=\"";
+									str += ELEMENTS_List[i];
+									str += "\">"
+									str += ELEMENTS_List[i];
+									str += "</button></div>";
+
+								}
+							}
+
+							$(".FORMULA_Dialog").append(str);
+						});
+
+	});
+</script>
 </html>
