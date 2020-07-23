@@ -347,9 +347,9 @@
 														class="btn btn-danger waves-effect waves-light"
 														type="button" style="float: left; margin-left: 5px;">지표
 														사용중지</button>
-													<button onclick="location.href='indicators_modify_ok.do'"
+													<button 
 														class="btn btn-primary waves-effect waves-light"
-														type="button" style="float: right; margin-left: 5px;">지표
+														type="submit" style="float: right; margin-left: 5px;">지표
 														수정</button>
 													<button onclick="history.back(-1);"
 														class="btn btn-light waves-effect waves-light"

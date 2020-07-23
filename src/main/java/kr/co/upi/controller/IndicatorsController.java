@@ -116,7 +116,6 @@ public class IndicatorsController {
 			mav.addObject("msg", "DB_ERROR");
 			System.out.println("에러");
 		}
-		;
 
 		mav = setIndicatorsList(mav);
 		return mav;
