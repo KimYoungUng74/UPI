@@ -38,5 +38,10 @@ public class ResultDAO {
 
 		return mybatis.selectList("ResultMapper.ResultListIncd",INDICATORS_NUM);
 	}
-
+	
+	
+	// 특정 등급의 최신값 가져오기
+	public List<RecordDTO> selectListGrade(String GRADE) {
+		return mybatis.selectList("ResultMapper.ResultListGrade",GRADE);
+	}
 }
