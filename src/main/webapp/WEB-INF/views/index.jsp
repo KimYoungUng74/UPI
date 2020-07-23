@@ -127,7 +127,7 @@
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">38개</h2>
+                                        <h2 class="text-dark mb-1 font-weight-medium">${cnt_BEST}개</h2>
                                     </div>
                                     <h6 class=" font-weight-normal mb-0 w-100 text-truncate">대학중장기발전계획 BEST</h6>
                                 </div>
@@ -142,7 +142,7 @@
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">18개</h2>
+                                        <h2 class="text-dark mb-1 font-weight-medium">${cnt_AGENCY}개</h2>
                                     </div>
                                     <h6 class=" font-weight-normal mb-0 w-100 text-truncate">기관 평가 인증</h6>
                                 </div>
@@ -157,7 +157,7 @@
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">9개</h2>
+                                        <h2 class="text-dark mb-1 font-weight-medium">${cnt_AHA}개</h2>
                                     </div>
                                     <h6 class=" font-weight-normal mb-0 w-100 text-truncate">혁신 지원 AHA</h6>
                                 </div>
@@ -173,7 +173,7 @@
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">5개</h2>
+                                        <h2 class="text-dark mb-1 font-weight-medium">${cnt_LINC}개</h2>
                                     </div>
                                     <h6 class=" font-weight-normal mb-0 w-100 text-truncate">사회 맞춤형 LINC+</h6>
                                 </div>
@@ -189,7 +189,7 @@
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">5개</h2>
+                                        <h2 class="text-dark mb-1 font-weight-medium">${cnt_TYPE3}개</h2>
                                     </div>
                                     <h6 class=" font-weight-normal mb-0 w-100 text-truncate">3유형</h6>
                                 </div>
@@ -475,18 +475,15 @@
             colorByPoint: true,
             data: [{
                 name: 'A등급',
-                y: 61.41,
+                y: ${A_GRADE.size()},
                 sliced: true,
                 selected: true
             }, {
                 name: 'B등급',
-                y: 11.84
+                y: ${B_GRADE.size()},
             }, {
                 name: 'D등급',
-                y: 10.85
-            }, {
-                name: '기타',
-                y: 15.9
+                y: ${D_GRADE.size()},
             }]
         }]
     });
