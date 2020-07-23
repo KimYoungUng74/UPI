@@ -29,4 +29,9 @@ public class ResultService {
 
 		return dao.selectListIncd(INDICATORS_NUM);
 	}
+	
+	// 특정 등급의 최신값 가져오기
+	public List<RecordDTO> selectListGrade(String GRADE) {
+		return dao.selectListGrade(GRADE);
+	}
 }

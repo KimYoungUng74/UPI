@@ -45,8 +45,6 @@ public class ReportController {
 		}
 		model.addAttribute("kategorie", dto);
 		model.addAttribute("list", indcSer.selectKategorie(dto));
-		
-
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("report_view/list");
 		return mav;
@@ -60,13 +58,10 @@ public class ReportController {
 		model.addAttribute("Indicators", indcSer.selectOne(idto));
 		
 		// 년도별 보고서
-		
 		List<RecordDTO> recordDTOs = resultSer.selectListIncd(idto.getINDICATORS_NUM());
 		for(int i=0; i<recordDTOs.size();i++) {
 			model.addAttribute("Record_"+(i+1), recordDTOs.get(i));
 		}
-		
-		
 		mav.setViewName("report_view/view");
 		return mav;
 	}

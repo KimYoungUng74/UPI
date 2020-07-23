@@ -1,5 +1,7 @@
 package kr.co.upi.DTO;
 
+import java.sql.Date;
+
 public class IndicatorsDTO {
 	private int CONTROL_NUM;		// 지표 번호 PK
 	private int INDICATORS_NUM;		// 관리번호
@@ -15,13 +17,13 @@ public class IndicatorsDTO {
 	private String EVAL_STANDARD;	// 평가기준
 	private String DIVISION_NAME;	// 관리부서명
 	private String FORMULA;			// 산출식
-    private int TARGET_VAL;			// 목표 값
+    private String TARGET_VAL;		// 목표 값
 	private int IS_CORE;			// 핵심 여부
 	private int IS_USE;				// 사용 여부
 	private String USER_ID;			// 유저 아이디
 	private String USER_NAME;		// 유저 이름
 	private int ACTION_CODE;		// 행위 코드
-	private java.sql.Date RECODE_DATE; // 기록 날짜
+	private Date RECORD_DATE; // 기록 날짜
 	
 	public int getCONTROL_NUM() {
 		return CONTROL_NUM;
@@ -120,10 +122,10 @@ public class IndicatorsDTO {
 		IS_USE = iS_USE;
 	}
 	
-	public int getTARGET_VAL() {
+	public String getTARGET_VAL() {
 		return TARGET_VAL;
 	}
-	public void setTARGET_VAL(int tARGET_VAL) {
+	public void setTARGET_VAL(String tARGET_VAL) {
 		TARGET_VAL = tARGET_VAL;
 	}
 	
@@ -145,13 +147,13 @@ public class IndicatorsDTO {
    	public void setACTION_CODE(int aCTION_CODE) {
    		ACTION_CODE = aCTION_CODE;
    	}
-   	public java.sql.Date getRECODE_DATE() {
-   		return RECODE_DATE;
-   	}
-   	public void setRECODE_DATE(java.sql.Date rECODE_DATE) {
-   		RECODE_DATE = rECODE_DATE;
-   	}
-   	@Override
+   	public Date getRECORD_DATE() {
+		return RECORD_DATE;
+	}
+	public void setRECORD_DATE(Date rECORD_DATE) {
+		RECORD_DATE = rECORD_DATE;
+	}
+	@Override
    	public String toString() {
    		return "IndicatorsDTO [CONTROL_NUM=" + CONTROL_NUM + ", INDICATORS_NUM=" + INDICATORS_NUM + ", INDICATORS_NAME="
    				+ INDICATORS_NAME + ", IS_BEST=" + IS_BEST + ", IS_AGENCY=" + IS_AGENCY + ", IS_AHA=" + IS_AHA
@@ -159,7 +161,7 @@ public class IndicatorsDTO {
 				+ COL_METHOD + ", EVAL_METHOD=" + EVAL_METHOD + ", EVAL_STANDARD=" + EVAL_STANDARD + ", DIVISION_NAME="
 				+ DIVISION_NAME + ", FORMULA=" + FORMULA + ", TARGET_VAL=" + TARGET_VAL + ", IS_CORE=" + IS_CORE
 				+ ", IS_USE=" + IS_USE + ", USER_ID=" + USER_ID + ", USER_NAME=" + USER_NAME + ", ACTION_CODE="
-				+ ACTION_CODE + ", RECODE_DATE=" + RECODE_DATE + "]";
+				+ ACTION_CODE + ", RECORD_DATE=" + RECORD_DATE + "]";
 	}
 	
 	
