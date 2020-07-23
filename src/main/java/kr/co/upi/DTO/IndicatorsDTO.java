@@ -15,7 +15,7 @@ public class IndicatorsDTO {
 	private String EVAL_STANDARD;	// 평가기준
 	private String DIVISION_NAME;	// 관리부서명
 	private String FORMULA;			// 산출식
-    private int TARGET_VAL;			// 목표 값
+    private String TARGET_VAL;			// 목표 값
 	private int IS_CORE;			// 핵심 여부
 	private int IS_USE;				// 사용 여부
 	private String USER_ID;			// 유저 아이디
@@ -120,10 +120,10 @@ public class IndicatorsDTO {
 		IS_USE = iS_USE;
 	}
 	
-	public int getTARGET_VAL() {
+	public String getTARGET_VAL() {
 		return TARGET_VAL;
 	}
-	public void setTARGET_VAL(int tARGET_VAL) {
+	public void setTARGET_VAL(String tARGET_VAL) {
 		TARGET_VAL = tARGET_VAL;
 	}
 	

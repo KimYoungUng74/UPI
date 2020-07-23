@@ -38,8 +38,13 @@ public class IndicatorsService {
 	}
 
 	// 평가 등급 수정
-	public int modifyGrade(GradeDTO dto, UserDTO userDto) {
-		return dao.modifyGrade(dto, userDto);
+	public int modifyGrade(GradeDTO dto) {
+		return dao.modifyGrade(dto);
+	}
+	
+	// 새 지표 등록
+	public int indicators_write(IndicatorsDTO dto) {
+		return dao.indicators_write(dto);
 	}
 
 }

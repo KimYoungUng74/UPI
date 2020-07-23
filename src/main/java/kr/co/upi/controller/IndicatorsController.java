@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.servlet.ModelAndView;
 
-
 import kr.co.upi.DTO.GradeDTO;
+import kr.co.upi.DTO.IndicatorsDTO;
 import kr.co.upi.DTO.UserDTO;
 import kr.co.upi.Service.IndicatorsService;
 
@@ -48,6 +48,26 @@ public class IndicatorsController {
 		return mav;
 	}
 
+	// 새 지표 등록
+	@RequestMapping(value = "indicators_writeOk.do")
+	public ModelAndView indicators_writeOk(IndicatorsDTO dto, Locale locale, Model model, HttpSession session) {
+		
+		ModelAndView mav = new ModelAndView();
+		dto.setUSER_ID("9703007");
+		dto.setUSER_NAME("관리자");
+		dto.setACTION_CODE(1);
+		
+		System.out.println(dto);
+		
+		if (1 != indicatorsSer.indicators_write(dto)) {
+			mav.addObject("msg", "DB_ERROR");
+			System.out.println("에러");
+		}
+		
+		mav.setViewName("indicators_view/indicatorsWrite");
+		return mav;
+	}
+
 	// 지표 수정 페이지
 	@RequestMapping(value = "indicators_modify.do")
 	public ModelAndView indicators_modify(Locale locale, Model model, HttpSession session) {
@@ -65,30 +85,21 @@ public class IndicatorsController {
 		return mav;
 	}
 
-	// 등급기준 변경 
+	// 등급기준 변경
 	@RequestMapping(value = "gradeModify.do")
 	public ModelAndView gradeModify(Locale local, GradeDTO dto, HttpServletRequest request, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
-		UserDTO userDto = new UserDTO();
-		userDto = setUser(userDto, session);
-		if(indicatorsSer.modifyGrade(dto, userDto)!=1) {
+		dto.setUSER_ID("9703007");
+		dto.setUSER_NAME("관리자");
+		dto.setACTION_CODE(2);
+		if (indicatorsSer.modifyGrade(dto) != 1) {
 			mav.addObject("msg", "DB_ERROR");
-			System.out.println("뿌뿌 에러남");
-		};
-		
+			System.out.println("에러");
+		}
+		;
+
 		mav = setIndicatorsList(mav);
 		return mav;
-	}
-	
-	//유저 정보 저장
-	private UserDTO setUser(UserDTO userDto, HttpSession session) {
-		/*
-		 * userDto.setUSER_ID(session.getAttribute("userId").toString());
-		 * userDto.setUSER_ID(session.getAttribute("userName").toString());
-		 */
-		userDto.setUSER_ID("9703007");
-		userDto.setUSER_NAME("관리자");
-		return userDto;
 	}
 
 	// 리스트로 가기
@@ -102,6 +113,5 @@ public class IndicatorsController {
 		mav.setViewName("indicators_view/indicatorsList");
 		return mav;
 	}
-	
 
 }

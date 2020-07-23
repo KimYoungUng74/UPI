@@ -14,44 +14,6 @@
 	</select>
 
 	<!-- 카테고리 선택 지표 리스트 보기 -->
-	<select id="IndicatorsListKategorie_"
-		parameterType="IndicatorsDTO" resultType="IndicatorsDTO">
-		SELECT MAX(CONTROL_NUM) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) CONTROL_NUM,
-		MAX(INDICATORS_NUM) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) INDICATORS_NUM, 
-		MAX(INDICATORS_NAME) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) INDICATORS_NAME,
-		MAX(IS_BEST) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) IS_BEST,
-		MAX(IS_AGENCY) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) IS_AGENCY,
-		MAX(IS_AHA) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) IS_AHA,
-		MAX(IS_LINC) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) IS_LINC,
-		MAX(IS_TYPE3) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) IS_TYPE3,
-		MAX(DIVISION_NAME) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) DIVISION_NAME,
-		MAX(to_char(RECORD_DATE, 'YYYY')) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) 년도
-		FROM
-		INDICATORS_TB
-		WHERE to_char(RECORD_DATE, 'YYYY') in to_char(sysdate, 'YYYY')
-		<if test="IS_BEST == 1">
-			AND IS_BEST = #{IS_BEST}
-		</if>
-		<if test="IS_AGENCY == 1">
-			AND IS_AGENCY = #{IS_AGENCY}
-		</if>
-		<if test="IS_AHA == 1">
-			AND IS_AHA = #{IS_AHA}
-		</if>
-		<if test="IS_LINC == 1">
-			AND IS_LINC = #{IS_LINC}
-		</if>
-		<if test="IS_TYPE3 == 1">
-			AND IS_TYPE3 = #{IS_TYPE3}
-		</if>
-		<if test="!DIVISION_NAME.equals('모두 보기')">
-			AND DIVISION_NAME = #{DIVISION_NAME}
-		</if>
-		AND IS_USE = 0
-		GROUP BY INDICATORS_NAME
-		ORDER BY INDICATORS_NUM
-	</select>
-	<!-- 카테고리 선택 지표 리스트 보기 -->
 	<select id="IndicatorsListKategorie"
 		parameterType="IndicatorsDTO" resultType="IndicatorsDTO">
 		SELECT *
@@ -97,43 +59,84 @@
 	<!-- 현재 등급기준 보기 -->
 	<select id="NowGradeSelect" parameterType="GradeDTO"
 		resultType="GradeDTO">
-		SELECT MAX(GRADE_NUM) KEEP (DENSE_RANK LAST ORDER BY
-		RECORD_DATE) GRADE_NUM,
-		MAX(A_GRADE) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) A_GRADE,
-		MAX(B_GRADE) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) B_GRADE,
-		MAX(D_GRADE) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) D_GRADE,
-		MAX(A_MEASURE) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) A_MEASURE,
-		MAX(B_MEASURE) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) B_MEASURE,
-		MAX(D_MEASURE) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) D_MEASURE,
-		MAX(RECORD_DATE) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) RECORD_DATE
-		FROM GRADE_TB
-		WHERE to_char(RECORD_DATE, 'yy') = to_char(sysdate, 'yy')
+		SELECT *
+		FROM
+		GRADE_TB
+		where (GRADE_NUM, RECORD_DATE) in (
+    		select GRADE_NUM, max (RECORD_DATE) from GRADE_TB group by GRADE_NUM
+		)
 	</select>
 
 	<!-- 현재 등급기준 변경 -->
 	<insert id="GradeModify" parameterType="GradeDTO">
 		INSERT INTO GRADE_TB(GRADE_NUM,
-		A_GRADE,
-		B_GRADE,
-		D_GRADE,
-		A_MEASURE,
-		B_MEASURE,
-		D_MEASURE,
-		USER_ID,
-		USER_NAME,
-		ACTION_CODE,
-		RECORD_DATE)
+			A_GRADE,
+			B_GRADE,
+			D_GRADE,
+			A_MEASURE,
+			B_MEASURE,
+			D_MEASURE,
+			USER_ID,
+			USER_NAME,
+			ACTION_CODE,
+			RECORD_DATE)
 		VALUES (GRADE_NUM.nextval,
-		#{A_GRADE},
-		#{B_GRADE},
-		#{D_GRADE},
-		#{A_MEASURE},
-		#{B_MEASURE},
-		#{D_MEASURE},
-		#{USER_ID},
-		#{USER_NAME},
-		#{ACTION_CODE},
-		sysdate)
+			#{A_GRADE},
+			#{B_GRADE},
+			#{D_GRADE},
+			#{A_MEASURE},
+			#{B_MEASURE},
+			#{D_MEASURE},
+			#{USER_ID},
+			#{USER_NAME},
+			#{ACTION_CODE},
+			sysdate)
+	</insert>
+	
+	<!-- 새 지표 등록 -->
+	<insert id="Indicators_write" parameterType="GradeDTO">
+		INSERT INTO INDICATORS_TB(CONTROL_NUM,
+			INDICATORS_NUM,
+			INDICATORS_NAME,
+			IS_BEST,
+			IS_AGENCY,
+			IS_AHA,
+			IS_LINC,
+			IS_TYPE3,
+			ELEMENTS,
+			COL_METHOD,
+			EVAL_METHOD,
+			EVAL_STANDARD,
+			DIVISION_NAME,
+			TARGET_VAL,
+			FORMULA,
+			IS_CORE,
+			IS_USE,
+			USER_ID,
+			USER_NAME,
+			ACTION_CODE,
+			RECORD_DATE)
+		VALUES (CONTROL_NUM.nextval,
+			INDICATORS_NUM.nextval,
+			#{INDICATORS_NAME},
+			#{IS_BEST},
+			#{IS_AGENCY},
+			#{IS_AHA},
+			#{IS_LINC},
+			#{IS_TYPE3},
+			#{ELEMENTS},
+			#{COL_METHOD},
+			#{EVAL_METHOD},
+			#{EVAL_STANDARD},
+			#{DIVISION_NAME},
+			#{TARGET_VAL},
+			#{FORMULA},
+			1,
+			0,
+			#{USER_ID},
+			#{USER_NAME},
+			#{ACTION_CODE},
+			sysdate)
 	</insert>
 
 </mapper>
