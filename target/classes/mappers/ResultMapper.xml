@@ -50,7 +50,7 @@
 	</select>
 	
 	<!-- 해당 등급 최신보고서들 가져오기 -->
-	<select id="ResultListGrade" parameterType="int" resultType="RecordDTO">
+	<select id="ResultListGrade" parameterType="String" resultType="RecordDTO">
 		SELECT *
 		FROM
 		RECORD_TB
