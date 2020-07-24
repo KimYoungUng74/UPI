@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.co.upi.DTO.GradeDTO;
@@ -99,7 +99,7 @@ public class IndicatorsController {
 
 	// 보고서 등록 페이지
 	@RequestMapping(value = "report_write.do")
-	public ModelAndView report_write(Locale locale, Model model, HttpSession session) {
+	public ModelAndView report_write(Locale locale, Model model, @RequestParam int INDICATORS_NUM, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("report_view/reportWrite");
 		return mav;
