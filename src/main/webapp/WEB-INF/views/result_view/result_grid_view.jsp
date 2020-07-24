@@ -143,6 +143,9 @@
 					</div>
                  	
                     <div class="col-12" id="all-list">
+                    <!-- css링크들 임포트 -->
+    				<c:import url="../import/csslink.jsp" charEncoding="UTF-8" >
+    				</c:import>
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title"><b>총괄 결과표</b></h4>
