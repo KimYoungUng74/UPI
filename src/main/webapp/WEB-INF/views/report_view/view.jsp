@@ -207,9 +207,9 @@
 										<td class="border-top-0  px-8 py-5 font-14 table-active">등급<br>기준
 										</td>
 										<td class="border-top-0  px-8 py-6 font-14" colspan="5">
-											<br> A(경민대학교 인증등급):평가지표별 목표 값 대비 달성도 100% 이상<br>
-											B(잠재적 인증등급): 평가지표별 목표값 대비 달성도 70% 이상<br> D(부적합등급): 평가
-											지표별 목표값 대비 달성도 70% 이하<br> 달성도 : 실시년도 실적값 / 전년도 실적값
+											<br> A(경민대학교 인증등급):평가지표별 목표 값 대비 달성도 ${Grade.getA_GRADE()}% 이상<br>
+											B(잠재적 인증등급): 평가지표별 목표값 대비 달성도 ${Grade.getB_GRADE()}% 이상<br> D(부적합등급): 평가
+											지표별 목표값 대비 달성도 ${Grade.getD_GRADE()}% 이하<br> 달성도 : 실시년도 실적값 / 전년도 실적값
 										</td>
 									</tr>
 									<tr>

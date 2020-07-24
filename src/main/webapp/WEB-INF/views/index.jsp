@@ -220,7 +220,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex align-items-center mb-4">
-                                    <h4 class="card-title">A등급 성과지표</h4>
+                                    <h4 class="card-title">A등급 성과지표 ${A_GRADE.size()}개</h4>
                                     
                                 </div>
                                 <div class="table-responsive">
@@ -269,7 +269,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex align-items-center mb-4">
-                                    <h4 class="card-title">B등급 성과지표</h4>
+                                    <h4 class="card-title">B등급 성과지표 ${B_GRADE.size()}개</h4>
                                     
                                 </div>
                                 <div class="table-responsive">
@@ -318,7 +318,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex align-items-center mb-4">
-                                    <h4 class="card-title">D등급 성과지표</h4>
+                                    <h4 class="card-title">D등급 성과지표 ${D_GRADE.size()}개</h4>
                                     
                                 </div>
                                 <div class="table-responsive table-hover">
@@ -409,7 +409,7 @@
             type: 'pie'
         },
         title: {
-            text: '등급별 성과지표, 2020'
+            text: '등급별 성과지표, 2020  (총 ${A_GRADE.size()+B_GRADE.size()+D_GRADE.size()}개)'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -433,15 +433,15 @@
             name: '비율',
             colorByPoint: true,
             data: [{
-                name: 'A등급',
+                name: 'A등급 - ${A_GRADE.size()}개',
                 y: ${A_GRADE.size()},
                 sliced: true,
                 selected: true
             }, {
-                name: 'B등급',
+                name: 'B등급 - ${B_GRADE.size()}개',
                 y: ${B_GRADE.size()},
             }, {
-                name: 'D등급',
+                name: 'D등급 - ${D_GRADE.size()}개',
                 y: ${D_GRADE.size()},
             }]
         }]
