@@ -182,7 +182,15 @@
                                                 <td class="text-center" >${row.TARGET_VAL }</td>
                                                 <td class="text-center"> ${row.PRESENT_VAL}</td>                                                
                                                 <td class="text-center" > ${row.GRADE }</td>
-                                                <td class="text-center" > ${row.ACHIEVE_VAL}</td>
+                                                <c:choose>
+                                                	<c:when  test="${row.ACHIEVE_VAL != null }">                                  
+		                                                <td class="text-center">${row.ACHIEVE_VAL }</td>
+		                                            </c:when >
+		                                                
+		                                            <c:otherwise>
+		                                                <td class="text-center">-</td>
+		                                        	</c:otherwise>
+		                                        </c:choose>	
                                                 <!-- <td class="text-center"><div class="popover-icon">
                                                         <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
                                                         <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>

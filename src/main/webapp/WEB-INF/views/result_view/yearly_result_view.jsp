@@ -204,14 +204,44 @@
  											<tr>
 		                                                <th class="text-center" scope="row">${status.count}</th>
 		                                                <td>${row.INDICATORS_NAME }</td>
+		                                                
+		                                                
+		                                                
 		                                                <td class="text-center" >${two_year_ago[status.index].GRADE }</td>
 		                                                <td class="text-center" >${one_year_ago[status.index].GRADE }</td>
 		                                                <td class="text-center" >${row.GRADE }</td>
-		                                                <td class="text-center" >${two_year_ago[status.index].ACHIEVE_VAL }</td>
-		                                                <td class="text-center" >${one_year_ago[status.index].ACHIEVE_VAL }</td>
-		                                                <td class="text-center" >${row.ACHIEVE_VAL }</td>
 		                                                
+		                                                <c:choose>
+			                                                <c:when  test="${two_year_ago[status.index].ACHIEVE_VAL != null }">                                  
+			                                                	<td class="text-center">${two_year_ago[status.index].ACHIEVE_VAL }</td>
+			                                                </c:when >
+			                                                
+			                                                <c:otherwise>
+			                                                	<td class="text-center">-</td>
+			                                                </c:otherwise>
+		                                               </c:choose>
+		                                                
+		                                                <c:choose>
+			                                                <c:when  test="${one_year_ago[status.index].ACHIEVE_VAL != null }">                                  
+			                                                	<td class="text-center">${one_year_ago[status.index].ACHIEVE_VAL }</td>
+			                                                </c:when >
+			                                                
+			                                                <c:otherwise>
+			                                                	<td class="text-center">-</td>
+			                                                </c:otherwise>
+		                                                </c:choose>
+		                                                
+		                                                <c:choose>
+		                                                
+			                                                <c:when  test="${row.ACHIEVE_VAL != null }">                                  
+			                                                	<td class="text-center">${row.ACHIEVE_VAL }</td>
+			                                                </c:when >
+			                                                
+			                                                <c:otherwise>
+			                                                	<td class="text-center">-</td>
+			                                                </c:otherwise>
 		                                              
+	                                               	 	</c:choose>  
 		                                     </tr>		
 										</c:forEach>
                        			</tbody>
