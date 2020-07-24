@@ -11,7 +11,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-
+import kr.co.upi.DTO.GradeCountDTO;
 import kr.co.upi.DTO.RecordDTO;
 
 @Repository
@@ -21,16 +21,22 @@ public class ResultDAO {
 	@Autowired
 	public SqlSessionTemplate mybatis;
 
-	// 총괄결과표
+	// 해당 년도 지표값들 가져오기
 	public List<RecordDTO> selectResultListAll(String YEAR) {
 
 		return mybatis.selectList("ResultMapper.ResultGridList",YEAR);
 	}
 	
-
+	// 해당 년도별 지표값들 가져오기 ( NULL 포함 )
 	public List<RecordDTO> selectYearList(String YEAR) {
 
 		return mybatis.selectList("ResultMapper.ResultYearList",YEAR);
+	}
+	
+	// 해당 년도별 등급 갯수 가져오기
+	public List<GradeCountDTO> selectYearGrade(String YEAR) {
+
+		return mybatis.selectList("ResultMapper.ResultYearGrade",YEAR);
 	}
 	
 	// 특정 지표의 최신값 가져오기
