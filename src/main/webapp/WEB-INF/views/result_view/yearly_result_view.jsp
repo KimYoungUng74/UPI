@@ -347,5 +347,26 @@
 		fileDownload.click();
 		document.body.removeChild(fileDownload);
 	});
+    $('.btn-print-2').click(function() {
+		var win = window.open();
+		self.focus();
+		win.document.open();
+		win.document.write(document.getElementById('grade-view').innerHTML);
+		win.print();
+		win.close();
+	});
+    $('.btn-hwp-2').click(function() {
+		var file = "hwp";
+		var header = "<html>"+"<head><meta charset='utf-8'></head><body>";
+		var footer = "</body></html>";
+		var sourceHTML = header+document.getElementById("grade-view").innerHTML+footer;
+		var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+		var fileDownload = document.createElement("a");
+		document.body.appendChild(fileDownload);
+		fileDownload.href = source;
+		fileDownload.download = '경민대학교성과지표_등급기준표.'+file;
+		fileDownload.click();
+		document.body.removeChild(fileDownload);
+	});
     </script>
 </html>

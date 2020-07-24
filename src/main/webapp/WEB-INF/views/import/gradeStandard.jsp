@@ -2,7 +2,28 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div class="row">
-                    <div class="col-12">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-body">
+								<button class="btn btn-primary waves-effect waves-light btn-hwp-2" margin-left: 10px;
+									type="button">
+									<span class="btn-label"><i class="far fa-file-alt"></i></span>HWP로
+									저장
+								</button>
+								&nbsp;
+								<button
+									class="btn btn-secondary waves-effect waves-light btn-print-2"
+									type="button">
+									<span class="btn-label"><i class="fas fa-print"></i></span>PDF저장/인쇄
+								</button>
+
+							</div>
+						</div>
+					</div>
+                    <div class="col-12" id="grade-view">
+                    	<!-- css링크들 임포트 -->
+    					<c:import url="../import/csslink.jsp" charEncoding="UTF-8" >
+    					</c:import>
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title"><b>평가 등급 기준</b></h4>
@@ -11,7 +32,7 @@
                                 </p>
 					
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-striped mb-0">
+                                    <table class="table table-bordered table-striped mb-0" width="320" border="1">
                                         <thead>
                                             <tr>
                                                 <th class="text-center" rowspan="2">등급</th>
@@ -48,3 +69,4 @@
                         </div> <!-- end card-->
                     </div> <!-- end col-->
                 </div>
+    
