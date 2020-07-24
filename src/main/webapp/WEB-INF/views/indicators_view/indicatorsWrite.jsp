@@ -174,7 +174,8 @@
 												<div class="col-md-4"
 													style="padding: 5px; padding-left: 15px;">
 													<div class="custom-control custom-checkbox">
-														<input type="checkbox" class="custom-control-input cuscheck" value=1
+														<input type="checkbox"
+															class="custom-control-input cuscheck" value=1
 															name="IS_BEST" id="customCheck1"> <label
 															class="custom-control-label" for="customCheck1">
 															<a class="btn btn-primary rounded-circle btn-circle"
@@ -187,7 +188,8 @@
 													style="padding: 5px; padding-left: 15px;">
 
 													<div class="custom-control custom-checkbox">
-														<input type="checkbox" class="custom-control-input cuscheck" value=1
+														<input type="checkbox"
+															class="custom-control-input cuscheck" value=1
 															name="IS_AGENCY" id="customCheck2"> <label
 															class="custom-control-label" for="customCheck2">
 															<a class="btn btn-danger rounded-circle btn-circle "
@@ -199,7 +201,8 @@
 												<div class="col-md-4"
 													style="padding: 5px; padding-left: 15px;">
 													<div class="custom-control custom-checkbox">
-														<input type="checkbox" class="custom-control-input cuscheck"value=1
+														<input type="checkbox"
+															class="custom-control-input cuscheck" value=1
 															name="IS_AHA" id="customCheck3"> <label
 															class="custom-control-label" for="customCheck3">
 															<a class="btn btn-warning rounded-circle btn-circle "
@@ -211,7 +214,8 @@
 												<div class="col-md-4"
 													style="padding: 5px; padding-left: 15px;">
 													<div class="custom-control custom-checkbox">
-														<input type="checkbox" class="custom-control-input cuscheck"value=1
+														<input type="checkbox"
+															class="custom-control-input cuscheck" value=1
 															name="IS_LINC" id="customCheck4"> <label
 															class="custom-control-label" for="customCheck4">
 															<a class="btn btn-success rounded-circle btn-circle "
@@ -223,7 +227,8 @@
 												<div class="col-md-4"
 													style="padding: 5px; padding-left: 15px;">
 													<div class="custom-control custom-checkbox">
-														<input type="checkbox" class="custom-control-input cuscheck" value=1
+														<input type="checkbox"
+															class="custom-control-input cuscheck" value=1
 															name="IS_TYPE3" id="customCheck5"> <label
 															class="custom-control-label" for="customCheck5">
 															<a class="btn btn-secondary rounded-circle btn-circle "
@@ -414,44 +419,32 @@
 
 					<div class="row">
 
-
-						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary"
-								onclick="FORMULA_BTN('(');" name="FORMULA_BTN" value="(">(</button>
-						</div>
-						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary"
-								onclick="FORMULA_BTN(')');" name="FORMULA_BTN" value=")">)</button>
-						</div>
-						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary"
-								onclick="FORMULA_BTN('+');" name="FORMULA_BTN" value="+">+</button>
-						</div>
-						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary"
-								onclick="FORMULA_BTN('-');" name="FORMULA_BTN" value="-">-</button>
-						</div>
-						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary"
-								onclick="FORMULA_BTN('*');" name="FORMULA_BTN" value="*">*</button>
-						</div>
-						<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary"
-								onclick="FORMULA_BTN('/');" name="FORMULA_BTN" value="/">/</button>
-						</div>
-						<div class="col-md-8" style="padding-bottom: 10px; width: 100%">
+						<div class="col-md-9" style="padding-bottom: 10px; width: 100%">
 							<div class="row">
+								
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
 									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('1');" value="1">1</button>
+										onclick="FORMULA_BTN('(');" name="FORMULA_BTN" value="(">(</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
 									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('2');" name="FORMULA_BTN" value="2">2</button>
+										onclick="FORMULA_BTN(')');" name="FORMULA_BTN" value=")">)</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
 									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('3');" name="FORMULA_BTN" value="3">3</button>
+										onclick="FORMULA_ALL_CLEAR_BTN();" name="FORMULA_BTN">C</button>
+								</div>
+								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('7');" name="FORMULA_BTN" value="7">7</button>
+								</div>
+								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('8');" name="FORMULA_BTN" value="8">8</button>
+								</div>
+								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('9');" name="FORMULA_BTN" value="9">9</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
 									<button type="button" class="btn btn-block btn-primary"
@@ -467,44 +460,75 @@
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
 									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('7');" name="FORMULA_BTN" value="7">7</button>
+										onclick="FORMULA_BTN('1');" name="FORMULA_BTN" value="1">1</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
 									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('8');" name="FORMULA_BTN" value="8">8</button>
+										onclick="FORMULA_BTN('2');" name="FORMULA_BTN" value="2">2</button>
 								</div>
 								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
 									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('9');" name="FORMULA_BTN" value="9">9</button>
+										onclick="FORMULA_BTN('3');" name="FORMULA_BTN" value="3">3</button>
+								</div>
+								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('00');" name="FORMULA_BTN" value="00">00</button>
+								</div>
+								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('0');" name="FORMULA_BTN" value="0">0</button>
+								</div>
+								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('.');" name="FORMULA_BTN" value=".">.</button>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-							<button type="button" class="btn btn-block btn-primary"
-								style="height: 63px;" onclick="FORMULA_DELET_BTN();"
-								id="FORMULA_BACK_BTN">←</button>
-							<button type="button" class="btn btn-block btn-primary"
-								onclick="FORMULA_BTN('0');" name="FORMULA_BTN"
-								style="height: 63px;" value="0">0</button>
+
+						<div class="col-md-3" style="padding-bottom: 10px; width: 100%">
+							<div class="row">
+								<div class="col-md-12" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_DELET_BTN();"id="FORMULA_BACK_BTN">←</button>
+								</div>
+								<div class="col-md-12" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('/');" name="FORMULA_BTN" value="/">/</button>
+								</div>
+								<div class="col-md-12" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('*');" name="FORMULA_BTN" value="*">*</button>
+								</div>
+								<div class="col-md-12" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('-');" name="FORMULA_BTN" value="-">-</button>
+								</div>
+								<div class="col-md-12" style="padding-bottom: 10px; width: 100%">
+									<button type="button" class="btn btn-block btn-primary"
+										onclick="FORMULA_BTN('+');" name="FORMULA_BTN" value="+">+</button>
+								</div>
+							</div>
 						</div>
+
+
 						<div class="col-md-12" style="padding-bottom: 10px; width: 100%">
 							<div class="row FORMULA_Dialog"></div>
 						</div>
-
-
 					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary"
-							onclick="Reg_FORMULA();">산출식 등록</button>
-						<button id="Close_Formula" type="button" class="btn btn-light"
-							data-dismiss="modal">닫기</button>
-					</div>
+
 				</div>
-				<!-- /.modal-content -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary"
+						onclick="Reg_FORMULA();">산출식 등록</button>
+					<button id="Close_Formula" type="button" class="btn btn-light"
+						data-dismiss="modal">닫기</button>
+				</div>
 			</div>
-			<!-- /.modal-dialog -->
+			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal -->
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
 	</div>
 </body>
 <c:import url="../import/javascript.jsp" charEncoding="UTF-8">
@@ -512,7 +536,7 @@
 <script type="text/javascript">
 	/*요소 길이*/
 	var ELEMENT_LEN = 0;
-
+	
 	/* 요소 버튼 클릭 */
 	function FORMULA_BTN(element_val) {
 		ELEMENT_LEN = Number(element_val.length);
@@ -526,6 +550,11 @@
 		ELEMENT_LEN = 1;
 		$('#FORMULA_INPUT').val(TEMP);
 	};
+	
+	/* 요소 전체삭제 클릭 */
+	function FORMULA_ALL_CLEAR_BTN() {
+		$('#FORMULA_INPUT').val('');
+	};
 
 	/* 산술식 등록 버튼 클릭 */
 	function Reg_FORMULA() {
@@ -534,8 +563,6 @@
 
 		$('#Close_Formula').click();
 	};
-	
-	
 
 	$(function() {
 		/* 요소 추가 버튼 클릭 */
@@ -614,8 +641,7 @@
 
 							$(".FORMULA_Dialog").append(str);
 						});
-		
-		
+
 	});
 </script>
 </html>

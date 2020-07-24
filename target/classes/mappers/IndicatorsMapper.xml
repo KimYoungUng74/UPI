@@ -65,8 +65,8 @@
 		SELECT *
 		FROM
 		GRADE_TB
-		where (GRADE_NUM, RECORD_DATE) in (
-    		select GRADE_NUM, max (RECORD_DATE) from GRADE_TB group by GRADE_NUM
+		where (RECORD_DATE) in (
+    		select max(RECORD_DATE) from GRADE_TB
 		)
 	</select>
 
