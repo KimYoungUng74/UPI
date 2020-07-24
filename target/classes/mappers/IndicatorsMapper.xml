@@ -60,7 +60,7 @@
 	</select>
 
 	<!-- 현재 등급기준 보기 -->
-	<select id="NowGradeSelect" parameterType="GradeDTO"
+	<select id="NowGradeSelect"
 		resultType="GradeDTO">
 		SELECT *
 		FROM

@@ -32,9 +32,9 @@ public class IndicatorsService {
 	}
 	
 	// 현재 평가 등급 불러오기
-	public GradeDTO selectGrade(GradeDTO gradeDto) {
+	public GradeDTO selectGrade() {
 		// TODO Auto-generated method stub
-		return dao.selectGrade(gradeDto);
+		return dao.selectGrade();
 	}
 
 	// 평가 등급 수정
