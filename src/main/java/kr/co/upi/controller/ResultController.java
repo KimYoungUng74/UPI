@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.co.upi.DTO.GradeCountDTO;
 import kr.co.upi.DTO.RecordDTO;
 import kr.co.upi.Service.ResultService;
 
@@ -24,14 +25,13 @@ public class ResultController {
 	ResultService resultSer;
 
 	Calendar cal = Calendar.getInstance();
+	String YEAR = Integer.toString(cal.get(Calendar.YEAR)); // 현재 년도 계산
+	String ONE_YEAR_AGO = Integer.toString(cal.get(Calendar.YEAR)-1); // 1년전 계산
+	String TWO_YEAR_AGO = Integer.toString(cal.get(Calendar.YEAR)-2); // 2년전 계산
 	
 	// 전년도 대비 평가 비교 페이지
 	@RequestMapping(value = "yearly_result_view.do")
 	public ModelAndView yearlyResult(Locale locale, Model model) {
-
-		String YEAR = Integer.toString(cal.get(Calendar.YEAR)); // 현재 년도 계산
-		String ONE_YEAR_AGO = Integer.toString(cal.get(Calendar.YEAR)-1); // 1년전 계산
-		String TWO_YEAR_AGO = Integer.toString(cal.get(Calendar.YEAR)-2); // 2년전 계산
 		
 		/*
 		 * HashMap<String,List<RecordDTO>> map=new HashMap<String,List<RecordDTO>>();
@@ -64,7 +64,25 @@ public class ResultController {
 	@RequestMapping(value = "yearly_grade_view.do")
 	public ModelAndView yearlyGrad(Locale locale, Model model) {
 
+		List<GradeCountDTO> now_year = resultSer.selectYearGrade(YEAR);
+		List<GradeCountDTO> one_year_ago = resultSer.selectYearGrade(ONE_YEAR_AGO);
+		List<GradeCountDTO> two_year_ago = resultSer.selectYearGrade(TWO_YEAR_AGO);
+		
+		
+		for(int i=0; i<now_year.size(); i++) {
+			System.out.println(now_year.get(i).getGRADE()  + "//" + now_year.get(i).getGC());
+		}
+		
 		ModelAndView mav = new ModelAndView();
+		
+		mav.addObject("now_year", now_year);
+		mav.addObject("one_year_ago", one_year_ago);
+		mav.addObject("two_year_ago", two_year_ago);
+		
+		mav.addObject("year",YEAR);
+		mav.addObject("one_year",ONE_YEAR_AGO);
+		mav.addObject("two_year",TWO_YEAR_AGO);
+		
 		mav.setViewName("result_view/yearly_grade_view");
 		return mav;
 	}
@@ -72,9 +90,6 @@ public class ResultController {
 	// 총괄 결과표 페이지
 	@RequestMapping(value = "result_grid_view.do")
 	public ModelAndView resultGrid(Locale locale, Model model) {
-		
-		
-		String YEAR = Integer.toString(cal.get(Calendar.YEAR)); // 현재 년도 계산
 		
 		List<RecordDTO> dto = resultSer.selectResultListAll(YEAR);
 				

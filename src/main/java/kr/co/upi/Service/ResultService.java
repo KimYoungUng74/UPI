@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.co.upi.DAO.ResultDAO;
+import kr.co.upi.DTO.GradeCountDTO;
 import kr.co.upi.DTO.RecordDTO;
 
 @Service("IResultService")
@@ -14,14 +15,22 @@ public class ResultService {
 	@Autowired
 	public ResultDAO dao;
 
+	// 해당 년도 지표값들 가져오기
 	public List<RecordDTO> selectResultListAll(String YEAR) {
 
 		return dao.selectResultListAll(YEAR);
 	}
 	
+	// 해당 년도별 지표값들 가져오기 ( NULL 포함 )
 	public List<RecordDTO> selectYearList(String YEAR) {
 
 		return dao.selectYearList(YEAR);
+	}
+	
+	// 해당 년도별 등급 갯수 가져오기
+	public List<GradeCountDTO> selectYearGrade(String YEAR) {
+
+		return dao.selectYearGrade(YEAR);
 	}
 	
 	// 특정 지표의 최신값 가져오기
