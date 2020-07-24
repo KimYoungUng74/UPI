@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.co.upi.DTO.GradeDTO;
 import kr.co.upi.DTO.IndicatorsDTO;
 import kr.co.upi.DTO.RecordDTO;
 import kr.co.upi.Service.IndicatorsService;
@@ -59,9 +60,15 @@ public class ReportController {
 		
 		// 년도별 보고서
 		List<RecordDTO> recordDTOs = resultSer.selectListIncd(idto.getINDICATORS_NUM());
-		for(int i=0; i<recordDTOs.size();i++) {
+		for(int i=0; i<recordDTOs.size()&&i<3;i++) {
 			model.addAttribute("Record_"+(i+1), recordDTOs.get(i));
 		}
+		
+		//최신 등급 기준 가져오기
+		GradeDTO gdto = indcSer.selectGrade();
+		model.addAttribute("Grade",gdto);
+		
+		
 		mav.setViewName("report_view/view");
 		return mav;
 	}

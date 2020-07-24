@@ -71,7 +71,7 @@
     		WHERE to_char(RECORD_DATE, 'yyyy') = to_char(sysdate, 'yyyy')
     		group by INDICATORS_NUM,to_char(RECORD_DATE, 'yyyy')
 		) AND GRADE = #{GRADE}
-		ORDER BY to_char(RECORD_DATE, 'yyyy') DESC
+		ORDER BY INDICATORS_NUM, to_char(RECORD_DATE, 'yyyy') DESC
 	</select>
 	
 </mapper>

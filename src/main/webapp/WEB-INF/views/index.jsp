@@ -224,55 +224,41 @@
                                     
                                 </div>
                                 <div class="table-responsive">
-                                    <table class="table no-wrap v-middle mb-0">
+                                    <table class="table no-wrap v-middle mb-0 table-hover text-center">
                                         <thead style="background-color: rgb(124, 181, 236);">
                                             <tr class="border-0 text-white">
-                                                <th class="font-14">성과지표명</th>
-                                                <th class="font-14">관련부서</th>
-                                                <th class="font-14">활용사업</th>
+                                            	<th class="font-14" width="5%">관리번호</th>
+                                                <th class="font-14" width="50%">성과지표명</th>
+                                                <th class="font-14" width="45%">활용사업</th>
                                                 
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="border-top-0 px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0 px-2 py-4 font-14">입학취업처</td>
+                                            <c:forEach var="a_grade" items="${A_GRADE}">
+                                        	<tr>
+                                        		<td class="border-top-0  px-2 py-4 font-14">${a_grade.INDICATORS_NUM}</td>
+                                        		<td class="border-top-0  px-2 py-4 font-14">${a_grade.INDICATORS_NAME}</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
-                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
-                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
-                                                        <a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    	<c:if test="${a_grade.IS_BEST==1}">
+                                                    		<a class="btn btn-primary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">B</a>
+                                                    	</c:if>
+                                                    	<c:if test="${a_grade.IS_AGENCY==1}">
+                                                    		<a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
+                                                    	</c:if>
+                                                    	<c:if test="${a_grade.IS_AHA==1}">
+                                                    		<a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
+                                                    	</c:if>
+                                                        <c:if test="${a_grade.IS_LINC==1}">
+                                                    		<a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
+                                                    	</c:if>
+                                                        <c:if test="${a_grade.IS_TYPE3==1}">
+                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    	</c:if>
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td class="border-top-0  px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0  px-2 py-4 font-14">입학취업처</td>
-                                                 <td class="border-top-0 px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
-                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
-                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
-                                                        <a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="border-top-0  px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0  px-2 py-4 font-14">입학취업처</td>
-                                                 <td class="border-top-0 px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
-                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
-                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
-                                                        <a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                        </c:forEach>
                                         </tbody>
                                     </table>
                                 </div>
@@ -287,55 +273,41 @@
                                     
                                 </div>
                                 <div class="table-responsive">
-                                    <table class="table no-wrap v-middle mb-0">
+                                    <table class="table no-wrap v-middle mb-0 table-hover text-center">
                                         <thead style="background-color: rgb(67, 67, 72);">
                                             <tr class="border-0 text-white">
-                                                <th class="font-14">성과지표명</th>
-                                                <th class="font-14">관련부서</th>
-                                                <th class="font-14">활용사업</th>
+                                            	<th class="font-14" width="5%">관리번호</th>
+                                                <th class="font-14" width="50%">성과지표명</th>
+                                                <th class="font-14" width="45%">활용사업</th>
                                                 
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="border-top-0  px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0  px-2 py-4 font-14">입학취업처</td>
+                                           <c:forEach var="b_grade" items="${B_GRADE}">
+                                        	<tr>
+                                        		<td class="border-top-0  px-2 py-4 font-14">${b_grade.INDICATORS_NUM}</td>
+                                        		<td class="border-top-0  px-2 py-4 font-14">${b_grade.INDICATORS_NAME}</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
-                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
-                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
-                                                        <a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    	<c:if test="${b_grade.IS_BEST==1}">
+                                                    		<a class="btn btn-primary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">B</a>
+                                                    	</c:if>
+                                                    	<c:if test="${b_grade.IS_AGENCY==1}">
+                                                    		<a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
+                                                    	</c:if>
+                                                    	<c:if test="${b_grade.IS_AHA==1}">
+                                                    		<a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
+                                                    	</c:if>
+                                                        <c:if test="${b_grade.IS_LINC==1}">
+                                                    		<a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
+                                                    	</c:if>
+                                                        <c:if test="${b_grade.IS_TYPE3==1}">
+                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    	</c:if>
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td class="border-top-0  px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0  px-2 py-4 font-14">입학취업처</td>
-                                                 <td class="border-top-0 px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
-                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
-                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
-                                                        <a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="border-top-0  px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0  px-2 py-4 font-14">입학취업처</td>
-                                                 <td class="border-top-0 px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
-                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
-                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
-                                                        <a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                        </c:forEach>
                                         </tbody>
                                     </table>
                                 </div>
@@ -349,56 +321,43 @@
                                     <h4 class="card-title">D등급 성과지표</h4>
                                     
                                 </div>
-                                <div class="table-responsive">
-                                    <table class="table no-wrap v-middle mb-0">
+                                <div class="table-responsive table-hover">
+                                    <table class="table no-wrap v-middle mb-0 text-center">
                                         <thead style="background-color: rgb(144, 237, 125); color:black; ">
                                             <tr class="border-0">
-                                                <th class="font-14">성과지표명</th>
-                                                <th class="font-14">관련부서</th>
-                                                <th class="font-14">활용사업</th>
+                                            	<th class="font-14" width="5%">관리번호</th>
+                                                <th class="font-14" width="50%">성과지표명</th>
+                                                <th class="font-14" width="45%">활용사업</th>
                                                 
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="border-top-0  px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0  px-2 py-4 font-14">입학취업처</td>
+                                        
+                                        <c:forEach var="d_grade" items="${D_GRADE}">
+                                        	<tr>
+                                        		<td class="border-top-0  px-2 py-4 font-14">${d_grade.INDICATORS_NUM}</td>
+                                        		<td class="border-top-0  px-2 py-4 font-14">${d_grade.INDICATORS_NAME}</td>
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
-                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
-                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
-                                                        <a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    	<c:if test="${d_grade.IS_BEST==1}">
+                                                    		<a class="btn btn-primary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">B</a>
+                                                    	</c:if>
+                                                    	<c:if test="${d_grade.IS_AGENCY==1}">
+                                                    		<a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
+                                                    	</c:if>
+                                                    	<c:if test="${d_grade.IS_AHA==1}">
+                                                    		<a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
+                                                    	</c:if>
+                                                        <c:if test="${d_grade.IS_LINC==1}">
+                                                    		<a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
+                                                    	</c:if>
+                                                        <c:if test="${d_grade.IS_TYPE3==1}">
+                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    	</c:if>
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td class="border-top-0  px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0  px-2 py-4 font-14">입학취업처</td>
-                                                 <td class="border-top-0 px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
-                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
-                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
-                                                        <a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="border-top-0  px-2 py-4 font-14">취업률</td>
-                                                <td class="border-top-0  px-2 py-4 font-14">입학취업처</td>
-                                                 <td class="border-top-0 px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">B</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
-                                                        <a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
-                                                        <a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
-                                                        <a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                        </c:forEach>
                                         </tbody>
                                     </table>
                                 </div>

@@ -125,7 +125,7 @@ public class IndicatorsController {
 	public ModelAndView setIndicatorsList(ModelAndView mav) {
 		GradeDTO gradeDto = new GradeDTO();
 		gradeDto.setRECORD_DATE(time);
-		gradeDto = indicatorsSer.selectGrade(gradeDto);
+		gradeDto = indicatorsSer.selectGrade();
 
 		System.out.println(gradeDto);
 		mav.addObject("gradeDto", gradeDto);
