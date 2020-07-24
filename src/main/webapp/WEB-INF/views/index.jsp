@@ -235,7 +235,7 @@
                                         </thead>
                                         <tbody>
                                             <c:forEach var="a_grade" items="${A_GRADE}">
-                                        	<tr>
+                                        	<tr onclick="location.href='report_view.do?INDICATORS_NUM=${a_grade.INDICATORS_NUM}'">
                                         		<td class="border-top-0  px-2 py-4 font-14">${a_grade.INDICATORS_NUM}</td>
                                         		<td class="border-top-0  px-2 py-4 font-14">${a_grade.INDICATORS_NAME}</td>
                                                  <td class="border-top-0 px-2 py-4">
@@ -284,7 +284,7 @@
                                         </thead>
                                         <tbody>
                                            <c:forEach var="b_grade" items="${B_GRADE}">
-                                        	<tr>
+                                        	<tr onclick="location.href='report_view.do?INDICATORS_NUM=${b_grade.INDICATORS_NUM}'">
                                         		<td class="border-top-0  px-2 py-4 font-14">${b_grade.INDICATORS_NUM}</td>
                                         		<td class="border-top-0  px-2 py-4 font-14">${b_grade.INDICATORS_NAME}</td>
                                                  <td class="border-top-0 px-2 py-4">
@@ -334,7 +334,7 @@
                                         <tbody>
                                         
                                         <c:forEach var="d_grade" items="${D_GRADE}">
-                                        	<tr>
+                                        	<tr onclick="location.href='report_view.do?INDICATORS_NUM=${d_grade.INDICATORS_NUM}'">
                                         		<td class="border-top-0  px-2 py-4 font-14">${d_grade.INDICATORS_NUM}</td>
                                         		<td class="border-top-0  px-2 py-4 font-14">${d_grade.INDICATORS_NAME}</td>
                                                  <td class="border-top-0 px-2 py-4">
