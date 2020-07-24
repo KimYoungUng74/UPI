@@ -123,7 +123,28 @@
 			<!-- Start Scroll AND Grid  -->            
 			<!-- *************************************************************** -->
              	<div class="row">
-                    <div class="col-12">
+             		<div class="col-md-12">
+						<div class="card">
+							<div class="card-body">
+								<button class="btn btn-primary waves-effect waves-light btn-hwp-1" margin-left: 10px;
+									type="button">
+									<span class="btn-label"><i class="far fa-file-alt"></i></span>HWP로
+									저장
+								</button>
+								&nbsp;
+								<button
+									class="btn btn-secondary waves-effect waves-light btn-print-1"
+									type="button">
+									<span class="btn-label"><i class="fas fa-print"></i></span>PDF저장/인쇄
+								</button>
+
+							</div>
+						</div>
+					</div>
+                    <div class="col-12"  id="all-list">
+                    	<!-- css링크들 임포트 -->
+    					<c:import url="../import/csslink.jsp" charEncoding="UTF-8" >
+    					</c:import>
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title"><b>전년도 대비 총괄 결과표</b></h4>
@@ -132,7 +153,7 @@
                                 </p>
 					
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-striped mb-0">
+                                    <table class="table table-bordered table-striped mb-0" width="310" border="1">
                                         <thead>
                                             <tr>
                                                 <th class="text-center" rowspan="2">연번<br><br><br></th>
@@ -304,4 +325,27 @@
     </body>
 	<c:import url="../import/javascript.jsp" charEncoding="UTF-8" >
     </c:import>
+    <script>
+    $('.btn-print-1').click(function() {
+		var win = window.open();
+		self.focus();
+		win.document.open();
+		win.document.write(document.getElementById('all-list').innerHTML);
+		win.print();
+		win.close();
+	});
+    $('.btn-hwp-1').click(function() {
+		var file = "hwp";
+		var header = "<html>"+"<head><meta charset='utf-8'></head><body>";
+		var footer = "</body></html>";
+		var sourceHTML = header+document.getElementById("all-list").innerHTML+footer;
+		var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+		var fileDownload = document.createElement("a");
+		document.body.appendChild(fileDownload);
+		fileDownload.href = source;
+		fileDownload.download = '경민대학교성과지표_전년도대비평가비교표.'+file;
+		fileDownload.click();
+		document.body.removeChild(fileDownload);
+	});
+    </script>
 </html>

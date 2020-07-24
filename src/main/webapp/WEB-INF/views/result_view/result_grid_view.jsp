@@ -301,7 +301,7 @@
 		var fileDownload = document.createElement("a");
 		document.body.appendChild(fileDownload);
 		fileDownload.href = source;
-		fileDownload.download = '경민대학교성과지표총괄결과표.'+file;
+		fileDownload.download = '경민대학교성과지표_총괄결과표.'+file;
 		fileDownload.click();
 		document.body.removeChild(fileDownload);
 	});
