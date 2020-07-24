@@ -99,8 +99,12 @@ public class IndicatorsController {
 
 	// 보고서 등록 페이지
 	@RequestMapping(value = "report_write.do")
-	public ModelAndView report_write(Locale locale, Model model, @RequestParam int INDICATORS_NUM, HttpSession session) {
+	public ModelAndView report_write(Locale locale, Model model,IndicatorsDTO dto, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
+		
+		dto = indicatorsSer.selectOne(dto);
+		System.out.println(dto);
+		mav.addObject("dto", dto);
 		mav.setViewName("report_view/reportWrite");
 		return mav;
 	}
