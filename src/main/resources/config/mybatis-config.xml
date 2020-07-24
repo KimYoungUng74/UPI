@@ -9,6 +9,7 @@
 		<typeAlias type="kr.co.upi.DTO.IndicatorsDTO" alias="IndicatorsDTO"></typeAlias>
 		<typeAlias type="kr.co.upi.DTO.GradeDTO" alias="GradeDTO"></typeAlias>
 		<typeAlias type="kr.co.upi.DTO.RecordDTO" alias="RecordDTO"></typeAlias>
+		<typeAlias type="kr.co.upi.DTO.GradeCountDTO" alias="GradeCountDTO"></typeAlias>
 	</typeAliases>
 
 	<mappers>

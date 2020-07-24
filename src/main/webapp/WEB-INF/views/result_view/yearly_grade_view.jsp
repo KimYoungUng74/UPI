@@ -154,34 +154,35 @@
                                            
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th class="text-center" scope="row">A등급</th>
-                                                <td class="text-center">33(71.7%)</td>
-                                                <td class="text-center">25(54.3%)</td>
-                                                <td class="text-center">28(50.9%)</td>
-                                                                                          
-                                            </tr>
-                                            
-                                            <tr>
-                                                <th class="text-center" scope="row">B등급</th>
-                                                <td class="text-center">13(28.3%)</td>
-                                                <td class="text-center">20(43.5%)</td>
-                                                <td class="text-center">20(36.4%)</td>                                            
-                                            </tr>
-                                            
-                                            <tr>
-                                                <th class="text-center" scope="row">D등급</th>
-                                                <td class="text-center">0(0.0%)</td>
-                                                <td class="text-center">1(2.2%)</td>
-                                                <td class="text-center">6(10.9%)</td>                                            
-                                            </tr>
-                                            
-                                            <tr>
-                                                <th class="text-center" scope="row">기타</th>
-                                                <td class="text-center">0(0.0%)</td>
-                                                <td class="text-center">0(0.0%)</td>
-                                                <td class="text-center">1(1.8%)</td>                                        
-                                            </tr>
+                                        	<c:forEach items="${now_year}" var="row" varStatus="status">                                       
+	                                            <tr>
+	                                                <th class="text-center" scope="row">${row.GRADE}</th>                                           
+	                                                                                  
+	                                                 <c:choose>  
+		                                                <c:when  test="${two_year_ago[status.index].GRADE != null }">                                  
+		                                                	<td class="text-center">${two_year_ago[status.index].GC }</td>
+		                                                </c:when >
+		                                                
+		                                                <c:otherwise>
+		                                                	<td class="text-center">0</td>
+		                                                </c:otherwise>
+	                                                </c:choose>
+	                                                
+	                                                <c:choose>  
+		                                                <c:when  test="${one_year_ago[status.index].GRADE != null }">                                  
+		                                                	<td class="text-center">${one_year_ago[status.index].GC }</td>
+		                                                </c:when >
+		                                                
+		                                                <c:otherwise>
+		                                                	<td class="text-center">0</td>
+		                                                </c:otherwise>
+	                                                </c:choose>
+	                                                
+	                                                <td class="text-center">${row.GC}</td>
+	                                                
+	                                                                                          
+	                                            </tr>
+                                            </c:forEach>
                                         
                                         </tbody>
                                     </table>
