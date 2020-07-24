@@ -129,20 +129,19 @@
 						<div class="card">
 							<div class="card-body">
 								<button class="btn btn-primary waves-effect waves-light"
-									type="button" style="float: left;"
+									type="button" style="float: right;"
 									onclick="location.href='report_view_list.do'">
 									<span class="btn-label"><i class="fas fa-align-justify"></i></span>목록으로
 								</button>
-								<button class="btn btn-primary waves-effect waves-light" margin-left: 10px;
-									type="button" style="float: right;"
-									onclick="location.href='report_hwp_viewer.hwp'">
+								<button class="btn btn-primary waves-effect waves-light btn-hwp" margin-left: 10px;
+									type="button" >
 									<span class="btn-label"><i class="far fa-file-alt"></i></span>HWP로
 									저장
 								</button>
 								&nbsp;
 								<button
 									class="btn btn-secondary waves-effect waves-light btn-print"
-									type="button" style="float: right; " >
+									type="button">
 									<span class="btn-label"><i class="fas fa-print"></i></span>PDF저장/인쇄
 								</button>
 
@@ -159,7 +158,7 @@
 									<h4 class="card-title">성과지표 정의서</h4>
 								</div>
 								<table class="table" border="1"
-									style="text-align: center; color: black;">
+									style="text-align: center; color: black;" width="380">
 
 									<tr>
 										<td class="border-top-0 px-8 py-4 font-14 table-active">관리번호</td>
@@ -215,7 +214,7 @@
 									<tr>
 										<td class="border-top-0  px-8 py-14 font-14" colspan="6"
 											align="center">
-											<table class="table" border="1" style="color: black;">
+											<table class="table" border="1" style="text-align: center; color: black;" width="380">
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">목표값</td>
 													<td class="border-top-0  px-4 py-2 font-14" colspan="3">${Record_1.getTARGET_VAL()}</td>
@@ -226,9 +225,21 @@
 												</tr>
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">평가년도</td>
-													<td class="border-top-0  px-4 py-2 font-14">${Record_3.getRECORD_DATE().getYear()+1900}년도</td>
-													<td class="border-top-0  px-4 py-2 font-14">${Record_2.getRECORD_DATE().getYear()+1900}년도</td>
-													<td class="border-top-0  px-4 py-2 font-14">${Record_1.getRECORD_DATE().getYear()+1900}년도</td>
+													<td class="border-top-0  px-4 py-2 font-14">
+														<c:if test="${Record_3.getRECORD_DATE().getYear()!=null}">
+															${Record_3.getRECORD_DATE().getYear()+1900}년도
+														</c:if>
+													</td>
+													<td class="border-top-0  px-4 py-2 font-14">
+														<c:if test="${Record_2.getRECORD_DATE().getYear()!=null}">
+														${Record_2.getRECORD_DATE().getYear()+1900}년도
+														</c:if>
+													</td>
+													<td class="border-top-0  px-4 py-2 font-14">
+														<c:if test="${Record_1.getRECORD_DATE().getYear()!=null}">
+															${Record_1.getRECORD_DATE().getYear()+1900}년도
+														</c:if>
+													</td>
 												</tr>
 												<tr>
 													<td class="border-top-0  px-4 py-2 font-14 table-active">등급</td>
@@ -310,7 +321,6 @@
 </c:import>
 <script type="text/javascript">
 	Highcharts.chart('container1', {
-
 		chart : {
 			type : 'column'
 		},
@@ -402,5 +412,19 @@
 		win.print();
 		win.close();
 	});
+	$('.btn-hwp').click(function() {
+		var file = "hwp";
+		var header = "<html>"+"<head><meta charset='utf-8'></head><body>";
+		var footer = "</body></html>";
+		var sourceHTML = header+document.getElementById("report").innerHTML+footer;
+		var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+		var fileDownload = document.createElement("a");
+		document.body.appendChild(fileDownload);
+		fileDownload.href = source;
+		fileDownload.download = '경민대학교정의서_${Indicators.getINDICATORS_NAME()}.'+file;
+		fileDownload.click();
+		document.body.removeChild(fileDownload);
+	});
+	
 </script>
 </html>

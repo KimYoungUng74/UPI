@@ -223,7 +223,7 @@
                                 			<span>담당 부서</span>
                                 		</div>
                                 		<div class="col-md-12">
-                                			<select class="custom-select" name="DIVISION_NAME">
+                                			<select class="custom-select" name="DIVISION_NAME" style="color:gray;">
                                 			<c:choose>
                                 				<c:when test="${!kategorie.DIVISION_NAME.equals('모두 보기')}">
                                            			<option selected="" value="${kategorie.DIVISION_NAME}">${kategorie.DIVISION_NAME}</option>

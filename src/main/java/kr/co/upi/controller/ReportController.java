@@ -1,6 +1,7 @@
 package kr.co.upi.controller;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -63,11 +64,9 @@ public class ReportController {
 		for(int i=0; i<recordDTOs.size()&&i<3;i++) {
 			model.addAttribute("Record_"+(i+1), recordDTOs.get(i));
 		}
-		
 		//최신 등급 기준 가져오기
 		GradeDTO gdto = indcSer.selectGrade();
 		model.addAttribute("Grade",gdto);
-		
 		
 		mav.setViewName("report_view/view");
 		return mav;
