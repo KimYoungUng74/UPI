@@ -256,8 +256,8 @@
                                 <div class="d-flex align-items-center mb-4">
                                     <h4 class="card-title">성과지표 정의서 목록</h4>
                                 </div>
-                                <div class="table-responsive">
-                                    <table class="table no-wrap v-middle mb-0">
+                                <div class="table-responsive table-hover">
+                                    <table class="table no-wrap v-middle mb-0 text-center">
                                         <thead>
                                             <tr class="border-0">
                                             	<th class="font-14 font-weight-medium  px-2">관리번호</th>

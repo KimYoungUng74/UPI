@@ -29,9 +29,9 @@ public class IndicatorsDAO {
 	
 	
 	// 평가 등급 기준 
-	public GradeDTO selectGrade(GradeDTO gradeDto) {
+	public GradeDTO selectGrade() {
 		// TODO Auto-generated method stub
-		return mybatis.selectOne("IndicatorsMapper.NowGradeSelect",gradeDto);
+		return mybatis.selectOne("IndicatorsMapper.NowGradeSelect");
 	}
 
 	// 평가 등급 수정
