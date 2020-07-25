@@ -158,7 +158,7 @@
 									<h4 class="card-title">성과지표 정의서</h4>
 								</div>
 								<table class="table" border="1"
-									style="text-align: center; color: black;" width="380">
+									style="text-align: center; color: black;" width="100%">
 
 									<tr>
 										<td class="border-top-0 px-8 py-4 font-14 table-active">관리번호</td>

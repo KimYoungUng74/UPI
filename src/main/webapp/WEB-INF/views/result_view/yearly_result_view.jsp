@@ -153,7 +153,7 @@
                                 </p>
 					
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-striped mb-0" width="310" border="1">
+                                    <table class="table table-bordered table-striped mb-0" width="100%" border="1">
                                         <thead>
                                             <tr>
                                                 <th class="text-center" rowspan="2">연번<br><br><br></th>
