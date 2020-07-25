@@ -70,9 +70,13 @@ public class IndicatorsController {
 
 	// 지표 수정 페이지
 	@RequestMapping(value = "indicators_modify.do")
-	public ModelAndView indicators_modify(Locale locale, Model model, HttpSession session) {
-
+	public ModelAndView indicators_modify(IndicatorsDTO dto, Locale locale, Model model, HttpSession session) {
+			
 		ModelAndView mav = new ModelAndView();
+		System.out.println(dto);
+		IndicatorsDTO indto = indicatorsSer.selectOne(dto);
+		System.out.println(indto);
+		mav.addObject("dto", dto);
 		mav.setViewName("indicators_view/indicatorsModify");
 		return mav;
 	}
@@ -85,7 +89,6 @@ public class IndicatorsController {
 		dto.setUSER_ID("9703007");
 		dto.setUSER_NAME("관리자");
 		dto.setACTION_CODE(2);
-		dto.setINDICATORS_NUM(2);
 		System.out.println(dto);
 
 		if (1 != indicatorsSer.indicators_modify(dto)) {

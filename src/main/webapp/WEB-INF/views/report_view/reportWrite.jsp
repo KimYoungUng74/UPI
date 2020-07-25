@@ -127,7 +127,7 @@
 					<div class="col-lg-12 col-md-12">
 						<div class="card">
 							<div class="card-body">
-
+								<form action=""></form>
 								<div class="row">
 									<!-- 지표명 -->
 									<div class="col-md-7" style="padding-bottom: 5px;">
