@@ -759,10 +759,8 @@
 
 								}
 							}
-
 							$(".FORMULA_Dialog").append(str);
 						});
-
 	});
 </script>
 </html>

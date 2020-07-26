@@ -127,7 +127,7 @@
 					<div class="col-lg-12 col-md-12">
 						<div class="card">
 							<div class="card-body">
-								<form action="report_write_Ok.do">
+								<form action="report_write_Ok.do" method="post">
 									<input type="hidden" name="INDICATORS_NUM"
 										value="${dto.INDICATORS_NUM}">
 									<div class="row">
@@ -337,7 +337,7 @@
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<input type="text" class="form-control" disabled="disabled"
-														name="ELEMENTS" value="${dto.ELEMENTS}">
+														id="ELEMENTS" name="ELEMENTS" value="${dto.ELEMENTS}">
 												</div>
 											</div>
 										</div>
@@ -349,7 +349,7 @@
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<input type="text" class="form-control" readonly="readonly"
-														name="FORMULA" value="${dto.FORMULA}">
+														id="FORMULA" name="FORMULA" value="${dto.FORMULA}">
 												</div>
 											</div>
 										</div>
@@ -358,7 +358,8 @@
 											<div class="row">
 												<div class="col-md-12" style="padding-top: 5px;">
 
-													<button onclick="location.href='indicators_modify.do?INDICATORS_NUM=${dto.INDICATORS_NUM}'"
+													<button
+														onclick="location.href='indicators_modify.do?INDICATORS_NUM=${dto.INDICATORS_NUM}'"
 														class="btn btn-primary waves-effect waves-light"
 														type="button" style="float: right; margin-left: 5px;">지표
 														수정</button>
@@ -372,43 +373,7 @@
 											<br>
 											<div class="row">
 												<div class="col-md-6" style="padding-top: 5px;">
-													<div class="row">
-														<div class="col-md-3" style="padding-bottom: 5px;">
-															<span>요소명</span> <input type="text"
-																name="INDICATORS_NAME" class="form-control">
-														</div>
-														<div class="col-md-3" style="padding-bottom: 5px;">
-															<span>요소명</span> <input type="text"
-																name="INDICATORS_NAME" class="form-control">
-														</div>
-														<div class="col-md-3" style="padding-bottom: 5px;">
-															<span>요소명</span> <input type="text"
-																name="INDICATORS_NAME" class="form-control">
-														</div>
-														<div class="col-md-3" style="padding-bottom: 5px;">
-															<span>요소명</span> <input type="text"
-																name="INDICATORS_NAME" class="form-control">
-														</div>
-														<div class="col-md-3" style="padding-bottom: 5px;">
-															<span>요소명</span> <input type="text"
-																name="INDICATORS_NAME" class="form-control">
-														</div>
-														<div class="col-md-3" style="padding-bottom: 5px;">
-															<span>요소명</span> <input type="text"
-																name="INDICATORS_NAME" class="form-control">
-														</div>
-														<div class="col-md-3" style="padding-bottom: 5px;">
-															<span>요소명</span> <input type="text"
-																name="INDICATORS_NAME" class="form-control">
-														</div>
-
-														<div class="col-md-12" style="padding-top: 10px;">
-															<button onclick="location.href='indicators_modify.do'"
-																class="btn btn-warning waves-effect waves-light"
-																type="button" style="float: right; margin-left: 5px;">현재값
-																계산하기</button>
-														</div>
-													</div>
+													<div class="row" id="FORMULA_AREA"></div>
 												</div>
 												<div class="col-md-1" style="padding-top: 5px;"></div>
 												<div class="col-md-5" style="padding-top: 5px;">
@@ -417,13 +382,23 @@
 														<div class="col-md-12">
 															<span>현재값</span>
 														</div>
+														<input type="hidden" id="ELEMENTS_VAL" name="ELEMENT_VAL" value="">
 
 														<div class="col-md-12">
-															<input type="text" name="INDICATORS_NAME"
+															<input type="text" id="PRESENT_VAL" name="PRESENT_VAL"
 																class="form-control">
+														</div>
+
+														<div class="col-md-12" style="padding-top: 10px;">
+															<button
+																class="btn btn-warning waves-effect waves-light"
+																id="ele_Btn" type="button"
+																style="float: right; margin-left: 5px;">현재값
+																계산하기</button>
 														</div>
 													</div>
 												</div>
+
 												<div class="col-md-12" style="padding-top: 5px;">
 													<hr>
 													<button class="btn btn-primary waves-effect waves-light"
@@ -473,117 +448,53 @@
 		<!-- ============================================================== -->
 		<!-- All Jquery -->
 		<!-- ============================================================== -->
-
-		<!-- sample modal content -->
-		<div id="myModal" class="modal fade" tabindex="-1" role="dialog"
-			aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-lg ">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h4 class="modal-title" id="myModalLabel">산출식 등록</h4>
-						<button type="button" class="close" data-dismiss="modal"
-							aria-hidden="true">×</button>
-					</div>
-					<div class="modal-body">
-
-						<p>
-							<span style="float: center;">산출식</span>
-						</p>
-						<p>
-							<input type="text" class="form-control" readonly="readonly"
-								value="">
-						</p>
-						<hr>
-
-						<div class="row">
-
-
-							<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-								<button type="button" class="btn btn-block btn-primary">(</button>
-							</div>
-							<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-								<button type="button" class="btn btn-block btn-primary">)</button>
-							</div>
-							<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-								<button type="button" class="btn btn-block btn-primary">+</button>
-							</div>
-							<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-								<button type="button" class="btn btn-block btn-primary">-</button>
-							</div>
-							<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-								<button type="button" class="btn btn-block btn-primary">*</button>
-							</div>
-							<div class="col-md-2" style="padding-bottom: 10px; width: 100%">
-								<button type="button" class="btn btn-block btn-primary">/</button>
-							</div>
-							<div class="col-md-8" style="padding-bottom: 10px; width: 100%">
-								<div class="row">
-									<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-										<button type="button" class="btn btn-block btn-primary">1</button>
-									</div>
-									<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-										<button type="button" class="btn btn-block btn-primary">2</button>
-									</div>
-									<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-										<button type="button" class="btn btn-block btn-primary">3</button>
-									</div>
-									<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-										<button type="button" class="btn btn-block btn-primary">4</button>
-									</div>
-									<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-										<button type="button" class="btn btn-block btn-primary">5</button>
-									</div>
-									<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-										<button type="button" class="btn btn-block btn-primary">6</button>
-									</div>
-									<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-										<button type="button" class="btn btn-block btn-primary">7</button>
-									</div>
-									<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-										<button type="button" class="btn btn-block btn-primary">8</button>
-									</div>
-									<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-										<button type="button" class="btn btn-block btn-primary">9</button>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-								<button type="button" class="btn btn-block btn-primary"
-									style="height: 63px;">←</button>
-								<button type="button" class="btn btn-block btn-primary"
-									style="height: 63px;">0</button>
-							</div>
-							<div class="col-md-12" style="padding-bottom: 10px; width: 100%">
-								<div class="row">
-									<div class="col-md-12"
-										style="padding-bottom: 15px; text-align: center;">
-										<span>산술식 요소 </span>
-									</div>
-									<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-										<button type="button" class="btn btn-block btn-primary">취업자</button>
-									</div>
-									<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-										<button type="button" class="btn btn-block btn-primary">취업대상자</button>
-									</div>
-								</div>
-							</div>
-
-
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-primary">산출식 등록</button>
-							<button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
-						</div>
-					</div>
-					<!-- /.modal-content -->
-				</div>
-				<!-- /.modal-dialog -->
-			</div>
-			<!-- /.modal -->
-		</div>
 	</div>
 </body>
 <c:import url="../import/javascript.jsp" charEncoding="UTF-8">
 </c:import>
+<script type="text/javascript">
+	/* 요소 버튼 클릭 */
+	$(function() {
 
+		// 요소값 입력창 생성
+		str = "";
+		var ELEMENTS = $('#ELEMENTS').val();
+		if (ELEMENTS != "") {
+			var ELEMENTS_List = ELEMENTS.split(',');
+
+			for ( var i in ELEMENTS_List) {
+				str += "<div class=\"col-md-4\" style=\"padding-bottom: 5px;\"> <span>";
+				str += ELEMENTS_List[i];
+				str += "</span> <input type=\"text\" name=\"ELEMENTS_AREA\"";
+				str += " class=\"form-control\"></div>";
+			}
+		}
+		$("#FORMULA_AREA").append(str);
+
+		 // 현재값 계산
+		$('#ele_Btn').click(function() {
+				var FORMULA = $('#FORMULA').val();
+				var ELEMENTS = $('#ELEMENTS').val();
+				if (ELEMENTS != "") {
+				var ELEMENTS_List = ELEMENTS.split(',');
+				// 산출식에 요소별 값 적용
+				$('#ELEMENTS_VAL').val("");
+				for ( var i in ELEMENTS_List) {
+					FORMULA = FORMULA.replace(ELEMENTS_List[i], $("input[name=ELEMENTS_AREA]:eq(" + i + ")").val());
+					if($('#ELEMENTS_VAL').val() == "") {
+						$('#ELEMENTS_VAL').val($('#ELEMENTS_VAL').val()+$("input[name=ELEMENTS_AREA]:eq(" + i + ")").val());
+					} else {
+						$('#ELEMENTS_VAL').val($('#ELEMENTS_VAL').val()+","+$("input[name=ELEMENTS_AREA]:eq(" + i + ")").val());
+					} 
+				}
+				
+				// 양쪽 여백 제거 
+				FORMULA = $.trim(FORMULA);
+				$('#PRESENT_VAL').val(eval(FORMULA).toFixed(2));
+				$('#PRESENT_VAL').attr('readonly', true);
+			}
+			
+		}); 
+	});
+</script>
 </html>
