@@ -127,264 +127,319 @@
 					<div class="col-lg-12 col-md-12">
 						<div class="card">
 							<div class="card-body">
-								<form action=""></form>
-								<div class="row">
-									<!-- 지표명 -->
-									<div class="col-md-7" style="padding-bottom: 5px;">
-										<div class="row">
-											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>지표명</span>
-											</div>
-											<div class="col-md-12" style="padding-bottom: 10px;">
-												<label
-													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">취업률</label>
-											</div>
-										</div>
-									</div>
-									<!-- 담당 부서 -->
-									<div class="col-md-5">
-										<div class="row">
-											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>관리부서</span>
-											</div>
-											<div class="col-md-12" style="padding-bottom: 10px;">
-												<label
-													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">입학취업처</label>
-											</div>
-										</div>
-									</div>
-									<!-- 활용 사업 -->
-									<div class="col-md-7" style="padding-bottom: 5px;">
-										<div class="row">
-											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>활용 사업</span>
-											</div>
-											<div class="col-md-4"
-												style="padding: 5px; padding-left: 15px;">
-												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input"
-														name="IS_BEST" checked="checked" disabled="disabled"
-														id="customCheck1"> <label
-														class="custom-control-label" for="customCheck1"> <a
-														class="btn btn-primary rounded-circle btn-circle"
-														style="width: 25px; height: 25px;"
-														href="javascript:void(0)"></a> 대학중장기 발전계획 BEST
-													</label>
+								<form action="report_write_Ok.do">
+									<input type="hidden" name="INDICATORS_NUM"
+										value="${dto.INDICATORS_NUM}">
+									<div class="row">
+										<!-- 지표명 -->
+										<div class="col-md-7" style="padding-bottom: 5px;">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>지표명</span>
+												</div>
+												<div class="col-md-12" style="padding-bottom: 10px;">
+													<label
+														style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${dto.INDICATORS_NAME}</label>
 												</div>
 											</div>
-											<div class="col-md-4"
-												style="padding: 5px; padding-left: 15px;">
+										</div>
+										<!-- 담당 부서 -->
+										<div class="col-md-5">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>관리부서</span>
+												</div>
+												<div class="col-md-12" style="padding-bottom: 10px;">
+													<label
+														style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${dto.DIVISION_NAME}</label>
+												</div>
+											</div>
+										</div>
+										<!-- 활용 사업 -->
+										<div class="col-md-7" style="padding-bottom: 5px;">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>활용 사업</span>
+												</div>
+												<div class="col-md-4"
+													style="padding: 5px; padding-left: 15px;">
+													<div class="custom-control custom-checkbox">
+														<c:choose>
+															<c:when test="${1==dto.IS_BEST}">
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_BEST" id="customCheck1" checked="checked"
+																	disabled="disabled">
+															</c:when>
+															<c:otherwise>
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_BEST" id="customCheck1" disabled="disabled">
+															</c:otherwise>
+														</c:choose>
+														<label class="custom-control-label" for="customCheck1">
+															<a class="btn btn-primary rounded-circle btn-circle"
+															style="width: 25px; height: 25px;"
+															href="javascript:void(0)"></a> 대학중장기 발전계획 BEST
+														</label>
+													</div>
+												</div>
+												<div class="col-md-4"
+													style="padding: 5px; padding-left: 15px;">
 
-												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input"
-														name="IS_AGENCY" disabled="disabled" id="customCheck2">
-													<label class="custom-control-label" for="customCheck2">
-														<a class="btn btn-danger rounded-circle btn-circle "
-														style="width: 25px; height: 25px;"
-														href="javascript:void(0)"></a> 기관평가인증
-													</label>
+													<div class="custom-control custom-checkbox">
+														<c:choose>
+															<c:when test="${1==dto.IS_AGENCY}">
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_AGENCY" id="customCheck2" checked="checked"
+																	disabled="disabled">
+															</c:when>
+															<c:otherwise>
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_AGENCY" id="customCheck2" disabled="disabled">
+															</c:otherwise>
+														</c:choose>
+														<label class="custom-control-label" for="customCheck2">
+															<a class="btn btn-danger rounded-circle btn-circle "
+															style="width: 25px; height: 25px;"
+															href="javascript:void(0)"></a> 기관평가인증
+														</label>
+													</div>
 												</div>
-											</div>
-											<div class="col-md-4"
-												style="padding: 5px; padding-left: 15px;">
-												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input"
-														name="IS_AHA" disabled="disabled" id="customCheck3">
-													<label class="custom-control-label" for="customCheck3">
-														<a class="btn btn-warning rounded-circle btn-circle "
-														style="width: 25px; height: 25px;"
-														href="javascript:void(0)"></a> 혁신지원 AHA
-													</label>
+												<div class="col-md-4"
+													style="padding: 5px; padding-left: 15px;">
+													<div class="custom-control custom-checkbox">
+														<c:choose>
+															<c:when test="${1==dto.IS_AHA}">
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_AHA" id="customCheck3" checked="checked"
+																	disabled="disabled">
+															</c:when>
+															<c:otherwise>
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_AHA" id="customCheck3" disabled="disabled">
+															</c:otherwise>
+														</c:choose>
+														<label class="custom-control-label" for="customCheck3">
+															<a class="btn btn-warning rounded-circle btn-circle "
+															style="width: 25px; height: 25px;"
+															href="javascript:void(0)"></a> 혁신지원 AHA
+														</label>
+													</div>
 												</div>
-											</div>
-											<div class="col-md-4"
-												style="padding: 5px; padding-left: 15px;">
-												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input"
-														name="IS_LINC" disabled="disabled" id="customCheck4">
-													<label class="custom-control-label" for="customCheck4">
-														<a class="btn btn-success rounded-circle btn-circle "
-														style="width: 25px; height: 25px;"
-														href="javascript:void(0)"></a> 사회맞춤형 LINC+
-													</label>
+												<div class="col-md-4"
+													style="padding: 5px; padding-left: 15px;">
+													<div class="custom-control custom-checkbox">
+														<c:choose>
+															<c:when test="${1==dto.IS_LINC}">
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_LINC" id="customCheck4" checked="checked"
+																	disabled="disabled">
+															</c:when>
+															<c:otherwise>
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_LINC" id="customCheck4" disabled="disabled">
+															</c:otherwise>
+														</c:choose>
+														<label class="custom-control-label" for="customCheck4">
+															<a class="btn btn-success rounded-circle btn-circle "
+															style="width: 25px; height: 25px;"
+															href="javascript:void(0)"></a> 사회맞춤형 LINC+
+														</label>
+													</div>
 												</div>
-											</div>
-											<div class="col-md-4"
-												style="padding: 5px; padding-left: 15px;">
-												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input"
-														name="IS_TYPE3" disabled="disabled" id="customCheck5">
-													<label class="custom-control-label" for="customCheck5">
-														<a class="btn btn-secondary rounded-circle btn-circle "
-														style="width: 25px; height: 25px;"
-														href="javascript:void(0)"></a> 3유형
-													</label>
+												<div class="col-md-4"
+													style="padding: 5px; padding-left: 15px;">
+													<div class="custom-control custom-checkbox">
+														<c:choose>
+															<c:when test="${1==dto.IS_TYPE3}">
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_TYPE3" id="customCheck5" checked="checked"
+																	disabled="disabled">
+															</c:when>
+															<c:otherwise>
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_TYPE3" id="customCheck5" disabled="disabled">
+															</c:otherwise>
+														</c:choose>
+														<label class="custom-control-label" for="customCheck5">
+															<a class="btn btn-secondary rounded-circle btn-circle "
+															style="width: 25px; height: 25px;"
+															href="javascript:void(0)"></a> 3유형
+														</label>
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-									<!-- 수집 방법 -->
-									<div class="col-md-5" style="padding-bottom: 5px;">
-										<div class="row">
-											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>수집방법</span>
-											</div>
-											<div class="col-md-12" style="padding-bottom: 10px;">
-												<label
-													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">정보공시</label>
-											</div>
-										</div>
-									</div>
-									<!-- 목표 값 -->
-									<div class="col-md-2" style="padding-bottom: 5px;">
-										<div class="row">
-											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>목표 값</span>
-											</div>
-											<div class="col-md-12" style="padding-bottom: 10px;">
-												<label
-													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">100</label>
+										<!-- 수집 방법 -->
+										<div class="col-md-5" style="padding-bottom: 5px;">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>수집방법</span>
+												</div>
+												<div class="col-md-12" style="padding-bottom: 10px;">
+													<label
+														style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${dto.COL_METHOD}</label>
+												</div>
 											</div>
 										</div>
-									</div>
+										<!-- 목표 값 -->
+										<div class="col-md-2" style="padding-bottom: 5px;">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>목표 값</span>
+												</div>
+												<div class="col-md-12" style="padding-bottom: 10px;">
+													<label
+														style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${dto.TARGET_VAL}</label>
+												</div>
+											</div>
+										</div>
 
-									<!-- 평가 방법 -->
-									<div class="col-md-3" style="padding-bottom: 5px;">
-										<div class="row">
-											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>평가방법</span>
-											</div>
-											<div class="col-md-12" style="padding-bottom: 10px;">
-												<label
-													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">정량</label>
-											</div>
-										</div>
-									</div>
-									<!-- 지표 기준 -->
-									<div class="col-md-7" style="padding-bottom: 5px;">
-										<div class="row">
-											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>평가기준</span>
-											</div>
-											<div class="col-md-12" style="padding-bottom: 10px;">
-												<label
-													style="border: 1px solid #5a6268; width: 100%; padding: 5px;">중장기발전계획
-													목표 측정값</label>
-											</div>
-										</div>
-									</div>
-
-									<!-- 요소값 리스트 입력 -->
-									<div class="col-md-12" style="padding-bottom: 5px;">
-										<div class="row">
-											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>요소 리스트 </span>
-											</div>
-											<div class="col-md-12" style="padding-bottom: 10px;">
-												<input type="text" class="form-control" disabled="disabled"
-													name="ELEMENTS" value="">
-											</div>
-										</div>
-									</div>
-									<!-- 산출 식 입력 -->
-									<div class="col-md-12" style="padding-bottom: 5px;">
-										<div class="row">
-											<div class="col-md-12" style="padding-bottom: 5px;">
-												<span>산출식 </span>
-											</div>
-											<div class="col-md-12" style="padding-bottom: 10px;">
-												<input type="text" class="form-control" readonly="readonly"
-													name="FORMULA" value="">
-											</div>
-										</div>
-									</div>
-									<!-- 버튼-->
-									<div class="col-md-12">
-										<div class="row">
-											<div class="col-md-12" style="padding-top: 5px;">
-
-												<button onclick="location.href='indicators_modify.do'"
-													class="btn btn-primary waves-effect waves-light"
-													type="button" style="float: right; margin-left: 5px;">지표
-													수정</button>
-											</div>
-										</div>
-									</div>
-									<!-- 보고서 작성-->
-									<div class="col-md-12">
-										<hr>
-										<h4>보고서 등록</h4>
-										<br>
-										<div class="row">
-											<div class="col-md-6" style="padding-top: 5px;">
-												<div class="row">
-													<div class="col-md-3" style="padding-bottom: 5px;">
-														<span>요소명</span> <input type="text" name="INDICATORS_NAME"
-															class="form-control">
-													</div>
-													<div class="col-md-3" style="padding-bottom: 5px;">
-														<span>요소명</span> <input type="text" name="INDICATORS_NAME"
-															class="form-control">
-													</div>
-													<div class="col-md-3" style="padding-bottom: 5px;">
-														<span>요소명</span> <input type="text" name="INDICATORS_NAME"
-															class="form-control">
-													</div>
-													<div class="col-md-3" style="padding-bottom: 5px;">
-														<span>요소명</span> <input type="text" name="INDICATORS_NAME"
-															class="form-control">
-													</div>
-													<div class="col-md-3" style="padding-bottom: 5px;">
-														<span>요소명</span> <input type="text" name="INDICATORS_NAME"
-															class="form-control">
-													</div>
-													<div class="col-md-3" style="padding-bottom: 5px;">
-														<span>요소명</span> <input type="text" name="INDICATORS_NAME"
-															class="form-control">
-													</div>
-													<div class="col-md-3" style="padding-bottom: 5px;">
-														<span>요소명</span> <input type="text" name="INDICATORS_NAME"
-															class="form-control">
-													</div>
-
-													<div class="col-md-12" style="padding-top: 10px;">
-														<button onclick="location.href='indicators_modify.do'"
-															class="btn btn-warning waves-effect waves-light"
-															type="button" style="float: right; margin-left: 5px;">현재값
-															계산하기</button>
-													</div>
+										<!-- 평가 방법 -->
+										<div class="col-md-3" style="padding-bottom: 5px;">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>평가방법</span>
+												</div>
+												<div class="col-md-12" style="padding-bottom: 10px;">
+													<label
+														style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${dto.EVAL_METHOD}</label>
 												</div>
 											</div>
-											<div class="col-md-1" style="padding-top: 5px;"></div>
-											<div class="col-md-5" style="padding-top: 5px;">
-												<div class="row">
-													
-													<div class="col-md-12">
-														<span>현재값</span>
-													</div>
-													
-													<div class="col-md-12">
-														<input type="text" name="INDICATORS_NAME"
-															class="form-control">
-													</div>
+										</div>
+										<!-- 지표 기준 -->
+										<div class="col-md-7" style="padding-bottom: 5px;">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>평가기준</span>
+												</div>
+												<div class="col-md-12" style="padding-bottom: 10px;">
+													<label
+														style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${dto.EVAL_STANDARD}</label>
 												</div>
 											</div>
-											<div class="col-md-12" style="padding-top: 5px;">
-												<hr>
-												<button class="btn btn-primary waves-effect waves-light"
-													type="button" style="float: left;"
-													onclick="location.href='indicators_view_list.do'">
-													<span class="btn-label"><i
-														class="fas fa-align-justify"></i></span>목록으로
-												</button>
-												<button onclick="location.href='indicators_modify.do'"
-													class="btn btn-primary waves-effect waves-light"
-													type="button" style="float: right; margin-left: 5px;">보고서
-													등록</button>
+										</div>
+
+										<!-- 요소값 리스트 입력 -->
+										<div class="col-md-12" style="padding-bottom: 5px;">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>요소 리스트 </span>
+												</div>
+												<div class="col-md-12" style="padding-bottom: 10px;">
+													<input type="text" class="form-control" disabled="disabled"
+														name="ELEMENTS" value="${dto.ELEMENTS}">
+												</div>
+											</div>
+										</div>
+										<!-- 산출 식 입력 -->
+										<div class="col-md-12" style="padding-bottom: 5px;">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>산출식 </span>
+												</div>
+												<div class="col-md-12" style="padding-bottom: 10px;">
+													<input type="text" class="form-control" readonly="readonly"
+														name="FORMULA" value="${dto.FORMULA}">
+												</div>
+											</div>
+										</div>
+										<!-- 버튼-->
+										<div class="col-md-12">
+											<div class="row">
+												<div class="col-md-12" style="padding-top: 5px;">
+
+													<button onclick="location.href='indicators_modify.do?INDICATORS_NUM=${dto.INDICATORS_NUM}'"
+														class="btn btn-primary waves-effect waves-light"
+														type="button" style="float: right; margin-left: 5px;">지표
+														수정</button>
+												</div>
+											</div>
+										</div>
+										<!-- 보고서 작성-->
+										<div class="col-md-12">
+											<hr>
+											<h4>보고서 등록</h4>
+											<br>
+											<div class="row">
+												<div class="col-md-6" style="padding-top: 5px;">
+													<div class="row">
+														<div class="col-md-3" style="padding-bottom: 5px;">
+															<span>요소명</span> <input type="text"
+																name="INDICATORS_NAME" class="form-control">
+														</div>
+														<div class="col-md-3" style="padding-bottom: 5px;">
+															<span>요소명</span> <input type="text"
+																name="INDICATORS_NAME" class="form-control">
+														</div>
+														<div class="col-md-3" style="padding-bottom: 5px;">
+															<span>요소명</span> <input type="text"
+																name="INDICATORS_NAME" class="form-control">
+														</div>
+														<div class="col-md-3" style="padding-bottom: 5px;">
+															<span>요소명</span> <input type="text"
+																name="INDICATORS_NAME" class="form-control">
+														</div>
+														<div class="col-md-3" style="padding-bottom: 5px;">
+															<span>요소명</span> <input type="text"
+																name="INDICATORS_NAME" class="form-control">
+														</div>
+														<div class="col-md-3" style="padding-bottom: 5px;">
+															<span>요소명</span> <input type="text"
+																name="INDICATORS_NAME" class="form-control">
+														</div>
+														<div class="col-md-3" style="padding-bottom: 5px;">
+															<span>요소명</span> <input type="text"
+																name="INDICATORS_NAME" class="form-control">
+														</div>
+
+														<div class="col-md-12" style="padding-top: 10px;">
+															<button onclick="location.href='indicators_modify.do'"
+																class="btn btn-warning waves-effect waves-light"
+																type="button" style="float: right; margin-left: 5px;">현재값
+																계산하기</button>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-1" style="padding-top: 5px;"></div>
+												<div class="col-md-5" style="padding-top: 5px;">
+													<div class="row">
+
+														<div class="col-md-12">
+															<span>현재값</span>
+														</div>
+
+														<div class="col-md-12">
+															<input type="text" name="INDICATORS_NAME"
+																class="form-control">
+														</div>
+													</div>
+												</div>
+												<div class="col-md-12" style="padding-top: 5px;">
+													<hr>
+													<button class="btn btn-primary waves-effect waves-light"
+														type="button" style="float: left;"
+														onclick="location.href='indicators_view_list.do'">
+														<span class="btn-label"><i
+															class="fas fa-align-justify"></i></span>목록으로
+													</button>
+													<button class="btn btn-primary waves-effect waves-light"
+														type="submit" style="float: right; margin-left: 5px;">보고서
+														등록</button>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
+								</form>
 							</div>
 						</div>
 
@@ -526,6 +581,7 @@
 			</div>
 			<!-- /.modal -->
 		</div>
+	</div>
 </body>
 <c:import url="../import/javascript.jsp" charEncoding="UTF-8">
 </c:import>
