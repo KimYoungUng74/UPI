@@ -11,11 +11,14 @@
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                     class="hide-menu">홈</span></a></li>
                         <li class="list-divider"></li>
+                        <li class="nav-small-cap"><span class="hide-menu">관리</span></li>
                         <li class="sidebar-item"> <a class="sidebar-link" href="indicators_view_list.do"
                                 aria-expanded="false"><i data-feather="edit-3" class="feather-icon"></i><span
                                     class="hide-menu">성과지표 관리
                                 </span></a>
                         </li>
+                        <li class="list-divider"></li>
+                        <li class="nav-small-cap"><span class="hide-menu">정보</span></li>
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="report_view_list.do"
                                 aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
                                     class="hide-menu">지표 정의서</span></a></li>
@@ -52,13 +55,18 @@
                         
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">사용자</span></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="authentication-login1.html"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="javascript:void(0)" data-toggle="modal"
+                                        data-target="#login-modal"><i data-feather="log-in" class="feather-icon"></i><span
+                                   class="hide-menu">Log-In</span></a>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="logout.do"
                                 aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
-                                    class="hide-menu">Logout</span></a>
+                                    class="hide-menu">Log-Out</span></a>
                         </li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
+                
             </div>
             <!-- End Sidebar scroll-->
         </aside>
