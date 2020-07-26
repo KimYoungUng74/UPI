@@ -30,7 +30,7 @@
                         <!-- Search -->
                         <!-- ============================================================== -->
                         <li class="nav-item">
-                            <a class="nav-link" href="javascript:void(0)" data-toggle="dropdown"
+                            <a class="nav-link" href="http://www.kyungmin.ac.kr/site/kmc/main.do"
                                 aria-haspopup="true" aria-expanded="false">
                                 <i data-feather="home" class="feather-icon"></i>
                                 <span class="ml-2 d-none d-lg-inline-block"><span

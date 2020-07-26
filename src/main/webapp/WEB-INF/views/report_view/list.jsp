@@ -276,6 +276,11 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        	<c:if test="${list.size() == 0}">
+                                        		<tr>
+                                        			<td colspan="4">조건에 맞는 지표가 존재하지 않습니다.</td>
+                                        		</tr>
+                                        	</c:if>
                                             <c:forEach items="${list}" var="list">
                                             <tr onclick="location.href='report_view.do?INDICATORS_NUM=${list.INDICATORS_NUM}'">
                                             	<td class="border-top-0  px-2 py-4 font-14">${list.INDICATORS_NUM}</td>
