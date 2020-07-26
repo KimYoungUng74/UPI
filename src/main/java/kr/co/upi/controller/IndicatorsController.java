@@ -74,8 +74,8 @@ public class IndicatorsController {
 			
 		ModelAndView mav = new ModelAndView();
 		System.out.println(dto);
-		IndicatorsDTO indto = indicatorsSer.selectOne(dto);
-		System.out.println(indto);
+		dto = indicatorsSer.selectOne(dto);
+		System.out.println(dto);
 		mav.addObject("dto", dto);
 		mav.setViewName("indicators_view/indicatorsModify");
 		return mav;

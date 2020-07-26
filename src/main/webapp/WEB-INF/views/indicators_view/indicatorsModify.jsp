@@ -124,6 +124,7 @@
 				<!-- Start Sales Charts Section -->
 				<!-- *************************************************************** -->
 				<form action="indicators_modifyOk.do" method="post">
+				<input type="hidden" name="INDICATORS_NUM" value="${dto.INDICATORS_NUM}">
 					<div class="row">
 						<div class="col-lg-12 col-md-12">
 							<div class="card">
@@ -140,7 +141,7 @@
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<input type="text" name="INDICATORS_NAME"
-														class="form-control">
+														class="form-control" value="${dto.INDICATORS_NAME}" >
 												</div>
 											</div>
 										</div>
@@ -154,11 +155,46 @@
 													<select class="custom-select" id="DIVISION_NAME"
 														name="DIVISION_NAME">
 														<option value="0">모두 보기</option>
-														<option value="1">입학취업처</option>
-														<option value="2">교무학생처</option>
-														<option value="3">행정지원처</option>
-														<option value="4">대학발전운영실</option>
-														<option value="5">산학협력처</option>
+														<c:choose>
+															<c:when test="${dto.DIVISION_NAME eq '입학취업처'}">
+																<option value="입학취업처" selected="selected">입학취업처</option>
+															</c:when>
+															<c:otherwise>
+																<option value="입학취업처">입학취업처</option>
+															</c:otherwise>
+														</c:choose>
+														<c:choose>
+															<c:when test="${dto.DIVISION_NAME eq '교무학생처'}">
+																<option value="교무학생처" selected="selected">교무학생처</option>
+															</c:when>
+															<c:otherwise>
+																<option value="교무학생처">교무학생처</option>
+															</c:otherwise>
+														</c:choose>
+														<c:choose>
+															<c:when test="${dto.DIVISION_NAME eq '행정지원처'}">
+																<option value="행정지원처" selected="selected">행정지원처</option>
+															</c:when>
+															<c:otherwise>
+																<option value="행정지원처">행정지원처</option>
+															</c:otherwise>
+														</c:choose>
+														<c:choose>
+															<c:when test="${dto.DIVISION_NAME eq '대학발전운영실'}">
+																<option value="대학발전운영실" selected="selected">대학발전운영실</option>
+															</c:when>
+															<c:otherwise>
+																<option value="대학발전운영실">대학발전운영실</option>
+															</c:otherwise>
+														</c:choose>
+														<c:choose>
+															<c:when test="${dto.DIVISION_NAME eq '산학협력처'}">
+																<option value="산학협력처" selected="selected">산학협력처</option>
+															</c:when>
+															<c:otherwise>
+																<option value="산학협력처">산학협력처</option>
+															</c:otherwise>
+														</c:choose>
 													</select>
 												</div>
 											</div>
@@ -246,10 +282,31 @@
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<select class="custom-select" id="inputGroupSelect04"
 														name="COL_METHOD">
-														<option value="0">수집방법 선택</option>
-														<option value="정보공시">정보공시</option>
-														<option value="대학자료">대학자료</option>
-														<option value="대학자료">외부의뢰</option>
+														<option value="">수집방법 선택</option>
+														<c:choose>
+															<c:when test="${dto.COL_METHOD eq '정보공시'}">
+																<option value="정보공시" selected="selected">정보공시</option>
+															</c:when>
+															<c:otherwise>
+																<option value="정보공시">정보공시</option>
+															</c:otherwise>
+														</c:choose>
+														<c:choose>
+															<c:when test="${dto.COL_METHOD eq '대학자료'}">
+																<option value="대학자료" selected="selected">대학자료</option>
+															</c:when>
+															<c:otherwise>
+																<option value="대학자료">대학자료</option>
+															</c:otherwise>
+														</c:choose>
+														<c:choose>
+															<c:when test="${dto.COL_METHOD eq '외부의뢰'}">
+																<option value="외부의뢰" selected="selected">외부의뢰</option>
+															</c:when>
+															<c:otherwise>
+																<option value="외부의뢰">외부의뢰</option>
+															</c:otherwise>
+														</c:choose>
 													</select>
 												</div>
 											</div>
@@ -261,7 +318,7 @@
 													<span>목표 값</span>
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
-													<input type="text" class="form-control" value="100"
+													<input type="text" class="form-control" value="${dto.TARGET_VAL}"
 														name="TARGET_VAL">
 												</div>
 											</div>
@@ -275,9 +332,23 @@
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<select class="custom-select" id="inputGroupSelect04"
 														name="EVAL_METHOD">
-														<option value="0">평가방법 선택</option>
-														<option value="정량">정량</option>
-														<option value="정성">정성</option>
+														<option value="">평가방법 선택</option>
+														<c:choose>
+															<c:when test="${dto.EVAL_METHOD eq '정량'}">
+																<option value="정량" selected="selected">정량</option>
+															</c:when>
+															<c:otherwise>
+																<option value="정량">정량</option>
+															</c:otherwise>
+														</c:choose>
+														<c:choose>
+															<c:when test="${dto.EVAL_METHOD eq '정성'}">
+																<option value="정성" selected="selected">정성</option>
+															</c:when>
+															<c:otherwise>
+																<option value="정성">정성</option>
+															</c:otherwise>
+														</c:choose>
 													</select>
 												</div>
 											</div>
@@ -290,7 +361,7 @@
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<input type="text" class="form-control"
-														name="EVAL_STANDARD">
+														name="EVAL_STANDARD" value="${dto.EVAL_STANDARD}">
 												</div>
 											</div>
 										</div>
@@ -305,7 +376,7 @@
 												</div>
 												<div class="col-md-5" style="padding-bottom: 10px;">
 													<input type="text" class="form-control" readonly="readonly"
-														id="ELEMENTS" name="ELEMENTS" value="">
+														id="ELEMENTS" name="ELEMENTS" value="${dto.ELEMENTS}">
 												</div>
 												<div class="col-md-4" style="padding-bottom: 10px;">
 													<input type="text" class="form-control" id="input_ele">
@@ -328,7 +399,7 @@
 												</div>
 												<div class="col-md-9" style="padding-bottom: 10px;">
 													<input type="text" class="form-control" readonly="readonly"
-														id="FORMULA_input" name="FORMULA" value="">
+														id="FORMULA_input" name="FORMULA" value="${dto.FORMULA}">
 												</div>
 												<div class="col-md-2" style="padding-bottom: 10px;">
 													<button type="button" class="btn btn-primary"

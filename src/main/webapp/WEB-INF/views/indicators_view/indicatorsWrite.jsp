@@ -155,12 +155,12 @@
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<select class="custom-select" id="DIVISION_NAME"
 														name="DIVISION_NAME">
-														<option value="0">모두 보기</option>
-														<option value="1">입학취업처</option>
-														<option value="2">교무학생처</option>
-														<option value="3">행정지원처</option>
-														<option value="4">대학발전운영실</option>
-														<option value="5">산학협력처</option>
+														<option value="">모두 보기</option>
+														<option value="입학취업처">입학취업처</option>
+														<option value="교무학생처">교무학생처</option>
+														<option value="행정지원처">행정지원처</option>
+														<option value="대학발전운영실">대학발전운영실</option>
+														<option value="산학협력처">산학협력처</option>
 													</select>
 												</div>
 											</div>
@@ -248,7 +248,7 @@
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<select class="custom-select" id="inputGroupSelect04"
 														name="COL_METHOD">
-														<option value="0">수집방법 선택</option>
+														<option value="">수집방법 선택</option>
 														<option value="정보공시">정보공시</option>
 														<option value="대학자료">대학자료</option>
 														<option value="대학자료">외부의뢰</option>
@@ -277,7 +277,7 @@
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<select class="custom-select" id="inputGroupSelect04"
 														name="EVAL_METHOD">
-														<option value="0">평가방법 선택</option>
+														<option value="">평가방법 선택</option>
 														<option value="정량">정량</option>
 														<option value="정성">정성</option>
 													</select>
