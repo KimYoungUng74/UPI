@@ -45,6 +45,9 @@ public class ReportController {
 		if(dto.getDIVISION_NAME() == null) {
 			dto.setDIVISION_NAME("모두 보기");
 		}
+		if(dto.getINDICATORS_NAME() == null) {
+			dto.setINDICATORS_NAME("");
+		}
 		model.addAttribute("kategorie", dto);
 		model.addAttribute("list", indcSer.selectKategorie(dto));
 		ModelAndView mav = new ModelAndView();
