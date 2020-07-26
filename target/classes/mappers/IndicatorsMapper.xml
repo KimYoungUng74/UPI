@@ -44,6 +44,10 @@
 		<if test="!DIVISION_NAME.equals('모두 보기')">
 			AND DIVISION_NAME = #{DIVISION_NAME}
 		</if>
+		<if test="INDICATORS_NAME != ''">
+			AND INDICATORS_NAME like '%'||#{INDICATORS_NAME}||'%'
+		</if>
+		
 		AND IS_USE = 0
 		ORDER BY INDICATORS_NUM
 	</select>

@@ -11,7 +11,16 @@
                         <!-- ============================================================== -->
                         <!-- create new -->
                         <!-- ============================================================== -->
-                        
+                        <li class="nav-item d-none d-md-block">
+                            <a class="nav-link" href="javascript:void(0)">
+                                <form action="report_view_list.do">
+                                    <div class="customize-input">
+                                        <input name="INDICATORS_NAME" class="form-control custom-shadow custom-radius border-0 bg-white text-gray"
+                                            type="search" placeholder="지표명으로 검색" aria-label="Search">
+                                    </div>
+                                </form>
+                            </a>
+                        </li>
                     </ul>
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
