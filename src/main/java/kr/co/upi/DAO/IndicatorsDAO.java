@@ -52,11 +52,9 @@ public class IndicatorsDAO {
 		return 1;
 	}
 	public int indicators_modify(IndicatorsDTO dto) {
-		try {
+
 			mybatis.insert("IndicatorsMapper.Indicators_modify",dto);
-		} catch(Exception e) {
-			return 0;
-		}
+
 		return 1;
 	}
 }

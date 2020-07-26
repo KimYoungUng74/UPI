@@ -71,7 +71,7 @@ public class IndicatorsController {
 	// 지표 수정 페이지
 	@RequestMapping(value = "indicators_modify.do")
 	public ModelAndView indicators_modify(IndicatorsDTO dto, Locale locale, Model model, HttpSession session) {
-			
+
 		ModelAndView mav = new ModelAndView();
 		System.out.println(dto);
 		dto = indicatorsSer.selectOne(dto);
@@ -100,11 +100,30 @@ public class IndicatorsController {
 		return mav;
 	}
 
+	// 지표 사용중지
+	@RequestMapping(value = "indicators_delete.do")
+	public ModelAndView indicators_delete(IndicatorsDTO dto, Locale locale, Model model, HttpSession session) {
+
+		ModelAndView mav = new ModelAndView();
+		dto.setUSER_ID("9703007");
+		dto.setUSER_NAME("관리자");
+		dto.setACTION_CODE(3);
+		System.out.println(dto);
+
+		if (1 != indicatorsSer.indicators_modify(dto)) {
+			mav.addObject("msg", "DB_ERROR");
+			System.out.println("에러");
+		}
+
+		mav = setIndicatorsList(mav);
+		return mav;
+	}
+
 	// 보고서 등록 페이지
 	@RequestMapping(value = "report_write.do")
-	public ModelAndView report_write(Locale locale, Model model,IndicatorsDTO dto, HttpSession session) {
+	public ModelAndView report_write(Locale locale, Model model, IndicatorsDTO dto, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
-		
+
 		dto = indicatorsSer.selectOne(dto);
 		System.out.println(dto);
 		mav.addObject("dto", dto);

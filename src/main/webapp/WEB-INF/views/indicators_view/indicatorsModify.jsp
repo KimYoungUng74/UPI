@@ -123,7 +123,7 @@
 				<!-- *************************************************************** -->
 				<!-- Start Sales Charts Section -->
 				<!-- *************************************************************** -->
-				<form action="indicators_modifyOk.do" method="post">
+				<form action="indicators_modifyOk.do" id="frm" method="post">
 				<input type="hidden" name="INDICATORS_NUM" value="${dto.INDICATORS_NUM}">
 					<div class="row">
 						<div class="col-lg-12 col-md-12">
@@ -208,9 +208,19 @@
 												<div class="col-md-4"
 													style="padding: 5px; padding-left: 15px;">
 													<div class="custom-control custom-checkbox">
-														<input type="checkbox"
+													<c:choose>
+															<c:when test="${1==dto.IS_BEST}">
+																<input type="checkbox"
 															class="custom-control-input cuscheck" value=1
-															name="IS_BEST" id="customCheck1"> <label
+															name="IS_BEST" id="customCheck1" checked="checked"> 
+															</c:when>
+															<c:otherwise>
+																<input type="checkbox"
+															class="custom-control-input cuscheck" value=1
+															name="IS_BEST" id="customCheck1"> 
+															</c:otherwise>
+													</c:choose>
+														<label
 															class="custom-control-label" for="customCheck1">
 															<a class="btn btn-primary rounded-circle btn-circle"
 															style="width: 25px; height: 25px;"
@@ -222,9 +232,19 @@
 													style="padding: 5px; padding-left: 15px;">
 
 													<div class="custom-control custom-checkbox">
-														<input type="checkbox"
+													<c:choose>
+															<c:when test="${1==dto.IS_AGENCY}">
+																<input type="checkbox"
 															class="custom-control-input cuscheck" value=1
-															name="IS_AGENCY" id="customCheck2"> <label
+															name="IS_AGENCY" id="customCheck2" checked="checked"> 
+															</c:when>
+															<c:otherwise>
+																<input type="checkbox"
+															class="custom-control-input cuscheck" value=1
+															name="IS_AGENCY" id="customCheck2" > 
+															</c:otherwise>
+													</c:choose>
+														<label
 															class="custom-control-label" for="customCheck2">
 															<a class="btn btn-danger rounded-circle btn-circle "
 															style="width: 25px; height: 25px;"
@@ -235,9 +255,19 @@
 												<div class="col-md-4"
 													style="padding: 5px; padding-left: 15px;">
 													<div class="custom-control custom-checkbox">
-														<input type="checkbox"
+													<c:choose>
+															<c:when test="${1==dto.IS_AHA}">
+																<input type="checkbox"
 															class="custom-control-input cuscheck" value=1
-															name="IS_AHA" id="customCheck3"> <label
+															name="IS_AHA" id="customCheck3" checked="checked">
+															</c:when>
+															<c:otherwise>
+																<input type="checkbox"
+															class="custom-control-input cuscheck" value=1
+															name="IS_AHA" id="customCheck3">
+															</c:otherwise>
+													</c:choose>
+														 <label
 															class="custom-control-label" for="customCheck3">
 															<a class="btn btn-warning rounded-circle btn-circle "
 															style="width: 25px; height: 25px;"
@@ -248,9 +278,19 @@
 												<div class="col-md-4"
 													style="padding: 5px; padding-left: 15px;">
 													<div class="custom-control custom-checkbox">
-														<input type="checkbox"
+													<c:choose>
+															<c:when test="${1==dto.IS_LINC}">
+																<input type="checkbox"
 															class="custom-control-input cuscheck" value=1
-															name="IS_LINC" id="customCheck4"> <label
+															name="IS_LINC" id="customCheck4" checked="checked"> 
+															</c:when>
+															<c:otherwise>
+																<input type="checkbox"
+															class="custom-control-input cuscheck" value=1
+															name="IS_LINC" id="customCheck4"> 
+															</c:otherwise>
+													</c:choose>
+														<label
 															class="custom-control-label" for="customCheck4">
 															<a class="btn btn-success rounded-circle btn-circle "
 															style="width: 25px; height: 25px;"
@@ -261,9 +301,19 @@
 												<div class="col-md-4"
 													style="padding: 5px; padding-left: 15px;">
 													<div class="custom-control custom-checkbox">
-														<input type="checkbox"
+													<c:choose>
+															<c:when test="${1==dto.IS_TYPE3}">
+																<input type="checkbox"
 															class="custom-control-input cuscheck" value=1
-															name="IS_TYPE3" id="customCheck5"> <label
+															name="IS_TYPE3" id="customCheck5" checked="checked"> 
+															</c:when>
+															<c:otherwise>
+																<input type="checkbox"
+															class="custom-control-input cuscheck" value=1
+															name="IS_TYPE3" id="customCheck5"> 
+															</c:otherwise>
+													</c:choose>
+														<label
 															class="custom-control-label" for="customCheck5">
 															<a class="btn btn-secondary rounded-circle btn-circle "
 															style="width: 25px; height: 25px;"
@@ -414,7 +464,7 @@
 											<div class="row">
 												<div class="col-md-12" style="padding-top: 5px;">
 													<hr>
-													<button onclick="location.href='indicators_delete.do'"
+													<button onclick="changeURL(); return confirm('정말 사용중지 하시겠습니까?')?document.getElementById('frm').submit():''"
 														class="btn btn-danger waves-effect waves-light"
 														type="button" style="float: left; margin-left: 5px;">지표
 														사용중지</button>
@@ -607,6 +657,12 @@
 <script type="text/javascript">
 	/*요소 길이*/
 	var ELEMENT_LEN = 0;
+	
+	/* 요소 버튼 클릭 */
+	function changeURL() {
+		document.getElementById('frm').action = "indicators_delete.do";
+	};
+	
 
 	/* 요소 버튼 클릭 */
 	function FORMULA_BTN(element_val) {

@@ -84,7 +84,7 @@
 			ACTION_CODE,
 			RECORD_DATE)
 		VALUES (GRADE_NUM.nextval,
-			#{A_GRADE},
+			#{A_GRADE}, 
 			#{B_GRADE},
 			#{D_GRADE},
 			#{A_MEASURE},
@@ -142,6 +142,7 @@
 			sysdate)
 	</insert>
 	
+	
 
 	<!-- 지표 변경 -->
 	<insert id="Indicators_modify" parameterType="IndicatorsDTO">
@@ -188,5 +189,6 @@
 			#{ACTION_CODE},
 			sysdate)
 	</insert>
+	
 
 </mapper>
