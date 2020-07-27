@@ -182,29 +182,51 @@
 	                                                                                  
 	                                                 <c:choose>  
 		                                                <c:when  test="${two_year_ago[status.index].GRADE != null }">                                  
-		                                                	<td class="text-center">${two_year_ago[status.index].GC }</td>
+		                                                	<td class="text-center" id="two_year_ago">${two_year_ago[status.index].GC }</td>
 		                                                </c:when >
 		                                                
 		                                                <c:otherwise>
-		                                                	<td class="text-center">0</td>
+		                                                	<td class="text-center" id="two_year_ago">0</td>
 		                                                </c:otherwise>
 	                                                </c:choose>
 	                                                
 	                                                <c:choose>  
 		                                                <c:when  test="${one_year_ago[status.index].GRADE != null }">                                  
-		                                                	<td class="text-center">${one_year_ago[status.index].GC }</td>
+		                                                	<td class="text-center" id="one_year_ago">${one_year_ago[status.index].GC }</td>
 		                                                </c:when >
 		                                                
 		                                                <c:otherwise>
-		                                                	<td class="text-center">0</td>
+		                                                	<td class="text-center" id="two_year_ago">0</td>
 		                                                </c:otherwise>
 	                                                </c:choose>
 	                                                
-	                                                <td class="text-center">${row.GC}</td>
-	                                                
+	                                                <c:choose>  
+		                                                <c:when  test="${row.GRADE != null }">                                  
+		                                                	<td class="text-center" id="now_year">${row.GC}</td>
+
+		                                                </c:when >
+		                                                
+		                                                <c:otherwise>
+		                                                	<td class="text-center" id="now_year">0</td>
+
+		                                                </c:otherwise>
+	                                                </c:choose>                                            
 	                                                                                          
 	                                            </tr>
                                             </c:forEach>
+                                            
+                                            <thead>
+	                                            <tr>
+	                                            	    
+		                                            <th class="text-center font-weight-bold">합계</th>
+		                                            <c:forEach items="${total}" var="tRow" varStatus="status">  
+		                                                <th class="text-center">${tRow }</th>
+		                                                
+	                                                </c:forEach>
+	                                                
+	                                            </tr>
+                                           
+                                        	</thead>
                                         
                                         </tbody>
                                     </table>
