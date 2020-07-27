@@ -106,10 +106,32 @@ public class ResultController {
 	 
 		List<RecordDTO> dto = resultSer.selectBusinessGrade(YEAR);
 		List<GradeCountDTO> now_year = resultSer.selectYearGrade(YEAR);
+		List<Integer> total = new ArrayList<Integer>();
+		
+		int all_Best = 0;
+		int all_Agency = 0;
+		int all_AHA = 0;
+		int all_Linc = 0;
+		int all_Type3 = 0;
+		int all = 0;
+		
+		for(int i=0; i<now_year.size(); i++) {
+			all_Best += dto.get(i).getIS_BEST();
+			all_Agency += dto.get(i).getIS_AGENCY();
+			all_AHA += dto.get(i).getIS_AHA();
+			all_Linc += dto.get(i).getIS_LINC();
+			all_Type3 += dto.get(i).getIS_TYPE3();
+			all += now_year.get(i).getGC();
+		}
+		
+		total.add(all_Best); total.add(all_Agency);
+		total.add(all_AHA); total.add(all_Linc);
+		total.add(all_Type3); total.add(all);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("viewAll",dto);
 		mav.addObject("now_year", now_year);
+		mav.addObject("total", total);
 		mav.setViewName("result_view/business_grade_view");
 		return mav;
 	}

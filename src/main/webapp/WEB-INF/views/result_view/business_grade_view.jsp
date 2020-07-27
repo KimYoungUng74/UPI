@@ -181,12 +181,12 @@
                                         	<c:forEach items="${viewAll}" var="row" varStatus="status">        
 	                                            <tr>
 	                                                <th class="text-center" scope="row">${row.GRADE }</th>
-	                                                <td class="text-center">${row.IS_BEST }</td>
-	                                                <td class="text-center">${row.IS_AGENCY }</td>
-	                                                <td class="text-center">${row.IS_AHA }</td>
-	                                                <td class="text-center">${row.IS_LINC }</td>
-	                                                <td class="text-center">${row.IS_TYPE3 }</td>                                                                                    
-	                                                <td class="text-center">${now_year[status.index].GC }</td>                                                                                    
+	                                                <td class="text-center" id="IS_BEST">${row.IS_BEST }</td>
+	                                                <td class="text-center" id="IS_AGENCY">${row.IS_AGENCY }</td>
+	                                                <td class="text-center" id="IS_AHA">${row.IS_AHA }</td>
+	                                                <td class="text-center" id="IS_LINC">${row.IS_LINC }</td>
+	                                                <td class="text-center" id="IS_TYPE3">${row.IS_TYPE3 }</td>                                                                                    
+	                                                <td class="text-center" id="IS_ALL">${now_year[status.index].GC }</td>                                                                                    
 	                                                                                                                                  
 	                                            </tr>
                                              </c:forEach>
@@ -195,13 +195,12 @@
                                         
                                         <thead>
                                             <tr>
-                                                <th class="text-center font-weight-bold">합계</th>
-                                                <th class="text-center">38</th>
-                                                <th class="text-center">18</th>
-                                                <th class="text-center">9</th>
-                                                <th class="text-center">5</th>
-                                                <th class="text-center">18</th>
-                                                <th class="text-center">55</th>
+                                            	    
+	                                            <th class="text-center font-weight-bold">합계</th>
+	                                            <c:forEach items="${total}" var="tRow" varStatus="status">  
+	                                                <th class="text-center">${tRow }</th>
+	                                                
+                                                </c:forEach>
                                                 
                                             </tr>
                                            
