@@ -29,11 +29,17 @@ import kr.co.upi.Service.TestService;
 public class UserController {
 	
 	@RequestMapping(value = "login.do")
-	public ModelAndView test(Locale locale, Model model, UserDTO dto) {
+	public ModelAndView login_do(Locale locale, Model model, UserDTO dto) {
 
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("login");
+		return mav;
+	}
+	@RequestMapping(value = "login_ok.do")
+	public ModelAndView login_ok(Locale locale, Model model, UserDTO dto) {
+		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("index");
 		return mav;
 	}
-
 }

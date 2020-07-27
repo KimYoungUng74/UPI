@@ -133,8 +133,30 @@
                 <!-- Start YEAR GRID  -->            
                 <!-- *************************************************************** -->
                 <div class="row">
+                	<div class="col-md-12">
+						<div class="card">
+							<div class="card-body">
+								<button class="btn btn-primary waves-effect waves-light btn-hwp-1" margin-left: 10px;
+									type="button">
+									<span class="btn-label"><i class="far fa-file-alt"></i></span>HWP로
+									저장
+								</button>
+								&nbsp;
+								<button
+									class="btn btn-secondary waves-effect waves-light btn-print-1"
+									type="button">
+									<span class="btn-label"><i class="fas fa-print"></i></span>PDF저장/인쇄
+								</button>
+
+							</div>
+						</div>
+					</div>
+                	
                     <div class="col-12">
-                        <div class="card">
+                        <div class="card" id="all-list">
+                        <!-- css링크들 임포트 -->
+    					<c:import url="../import/csslink.jsp" charEncoding="UTF-8" >
+    					</c:import>
                             <div class="card-body">
                                 <h4 class="card-title"><b>연도별 평가 등급표</b></h4>
                                 <p class="text-muted font-13">
@@ -142,13 +164,13 @@
                                 </p>
 					
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-striped mb-0">
+                                    <table class="table table-bordered table-striped mb-0" border="1" width="100%">
                                         <thead>
                                             <tr>
                                                 <th class="text-center" rowspan="2">등급</th>
-                                                <th class="text-center" rowspan="2">2018년</th>
-                                                <th class="text-center" rowspan="2">2019년</th>
-                                                <th class="text-center" rowspan="2">2020년</th>
+                                                <th class="text-center" rowspan="2">${two_year }년</th>
+                                                <th class="text-center" rowspan="2">${one_year }년</th>
+                                                <th class="text-center" rowspan="2">${year }년</th>
                                                 
                                             </tr>
                                            
@@ -188,18 +210,21 @@
                                     </table>
                                     
                                 </div> <!-- end table-responsive-->
-								<!-- START GRAPH -->
-								<br><br>
-								<!-- column -->
-			                    <div id="chart-area"></div>
-			                    <!-- column -->
-			                    
-			                    
-								
-								<!-- END GRAPH -->
                             </div> <!-- end card-body-->
                         </div> <!-- end card-->
                     </div> <!-- end col-->
+                    
+                    <div class="col-12">
+                        <div class="card">
+                        	<div class="card-body">
+                        		<h4 class="card-title"><b>연도별 평가 등급추이</b></h4>
+                        		<center>
+			                    <div id="chart-area"> </div>
+			               		</center>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+                    
                 </div>             
                 <!-- *************************************************************** -->
                 <!-- End YEAR GRID  -->
@@ -251,15 +276,15 @@
 	    categories: ['A 등급', 'B 등급', 'D 등급'],
 	    series: [
 	        {
-	            name: '2018',
+	            name: '${two_year}',
 	            data: [71.7, 28.3, 0]
 	        },
 	        {
-	            name: '2019',
+	            name: '${one_year}',
 	            data: [54.3, 43.5, 2.2]
 	        },
 	        {
-	            name: '2020',
+	            name: '${year}',
 	            data: [50.9, 36.4, 10.9]
 	        },
 	        
@@ -269,7 +294,7 @@
 	    chart: {
 	        width: 1160,
 	        height: 650,
-	        title: '연도별 등급 추이',
+	        title: '',
 	        format: '1,000'
 	    },
 	    yAxis: {
@@ -300,5 +325,49 @@
 	
 	</script>
 
-   
+   <script>
+    $('.btn-print-1').click(function() {
+		var win = window.open();
+		self.focus();
+		win.document.open();
+		win.document.write(document.getElementById('all-list').innerHTML);
+		win.print();
+		win.close();
+	});
+    $('.btn-hwp-1').click(function() {
+		var file = "hwp";
+		var header = "<html>"+"<head><meta charset='utf-8'></head><body>";
+		var footer = "</body></html>";
+		var sourceHTML = header+document.getElementById("all-list").innerHTML+footer;
+		var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+		var fileDownload = document.createElement("a");
+		document.body.appendChild(fileDownload);
+		fileDownload.href = source;
+		fileDownload.download = '경민대학교성과지표_연도별평가등급표.'+file;
+		fileDownload.click();
+		document.body.removeChild(fileDownload);
+	});
+    
+    $('.btn-print-2').click(function() {
+		var win = window.open();
+		self.focus();
+		win.document.open();
+		win.document.write(document.getElementById('grade-view').innerHTML);
+		win.print();
+		win.close();
+	});
+    $('.btn-hwp-2').click(function() {
+		var file = "hwp";
+		var header = "<html>"+"<head><meta charset='utf-8'></head><body>";
+		var footer = "</body></html>";
+		var sourceHTML = header+document.getElementById("grade-view").innerHTML+footer;
+		var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+		var fileDownload = document.createElement("a");
+		document.body.appendChild(fileDownload);
+		fileDownload.href = source;
+		fileDownload.download = '경민대학교성과지표_등급기준표.'+file;
+		fileDownload.click();
+		document.body.removeChild(fileDownload);
+	});
+    </script>
 </html>

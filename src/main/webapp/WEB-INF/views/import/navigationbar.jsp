@@ -37,19 +37,5 @@
                                         class="text-dark">경민대학교 홈페이지</span></span>
                             </a>
                         </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="javascript:void(0)" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <i data-feather="log-out" class="feather-icon"></i>
-                                <span class="ml-2 d-none d-lg-inline-block"><span
-                                        class="text-dark">로그아웃</span></span>
-                            </a>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
                     </ul>
                 </div>

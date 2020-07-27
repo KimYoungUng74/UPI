@@ -55,8 +55,7 @@
                         
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">사용자</span></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="javascript:void(0)" data-toggle="modal"
-                                        data-target="#login-modal"><i data-feather="log-in" class="feather-icon"></i><span
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="login.do"><i data-feather="log-in" class="feather-icon"></i><span
                                    class="hide-menu">Log-In</span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="logout.do"

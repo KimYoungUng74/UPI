@@ -33,6 +33,11 @@ public class ResultService {
 		return dao.selectYearGrade(YEAR);
 	}
 	
+	// 사업별 등급 갯수 가져오기
+	public List<RecordDTO> selectBusinessGrade(String YEAR){
+		
+		return dao.selectBusinessGrade(YEAR);
+	}
 	// 특정 지표의 최신값 가져오기
 	public List<RecordDTO> selectListIncd(int INDICATORS_NUM) {
 
