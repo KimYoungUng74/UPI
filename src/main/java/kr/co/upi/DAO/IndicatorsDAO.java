@@ -36,11 +36,9 @@ public class IndicatorsDAO {
 
 	// 평가 등급 수정
 	public int modifyGrade(GradeDTO dto) {
-		try {
+
 			mybatis.insert("IndicatorsMapper.GradeModify",dto);
-		} catch(Exception e) {
-			return 0;
-		}
+
 		return 1;
 	}
 	public int indicators_write(IndicatorsDTO dto) {
