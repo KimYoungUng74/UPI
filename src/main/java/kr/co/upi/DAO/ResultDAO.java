@@ -39,6 +39,12 @@ public class ResultDAO {
 		return mybatis.selectList("ResultMapper.ResultYearGrade",YEAR);
 	}
 	
+	// 사업별 등급 갯수 가져오기
+	public List<RecordDTO> selectBusinessGrade(String YEAR){
+		
+		return mybatis.selectList("ResultMapper.ResultBusinessGrade", YEAR);
+	}
+	
 	// 특정 지표의 최신값 가져오기
 	public List<RecordDTO> selectListIncd(int INDICATORS_NUM) {
 

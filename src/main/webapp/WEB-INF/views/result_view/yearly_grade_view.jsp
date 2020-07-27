@@ -146,9 +146,9 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center" rowspan="2">등급</th>
-                                                <th class="text-center" rowspan="2">2018년</th>
-                                                <th class="text-center" rowspan="2">2019년</th>
-                                                <th class="text-center" rowspan="2">2020년</th>
+                                                <th class="text-center" rowspan="2">${two_year }년</th>
+                                                <th class="text-center" rowspan="2">${one_year }년</th>
+                                                <th class="text-center" rowspan="2">${year }년</th>
                                                 
                                             </tr>
                                            
@@ -251,15 +251,15 @@
 	    categories: ['A 등급', 'B 등급', 'D 등급'],
 	    series: [
 	        {
-	            name: '2018',
+	            name: '${two_year}',
 	            data: [71.7, 28.3, 0]
 	        },
 	        {
-	            name: '2019',
+	            name: '${one_year}',
 	            data: [54.3, 43.5, 2.2]
 	        },
 	        {
-	            name: '2020',
+	            name: '${year}',
 	            data: [50.9, 36.4, 10.9]
 	        },
 	        

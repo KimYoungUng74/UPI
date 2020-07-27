@@ -44,10 +44,25 @@
 	
 		SELECT  NVL(MAX(GRADE) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE),'기타') as GRADE, NVL(count(*),0) as GC
 		FROM RECORD_TB
-		WHERE to_char(RECORD_DATE, 'yyyy') = '${YEAR}'
+		WHERE to_char(RECORD_DATE, 'yyyy') = '${YEAR}' AND (INDICATORS_NUM, RECORD_DATE) in (select indicators_num,MAX(record_date) from RECORD_TB GROUP BY indicators_num)
 		GROUP BY GRADE
 		
 	</select>
+	
+	
+	<!-- 사업별 등급 갯수 가져오기 -->
+	<select id="ResultBusinessGrade" parameterType="String" resultType="RecordDTO">
+		SELECT  NVL(MAX(GRADE) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE),'기타') as GRADE, 
+		NVL(count(decode(is_best,1,1)) ,0) as IS_BEST,
+		NVL(count(decode(is_agency,1,1)), 0) as IS_AGENCY, 
+		NVL(count(decode(is_aha,1,1)), 0) as IS_AHA, 
+		NVL(count(decode(is_linc,1,1)), 0) as IS_LINC, 
+		NVL(count(decode(is_type3,1,1)), 0) as IS_TYPE3
+		FROM RECORD_TB
+		WHERE to_char(RECORD_DATE, 'yyyy') = '${YEAR}' AND (INDICATORS_NUM, RECORD_DATE) in (select indicators_num,MAX(record_date) from RECORD_TB GROUP BY indicators_num)
+		GROUP BY GRADE
+	</select>
+	
 	
 	
 	<!-- 특정 지표의 년도별 최신보고서들 가져오기 -->

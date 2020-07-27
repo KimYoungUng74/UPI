@@ -93,7 +93,6 @@ public class ResultController {
 		
 		List<RecordDTO> dto = resultSer.selectResultListAll(YEAR);
 				
-		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("result_view/result_grid_view");
 		mav.addObject("viewAll", dto);
@@ -104,8 +103,13 @@ public class ResultController {
 	// 사업별 등급 표 페이지
 	@RequestMapping(value = "business_grade_view.do")
 	public ModelAndView businessGrade(Locale locale, Model model) {
-
+	 
+		List<RecordDTO> dto = resultSer.selectBusinessGrade(YEAR);
+		List<GradeCountDTO> now_year = resultSer.selectYearGrade(YEAR);
+		
 		ModelAndView mav = new ModelAndView();
+		mav.addObject("viewAll",dto);
+		mav.addObject("now_year", now_year);
 		mav.setViewName("result_view/business_grade_view");
 		return mav;
 	}

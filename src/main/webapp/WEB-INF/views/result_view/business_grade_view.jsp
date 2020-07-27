@@ -157,47 +157,19 @@
                                            
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th class="text-center" scope="row">A등급</th>
-                                                <td class="text-center">15 (40%)</td>
-                                                <td class="text-center">11 (61%)</td>
-                                                <td class="text-center">5 (56%)</td>
-                                                <td class="text-center">2 (40%)</td>
-                                                <td class="text-center">11 (61%)</td>
-                                                <td class="text-center">28 (51%)</td>
-                                                                                          
-                                            </tr>
-                                            
-                                            <tr>
-                                                <th class="text-center" scope="row">B등급</th>
-                                                <td class="text-center">18 (47%)</td>
-                                                <td class="text-center">6 (33%)</td>
-                                                <td class="text-center">3 (33%)</td>       
-                                                <td class="text-center">2 (40%)</td>
-                                                <td class="text-center">6 (33%)</td>
-                                                <td class="text-center">20 (36%)</td>                                     
-                                            </tr>
-                                            
-                                            <tr>
-                                                <th class="text-center" scope="row">D등급</th>
-                                                <td class="text-center">5 (13%)</td>
-                                                <td class="text-center">1 (6%)</td>
-                                                <td class="text-center">0 (0%)</td>      
-                                                <td class="text-center">1 (20%)</td>
-                                                <td class="text-center">1 (6%)</td>
-                                                <td class="text-center">6 (11%)</td>                                      
-                                            </tr>
-                                            
-                                            <tr>
-                                                <th class="text-center" scope="row">기타</th>
-                                                <td class="text-center">0 (0%)</td>
-                                                <td class="text-center">0 (0%)</td>
-                                                <td class="text-center">1 (1%)</td>       
-                                                <td class="text-center">0 (0%)</td>
-                                                <td class="text-center">0 (0%)</td>
-                                                <td class="text-center">1 (2%)</td>                                 
-                                            </tr>
-                                        
+                                        	<c:forEach items="${viewAll}" var="row" varStatus="status">        
+	                                            <tr>
+	                                                <th class="text-center" scope="row">${row.GRADE }</th>
+	                                                <td class="text-center">${row.IS_BEST }</td>
+	                                                <td class="text-center">${row.IS_AGENCY }</td>
+	                                                <td class="text-center">${row.IS_AHA }</td>
+	                                                <td class="text-center">${row.IS_LINC }</td>
+	                                                <td class="text-center">${row.IS_TYPE3 }</td>                                                                                    
+	                                                <td class="text-center">${now_year[status.index].GC }</td>                                                                                    
+	                                                                                                                                  
+	                                            </tr>
+                                             </c:forEach>
+                                    
                                         </tbody>
                                         
                                         <thead>
