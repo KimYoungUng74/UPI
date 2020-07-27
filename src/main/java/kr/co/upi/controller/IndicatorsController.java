@@ -131,28 +131,29 @@ public class IndicatorsController {
 		mav.setViewName("report_view/reportWrite");
 		return mav;
 	}
-	
-	// 지표 사용중지
-		@RequestMapping(value = "report_write_ok.do")
-		public ModelAndView report_write_ok(RecordDTO dto, Locale locale, Model model, HttpSession session) {
 
-			ModelAndView mav = new ModelAndView();
-			dto.setUSER_ID("9703007");
-			dto.setUSER_NAME("관리자");
-			dto.setACTION_CODE(1);
-			
-			System.out.println(dto);
+	// 보고서 등록 기능
+	@RequestMapping(value = "report_write_ok.do")
+	public ModelAndView report_write_ok(RecordDTO dto, Locale locale, Model model, HttpSession session) {
 
-			if (1 != indicatorsSer.report_write(dto)) {
-				mav.addObject("msg", "DB_ERROR");
-				System.out.println("에러");
-			}
+		ModelAndView mav = new ModelAndView();
+		dto.setUSER_ID("9703007");
+		dto.setUSER_NAME("관리자");
+		dto.setACTION_CODE(1);
+		dto.setGRADE(setGrade(dto.getPRESENT_VAL()));
 
-			mav = setIndicatorsList(mav);
-			return mav;
+		System.out.println(dto);
+
+		if (1 != indicatorsSer.report_write(dto)) {
+			mav.addObject("msg", "DB_ERROR");
+			System.out.println("에러");
 		}
 
+		mav = setIndicatorsList(mav);
+		return mav;
+	}
 
+	
 	// 등급기준 변경
 	@RequestMapping(value = "gradeModify.do")
 	public ModelAndView gradeModify(Locale local, GradeDTO dto, HttpServletRequest request, HttpSession session) {
@@ -172,7 +173,6 @@ public class IndicatorsController {
 	// 리스트로 가기
 	public ModelAndView setIndicatorsList(ModelAndView mav) {
 		GradeDTO gradeDto = new GradeDTO();
-		gradeDto.setRECORD_DATE(time);
 		gradeDto = indicatorsSer.selectGrade();
 
 		System.out.println(gradeDto);
@@ -180,5 +180,24 @@ public class IndicatorsController {
 		mav.setViewName("indicators_view/indicatorsList");
 		return mav;
 	}
+	
+	// 등급 판별
+	private String setGrade(String present_VAL) {
+		String result = "Error";
+		int present = Integer.parseInt(present_VAL);
+		
+		GradeDTO gradeDto = new GradeDTO();
+		gradeDto = indicatorsSer.selectGrade();
+		
+		if(present >= gradeDto.getA_GRADE()) {
+			result = "A";
+		} else if(present >= gradeDto.getB_GRADE()) {
+			result = "B";
+		} else if(present < gradeDto.getD_GRADE()) {
+			result = "D";
+		}
+		return result;
+	}
+
 
 }
