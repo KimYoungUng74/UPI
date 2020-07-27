@@ -127,9 +127,23 @@
 					<div class="col-lg-12 col-md-12">
 						<div class="card">
 							<div class="card-body">
-								<form action="report_write_Ok.do" method="post">
+								<form action="report_write_ok.do" method="post">
 									<input type="hidden" name="INDICATORS_NUM"
 										value="${dto.INDICATORS_NUM}">
+										<input type="hidden" name="INDICATORS_NAME"
+										value="${dto.INDICATORS_NAME}">
+										<input type="hidden" name="TARGET_VAL"
+										value="${dto.TARGET_VAL}">
+										<input type="hidden" name="IS_BEST"
+										value="${dto.IS_BEST}"> 
+										<input type="hidden" name="IS_AGENCY"
+										value="${dto.IS_AGENCY}"> 
+										<input type="hidden" name="IS_AHA"
+										value="${dto.IS_AHA}"> 
+										<input type="hidden" name="IS_LINC"
+										value="${dto.IS_LINC}"> 
+										<input type="hidden" name="IS_TYPE3"
+										value="${dto.IS_TYPE3}"> 
 									<div class="row">
 										<!-- 지표명 -->
 										<div class="col-md-7" style="padding-bottom: 5px;">
@@ -168,13 +182,13 @@
 															<c:when test="${1==dto.IS_BEST}">
 																<input type="checkbox"
 																	class="custom-control-input cuscheck" value=1
-																	name="IS_BEST" id="customCheck1" checked="checked"
+																	 id="customCheck1" checked="checked"
 																	disabled="disabled">
 															</c:when>
 															<c:otherwise>
 																<input type="checkbox"
 																	class="custom-control-input cuscheck" value=1
-																	name="IS_BEST" id="customCheck1" disabled="disabled">
+																	 id="customCheck1" disabled="disabled">
 															</c:otherwise>
 														</c:choose>
 														<label class="custom-control-label" for="customCheck1">
@@ -192,13 +206,13 @@
 															<c:when test="${1==dto.IS_AGENCY}">
 																<input type="checkbox"
 																	class="custom-control-input cuscheck" value=1
-																	name="IS_AGENCY" id="customCheck2" checked="checked"
+																	 id="customCheck2" checked="checked"
 																	disabled="disabled">
 															</c:when>
 															<c:otherwise>
 																<input type="checkbox"
 																	class="custom-control-input cuscheck" value=1
-																	name="IS_AGENCY" id="customCheck2" disabled="disabled">
+																	 id="customCheck2" disabled="disabled">
 															</c:otherwise>
 														</c:choose>
 														<label class="custom-control-label" for="customCheck2">
@@ -215,13 +229,13 @@
 															<c:when test="${1==dto.IS_AHA}">
 																<input type="checkbox"
 																	class="custom-control-input cuscheck" value=1
-																	name="IS_AHA" id="customCheck3" checked="checked"
+																	id="customCheck3" checked="checked"
 																	disabled="disabled">
 															</c:when>
 															<c:otherwise>
 																<input type="checkbox"
 																	class="custom-control-input cuscheck" value=1
-																	name="IS_AHA" id="customCheck3" disabled="disabled">
+																	id="customCheck3" disabled="disabled">
 															</c:otherwise>
 														</c:choose>
 														<label class="custom-control-label" for="customCheck3">
@@ -238,13 +252,13 @@
 															<c:when test="${1==dto.IS_LINC}">
 																<input type="checkbox"
 																	class="custom-control-input cuscheck" value=1
-																	name="IS_LINC" id="customCheck4" checked="checked"
+																    id="customCheck4" checked="checked"
 																	disabled="disabled">
 															</c:when>
 															<c:otherwise>
 																<input type="checkbox"
 																	class="custom-control-input cuscheck" value=1
-																	name="IS_LINC" id="customCheck4" disabled="disabled">
+																	id="customCheck4" disabled="disabled">
 															</c:otherwise>
 														</c:choose>
 														<label class="custom-control-label" for="customCheck4">
@@ -261,13 +275,13 @@
 															<c:when test="${1==dto.IS_TYPE3}">
 																<input type="checkbox"
 																	class="custom-control-input cuscheck" value=1
-																	name="IS_TYPE3" id="customCheck5" checked="checked"
+																	id="customCheck5" checked="checked"
 																	disabled="disabled">
 															</c:when>
 															<c:otherwise>
 																<input type="checkbox"
 																	class="custom-control-input cuscheck" value=1
-																	name="IS_TYPE3" id="customCheck5" disabled="disabled">
+																	id="customCheck5" disabled="disabled">
 															</c:otherwise>
 														</c:choose>
 														<label class="custom-control-label" for="customCheck5">

@@ -141,7 +141,7 @@ public class IndicatorsController {
 		dto.setUSER_NAME("관리자");
 		dto.setACTION_CODE(1);
 		dto.setGRADE(setGrade(dto.getPRESENT_VAL()));
-
+		dto.setACHIEVE_VAL(setACHIEVE(dto.getPRESENT_VAL(), dto.getTARGET_VAL()));
 		System.out.println(dto);
 
 		if (1 != indicatorsSer.report_write(dto)) {
@@ -153,7 +153,6 @@ public class IndicatorsController {
 		return mav;
 	}
 
-	
 	// 등급기준 변경
 	@RequestMapping(value = "gradeModify.do")
 	public ModelAndView gradeModify(Locale local, GradeDTO dto, HttpServletRequest request, HttpSession session) {
@@ -180,24 +179,29 @@ public class IndicatorsController {
 		mav.setViewName("indicators_view/indicatorsList");
 		return mav;
 	}
-	
+
 	// 등급 판별
 	private String setGrade(String present_VAL) {
 		String result = "Error";
-		int present = Integer.parseInt(present_VAL);
-		
+		Double present = Double.parseDouble(present_VAL);
+
 		GradeDTO gradeDto = new GradeDTO();
 		gradeDto = indicatorsSer.selectGrade();
-		
-		if(present >= gradeDto.getA_GRADE()) {
+
+		if (present >= gradeDto.getA_GRADE()) {
 			result = "A";
-		} else if(present >= gradeDto.getB_GRADE()) {
+		} else if (present >= gradeDto.getB_GRADE()) {
 			result = "B";
-		} else if(present < gradeDto.getD_GRADE()) {
+		} else if (present < gradeDto.getD_GRADE()) {
 			result = "D";
 		}
 		return result;
 	}
 
+	// 달성도 계산
+	private String setACHIEVE(String present_VAL, String target_VAL) {
+		Double ACHIEVE_VAL = (Double.parseDouble(present_VAL) / Double.parseDouble(target_VAL) * 100);
+		return ACHIEVE_VAL.toString();
+	}
 
 }

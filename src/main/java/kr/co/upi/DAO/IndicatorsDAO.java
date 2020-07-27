@@ -68,11 +68,8 @@ public class IndicatorsDAO {
 
 	// 보고서 입력
 	public int report_write(RecordDTO dto) {
-		try {
 			mybatis.insert("IndicatorsMapper.Report_write", dto);
-		} catch (Exception e) {
-			return 0;
-		}
+
 		return 1;
 	}
 }
