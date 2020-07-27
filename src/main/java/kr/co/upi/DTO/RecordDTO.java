@@ -19,7 +19,7 @@ public class RecordDTO {
 	private String ACHIEVE_VAL;		//달성도
     private String USER_ID;			//유저 아이디
     private String USER_NAME;		//유저 이름
-    private String ACTION_CODE;		//행위 코드
+    private int ACTION_CODE;		//행위 코드
 	private Date RECORD_DATE;		//기준일
 	
 	public int getRECORD_NUM() {
@@ -123,10 +123,10 @@ public class RecordDTO {
 	public void setUSER_NAME(String uSER_NAME) {
 		USER_NAME = uSER_NAME;
 	}
-	public String getACTION_CODE() {
+	public int getACTION_CODE() {
 		return ACTION_CODE;
 	}
-	public void setACTION_CODE(String aCTION_CODE) {
+	public void setACTION_CODE(int aCTION_CODE) {
 		ACTION_CODE = aCTION_CODE;
 	}
 	

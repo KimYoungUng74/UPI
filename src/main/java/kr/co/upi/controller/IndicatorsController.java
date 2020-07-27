@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import kr.co.upi.DTO.GradeDTO;
 import kr.co.upi.DTO.IndicatorsDTO;
+import kr.co.upi.DTO.RecordDTO;
 import kr.co.upi.DTO.UserDTO;
 import kr.co.upi.Service.IndicatorsService;
 
@@ -130,6 +131,27 @@ public class IndicatorsController {
 		mav.setViewName("report_view/reportWrite");
 		return mav;
 	}
+	
+	// 지표 사용중지
+		@RequestMapping(value = "report_write_ok.do")
+		public ModelAndView report_write_ok(RecordDTO dto, Locale locale, Model model, HttpSession session) {
+
+			ModelAndView mav = new ModelAndView();
+			dto.setUSER_ID("9703007");
+			dto.setUSER_NAME("관리자");
+			dto.setACTION_CODE(1);
+			
+			System.out.println(dto);
+
+			if (1 != indicatorsSer.report_write(dto)) {
+				mav.addObject("msg", "DB_ERROR");
+				System.out.println("에러");
+			}
+
+			mav = setIndicatorsList(mav);
+			return mav;
+		}
+
 
 	// 등급기준 변경
 	@RequestMapping(value = "gradeModify.do")

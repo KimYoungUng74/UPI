@@ -194,5 +194,42 @@
 			sysdate)
 	</insert>
 	
+	<!-- 지표 변경 -->
+	<insert id="Report_write" parameterType="RecordDTO">
+		INSERT INTO RECORD_TB(RECORD_NUM,
+			INDICATORS_NUM,
+			INDICATORS_NAME,
+			IS_BEST,
+			IS_AGENCY,
+			IS_AHA,
+			IS_LINC,
+			IS_TYPE3,
+			TARGET_VAL,
+			ELEMENT_VAL,
+			PRESENT_VAL,
+			GRADE,
+			ACHIEVE_VAL,
+			USER_ID,
+			USER_NAME,
+			ACTION_CODE,
+			RECORD_DATE)
+		VALUES (RECORD_NUM.nextval,
+			#{INDICATORS_NUM},
+			#{INDICATORS_NAME},
+			#{IS_BEST},
+			#{IS_AGENCY},
+			#{IS_AHA},
+			#{IS_LINC},
+			#{IS_TYPE3},
+			#{TARGET_VAL},
+			#{ELEMENT_VAL},
+			#{PRESENT_VAL},
+			#{GRADE},
+			#{ACHIEVE_VAL},
+			#{USER_ID},
+			#{USER_NAME},
+			#{ACTION_CODE},
+			sysdate)
+	</insert>
 
 </mapper>

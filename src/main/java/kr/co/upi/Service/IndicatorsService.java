@@ -46,9 +46,17 @@ public class IndicatorsService {
 	public int indicators_write(IndicatorsDTO dto) {
 		return dao.indicators_write(dto);
 	}
+	
+	// 지표 수정
 	public int indicators_modify(IndicatorsDTO dto) {
 		// TODO Auto-generated method stub
 		return dao.indicators_modify(dto);
+	}
+	
+	// 보고서 작성
+	public int report_write(RecordDTO dto) {
+		// TODO Auto-generated method stub
+		return dao.report_write(dto);
 	}
 
 }
