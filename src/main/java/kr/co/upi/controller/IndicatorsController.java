@@ -33,8 +33,16 @@ public class IndicatorsController {
 
 	// 지표관리 리스트
 	@RequestMapping(value = "indicators_view_list.do")
-	public ModelAndView report_view_list(Locale locale, Model model, HttpSession session) {
-
+	public ModelAndView report_view_list(Locale locale, Model model, HttpSession session, IndicatorsDTO dto) {
+		if(dto.getDIVISION_NAME() == null) {
+			dto.setDIVISION_NAME("모두 보기");
+		}
+		if(dto.getINDICATORS_NAME() == null) {
+			dto.setINDICATORS_NAME("");
+		}
+		model.addAttribute("kategorie", dto);
+		model.addAttribute("list", indicatorsSer.selectKategorie(dto));
+		
 		ModelAndView mav = new ModelAndView();
 		mav = setIndicatorsList(mav);
 		return mav;
@@ -173,7 +181,6 @@ public class IndicatorsController {
 	public ModelAndView setIndicatorsList(ModelAndView mav) {
 		GradeDTO gradeDto = new GradeDTO();
 		gradeDto = indicatorsSer.selectGrade();
-
 		System.out.println(gradeDto);
 		mav.addObject("gradeDto", gradeDto);
 		mav.setViewName("indicators_view/indicatorsList");
