@@ -15,7 +15,7 @@ public class UserService {
 	public UserDAO dao;
 
 	// 해당 년도 지표값들 가져오기
-	public UserDTO IDCheck(UserDTO dto) {
+	public int IDCheck(UserDTO dto) {
 
 		return dao.IDCheck(dto);
 	}
