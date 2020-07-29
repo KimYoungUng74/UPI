@@ -16,7 +16,6 @@ import kr.co.upi.DTO.RecordDTO;
 
 @Repository
 public class ResultDAO {
-	
 
 	@Autowired
 	public SqlSessionTemplate mybatis;
@@ -24,36 +23,41 @@ public class ResultDAO {
 	// 해당 년도 지표값들 가져오기
 	public List<RecordDTO> selectResultListAll(String YEAR) {
 
-		return mybatis.selectList("ResultMapper.ResultGridList",YEAR);
+		return mybatis.selectList("ResultMapper.ResultGridList", YEAR);
 	}
-	
+
 	// 해당 년도별 지표값들 가져오기 ( NULL 포함 )
 	public List<RecordDTO> selectYearList(String YEAR) {
 
-		return mybatis.selectList("ResultMapper.ResultYearList",YEAR);
+		return mybatis.selectList("ResultMapper.ResultYearList", YEAR);
 	}
-	
+
 	// 해당 년도별 등급 갯수 가져오기
 	public List<GradeCountDTO> selectYearGrade(String YEAR) {
 
-		return mybatis.selectList("ResultMapper.ResultYearGrade",YEAR);
+		return mybatis.selectList("ResultMapper.ResultYearGrade", YEAR);
 	}
-	
+
 	// 사업별 등급 갯수 가져오기
-	public List<RecordDTO> selectBusinessGrade(String YEAR){
-		
+	public List<RecordDTO> selectBusinessGrade(String YEAR) {
+
 		return mybatis.selectList("ResultMapper.ResultBusinessGrade", YEAR);
 	}
 	
+	// 년도별 등급 갯수 퍼센트 사용 할 때 사용
+	public List<GradeCountDTO> BusinessGradePer(String YEAR){
+			
+			return mybatis.selectList("ResultMapper.BusinessGradePer", YEAR);
+	}
+
 	// 특정 지표의 최신값 가져오기
 	public List<RecordDTO> selectListIncd(int INDICATORS_NUM) {
 
-		return mybatis.selectList("ResultMapper.ResultListIncd",INDICATORS_NUM);
+		return mybatis.selectList("ResultMapper.ResultListIncd", INDICATORS_NUM);
 	}
-	
-	
+
 	// 특정 등급의 최신값 가져오기
 	public List<RecordDTO> selectListGrade(String GRADE) {
-		return mybatis.selectList("ResultMapper.ResultListGrade",GRADE);
+		return mybatis.selectList("ResultMapper.ResultListGrade", GRADE);
 	}
 }

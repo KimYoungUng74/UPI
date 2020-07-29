@@ -272,13 +272,13 @@
                                                 <th class="font-14 font-weight-medium  px-2">성과지표명</th>
                                                 <th class="font-14 font-weight-medium  px-2">관련부서</th>
                                                 <th class="font-14 font-weight-medium  px-2">활용사업</th>
-                                                
+                                                <th class="font-14 font-weight-medium  px-2">보고서 업데이트</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         	<c:if test="${list.size() == 0}">
                                         		<tr>
-                                        			<td colspan="4">조건에 맞는 지표가 존재하지 않습니다.</td>
+                                        			<td colspan="5">조건에 맞는 지표가 존재하지 않습니다.</td>
                                         		</tr>
                                         	</c:if>
                                             <c:forEach items="${list}" var="list">
@@ -310,6 +310,7 @@
                                                     	</c:if>
                                                     </div>
                                                 </td>
+                                                <td class="border-top-0  px-2 py-4 font-14">${list.RECORD_DATE}</td>
                                             </tr>
                                             </c:forEach>
                                         </tbody>
