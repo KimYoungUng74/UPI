@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-lg-5 col-md-7 bg-white">
                     <div class="p-3">
-                        <form class="mt-4">
+                        <form class="mt-4" id="frm_login" action="login_ok.do" method="post">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
@@ -87,19 +87,20 @@
     			success : function(data) {
     				//아이디 인풋 테스트 (다른 텍스트를 받지않음)
     				if(idJ.test(user_id)){
-    					if (data == 1) {
+    					if ($.trim(data) == "1") {
     						// 1 : 아이디가 존재하지 않는 경우
     						$("#id_check").text("존재하지 않는 아이디입니다.");
     						$("#id_check").css("color", "red");
-    					} else if(data == 2){
+    					} else if($.trim(data) == "2"){
     						// 2 : 아이디는 존재하나 암호는 맞지않는 경우
     						$("#id_check").text("");
 							$("#pw_check").text("암호가 맞지않습니다.");
 							$("#pw_check").css("color", "red");
-    					} else if(data == 3){
+    					} else if($.trim(data) == "3"){
     						// 3 : 로그인 검사 성공
-    						$("#id_check").text("로그인 성공");
-    						$("#id_check").css("color", "green");
+    						$("#id_check").text("");
+    						$("#pw_check").text("");
+    						$("#frm_login").submit();
     					}
 					} else if(user_id == ""){
 						$('#id_check').text('아이디를 입력해주세요');

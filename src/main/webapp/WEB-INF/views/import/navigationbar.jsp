@@ -21,6 +21,9 @@
                                 </form>
                             </a>
                         </li>
+                        <c:if test="${not empty sessionScope.USER_NAME}">
+                        	${sessionScope.USER_NAME}님 로그인중
+                       	</c:if>
                     </ul>
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
