@@ -75,46 +75,63 @@
         
     	// 로그인(1 = 아이디가 존재 안 함/ 2 = 암호가 안맞음 / 3 = 로그인 가능)
         var idJ = /^[a-z0-9]{4,12}$/;
+        var pwidJ = /^[a-z0-9]{8,12}$/;
+        var spectial = /^[~!@#$]$/;
     	var checkPoint = 0;
     	$("#login_btn").click(function() {
-    		// id = "id_reg" / name = "userId"
+    		
     		var user_id = $('#USER_ID').val();
     		var user_pw = $('#USER_PW').val();
-    		console.log("id:"+user_id+"/pw:"+user_pw);
-    		$.ajax({
-    			url : '${pageContext.request.contextPath}/login_check.do?USER_ID='+user_id+'&USER_PW='+user_pw,
-    			type : 'post',
-    			success : function(data) {
-    				//아이디 인풋 테스트 (다른 텍스트를 받지않음)
-    				if(idJ.test(user_id)){
-    					if ($.trim(data) == "1") {
-    						// 1 : 아이디가 존재하지 않는 경우
-    						$("#id_check").text("존재하지 않는 아이디입니다.");
-    						$("#id_check").css("color", "red");
-    					} else if($.trim(data) == "2"){
-    						// 2 : 아이디는 존재하나 암호는 맞지않는 경우
-    						$("#id_check").text("");
-							$("#pw_check").text("암호가 맞지않습니다.");
-							$("#pw_check").css("color", "red");
-    					} else if($.trim(data) == "3"){
-    						// 3 : 로그인 검사 성공
-    						$("#id_check").text("");
-    						$("#pw_check").text("");
-    						$("#frm_login").submit();
+    		//아이디 인풋 테스트
+			if(idJ.test(user_id)){
+				//암호 인풋 테스트
+				if(pwidJ.test(user_pw)){
+    				$.ajax({
+    					url : '${pageContext.request.contextPath}/login_check.do?USER_ID='+user_id+'&USER_PW='+user_pw,
+    					type : 'post',
+    					success : function(data) {
+    						if ($.trim(data) == "1") {
+								// 1 : 아이디가 존재하지 않는 경우
+								$("#id_check").text("존재하지 않는 아이디입니다.");
+								$("#id_check").css("color", "red");
+								$("#pw_check").text("");
+							} else if($.trim(data) == "2"){
+								// 2 : 아이디는 존재하나 암호는 맞지않는 경우
+								$("#id_check").text("");
+								$("#pw_check").text("암호가 맞지않습니다.");
+								$("#pw_check").css("color", "red");
+							} else if($.trim(data) == "3"){
+								// 3 : 로그인 검사 성공
+								$("#id_check").text("");
+								$("#pw_check").text("");
+								//로그인 실행
+								$("#frm_login").submit();
+							}
+    				
+    					}, error : function(request, error) {
+    						console.log("로그인 오류 발생");
+    						console.log("code:"+request.status+"\n"+"message:"+request.responseText);
     					}
-					} else if(user_id == ""){
-						$('#id_check').text('아이디를 입력해주세요');
-						$('#id_check').css('color', 'red');		
-						
-					} else {
-						$('#id_check').text("아이디는 소문자와 숫자 4~12자리만 가능합니다");
-						$('#id_check').css('color', 'red');
-					}
-    			}, error : function(request, error) {
-    				console.log("로그인 오류 발생");
-    				console.log("code:"+request.status+"\n"+"message:"+request.responseText);
-    			}
-    		});
+    				});
+				}else if(user_pw == ""){
+					$('#pw_check').text('패스워드를 입력해주세요');
+					$('#pw_check').css('color', 'red');
+					$("#id_check").text("");
+				}else {
+					$('#pw_check').text("암호는 소문자와 숫자 8~12자리만 가능합니다");
+					$('#pw_check').css('color', 'red');
+					$("#id_check").text("");
+				} 
+			} else if(user_id == ""){
+				$('#id_check').text('아이디를 입력해주세요');
+				$('#id_check').css('color', 'red');
+				$("#pw_check").text("");
+				
+			} else {
+				$('#id_check').text("아이디는 소문자와 숫자 4~12자리만 가능합니다");
+				$('#id_check').css('color', 'red');
+				$("#pw_check").text("");
+			}
     	});
     </script>
 </html>

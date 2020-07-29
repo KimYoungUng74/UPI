@@ -69,50 +69,12 @@ public class UserController {
 		ModelAndView mav = new ModelAndView();
 		UserDTO userdto = userSer.loginOK(dto); //ID와 PW를 동시에 조건으로 하여 결과값을 가져옴
 		if( userdto != null) {
+			//세션생성
 			HttpSession session = request.getSession();
-			session.setAttribute("USER_ID", dto.getUSER_ID()); // 유저 ID 세션에 넣기
-			session.setAttribute("USER_NAME", dto.getUSER_NAME()); // 유저 NAME 세션에 넣기
-			//최신지표리스트
-			List<IndicatorsDTO> indcDTOs = indicatorsSer.selectAll();
-			int cnt_BEST=0;
-			int cnt_AGENCY=0;
-			int cnt_AHA =0;
-			int cnt_LINC =0;
-			int cnt_TYPE3 =0;
-			for(int i=0;i<indcDTOs.size();i++) {
-				IndicatorsDTO idto = indcDTOs.get(i);
-				if(idto.getIS_BEST()==1) {
-					cnt_BEST++;
-				}
-				if(idto.getIS_AGENCY()==1) {
-					cnt_AGENCY++;
-				}
-				if(idto.getIS_AHA()==1) {
-					cnt_AHA++;
-				}
-				if(idto.getIS_LINC()==1) {
-					cnt_LINC++;
-				}
-				if(idto.getIS_TYPE3()==1) {
-					cnt_TYPE3++;
-				}
-			}
-			//활용 사업별 지표 갯수
-			model.addAttribute("cnt_BEST",cnt_BEST);
-			model.addAttribute("cnt_AGENCY",cnt_AGENCY);
-			model.addAttribute("cnt_AHA",cnt_AHA);
-			model.addAttribute("cnt_LINC",cnt_LINC);
-			model.addAttribute("cnt_TYPE3",cnt_TYPE3);
-			//A등급 보고서
-			List<RecordDTO> A_GRADE = resultSer.selectListGrade("A");
-			//B등급 보고서
-			List<RecordDTO> B_GRADE = resultSer.selectListGrade("B");
-			//D등급 보고서
-			List<RecordDTO> D_GRADE = resultSer.selectListGrade("D");
-			model.addAttribute("A_GRADE",A_GRADE);
-			model.addAttribute("B_GRADE",B_GRADE);
-			model.addAttribute("D_GRADE",D_GRADE);
-			mav.setViewName("index");
+			session.setAttribute("USER_ID", userdto.getUSER_ID()); // 유저 ID 세션에 넣기
+			session.setAttribute("USER_NAME", userdto.getUSER_NAME()); // 유저 NAME 세션에 넣기
+			
+			mav.setViewName("redirect:index.do");
 		}else {
 			PrintWriter pw = response.getWriter();
 			pw.println("<script>alert('로그인 오류입니다.');</script>");
@@ -122,6 +84,14 @@ public class UserController {
 		
 		
 		
+		return mav;
+	}
+	@RequestMapping(value = "logout.do" ,method = RequestMethod.GET)
+	public ModelAndView logout(Locale locale, Model model,HttpServletRequest request){
+		
+		ModelAndView mav = new ModelAndView();
+		request.getSession().invalidate();
+		mav.setViewName("redirect:index.do");
 		return mav;
 	}
 	
