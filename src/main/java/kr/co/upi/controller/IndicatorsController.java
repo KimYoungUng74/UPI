@@ -1,5 +1,6 @@
 package kr.co.upi.controller;
 
+import java.io.InputStream;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
@@ -40,11 +41,16 @@ public class IndicatorsController {
 		if(dto.getINDICATORS_NAME() == null) {
 			dto.setINDICATORS_NAME("");
 		}
-		model.addAttribute("kategorie", dto);
-		model.addAttribute("list", indicatorsSer.selectKategorie(dto));
 		
 		ModelAndView mav = new ModelAndView();
-		mav = setIndicatorsList(mav);
+		mav.addObject("kategorie", dto);
+		mav.addObject("list", indicatorsSer.selectKategorie(dto));
+		
+		GradeDTO gradeDto = new GradeDTO();
+		gradeDto = indicatorsSer.selectGrade();
+		System.out.println(gradeDto);
+		mav.addObject("gradeDto", gradeDto);
+		mav.setViewName("indicators_view/indicatorsList");
 		return mav;
 	}
 
@@ -179,6 +185,14 @@ public class IndicatorsController {
 
 	// 리스트로 가기
 	public ModelAndView setIndicatorsList(ModelAndView mav) {
+		IndicatorsDTO dto = new IndicatorsDTO();
+		
+		dto.setDIVISION_NAME("모두 보기");
+		
+		
+		mav.addObject("kategorie", dto);
+		mav.addObject("list", indicatorsSer.selectKategorie(dto));
+		
 		GradeDTO gradeDto = new GradeDTO();
 		gradeDto = indicatorsSer.selectGrade();
 		System.out.println(gradeDto);

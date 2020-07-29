@@ -285,7 +285,7 @@
 											</div>
 										</div>
 										<!-- 지표 기준 -->
-										<div class="col-md-7" style="padding-bottom: 5px;">
+										<div class="col-md-4" style="padding-bottom: 5px;">
 											<div class="row">
 												<div class="col-md-12" style="padding-bottom: 5px;">
 													<span>평가기준</span>
@@ -293,6 +293,21 @@
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<input type="text" class="form-control"
 														name="EVAL_STANDARD">
+												</div>
+											</div>
+										</div>
+										<!-- 등급 기준 -->
+										<div class="col-md-3" style="padding-bottom: 5px;">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>등급기준</span>
+												</div>
+												<div class="col-md-12" style="padding-bottom: 10px;">
+													<select class="custom-select" id="inputGroupSelect04"
+														name="아직 안정함">
+														<option value="1" selected="selected">정적(기본)</option>
+														<option value="2">부적</option>
+													</select>
 												</div>
 											</div>
 										</div>
