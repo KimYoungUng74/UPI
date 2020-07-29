@@ -27,14 +27,9 @@ public class UserDAO {
 	public String IDCheck(UserDTO dto) {
 		System.out.println("로그인 검사 시작");
 		String result = "";
-		System.out.println(dto.toString());
+		System.out.println("입력된 id,pw :"+ dto.toString());
 		// ID에 포함된 정보를 가져옵니다.
 		UserDTO userdto = mybatis.selectOne("UserMapper.IDCheck", dto);
-		if (userdto != null) {
-			System.out.println(userdto.toString());
-		}else {
-			System.out.println("result data null");
-		}
 		if (userdto == null) {
 			result = "1"; // id가 없을경우
 		} else if (!userdto.getUSER_PW().equals(SHA256.getSHA256(dto.getUSER_PW()))) {

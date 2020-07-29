@@ -64,8 +64,6 @@ public class UserController {
 	
 	@RequestMapping(value = "login_ok.do" ,method = RequestMethod.POST)
 	public ModelAndView login_ok(Locale locale, Model model,UserDTO dto,HttpServletRequest request,HttpServletResponse response) throws IOException {
-		System.out.println("로그인된"+dto.toString());
-		
 		ModelAndView mav = new ModelAndView();
 		UserDTO userdto = userSer.loginOK(dto); //ID와 PW를 동시에 조건으로 하여 결과값을 가져옴
 		if( userdto != null) {
@@ -81,9 +79,6 @@ public class UserController {
 			pw.flush();
 			mav.setViewName("login");
 		}
-		
-		
-		
 		return mav;
 	}
 	@RequestMapping(value = "logout.do" ,method = RequestMethod.GET)

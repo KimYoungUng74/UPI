@@ -75,8 +75,6 @@
         
     	// 로그인(1 = 아이디가 존재 안 함/ 2 = 암호가 안맞음 / 3 = 로그인 가능)
         var idJ = /^[a-z0-9]{4,12}$/;
-        var pwidJ = /^[a-z0-9]{8,12}$/;
-        var spectial = /^[~!@#$]$/;
     	var checkPoint = 0;
     	$("#login_btn").click(function() {
     		
@@ -85,9 +83,9 @@
     		//아이디 인풋 테스트
 			if(idJ.test(user_id)){
 				//암호 인풋 테스트
-				if(pwidJ.test(user_pw)){
+				if(user_pw.length >= 8 && user_pw.length <= 20){
     				$.ajax({
-    					url : '${pageContext.request.contextPath}/login_check.do?USER_ID='+user_id+'&USER_PW='+user_pw,
+    					url : '${pageContext.request.contextPath}/login_check.do?USER_ID='+user_id+'&USER_PW='+encodeURIComponent(user_pw), // encodeURIComponent()은 URL에 포함되거나 위험성있는 특수문자도 톰캣에게 허용하기 위해 16진수로 변환해줍니다.
     					type : 'post',
     					success : function(data) {
     						if ($.trim(data) == "1") {
@@ -118,7 +116,7 @@
 					$('#pw_check').css('color', 'red');
 					$("#id_check").text("");
 				}else {
-					$('#pw_check').text("암호는 소문자와 숫자 8~12자리만 가능합니다");
+					$('#pw_check').text("암호는 8~20자리만 가능합니다");
 					$('#pw_check').css('color', 'red');
 					$("#id_check").text("");
 				} 
