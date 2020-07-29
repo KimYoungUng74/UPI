@@ -272,7 +272,7 @@
                                                 <th class="font-14 font-weight-medium  px-2">성과지표명</th>
                                                 <th class="font-14 font-weight-medium  px-2">관련부서</th>
                                                 <th class="font-14 font-weight-medium  px-2">활용사업</th>
-                                                
+                                                <th class="font-14 font-weight-medium  px-2">보고서 업데이트</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -310,6 +310,7 @@
                                                     	</c:if>
                                                     </div>
                                                 </td>
+                                                <td class="border-top-0  px-2 py-4 font-14">${list.RECORD_DATE}</td>
                                             </tr>
                                             </c:forEach>
                                         </tbody>
