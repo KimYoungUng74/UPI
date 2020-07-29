@@ -24,9 +24,9 @@ public class UserDAO {
 	public SqlSessionTemplate mybatis;
 
 	//사용자 ID check
-	public int IDCheck(UserDTO dto) {
+	public String IDCheck(UserDTO dto) {
 		System.out.println("로그인 검사 시작");
-		int result = 0; 
+		String result = "";
 		System.out.println(dto.toString());
 		// ID에 포함된 정보를 가져옵니다.
 		UserDTO userdto = mybatis.selectOne("UserMapper.IDCheck", dto);
@@ -36,12 +36,18 @@ public class UserDAO {
 			System.out.println("result data null");
 		}
 		if (userdto == null) {
-			result = 1; // id가 없을경우
+			result = "1"; // id가 없을경우
 		} else if (!userdto.getUSER_PW().equals(SHA256.getSHA256(dto.getUSER_PW()))) {
-			result = 2;// pw가 맞지않을경우
+			result = "2";// pw가 맞지않을경우
 		} else {
-			result = 3;// 로그인 성공
+			result = "3";// 로그인 성공
 		}
 		return result;
+	}
+	
+	//로그인후 사용자 정보 가져오기
+	public UserDTO loginOK(UserDTO dto) {
+		dto.setUSER_PW(SHA256.getSHA256(dto.getUSER_PW()));
+		return mybatis.selectOne("UserMapper.loginOk", dto);
 	}
 }

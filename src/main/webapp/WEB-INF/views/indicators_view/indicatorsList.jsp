@@ -278,7 +278,7 @@
                                         <tbody style="height: 200px; overflow: auto;">
                                         	<c:if test="${list.size() == 0}">
                                         		<tr>
-                                        			<td colspan="4">조건에 맞는 지표가 존재하지 않습니다.</td>
+                                        			<td colspan="5">조건에 맞는 지표가 존재하지 않습니다.</td>
                                         		</tr>
                                         	</c:if>
                                             <c:forEach items="${list}" var="list">

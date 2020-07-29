@@ -9,4 +9,8 @@
 	<select id="IDCheck" parameterType="UserDTO" resultType="UserDTO">
 		SELECT * FROM USER_TB WHERE USER_ID = #{USER_ID}
 	</select>
+	
+	<select id="loginOk" parameterType="UserDTO" resultType="UserDTO">
+		SELECT * FROM USER_TB WHERE USER_ID = #{USER_ID} AND USER_PW = #{USER_PW}
+	</select>
 </mapper>
