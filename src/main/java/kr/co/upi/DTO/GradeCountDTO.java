@@ -7,7 +7,7 @@ public class GradeCountDTO {
 	private int A; // A 갯수
 	private int B; // B 갯수
 	private int D; // C 갯수
-	private int ect; // 기타 갯수
+	private int ETC; // 기타 갯수
 	
 	public String getGRADE() {
 		return GRADE;
@@ -35,11 +35,11 @@ public class GradeCountDTO {
 		D = d;
 	}
 	
-	public int getEct() {
-		return ect;
+	public int getETC() {
+		return ETC;
 	}
-	public void setEct(int ect) {
-		this.ect = ect;
+	public void setETC(int eTC) {
+		ETC = eTC;
 	}
 	public int getGC() {
 		return GC;
@@ -47,10 +47,14 @@ public class GradeCountDTO {
 	public void setGC(int gC) {
 		GC = gC;
 	}
+	
 	@Override
 	public String toString() {
-		return "GradeCountDTO [GRADE=" + GRADE + ", GC=" + GC + "]";
+		return "GradeCountDTO [GRADE=" + GRADE + ", GC=" + GC + ", A=" + A + ", B=" + B + ", D=" + D + ", ETC=" + ETC
+				+ "]";
 	}
+	
+	
 	
 	
 	

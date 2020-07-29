@@ -46,13 +46,17 @@
 		WHERE to_char(RECORD_DATE, 'yyyy') = '${YEAR}' AND (INDICATORS_NUM, RECORD_DATE) in (select indicators_num,MAX(record_date) from RECORD_TB  where to_char(RECORD_DATE, 'yyyy') = '${YEAR}'  GROUP BY indicators_num)
 		GROUP BY GRADE		
 		
-		<!-- SELECT  NVL(MAX(GRADE) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE),'기타') as GRADE,decode(grade,'A',count(*),0) as A, decode(grade,'B',count(*),0) as B, decode(grade,'D',count(*),0) as D, decode(grade,'',count(*),0) as 기타
-		FROM RECORD_TB
-		WHERE to_char(RECORD_DATE, 'yyyy') = '2019' AND (INDICATORS_NUM, RECORD_DATE) in (select indicators_num,MAX(record_date) from RECORD_TB  where to_char(RECORD_DATE, 'yyyy') = '2019' GROUP BY indicators_num)
-		GROUP BY GRADE
-        ORDER BY GRADE -->
+		
 	</select>
 	
+	<!--년도별 평가 등급 퍼센트 사용시 이용  -->
+	<select id="BusinessGradePer" parameterType="String" resultType="GradeCountDTO">
+		SELECT  NVL(MAX(GRADE) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE),'etc') as GRADE,decode(grade,'A',count(*),0) as A, decode(grade,'B',count(*),0) as B, decode(grade,'D',count(*),0) as D, decode(grade,'',count(*),0) as ETC
+		FROM RECORD_TB
+		WHERE to_char(RECORD_DATE, 'yyyy') = '${YEAR}' AND (INDICATORS_NUM, RECORD_DATE) in (select indicators_num,MAX(record_date) from RECORD_TB  where to_char(RECORD_DATE, 'yyyy') = '${YEAR}' GROUP BY indicators_num)
+		GROUP BY GRADE
+        ORDER BY GRADE
+	</select>
 	
 	<!-- 사업별 등급 갯수 가져오기 -->
 	<select id="ResultBusinessGrade" parameterType="String" resultType="RecordDTO">
