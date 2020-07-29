@@ -108,11 +108,11 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">2020년도 사업별 지표 등급</h3>
+                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">사업별 지표 등급표 </h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="index.html">경민대학교</a>
+                                    <li class="breadcrumb-item"><a href="index.html">사업별 지표 등급 각각 확인하실 수 있습니다</a>
                                     </li>
                                 </ol>
                             </nav>
@@ -157,9 +157,9 @@
     					<c:import url="../import/csslink.jsp" charEncoding="UTF-8" >
     					</c:import>
                             <div class="card-body">
-                                <h4 class="card-title"><b>사업별 지표 등급표</b></h4>
+                                <h4 class="card-title"><b>2020년도 사업별 지표 등급</b></h4>
                                 <p class="text-muted font-13">
-                                    	사업별 지표 등급 갯수를 확인하실 수 있습니다.
+                                    	경민대학교
                                 </p>
 					
                                 <div class="table-responsive">
@@ -178,14 +178,14 @@
                                            
                                         </thead>
                                         <tbody>
-                                        	<c:forEach items="${viewAll}" var="row" varStatus="status">        
+                                        	<c:forEach items="${grade}" var="row" varStatus="status">        
 	                                            <tr>
-	                                                <th class="text-center" scope="row">${row.GRADE }</th>
-	                                                <td class="text-center" id="IS_BEST">${row.IS_BEST }</td>
-	                                                <td class="text-center" id="IS_AGENCY">${row.IS_AGENCY }</td>
-	                                                <td class="text-center" id="IS_AHA">${row.IS_AHA }</td>
-	                                                <td class="text-center" id="IS_LINC">${row.IS_LINC }</td>
-	                                                <td class="text-center" id="IS_TYPE3">${row.IS_TYPE3 }</td>                                                                                    
+	                                                <th class="text-center" scope="row">${row}</th>
+	                                                <td class="text-center" id="IS_BEST">${viewAll[status.index].IS_BEST }</td>
+	                                                <td class="text-center" id="IS_AGENCY">${viewAll[status.index].IS_AGENCY }</td>
+	                                                <td class="text-center" id="IS_AHA">${viewAll[status.index].IS_AHA }</td>
+	                                                <td class="text-center" id="IS_LINC">${viewAll[status.index].IS_LINC }</td>
+	                                                <td class="text-center" id="IS_TYPE3">${viewAll[status.index].IS_TYPE3 }</td>                                                                                    
 	                                                <td class="text-center" id="IS_ALL">${now_year[status.index].GC }</td>                                                                                    
 	                                                                                                                                  
 	                                            </tr>
@@ -291,19 +291,19 @@
 	    series: [
 	        {
 	            name: 'A등급',
-	            data: 15
+	            data: ${viewAll[0].IS_BEST}
 	        },
 	        {
 	            name: 'B등급',
-	            data: 18
+	            data: ${viewAll[1].IS_BEST}
 	        },
 	        {
 	            name: 'C등급',
-	            data: 5
+	            data: ${viewAll[2].IS_BEST}
 	        },
 	        {
 	            name: '기타',
-	            data: 0
+	            data: ${viewAll[3].IS_BEST}
 	        }
 	    ]
 	};
@@ -341,19 +341,19 @@
 	    series: [
 	        {
 	            name: 'A등급',
-	            data: 11
+	            data: ${viewAll[0].IS_AGENCY}
 	        },
 	        {
 	            name: 'B등급',
-	            data: 6
+	            data: ${viewAll[1].IS_AGENCY}
 	        },
 	        {
 	            name: 'C등급',
-	            data: 1
+	            data: ${viewAll[2].IS_AGENCY}
 	        },
 	        {
 	            name: '기타',
-	            data: 0
+	            data: ${viewAll[3].IS_AGENCY}
 	        }
 	    ]
 	};
@@ -391,19 +391,19 @@
 	    series: [
 	        {
 	            name: 'A등급',
-	            data: 5
+	            data: ${viewAll[0].IS_AHA}
 	        },
 	        {
 	            name: 'B등급',
-	            data: 3
+	            data: ${viewAll[1].IS_AHA}
 	        },
 	        {
 	            name: 'C등급',
-	            data: 0
+	            data: ${viewAll[2].IS_AHA}
 	        },
 	        {
 	            name: '기타',
-	            data: 1
+	            data: ${viewAll[3].IS_AHA}
 	        }
 	    ]
 	};
@@ -441,19 +441,19 @@
 	    series: [
 	        {
 	            name: 'A등급',
-	            data: 2
+	            data: ${viewAll[0].IS_LINC}
 	        },
 	        {
 	            name: 'B등급',
-	            data: 2
+	            data: ${viewAll[1].IS_LINC}
 	        },
 	        {
 	            name: 'D등급',
-	            data: 1
+	            data: ${viewAll[2].IS_LINC}
 	        },
 	        {
 	            name: '기타',
-	            data: 0
+	            data: ${viewAll[3].IS_LINC}
 	        }
 	    ]
 	};
@@ -491,19 +491,19 @@
 	    series: [
 	        {
 	            name: 'A등급',
-	            data: 11
+	            data: ${viewAll[0].IS_TYPE3}
 	        },
 	        {
 	            name: 'B등급',
-	            data: 6
+	            data: ${viewAll[1].IS_TYPE3}
 	        },
 	        {
 	            name: 'D등급',
-	            data: 1
+	            data: ${viewAll[2].IS_TYPE3}
 	        },
 	        {
 	            name: '기타',
-	            data: 0
+	            data: ${viewAll[3].IS_TYPE3}
 	        }
 	    ]
 	};
@@ -541,19 +541,19 @@
 	    series: [
 	        {
 	            name: 'A등급',
-	            data: 28
+	            data: ${now_year[0].GC}
 	        },
 	        {
 	            name: 'B등급',
-	            data: 20
+	            data: ${now_year[1].GC}
 	        },
 	        {
 	            name: 'D등급',
-	            data: 6
+	            data: ${now_year[2].GC}
 	        },
 	        {
 	            name: '기타',
-	            data: 1
+	            data: ${now_year[3].GC}
 	        }
 	    ]
 	};

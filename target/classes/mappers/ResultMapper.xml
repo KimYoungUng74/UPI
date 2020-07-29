@@ -45,6 +45,12 @@
 		FROM RECORD_TB
 		WHERE to_char(RECORD_DATE, 'yyyy') = '${YEAR}' AND (INDICATORS_NUM, RECORD_DATE) in (select indicators_num,MAX(record_date) from RECORD_TB  where to_char(RECORD_DATE, 'yyyy') = '${YEAR}'  GROUP BY indicators_num)
 		GROUP BY GRADE		
+		
+		<!-- SELECT  NVL(MAX(GRADE) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE),'기타') as GRADE,decode(grade,'A',count(*),0) as A, decode(grade,'B',count(*),0) as B, decode(grade,'D',count(*),0) as D, decode(grade,'',count(*),0) as 기타
+		FROM RECORD_TB
+		WHERE to_char(RECORD_DATE, 'yyyy') = '2019' AND (INDICATORS_NUM, RECORD_DATE) in (select indicators_num,MAX(record_date) from RECORD_TB  where to_char(RECORD_DATE, 'yyyy') = '2019' GROUP BY indicators_num)
+		GROUP BY GRADE
+        ORDER BY GRADE -->
 	</select>
 	
 	

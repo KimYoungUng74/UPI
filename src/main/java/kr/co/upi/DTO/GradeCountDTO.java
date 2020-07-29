@@ -2,14 +2,44 @@ package kr.co.upi.DTO;
 
 public class GradeCountDTO {
 
-	private String GRADE; // µî±Þ : A, B, C, ±âÅ¸
-	private int GC; // µî±Þ º° °¹¼ö
+	private String GRADE; // ë“±ê¸‰ ëª…
+	private int GC; // ë“±ê¸‰ ë³„ ê°¯ìˆ˜
+	private int A; // A ê°¯ìˆ˜
+	private int B; // B ê°¯ìˆ˜
+	private int D; // C ê°¯ìˆ˜
+	private int ect; // ê¸°íƒ€ ê°¯ìˆ˜
 	
 	public String getGRADE() {
 		return GRADE;
 	}
 	public void setGRADE(String gRADE) {
 		GRADE = gRADE;
+	}
+	
+	public int getA() {
+		return A;
+	}
+	public void setA(int a) {
+		A = a;
+	}
+	public int getB() {
+		return B;
+	}
+	public void setB(int b) {
+		B = b;
+	}
+	public int getD() {
+		return D;
+	}
+	public void setD(int d) {
+		D = d;
+	}
+	
+	public int getEct() {
+		return ect;
+	}
+	public void setEct(int ect) {
+		this.ect = ect;
 	}
 	public int getGC() {
 		return GC;
