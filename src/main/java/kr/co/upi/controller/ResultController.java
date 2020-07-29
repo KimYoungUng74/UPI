@@ -67,9 +67,11 @@ public class ResultController {
 		List<GradeCountDTO> now_year = resultSer.selectYearGrade(YEAR);
 		List<GradeCountDTO> one_year_ago = resultSer.selectYearGrade(ONE_YEAR_AGO);
 		List<GradeCountDTO> two_year_ago = resultSer.selectYearGrade(TWO_YEAR_AGO);
-
 		List<Integer> total = new ArrayList<Integer>();
-
+		List<String> grade = new ArrayList<String>();	
+		
+		grade.add("A"); grade.add("B"); grade.add("D"); grade.add("기타");
+		
 		int c_now_year = 0;
 		int c_one_year_ago = 0;
 		int c_two_year_ago = 0;
@@ -86,9 +88,7 @@ public class ResultController {
 			c_two_year_ago += two_year_ago.get(i).getGC();
 		}
 		
-		total.add(c_two_year_ago);
-		total.add(c_one_year_ago);
-		total.add(c_now_year);
+		total.add(c_two_year_ago); total.add(c_one_year_ago); total.add(c_now_year);
 
 		ModelAndView mav = new ModelAndView();
 
@@ -100,6 +100,7 @@ public class ResultController {
 		mav.addObject("one_year", ONE_YEAR_AGO);
 		mav.addObject("two_year", TWO_YEAR_AGO);
 		mav.addObject("total",total);
+		mav.addObject("grade", grade);
 
 		mav.setViewName("result_view/yearly_grade_view");
 		return mav;
@@ -125,6 +126,11 @@ public class ResultController {
 		List<RecordDTO> dto = resultSer.selectBusinessGrade(YEAR);
 		List<GradeCountDTO> now_year = resultSer.selectYearGrade(YEAR);
 		List<Integer> total = new ArrayList<Integer>();
+		List<String> grade = new ArrayList<String>();
+		List<String> business = new ArrayList<String>();
+		
+		grade.add("A"); grade.add("B"); grade.add("D"); grade.add("기타");
+		business.add("IS_BEST"); business.add("IS_AGENCY"); business.add("IS_AHA"); business.add("IS_LINC"); business.add("IS_TYPE3");
 
 		int all_Best = 0;
 		int all_Agency = 0;
@@ -142,16 +148,13 @@ public class ResultController {
 			all += now_year.get(i).getGC();
 		}
 
-		total.add(all_Best);
-		total.add(all_Agency);
-		total.add(all_AHA);
-		total.add(all_Linc);
-		total.add(all_Type3);
-		total.add(all);
+		total.add(all_Best); total.add(all_Agency); total.add(all_AHA); total.add(all_Linc); total.add(all_Type3); total.add(all);
 
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("viewAll", dto);
 		mav.addObject("now_year", now_year);
+		mav.addObject("grade",grade);
+		mav.addObject("business", business);
 		mav.addObject("total", total);
 		mav.setViewName("result_view/business_grade_view");
 		return mav;

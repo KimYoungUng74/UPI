@@ -108,11 +108,11 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">연도별 평가 등급</h3>
+                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">연도별 평가 등급표</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="index.html">경민대학교</a>
+                                    <li class="breadcrumb-item"><a href="index.html">연도별 평가 등급을 확인하실 수 있습니다. </a>
                                     </li>
                                 </ol>
                             </nav>
@@ -158,10 +158,8 @@
     					<c:import url="../import/csslink.jsp" charEncoding="UTF-8" >
     					</c:import>
                             <div class="card-body">
-                                <h4 class="card-title"><b>연도별 평가 등급표</b></h4>
-                                <p class="text-muted font-13">
-                                    	연도별 평가 등급을 확인하실 수 있습니다.
-                                </p>
+                                <h4 class="card-title"><b>연도별 평가 등급</b></h4>
+                                <p class="text-muted font-13">경민대학교</p>
 					
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-striped mb-0" border="1" width="100%">
@@ -176,9 +174,9 @@
                                            
                                         </thead>
                                         <tbody>
-                                        	<c:forEach items="${now_year}" var="row" varStatus="status">                                       
+                                        	<c:forEach items="${grade}" var="row" varStatus="status">                                       
 	                                            <tr>
-	                                                <th class="text-center" scope="row">${row.GRADE}</th>                                           
+	                                                <th class="text-center" scope="row">${row}</th>                                           
 	                                                                                  
 	                                                 <c:choose>  
 		                                                <c:when  test="${two_year_ago[status.index].GRADE != null }">                                  
@@ -201,8 +199,8 @@
 	                                                </c:choose>
 	                                                
 	                                                <c:choose>  
-		                                                <c:when  test="${row.GRADE != null }">                                  
-		                                                	<td class="text-center" id="now_year">${row.GC}</td>
+		                                                <c:when  test="${now_year[status.index].GRADE != null }">                                  
+		                                                	<td class="text-center" id="now_year">${now_year[status.index].GC}</td>
 
 		                                                </c:when >
 		                                                
