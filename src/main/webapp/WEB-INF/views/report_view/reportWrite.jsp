@@ -132,7 +132,7 @@
 										value="${dto.INDICATORS_NUM}">
 										<input type="hidden" name="INDICATORS_NAME"
 										value="${dto.INDICATORS_NAME}">
-										<input type="hidden" name="TARGET_VAL"
+										<input type="hidden" name="TARGET_VAL" id="TARGET_VAL"
 										value="${dto.TARGET_VAL}">
 										<input type="hidden" name="IS_BEST"
 										value="${dto.IS_BEST}"> 
@@ -504,7 +504,11 @@
 				
 				// 양쪽 여백 제거 
 				FORMULA = $.trim(FORMULA);
-				$('#PRESENT_VAL').val(eval(FORMULA).toFixed(2));
+				if($('#TARGET_VAL').val().includes(":")) {
+					$('#PRESENT_VAL').val(eval(FORMULA).toFixed(2)+":1");
+				} else {
+					$('#PRESENT_VAL').val(eval(FORMULA).toFixed(2));
+				}
 				$('#PRESENT_VAL').attr('readonly', true);
 			}
 			

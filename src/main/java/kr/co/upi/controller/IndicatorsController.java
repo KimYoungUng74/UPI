@@ -148,8 +148,8 @@ public class IndicatorsController {
 		dto.setUSER_ID("9703007");
 		dto.setUSER_NAME("관리자");
 		dto.setACTION_CODE(1);
-		dto.setGRADE(setGrade(dto.getPRESENT_VAL()));
 		dto.setACHIEVE_VAL(setACHIEVE(dto.getPRESENT_VAL(), dto.getTARGET_VAL()));
+		dto.setGRADE(setGrade(dto.getACHIEVE_VAL()));
 		System.out.println(dto);
 
 		if (1 != indicatorsSer.report_write(dto)) {
@@ -188,18 +188,18 @@ public class IndicatorsController {
 	}
 
 	// 등급 판별
-	private String setGrade(String present_VAL) {
+	private String setGrade(String ACHIEVE_VAL) {
 		String result = "Error";
-		Double present = Double.parseDouble(present_VAL);
+		Double ACHIEVE = Double.parseDouble(ACHIEVE_VAL);
 
 		GradeDTO gradeDto = new GradeDTO();
 		gradeDto = indicatorsSer.selectGrade();
 
-		if (present >= gradeDto.getA_GRADE()) {
+		if (ACHIEVE >= gradeDto.getA_GRADE()) {
 			result = "A";
-		} else if (present >= gradeDto.getB_GRADE()) {
+		} else if (ACHIEVE >= gradeDto.getB_GRADE()) {
 			result = "B";
-		} else if (present < gradeDto.getD_GRADE()) {
+		} else if (ACHIEVE < gradeDto.getD_GRADE()) {
 			result = "D";
 		}
 		return result;
@@ -207,6 +207,10 @@ public class IndicatorsController {
 
 	// 달성도 계산
 	private String setACHIEVE(String present_VAL, String target_VAL) {
+		
+		present_VAL = present_VAL.split(":")[0];
+		target_VAL = target_VAL.split(":")[0];
+		
 		Double ACHIEVE_VAL = (Double.parseDouble(present_VAL) / Double.parseDouble(target_VAL) * 100);
 		return ACHIEVE_VAL.toString();
 	}
