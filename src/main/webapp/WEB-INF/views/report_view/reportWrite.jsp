@@ -143,7 +143,9 @@
 										<input type="hidden" name="IS_LINC"
 										value="${dto.IS_LINC}"> 
 										<input type="hidden" name="IS_TYPE3"
-										value="${dto.IS_TYPE3}"> 
+										value="${dto.IS_TYPE3}">
+										<input type="hidden" name="IS_NEGATIVE"
+										value="${dto.IS_NEGATIVE}"> 
 									<div class="row">
 										<!-- 지표명 -->
 										<div class="col-md-7" style="padding-bottom: 5px;">
@@ -331,7 +333,7 @@
 											</div>
 										</div>
 										<!-- 지표 기준 -->
-										<div class="col-md-7" style="padding-bottom: 5px;">
+										<div class="col-md-4" style="padding-bottom: 5px;">
 											<div class="row">
 												<div class="col-md-12" style="padding-bottom: 5px;">
 													<span>평가기준</span>
@@ -342,6 +344,26 @@
 												</div>
 											</div>
 										</div>
+										
+										<!-- 정적 부적  -->
+										<div class="col-md-3" style="padding-bottom: 5px;">
+											<div class="row">
+												<div class="col-md-12" style="padding-bottom: 5px;">
+													<span>등급기준</span>
+												</div>
+												<div class="col-md-12" style="padding-bottom: 10px;">
+												<c:choose>
+												 <c:when test="${dto.IS_NEGATIVE == 0}">
+												 	<label style="border: 1px solid #5a6268; width: 100%; padding: 5px;">정적</label>
+												 </c:when>
+												 <c:otherwise>
+												 	<label style="border: 1px solid #5a6268; width: 100%; padding: 5px;">부적</label>
+												 </c:otherwise>
+												</c:choose>
+													
+												</div>
+											</div>
+										</div>
 
 										<!-- 요소값 리스트 입력 -->
 										<div class="col-md-12" style="padding-bottom: 5px;">
@@ -349,6 +371,7 @@
 												<div class="col-md-12" style="padding-bottom: 5px;">
 													<span>요소 리스트 </span>
 												</div>
+												
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<input type="text" class="form-control" disabled="disabled"
 														id="ELEMENTS" name="ELEMENTS" value="${dto.ELEMENTS}">

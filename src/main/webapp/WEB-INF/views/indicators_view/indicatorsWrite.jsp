@@ -296,7 +296,7 @@
 												</div>
 											</div>
 										</div>
-										<!-- 등급 기준 -->
+										<!-- 정적 부적-->
 										<div class="col-md-3" style="padding-bottom: 5px;">
 											<div class="row">
 												<div class="col-md-12" style="padding-bottom: 5px;">
@@ -304,9 +304,9 @@
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<select class="custom-select" id="inputGroupSelect04"
-														name="아직 안정함">
-														<option value="1" selected="selected">정적(기본)</option>
-														<option value="2">부적</option>
+														name="IS_NEGATIVE">
+														<option value=0 selected="selected">정적(기본)</option>
+														<option value=1>부적</option>
 													</select>
 												</div>
 											</div>
