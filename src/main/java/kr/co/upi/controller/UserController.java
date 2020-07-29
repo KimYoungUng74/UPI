@@ -37,7 +37,6 @@ public class UserController {
 	
 	@RequestMapping(value = "login.do")
 	public ModelAndView login_do(Locale locale, Model model) {
-
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("login");
 		return mav;
@@ -54,7 +53,6 @@ public class UserController {
 	
 	@RequestMapping(value = "login_ok.do")
 	public ModelAndView login_ok(Locale locale, Model model) {
-
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("index");
 		return mav;

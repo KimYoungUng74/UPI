@@ -1,5 +1,7 @@
 package kr.co.upi.DTO;
 
+import java.sql.Date;
+
 public class IndicatorsDTO {
 	private int CONTROL_NUM;		// 지표 번호 PK
 	private int INDICATORS_NUM;		// 관리번호
@@ -21,7 +23,7 @@ public class IndicatorsDTO {
 	private String USER_ID;			// 유저 아이디
 	private String USER_NAME;		// 유저 이름
 	private int ACTION_CODE;		// 행위 코드
-	private java.sql.Date RECODE_DATE; // 기록 날짜
+	private Date RECORD_DATE; // 기록 날짜
 	
 	public int getCONTROL_NUM() {
 		return CONTROL_NUM;
@@ -145,11 +147,11 @@ public class IndicatorsDTO {
    	public void setACTION_CODE(int aCTION_CODE) {
    		ACTION_CODE = aCTION_CODE;
    	}
-   	public java.sql.Date getRECODE_DATE() {
-   		return RECODE_DATE;
+   	public Date getRECORD_DATE() {
+   		return RECORD_DATE;
    	}
-   	public void setRECODE_DATE(java.sql.Date rECODE_DATE) {
-   		RECODE_DATE = rECODE_DATE;
+   	public void setRECORD_DATE(Date rECORD_DATE) {
+   		RECORD_DATE = rECORD_DATE;
    	}
    	@Override
    	public String toString() {
@@ -159,7 +161,7 @@ public class IndicatorsDTO {
 				+ COL_METHOD + ", EVAL_METHOD=" + EVAL_METHOD + ", EVAL_STANDARD=" + EVAL_STANDARD + ", DIVISION_NAME="
 				+ DIVISION_NAME + ", FORMULA=" + FORMULA + ", TARGET_VAL=" + TARGET_VAL + ", IS_CORE=" + IS_CORE
 				+ ", IS_USE=" + IS_USE + ", USER_ID=" + USER_ID + ", USER_NAME=" + USER_NAME + ", ACTION_CODE="
-				+ ACTION_CODE + ", RECODE_DATE=" + RECODE_DATE + "]";
+				+ ACTION_CODE + ", RECORD_DATE=" + RECORD_DATE + "]";
 	}
 	
 	
