@@ -48,7 +48,7 @@ public class UserController {
 	@RequestMapping(value = "login.do")
 	public ModelAndView login_do(Locale locale, Model model) {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("login");
+		mav.setViewName("user/login");
 		return mav;
 	}
 	
@@ -66,19 +66,25 @@ public class UserController {
 	public ModelAndView login_ok(Locale locale, Model model,UserDTO dto,HttpServletRequest request,HttpServletResponse response) throws IOException {
 		ModelAndView mav = new ModelAndView();
 		UserDTO userdto = userSer.loginOK(dto); //ID와 PW를 동시에 조건으로 하여 결과값을 가져옴
+		
 		if( userdto != null) {
 			//세션생성
 			HttpSession session = request.getSession();
 			session.setAttribute("USER_ID", userdto.getUSER_ID()); // 유저 ID 세션에 넣기
 			session.setAttribute("USER_NAME", userdto.getUSER_NAME()); // 유저 NAME 세션에 넣기
-			
-			mav.setViewName("redirect:index.do");
+			if(userdto.getUSER_PW().equals("d8f01284fda46e5584a444a23ea4d977b89b1ebb586812b3cad97662270e4aed")) {
+				mav.setViewName("user/pwUpdate");
+			}else {
+				mav.setViewName("redirect:index.do");
+			}
 		}else {
 			PrintWriter pw = response.getWriter();
 			pw.println("<script>alert('로그인 오류입니다.');</script>");
 			pw.flush();
-			mav.setViewName("login");
+			mav.setViewName("user/login");
 		}
+		
+		
 		return mav;
 	}
 	@RequestMapping(value = "logout.do" ,method = RequestMethod.GET)
@@ -86,8 +92,36 @@ public class UserController {
 		
 		ModelAndView mav = new ModelAndView();
 		request.getSession().invalidate();
-		mav.setViewName("redirect:index.do");
+		mav.setViewName("user/login");
 		return mav;
 	}
 	
+	
+	@RequestMapping(value = "pw_check.do", method = RequestMethod.POST, produces = "application/text; charset=utf8")
+	@ResponseBody
+	public String pw_check(@RequestParam("USER_PW") String USER_PW,HttpServletRequest request) {//PW 를 들고 옵니다.
+		
+		UserDTO dto = new UserDTO();
+		dto.setUSER_ID((String)request.getSession().getAttribute("USER_ID"));
+		dto.setUSER_PW(USER_PW);
+		
+		return userSer.IDCheck(dto);
+	}
+	
+	@RequestMapping(value = "pwUpdate.do"  ,method = RequestMethod.POST)
+	public ModelAndView pwUpdate(Locale locale, Model model,HttpServletRequest request,HttpServletResponse response, UserDTO dto) throws IOException {
+		
+		ModelAndView mav = new ModelAndView();
+		dto.setUSER_ID((String)request.getSession().getAttribute("USER_ID")); //세션에서 id를 가져와서 넣어줍니다. pw는 dto에 담아왔습니다.
+		if(userSer.pwUpdate(dto) == 1) { // 변경
+			request.getSession().invalidate();
+			mav.setViewName("user/login");
+		}else {
+			PrintWriter pw = response.getWriter();
+			pw.println("<script>alert('비밀번호 변경 오류');</script>");
+			pw.flush();
+			mav.setViewName("user/pwUpdate");
+		}
+		return mav;
+	}
 }

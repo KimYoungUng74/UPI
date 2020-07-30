@@ -6,7 +6,7 @@
 
 <head>
 	<!-- css링크들 임포트 -->
-    <c:import url="import/csslink.jsp" charEncoding="UTF-8" >
+    <c:import url="../import/csslink.jsp" charEncoding="UTF-8" >
     </c:import>
 </head>
 
@@ -34,26 +34,45 @@
                 </div>
                 <div class="col-lg-5 col-md-7 bg-white">
                     <div class="p-3">
-                        <form class="mt-4" id="frm_login" action="login_ok.do" method="post">
+                        <form class="mt-4" id="frm_update" action="pwUpdate.do" method="post">
                             <div class="row">
+                            	<div class="col-lg-12">
+                                        <span>비밀번호 변경</span>
+                                </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label class="text-dark" for="USER_ID">I D</label>
-                                        <input class="form-control" id="USER_ID" name="USER_ID" type="text"
-                                            placeholder="enter your id">
-                                            <span id="id_check"></span>
+                                        <input class="form-control" id="USER_ID" type="text" value="${sessionScope.USER_ID}">
+                                        <span id="id_check"></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label class="text-dark" for="USER_PW">Password</label>
-                                        <input class="form-control" id="USER_PW" name="USER_PW" type="password"
+                                        <label class="text-dark" for="USER_PW">기존 Password</label>
+                                        <input class="form-control" id="USER_PW" type="password"
                                             placeholder="enter your password">
                                             <span id="pw_check"></span>
                                     </div>
                                 </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="text-dark" for="USER_PW1">변경할 Password</label>
+                                        <input class="form-control" id="USER_PW1" name="USER_PW" type="password"
+                                            placeholder="enter your password">
+                                            <span id="pw_check1"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="text-dark" for="USER_PW2">Password 확인</label>
+                                        <input class="form-control" id="USER_PW2" type="password"
+                                            placeholder="password check">
+                                            <span id="pw_check2"></span>
+                                    </div>
+                                </div>
+                                
                                 <div class="col-lg-12 text-center mt-2">
-                                    <button type="button" id="login_btn" class="btn btn-block btn-dark">로그인</button>
+                                    <button type="button" id="update_btn" class="btn btn-block btn-dark">변경 하기</button>
                                 </div>
                             </div>
                         </form>
@@ -66,13 +85,12 @@
         <!-- ============================================================== -->
     </div>
 </body>
-<c:import url="import/javascript.jsp" charEncoding="UTF-8" >
+<c:import url="../import/javascript.jsp" charEncoding="UTF-8" >
 </c:import>
 
-    <script>
-        $(".preloader ").fadeOut(); //템플릿에 원래 있던 것
-        
-    </script>
-    <!-- 로그인 체크 자바스크립트 -->
-    <script src="<c:url value='/resources/js/loginCheck.js'/>"></script>
+<script>
+	$(".preloader ").fadeOut(); //TEMPLATE DEFAULT
+</script>
+<!-- 로그인 체크 자바스크립트 -->
+<script src="<c:url value='/resources/js/updateCheck.js'/>"></script>
 </html>

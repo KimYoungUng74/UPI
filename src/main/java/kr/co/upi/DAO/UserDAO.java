@@ -45,4 +45,10 @@ public class UserDAO {
 		dto.setUSER_PW(SHA256.getSHA256(dto.getUSER_PW()));
 		return mybatis.selectOne("UserMapper.loginOk", dto);
 	}
+	
+	// 사용자 암호 변경
+	public int pwUpdate(UserDTO dto) {
+		dto.setUSER_PW(SHA256.getSHA256(dto.getUSER_PW()));
+		return mybatis.update("UserMapper.pwUpdate", dto);
+	}
 }
