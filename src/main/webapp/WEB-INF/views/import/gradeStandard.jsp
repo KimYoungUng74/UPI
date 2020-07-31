@@ -35,9 +35,9 @@
                                     <table class="table table-bordered table-striped mb-0" width="100%" border="1">
                                         <thead>
                                             <tr>
-                                                <th class="text-center" rowspan="2">등급</th>
-                                                <th class="text-center" rowspan="2">평 가 등 급 기 준</th>
-                                                <th class="text-center" rowspan="2">등급별 조치</th>
+                                                <th class="text-center">등급</th>
+                                                <th class="text-center">평 가 등 급 기 준</th>
+                                                <th class="text-center">등급별 조치</th>
                                                 
                                             </tr>
                                            

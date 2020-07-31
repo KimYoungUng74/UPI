@@ -60,4 +60,10 @@ public class ResultDAO {
 	public List<RecordDTO> selectListGrade(String GRADE) {
 		return mybatis.selectList("ResultMapper.ResultListGrade", GRADE);
 	}
+	
+	// 사업별 갯수 리스트 가져오기
+	public List<RecordDTO> selectListBussiness(String BUSINESS) {
+		return mybatis.selectList("ResultMapper.ResultListBussiness", BUSINESS);
+	}
+
 }

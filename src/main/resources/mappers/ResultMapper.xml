@@ -97,4 +97,16 @@
 		ORDER BY INDICATORS_NUM, to_char(RECORD_DATE, 'yyyy') DESC
 	</select>
 	
+	<!-- 사업별 리스트 가져오기  -->
+	<select id="ResultListBussiness" parameterType="String" resultType="RecordDTo">
+		SELECT *
+		FROM
+		RECORD_TB
+		where (INDICATORS_NUM, RECORD_DATE, to_char(RECORD_DATE, 'yyyy')) in (
+    		select INDICATORS_NUM, max(RECORD_DATE),to_char(RECORD_DATE, 'yyyy') from RECORD_TB
+    		WHERE to_char(RECORD_DATE, 'yyyy') = to_char(sysdate, 'yyyy')
+    		group by INDICATORS_NUM,to_char(RECORD_DATE, 'yyyy')
+		) AND ${BUSINESS} = 1
+		ORDER BY INDICATORS_NUM, to_char(RECORD_DATE, 'yyyy') DESC
+	</select>
 </mapper>

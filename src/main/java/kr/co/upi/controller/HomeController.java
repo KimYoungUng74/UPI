@@ -87,9 +87,26 @@ public class HomeController {
 		List<RecordDTO> B_GRADE = resultSer.selectListGrade("B");
 		//D등급 보고서
 		List<RecordDTO> D_GRADE = resultSer.selectListGrade("D");
+		//BEST 보고서
+		List<RecordDTO> BUSINESS_BEST = resultSer.selectListBussiness("IS_BEST");		
+		//기관 평가 인증 보고서	
+		List<RecordDTO> BUSINESS_AGENCY = resultSer.selectListBussiness("IS_AGENCY");
+		//혁신지원AHA 보고서
+		List<RecordDTO> BUSINESS_AHA = resultSer.selectListBussiness("IS_AHA");
+		//사회맞춤형 LINC 보고서
+		List<RecordDTO> BUSINESS_LINC = resultSer.selectListBussiness("IS_LINC");
+		//3유형 보고서
+		List<RecordDTO> BUSINESS_TYPE3 = resultSer.selectListBussiness("IS_TYPE3");
+		
 		model.addAttribute("A_GRADE",A_GRADE);
 		model.addAttribute("B_GRADE",B_GRADE);
 		model.addAttribute("D_GRADE",D_GRADE);
+		
+		model.addAttribute("BUSINESS_BEST",BUSINESS_BEST);
+		model.addAttribute("BUSINESS_AGENCY",BUSINESS_AGENCY);
+		model.addAttribute("BUSINESS_AHA",BUSINESS_AHA);
+		model.addAttribute("BUSINESS_LINC",BUSINESS_LINC);
+		model.addAttribute("BUSINESS_TYPE3",BUSINESS_TYPE3);
 		
 		return "index";
 	}

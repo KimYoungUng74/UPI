@@ -211,7 +211,13 @@
                     <div class="col-lg-4 col-md-12">
                         <div class="card">
                             <div class="card-body">
-                                <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                                <div id="container" class="chart1" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                            </div>
+                        </div>
+                        
+                         <div class="card">
+                            <div class="card-body">
+                                <div id="container2" class="chart2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
                             </div>
                         </div>
                     </div>
@@ -364,7 +370,267 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                    <!-- IS_BEST -->
+               	 	<div class="col-lg-8" id="IS_BEST" style="display: none;">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-4">
+                                    <h4 class="card-title">대학중장기발전계획 BEST ${cnt_BEST}개</h4>
+                                    
+                                </div>
+                                <div class="table-responsive table-hover">
+                                    <table class="table no-wrap v-middle mb-0 text-center">
+                                        <thead style="background-color: rgb(124, 181, 236); color:black; ">
+                                            <tr class="border-0 text-white" >
+                                            	<th class="font-14" width="5%">관리번호</th>
+                                                <th class="font-14" width="50%">성과지표명</th>
+                                                <th class="font-14" width="45%">활용사업</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+                                        <c:forEach var="BUSINESS_BEST" items="${BUSINESS_BEST}">
+                                        	<tr onclick="location.href='report_view.do?INDICATORS_NUM=${BUSINESS_BEST.INDICATORS_NUM}'">
+                                        		<td class="border-top-0  px-2 py-4 font-14">${BUSINESS_BEST.INDICATORS_NUM}</td>
+                                        		<td class="border-top-0  px-2 py-4 font-14">${BUSINESS_BEST.INDICATORS_NAME}</td>
+                                                 <td class="border-top-0 px-2 py-4">
+                                                    <div class="popover-icon">
+                                                    	<c:if test="${BUSINESS_BEST.IS_BEST==1}">
+                                                    		<a class="btn btn-primary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">B</a>
+                                                    	</c:if>
+                                                    	<c:if test="${BUSINESS_BEST.IS_AGENCY==1}">
+                                                    		<a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
+                                                    	</c:if>
+                                                    	<c:if test="${BUSINESS_BEST.IS_AHA==1}">
+                                                    		<a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
+                                                    	</c:if>
+                                                        <c:if test="${BUSINESS_BEST.IS_LINC==1}">
+                                                    		<a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
+                                                    	</c:if>
+                                                        <c:if test="${BUSINESS_BEST.IS_TYPE3==1}">
+                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    	</c:if>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </c:forEach>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>             
+                	<!-- IS_AGENCT -->
+                	<div class="col-lg-8" id="IS_AGENCY" style="display: none;">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-4">
+                                    <h4 class="card-title">기관 평가 인증 ${cnt_AGENCY}개</h4>
+                                    
+                                </div>
+                                <div class="table-responsive table-hover">
+                                    <table class="table no-wrap v-middle mb-0 text-center">
+                                        <thead style="background-color: rgb(67, 67, 72); color:black; ">
+                                            <tr class="border-0 text-white">
+                                            	<th class="font-14" width="5%">관리번호</th>
+                                                <th class="font-14" width="50%">성과지표명</th>
+                                                <th class="font-14" width="45%">활용사업</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+                                        <c:forEach var="BUSINESS_AGENCY" items="${BUSINESS_AGENCY}">
+                                        	<tr onclick="location.href='report_view.do?INDICATORS_NUM=${BUSINESS_AGENCY.INDICATORS_NUM}'">
+                                        		<td class="border-top-0  px-2 py-4 font-14">${BUSINESS_AGENCY.INDICATORS_NUM}</td>
+                                        		<td class="border-top-0  px-2 py-4 font-14">${BUSINESS_AGENCY.INDICATORS_NAME}</td>
+                                                 <td class="border-top-0 px-2 py-4">
+                                                    <div class="popover-icon">
+                                                    	<c:if test="${BUSINESS_AGENCY.IS_BEST==1}">
+                                                    		<a class="btn btn-primary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">B</a>
+                                                    	</c:if>
+                                                    	<c:if test="${BUSINESS_AGENCY.IS_AGENCY==1}">
+                                                    		<a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
+                                                    	</c:if>
+                                                    	<c:if test="${BUSINESS_AGENCY.IS_AHA==1}">
+                                                    		<a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
+                                                    	</c:if>
+                                                        <c:if test="${BUSINESS_AGENCY.IS_LINC==1}">
+                                                    		<a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
+                                                    	</c:if>
+                                                        <c:if test="${BUSINESS_AGENCY.IS_TYPE3==1}">
+                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    	</c:if>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </c:forEach>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                	<!-- IS_AHA -->
+                	<div class="col-lg-8" id="IS_AHA" style="display: none;">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-4">
+                                    <h4 class="card-title">혁신 지원 AHA 개</h4>
+                                    
+                                </div>
+                                <div class="table-responsive table-hover">
+                                    <table class="table no-wrap v-middle mb-0 text-center">
+                                        <thead style="background-color: rgb(144, 237, 125); color:black; ">
+                                            <tr class="border-0">
+                                            	<th class="font-14" width="5%">관리번호</th>
+                                                <th class="font-14" width="50%">성과지표명</th>
+                                                <th class="font-14" width="45%">활용사업</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+                                        <c:forEach var="BUSINESS_AHA" items="${BUSINESS_AHA}">
+                                        	<tr onclick="location.href='report_view.do?INDICATORS_NUM=${BUSINESS_AHA.INDICATORS_NUM}'">
+                                        		<td class="border-top-0  px-2 py-4 font-14">${BUSINESS_AHA.INDICATORS_NUM}</td>
+                                        		<td class="border-top-0  px-2 py-4 font-14">${BUSINESS_AHA.INDICATORS_NAME}</td>
+                                                 <td class="border-top-0 px-2 py-4">
+                                                    <div class="popover-icon">
+                                                    	<c:if test="${BUSINESS_AHA.IS_BEST==1}">
+                                                    		<a class="btn btn-primary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">B</a>
+                                                    	</c:if>
+                                                    	<c:if test="${BUSINESS_AHA.IS_AGENCY==1}">
+                                                    		<a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
+                                                    	</c:if>
+                                                    	<c:if test="${BUSINESS_AHA.IS_AHA==1}">
+                                                    		<a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
+                                                    	</c:if>
+                                                        <c:if test="${BUSINESS_AHA.IS_LINC==1}">
+                                                    		<a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
+                                                    	</c:if>
+                                                        <c:if test="${BUSINESS_AHA.IS_TYPE3==1}">
+                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    	</c:if>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </c:forEach>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                	<!-- IS_LINC -->
+                	<div class="col-lg-8" id="IS_LINC" style="display: none;">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-4">
+                                    <h4 class="card-title">사회맞춤형 LINC+ ${cnt_LINC }개</h4>
+                                    
+                                </div>
+                                <div class="table-responsive table-hover">
+                                    <table class="table no-wrap v-middle mb-0 text-center">
+                                        <thead style="background-color: rgb(247, 163, 92); color:black; ">
+                                            <tr class="border-0 text-white">
+                                            	<th class="font-14" width="5%">관리번호</th>
+                                                <th class="font-14" width="50%">성과지표명</th>
+                                                <th class="font-14" width="45%">활용사업</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+                                        <c:forEach var="BUSINESS_LINC" items="${BUSINESS_LINC}">
+                                        	<tr onclick="location.href='report_view.do?INDICATORS_NUM=${BUSINESS_LINC.INDICATORS_NUM}'">
+                                        		<td class="border-top-0  px-2 py-4 font-14">${BUSINESS_LINC.INDICATORS_NUM}</td>
+                                        		<td class="border-top-0  px-2 py-4 font-14">${BUSINESS_LINC.INDICATORS_NAME}</td>
+                                                 <td class="border-top-0 px-2 py-4">
+                                                    <div class="popover-icon">
+                                                    	<c:if test="${BUSINESS_LINC.IS_BEST==1}">
+                                                    		<a class="btn btn-primary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">B</a>
+                                                    	</c:if>
+                                                    	<c:if test="${BUSINESS_LINC.IS_AGENCY==1}">
+                                                    		<a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
+                                                    	</c:if>
+                                                    	<c:if test="${BUSINESS_LINC.IS_AHA==1}">
+                                                    		<a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
+                                                    	</c:if>
+                                                        <c:if test="${BUSINESS_LINC.IS_LINC==1}">
+                                                    		<a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
+                                                    	</c:if>
+                                                        <c:if test="${BUSINESS_LINC.IS_TYPE3==1}">
+                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    	</c:if>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </c:forEach>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                
+                	<!-- IS_TYPE3 -->
+                	<div class="col-lg-8" id="IS_TYPE3" style="display: none;">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-4">
+                                    <h4 class="card-title">3유형 ${cnt_TYPE3 }개</h4>
+                                    
+                                </div>
+                                <div class="table-responsive table-hover">
+                                    <table class="table no-wrap v-middle mb-0 text-center">
+                                        <thead style="background-color: rgb(128, 133, 233); color:black; ">
+                                            <tr class="border-0 text-white">
+                                            	<th class="font-14" width="5%">관리번호</th>
+                                                <th class="font-14" width="50%">성과지표명</th>
+                                                <th class="font-14" width="45%">활용사업</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+                                        <c:forEach var="BUSINESS_TYPE3" items="${BUSINESS_TYPE3}">
+                                        	<tr onclick="location.href='report_view.do?INDICATORS_NUM=${BUSINESS_TYPE3.INDICATORS_NUM}'">
+                                        		<td class="border-top-0  px-2 py-4 font-14">${BUSINESS_TYPE3.INDICATORS_NUM}</td>
+                                        		<td class="border-top-0  px-2 py-4 font-14">${BUSINESS_TYPE3.INDICATORS_NAME}</td>
+                                                 <td class="border-top-0 px-2 py-4">
+                                                    <div class="popover-icon">
+                                                    	<c:if test="${BUSINESS_TYPE3.IS_BEST==1}">
+                                                    		<a class="btn btn-primary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">B</a>
+                                                    	</c:if>
+                                                    	<c:if test="${BUSINESS_TYPE3.IS_AGENCY==1}">
+                                                    		<a class="btn btn-danger rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">E</a>
+                                                    	</c:if>
+                                                    	<c:if test="${BUSINESS_TYPE3.IS_AHA==1}">
+                                                    		<a class="btn btn-warning rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">A</a>
+                                                    	</c:if>
+                                                        <c:if test="${BUSINESS_TYPE3.IS_LINC==1}">
+                                                    		<a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
+                                                    	</c:if>
+                                                        <c:if test="${BUSINESS_TYPE3.IS_TYPE3==1}">
+                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    	</c:if>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </c:forEach>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+                
                 <!-- *************************************************************** -->
                 <!-- End Location and Earnings Charts Section -->
                 <!-- *************************************************************** -->
@@ -446,23 +712,149 @@
             }]
         }]
     });
-    
-    $('.highcharts-color-0').click(function(){
+   
+    $('div.chart1').find('.highcharts-color-0').click(function(){
       
     	$('#d_grade').hide();
   	  	$('#b_grade').hide();
   	  	$('#a_grade').show();
+  	  	$('#IS_TYPE3').hide();
+  		$('#IS_LINC').hide();
+  		$('#IS_AHA').hide();
+	  	$('#IS_AGENCY').hide();
+	  	$('#IS_BEST').hide();
   	});
-    $('.highcharts-color-1').click(function(){
+    $('div.chart1').find('.highcharts-color-1').click(function(){
     	$('#d_grade').hide();
     	$('#a_grade').hide();
     	$('#b_grade').show();
+    	$('#IS_TYPE3').hide();
+  		$('#IS_LINC').hide();
+  		$('#IS_AHA').hide();
+	  	$('#IS_AGENCY').hide();
+	  	$('#IS_BEST').hide();
+    	
     });
-    $('.highcharts-color-2').click(function(){
+    $('div.chart1').find('.highcharts-color-2').click(function(){
     	$('#d_grade').show();
     	$('#a_grade').hide();
     	$('#b_grade').hide();
+    	$('#IS_TYPE3').hide();
+  		$('#IS_LINC').hide();
+  		$('#IS_AHA').hide();
+	  	$('#IS_AGENCY').hide();
+	  	$('#IS_BEST').hide();
     });
+    
+    
+    //사업별 갯수 
+    Highcharts.chart('container2', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: '사업별 성과지표, 2020  (총 ${A_GRADE.size()+B_GRADE.size()+D_GRADE.size()}개)'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: false
+                },
+                showInLegend: true
+            }
+        },
+        series: [{
+            name: '비율',
+            colorByPoint: true,
+            data: [{
+                name: 'BEST - ${cnt_BEST}개',
+                y: ${cnt_BEST},
+                sliced: true,
+                selected: true
+            }, {
+                name: '기관 평가 인증 - ${cnt_AGENCY}개',
+                y: ${cnt_AGENCY},
+            }, {
+                name: '혁신 지원 AHA - ${cnt_AHA}개',
+                y: ${cnt_AHA},
+            }, {
+                name: '사회 맞춤형 LINC+ - ${cnt_LINC}개',
+                y: ${cnt_LINC},
+            },{
+                name: '3유형 - ${cnt_TYPE3}개',
+                y: ${cnt_TYPE3},
+            }]
+        }]
+    });
+    
+    $('div.chart2').find('.highcharts-color-0').click(function(){
+      
+    	$('#d_grade').hide();
+  	  	$('#b_grade').hide();
+  	  	$('#a_grade').hide();
+    	$('#IS_TYPE3').hide();
+    	$('#IS_LINC').hide();
+    	$('#IS_AHA').hide();
+  	  	$('#IS_AGENCY').hide();
+  	  	$('#IS_BEST').show();
+  	});
+    $('div.chart2').find('.highcharts-color-1').click(function(){
+    	
+    	$('#d_grade').hide();
+  	  	$('#b_grade').hide();
+  	  	$('#a_grade').hide();
+    	$('#IS_TYPE3').hide();
+    	$('#IS_LINC').hide();
+    	$('#IS_AHA').hide();
+  	  	$('#IS_AGENCY').show();
+  	  	$('#IS_BEST').hide();
+    });
+    $('div.chart2').find('.highcharts-color-2').click(function(){
+    	
+    	$('#d_grade').hide();
+  	  	$('#b_grade').hide();
+  	  	$('#a_grade').hide();
+    	$('#IS_TYPE3').hide();
+    	$('#IS_LINC').hide();
+    	$('#IS_AHA').show();
+  	  	$('#IS_AGENCY').hide();
+  	  	$('#IS_BEST').hide();
+    });
+    $('div.chart2').find('.highcharts-color-3').click(function(){
+        
+    	$('#d_grade').hide();
+  	  	$('#b_grade').hide();
+  	  	$('#a_grade').hide();
+    	$('#IS_TYPE3').hide();
+    	$('#IS_LINC').show();
+    	$('#IS_AHA').hide();
+  	  	$('#IS_AGENCY').hide();
+  	  	$('#IS_BEST').hide();
+  	});
+    $('div.chart2').find('.highcharts-color-4').click(function(){
+        
+    	$('#d_grade').hide();
+  	  	$('#b_grade').hide();
+  	  	$('#a_grade').hide();
+    	$('#IS_TYPE3').show();
+    	$('#IS_LINC').hide();
+    	$('#IS_AHA').hide();
+  	  	$('#IS_AGENCY').hide();
+  	  	$('#IS_BEST').hide();
+  	});
     
     </script>
     

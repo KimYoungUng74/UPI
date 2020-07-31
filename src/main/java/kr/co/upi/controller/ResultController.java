@@ -105,7 +105,10 @@ public class ResultController {
 		List<GradeCountDTO> p_now_year = resultSer.BusinessGradePer(YEAR);
 		ArrayList<Integer> pGrade = new ArrayList<Integer>();
 
-		int pA = 0;	int pB = 0;	int pD = 0; int pEtc = 0;
+		int pA = 0;
+		int pB = 0;
+		int pD = 0;
+		int pEtc = 0;
 
 		// 제작년도 퍼센트
 		for (int i = 0; i < p_two_year_ago.size(); i++) {
@@ -116,53 +119,36 @@ public class ResultController {
 		}
 
 		List<String> p_two_year = cal.calPer(pA, pB, pD, pEtc);
-		System.out.println("제작년도");
-		for(int i=0; i<p_two_year.size(); i++) {
-			
-			System.out.println(p_two_year.get(i));
-		}
 
 		// 작년도 퍼센트
-		pA =0; pB = 0; pD = 0; pEtc = 0;
-		
+		pA = 0;
+		pB = 0;
+		pD = 0;
+		pEtc = 0;
+
 		for (int i = 0; i < p_one_year_ago.size(); i++) {
 			pA += p_one_year_ago.get(i).getA();
 			pB += p_one_year_ago.get(i).getB();
 			pD += p_one_year_ago.get(i).getD();
 			pEtc += p_one_year_ago.get(i).getETC();
 		}
-		System.out.println("전년도");
+
 		List<String> p_one_year = cal.calPer(pA, pB, pD, pEtc);
-		for(int i=0; i<p_two_year.size(); i++) {
-			
-			System.out.println(p_one_year.get(i));
-		}
 
 		// 이번년도 퍼센트
-		pA =0; pB = 0; pD = 0; pEtc = 0;
-		
+		pA = 0;
+		pB = 0;
+		pD = 0;
+		pEtc = 0;
+
 		for (int i = 0; i < p_now_year.size(); i++) {
 			pA += p_now_year.get(i).getA();
 			pB += p_now_year.get(i).getB();
 			pD += p_now_year.get(i).getD();
 			pEtc += p_now_year.get(i).getETC();
 		}
-		System.out.println("이번년도");
+
 		List<String> p_now = cal.calPer(pA, pB, pD, pEtc);
-		for(int i=0; i<p_now.size(); i++) {
-			
-			System.out.println(p_now.get(i));
-		}
-		/*
-		 * cal.calPer(one_year_ago.get(0).getGC(), now_year.get(1).getGC(),
-		 * now_year.get(2).getGC(), now_year.get(3).getGC());
-		 * System.out.println(cal.getPer_A()); System.out.println(cal.getPer_B());
-		 * System.out.println(cal.getPer_D()); System.out.println(cal.getPer_etc());
-		 * cal.calPer(now_year.get(0).getGC(), now_year.get(1).getGC(),
-		 * now_year.get(2).getGC(), now_year.get(3).getGC());
-		 * System.out.println(cal.getPer_A()); System.out.println(cal.getPer_B());
-		 * System.out.println(cal.getPer_D()); System.out.println(cal.getPer_etc());
-		 */
 
 		ModelAndView mav = new ModelAndView();
 
@@ -171,7 +157,7 @@ public class ResultController {
 		mav.addObject("one_year_ago", one_year_ago);
 		mav.addObject("two_year_ago", two_year_ago);
 
-		// 년도 표기 및 합계, 등급 표기
+		// 년도 등급별총합 등급 표기
 		mav.addObject("year", YEAR);
 		mav.addObject("one_year", ONE_YEAR_AGO);
 		mav.addObject("two_year", TWO_YEAR_AGO);
@@ -182,7 +168,7 @@ public class ResultController {
 		mav.addObject("p_two_year", p_two_year);
 		mav.addObject("p_one_year", p_one_year);
 		mav.addObject("p_now", p_now);
-		
+
 		mav.setViewName("result_view/yearly_grade_view");
 		return mav;
 	}
@@ -209,6 +195,8 @@ public class ResultController {
 		List<Integer> total = new ArrayList<Integer>();
 		List<String> grade = new ArrayList<String>();
 		List<String> business = new ArrayList<String>();
+		List<Integer> pGrade = new ArrayList<Integer>();
+		GradePerDTO cal = new GradePerDTO();
 
 		grade.add("A");
 		grade.add("B");
@@ -220,6 +208,7 @@ public class ResultController {
 		business.add("IS_LINC");
 		business.add("IS_TYPE3");
 
+		// 총합 계산
 		int all_Best = 0;
 		int all_Agency = 0;
 		int all_AHA = 0;
@@ -228,12 +217,13 @@ public class ResultController {
 		int all = 0;
 
 		for (int i = 0; i < now_year.size(); i++) {
-			all_Best += dto.get(i).getIS_BEST();
+			all_Best += dto.get(i).getIS_BEST();	
 			all_Agency += dto.get(i).getIS_AGENCY();
 			all_AHA += dto.get(i).getIS_AHA();
 			all_Linc += dto.get(i).getIS_LINC();
 			all_Type3 += dto.get(i).getIS_TYPE3();
 			all += now_year.get(i).getGC();
+
 		}
 
 		total.add(all_Best);
@@ -243,6 +233,8 @@ public class ResultController {
 		total.add(all_Type3);
 		total.add(all);
 
+		// 퍼센트 계산
+		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("viewAll", dto);
 		mav.addObject("now_year", now_year);

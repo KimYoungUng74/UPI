@@ -52,8 +52,8 @@ public class GradePerDTO {
 		double per_D = (D / (double) total) * 100;
 		double per_etc = (etc / (double) total) * 100;
 
-		System.out.println(A + "//" + B + "//" + D + "//" + etc + "//" + total);
-		System.out.println(per_A + "//" + per_B + "//" + per_D + "//" + per_etc + "//");
+		//System.out.println(A + "//" + B + "//" + D + "//" + etc + "//" + total);
+		//System.out.println(per_A + "//" + per_B + "//" + per_D + "//" + per_etc + "//");
 
 		gradePer.add(String.format("%.1f", per_A));
 		gradePer.add(String.format("%.1f", per_B));
@@ -74,81 +74,37 @@ public class GradePerDTO {
 		cal.calPer(33, 13, 0, 0);
 	}
 
-	public void calPer(ArrayList<Integer> pGrade) {
+	public List<String> calPer(List<Integer> pGrade) {
 		// TODO Auto-generated method stub
 		int total = 0;
+		
+		List<String> gradePer = new ArrayList<String>();
 
-		System.out.println(pGrade.size());
+		//System.out.println(pGrade.size());
 		for (int i = 0; i < pGrade.size(); i++) {
 			total += pGrade.get(i);
 		}
 
-		/*
-		 * // A B D 기타 등급이 하나도 없을 때 if (pGrade.size() == 0) { double per_A = 0; double
-		 * per_B = 0; double per_D = 0; double per_etc = 0;
-		 * 
-		 * System.out.println(String.format("%.1f", per_A));
-		 * System.out.println(String.format("%.1f", per_B));
-		 * System.out.println(String.format("%.1f", per_D));
-		 * System.out.println(String.format("%.1f", per_etc));
-		 * 
-		 * setPer_A(String.format("%.1f", per_A)); setPer_B(String.format("%.1f",
-		 * per_B)); setPer_D(String.format("%.1f", per_D));
-		 * setPer_etc(String.format("%.1f", per_etc)); }
-		 * 
-		 * // A등급 갯수 하나만 존재할 때 if (pGrade.size() == 1) { double per_A = (pGrade.get(0) /
-		 * (double)total) * 100; double per_B = 0; double per_D = 0; double per_etc = 0;
-		 * 
-		 * System.out.println(String.format("%.1f", per_A));
-		 * System.out.println(String.format("%.1f", per_B));
-		 * System.out.println(String.format("%.1f", per_D));
-		 * System.out.println(String.format("%.1f", per_etc));
-		 * 
-		 * setPer_A(String.format("%.1f", per_A)); setPer_B(String.format("%.1f",
-		 * per_B)); setPer_D(String.format("%.1f", per_D));
-		 * setPer_etc(String.format("%.1f", per_etc)); }
-		 * 
-		 * // A등급 B등급 둘이 존재할 때 if (pGrade.size() == 2) { double per_A = (pGrade.get(0) /
-		 * (double)total) * 100; double per_B = (pGrade.get(1) / (double)total) * 100;
-		 * double per_D = 0; double per_etc = 0;
-		 * 
-		 * System.out.println(String.format("%.1f", per_A));
-		 * System.out.println(String.format("%.1f", per_B));
-		 * System.out.println(String.format("%.1f", per_D));
-		 * System.out.println(String.format("%.1f", per_etc));
-		 * 
-		 * setPer_A(String.format("%.1f", per_A)); setPer_B(String.format("%.1f",
-		 * per_B)); setPer_D(String.format("%.1f", per_D));
-		 * setPer_etc(String.format("%.1f", per_etc)); }
-		 * 
-		 * // A등급 B등급 D 등급 셋이 존재할 때 if (pGrade.size() == 3) { double per_A =
-		 * (pGrade.get(0) / (double)total) * 100; double per_B = (pGrade.get(1) /
-		 * (double)total) * 100; double per_D = (pGrade.get(2) / (double)total) * 100;
-		 * double per_etc = 0;
-		 * 
-		 * System.out.println(String.format("%.1f", per_A));
-		 * System.out.println(String.format("%.1f", per_B));
-		 * System.out.println(String.format("%.1f", per_D));
-		 * System.out.println(String.format("%.1f", per_etc));
-		 * 
-		 * setPer_A(String.format("%.1f", per_A)); setPer_B(String.format("%.1f",
-		 * per_B)); setPer_D(String.format("%.1f", per_D));
-		 * setPer_etc(String.format("%.1f", per_etc)); }
-		 * 
-		 * // 전부 존재할 때 if (pGrade.size() == 4) { double per_A = (pGrade.get(0) /
-		 * (double)total) * 100; double per_B = (pGrade.get(1) / (double)total) * 100;
-		 * double per_D = (pGrade.get(2) / (double)total) * 100; double per_etc =
-		 * (pGrade.get(3) / (double)total) * 100;
-		 * 
-		 * System.out.println(String.format("%.1f", per_A));
-		 * System.out.println(String.format("%.1f", per_B));
-		 * System.out.println(String.format("%.1f", per_D));
-		 * System.out.println(String.format("%.1f", per_etc));
-		 * 
-		 * setPer_A(String.format("%.1f", per_A)); setPer_B(String.format("%.1f",
-		 * per_B)); setPer_D(String.format("%.1f", per_D));
-		 * setPer_etc(String.format("%.1f", per_etc)); }
-		 */
+		double per_A = (pGrade.get(0) / (double) total) * 100;
+		double per_B = (pGrade.get(1) / (double) total) * 100;
+		double per_D = (pGrade.get(2) / (double) total) * 100;
+		double per_etc = (pGrade.get(3) / (double) total) * 100;
+		
+		gradePer.add(String.format("%.1f", per_A));
+		gradePer.add(String.format("%.1f", per_B));
+		gradePer.add(String.format("%.1f", per_D));
+		gradePer.add(String.format("%.1f", per_etc));
+		
+		//System.out.println(String.format("%.1f", per_A));
+		//System.out.println(String.format("%.1f", per_B));
+		//System.out.println(String.format("%.1f", per_D));
+		//System.out.println(String.format("%.1f", per_etc));
 
+		setPer_A(String.format("%.1f", per_A));
+		setPer_B(String.format("%.1f", per_B));
+		setPer_D(String.format("%.1f", per_D));
+		setPer_etc(String.format("%.1f", per_etc));
+
+		return gradePer;
 	}
 }
