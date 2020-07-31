@@ -125,7 +125,7 @@
 				<!-- *************************************************************** -->
 				<!-- Start Sales Charts Section -->
 				<!-- *************************************************************** -->
-				<form action="indicators_writeOk.do" method="post">
+				<form id="submitform" action="indicators_writeOk.do" method="post">
 					<div class="row">
 						<div class="col-lg-12 col-md-12">
 							<div class="card">
@@ -141,8 +141,8 @@
 													<span>지표명</span>
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
-													<input type="text" name="INDICATORS_NAME"
-														class="form-control">
+													<input type="text" id="INDICATORS_NAME" name="INDICATORS_NAME"
+														value="" class="form-control">
 												</div>
 											</div>
 										</div>
@@ -246,7 +246,7 @@
 													<span>수집방법</span>
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
-													<select class="custom-select" id="inputGroupSelect04"
+													<select class="custom-select" id="COL_METHOD"
 														name="COL_METHOD">
 														<option value="">수집방법 선택</option>
 														<option value="정보공시">정보공시</option>
@@ -264,7 +264,7 @@
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<input type="text" class="form-control" value="100"
-														name="TARGET_VAL">
+														id="TARGET_VAL" name="TARGET_VAL">
 												</div>
 											</div>
 										</div>
@@ -275,7 +275,7 @@
 													<span>평가방법</span>
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
-													<select class="custom-select" id="inputGroupSelect04"
+													<select class="custom-select" id="EVAL_METHOD"
 														name="EVAL_METHOD">
 														<option value="">평가방법 선택</option>
 														<option value="정량">정량</option>
@@ -292,7 +292,7 @@
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<input type="text" class="form-control"
-														name="EVAL_STANDARD">
+													id="EVAL_STANDARD"	name="EVAL_STANDARD">
 												</div>
 											</div>
 										</div>
@@ -303,7 +303,7 @@
 													<span>등급기준</span>
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
-													<select class="custom-select" id="inputGroupSelect04"
+													<select class="custom-select" id="IS_NEGATIVE"
 														name="IS_NEGATIVE">
 														<option value=0 selected="selected">정적(기본)</option>
 														<option value=1>부적</option>
@@ -367,7 +367,7 @@
 															class="fas fa-align-justify"></i></span>목록으로
 													</button>
 													<button class="btn btn-primary waves-effect waves-light"
-														type="submit" style="float: right;">지표 등록</button>
+													id="write_btn"	type="button" style="float: right;">지표 등록</button>
 												</div>
 											</div>
 
@@ -544,7 +544,6 @@
 		<!-- /.modal-dialog -->
 	</div>
 	<!-- /.modal -->
-	</div>
 </body>
 <c:import url="../import/javascript.jsp" charEncoding="UTF-8">
 </c:import>
@@ -659,4 +658,5 @@
 
 	});
 </script>
+<script src="<c:url value='/resources/js/IndicatorsCheck.js'/>"></script>
 </html>
