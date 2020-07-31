@@ -667,6 +667,8 @@
     </c:import>
     
     <script type="text/javascript">
+    var pieColors = ['#5F76E8', '#ff4f70', '#fdc16a', '#22ca80', '#6c757d'] ;
+    
     Highcharts.chart('container', {
         chart: {
             plotBackgroundColor: null,
@@ -770,6 +772,7 @@
             pie: {
                 allowPointSelect: true,
                 cursor: 'pointer',
+                colors: pieColors,
                 dataLabels: {
                     enabled: false
                 },
