@@ -367,7 +367,7 @@
 															class="fas fa-align-justify"></i></span>목록으로
 													</button>
 													<button class="btn btn-primary waves-effect waves-light"
-													id="write_btn"	type="button" style="float: right;">지표 등록</button>
+													id="submit_btn"	type="button" style="float: right;">지표 등록</button>
 												</div>
 											</div>
 

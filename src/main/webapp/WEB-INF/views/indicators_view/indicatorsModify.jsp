@@ -123,8 +123,8 @@
 				<!-- *************************************************************** -->
 				<!-- Start Sales Charts Section -->
 				<!-- *************************************************************** -->
-				<form action="indicators_modifyOk.do" id="frm" method="post">
-					<input type="hidden" name="INDICATORS_NUM"
+				<form id="submitform" action="indicators_modifyOk.do" id="frm" method="post">
+					<input type="hidden" name="INDICATORS_NUM" 
 						value="${dto.INDICATORS_NUM}">
 					<div class="row">
 						<div class="col-lg-12 col-md-12">
@@ -141,7 +141,7 @@
 													<span>지표명</span>
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
-													<input type="text" name="INDICATORS_NAME"
+													<input type="text" name="INDICATORS_NAME" id="INDICATORS_NAME"
 														class="form-control" value="${dto.INDICATORS_NAME}">
 												</div>
 											</div>
@@ -155,7 +155,7 @@
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<select class="custom-select" id="DIVISION_NAME"
 														name="DIVISION_NAME">
-														<option value="0">모두 보기</option>
+														<option value="">모두 보기</option>
 														<c:choose>
 															<c:when test="${dto.DIVISION_NAME eq '입학취업처'}">
 																<option value="입학취업처" selected="selected">입학취업처</option>
@@ -326,7 +326,7 @@
 													<span>수집방법</span>
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
-													<select class="custom-select" id="inputGroupSelect04"
+													<select class="custom-select" id="COL_METHOD"
 														name="COL_METHOD">
 														<option value="">수집방법 선택</option>
 														<c:choose>
@@ -365,7 +365,7 @@
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<input type="text" class="form-control"
-														value="${dto.TARGET_VAL}" name="TARGET_VAL">
+														value="${dto.TARGET_VAL}" name="TARGET_VAL" id="TARGET_VAL">
 												</div>
 											</div>
 										</div>
@@ -376,7 +376,7 @@
 													<span>평가방법</span>
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
-													<select class="custom-select" id="inputGroupSelect04"
+													<select class="custom-select" id="EVAL_METHOD"
 														name="EVAL_METHOD">
 														<option value="">평가방법 선택</option>
 														<c:choose>
@@ -407,7 +407,7 @@
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<input type="text" class="form-control"
-														name="EVAL_STANDARD" value="${dto.EVAL_STANDARD}">
+														id="EVAL_STANDARD" name="EVAL_STANDARD" value="${dto.EVAL_STANDARD}">
 												</div>
 											</div>
 										</div>
@@ -418,7 +418,7 @@
 													<span>등급기준</span>
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
-													<select class="custom-select" id="inputGroupSelect04"
+													<select class="custom-select" id="IS_NEGATIVE"
 														name="IS_NEGATIVE">
 														<c:choose>
 															<c:when test="${dto.IS_NEGATIVE == 0}">
@@ -496,7 +496,7 @@
 														type="button" style="float: left; margin-left: 5px;">지표
 														사용중지</button>
 													<button class="btn btn-primary waves-effect waves-light"
-														type="submit" style="float: right; margin-left: 5px;">지표
+														type="button" id="submit_btn" style="float: right; margin-left: 5px;">지표
 														수정</button>
 													<button onclick="history.back(-1);"
 														class="btn btn-light waves-effect waves-light"
@@ -793,4 +793,5 @@
 						});
 	});
 </script>
+<script src="<c:url value='/resources/js/IndicatorsCheck.js'/>"></script>
 </html>

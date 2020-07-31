@@ -1,7 +1,7 @@
 // 로그인(1 = 아이디가 존재 안 함/ 2 = 암호가 안맞음 / 3 = 로그인 가능)
 var idJ = /^[가-힣a-z0-9A-Z/-_.]{1,100}$/;
 var checkPoint = 0;
-$("#write_btn").click(function() {
+$("#submit_btn").click(function() {
 	var INDICATORS_NAME = $("#INDICATORS_NAME").val();
 	var DIVISION_NAME = $("#DIVISION_NAME").val();
 	var COL_METHOD = $("#COL_METHOD").val();
