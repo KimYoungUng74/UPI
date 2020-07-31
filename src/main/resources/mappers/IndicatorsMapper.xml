@@ -159,7 +159,7 @@
 			#{DIVISION_NAME},
 			#{TARGET_VAL},
 			#{FORMULA},
-			1,
+			#{IS_NEGATIVE},
 			0,
 			#{USER_ID},
 			#{USER_NAME},
@@ -207,7 +207,7 @@
 			#{DIVISION_NAME},
 			#{TARGET_VAL},
 			#{FORMULA},
-			1,
+			#{IS_NEGATIVE},
 			0,
 			#{USER_ID},
 			#{USER_NAME},
@@ -215,7 +215,7 @@
 			sysdate)
 	</insert>
 	
-	<!-- 지표 변경 -->
+	<!-- 보고서 작성 -->
 	<insert id="Report_write" parameterType="RecordDTO">
 		INSERT INTO RECORD_TB(RECORD_NUM,
 			INDICATORS_NUM,

@@ -429,7 +429,7 @@
 															</c:otherwise>
 														</c:choose>
 														<c:choose>
-															<c:when test="${dto.IS_NEGATIVE == 0}">
+															<c:when test="${dto.IS_NEGATIVE == 1}">
 																<option value=1 selected="selected" >부적</option>
 															</c:when>
 															<c:otherwise>
