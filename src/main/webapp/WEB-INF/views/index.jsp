@@ -380,7 +380,7 @@
                                 </div>
                                 <div class="table-responsive table-hover">
                                     <table class="table no-wrap v-middle mb-0 text-center">
-                                        <thead style="background-color: rgb(124, 181, 236); color:black; ">
+                                        <thead style="background-color: #5F76E8; color:black; ">
                                             <tr class="border-0 text-white" >
                                             	<th class="font-14" width="5%">관리번호</th>
                                                 <th class="font-14" width="50%">성과지표명</th>
@@ -431,7 +431,7 @@
                                 </div>
                                 <div class="table-responsive table-hover">
                                     <table class="table no-wrap v-middle mb-0 text-center">
-                                        <thead style="background-color: rgb(67, 67, 72); color:black; ">
+                                        <thead style="background-color: #ff4f70; color:black; ">
                                             <tr class="border-0 text-white">
                                             	<th class="font-14" width="5%">관리번호</th>
                                                 <th class="font-14" width="50%">성과지표명</th>
@@ -483,7 +483,7 @@
                                 </div>
                                 <div class="table-responsive table-hover">
                                     <table class="table no-wrap v-middle mb-0 text-center">
-                                        <thead style="background-color: rgb(144, 237, 125); color:black; ">
+                                        <thead style="background-color: #fdc16a; color:black; ">
                                             <tr class="border-0">
                                             	<th class="font-14" width="5%">관리번호</th>
                                                 <th class="font-14" width="50%">성과지표명</th>
@@ -535,7 +535,7 @@
                                 </div>
                                 <div class="table-responsive table-hover">
                                     <table class="table no-wrap v-middle mb-0 text-center">
-                                        <thead style="background-color: rgb(247, 163, 92); color:black; ">
+                                        <thead style="background-color: #22ca80; color:black; ">
                                             <tr class="border-0 text-white">
                                             	<th class="font-14" width="5%">관리번호</th>
                                                 <th class="font-14" width="50%">성과지표명</th>
@@ -588,7 +588,7 @@
                                 </div>
                                 <div class="table-responsive table-hover">
                                     <table class="table no-wrap v-middle mb-0 text-center">
-                                        <thead style="background-color: rgb(128, 133, 233); color:black; ">
+                                        <thead style="background-color:#6c757d; color:black; ">
                                             <tr class="border-0 text-white">
                                             	<th class="font-14" width="5%">관리번호</th>
                                                 <th class="font-14" width="50%">성과지표명</th>
