@@ -45,7 +45,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(Locale locale, Model model) {
 		
-		return "index";
+		return "redirect:index.do";
 	}
 
 	@RequestMapping(value = "index.do", method = RequestMethod.GET)

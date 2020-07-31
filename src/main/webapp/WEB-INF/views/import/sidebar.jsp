@@ -61,11 +61,6 @@
                                     class="hide-menu">Log-Out</span></a>
                         </li>
                        	</c:if>
-                       	
-                       	<!-- 테스팅용 -->
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="login.do"><i data-feather="log-in" class="feather-icon"></i><span
-                                   class="hide-menu">Log-In(TEST)</span></a>
-                        </li>
                         
                     </ul>
                 </nav>

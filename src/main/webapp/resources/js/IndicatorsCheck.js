@@ -1,57 +1,89 @@
 // 로그인(1 = 아이디가 존재 안 함/ 2 = 암호가 안맞음 / 3 = 로그인 가능)
-        var idJ = /^[가-힣a-z0-9]$/;
-    	var checkPoint = 0;
-    	$("#write_btn").click(function() {	
-    		var INDICATORS_NAME = $('input[name=INDICATORS_NAME]').val();
-    		var DIVISION_NAME = $('#DIVISION_NAME').val();
-    		//아이디 인풋 테스트
-			if(idJ.test(user_id)){
-				//암호 인풋 테스트
-				if(user_pw.length >= 8 && user_pw.length <= 20){
-    				$.ajax({
-    					url : 'login_check.do?USER_ID='+user_id+'&USER_PW='+encodeURIComponent(user_pw), // encodeURIComponent()은 URL에 포함되거나 위험성있는 특수문자도 톰캣에게 허용하기 위해 16진수로 변환해줍니다.
-    					type : 'post',
-    					success : function(data) {
-    						if ($.trim(data) == "1") {
-								// 1 : 아이디가 존재하지 않는 경우
-								$("#id_check").text("존재하지 않는 아이디입니다.");
-								$("#id_check").css("color", "red");
-								$("#pw_check").text("");
-							} else if($.trim(data) == "2"){
-								// 2 : 아이디는 존재하나 암호는 맞지않는 경우
-								$("#id_check").text("");
-								$("#pw_check").text("암호가 맞지않습니다.");
-								$("#pw_check").css("color", "red");
-							} else if($.trim(data) == "3"){
-								// 3 : 로그인 검사 성공
-								$("#id_check").text("");
-								$("#pw_check").text("");
-								//로그인 실행
-								$("#frm_login").submit();
-							}
-    				
-    					}, error : function(request, error) {
-    						console.log("로그인 오류 발생");
-    						console.log("code:"+request.status+"\n"+"message:"+request.responseText);
-    					}
-    				});
-				}else if(user_pw == ""){
-					$('#pw_check').text('패스워드를 입력해주세요');
-					$('#pw_check').css('color', 'red');
-					$("#id_check").text("");
-				}else {
-					$('#pw_check').text("암호는 8~20자리만 가능합니다");
-					$('#pw_check').css('color', 'red');
-					$("#id_check").text("");
-				} 
-			} else if(user_id == ""){
-				$('#id_check').text('아이디를 입력해주세요');
-				$('#id_check').css('color', 'red');
-				$("#pw_check").text("");
-				
-			} else {
-				$('#id_check').text("아이디는 소문자와 숫자 4~12자리만 가능합니다");
-				$('#id_check').css('color', 'red');
-				$("#pw_check").text("");
-			}
-    	});
+var idJ = /^[가-힣a-z0-9A-Z/-_.]{1,100}$/;
+var checkPoint = 0;
+$("#submit_btn").click(function() {
+	var INDICATORS_NAME = $("#INDICATORS_NAME").val();
+	var DIVISION_NAME = $("#DIVISION_NAME").val();
+	var COL_METHOD = $("#COL_METHOD").val();
+	var TARGET_VAL = $("#TARGET_VAL").val();
+	var EVAL_METHOD = $("#EVAL_METHOD").val();
+	var EVAL_STANDARD = $("#EVAL_STANDARD").val();
+	var IS_NEGATIVE = $("#IS_NEGATIVE").val();
+	var ELEMENTS = $("#ELEMENTS").val();
+	var input_ele = $("#input_ele").val();
+	var FORMULA_input = $("#FORMULA_input").val();
+	
+	var check1 = $("input:checkbox[id='customCheck1']").is(":checked");
+	var check2 = $("input:checkbox[id='customCheck2']").is(":checked");
+	var check3 = $("input:checkbox[id='customCheck3']").is(":checked");
+	var check4 = $("input:checkbox[id='customCheck4']").is(":checked");
+	var check5 = $("input:checkbox[id='customCheck5']").is(":checked");
+
+	if (check1) {
+		checkPoint++;
+	} else if (check2) {
+		checkPoint++;
+	} else if (check3) {
+		checkPoint++;
+	} else if (check4) {
+		checkPoint++;
+	} else if (check5) {
+		checkPoint++;
+	}
+
+	if (!idJ.test(INDICATORS_NAME)) {
+		if (INDICATORS_NAME == "") {
+			alert("지표이름을 입력하세요");
+		} else {
+			alert("지표이름에 잘못 된 값을 입력되었습니다.");
+		}
+		$("#INDICATORS_NAME").focus();
+	} else if (!idJ.test(DIVISION_NAME)) {
+		if (DIVISION_NAME == "") {
+			alert("관리부서를 선택하세요");
+		} else {
+			alert("관리부서에 잘못 된 값을 입력되었습니다.");
+		}
+	} else if (checkPoint == 0) {
+		alert("활용 사업을 하나이상 선택하세요");
+	} else if (!idJ.test(COL_METHOD)) {
+		if (COL_METHOD == "") {
+			alert("수집방법을 선택하세요");
+		} else {
+			alert("수집방법에 잘못 된 값을 입력되었습니다.");
+		}
+	} else if (!idJ.test(TARGET_VAL)) {
+		if (TARGET_VAL == "") {
+			alert("목표값을 입력하세요");
+		} else {
+			alert("목표값에 잘못 된 값을 입력되었습니다.");
+		}
+		$("#TARGET_VAL").focus();
+	} else if (!idJ.test(EVAL_METHOD)) {
+		if (EVAL_METHOD == "") {
+			alert("평가방법을 선택하세요");
+		} else {
+			alert("평가방법에 잘못 된 값을 입력되었습니다.");
+		}
+	} else if (!idJ.test(EVAL_STANDARD)) {
+		if (EVAL_STANDARD == "") {
+			alert("평가기준을 입력하세요");
+		} else {
+			alert("평가기준에 잘못 된 값을 입력되었습니다.");
+		}
+		$("#EVAL_STANDARD").focus();
+	} else if (!idJ.test(IS_NEGATIVE)) {
+		if (IS_NEGATIVE == "") {
+			alert("등급기준을 선택하세요");
+		} else {
+			alert("등급기준에 잘못 된 값을 입력되었습니다.");
+		}
+	} else if (ELEMENTS == "") {
+		alert("요소가 비었습니다 요소를 입력하세요");
+		$("#input_ele").focus();
+	} else if (FORMULA_input == "") {
+		alert("산출식이 비었습니다 산출식을 등록하세요");
+	} else {
+		$("#submitform").submit();
+	}
+});
