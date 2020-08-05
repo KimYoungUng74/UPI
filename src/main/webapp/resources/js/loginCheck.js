@@ -55,4 +55,6 @@
 				$('#id_check').css('color', 'red');
 				$("#pw_check").text("");
 			}
+			
+			
     	});

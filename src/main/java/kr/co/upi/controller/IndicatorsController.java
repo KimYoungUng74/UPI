@@ -212,7 +212,7 @@ public class IndicatorsController {
 
 		GradeDTO gradeDto = new GradeDTO();
 		gradeDto = indicatorsSer.selectGrade();
-
+		System.out.println(gradeDto);
 		if (ACHIEVE >= gradeDto.getA_GRADE()) {
 			result = "A";
 		} else if (ACHIEVE >= gradeDto.getB_GRADE()) {
@@ -235,8 +235,7 @@ public class IndicatorsController {
 		} else { 
 			ACHIEVE_VAL = (Double.parseDouble(target_VAL) /  Double.parseDouble(present_VAL) * 100);
 		}
-		
 		return ACHIEVE_VAL.toString();
 	}
-
+	
 }
