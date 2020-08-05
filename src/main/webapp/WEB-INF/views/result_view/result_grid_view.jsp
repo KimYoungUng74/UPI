@@ -197,9 +197,9 @@
                                         </thead>
                                         <tbody>
                                         <!-- 출력 부분 -->
-                                        <c:forEach var="row" items="${viewAll }">
+                                        <c:forEach var="row" items="${viewAll }" varStatus="status">
                                             <tr>
-                                                <th class="text-center" scope="row">${row.INDICATORS_NUM }</th>
+                                                <th class="text-center" scope="row">${status.count}</th>
                                                 <td>${row.INDICATORS_NAME }</td>
                                                 <td class="text-center" >${row.TARGET_VAL }</td>
                                                 <td class="text-center"> ${row.PRESENT_VAL}</td>                                                
