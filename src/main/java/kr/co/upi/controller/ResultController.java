@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.co.upi.DTO.GradeCountDTO;
+import kr.co.upi.DTO.IndicatorsDTO;
 import kr.co.upi.DTO.RecordDTO;
+import kr.co.upi.Service.IndicatorsService;
 import kr.co.upi.Service.ResultService;
 import kr.co.upi.utill.GradePerDTO;
 
@@ -24,6 +26,9 @@ public class ResultController {
 
 	@Autowired
 	ResultService resultSer;
+	
+	@Autowired
+	IndicatorsService indcSer;
 
 	Calendar cal = Calendar.getInstance();
 	String YEAR = Integer.toString(cal.get(Calendar.YEAR)); // 현재 년도 계산
@@ -249,7 +254,11 @@ public class ResultController {
 	@RequestMapping(value = "indicator_formula_view.do")
 	public ModelAndView indicatorFomula(Locale locale, Model model) {
 
+		List<IndicatorsDTO> dto = indcSer.selectAll();
+		
+		
 		ModelAndView mav = new ModelAndView();
+		mav.addObject("viewAll",dto);
 		mav.setViewName("result_view/indicator_formula_view");
 		return mav;
 	}

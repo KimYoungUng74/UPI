@@ -148,103 +148,16 @@
                                         
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th class="text-center" scope="row">1</th>
-                                                <td>취업률</td>
-                                                <td>(취업자/취업대상자)X100</td>
-                                                
-                                            </tr>
-                                            
-                                            <tr>
-                                                <th class="text-center" scope="row">2</th>
-                                                <td>유지취업률</td>
-                                                <td>[(1~4차)기준일 유지 건강보험 직장가입자 / 조사기준년 12월31일 건강보험 직장가입자]X100</td>
-                                                
-                                            </tr>
-                                            
-                                            <tr>
-                                                <th class="text-center" scope="row">3</th>
-                                                <td>신입생충원율</td>
-                                                <td>(정원내 입학자 수 / 정원 내 모집인원)X100</td>
-                                                
-                                            </tr>
-                                            
-                                            <tr>
-                                                <th class="text-center" scope="row">4</th>
-                                                <td>취업률</td>
-                                                <td>(정원내 재학생 수 / 편제정원)X100</td>
-                                                
-                                            </tr>
-                                           
-                                            <tr>
-                                                <th class="text-center" scope="row">5</th>
-                                                <td>중도탈락률</td>
-                                                <td>(제적학생 수 /재적학생 수)X100</td>
-                                                
-                                            </tr>
-                                            
-                                            <tr>
-                                                <th class="text-center" scope="row">6</th>
-                                                <td>NCS/직무분석기반 교육여건 예산 집행률</td>
-                                                <td>(집행액 / 예산액)X100</td>
-                                                
-                                            </tr>
-                                            
-                                            <tr>
-                                                <th class="text-center" scope="row">7</th>
-                                                <td>전임교원 확보율</td>
-                                                <td>[전임교원 수 / 교원법정정원(재학생기준)]X100</td>
-                                                
-                                            </tr>
-                                            
-                                            <tr>
-                                                <th class="text-center" scope="row">8</th>
-                                                <td>취업률</td>
-                                                <td>(취업자/취업대사장)X100</td>
-                                                
-                                            </tr>
-                                            
-                                            <tr>
-                                                <th class="text-center" scope="row">9</th>
-                                                <td>유지취업률</td>
-                                                <td>[(1~4차)기준일 유지 건강보험 직장가입자 / 조사기준년 12월31일 건강보험 직장가입자]X100</td>
-                                                
-                                            </tr>
-                                            
-                                            <tr>
-                                                <th class="text-center" scope="row">10</th>
-                                                <td>신입생충원율</td>
-                                                <td>(정원내 입학자 수 / 정원 내 모집인원)X100</td>
-                                                
-                                            </tr>
-                                            
-                                            <tr>
-                                                <th class="text-center" scope="row">11</th>
-                                                <td>취업률</td>
-                                                <td>(정원내 재학생 수 / 편제정원)X100</td>
-                                                
-                                            </tr>
-                                           
-                                            <tr>
-                                                <th class="text-center" scope="row">12</th>
-                                                <td>중도탈락률</td>
-                                                <td>(제적학생 수 /재적학생 수)X100</td>
-                                                
-                                            </tr>
-                                            
-                                            <tr>
-                                                <th class="text-center" scope="row">13</th>
-                                                <td>NCS/직무분석기반 교육여건 예산 집행률</td>
-                                                <td>(집행액 / 예산액)X100</td>
-                                                
-                                            </tr>
-                                            
-                                            <tr>
-                                                <th class="text-center" scope="row">14</th>
-                                                <td>전임교원 확보율</td>
-                                                <td>[전임교원 수 / 교원법정정원(재학생기준)]X100</td>
-                                                
-                                            </tr>
+                                            <!-- 출력 부분 -->
+										<c:forEach items="${viewAll}" var="row" varStatus="status">
+ 											<tr>
+		                                                <th class="text-center" scope="row">${status.count}</th>
+		                                                <td>${row.INDICATORS_NAME }</td>		                                                
+		                                                <td class="text-center" >${row.FORMULA }</td>
+
+		                                                
+		                                     </tr>		
+										</c:forEach>
                                         </tbody>
                                     </table>
                                 </div> <!-- end table-responsive-->
