@@ -127,7 +127,7 @@
 					<div class="col-lg-12 col-md-12">
 						<div class="card">
 							<div class="card-body">
-								<form action="report_write_ok.do" method="post">
+								<form action="report_write_ok.do" method="post" id="submitform">
 									<input type="hidden" name="INDICATORS_NUM"
 										value="${dto.INDICATORS_NUM}">
 										<input type="hidden" name="INDICATORS_NAME"
@@ -444,8 +444,8 @@
 														<span class="btn-label"><i
 															class="fas fa-align-justify"></i></span>목록으로
 													</button>
-													<button class="btn btn-primary waves-effect waves-light"
-														type="submit" style="float: right; margin-left: 5px;">보고서
+													<button class="btn btn-primary waves-effect waves-light" id="submit_btn"
+														type="button" style="float: right; margin-left: 5px;">보고서
 														등록</button>
 												</div>
 											</div>
@@ -512,30 +512,33 @@
 		$('#ele_Btn').click(function() {
 				var FORMULA = $('#FORMULA').val();
 				var ELEMENTS = $('#ELEMENTS').val();
+				var isOk = 0;
 				if (ELEMENTS != "") {
 				var ELEMENTS_List = ELEMENTS.split(',');
 				// 산출식에 요소별 값 적용
 				$('#ELEMENTS_VAL').val("");
 				for ( var i in ELEMENTS_List) {
+					if($("input[name=ELEMENTS_AREA]:eq(" + i + ")").val() == "") {
+						alert(ELEMENTS_List[i]+"의 요소값을 입력해주세요");
+						isOk=1;
+					}
 					FORMULA = FORMULA.replace(ELEMENTS_List[i], $("input[name=ELEMENTS_AREA]:eq(" + i + ")").val());
-					if($('#ELEMENTS_VAL').val() == "") {
-						$('#ELEMENTS_VAL').val($('#ELEMENTS_VAL').val()+$("input[name=ELEMENTS_AREA]:eq(" + i + ")").val());
-					} else {
-						$('#ELEMENTS_VAL').val($('#ELEMENTS_VAL').val()+","+$("input[name=ELEMENTS_AREA]:eq(" + i + ")").val());
-					} 
 				}
 				
-				// 양쪽 여백 제거 
-				FORMULA = $.trim(FORMULA);
-				if($('#TARGET_VAL').val().includes(":")) {
-					$('#PRESENT_VAL').val(eval(FORMULA).toFixed(2)+":1");
-				} else {
-					$('#PRESENT_VAL').val(eval(FORMULA).toFixed(2));
+				if(isOk == 0) {
+					// 양쪽 여백 제거 
+					FORMULA = $.trim(FORMULA);
+					if($('#TARGET_VAL').val().includes(":")) {
+						$('#PRESENT_VAL').val(eval(FORMULA).toFixed(2)+":1");
+					} else {
+						$('#PRESENT_VAL').val(eval(FORMULA).toFixed(2));
+					}
+					$('#PRESENT_VAL').attr('readonly', true);
 				}
-				$('#PRESENT_VAL').attr('readonly', true);
-			}
-			
+				}
 		}); 
 	});
 </script>
+
+<script src="<c:url value='/resources/js/ReportCheck.js'/>"></script>
 </html>
