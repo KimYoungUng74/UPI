@@ -42,7 +42,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label class="text-dark" for="USER_ID">I D</label>
-                                        <input class="form-control" id="USER_ID" type="text" value="${sessionScope.USER_ID}">
+                                        <input class="form-control" id="USER_ID" type="text" value="${sessionScope.USER_ID}" readonly="readonly">
                                         <span id="id_check"></span>
                                     </div>
                                 </div>

@@ -11,7 +11,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import kr.co.upi.DTO.UserDTO;
 
-public class loginCheck extends HandlerInterceptorAdapter{
+public class grantCheck extends HandlerInterceptorAdapter{
 	@Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
@@ -28,11 +28,14 @@ public class loginCheck extends HandlerInterceptorAdapter{
 		response.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         String userid = (String) session.getAttribute("USER_ID");
-        
+        int userGrant = Integer.parseInt((String) session.getAttribute("USER_ID"));
     	if(userid == null){
     		modelAndView.setViewName("user/login");
-            
+        }else if(userGrant < 1) {
+        	modelAndView.setViewName("user/index");
         }
+    	
+    	
         super.postHandle(request, response, handler, modelAndView);
     }
     

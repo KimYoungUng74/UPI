@@ -41,10 +41,17 @@
     
     <interceptors>
         <interceptor>
-            <mapping path="/*.do"/>
+            <mapping path="/*.do" />
             <beans:ref bean="LogInterceptor"/>
         </interceptor>
     </interceptors>
 	
-	
+	<beans:bean id="grantInterceptor" class="kr.co.upi.handler.grantCheck"></beans:bean>
+    
+    <interceptors>
+        <interceptor>
+            <mapping path="/*.mg" />
+            <beans:ref bean="grantInterceptor"/>
+        </interceptor>
+    </interceptors>
 </beans:beans>
