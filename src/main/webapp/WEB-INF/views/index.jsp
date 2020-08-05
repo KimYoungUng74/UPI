@@ -478,7 +478,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex align-items-center mb-4">
-                                    <h4 class="card-title">혁신 지원 AHA 개</h4>
+                                    <h4 class="card-title">혁신 지원 AHA ${cnt_AHA } 개</h4>
                                     
                                 </div>
                                 <div class="table-responsive table-hover">
