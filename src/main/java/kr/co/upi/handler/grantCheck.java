@@ -15,7 +15,28 @@ public class grantCheck extends HandlerInterceptorAdapter{
 	@Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
-		
+		response.setContentType("text/html; charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+        HttpSession session = request.getSession();
+        String userid = (String) session.getAttribute("USER_ID");
+        int userGrant = Integer.parseInt(session.getAttribute("USER_GRANT")+"");
+        System.out.println("유저등급확인:"+userGrant);
+        
+        
+    	if(userid == null){
+    		PrintWriter pw = response.getWriter();
+    		pw.print("<script>alert('로그인이 필요합니다.')</script>");
+    		pw.print("<script>location.href='login.do'</script>");
+    		pw.flush();
+    		//response.sendRedirect("login.do");
+        }else if(userGrant < 1) {
+        	PrintWriter pw = response.getWriter();
+    		pw.print("<script>alert('해당 페이지는 권한이 없습니다.')</script>");
+    		pw.print("<script>history.back();</script>");
+    		pw.flush();
+    		//response.sendRedirect("index.do");
+        }
         return true;
     }
  
@@ -30,10 +51,12 @@ public class grantCheck extends HandlerInterceptorAdapter{
         String userid = (String) session.getAttribute("USER_ID");
         int userGrant = Integer.parseInt(session.getAttribute("USER_GRANT")+"");
         System.out.println("유저등급확인:"+userGrant);
+        
+        
     	if(userid == null){
-    		modelAndView.setViewName("redirect:login.do");
+    		modelAndView.setViewName("user/login");
         }else if(userGrant < 1) {
-        	modelAndView.setViewName("redirect:index.do");
+        	modelAndView.setViewName("index");
         }
     	
     	

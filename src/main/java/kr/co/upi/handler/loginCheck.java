@@ -31,7 +31,6 @@ public class loginCheck extends HandlerInterceptorAdapter{
         
     	if(userid == null){
     		modelAndView.setViewName("user/login");
-            
         }
         super.postHandle(request, response, handler, modelAndView);
     }
