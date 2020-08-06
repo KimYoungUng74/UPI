@@ -72,8 +72,9 @@ public class UserController {
 			HttpSession session = request.getSession();
 			session.setAttribute("USER_ID", userdto.getUSER_ID()); // 유저 ID 세션에 넣기
 			session.setAttribute("USER_NAME", userdto.getUSER_NAME()); // 유저 NAME 세션에 넣기
-			if(userdto.getUSER_PW().equals("d8f01284fda46e5584a444a23ea4d977b89b1ebb586812b3cad97662270e4aed")) {
-				mav.setViewName("user/pwUpdate");
+			session.setAttribute("USER_GRANT", userdto.getUSER_GRANT()); // 유저 권한 세션에 넣기
+			if(userdto.getUSER_PW().equals("d8f01284fda46e5584a444a23ea4d977b89b1ebb586812b3cad97662270e4aed")) { // 암호가 12346578일 경우 변경창으로 넘어갑니다.
+ 				mav.setViewName("user/pwUpdate");
 			}else {
 				mav.setViewName("redirect:index.do");
 			}

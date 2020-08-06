@@ -125,7 +125,7 @@
 				<!-- *************************************************************** -->
 				<!-- Start Sales Charts Section -->
 				<!-- *************************************************************** -->
-				<form id="submitform" action="indicators_writeOk.do" method="post">
+				<form id="submitform" action="indicators_writeOk.mg" method="post">
 					<div class="row">
 						<div class="col-lg-12 col-md-12">
 							<div class="card">
@@ -362,7 +362,7 @@
 													<hr>
 													<button class="btn btn-primary waves-effect waves-light"
 														type="button" style="float: left;"
-														onclick="location.href='indicators_view_list.do'">
+														onclick="location.href='indicators_view_list.mg'">
 														<span class="btn-label"><i
 															class="fas fa-align-justify"></i></span>목록으로
 													</button>

@@ -28,11 +28,12 @@ public class grantCheck extends HandlerInterceptorAdapter{
 		response.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         String userid = (String) session.getAttribute("USER_ID");
-        int userGrant = Integer.parseInt((String) session.getAttribute("USER_ID"));
+        int userGrant = Integer.parseInt(session.getAttribute("USER_GRANT")+"");
+        System.out.println("유저등급확인:"+userGrant);
     	if(userid == null){
-    		modelAndView.setViewName("user/login");
+    		modelAndView.setViewName("redirect:login.do");
         }else if(userGrant < 1) {
-        	modelAndView.setViewName("user/index");
+        	modelAndView.setViewName("redirect:index.do");
         }
     	
     	

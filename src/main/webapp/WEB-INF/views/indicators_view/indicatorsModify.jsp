@@ -123,7 +123,7 @@
 				<!-- *************************************************************** -->
 				<!-- Start Sales Charts Section -->
 				<!-- *************************************************************** -->
-				<form id="submitform" action="indicators_modifyOk.do" id="frm" method="post">
+				<form id="submitform" action="indicators_modifyOk.mg" id="frm" method="post">
 					<input type="hidden" name="INDICATORS_NUM" 
 						value="${dto.INDICATORS_NUM}">
 					<div class="row">
@@ -685,7 +685,7 @@
 
 	/* 요소 버튼 클릭 */
 	function changeURL() {
-		document.getElementById('frm').action = "indicators_delete.do";
+		document.getElementById('frm').action = "indicators_delete.mg";
 	};
 
 	/* 요소 버튼 클릭 */

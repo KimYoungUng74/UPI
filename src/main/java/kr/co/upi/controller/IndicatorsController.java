@@ -34,7 +34,7 @@ public class IndicatorsController {
 	Date time = new Date(new java.util.Date().getTime()); // 현재 날짜
 
 	// 지표관리 리스트
-	@RequestMapping(value = "indicators_view_list.do")
+	@RequestMapping(value = "indicators_view_list.mg")
 	public ModelAndView report_view_list(Locale locale, Model model, HttpSession session, IndicatorsDTO dto) {
 		if(dto.getDIVISION_NAME() == null) {
 			dto.setDIVISION_NAME("모두 보기");
@@ -56,7 +56,7 @@ public class IndicatorsController {
 	}
 
 	// 새 지표 등록 페이지
-	@RequestMapping(value = "indicators_write.do")
+	@RequestMapping(value = "indicators_write.mg")
 	public ModelAndView indicators_write(Locale locale, Model model, HttpSession session) {
 
 		ModelAndView mav = new ModelAndView();
@@ -65,7 +65,7 @@ public class IndicatorsController {
 	}
 
 	// 새 지표 등록
-	@RequestMapping(value = "indicators_writeOk.do")
+	@RequestMapping(value = "indicators_writeOk.mg")
 	public ModelAndView indicators_writeOk(IndicatorsDTO dto, Locale locale, Model model, HttpSession session) {
 
 		ModelAndView mav = new ModelAndView();
@@ -85,7 +85,7 @@ public class IndicatorsController {
 	}
 
 	// 지표 수정 페이지
-	@RequestMapping(value = "indicators_modify.do")
+	@RequestMapping(value = "indicators_modify.mg")
 	public ModelAndView indicators_modify(IndicatorsDTO dto, Locale locale, Model model, HttpSession session) {
 
 		ModelAndView mav = new ModelAndView();
@@ -98,7 +98,7 @@ public class IndicatorsController {
 	}
 
 	// 지표 수정
-	@RequestMapping(value = "indicators_modifyOk.do")
+	@RequestMapping(value = "indicators_modifyOk.mg")
 	public ModelAndView indicators_modifyOk(IndicatorsDTO dto, Locale locale, Model model, HttpSession session) {
 
 		ModelAndView mav = new ModelAndView();
@@ -117,7 +117,7 @@ public class IndicatorsController {
 	}
 
 	// 지표 사용중지
-	@RequestMapping(value = "indicators_delete.do")
+	@RequestMapping(value = "indicators_delete.mg")
 	public ModelAndView indicators_delete(IndicatorsDTO dto, Locale locale, Model model, HttpSession session) {
 
 		ModelAndView mav = new ModelAndView();
@@ -137,7 +137,7 @@ public class IndicatorsController {
 	}
 
 	// 보고서 등록 페이지
-	@RequestMapping(value = "report_write.do")
+	@RequestMapping(value = "report_write.mg")
 	public ModelAndView report_write(Locale locale, Model model, IndicatorsDTO dto, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
 
@@ -149,7 +149,7 @@ public class IndicatorsController {
 	}
 
 	// 보고서 등록 기능
-	@RequestMapping(value = "report_write_ok.do", method = RequestMethod.POST, produces = "application/text; charset=utf8")
+	@RequestMapping(value = "report_write_ok.mg", method = RequestMethod.POST, produces = "application/text; charset=utf8")
 	public ModelAndView report_write_ok(@RequestParam("IS_NEGATIVE") int IS_NEGATIVE, RecordDTO dto, Locale locale, Model model, HttpSession session) {
 
 		ModelAndView mav = new ModelAndView();
@@ -171,7 +171,7 @@ public class IndicatorsController {
 	}
 
 	// 등급기준 변경
-	@RequestMapping(value = "gradeModify.do")
+	@RequestMapping(value = "gradeModify.mg")
 	public ModelAndView gradeModify(Locale local, GradeDTO dto, HttpServletRequest request, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
 		dto.setUSER_ID("9703007");

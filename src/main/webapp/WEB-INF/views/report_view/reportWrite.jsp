@@ -127,7 +127,7 @@
 					<div class="col-lg-12 col-md-12">
 						<div class="card">
 							<div class="card-body">
-								<form action="report_write_ok.do" method="post" id="submitform">
+								<form action="report_write_ok.mg" method="post" id="submitform">
 									<input type="hidden" name="INDICATORS_NUM"
 										value="${dto.INDICATORS_NUM}">
 										<input type="hidden" name="INDICATORS_NAME"
@@ -396,7 +396,7 @@
 												<div class="col-md-12" style="padding-top: 5px;">
 
 													<button
-														onclick="location.href='indicators_modify.do?INDICATORS_NUM=${dto.INDICATORS_NUM}'"
+														onclick="location.href='indicators_modify.mg?INDICATORS_NUM=${dto.INDICATORS_NUM}'"
 														class="btn btn-primary waves-effect waves-light"
 														type="button" style="float: right; margin-left: 5px;">지표
 														수정</button>
@@ -440,7 +440,7 @@
 													<hr>
 													<button class="btn btn-primary waves-effect waves-light"
 														type="button" style="float: left;"
-														onclick="location.href='indicators_view_list.do'">
+														onclick="location.href='indicators_view_list.mg'">
 														<span class="btn-label"><i
 															class="fas fa-align-justify"></i></span>목록으로
 													</button>

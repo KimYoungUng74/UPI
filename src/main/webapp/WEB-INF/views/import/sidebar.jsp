@@ -12,7 +12,7 @@
                                     class="hide-menu">홈</span></a></li>
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">관리</span></li>
-                        <li class="sidebar-item"> <a class="sidebar-link" href="indicators_view_list.do"
+                        <li class="sidebar-item"> <a class="sidebar-link" href="indicators_view_list.mg"
                                 aria-expanded="false"><i data-feather="edit-3" class="feather-icon"></i><span
                                     class="hide-menu">성과지표 관리
                                 </span></a>

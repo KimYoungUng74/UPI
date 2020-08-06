@@ -129,7 +129,7 @@
                             <div class="card-body">
                                 	<h4>카테고리 별 보기 </h4><br>
                                 	
-                                	<form class="row" action="indicators_view_list.do">
+                                	<form class="row" action="indicators_view_list.mg">
                                 	<div class="col-md-6">
                                 		<div class="col-md-6"  style="padding-bottom: 20px;">
                                 			<span>활용 사업</span>
@@ -261,7 +261,7 @@
                                 <div class="d-flex align-items-center col-md-12">
                                     <h4 class="card-title col-md-6">성과지표 정의서 목록</h4>
                                     <div class="col-md-6" style="padding-bottom: 20px;">
-                                		<button class="btn btn-primary waves-effect waves-light" type="button" onclick="location.href='indicators_write.do'"   style="float: right;"><span class="btn-label"><i class="far fa-plus-square"></i></span> 새 지표 등록</button>
+                                		<button class="btn btn-primary waves-effect waves-light" type="button" onclick="location.href='indicators_write.mg'"   style="float: right;"><span class="btn-label"><i class="far fa-plus-square"></i></span> 새 지표 등록</button>
                                     </div>
                                 </div>
                                 <div class="table-responsive table-hover">
@@ -282,7 +282,7 @@
                                         		</tr>
                                         	</c:if>
                                             <c:forEach items="${list}" var="list">
-                                            <tr onclick="location.href='report_write.do?INDICATORS_NUM=${list.INDICATORS_NUM}'">
+                                            <tr onclick="location.href='report_write.mg?INDICATORS_NUM=${list.INDICATORS_NUM}'">
                                             	<td class="border-top-0  px-2 py-4 font-14">${list.INDICATORS_NUM}</td>
                                                 <td class="border-top-0  px-2 py-4 font-14">${list.INDICATORS_NAME}</td>
                                                 <td class="border-top-0  px-2 py-4 font-14">${list.DIVISION_NAME}</td>
@@ -419,7 +419,7 @@
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">×</button>
 				</div>
-				<form action="gradeModify.do" method="post">
+				<form action="gradeModify.mg" method="post">
 					<div class="modal-body">
 						<div class="row">
 							<c:choose>
