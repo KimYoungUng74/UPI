@@ -76,26 +76,6 @@ public class ReportController {
 	}
 	
 	
-	// 테스트 페이지
-	@RequestMapping(value = "report_view2.do")
-	public ModelAndView report_view2(Locale locale, Model model) {
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("report_view/view2");
-		return mav;
-	}
 	
-	// 한글 저장 페이지
-	@RequestMapping(value = "report_hwp_viewer.hwp")
-	public ModelAndView report_view3(Locale locale, Model model, HttpServletRequest request) throws Exception {
-		ModelAndView mav = new ModelAndView();
-
-		// highchart 이미지화
-
-		// 한글파일 저장
-		// hwp_library.hwpsave();
-
-		mav.setViewName("report_view/hwp_viewer");
-		return mav;
-	}
 	
 }
