@@ -10,6 +10,8 @@
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index.do"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                     class="hide-menu">홈</span></a></li>
+                                    
+                        <c:if test="${sessionScope.USER_GRANT > 0}">            
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">관리</span></li>
                         <li class="sidebar-item"> <a class="sidebar-link" href="indicators_view_list.mg"
@@ -17,6 +19,7 @@
                                     class="hide-menu">성과지표 관리
                                 </span></a>
                         </li>
+                        </c:if>
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">정보</span></li>
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="report_view_list.do"

@@ -135,14 +135,19 @@
 								</button>
 								<button class="btn btn-primary waves-effect waves-light btn-hwp" margin-left: 10px;
 									type="button" >
-									<span class="btn-label"><i class="far fa-file-alt"></i></span>HWP로
-									저장
+									<span class="btn-label"><i class="far fa-file-alt"></i></span> HWP로 저장
 								</button>
 								&nbsp;
 								<button
 									class="btn btn-secondary waves-effect waves-light btn-print"
 									type="button">
-									<span class="btn-label"><i class="fas fa-print"></i></span>PDF저장/인쇄
+									<span class="btn-label"><i class="fas fa-print"></i></span> PDF저장/인쇄
+								</button>
+								&nbsp;
+								<button
+									class="btn btn-secondary waves-effect waves-light btn-png"
+									type="button">
+									<span class="btn-label"><i class="fas fa-image"></i></span> PNG로 저장
 								</button>
 
 							</div>
@@ -319,6 +324,7 @@
 </body>
 <c:import url="../import/javascript.jsp" charEncoding="UTF-8">
 </c:import>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <script type="text/javascript">
 	Highcharts.chart('container1', {
 		chart : {
@@ -426,5 +432,26 @@
 		document.body.removeChild(fileDownload);
 	});
 	
+	$('.btn-png').on("click", function(){
+		// 캡쳐 라이브러리를 통해서 canvas 오브젝트를 받고 이미지 파일로 리턴한다.
+		html2canvas(document.querySelector("#report")).then(canvas => {
+		saveAs(canvas.toDataURL('image/png'),"capture-test.png");
+		});
+	});
+	function saveAs(uri, filename) {
+	// 캡쳐된 파일을 이미지 파일로 내보낸다.
+	var link = document.createElement('a');
+	if (typeof link.download === 'string') {
+	link.href = uri;
+	link.download = filename;
+	document.body.appendChild(link);
+	link.click();
+	document.body.removeChild(link);
+	} else {
+	window.open(uri);
+	}
+	}
+	
 </script>
+
 </html>
