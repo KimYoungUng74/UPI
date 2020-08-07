@@ -3,6 +3,7 @@ package kr.co.upi.controller;
 import java.io.InputStream;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +22,7 @@ import kr.co.upi.DTO.IndicatorsDTO;
 import kr.co.upi.DTO.RecordDTO;
 import kr.co.upi.DTO.UserDTO;
 import kr.co.upi.Service.IndicatorsService;
+import kr.co.upi.Service.ResultService;
 
 /**
  * Handles requests for the application home page.
@@ -30,6 +32,9 @@ public class IndicatorsController {
 
 	@Autowired
 	IndicatorsService indicatorsSer;
+	
+	@Autowired
+	ResultService resultSer;
 
 	Date time = new Date(new java.util.Date().getTime()); // 현재 날짜
 
@@ -142,8 +147,11 @@ public class IndicatorsController {
 		ModelAndView mav = new ModelAndView();
 
 		dto = indicatorsSer.selectOne(dto);
+		List<RecordDTO> recordDTOs = resultSer.selectListIncd(dto.getINDICATORS_NUM());
+		System.out.println(recordDTOs.get(0));
 		System.out.println(dto);
 		mav.addObject("dto", dto);
+		mav.addObject("recordDTO", recordDTOs.get(0));
 		mav.setViewName("report_view/reportWrite");
 		return mav;
 	}

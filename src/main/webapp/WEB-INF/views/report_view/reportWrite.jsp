@@ -406,7 +406,7 @@
 										<!-- 보고서 작성-->
 										<div class="col-md-12">
 											<hr>
-											<h4>보고서 등록</h4>
+											<h4>보고서 등록 <span style="float:right;"> 최근 등록날짜 : ${recordDTO.RECORD_DATE}</span></h4> 
 											<br>
 											<div class="row">
 												<div class="col-md-6" style="padding-top: 5px;">
@@ -417,7 +417,7 @@
 													<div class="row">
 
 														<div class="col-md-12">
-															<span>현재값</span>
+															<span>현재 값</span> <span style="float:right; color: orange;"> 이전 등록 현재 값 : ${recordDTO.PRESENT_VAL}</span>
 														</div>
 														<input type="hidden" id="ELEMENTS_VAL" name="ELEMENT_VAL" value="">
 
