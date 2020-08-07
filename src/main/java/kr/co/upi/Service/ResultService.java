@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.co.upi.DAO.ResultDAO;
 import kr.co.upi.DTO.GradeCountDTO;
+import kr.co.upi.DTO.GradeDTO;
 import kr.co.upi.DTO.RecordDTO;
 
 @Service("IResultService")
@@ -59,6 +60,11 @@ public class ResultService {
 	// 사업별 갯수 리스트 가져오기
 	public List<RecordDTO> selectListBussiness(String BUSINESS) {
 		return dao.selectListBussiness(BUSINESS);
+	}
+
+	// 등급 기준 가져오기
+	public List<GradeDTO> selectResultGradeStandard() {
+		return dao.selectResultGradeStandard();
 	}
 	
 }
