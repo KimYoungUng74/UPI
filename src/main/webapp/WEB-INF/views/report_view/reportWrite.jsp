@@ -417,7 +417,7 @@
 													<div class="row">
 
 														<div class="col-md-12">
-															<span>현재 값</span> <span style="float:right; color: orange;"> 이전 등록 현재 값 : ${recordDTO.PRESENT_VAL}</span>
+															<span>현재 값</span> <span style="float:right; color: green;"> 이전 등록 현재 값 : ${recordDTO.PRESENT_VAL}</span>
 														</div>
 														<input type="hidden" id="ELEMENTS_VAL" name="ELEMENT_VAL" value="">
 
@@ -428,7 +428,7 @@
 
 														<div class="col-md-12" style="padding-top: 10px;">
 															<button
-																class="btn btn-warning waves-effect waves-light"
+																class="btn btn-success waves-effect waves-light"
 																id="ele_Btn" type="button"
 																style="float: right; margin-left: 5px;">현재값
 																계산하기</button>
