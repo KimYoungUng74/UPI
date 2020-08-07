@@ -145,7 +145,7 @@
 								</button>
 								&nbsp;
 								<button
-									class="btn btn-secondary waves-effect waves-light btn-png"
+									class="btn btn-success waves-effect waves-light btn-png"
 									type="button">
 									<span class="btn-label"><i class="fas fa-image"></i></span> PNG로 저장
 								</button>
@@ -158,11 +158,11 @@
 						<c:import url="../import/csslink.jsp" charEncoding="UTF-8">
 						</c:import>
 						<div class="card">
-							<div class="card-body">
+							<div class="card-body"  id="report_tb">
 								<div class="d-flex align-items-center mb-4">
 									<h4 class="card-title">성과지표 정의서</h4>
 								</div>
-								<table class="table" border="1"
+								<table class="table" border="1" 
 									style="text-align: center; color: black;" width="100%">
 
 									<tr>
@@ -434,7 +434,7 @@
 	
 	$('.btn-png').on("click", function(){
 		// 캡쳐 라이브러리를 통해서 canvas 오브젝트를 받고 이미지 파일로 리턴한다.
-		html2canvas(document.querySelector("#report")).then(canvas => {
+		html2canvas(document.querySelector("#report_tb")).then(canvas => {
 		saveAs(canvas.toDataURL('image/png'),"capture-test.png");
 		});
 	});
