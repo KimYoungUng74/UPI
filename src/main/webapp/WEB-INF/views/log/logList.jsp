@@ -103,13 +103,11 @@
 				<div class="row">
 					<div class="col-7 align-self-center">
 						<h3
-							class="page-title text-truncate text-dark font-weight-medium mb-1">성과
-							지표 정의서</h3>
+							class="page-title text-truncate text-dark font-weight-medium mb-1">로그정보 관리</h3>
 						<div class="d-flex align-items-center">
 							<nav aria-label="breadcrumb">
 								<ol class="breadcrumb m-0 p-0">
-									<li class="breadcrumb-item"><a href="index.html">지표
-											정의서 선택</a></li>
+									<li class="breadcrumb-item"><a href="index.html">로그</a></li>
 								</ol>
 							</nav>
 						</div>
@@ -130,32 +128,384 @@
 					<div class="col-lg-12 col-md-12">
 						<div class="card">
 							<div class="card-body">
-								<table id="example" class="table table-striped table-bordered no-wrap dataTable" role="grid" aria-describedby="zero_config_info">
-									<tr>
-										<td>꾸꾸</td>
-										<td>꾸꾸</td>
-										<td>꾸꾸</td>
-										<td>꾸꾸</td>
-										
-										
-									</tr>
-									<tr>
-										<td>꾸꾸</td>
-										<td>꾸꾸</td>
-										<td>꾸꾸</td>
-										<td>꾸꾸</td>
-										
-										
-									</tr>
-									<tr>
-										<td>꾸꾸</td>
-										<td>꾸꾸</td>
-										<td>꾸꾸</td>
-										<td>꾸꾸</td>
-										
-										
-									</tr>
-								</table>
+                                <ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
+                                    <li class="nav-item">
+                                        <a href="#indic_tab" data-toggle="tab" aria-expanded="true" class="nav-link active">
+                                            <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                            <span class="d-none d-lg-block">지표 로그 관리</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#record_tab" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                            <span class="d-none d-lg-block">보고서 로그 관리</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#grade_tab" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                            <span class="d-none d-lg-block">등급 기준 로그 관리</span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div class="tab-pane show active" id="indic_tab">
+										<div class="table-responsive">
+											<table id="tb1"
+												class="table table-striped table-bordered no-wrap dataTable"
+												role="grid">
+
+												<thead>
+													<tr>
+														<th>뚜뚜</th>
+														<th>뚜뚜</th>
+														<th>뚜뚜</th>
+														<th>뚜뚜</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+												</tbody>
+
+											</table>
+										</div>
+									</div>
+                                    <div class="tab-pane" id="record_tab">
+                                        
+										<div class="table-responsive">
+											<table id="tb2"
+												class="table table-striped table-bordered no-wrap dataTable"
+												role="grid">
+
+												<thead>
+													<tr>
+														<th>뚜뚜</th>
+														<th>뚜뚜</th>
+														<th>뚜뚜</th>
+														<th>뚜뚜</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+												</tbody>
+
+											</table>
+										</div>
+									
+                                    </div>
+                                    <div class="tab-pane" id="grade_tab">
+                                        
+										<div class="table-responsive">
+											<table id="tb3"
+												class="table table-striped table-bordered no-wrap dataTable"
+												role="grid">
+
+												<thead>
+													<tr>
+														<th>뚜뚜</th>
+														<th>뚜뚜</th>
+														<th>뚜뚜</th>
+														<th>뚜뚜</th>
+													</tr>
+												</thead>
+												<tbody">
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+													<tr>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+														<td>꾸꾸</td>
+													</tr>
+												</tbody>
+
+											</table>
+										</div>
+									
+                                    </div>
+                                </div>
+							
+							
+							
 							</div>
 						</div>
 					</div>
@@ -194,12 +544,10 @@
 </body>
 <c:import url="../import/javascript.jsp" charEncoding="UTF-8">
 </c:import>
-<script
-      src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
    <script>
       $(document).ready(function() {
-         $('#example').DataTable({
+         $('#tb1').DataTable({
             "lengthMenu" : [ 5, 10, 25, 50, 100 ],
             "scrollY" : 400,
             "scrollCollapse" : true,
@@ -220,6 +568,48 @@
             }
 
          });
+         $('#tb2').DataTable({
+             "lengthMenu" : [ 5, 10, 25, 50, 100 ],
+             "scrollY" : 400,
+             "scrollCollapse" : true,
+             "pagingType" : "full_numbers",
+             "language" : {
+                search : "리스트 내 검색 : ",
+                "info" : "총 _PAGES_ 페이지 중 _PAGE_ 페이지 ",
+                "infoEmpty" : "검색 결과가 없습니다.",
+                "infoFiltered" : " ( _MAX_개의 검색결과 중)",
+                "lengthMenu" : "_MENU_ 개씩 보기",
+                "paginate" : {
+                   "first" : "처음",
+                   "last" : "마지막",
+                   "next" : "다음",
+                   "previous" : "이전"
+                }
+
+             }
+
+          });
+         $('#tb3').DataTable({
+             "lengthMenu" : [ 5, 10, 25, 50, 100 ],
+             "scrollY" : 400,
+             "scrollCollapse" : true,
+             "pagingType" : "full_numbers",
+             "language" : {
+                search : "리스트 내 검색 : ",
+                "info" : "총 _PAGES_ 페이지 중 _PAGE_ 페이지 ",
+                "infoEmpty" : "검색 결과가 없습니다.",
+                "infoFiltered" : " ( _MAX_개의 검색결과 중)",
+                "lengthMenu" : "_MENU_ 개씩 보기",
+                "paginate" : {
+                   "first" : "처음",
+                   "last" : "마지막",
+                   "next" : "다음",
+                   "previous" : "이전"
+                }
+
+             }
+
+          });
       });
    </script>
 </html>

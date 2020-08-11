@@ -74,4 +74,17 @@
 </script>
 <!-- 로그인 체크 자바스크립트 -->
 <script src="<c:url value='/resources/js/loginCheck.js'/>"></script>
+
+<script>
+$('#USER_ID').keydown(function(key) {
+    if (key.keyCode == 13) {
+    	$("#login_btn").click();
+    }
+});
+$('#USER_PW').keydown(function(key) {
+    if (key.keyCode == 13) {
+    	$("#login_btn").click();
+    }
+});
+</script>
 </html>
