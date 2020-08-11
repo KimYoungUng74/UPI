@@ -440,19 +440,18 @@
 		});
 	});
 	function saveAs(uri, filename) {
-	// 캡쳐된 파일을 이미지 파일로 내보낸다.
-	var link = document.createElement('a');
-	if (typeof link.download === 'string') {
-	link.href = uri;
-	link.download = filename;
-	document.body.appendChild(link);
-	link.click();
-	document.body.removeChild(link);
-	} else {
-	window.open(uri);
+		// 캡쳐된 파일을 이미지 파일로 내보낸다.
+		var link = document.createElement('a');
+		if (typeof link.download === 'string') {
+			link.href = uri;
+			link.download = filename;
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+		} else {
+			window.open(uri);
+		}
 	}
-	}
-	
 </script>
 
 </html>
