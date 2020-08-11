@@ -20,6 +20,14 @@
                                 </span></a>
                         </li>
                         </c:if>
+                        
+                        <c:if test="${sessionScope.USER_GRANT > 1}">
+                        <li class="sidebar-item"> <a class="sidebar-link" href="log_view.lo"
+                                aria-expanded="false"><i data-feather="edit-3" class="feather-icon"></i><span
+                                    class="hide-menu">로그정보 관리
+                                </span></a>
+                        </li>
+                        </c:if>
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">정보</span></li>
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="report_view_list.do"
@@ -49,10 +57,6 @@
                                             class="hide-menu"> 지표별 산출식
                                         </span></a>
                                 </li>
-<!--                                 <li class="sidebar-item"><a href="indicator_grade_standard.do" class="sidebar-link"><span
-                                            class="hide-menu"> 지표별 평가등급기준
-                                        </span></a>
-                                </li> -->
                             </ul>
                         </li>
                         
