@@ -68,8 +68,30 @@ public class IndicatorsDAO {
 
 	// 보고서 입력
 	public int report_write(RecordDTO dto) {
+		
+		try {
 			mybatis.insert("IndicatorsMapper.Report_write", dto);
-
+		} catch (Exception e) {
+			return 0;
+		}
+		
 		return 1;
+	}
+
+	// 지표 로그
+	public List<IndicatorsDTO> selectIndiLog() {
+		
+		return  mybatis.selectList("IndicatorsMapper.selectIndiLog");
+	}
+
+	// 보고서 로그
+	public List<RecordDTO> selectRecordLog() {
+		// TODO Auto-generated method stub
+		return  mybatis.selectList("IndicatorsMapper.selectRecordLog");
+	}
+
+	public List<GradeDTO> selectGradeLog() {
+		// TODO Auto-generated method stub
+		return mybatis.selectList("IndicatorsMapper.selectGradeLog");
 	}
 }

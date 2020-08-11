@@ -58,5 +58,17 @@ public class IndicatorsService {
 		// TODO Auto-generated method stub
 		return dao.report_write(dto);
 	}
+	public List<IndicatorsDTO> selectIndiLog() {
+		// TODO Auto-generated method stub
+		return dao.selectIndiLog();
+	}
+	public List<RecordDTO> selectRecordLog() {
+		// TODO Auto-generated method stub
+		return dao.selectRecordLog();
+	}
+	public List<GradeDTO> selectGradeLog() {
+		// TODO Auto-generated method stub
+		return  dao.selectGradeLog();
+	}
 
 }
