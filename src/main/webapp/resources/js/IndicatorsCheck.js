@@ -1,5 +1,5 @@
 // 로그인(1 = 아이디가 존재 안 함/ 2 = 암호가 안맞음 / 3 = 로그인 가능)
-var idJ = /^[가-힣a-z0-9A-Z/-_.]{1,100}$/;
+var idJ = /^[가-힣a-z0-9A-Z/-_.:]{1,100}$/;
 var checkPoint = 0;
 $("#submit_btn").click(function() {
 	var INDICATORS_NAME = $("#INDICATORS_NAME").val();
@@ -30,8 +30,7 @@ $("#submit_btn").click(function() {
 	} else if (check5) {
 		checkPoint++;
 	}
-
-	if (!idJ.test(INDICATORS_NAME)) {
+	if (!idJ.test(INDICATORS_NAME.replace(/\s/gi, ""))) {
 		if (INDICATORS_NAME == "") {
 			alert("지표이름을 입력하세요");
 		} else {
@@ -65,7 +64,7 @@ $("#submit_btn").click(function() {
 		} else {
 			alert("평가방법에 잘못 된 값을 입력되었습니다.");
 		}
-	} else if (!idJ.test(EVAL_STANDARD)) {
+	} else if (!idJ.test(EVAL_STANDARD.replace(/\s/gi, ""))) {
 		if (EVAL_STANDARD == "") {
 			alert("평가기준을 입력하세요");
 		} else {

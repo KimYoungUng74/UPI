@@ -264,7 +264,7 @@
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<input type="text" class="form-control" value="100"
-														id="TARGET_VAL" name="TARGET_VAL">
+														id="TARGET_VAL" style="text-align: right;" name="TARGET_VAL">
 												</div>
 											</div>
 										</div>
@@ -305,8 +305,8 @@
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<select class="custom-select" id="IS_NEGATIVE"
 														name="IS_NEGATIVE">
-														<option value=0 selected="selected">정적(기본)</option>
-														<option value=1>부적</option>
+														<option value=0 selected="selected">Positive</option>
+														<option value=1>Negative</option>
 													</select>
 												</div>
 											</div>

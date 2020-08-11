@@ -315,7 +315,7 @@
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<label
-														style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${dto.TARGET_VAL}</label>
+														style="border: 1px solid #5a6268; width: 100%; padding: 5px; text-align: right;">${dto.TARGET_VAL}</label>
 												</div>
 											</div>
 										</div>
@@ -354,10 +354,10 @@
 												<div class="col-md-12" style="padding-bottom: 10px;">
 												<c:choose>
 												 <c:when test="${dto.IS_NEGATIVE == 0}">
-												 	<label style="border: 1px solid #5a6268; width: 100%; padding: 5px;">정적</label>
+												 	<label style="border: 1px solid #5a6268; width: 100%; padding: 5px;">Positive</label>
 												 </c:when>
 												 <c:otherwise>
-												 	<label style="border: 1px solid #5a6268; width: 100%; padding: 5px;">부적</label>
+												 	<label style="border: 1px solid #5a6268; width: 100%; padding: 5px;">Negative</label>
 												 </c:otherwise>
 												</c:choose>
 													
@@ -369,7 +369,7 @@
 										<div class="col-md-12" style="padding-bottom: 5px;">
 											<div class="row">
 												<div class="col-md-12" style="padding-bottom: 5px;">
-													<span>요소 리스트 </span>
+													<span>평가항목 </span>
 												</div>
 												
 												<div class="col-md-12" style="padding-bottom: 10px;">
@@ -417,12 +417,12 @@
 													<div class="row">
 
 														<div class="col-md-12">
-															<span>현재 값</span> <span style="float:right; color: green;"> 이전 등록 현재 값 : ${recordDTO.PRESENT_VAL}</span>
+															<span>현재 값</span>
 														</div>
 														<input type="hidden" id="ELEMENTS_VAL" name="ELEMENT_VAL" value="">
 
 														<div class="col-md-12">
-															<input type="text" id="PRESENT_VAL" name="PRESENT_VAL"
+															<input type="text" id="PRESENT_VAL" name="PRESENT_VAL" value="${recordDTO.PRESENT_VAL}"
 																class="form-control">
 														</div>
 

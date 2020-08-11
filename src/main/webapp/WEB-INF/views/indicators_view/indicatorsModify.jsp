@@ -130,7 +130,7 @@
 						<div class="col-lg-12 col-md-12">
 							<div class="card">
 								<div class="card-body">
-									<h4>지표 수정</h4>
+									<h4>지표 수정   <span style="float:right;"> 최근 등록날짜 : ${dto.RECORD_DATE}</span></h4>
 									<br>
 
 									<div class="row">
@@ -365,7 +365,7 @@
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<input type="text" class="form-control"
-														value="${dto.TARGET_VAL}" name="TARGET_VAL" id="TARGET_VAL">
+														value="${dto.TARGET_VAL}" style="text-align: right;" name="TARGET_VAL" id="TARGET_VAL">
 												</div>
 											</div>
 										</div>
@@ -422,18 +422,18 @@
 														name="IS_NEGATIVE">
 														<c:choose>
 															<c:when test="${dto.IS_NEGATIVE == 0}">
-																<option value=0 selected="selected">정적(기본)</option>
+																<option value=0 selected="selected">Positive</option>
 															</c:when>
 															<c:otherwise>
-																<option value=0>정적(기본)</option>
+																<option value=0>Positive</option>
 															</c:otherwise>
 														</c:choose>
 														<c:choose>
 															<c:when test="${dto.IS_NEGATIVE == 1}">
-																<option value=1 selected="selected" >부적</option>
+																<option value=1 selected="selected" >Negative</option>
 															</c:when>
 															<c:otherwise>
-																<option value=1>부적</option>
+																<option value=1>Negative</option>
 															</c:otherwise>
 														</c:choose>
 														
