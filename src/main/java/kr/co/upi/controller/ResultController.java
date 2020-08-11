@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.co.upi.DTO.GradeCountDTO;
+import kr.co.upi.DTO.GradeDTO;
 import kr.co.upi.DTO.IndicatorsDTO;
 import kr.co.upi.DTO.RecordDTO;
 import kr.co.upi.Service.IndicatorsService;
@@ -34,6 +35,7 @@ public class ResultController {
 	String YEAR = Integer.toString(cal.get(Calendar.YEAR)); // 현재 년도 계산
 	String ONE_YEAR_AGO = Integer.toString(cal.get(Calendar.YEAR) - 1); // 1년전 계산
 	String TWO_YEAR_AGO = Integer.toString(cal.get(Calendar.YEAR) - 2); // 2년전 계산
+	
 
 	// 전년도 대비 평가 비교 페이지
 	@RequestMapping(value = "yearly_result_view.do")
@@ -46,7 +48,7 @@ public class ResultController {
 		List<RecordDTO> now_year = resultSer.selectYearList(YEAR);
 		List<RecordDTO> one_year_ago = resultSer.selectYearList(ONE_YEAR_AGO);
 		List<RecordDTO> two_year_ago = resultSer.selectYearList(TWO_YEAR_AGO);
-
+		List<GradeDTO> gDto = resultSer.selectResultGradeStandard(); // 평가 등급 기준
 		/*
 		 * map.put("now_year", now_year); map.put("one_year_ago", one_year_ago);
 		 * map.put("two_year_ago", two_year_ago);
@@ -61,6 +63,9 @@ public class ResultController {
 		mav.addObject("year", YEAR);
 		mav.addObject("one_year", ONE_YEAR_AGO);
 		mav.addObject("two_year", TWO_YEAR_AGO);
+		
+		//평가 등급 기준
+		mav.addObject("viewGrade",gDto);
 
 		mav.setViewName("result_view/yearly_result_view");
 		return mav;
@@ -109,7 +114,8 @@ public class ResultController {
 		List<GradeCountDTO> p_one_year_ago = resultSer.BusinessGradePer(ONE_YEAR_AGO);
 		List<GradeCountDTO> p_now_year = resultSer.BusinessGradePer(YEAR);
 		ArrayList<Integer> pGrade = new ArrayList<Integer>();
-
+		List<GradeDTO> gDto = resultSer.selectResultGradeStandard(); // 평가 등급 기준
+		
 		int pA = 0;
 		int pB = 0;
 		int pD = 0;
@@ -173,7 +179,10 @@ public class ResultController {
 		mav.addObject("p_two_year", p_two_year);
 		mav.addObject("p_one_year", p_one_year);
 		mav.addObject("p_now", p_now);
-
+		
+		//평가 등급 기준
+		mav.addObject("viewGrade",gDto);
+		
 		mav.setViewName("result_view/yearly_grade_view");
 		return mav;
 	}
@@ -183,10 +192,18 @@ public class ResultController {
 	public ModelAndView resultGrid(Locale locale, Model model) {
 
 		List<RecordDTO> dto = resultSer.selectResultListAll(YEAR);
-
+		List<GradeDTO> gDto = resultSer.selectResultGradeStandard(); // 평가 등급 기준
+		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("result_view/result_grid_view");
+		
+		//현재 년도 총괄 결과
 		mav.addObject("viewAll", dto);
+		
+		//평가 등급 기준
+		mav.addObject("viewGrade",gDto);
+		
+		//현재 년도
 		mav.addObject("year", YEAR);
 		return mav;
 	}
@@ -201,6 +218,7 @@ public class ResultController {
 		List<String> grade = new ArrayList<String>();
 		List<String> business = new ArrayList<String>();
 		List<Integer> pGrade = new ArrayList<Integer>();
+		List<GradeDTO> gDto = resultSer.selectResultGradeStandard(); // 평가 등급 기준
 		GradePerDTO cal = new GradePerDTO();
 
 		grade.add("A");
@@ -245,7 +263,8 @@ public class ResultController {
 		mav.addObject("now_year", now_year);
 		mav.addObject("grade", grade);
 		mav.addObject("business", business);
-		mav.addObject("total", total);
+		mav.addObject("total", total);		
+		mav.addObject("viewGrade",gDto);
 		mav.setViewName("result_view/business_grade_view");
 		return mav;
 	}
@@ -255,7 +274,6 @@ public class ResultController {
 	public ModelAndView indicatorFomula(Locale locale, Model model) {
 
 		List<IndicatorsDTO> dto = indcSer.selectAll();
-		
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("viewAll",dto);

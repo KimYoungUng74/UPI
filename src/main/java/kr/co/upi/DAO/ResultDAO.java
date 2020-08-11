@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.co.upi.DTO.GradeCountDTO;
+import kr.co.upi.DTO.GradeDTO;
 import kr.co.upi.DTO.RecordDTO;
 
 @Repository
@@ -64,6 +65,12 @@ public class ResultDAO {
 	// 사업별 갯수 리스트 가져오기
 	public List<RecordDTO> selectListBussiness(String BUSINESS) {
 		return mybatis.selectList("ResultMapper.ResultListBussiness", BUSINESS);
+	}
+
+	// 등급 기준 가져오기
+	public List<GradeDTO> selectResultGradeStandard() {
+		
+		return mybatis.selectList("ResultMapper.ResultGradeStandard");
 	}
 
 }
