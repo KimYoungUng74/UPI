@@ -325,6 +325,7 @@
 <c:import url="../import/javascript.jsp" charEncoding="UTF-8">
 </c:import>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <script type="text/javascript">
 	Highcharts.chart('container1', {
 		chart : {
@@ -433,9 +434,17 @@
 	});
 	
 	$('.btn-png').on("click", function(){
-		
+		var doc = new jsPDF("p", "mm", "a4");
+		var width_a4=doc.internal.pageSize.getWidth();
+		var height_a4=doc.internal.pageSize.getHeight();
 		// 캡쳐 라이브러리를 통해서 canvas 오브젝트를 받고 이미지 파일로 리턴한다.
-		html2canvas(document.querySelector("#report_tb")).then(canvas => {
+		html2canvas(document.querySelector("#report_tb"), {
+			  width: width_a4,
+			  height: height_a4
+			}).then(canvas => {
+		
+		console.log('가로:'+canvas.width);
+		console.log('세로:'+canvas.height);
 		saveAs(canvas.toDataURL('image/png'),"${Indicators.getINDICATORS_NAME()} 보고서.png");
 		});
 	});
