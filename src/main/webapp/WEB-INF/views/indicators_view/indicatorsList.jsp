@@ -345,23 +345,26 @@
 
 												</thead>
 												<tbody>
-													<tr>
-														<th class="text-center" scope="row">A</th>
-														<td>평가지표별 목표 값 대비 달성도 100% 이상</td>
-														<td>차년도 달성값 이상 유지</td>
-													</tr>
-
-													<tr>
-														<th class="text-center" scope="row">B</th>
-														<td>평가지표별 목표 값 대비 달성도 70% 이상</td>
-														<td>문제점/개선사항 마련</td>
-													</tr>
-
-													<tr>
-														<th class="text-center" scope="row">D</th>
-														<td>평가지표별 목표 값 대비 달성도 70% 이하</td>
-														<td>목표 값 검토 및 문제/개선사항</td>
-													</tr>
+													<!-- 출력 부분 -->
+													
+			                                            <tr>
+			                                                <th class="text-center" scope="row">A</th>
+			                                                <td>평가지표별 목표 값 대비 달성도 ${gradeDto.getA_GRADE()}% 이상</td>
+			                                                <td>${gradeDto.getA_MEASURE()}</td>                                           
+			                                            </tr>
+			                                            
+			                                            <tr>
+			                                                <th class="text-center" scope="row">B</th>
+			                                                <td>평가지표별 목표 값 대비 달성도 ${gradeDto.getB_GRADE()}% 이상</td>
+			                                                <td>${gradeDto.getB_MEASURE()}</td>                                            
+			                                            </tr>
+			                                            
+			                                            <tr>
+			                                                <th class="text-center" scope="row">D</th>
+			                                                <td>평가지표별 목표 값 대비 달성도${gradeDto.getD_GRADE()}% 미만</td>
+			                                                <td>${gradeDto.getD_MEASURE()}</td>                                            
+			                                            </tr>
+			                                        
 
 												</tbody>
 											</table>

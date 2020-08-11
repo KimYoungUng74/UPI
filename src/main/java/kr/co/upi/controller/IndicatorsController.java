@@ -41,6 +41,9 @@ public class IndicatorsController {
 	// 지표관리 리스트
 	@RequestMapping(value = "indicators_view_list.mg")
 	public ModelAndView report_view_list(Locale locale, Model model, HttpSession session, IndicatorsDTO dto) {
+		
+		List<GradeDTO> gDto = resultSer.selectResultGradeStandard(); // 평가 등급 기준
+		
 		if(dto.getDIVISION_NAME() == null) {
 			dto.setDIVISION_NAME("모두 보기");
 		}
