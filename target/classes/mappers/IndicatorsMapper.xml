@@ -261,21 +261,21 @@
 	</insert>
 
 	<!-- 로그 지표 리스트 보기 -->
-	<select id="IndicatorsListAll" resultType="IndicatorsDTO">
+	<select id="selectIndiLog" resultType="IndicatorsDTO">
 		SELECT *
 		FROM
 		INDICATORS_TB
 		ORDER BY RECORD_DATE DESC
 	</select>
 	<!-- 로그 보고서 보기 -->
-	<select id="IndicatorsListAll" resultType="IndicatorsDTO">
+	<select id="selectRecordLog" resultType="RecordDTO">
 		SELECT *
 		FROM
 		RECORD_TB
 		ORDER BY RECORD_DATE DESC
 	</select>
 	<!-- 로그 등급 보기 -->
-	<select id="IndicatorsListAll" resultType="IndicatorsDTO">
+	<select id="selectGradeLog" resultType="GradeDTO">
 		SELECT *
 		FROM
 		GRADE_TB

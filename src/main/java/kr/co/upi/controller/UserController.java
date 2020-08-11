@@ -125,4 +125,12 @@ public class UserController {
 		}
 		return mav;
 	}
+	
+	@RequestMapping(value = "userDelete.lo")
+	public ModelAndView userDelete(Locale locale, Model model,HttpServletRequest request, HttpSession session){
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("user/userDelete");
+		return mav;
+	}
 }
