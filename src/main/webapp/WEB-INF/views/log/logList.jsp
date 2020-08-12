@@ -153,116 +153,60 @@
                                     <div class="tab-pane show active" id="indic_tab">
 										<div class="table-responsive">
 											<table id="tb1"
-												class="table table-striped table-bordered no-wrap dataTable"
+												class="table table-sm table-striped table-bordered no-wrap dataTable"
 												role="grid">
 
 												<thead>
 													<tr>
-														<th>뚜뚜</th>
-														<th>뚜뚜</th>
-														<th>뚜뚜</th>
-														<th>뚜뚜</th>
+														<th>index</th>
+														<th>관리번호</th>
+														<th>성과지표명</th>
+														<th>BEST</th>
+														<th>기간평가인증</th>
+														<th>AHA</th>
+														<th>LINC+</th>
+														<th>3유형</th>
+														<th>요소값</th>
+														<th>수집방법</th>
+														<th>평가방법</th>
+														<th>평가기준</th>
+														<th>관리부서</th>
+														<th>목표값</th>
+														<th>산출식</th>
+														<th>정적/부적</th>
+														<th>사용여부</th>
+														<th>유저ID</th>
+														<th>유저명</th>
+														<th>행위</th>
+														<th>DATE</th>
 													</tr>
 												</thead>
 												<tbody>
 													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
+														<td>55</td>
+														<td>주당수업시수비율</td>
+														<td>0</td>
+														<td>1</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>정보공시</td>
+														<td>정량</td>
+														<td>중장기발전계획 목표 측정값</td>
+														<td>교무학생처</td>
+														<td>50.00</td>
+														<td>(전임교원 총 주당 수업시수 / 전임교원 수) X 100</td>
+														<td>55</td>
+														<td>55</td>
+														<td>0</td>
+														<td>0</td>
+														<td>9703007</td>
+														<td>관리자</td>
+														<td>1</td>
+														<td>20/07/26</td>
+														
+													</tr>	
 												</tbody>
-
 											</table>
 										</div>
 									</div>
@@ -270,114 +214,59 @@
                                         
 										<div class="table-responsive">
 											<table id="tb2"
-												class="table table-striped table-bordered no-wrap dataTable"
+												class="table table-sm table-striped table-bordered no-wrap dataTable"
 												role="grid">
 
 												<thead>
 													<tr>
-														<th>뚜뚜</th>
-														<th>뚜뚜</th>
-														<th>뚜뚜</th>
-														<th>뚜뚜</th>
+														<th>index</th>
+														<th>관리번호</th>
+														<th>성과지표명</th>
+														<th>BEST</th>
+														<th>기간평가인증</th>
+														<th>AHA</th>
+														<th>LINC+</th>
+														<th>3유형</th>
+														<th>요소값</th>
+														<th>수집방법</th>
+														<th>평가방법</th>
+														<th>평가기준</th>
+														<th>관리부서</th>
+														<th>목표값</th>
+														<th>산출식</th>
+														<th>정적/부적</th>
+														<th>사용여부</th>
+														<th>유저ID</th>
+														<th>유저명</th>
+														<th>행위</th>
+														<th>DATE</th>
 													</tr>
 												</thead>
 												<tbody>
 													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
+														<td>55</td>
+														<td>주당수업시수비율</td>
+														<td>0</td>
+														<td>1</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>정보공시</td>
+														<td>정량</td>
+														<td>중장기발전계획 목표 측정값</td>
+														<td>교무학생처</td>
+														<td>50.00</td>
+														<td>(전임교원 총 주당 수업시수 / 전임교원 수) X 100</td>
+														<td>55</td>
+														<td>55</td>
+														<td>0</td>
+														<td>0</td>
+														<td>9703007</td>
+														<td>관리자</td>
+														<td>1</td>
+														<td>20/07/26</td>
+														
+													</tr>	
 												</tbody>
 
 											</table>
@@ -388,114 +277,58 @@
                                         
 										<div class="table-responsive">
 											<table id="tb3"
-												class="table table-striped table-bordered no-wrap dataTable"
+												class="table table-sm table-striped table-bordered no-wrap dataTable"
 												role="grid">
-
 												<thead>
 													<tr>
-														<th>뚜뚜</th>
-														<th>뚜뚜</th>
-														<th>뚜뚜</th>
-														<th>뚜뚜</th>
+														<th>index</th>
+														<th>관리번호</th>
+														<th>성과지표명</th>
+														<th>BEST</th>
+														<th>기간평가인증</th>
+														<th>AHA</th>
+														<th>LINC+</th>
+														<th>3유형</th>
+														<th>요소값</th>
+														<th>수집방법</th>
+														<th>평가방법</th>
+														<th>평가기준</th>
+														<th>관리부서</th>
+														<th>목표값</th>
+														<th>산출식</th>
+														<th>정적/부적</th>
+														<th>사용여부</th>
+														<th>유저ID</th>
+														<th>유저명</th>
+														<th>행위</th>
+														<th>DATE</th>
 													</tr>
 												</thead>
-												<tbody">
+												<tbody>
 													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
-													<tr>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-														<td>꾸꾸</td>
-													</tr>
+														<td>55</td>
+														<td>주당수업시수비율</td>
+														<td>0</td>
+														<td>1</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>정보공시</td>
+														<td>정량</td>
+														<td>중장기발전계획 목표 측정값</td>
+														<td>교무학생처</td>
+														<td>50.00</td>
+														<td>(전임교원 총 주당 수업시수 / 전임교원 수) X 100</td>
+														<td>55</td>
+														<td>55</td>
+														<td>0</td>
+														<td>0</td>
+														<td>9703007</td>
+														<td>관리자</td>
+														<td>1</td>
+														<td>20/07/26</td>
+														
+													</tr>	
 												</tbody>
 
 											</table>
@@ -549,9 +382,10 @@
       $(document).ready(function() {
          $('#tb1').DataTable({
             "lengthMenu" : [ 5, 10, 25, 50, 100 ],
-            "scrollY" : 400,
             "scrollCollapse" : true,
             "pagingType" : "full_numbers",
+        	ordering: false,
+        	info: false,
             "language" : {
                search : "리스트 내 검색 : ",
                "info" : "총 _PAGES_ 페이지 중 _PAGE_ 페이지 ",
@@ -570,9 +404,10 @@
          });
          $('#tb2').DataTable({
              "lengthMenu" : [ 5, 10, 25, 50, 100 ],
-             "scrollY" : 400,
              "scrollCollapse" : true,
              "pagingType" : "full_numbers",
+         	 ordering: false,
+         	 info: false,
              "language" : {
                 search : "리스트 내 검색 : ",
                 "info" : "총 _PAGES_ 페이지 중 _PAGE_ 페이지 ",
@@ -591,9 +426,10 @@
           });
          $('#tb3').DataTable({
              "lengthMenu" : [ 5, 10, 25, 50, 100 ],
-             "scrollY" : 400,
              "scrollCollapse" : true,
              "pagingType" : "full_numbers",
+             ordering: false,
+         	 info: false,
              "language" : {
                 search : "리스트 내 검색 : ",
                 "info" : "총 _PAGES_ 페이지 중 _PAGE_ 페이지 ",
