@@ -182,30 +182,44 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr>
-														<td>55</td>
-														<td>주당수업시수비율</td>
-														<td>0</td>
-														<td>1</td>
-														<td>0</td>
-														<td>0</td>
-														<td>0</td>
-														<td>정보공시</td>
-														<td>정량</td>
-														<td>중장기발전계획 목표 측정값</td>
-														<td>교무학생처</td>
-														<td>50.00</td>
-														<td>(전임교원 총 주당 수업시수 / 전임교원 수) X 100</td>
-														<td>55</td>
-														<td>55</td>
-														<td>0</td>
-														<td>0</td>
-														<td>9703007</td>
-														<td>관리자</td>
-														<td>1</td>
-														<td>20/07/26</td>
-														
-													</tr>	
+													<c:forEach var="indiDto" items="${indiDto}">
+														<tr>
+															<td>${indiDto.INDICATORS_NUM}</td>
+															<td>${indiDto.CONTROL_NUM}</td>
+															<td>${indiDto.INDICATORS_NAME}</td>
+															<td>${indiDto.IS_BEST}</td>
+															<td>${indiDto.IS_AGENCY}</td>
+															<td>${indiDto.IS_AHA}</td>
+															<td>${indiDto.IS_LINC}</td>
+															<td>${indiDto.IS_TYPE3}</td>
+															<td>${indiDto.ELEMENTS}</td>
+															<td>${indiDto.COL_METHOD}</td>
+															<td>${indiDto.EVAL_METHOD}</td>
+															<td>${indiDto.EVAL_STANDARD}</td>
+															<td>${indiDto.DIVISION_NAME}</td>
+															<td>${indiDto.TARGET_VAL}</td>
+															<td>${indiDto.FORMULA}</td>
+															<td>${indiDto.IS_NEGATIVE}</td>
+															<td>${indiDto.IS_USE}</td>
+															<td>${indiDto.USER_ID}</td>
+															<td>${indiDto.USER_NAME}</td>
+															<c:choose>
+																<c:when test="${indiDto.ACTION_CODE == 1}">
+																	<td>등록</td>
+																</c:when>
+																<c:when test="${indiDto.ACTION_CODE == 2}">
+																	<td>수정</td>
+																</c:when>
+																<c:when test="${indiDto.ACTION_CODE == 3}">
+																	<td>사용중지</td>
+																</c:when>
+																<c:otherwise>
+																	<td>오류</td>
+																</c:otherwise>
+															</c:choose>
+															<td>${indiDto.RECORD_DATE}</td>
+														</tr>
+													</c:forEach>	
 												</tbody>
 											</table>
 										</div>
@@ -227,15 +241,11 @@
 														<th>AHA</th>
 														<th>LINC+</th>
 														<th>3유형</th>
-														<th>요소값</th>
-														<th>수집방법</th>
-														<th>평가방법</th>
-														<th>평가기준</th>
-														<th>관리부서</th>
 														<th>목표값</th>
-														<th>산출식</th>
-														<th>정적/부적</th>
-														<th>사용여부</th>
+														<th>요소값</th>
+														<th>현재 값</th>
+														<th>등급</th>
+														<th>달성도</th>
 														<th>유저ID</th>
 														<th>유저명</th>
 														<th>행위</th>
@@ -243,30 +253,37 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr>
-														<td>55</td>
-														<td>주당수업시수비율</td>
-														<td>0</td>
-														<td>1</td>
-														<td>0</td>
-														<td>0</td>
-														<td>0</td>
-														<td>정보공시</td>
-														<td>정량</td>
-														<td>중장기발전계획 목표 측정값</td>
-														<td>교무학생처</td>
-														<td>50.00</td>
-														<td>(전임교원 총 주당 수업시수 / 전임교원 수) X 100</td>
-														<td>55</td>
-														<td>55</td>
-														<td>0</td>
-														<td>0</td>
-														<td>9703007</td>
-														<td>관리자</td>
-														<td>1</td>
-														<td>20/07/26</td>
-														
-													</tr>	
+													<c:forEach var="recordDto" items="${recordDto}">
+														<tr>
+															<td>${recordDto.RECORD_NUM}</td>
+															<td>${recordDto.INDICATORS_NUM}</td>
+															<td>${recordDto.INDICATORS_NAME}</td>
+															<td>${recordDto.IS_BEST}</td>
+															<td>${recordDto.IS_AGENCY}</td>
+															<td>${recordDto.IS_AHA}</td>
+															<td>${recordDto.IS_LINC}</td>
+															<td>${recordDto.IS_TYPE3}</td>
+															<td>${recordDto.TARGET_VAL}</td>
+															<td>${recordDto.ELEMENT_VAL}</td>
+															<td>${recordDto.PRESENT_VAL}</td>
+															<td>${recordDto.GRADE}</td>
+															<td>${recordDto.ACHIEVE_VAL}</td>
+															<td>${recordDto.USER_ID}</td>
+															<td>${recordDto.USER_NAME}</td>
+															<c:choose>
+																<c:when test="${recordDto.ACTION_CODE == 1}">
+																	<td>등록</td>
+																</c:when>
+																<c:when test="${recordDto.ACTION_CODE == 3}">
+																	<td>사용중지</td>
+																</c:when>
+																<c:otherwise>
+																	<td>오류</td>
+																</c:otherwise>
+															</c:choose>
+															<td>${recordDto.RECORD_DATE}</td>
+														</tr>
+													</c:forEach>
 												</tbody>
 
 											</table>
@@ -282,22 +299,12 @@
 												<thead>
 													<tr>
 														<th>index</th>
-														<th>관리번호</th>
-														<th>성과지표명</th>
-														<th>BEST</th>
-														<th>기간평가인증</th>
-														<th>AHA</th>
-														<th>LINC+</th>
-														<th>3유형</th>
-														<th>요소값</th>
-														<th>수집방법</th>
-														<th>평가방법</th>
-														<th>평가기준</th>
-														<th>관리부서</th>
-														<th>목표값</th>
-														<th>산출식</th>
-														<th>정적/부적</th>
-														<th>사용여부</th>
+														<th>A등급 %</th>
+														<th>B등급 %</th>
+														<th>D등급 %</th>
+														<th>A등급 조치</th>
+														<th>B등급 조치</th>
+														<th>D등급 조치</th>
 														<th>유저ID</th>
 														<th>유저명</th>
 														<th>행위</th>
@@ -305,30 +312,28 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr>
-														<td>55</td>
-														<td>주당수업시수비율</td>
-														<td>0</td>
-														<td>1</td>
-														<td>0</td>
-														<td>0</td>
-														<td>0</td>
-														<td>정보공시</td>
-														<td>정량</td>
-														<td>중장기발전계획 목표 측정값</td>
-														<td>교무학생처</td>
-														<td>50.00</td>
-														<td>(전임교원 총 주당 수업시수 / 전임교원 수) X 100</td>
-														<td>55</td>
-														<td>55</td>
-														<td>0</td>
-														<td>0</td>
-														<td>9703007</td>
-														<td>관리자</td>
-														<td>1</td>
-														<td>20/07/26</td>
-														
-													</tr>	
+													<c:forEach var="gradeDto" items="${gradeDto}">
+														<tr>
+															<td>${gradeDto.GRADE_NUM}</td>
+															<td>${gradeDto.A_GRADE}</td>
+															<td>${gradeDto.B_GRADE}</td>
+															<td>${gradeDto.D_GRADE}</td>
+															<td>${gradeDto.A_MEASURE}</td>
+															<td>${gradeDto.B_MEASURE}</td>
+															<td>${gradeDto.D_MEASURE}</td>
+															<td>${gradeDto.USER_ID}</td>
+															<td>${gradeDto.USER_NAME}</td>
+															<c:choose>
+																<c:when test="${gradeDto.ACTION_CODE == 2}">
+																	<td>수정</td>
+																</c:when>
+																<c:otherwise>
+																	<td>오류</td>
+																</c:otherwise>
+															</c:choose>
+															<td>${gradeDto.RECORD_DATE}</td>
+														</tr>
+													</c:forEach>
 												</tbody>
 
 											</table>
