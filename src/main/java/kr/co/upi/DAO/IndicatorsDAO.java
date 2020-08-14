@@ -38,11 +38,9 @@ public class IndicatorsDAO {
 
 	// 평가 등급 수정
 	public int modifyGrade(GradeDTO dto) {
-		try {
+	
 			mybatis.insert("IndicatorsMapper.GradeModify", dto);
-		} catch (Exception e) {
-			return 0;
-		}
+		
 		return 1;
 	}
 
@@ -69,12 +67,8 @@ public class IndicatorsDAO {
 	// 보고서 입력
 	public int report_write(RecordDTO dto) {
 		
-		try {
-			mybatis.insert("IndicatorsMapper.Report_write", dto);
-		} catch (Exception e) {
-			return 0;
-		}
 		
+			mybatis.insert("IndicatorsMapper.Report_write", dto);
 		return 1;
 	}
 
