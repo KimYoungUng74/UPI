@@ -120,7 +120,13 @@ public class IndicatorsController {
 			System.out.println("에러");
 		}
 
-		mav = setIndicatorsList(mav);
+		dto = indicatorsSer.selectOne(dto);
+		List<RecordDTO> recordDTOs = resultSer.selectListIncd(dto.getINDICATORS_NUM());
+		System.out.println(recordDTOs.get(0));
+		System.out.println(dto);
+		mav.addObject("dto", dto);
+		mav.addObject("recordDTO", recordDTOs.get(0));
+		mav.setViewName("report_view/reportWrite");
 		return mav;
 	}
 
