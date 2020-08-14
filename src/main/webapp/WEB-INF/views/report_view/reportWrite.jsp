@@ -100,16 +100,9 @@
 			<div class="page-breadcrumb">
 				<div class="row">
 					<div class="col-7 align-self-center">
-						<h3
-							class="page-title text-truncate text-dark font-weight-medium mb-1">성과지표
-							관리</h3>
-						<div class="d-flex align-items-center">
-							<nav aria-label="breadcrumb">
-								<ol class="breadcrumb m-0 p-0">
-									<li class="breadcrumb-item">보고서 등록</li>
-								</ol>
-							</nav>
-						</div>
+						<h3 class="page-title text-truncate font-weight-medium mb-1"
+							style="color: #5f76e8; font-weight: bold;">${dto.INDICATORS_NAME}
+							성과지표 관리</h3>
 					</div>
 				</div>
 			</div>
@@ -127,186 +120,242 @@
 					<div class="col-lg-12 col-md-12">
 						<div class="card">
 							<div class="card-body">
+								<!-- 보고서 작성-->
+								<div class="col-md-12">
+									<h4>${dto.INDICATORS_NAME}
+										신규 입력<span style="float: right;"> 마지막 입력 날짜 :
+											${recordDTO.RECORD_DATE}</span>
+									</h4>
+									<br>
+									<div class="row">
+										<div class="col-md-6" style="padding-top: 5px;">
+											<div class="row" id="FORMULA_AREA"></div>
+										</div>
+										<div class="col-md-1" style="padding-top: 5px;"></div>
+										<div class="col-md-5" style="padding-top: 5px;">
+											<div class="row">
+
+												<div class="col-md-12">
+													<span>현재 값</span>
+												</div>
+												<input type="hidden" id="ELEMENTS_VAL" name="ELEMENT_VAL"
+													value="">
+
+												<div class="col-md-12">
+													<input type="text" id="PRESENT_VAL" name="PRESENT_VAL"
+														value="${recordDTO.PRESENT_VAL}" class="form-control">
+												</div>
+
+												<div class="col-md-12" style="padding-top: 10px;">
+													<button class="btn btn-success waves-effect waves-light"
+														id="ele_Btn" type="button"
+														style="float: right; margin-left: 5px;">현재값 계산하기</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-md-12" style="padding-top: 5px;">
+											<hr>
+											<button class="btn btn-primary waves-effect waves-light"
+												type="button" style="float: left;"
+												onclick="location.href='indicators_view_list.mg'">
+												<span class="btn-label"><i
+													class="fas fa-align-justify"></i></span>목록으로
+											</button>
+											<button class="btn btn-primary waves-effect waves-light"
+												id="submit_btn" type="button"
+												style="float: right; margin-left: 5px;">저장</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-12 col-md-12">
+						<div class="card">
+							<div class="card-body">
 								<form action="report_write_ok.mg" method="post" id="submitform">
 									<input type="hidden" name="INDICATORS_NUM"
-										value="${dto.INDICATORS_NUM}">
-										<input type="hidden" name="INDICATORS_NAME"
-										value="${dto.INDICATORS_NAME}">
-										<input type="hidden" name="TARGET_VAL" id="TARGET_VAL"
-										value="${dto.TARGET_VAL}">
-										<input type="hidden" name="IS_BEST"
-										value="${dto.IS_BEST}"> 
-										<input type="hidden" name="IS_AGENCY"
-										value="${dto.IS_AGENCY}"> 
-										<input type="hidden" name="IS_AHA"
-										value="${dto.IS_AHA}"> 
-										<input type="hidden" name="IS_LINC"
-										value="${dto.IS_LINC}"> 
-										<input type="hidden" name="IS_TYPE3"
-										value="${dto.IS_TYPE3}">
-										<input type="hidden" name="IS_NEGATIVE"
-										value="${dto.IS_NEGATIVE}"> 
+										value="${dto.INDICATORS_NUM}"> <input type="hidden"
+										name="INDICATORS_NAME" value="${dto.INDICATORS_NAME}">
+									<input type="hidden" name="TARGET_VAL" id="TARGET_VAL"
+										value="${dto.TARGET_VAL}"> <input type="hidden"
+										name="IS_BEST" value="${dto.IS_BEST}"> <input
+										type="hidden" name="IS_AGENCY" value="${dto.IS_AGENCY}">
+									<input type="hidden" name="IS_AHA" value="${dto.IS_AHA}">
+									<input type="hidden" name="IS_LINC" value="${dto.IS_LINC}">
+									<input type="hidden" name="IS_TYPE3" value="${dto.IS_TYPE3}">
+									<input type="hidden" name="IS_NEGATIVE"
+										value="${dto.IS_NEGATIVE}">
 									<div class="row">
 										<!-- 지표명 -->
-										<div class="col-md-7" style="padding-bottom: 5px;">
+										<div class="col-md-6" style="padding-bottom: 5px;">
 											<div class="row">
 												<div class="col-md-12" style="padding-bottom: 5px;">
 													<span>지표명</span>
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<label
-														style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${dto.INDICATORS_NAME}</label>
+														style="background-color: #e9ecef; color: #4F5467; width: 100%; padding: 5px;">${dto.INDICATORS_NAME}</label>
 												</div>
-											</div>
-										</div>
-										<!-- 담당 부서 -->
-										<div class="col-md-5">
-											<div class="row">
-												<div class="col-md-12" style="padding-bottom: 5px;">
-													<span>관리부서</span>
+												<!-- 담당 부서 -->
+												<div class="col-md-6">
+													<div class="row">
+														<div class="col-md-12" style="padding-bottom: 5px;">
+															<span>관리부서</span>
+														</div>
+														<div class="col-md-12" style="padding-bottom: 10px;">
+															<label
+																style="background-color: #e9ecef; color: #4F5467; width: 100%; padding: 5px;">${dto.DIVISION_NAME}</label>
+														</div>
+													</div>
 												</div>
-												<div class="col-md-12" style="padding-bottom: 10px;">
-													<label
-														style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${dto.DIVISION_NAME}</label>
+
+												<!-- 수집 방법 -->
+												<div class="col-md-6" style="padding-bottom: 5px;">
+													<div class="row">
+														<div class="col-md-12" style="padding-bottom: 5px;">
+															<span>수집방법</span>
+														</div>
+														<div class="col-md-12" style="padding-bottom: 10px;">
+															<label
+																style="background-color: #e9ecef; color: #4F5467; width: 100%; padding: 5px;">${dto.COL_METHOD}</label>
+														</div>
+													</div>
 												</div>
 											</div>
 										</div>
 										<!-- 활용 사업 -->
-										<div class="col-md-7" style="padding-bottom: 5px;">
+										<div class="col-md-6" style="padding-bottom: 5px;">
 											<div class="row">
 												<div class="col-md-12" style="padding-bottom: 5px;">
 													<span>활용 사업</span>
 												</div>
-												<div class="col-md-4"
-													style="padding: 5px; padding-left: 15px;">
-													<div class="custom-control custom-checkbox">
-														<c:choose>
-															<c:when test="${1==dto.IS_BEST}">
-																<input type="checkbox"
-																	class="custom-control-input cuscheck" value=1
-																	 id="customCheck1" checked="checked"
-																	disabled="disabled">
-															</c:when>
-															<c:otherwise>
-																<input type="checkbox"
-																	class="custom-control-input cuscheck" value=1
-																	 id="customCheck1" disabled="disabled">
-															</c:otherwise>
-														</c:choose>
-														<label class="custom-control-label" for="customCheck1">
-															<a class="btn btn-primary rounded-circle btn-circle"
-															style="width: 25px; height: 25px;"
-															href="javascript:void(0)"></a> 대학중장기 발전계획 BEST
-														</label>
-													</div>
-												</div>
-												<div class="col-md-4"
-													style="padding: 5px; padding-left: 15px;">
+												<div class="col-md-12">
+													<div class="row">
+														<div class="col-md-12"
+															style="padding: 5px; padding-left: 15px;">
+															<div class="custom-control custom-checkbox">
+																<c:choose>
+																	<c:when test="${1==dto.IS_BEST}">
+																		<input type="checkbox"
+																			class="custom-control-input cuscheck" value=1
+																			id="customCheck1" checked="checked"
+																			disabled="disabled">
+																	</c:when>
+																	<c:otherwise>
+																		<input type="checkbox"
+																			class="custom-control-input cuscheck" value=1
+																			id="customCheck1" disabled="disabled">
+																	</c:otherwise>
+																</c:choose>
+																<label class="custom-control-label" for="customCheck1">
+																	<a class="btn btn-primary rounded-circle btn-circle"
+																	style="width: 25px; height: 25px;"
+																	href="javascript:void(0)"></a> 대학중장기 발전계획 BEST
+																</label>
+															</div>
+														</div>
+														<div class="col-md-12"
+															style="padding: 5px; padding-left: 15px;">
 
-													<div class="custom-control custom-checkbox">
-														<c:choose>
-															<c:when test="${1==dto.IS_AGENCY}">
-																<input type="checkbox"
-																	class="custom-control-input cuscheck" value=1
-																	 id="customCheck2" checked="checked"
-																	disabled="disabled">
-															</c:when>
-															<c:otherwise>
-																<input type="checkbox"
-																	class="custom-control-input cuscheck" value=1
-																	 id="customCheck2" disabled="disabled">
-															</c:otherwise>
-														</c:choose>
-														<label class="custom-control-label" for="customCheck2">
-															<a class="btn btn-danger rounded-circle btn-circle "
-															style="width: 25px; height: 25px;"
-															href="javascript:void(0)"></a> 기관평가인증
-														</label>
+															<div class="custom-control custom-checkbox">
+																<c:choose>
+																	<c:when test="${1==dto.IS_AGENCY}">
+																		<input type="checkbox"
+																			class="custom-control-input cuscheck" value=1
+																			id="customCheck2" checked="checked"
+																			disabled="disabled">
+																	</c:when>
+																	<c:otherwise>
+																		<input type="checkbox"
+																			class="custom-control-input cuscheck" value=1
+																			id="customCheck2" disabled="disabled">
+																	</c:otherwise>
+																</c:choose>
+																<label class="custom-control-label" for="customCheck2">
+																	<a class="btn btn-danger rounded-circle btn-circle "
+																	style="width: 25px; height: 25px;"
+																	href="javascript:void(0)"></a> 기관평가인증
+																</label>
+															</div>
+														</div>
+														<div class="col-md-12"
+															style="padding: 5px; padding-left: 15px;">
+															<div class="custom-control custom-checkbox">
+																<c:choose>
+																	<c:when test="${1==dto.IS_AHA}">
+																		<input type="checkbox"
+																			class="custom-control-input cuscheck" value=1
+																			id="customCheck3" checked="checked"
+																			disabled="disabled">
+																	</c:when>
+																	<c:otherwise>
+																		<input type="checkbox"
+																			class="custom-control-input cuscheck" value=1
+																			id="customCheck3" disabled="disabled">
+																	</c:otherwise>
+																</c:choose>
+																<label class="custom-control-label" for="customCheck3">
+																	<a class="btn btn-warning rounded-circle btn-circle "
+																	style="width: 25px; height: 25px;"
+																	href="javascript:void(0)"></a> 혁신지원 AHA
+																</label>
+															</div>
+														</div>
+														<div class="col-md-12"
+															style="padding: 5px; padding-left: 15px;">
+															<div class="custom-control custom-checkbox">
+																<c:choose>
+																	<c:when test="${1==dto.IS_LINC}">
+																		<input type="checkbox"
+																			class="custom-control-input cuscheck" value=1
+																			id="customCheck4" checked="checked"
+																			disabled="disabled">
+																	</c:when>
+																	<c:otherwise>
+																		<input type="checkbox"
+																			class="custom-control-input cuscheck" value=1
+																			id="customCheck4" disabled="disabled">
+																	</c:otherwise>
+																</c:choose>
+																<label class="custom-control-label" for="customCheck4">
+																	<a class="btn btn-success rounded-circle btn-circle "
+																	style="width: 25px; height: 25px;"
+																	href="javascript:void(0)"></a> 사회맞춤형 LINC+
+																</label>
+															</div>
+														</div>
+														<div class="col-md-12"
+															style="padding: 5px; padding-left: 15px;">
+															<div class="custom-control custom-checkbox">
+																<c:choose>
+																	<c:when test="${1==dto.IS_TYPE3}">
+																		<input type="checkbox"
+																			class="custom-control-input cuscheck" value=1
+																			id="customCheck5" checked="checked"
+																			disabled="disabled">
+																	</c:when>
+																	<c:otherwise>
+																		<input type="checkbox"
+																			class="custom-control-input cuscheck" value=1
+																			id="customCheck5" disabled="disabled">
+																	</c:otherwise>
+																</c:choose>
+																<label class="custom-control-label" for="customCheck5">
+																	<a class="btn btn-secondary rounded-circle btn-circle "
+																	style="width: 25px; height: 25px;"
+																	href="javascript:void(0)"></a> 3유형
+																</label>
+															</div>
+														</div>
 													</div>
 												</div>
-												<div class="col-md-4"
-													style="padding: 5px; padding-left: 15px;">
-													<div class="custom-control custom-checkbox">
-														<c:choose>
-															<c:when test="${1==dto.IS_AHA}">
-																<input type="checkbox"
-																	class="custom-control-input cuscheck" value=1
-																	id="customCheck3" checked="checked"
-																	disabled="disabled">
-															</c:when>
-															<c:otherwise>
-																<input type="checkbox"
-																	class="custom-control-input cuscheck" value=1
-																	id="customCheck3" disabled="disabled">
-															</c:otherwise>
-														</c:choose>
-														<label class="custom-control-label" for="customCheck3">
-															<a class="btn btn-warning rounded-circle btn-circle "
-															style="width: 25px; height: 25px;"
-															href="javascript:void(0)"></a> 혁신지원 AHA
-														</label>
-													</div>
-												</div>
-												<div class="col-md-4"
-													style="padding: 5px; padding-left: 15px;">
-													<div class="custom-control custom-checkbox">
-														<c:choose>
-															<c:when test="${1==dto.IS_LINC}">
-																<input type="checkbox"
-																	class="custom-control-input cuscheck" value=1
-																    id="customCheck4" checked="checked"
-																	disabled="disabled">
-															</c:when>
-															<c:otherwise>
-																<input type="checkbox"
-																	class="custom-control-input cuscheck" value=1
-																	id="customCheck4" disabled="disabled">
-															</c:otherwise>
-														</c:choose>
-														<label class="custom-control-label" for="customCheck4">
-															<a class="btn btn-success rounded-circle btn-circle "
-															style="width: 25px; height: 25px;"
-															href="javascript:void(0)"></a> 사회맞춤형 LINC+
-														</label>
-													</div>
-												</div>
-												<div class="col-md-4"
-													style="padding: 5px; padding-left: 15px;">
-													<div class="custom-control custom-checkbox">
-														<c:choose>
-															<c:when test="${1==dto.IS_TYPE3}">
-																<input type="checkbox"
-																	class="custom-control-input cuscheck" value=1
-																	id="customCheck5" checked="checked"
-																	disabled="disabled">
-															</c:when>
-															<c:otherwise>
-																<input type="checkbox"
-																	class="custom-control-input cuscheck" value=1
-																	id="customCheck5" disabled="disabled">
-															</c:otherwise>
-														</c:choose>
-														<label class="custom-control-label" for="customCheck5">
-															<a class="btn btn-secondary rounded-circle btn-circle "
-															style="width: 25px; height: 25px;"
-															href="javascript:void(0)"></a> 3유형
-														</label>
-													</div>
-												</div>
+
 											</div>
 										</div>
-										<!-- 수집 방법 -->
-										<div class="col-md-5" style="padding-bottom: 5px;">
-											<div class="row">
-												<div class="col-md-12" style="padding-bottom: 5px;">
-													<span>수집방법</span>
-												</div>
-												<div class="col-md-12" style="padding-bottom: 10px;">
-													<label
-														style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${dto.COL_METHOD}</label>
-												</div>
-											</div>
-										</div>
+
 										<!-- 목표 값 -->
 										<div class="col-md-2" style="padding-bottom: 5px;">
 											<div class="row">
@@ -315,7 +364,7 @@
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<label
-														style="border: 1px solid #5a6268; width: 100%; padding: 5px; text-align: right;">${dto.TARGET_VAL}</label>
+														style="background-color: #e9ecef; color: #4F5467; width: 100%; padding: 5px; text-align: right;">${dto.TARGET_VAL}</label>
 												</div>
 											</div>
 										</div>
@@ -328,7 +377,7 @@
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<label
-														style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${dto.EVAL_METHOD}</label>
+														style="background-color: #e9ecef; color: #4F5467; width: 100%; padding: 5px;">${dto.EVAL_METHOD}</label>
 												</div>
 											</div>
 										</div>
@@ -340,11 +389,11 @@
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<label
-														style="border: 1px solid #5a6268; width: 100%; padding: 5px;">${dto.EVAL_STANDARD}</label>
+														style="background-color: #e9ecef; color: #4F5467; width: 100%; padding: 5px;">${dto.EVAL_STANDARD}</label>
 												</div>
 											</div>
 										</div>
-										
+
 										<!-- 정적 부적  -->
 										<div class="col-md-3" style="padding-bottom: 5px;">
 											<div class="row">
@@ -352,15 +401,17 @@
 													<span>등급기준</span>
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
-												<c:choose>
-												 <c:when test="${dto.IS_NEGATIVE == 0}">
-												 	<label style="border: 1px solid #5a6268; width: 100%; padding: 5px;">Positive</label>
-												 </c:when>
-												 <c:otherwise>
-												 	<label style="border: 1px solid #5a6268; width: 100%; padding: 5px;">Negative</label>
-												 </c:otherwise>
-												</c:choose>
-													
+													<c:choose>
+														<c:when test="${dto.IS_NEGATIVE == 0}">
+															<label
+																style="background-color: #e9ecef; color: #4F5467; width: 100%; padding: 5px;">Positive</label>
+														</c:when>
+														<c:otherwise>
+															<label
+																style="background-color: #e9ecef; color: #4F5467; width: 100%; padding: 5px;">Negative</label>
+														</c:otherwise>
+													</c:choose>
+
 												</div>
 											</div>
 										</div>
@@ -371,7 +422,7 @@
 												<div class="col-md-12" style="padding-bottom: 5px;">
 													<span>평가항목 </span>
 												</div>
-												
+
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<input type="text" class="form-control" disabled="disabled"
 														id="ELEMENTS" name="ELEMENTS" value="${dto.ELEMENTS}">
@@ -403,53 +454,7 @@
 												</div>
 											</div>
 										</div>
-										<!-- 보고서 작성-->
-										<div class="col-md-12">
-											<hr>
-											<h4>보고서 등록 <span style="float:right;"> 최근 등록날짜 : ${recordDTO.RECORD_DATE}</span></h4> 
-											<br>
-											<div class="row">
-												<div class="col-md-6" style="padding-top: 5px;">
-													<div class="row" id="FORMULA_AREA"></div>
-												</div>
-												<div class="col-md-1" style="padding-top: 5px;"></div>
-												<div class="col-md-5" style="padding-top: 5px;">
-													<div class="row">
 
-														<div class="col-md-12">
-															<span>현재 값</span>
-														</div>
-														<input type="hidden" id="ELEMENTS_VAL" name="ELEMENT_VAL" value="">
-
-														<div class="col-md-12">
-															<input type="text" id="PRESENT_VAL" name="PRESENT_VAL" value="${recordDTO.PRESENT_VAL}"
-																class="form-control">
-														</div>
-
-														<div class="col-md-12" style="padding-top: 10px;">
-															<button
-																class="btn btn-success waves-effect waves-light"
-																id="ele_Btn" type="button"
-																style="float: right; margin-left: 5px;">현재값
-																계산하기</button>
-														</div>
-													</div>
-												</div>
-
-												<div class="col-md-12" style="padding-top: 5px;">
-													<hr>
-													<button class="btn btn-primary waves-effect waves-light"
-														type="button" style="float: left;"
-														onclick="location.href='indicators_view_list.mg'">
-														<span class="btn-label"><i
-															class="fas fa-align-justify"></i></span>목록으로
-													</button>
-													<button class="btn btn-primary waves-effect waves-light" id="submit_btn"
-														type="button" style="float: right; margin-left: 5px;">보고서
-														등록</button>
-												</div>
-											</div>
-										</div>
 									</div>
 								</form>
 							</div>
@@ -508,40 +513,53 @@
 		}
 		$("#FORMULA_AREA").append(str);
 
-		 // 현재값 계산
-		$('#ele_Btn').click(function() {
-				var FORMULA = $('#FORMULA').val();
-				var ELEMENTS = $('#ELEMENTS').val();
-				var isOk = 0;
-				if (ELEMENTS != "") {
-				var ELEMENTS_List = ELEMENTS.split(',');
-				// 산출식에 요소별 값 적용
-				$('#ELEMENTS_VAL').val("");
-				for ( var i in ELEMENTS_List) {
-					if($("input[name=ELEMENTS_AREA]:eq(" + i + ")").val() == "") {
-						alert(ELEMENTS_List[i]+"의 요소값을 입력해주세요");
-						isOk=1;
-					}
-					FORMULA = FORMULA.replace(ELEMENTS_List[i], $("input[name=ELEMENTS_AREA]:eq(" + i + ")").val());
-				}
-				
-				if(isOk == 0) {
-					// 양쪽 여백 제거 
-					FORMULA = $.trim(FORMULA);
-					if($('#TARGET_VAL').val().includes(":")) {
-						$('#PRESENT_VAL').val(eval(FORMULA).toFixed(2)+":1");
-					} else {
-						$('#PRESENT_VAL').val(eval(FORMULA).toFixed(2));
-					}
-					$('#PRESENT_VAL').attr('readonly', true);
-					
-				}
-				}
-		}); 
+		// 현재값 계산
+		$('#ele_Btn')
+				.click(
+						function() {
+							var FORMULA = $('#FORMULA').val();
+							var ELEMENTS = $('#ELEMENTS').val();
+							var isOk = 0;
+							if (ELEMENTS != "") {
+								var ELEMENTS_List = ELEMENTS.split(',');
+								// 산출식에 요소별 값 적용
+								$('#ELEMENTS_VAL').val("");
+								for ( var i in ELEMENTS_List) {
+									if ($(
+											"input[name=ELEMENTS_AREA]:eq(" + i
+													+ ")").val() == "") {
+										alert(ELEMENTS_List[i]
+												+ "의 요소값을 입력해주세요");
+										isOk = 1;
+									}
+									FORMULA = FORMULA.replace(ELEMENTS_List[i],
+											$(
+													"input[name=ELEMENTS_AREA]:eq("
+															+ i + ")").val());
+								}
+
+								if (isOk == 0) {
+									// 양쪽 여백 제거 
+									FORMULA = $.trim(FORMULA);
+									if ($('#TARGET_VAL').val().includes(":")) {
+										$('#PRESENT_VAL')
+												.val(
+														eval(FORMULA)
+																.toFixed(2)
+																+ ":1");
+									} else {
+										$('#PRESENT_VAL').val(
+												eval(FORMULA).toFixed(2));
+									}
+									$('#PRESENT_VAL').attr('readonly', true);
+
+								}
+							}
+						});
 	});
 	$("#submit_btn").click(function() {
 		var PRESENT_VAL = $('#PRESENT_VAL').val();
-		
+
 		if (PRESENT_VAL == "") {
 			alert("현재값이 비었습니다 현재값을 넣거나 계산하세요");
 			$("#iPRESENT_VAL").focus();

@@ -445,10 +445,10 @@
 										<div class="col-md-12" style="padding-bottom: 5px;">
 											<div class="row">
 												<div class="col-md-5" style="padding-bottom: 5px;">
-													<span>요소 리스트 </span>
+													<span>평가 항목</span>
 												</div>
 												<div class="col-md-7" style="padding-bottom: 5px;">
-													<span>요소 입력</span>
+													<span>항목 입력</span>
 												</div>
 												<div class="col-md-5" style="padding-bottom: 10px;">
 													<input type="text" class="form-control" readonly="readonly"
@@ -729,7 +729,7 @@
 						var newMySkill = oldMySkill.split(',');
 						for ( var i in newMySkill) {
 							if ($('#input_ele').val() == newMySkill[i]) {
-								alert("이미 등록된 요소입니다.");
+								alert("이미 등록된 항목입니다.");
 								return;
 							}
 						}
@@ -744,7 +744,7 @@
 		$('#delEleBtn').click(
 				function() {
 					if ($('#ELEMENTS').val() == "") {
-						alert("제거할 요소가 없습니다.");
+						alert("제거할 항목이 없습니다.");
 					} else {
 						var oldELEMENTS = $('#ELEMENTS').val();
 						var newELEMENTS = oldELEMENTS.split(',');
@@ -771,7 +771,7 @@
 		$('#formulaReg')
 				.click(
 						function() {
-							var str = "<div class=\"col-md-12\"style=\"padding-bottom: 15px; text-align: center;\"><span>산출식 요소 </span></div>";
+							var str = "<div class=\"col-md-12\"style=\"padding-bottom: 15px; text-align: center;\"><span>평가 항목 </span></div>";
 							$(".FORMULA_Dialog").html(str);
 							str = "";
 							var ELEMENTS = $('#ELEMENTS').val();
