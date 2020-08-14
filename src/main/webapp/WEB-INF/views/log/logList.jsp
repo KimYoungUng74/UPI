@@ -242,7 +242,6 @@
 														<th>LINC+</th>
 														<th>3유형</th>
 														<th>목표값</th>
-														<th>요소값</th>
 														<th>현재 값</th>
 														<th>등급</th>
 														<th>달성도</th>
@@ -264,7 +263,6 @@
 															<td>${recordDto.IS_LINC}</td>
 															<td>${recordDto.IS_TYPE3}</td>
 															<td>${recordDto.TARGET_VAL}</td>
-															<td>${recordDto.ELEMENT_VAL}</td>
 															<td>${recordDto.PRESENT_VAL}</td>
 															<td>${recordDto.GRADE}</td>
 															<td>${recordDto.ACHIEVE_VAL}</td>
