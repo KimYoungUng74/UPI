@@ -259,7 +259,7 @@
                                                     		<a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
                                                     	</c:if>
                                                         <c:if test="${a_grade.IS_TYPE3==1}">
-                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">3</a>
                                                     	</c:if>
                                                     </div>
                                                 </td>
@@ -308,7 +308,7 @@
                                                     		<a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
                                                     	</c:if>
                                                         <c:if test="${b_grade.IS_TYPE3==1}">
-                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">3</a>
                                                     	</c:if>
                                                     </div>
                                                 </td>
@@ -358,7 +358,7 @@
                                                     		<a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
                                                     	</c:if>
                                                         <c:if test="${d_grade.IS_TYPE3==1}">
-                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">3</a>
                                                     	</c:if>
                                                     </div>
                                                 </td>
@@ -409,7 +409,7 @@
                                                     		<a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
                                                     	</c:if>
                                                         <c:if test="${BUSINESS_BEST.IS_TYPE3==1}">
-                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">3</a>
                                                     	</c:if>
                                                     </div>
                                                 </td>
@@ -460,7 +460,7 @@
                                                     		<a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
                                                     	</c:if>
                                                         <c:if test="${BUSINESS_AGENCY.IS_TYPE3==1}">
-                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">3</a>
                                                     	</c:if>
                                                     </div>
                                                 </td>
@@ -512,7 +512,7 @@
                                                     		<a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
                                                     	</c:if>
                                                         <c:if test="${BUSINESS_AHA.IS_TYPE3==1}">
-                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">3</a>
                                                     	</c:if>
                                                     </div>
                                                 </td>
@@ -564,7 +564,7 @@
                                                     		<a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
                                                     	</c:if>
                                                         <c:if test="${BUSINESS_LINC.IS_TYPE3==1}">
-                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">3</a>
                                                     	</c:if>
                                                     </div>
                                                 </td>
@@ -617,7 +617,7 @@
                                                     		<a class="btn btn-success rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">L</a>
                                                     	</c:if>
                                                         <c:if test="${BUSINESS_TYPE3.IS_TYPE3==1}">
-                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">G</a>
+                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">3</a>
                                                     	</c:if>
                                                     </div>
                                                 </td>
