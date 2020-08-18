@@ -99,10 +99,17 @@
 			<!-- ============================================================== -->
 			<div class="page-breadcrumb">
 				<div class="row">
-					<div class="col-7 align-self-center">
+					<div class="col-12 align-self-center">
 						<h3 class="page-title text-truncate font-weight-medium mb-1"
 							style="color: #5f76e8; font-weight: bold;">${dto.INDICATORS_NAME}
-							성과지표 관리</h3>
+							성과지표 관리
+							<button class="btn btn-primary waves-effect waves-light"
+								type="button" style="float: right;"
+								onclick="location.href='indicators_view_list.mg'">
+								<span class="btn-label"><i class="fas fa-align-justify"></i></span>목록으로
+							</button>
+						</h3>
+
 					</div>
 				</div>
 			</div>
@@ -117,57 +124,70 @@
 				<!-- *************************************************************** -->
 				<!-- Start Sales Charts Section -->
 				<!-- *************************************************************** -->
+
+
 				<div class="row">
+				<div class="col-md-12">
+				<span style="float: right;"> 마지막 입력 날짜 :
+													${recordDTO.RECORD_DATE}</span>
+				</div>
+				
+				
 					<div class="col-lg-12 col-md-12">
 						<div class="card">
 							<div class="card-body">
-								<!-- 보고서 작성-->
-								<div class="col-md-12">
-									<h4>${dto.INDICATORS_NAME}
-										신규 입력<span style="float: right;"> 마지막 입력 날짜 :
-											${recordDTO.RECORD_DATE}</span>
-									</h4>
-									<br>
-									<div class="row">
-										<div class="col-md-5" style="padding-top: 5px;">
+								<ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
+									<li class="nav-item"><a href="#indic_tab"
+										data-toggle="tab" aria-expanded="true" class="nav-link active">
+											<i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i> <span
+											class="d-none d-lg-block">${dto.INDICATORS_NAME} 현재값
+												입력</span>
+									</a></li>
+									<li class="nav-item"><a href="#record_tab"
+										data-toggle="tab" aria-expanded="false" class="nav-link">
+											<i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+											<span class="d-none d-lg-block">${dto.INDICATORS_NAME}
+												산출식으로 현재값 입력</span>
+									</a></li>
+								</ul>
+
+								<div class="tab-content">
+									<div class="tab-pane show active" id="indic_tab">
+										<!-- 보고서 작성-->
+										<div class="col-md-12">
 											<div class="row">
+												<div class="col-md-12" style="padding-top: 5px;">
+													<div class="row">
 
-												<div class="col-md-12">
-													<span>현재 값</span>
+														<div class="col-md-12">
+															<span>현재 값</span>
+														</div>
+
+														<div class="col-md-3">
+															<input type="text" id="PRESENT_VAL" name="PRESENT_VAL"
+																value="${recordDTO.PRESENT_VAL}" class="form-control">
+														</div>
+														<div class="col-md-3">
+															<button class="btn btn-primary waves-effect waves-light"
+																id="submit_btn" type="button"
+																style="float: left; margin-left: 5px;">저장</button>
+														</div>
+														<div class="col-md-6">
+														
+														</div>
+													</div>
 												</div>
-
-												<div class="col-md-6">
-													<input type="text" id="PRESENT_VAL" name="PRESENT_VAL"
-														value="${recordDTO.PRESENT_VAL}" class="form-control">
-												</div>
-												<div class="col-md-6">
-													<button class="btn btn-primary waves-effect waves-light"
-														id="submit_btn" type="button"
-														style="float: left; margin-left: 5px;">저장</button>
-												</div>
-
-
-
 											</div>
 										</div>
-										<div class="col-md-6" style="padding-top: 5px;">
-											<div class="row" id="FORMULA_AREA"></div>
-										</div>
-										<div class="col-md-1" style="padding-top: 5px;"></div>
-
-
-										<div class="col-md-12" style="padding-top: 5px;">
-											<hr>
-											<button class="btn btn-primary waves-effect waves-light"
-												type="button" style="float: left;"
-												onclick="location.href='indicators_view_list.mg'">
-												<span class="btn-label"><i
-													class="fas fa-align-justify"></i></span>목록으로
-											</button>
-
-										</div>
+									</div>
+									<div class="tab-pane" id="record_tab">
+												<div class="col-md-12" style="padding-top: 5px;">
+													<div class="row" id="FORMULA_AREA"></div>
+												</div>
 									</div>
 								</div>
+
+
 							</div>
 						</div>
 					</div>
@@ -504,13 +524,13 @@
 			var ELEMENTS_List = ELEMENTS.split(',');
 
 			for ( var i in ELEMENTS_List) {
-				str += "<div class=\"col-md-4\" style=\"padding-bottom: 5px;\"> <span>";
+				str += "<div class=\"col-md-3\" style=\"padding-bottom: 5px;\"> <span>";
 				str += ELEMENTS_List[i];
 				str += "</span> <input type=\"text\" name=\"ELEMENTS_AREA\"";
 				str += " class=\"form-control\"></div>";
 			}
 		}
-		str + = "<div class=\"col-md-4\" style=\"padding-bottom: 5px;\"><button class=\"btn btn-success waves-effect waves-light\" id=\"ele_Btn\" type=\"button\" style=\"float: right; margin-left: 5px;\">현재값 계산하기</button></div>";
+		str += "<div class=\"col-md-3\" style=\"padding-bottom: 5px;\"><br><button class=\"btn btn-success waves-effect waves-light\" id=\"ele_Btn\" type=\"button\" style=\"float: left; margin-left: 5px;\">계산 후 저장</button></div>";
 		$("#FORMULA_AREA").append(str);
 
 		// 현재값 계산
@@ -552,7 +572,7 @@
 												eval(FORMULA).toFixed(2));
 									}
 									$('#PRESENT_VAL').attr('readonly', true);
-
+									$("#submit_btn").click();
 								}
 							}
 						});

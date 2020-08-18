@@ -1,5 +1,4 @@
 $("#submit_btn").click(function() {
-	alert("자주와!!!");
 	var PRESENT_VAL = $('#PRESENT_VAL').val();
 	
 	if (PRESENT_VAL == "") {
