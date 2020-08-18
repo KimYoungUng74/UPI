@@ -289,5 +289,13 @@ public class ResultController {
 		mav.setViewName("result_view/indicator_grade_standard");
 		return mav;
 	}
-
+	
+	// 사업별 현황 페이지
+	@RequestMapping(value = "status_list_view.do")
+	public ModelAndView status_list_view(Locale locale, Model model) {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("status/status_list_view");
+		return mav;
+	}
+	
 }
