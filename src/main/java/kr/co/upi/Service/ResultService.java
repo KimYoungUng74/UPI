@@ -67,4 +67,8 @@ public class ResultService {
 		return dao.selectResultGradeStandard();
 	}
 	
+	// 연도별 현황 리스트 가져오기
+	public List<RecordDTO> StatusList(String Years) {
+		return dao.StatusList(Years);
+	}
 }

@@ -72,5 +72,10 @@ public class ResultDAO {
 		
 		return mybatis.selectList("ResultMapper.ResultGradeStandard");
 	}
-
+	
+	
+	// 연도별 현황 리스트 가져오기
+	public List<RecordDTO> StatusList(String Years) {
+		return mybatis.selectList("ResultMapper.StatusList", Years);
+	}
 }

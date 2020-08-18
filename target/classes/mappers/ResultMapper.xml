@@ -44,9 +44,7 @@
 		SELECT  NVL(MAX(GRADE) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE),'기타') as GRADE, NVL(count(*),0) as GC
 		FROM RECORD_TB
 		WHERE to_char(RECORD_DATE, 'yyyy') = '${YEAR}' AND (INDICATORS_NUM, RECORD_DATE) in (select indicators_num,MAX(record_date) from RECORD_TB  where to_char(RECORD_DATE, 'yyyy') = '${YEAR}'  GROUP BY indicators_num)
-		GROUP BY GRADE		
-		
-		
+		GROUP BY GRADE
 	</select>
 	
 	<!--년도별 평가 등급 퍼센트 사용시 이용  -->
@@ -115,5 +113,26 @@
 		SELECT *
 		FROM GRADE_TB
 		WHERE RECORD_DATE = (SELECT MAX(RECORD_DATE) FROM GRADE_TB)
+	</select>
+	
+	<!-- 년도별 지표 현황 -->
+	<select id="StatusList" parameterType="String" resultType="RecordDTO">
+		SELECT INDICATORS_NUM,INDICATORS_NAME,TARGET_VAL,IS_BEST,IS_AGENCY,IS_AHA,IS_LINC,IS_TYPE3,
+			NVL(
+			(
+			SELECT PRESENT_VAL
+			FROM RECORD_TB rtb
+			WHERE rtb.INDICATORS_NUM = itb.INDICATORS_NUM
+			AND to_char(RECORD_DATE, 'yyyy') = #{Years}
+			AND ROWNUM = 1
+			),0) PRESENT_VAL
+		FROM
+		INDICATORS_TB itb
+		where (INDICATORS_NUM, RECORD_DATE, to_char(RECORD_DATE, 'yyyy')) in (
+    		select INDICATORS_NUM, max(RECORD_DATE),to_char(RECORD_DATE, 'yyyy') from INDICATORS_TB
+    		WHERE to_char(RECORD_DATE, 'yyyy') = to_char(sysdate, 'yyyy')
+    		group by INDICATORS_NUM,to_char(RECORD_DATE, 'yyyy')
+		)
+		ORDER BY INDICATORS_NUM, to_char(RECORD_DATE, 'yyyy') DESC
 	</select>
 </mapper>

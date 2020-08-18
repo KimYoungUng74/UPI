@@ -292,7 +292,58 @@ public class ResultController {
 	
 	// 사업별 현황 페이지
 	@RequestMapping(value = "status_list_view.do")
-	public ModelAndView status_list_view(Locale locale, Model model) {
+	public ModelAndView status_list_view(Locale locale, Model model, String Years) {
+		//년도정보가 없으면 그냥 최신으로 가져와~
+		if(Years==null){
+			Years = (new java.util.Date().getYear()+1900)+"";
+		}
+		//년도정보 추가
+		model.addAttribute("Years", Years);
+		List<RecordDTO> StatusDTOs = resultSer.StatusList(Years);
+		//전체 현황 추가
+		model.addAttribute("StatusDTOs", StatusDTOs);
+		
+		// BEST 지표
+		List<RecordDTO> BUSINESS_BEST = new ArrayList();
+		// 기관 평가 인증
+		List<RecordDTO> BUSINESS_AGENCY = new ArrayList();
+		// 혁신지원AHA
+		List<RecordDTO> BUSINESS_AHA = new ArrayList();
+		// 사회맞춤형 LINC
+		List<RecordDTO> BUSINESS_LINC = new ArrayList();
+		// 3유형 지표
+		List<RecordDTO> BUSINESS_TYPE3 = new ArrayList();
+		
+		
+		//각 지표값 사업별로 삽입
+		for(int i=0;i<StatusDTOs.size();i++) {
+			if(StatusDTOs.get(i).getIS_BEST() == 1) {
+				BUSINESS_BEST.add(StatusDTOs.get(i));
+			}
+			if(StatusDTOs.get(i).getIS_AGENCY() == 1) {
+				BUSINESS_AGENCY.add(StatusDTOs.get(i));
+			}
+			if(StatusDTOs.get(i).getIS_AHA() == 1) {
+				BUSINESS_AHA.add(StatusDTOs.get(i));
+			}
+			if(StatusDTOs.get(i).getIS_LINC() == 1) {
+				BUSINESS_LINC.add(StatusDTOs.get(i));
+			}
+			if(StatusDTOs.get(i).getIS_TYPE3() == 1) {
+				BUSINESS_TYPE3.add(StatusDTOs.get(i));
+			}
+		}
+		
+		
+		
+		
+		
+		model.addAttribute("BEST",BUSINESS_BEST);
+		model.addAttribute("AGENCY",BUSINESS_AGENCY);
+		model.addAttribute("AHA",BUSINESS_AHA);
+		model.addAttribute("LINC",BUSINESS_LINC);
+		model.addAttribute("TYPE3",BUSINESS_TYPE3);
+		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("status/status_list_view");
 		return mav;
