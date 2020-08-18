@@ -325,6 +325,7 @@
 <c:import url="../import/javascript.jsp" charEncoding="UTF-8">
 </c:import>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <script type="text/javascript">
 	Highcharts.chart('container1', {
 		chart : {
@@ -433,26 +434,28 @@
 	});
 	
 	$('.btn-png').on("click", function(){
-		
+		var width_a4=2480;
+		var height_a4=3508;
 		// 캡쳐 라이브러리를 통해서 canvas 오브젝트를 받고 이미지 파일로 리턴한다.
 		html2canvas(document.querySelector("#report_tb")).then(canvas => {
+		console.log('가로:'+canvas.width);
+		console.log('세로:'+canvas.height);
 		saveAs(canvas.toDataURL('image/png'),"${Indicators.getINDICATORS_NAME()} 보고서.png");
 		});
 	});
 	function saveAs(uri, filename) {
-	// 캡쳐된 파일을 이미지 파일로 내보낸다.
-	var link = document.createElement('a');
-	if (typeof link.download === 'string') {
-	link.href = uri;
-	link.download = filename;
-	document.body.appendChild(link);
-	link.click();
-	document.body.removeChild(link);
-	} else {
-	window.open(uri);
+		// 캡쳐된 파일을 이미지 파일로 내보낸다.
+		var link = document.createElement('a');
+		if (typeof link.download === 'string') {
+			link.href = uri;
+			link.download = filename;
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+		} else {
+			window.open(uri);
+		}
 	}
-	}
-	
 </script>
 
 </html>

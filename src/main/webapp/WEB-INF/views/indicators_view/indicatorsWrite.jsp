@@ -135,124 +135,227 @@
 
 									<div class="row">
 										<!-- 지표명 -->
-										<div class="col-md-7" style="padding-bottom: 5px;">
+										<div class="col-md-6" style="padding-bottom: 5px;">
 											<div class="row">
 												<div class="col-md-12" style="padding-bottom: 5px;">
 													<span>지표명</span>
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
-													<input type="text" id="INDICATORS_NAME" name="INDICATORS_NAME"
-														value="" class="form-control">
+													<input type="text" name="INDICATORS_NAME"
+														id="INDICATORS_NAME" class="form-control"
+														value="${dto.INDICATORS_NAME}">
+												</div>
+												<!-- 담당 부서 -->
+												<div class="col-md-6">
+													<div class="row">
+														<div class="col-md-12" style="padding-bottom: 5px;">
+															<span>관리부서</span>
+														</div>
+														<div class="col-md-12" style="padding-bottom: 10px;">
+															<select class="custom-select" id="DIVISION_NAME"
+																name="DIVISION_NAME">
+																<option value="">모두 보기</option>
+																<c:choose>
+																	<c:when test="${dto.DIVISION_NAME eq '입학취업처'}">
+																		<option value="입학취업처" selected="selected">입학취업처</option>
+																	</c:when>
+																	<c:otherwise>
+																		<option value="입학취업처">입학취업처</option>
+																	</c:otherwise>
+																</c:choose>
+																<c:choose>
+																	<c:when test="${dto.DIVISION_NAME eq '교무학생처'}">
+																		<option value="교무학생처" selected="selected">교무학생처</option>
+																	</c:when>
+																	<c:otherwise>
+																		<option value="교무학생처">교무학생처</option>
+																	</c:otherwise>
+																</c:choose>
+																<c:choose>
+																	<c:when test="${dto.DIVISION_NAME eq '행정지원처'}">
+																		<option value="행정지원처" selected="selected">행정지원처</option>
+																	</c:when>
+																	<c:otherwise>
+																		<option value="행정지원처">행정지원처</option>
+																	</c:otherwise>
+																</c:choose>
+																<c:choose>
+																	<c:when test="${dto.DIVISION_NAME eq '대학발전운영실'}">
+																		<option value="대학발전운영실" selected="selected">대학발전운영실</option>
+																	</c:when>
+																	<c:otherwise>
+																		<option value="대학발전운영실">대학발전운영실</option>
+																	</c:otherwise>
+																</c:choose>
+																<c:choose>
+																	<c:when test="${dto.DIVISION_NAME eq '산학협력처'}">
+																		<option value="산학협력처" selected="selected">산학협력처</option>
+																	</c:when>
+																	<c:otherwise>
+																		<option value="산학협력처">산학협력처</option>
+																	</c:otherwise>
+																</c:choose>
+															</select>
+														</div>
+													</div>
+												</div>
+												<!-- 수집 방법 -->
+												<div class="col-md-6" style="padding-bottom: 5px;">
+													<div class="row">
+														<div class="col-md-12" style="padding-bottom: 5px;">
+															<span>수집방법</span>
+														</div>
+														<div class="col-md-12" style="padding-bottom: 10px;">
+															<select class="custom-select" id="COL_METHOD"
+																name="COL_METHOD">
+																<option value="">수집방법 선택</option>
+																<c:choose>
+																	<c:when test="${dto.COL_METHOD eq '정보공시'}">
+																		<option value="정보공시" selected="selected">정보공시</option>
+																	</c:when>
+																	<c:otherwise>
+																		<option value="정보공시">정보공시</option>
+																	</c:otherwise>
+																</c:choose>
+																<c:choose>
+																	<c:when test="${dto.COL_METHOD eq '대학자료'}">
+																		<option value="대학자료" selected="selected">대학자료</option>
+																	</c:when>
+																	<c:otherwise>
+																		<option value="대학자료">대학자료</option>
+																	</c:otherwise>
+																</c:choose>
+																<c:choose>
+																	<c:when test="${dto.COL_METHOD eq '외부의뢰'}">
+																		<option value="외부의뢰" selected="selected">외부의뢰</option>
+																	</c:when>
+																	<c:otherwise>
+																		<option value="외부의뢰">외부의뢰</option>
+																	</c:otherwise>
+																</c:choose>
+															</select>
+														</div>
+													</div>
 												</div>
 											</div>
 										</div>
-										<!-- 담당 부서 -->
-										<div class="col-md-5">
-											<div class="row">
-												<div class="col-md-12" style="padding-bottom: 5px;">
-													<span>관리부서</span>
-												</div>
-												<div class="col-md-12" style="padding-bottom: 10px;">
-													<select class="custom-select" id="DIVISION_NAME"
-														name="DIVISION_NAME">
-														<option value="">모두 보기</option>
-														<option value="입학취업처">입학취업처</option>
-														<option value="교무학생처">교무학생처</option>
-														<option value="행정지원처">행정지원처</option>
-														<option value="대학발전운영실">대학발전운영실</option>
-														<option value="산학협력처">산학협력처</option>
-													</select>
-												</div>
-											</div>
-										</div>
+
 										<!-- 활용 사업 -->
-										<div class="col-md-7" style="padding-bottom: 5px;">
+										<div class="col-md-6" style="padding-bottom: 5px;">
 											<div class="row">
 												<div class="col-md-12" style="padding-bottom: 5px;">
 													<span>활용 사업</span>
 												</div>
-												<div class="col-md-4"
+												<div class="col-md-12"
 													style="padding: 5px; padding-left: 15px;">
 													<div class="custom-control custom-checkbox">
-														<input type="checkbox"
-															class="custom-control-input cuscheck" value=1
-															name="IS_BEST" id="customCheck1"> <label
-															class="custom-control-label" for="customCheck1">
+														<c:choose>
+															<c:when test="${1==dto.IS_BEST}">
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_BEST" id="customCheck1" checked="checked">
+															</c:when>
+															<c:otherwise>
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_BEST" id="customCheck1">
+															</c:otherwise>
+														</c:choose>
+														<label class="custom-control-label" for="customCheck1">
 															<a class="btn btn-primary rounded-circle btn-circle"
 															style="width: 25px; height: 25px;"
 															href="javascript:void(0)"></a> 대학중장기 발전계획 BEST
 														</label>
 													</div>
 												</div>
-												<div class="col-md-4"
+												<div class="col-md-12"
 													style="padding: 5px; padding-left: 15px;">
 
 													<div class="custom-control custom-checkbox">
-														<input type="checkbox"
-															class="custom-control-input cuscheck" value=1
-															name="IS_AGENCY" id="customCheck2"> <label
-															class="custom-control-label" for="customCheck2">
+														<c:choose>
+															<c:when test="${1==dto.IS_AGENCY}">
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_AGENCY" id="customCheck2" checked="checked">
+															</c:when>
+															<c:otherwise>
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_AGENCY" id="customCheck2">
+															</c:otherwise>
+														</c:choose>
+														<label class="custom-control-label" for="customCheck2">
 															<a class="btn btn-danger rounded-circle btn-circle "
 															style="width: 25px; height: 25px;"
 															href="javascript:void(0)"></a> 기관평가인증
 														</label>
 													</div>
 												</div>
-												<div class="col-md-4"
+												<div class="col-md-12"
 													style="padding: 5px; padding-left: 15px;">
 													<div class="custom-control custom-checkbox">
-														<input type="checkbox"
-															class="custom-control-input cuscheck" value=1
-															name="IS_AHA" id="customCheck3"> <label
-															class="custom-control-label" for="customCheck3">
+														<c:choose>
+															<c:when test="${1==dto.IS_AHA}">
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_AHA" id="customCheck3" checked="checked">
+															</c:when>
+															<c:otherwise>
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_AHA" id="customCheck3">
+															</c:otherwise>
+														</c:choose>
+														<label class="custom-control-label" for="customCheck3">
 															<a class="btn btn-warning rounded-circle btn-circle "
 															style="width: 25px; height: 25px;"
 															href="javascript:void(0)"></a> 혁신지원 AHA
 														</label>
 													</div>
 												</div>
-												<div class="col-md-4"
+												<div class="col-md-12"
 													style="padding: 5px; padding-left: 15px;">
 													<div class="custom-control custom-checkbox">
-														<input type="checkbox"
-															class="custom-control-input cuscheck" value=1
-															name="IS_LINC" id="customCheck4"> <label
-															class="custom-control-label" for="customCheck4">
+														<c:choose>
+															<c:when test="${1==dto.IS_LINC}">
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_LINC" id="customCheck4" checked="checked">
+															</c:when>
+															<c:otherwise>
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_LINC" id="customCheck4">
+															</c:otherwise>
+														</c:choose>
+														<label class="custom-control-label" for="customCheck4">
 															<a class="btn btn-success rounded-circle btn-circle "
 															style="width: 25px; height: 25px;"
 															href="javascript:void(0)"></a> 사회맞춤형 LINC+
 														</label>
 													</div>
 												</div>
-												<div class="col-md-4"
+												<div class="col-md-12"
 													style="padding: 5px; padding-left: 15px;">
 													<div class="custom-control custom-checkbox">
-														<input type="checkbox"
-															class="custom-control-input cuscheck" value=1
-															name="IS_TYPE3" id="customCheck5"> <label
-															class="custom-control-label" for="customCheck5">
+														<c:choose>
+															<c:when test="${1==dto.IS_TYPE3}">
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_TYPE3" id="customCheck5" checked="checked">
+															</c:when>
+															<c:otherwise>
+																<input type="checkbox"
+																	class="custom-control-input cuscheck" value=1
+																	name="IS_TYPE3" id="customCheck5">
+															</c:otherwise>
+														</c:choose>
+														<label class="custom-control-label" for="customCheck5">
 															<a class="btn btn-secondary rounded-circle btn-circle "
 															style="width: 25px; height: 25px;"
 															href="javascript:void(0)"></a> 3유형
 														</label>
 													</div>
-												</div>
-											</div>
-										</div>
-										<!-- 수집 방법 -->
-										<div class="col-md-5" style="padding-bottom: 5px;">
-											<div class="row">
-												<div class="col-md-12" style="padding-bottom: 5px;">
-													<span>수집방법</span>
-												</div>
-												<div class="col-md-12" style="padding-bottom: 10px;">
-													<select class="custom-select" id="COL_METHOD"
-														name="COL_METHOD">
-														<option value="">수집방법 선택</option>
-														<option value="정보공시">정보공시</option>
-														<option value="대학자료">대학자료</option>
-														<option value="대학자료">외부의뢰</option>
-													</select>
 												</div>
 											</div>
 										</div>

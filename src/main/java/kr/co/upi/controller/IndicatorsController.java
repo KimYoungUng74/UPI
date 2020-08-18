@@ -77,8 +77,8 @@ public class IndicatorsController {
 	public ModelAndView indicators_writeOk(IndicatorsDTO dto, Locale locale, Model model, HttpSession session) {
 
 		ModelAndView mav = new ModelAndView();
-		dto.setUSER_ID("9703007");
-		dto.setUSER_NAME("관리자");
+		dto.setUSER_ID(session.getAttribute("USER_ID").toString());
+		dto.setUSER_NAME(session.getAttribute("USER_NAME").toString());
 		dto.setACTION_CODE(1);
 
 		System.out.println(dto);
@@ -110,8 +110,8 @@ public class IndicatorsController {
 	public ModelAndView indicators_modifyOk(IndicatorsDTO dto, Locale locale, Model model, HttpSession session) {
 
 		ModelAndView mav = new ModelAndView();
-		dto.setUSER_ID("9703007");
-		dto.setUSER_NAME("관리자");
+		dto.setUSER_ID(session.getAttribute("USER_ID").toString());
+		dto.setUSER_NAME(session.getAttribute("USER_NAME").toString());
 		dto.setACTION_CODE(2);
 		System.out.println(dto);
 
@@ -120,7 +120,13 @@ public class IndicatorsController {
 			System.out.println("에러");
 		}
 
-		mav = setIndicatorsList(mav);
+		dto = indicatorsSer.selectOne(dto);
+		List<RecordDTO> recordDTOs = resultSer.selectListIncd(dto.getINDICATORS_NUM());
+		System.out.println(recordDTOs.get(0));
+		System.out.println(dto);
+		mav.addObject("dto", dto);
+		mav.addObject("recordDTO", recordDTOs.get(0));
+		mav.setViewName("report_view/reportWrite");
 		return mav;
 	}
 
@@ -129,8 +135,8 @@ public class IndicatorsController {
 	public ModelAndView indicators_delete(IndicatorsDTO dto, Locale locale, Model model, HttpSession session) {
 
 		ModelAndView mav = new ModelAndView();
-		dto.setUSER_ID("9703007");
-		dto.setUSER_NAME("관리자");
+		dto.setUSER_ID(session.getAttribute("USER_ID").toString());
+		dto.setUSER_NAME(session.getAttribute("USER_NAME").toString());
 		dto.setACTION_CODE(3);
 		dto.setIS_USE(1);
 		System.out.println(dto);
@@ -164,8 +170,8 @@ public class IndicatorsController {
 	public ModelAndView report_write_ok(@RequestParam("IS_NEGATIVE") int IS_NEGATIVE, RecordDTO dto, Locale locale, Model model, HttpSession session) {
 
 		ModelAndView mav = new ModelAndView();
-		dto.setUSER_ID("9703007");
-		dto.setUSER_NAME("관리자");
+		dto.setUSER_ID(session.getAttribute("USER_ID").toString());
+		dto.setUSER_NAME(session.getAttribute("USER_NAME").toString());
 		dto.setACTION_CODE(1);
 		System.out.println(IS_NEGATIVE);
 		dto.setACHIEVE_VAL(setACHIEVE(dto.getPRESENT_VAL(), dto.getTARGET_VAL(),IS_NEGATIVE));
@@ -185,8 +191,8 @@ public class IndicatorsController {
 	@RequestMapping(value = "gradeModify.mg")
 	public ModelAndView gradeModify(Locale local, GradeDTO dto, HttpServletRequest request, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
-		dto.setUSER_ID("9703007");
-		dto.setUSER_NAME("관리자");
+		dto.setUSER_ID(session.getAttribute("USER_ID").toString());
+		dto.setUSER_NAME(session.getAttribute("USER_NAME").toString());
 		dto.setACTION_CODE(2);
 		if (indicatorsSer.modifyGrade(dto) != 1) {
 			mav.addObject("msg", "DB_ERROR");

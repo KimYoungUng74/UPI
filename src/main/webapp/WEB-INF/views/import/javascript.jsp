@@ -36,3 +36,6 @@
 	src="<c:url value='/resources/template/dist/js/pages/dashboards/dashboard1.min.js'/>"></script>
 <script src="http://code.highcharts.com/highcharts.js"></script>
 	<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<!--This page plugins -->
+    <script src="<c:url value='/resources/template/assets/extra-libs/datatables.net/js/jquery.dataTables.min.js'/>"></script>
+    <script src="<c:url value='/resources/template/dist/js/pages/datatable/datatable-basic.init.js'/>"></script>

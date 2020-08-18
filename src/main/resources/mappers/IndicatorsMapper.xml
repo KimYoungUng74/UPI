@@ -11,7 +11,8 @@
 		FROM
 		INDICATORS_TB
 		WHERE (INDICATORS_NUM, RECORD_DATE) IN (
-    		SELECT INDICATORS_NUM, MAX(RECORD_DATE) FROM INDICATORS_TB GROUP BY INDICATORS_NUM
+		SELECT INDICATORS_NUM, MAX(RECORD_DATE) FROM INDICATORS_TB GROUP BY
+		INDICATORS_NUM
 		)
 		AND IS_USE = 0
 		ORDER BY INDICATORS_NUM
@@ -20,33 +21,35 @@
 	<!-- 카테고리 선택 지표 리스트 보기 -->
 	<select id="IndicatorsListKategorie"
 		parameterType="IndicatorsDTO" resultType="IndicatorsDTO">
-		SELECT 
-			CONTROL_NUM,
-			INDICATORS_NUM,
-			INDICATORS_NAME,
-			IS_BEST,
-			IS_AGENCY,
-			IS_AHA,
-			IS_LINC,
-			IS_TYPE3,
-			ELEMENTS,
-			COL_METHOD,
-			EVAL_METHOD,
-			EVAL_STANDARD,
-			DIVISION_NAME,
-			TARGET_VAL,
-			FORMULA,
-			IS_NEGATIVE,
-			IS_USE,
-			USER_ID,
-			USER_NAME,
-			ACTION_CODE,
-			(SELECT MAX(RECORD_DATE) FROM RECORD_TB WHERE INDICATORS_NUM = ind.INDICATORS_NUM GROUP BY INDICATORS_NUM) RECORD_DATE
+		SELECT
+		CONTROL_NUM,
+		INDICATORS_NUM,
+		INDICATORS_NAME,
+		IS_BEST,
+		IS_AGENCY,
+		IS_AHA,
+		IS_LINC,
+		IS_TYPE3,
+		ELEMENTS,
+		COL_METHOD,
+		EVAL_METHOD,
+		EVAL_STANDARD,
+		DIVISION_NAME,
+		TARGET_VAL,
+		FORMULA,
+		IS_NEGATIVE,
+		IS_USE,
+		USER_ID,
+		USER_NAME,
+		ACTION_CODE,
+		(SELECT MAX(RECORD_DATE) FROM RECORD_TB WHERE INDICATORS_NUM =
+		ind.INDICATORS_NUM GROUP BY INDICATORS_NUM) RECORD_DATE
 		FROM
 		INDICATORS_TB ind
 		WHERE (INDICATORS_NUM, RECORD_DATE) IN (
-    		SELECT INDICATORS_NUM, MAX(RECORD_DATE) FROM INDICATORS_TB GROUP BY INDICATORS_NUM
-		) 
+		SELECT INDICATORS_NUM, MAX(RECORD_DATE) FROM INDICATORS_TB GROUP BY
+		INDICATORS_NUM
+		)
 		<if test="IS_BEST == 1">
 			AND IS_BEST = #{IS_BEST}
 		</if>
@@ -68,189 +71,212 @@
 		<if test="INDICATORS_NAME != ''">
 			AND INDICATORS_NAME like '%'||#{INDICATORS_NAME}||'%'
 		</if>
-		
+
 		AND IS_USE = 0
 		ORDER BY INDICATORS_NUM
 	</select>
-	
+
 	<!-- 특정 지표 보기 -->
 	<select id="IndicatorsOne" parameterType="IndicatorsDTO"
 		resultType="IndicatorsDTO">
-		SELECT * 
+		SELECT *
 		FROM
 		INDICATORS_TB
 		where (INDICATORS_NUM, RECORD_DATE) in (
-    		select INDICATORS_NUM, max(RECORD_DATE) from INDICATORS_TB group by INDICATORS_NUM
+		select INDICATORS_NUM, max(RECORD_DATE) from INDICATORS_TB group by
+		INDICATORS_NUM
 		) AND INDICATORS_NUM =#{INDICATORS_NUM}
 	</select>
 
 	<!-- 현재 등급기준 보기 -->
-	<select id="NowGradeSelect"
-		resultType="GradeDTO">
+	<select id="NowGradeSelect" resultType="GradeDTO">
 		SELECT *
 		FROM
 		GRADE_TB
 		where (RECORD_DATE) in (
-    		select max(RECORD_DATE) from GRADE_TB
+		select max(RECORD_DATE) from GRADE_TB
 		)
 	</select>
 
 	<!-- 현재 등급기준 변경 -->
 	<insert id="GradeModify" parameterType="GradeDTO">
-		INSERT INTO GRADE_TB(GRADE_NUM,
-			A_GRADE,
-			B_GRADE,
-			D_GRADE,
-			A_MEASURE,
-			B_MEASURE,
-			D_MEASURE,
-			USER_ID,
-			USER_NAME,
-			ACTION_CODE,
-			RECORD_DATE)
+		INSERT INTO
+		GRADE_TB(GRADE_NUM,
+		A_GRADE,
+		B_GRADE,
+		D_GRADE,
+		A_MEASURE,
+		B_MEASURE,
+		D_MEASURE,
+		USER_ID,
+		USER_NAME,
+		ACTION_CODE,
+		RECORD_DATE)
 		VALUES (GRADE_NUM.nextval,
-			#{A_GRADE}, 
-			#{B_GRADE},
-			#{D_GRADE},
-			#{A_MEASURE},
-			#{B_MEASURE},
-			#{D_MEASURE},
-			#{USER_ID},
-			#{USER_NAME},
-			#{ACTION_CODE},
-			sysdate)
+		#{A_GRADE},
+		#{B_GRADE},
+		#{D_GRADE},
+		#{A_MEASURE},
+		#{B_MEASURE},
+		#{D_MEASURE},
+		#{USER_ID},
+		#{USER_NAME},
+		#{ACTION_CODE},
+		sysdate)
 	</insert>
-	
+
 	<!-- 새 지표 등록 -->
 	<insert id="Indicators_write" parameterType="IndicatorsDTO">
-		INSERT INTO INDICATORS_TB(CONTROL_NUM,
-			INDICATORS_NUM,
-			INDICATORS_NAME,
-			IS_BEST,
-			IS_AGENCY,
-			IS_AHA,
-			IS_LINC,
-			IS_TYPE3,
-			ELEMENTS,
-			COL_METHOD,
-			EVAL_METHOD,
-			EVAL_STANDARD,
-			DIVISION_NAME,
-			TARGET_VAL,
-			FORMULA,
-			IS_NEGATIVE,
-			IS_USE,
-			USER_ID,
-			USER_NAME,
-			ACTION_CODE,
-			RECORD_DATE)
+		INSERT INTO
+		INDICATORS_TB(CONTROL_NUM,
+		INDICATORS_NUM,
+		INDICATORS_NAME,
+		IS_BEST,
+		IS_AGENCY,
+		IS_AHA,
+		IS_LINC,
+		IS_TYPE3,
+		ELEMENTS,
+		COL_METHOD,
+		EVAL_METHOD,
+		EVAL_STANDARD,
+		DIVISION_NAME,
+		TARGET_VAL,
+		FORMULA,
+		IS_NEGATIVE,
+		IS_USE,
+		USER_ID,
+		USER_NAME,
+		ACTION_CODE,
+		RECORD_DATE)
 		VALUES (CONTROL_NUM.nextval,
-			INDICATORS_NUM.nextval,
-			#{INDICATORS_NAME},
-			#{IS_BEST},
-			#{IS_AGENCY},
-			#{IS_AHA},
-			#{IS_LINC},
-			#{IS_TYPE3},
-			#{ELEMENTS},
-			#{COL_METHOD},
-			#{EVAL_METHOD},
-			#{EVAL_STANDARD},
-			#{DIVISION_NAME},
-			#{TARGET_VAL},
-			#{FORMULA},
-			#{IS_NEGATIVE},
-			0,
-			#{USER_ID},
-			#{USER_NAME},
-			#{ACTION_CODE},
-			sysdate)
+		INDICATORS_NUM.nextval,
+		#{INDICATORS_NAME},
+		#{IS_BEST},
+		#{IS_AGENCY},
+		#{IS_AHA},
+		#{IS_LINC},
+		#{IS_TYPE3},
+		#{ELEMENTS},
+		#{COL_METHOD},
+		#{EVAL_METHOD},
+		#{EVAL_STANDARD},
+		#{DIVISION_NAME},
+		#{TARGET_VAL},
+		#{FORMULA},
+		#{IS_NEGATIVE},
+		0,
+		#{USER_ID},
+		#{USER_NAME},
+		#{ACTION_CODE},
+		sysdate)
 	</insert>
-	
-	
+
+
 
 	<!-- 지표 변경 -->
 	<insert id="Indicators_modify" parameterType="IndicatorsDTO">
-		INSERT INTO INDICATORS_TB(CONTROL_NUM,
-			INDICATORS_NUM,
-			INDICATORS_NAME,
-			IS_BEST,
-			IS_AGENCY,
-			IS_AHA,
-			IS_LINC,
-			IS_TYPE3,
-			ELEMENTS,
-			COL_METHOD,
-			EVAL_METHOD,
-			EVAL_STANDARD,
-			DIVISION_NAME,
-			TARGET_VAL,
-			FORMULA,
-			IS_NEGATIVE,
-			IS_USE,
-			USER_ID,
-			USER_NAME,
-			ACTION_CODE,
-			RECORD_DATE)
+		INSERT INTO
+		INDICATORS_TB(CONTROL_NUM,
+		INDICATORS_NUM,
+		INDICATORS_NAME,
+		IS_BEST,
+		IS_AGENCY,
+		IS_AHA,
+		IS_LINC,
+		IS_TYPE3,
+		ELEMENTS,
+		COL_METHOD,
+		EVAL_METHOD,
+		EVAL_STANDARD,
+		DIVISION_NAME,
+		TARGET_VAL,
+		FORMULA,
+		IS_NEGATIVE,
+		IS_USE,
+		USER_ID,
+		USER_NAME,
+		ACTION_CODE,
+		RECORD_DATE)
 		VALUES (CONTROL_NUM.nextval,
-			#{INDICATORS_NUM},
-			#{INDICATORS_NAME},
-			#{IS_BEST},
-			#{IS_AGENCY},
-			#{IS_AHA},
-			#{IS_LINC},
-			#{IS_TYPE3},
-			#{ELEMENTS},
-			#{COL_METHOD},
-			#{EVAL_METHOD},
-			#{EVAL_STANDARD},
-			#{DIVISION_NAME},
-			#{TARGET_VAL},
-			#{FORMULA},
-			#{IS_NEGATIVE},
-			0,
-			#{USER_ID},
-			#{USER_NAME},
-			#{ACTION_CODE},
-			sysdate)
-	</insert>
-	
-	<!-- 보고서 작성 -->
-	<insert id="Report_write" parameterType="RecordDTO">
-		INSERT INTO RECORD_TB(RECORD_NUM,
-			INDICATORS_NUM,
-			INDICATORS_NAME,
-			IS_BEST,
-			IS_AGENCY,
-			IS_AHA,
-			IS_LINC,
-			IS_TYPE3,
-			TARGET_VAL,
-			ELEMENT_VAL,
-			PRESENT_VAL,
-			GRADE,
-			ACHIEVE_VAL,
-			USER_ID,
-			USER_NAME,
-			ACTION_CODE,
-			RECORD_DATE)
-		VALUES (RECORD_NUM.nextval,
-			#{INDICATORS_NUM},
-			#{INDICATORS_NAME},
-			#{IS_BEST},
-			#{IS_AGENCY},
-			#{IS_AHA},
-			#{IS_LINC},
-			#{IS_TYPE3},
-			#{TARGET_VAL},
-			#{ELEMENT_VAL},
-			#{PRESENT_VAL},
-			#{GRADE},
-			#{ACHIEVE_VAL},
-			#{USER_ID},
-			#{USER_NAME},
-			#{ACTION_CODE},
-			sysdate)
+		#{INDICATORS_NUM},
+		#{INDICATORS_NAME},
+		#{IS_BEST},
+		#{IS_AGENCY},
+		#{IS_AHA},
+		#{IS_LINC},
+		#{IS_TYPE3},
+		#{ELEMENTS},
+		#{COL_METHOD},
+		#{EVAL_METHOD},
+		#{EVAL_STANDARD},
+		#{DIVISION_NAME},
+		#{TARGET_VAL},
+		#{FORMULA},
+		#{IS_NEGATIVE},
+		0,
+		#{USER_ID},
+		#{USER_NAME},
+		#{ACTION_CODE},
+		sysdate)
 	</insert>
 
+	<!-- 보고서 작성 -->
+	<insert id="Report_write" parameterType="RecordDTO">
+		INSERT INTO
+		RECORD_TB(RECORD_NUM,
+		INDICATORS_NUM,
+		INDICATORS_NAME,
+		IS_BEST,
+		IS_AGENCY,
+		IS_AHA,
+		IS_LINC,
+		IS_TYPE3,
+		TARGET_VAL,
+		PRESENT_VAL,
+		GRADE,
+		ACHIEVE_VAL,
+		USER_ID,
+		USER_NAME,
+		ACTION_CODE,
+		RECORD_DATE)
+		VALUES (RECORD_NUM.nextval,
+		#{INDICATORS_NUM},
+		#{INDICATORS_NAME},
+		#{IS_BEST},
+		#{IS_AGENCY},
+		#{IS_AHA},
+		#{IS_LINC},
+		#{IS_TYPE3},
+		#{TARGET_VAL},
+		#{PRESENT_VAL},
+		#{GRADE},
+		#{ACHIEVE_VAL},
+		#{USER_ID},
+		#{USER_NAME},
+		#{ACTION_CODE},
+		sysdate)
+	</insert>
+
+	<!-- 로그 지표 리스트 보기 -->
+	<select id="selectIndiLog" resultType="IndicatorsDTO">
+		SELECT *
+		FROM
+		INDICATORS_TB
+		ORDER BY RECORD_DATE DESC
+	</select>
+	<!-- 로그 보고서 보기 -->
+	<select id="selectRecordLog" resultType="RecordDTO">
+		SELECT *
+		FROM
+		RECORD_TB
+		ORDER BY RECORD_DATE DESC
+	</select>
+	<!-- 로그 등급 보기 -->
+	<select id="selectGradeLog" resultType="GradeDTO">
+		SELECT *
+		FROM
+		GRADE_TB
+		ORDER BY RECORD_DATE DESC
+	</select>
 </mapper>

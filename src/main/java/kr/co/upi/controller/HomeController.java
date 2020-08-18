@@ -30,9 +30,6 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 	@Autowired
-	TestService testSer;
-	
-	@Autowired
 	IndicatorsService indcSer;
 	
 	@Autowired
@@ -109,16 +106,6 @@ public class HomeController {
 		model.addAttribute("BUSINESS_TYPE3",BUSINESS_TYPE3);
 		
 		return "index";
-	}
-
-	@RequestMapping(value = "test.do")
-	public ModelAndView test(Locale locale, Model model) {
-
-		System.out.println(testSer.DBTest());
-
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("home");
-		return mav;
 	}
 
 }

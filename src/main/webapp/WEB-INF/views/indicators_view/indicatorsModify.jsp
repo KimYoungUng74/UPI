@@ -101,15 +101,10 @@
 				<div class="row">
 					<div class="col-7 align-self-center">
 						<h3
-							class="page-title text-truncate text-dark font-weight-medium mb-1">성과지표
-							관리</h3>
-						<div class="d-flex align-items-center">
-							<nav aria-label="breadcrumb">
-								<ol class="breadcrumb m-0 p-0">
-									<li class="breadcrumb-item">지표 수정</li>
-								</ol>
-							</nav>
-						</div>
+							class="page-title text-truncate text-dark font-weight-medium mb-1"
+							style="color: #5f76e8; font-weight: bold;">${dto.INDICATORS_NAME}
+							성과지표 수정</h3>
+
 					</div>
 				</div>
 			</div>
@@ -123,90 +118,134 @@
 				<!-- *************************************************************** -->
 				<!-- Start Sales Charts Section -->
 				<!-- *************************************************************** -->
-				<form id="submitform" action="indicators_modifyOk.mg" id="frm" method="post">
-					<input type="hidden" name="INDICATORS_NUM" 
+				<form id="submitform" action="indicators_modifyOk.mg" id="frm"
+					method="post">
+					<input type="hidden" name="INDICATORS_NUM"
 						value="${dto.INDICATORS_NUM}">
 					<div class="row">
 						<div class="col-lg-12 col-md-12">
 							<div class="card">
 								<div class="card-body">
-									<h4>지표 수정   <span style="float:right;"> 최근 등록날짜 : ${dto.RECORD_DATE}</span></h4>
+									<h4>
+										지표 수정 <span style="float: right;"> 최근 등록날짜 :
+											${dto.RECORD_DATE}</span>
+									</h4>
 									<br>
 
 									<div class="row">
 										<!-- 지표명 -->
-										<div class="col-md-7" style="padding-bottom: 5px;">
+										<div class="col-md-6" style="padding-bottom: 5px;">
 											<div class="row">
 												<div class="col-md-12" style="padding-bottom: 5px;">
 													<span>지표명</span>
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
-													<input type="text" name="INDICATORS_NAME" id="INDICATORS_NAME"
-														class="form-control" value="${dto.INDICATORS_NAME}">
+													<input type="text" name="INDICATORS_NAME"
+														id="INDICATORS_NAME" class="form-control"
+														value="${dto.INDICATORS_NAME}">
+												</div>
+												<!-- 담당 부서 -->
+												<div class="col-md-6">
+													<div class="row">
+														<div class="col-md-12" style="padding-bottom: 5px;">
+															<span>관리부서</span>
+														</div>
+														<div class="col-md-12" style="padding-bottom: 10px;">
+															<select class="custom-select" id="DIVISION_NAME"
+																name="DIVISION_NAME">
+																<option value="">모두 보기</option>
+																<c:choose>
+																	<c:when test="${dto.DIVISION_NAME eq '입학취업처'}">
+																		<option value="입학취업처" selected="selected">입학취업처</option>
+																	</c:when>
+																	<c:otherwise>
+																		<option value="입학취업처">입학취업처</option>
+																	</c:otherwise>
+																</c:choose>
+																<c:choose>
+																	<c:when test="${dto.DIVISION_NAME eq '교무학생처'}">
+																		<option value="교무학생처" selected="selected">교무학생처</option>
+																	</c:when>
+																	<c:otherwise>
+																		<option value="교무학생처">교무학생처</option>
+																	</c:otherwise>
+																</c:choose>
+																<c:choose>
+																	<c:when test="${dto.DIVISION_NAME eq '행정지원처'}">
+																		<option value="행정지원처" selected="selected">행정지원처</option>
+																	</c:when>
+																	<c:otherwise>
+																		<option value="행정지원처">행정지원처</option>
+																	</c:otherwise>
+																</c:choose>
+																<c:choose>
+																	<c:when test="${dto.DIVISION_NAME eq '대학발전운영실'}">
+																		<option value="대학발전운영실" selected="selected">대학발전운영실</option>
+																	</c:when>
+																	<c:otherwise>
+																		<option value="대학발전운영실">대학발전운영실</option>
+																	</c:otherwise>
+																</c:choose>
+																<c:choose>
+																	<c:when test="${dto.DIVISION_NAME eq '산학협력처'}">
+																		<option value="산학협력처" selected="selected">산학협력처</option>
+																	</c:when>
+																	<c:otherwise>
+																		<option value="산학협력처">산학협력처</option>
+																	</c:otherwise>
+																</c:choose>
+															</select>
+														</div>
+													</div>
+												</div>
+												<!-- 수집 방법 -->
+												<div class="col-md-6" style="padding-bottom: 5px;">
+													<div class="row">
+														<div class="col-md-12" style="padding-bottom: 5px;">
+															<span>수집방법</span>
+														</div>
+														<div class="col-md-12" style="padding-bottom: 10px;">
+															<select class="custom-select" id="COL_METHOD"
+																name="COL_METHOD">
+																<option value="">수집방법 선택</option>
+																<c:choose>
+																	<c:when test="${dto.COL_METHOD eq '정보공시'}">
+																		<option value="정보공시" selected="selected">정보공시</option>
+																	</c:when>
+																	<c:otherwise>
+																		<option value="정보공시">정보공시</option>
+																	</c:otherwise>
+																</c:choose>
+																<c:choose>
+																	<c:when test="${dto.COL_METHOD eq '대학자료'}">
+																		<option value="대학자료" selected="selected">대학자료</option>
+																	</c:when>
+																	<c:otherwise>
+																		<option value="대학자료">대학자료</option>
+																	</c:otherwise>
+																</c:choose>
+																<c:choose>
+																	<c:when test="${dto.COL_METHOD eq '외부의뢰'}">
+																		<option value="외부의뢰" selected="selected">외부의뢰</option>
+																	</c:when>
+																	<c:otherwise>
+																		<option value="외부의뢰">외부의뢰</option>
+																	</c:otherwise>
+																</c:choose>
+															</select>
+														</div>
+													</div>
 												</div>
 											</div>
 										</div>
-										<!-- 담당 부서 -->
-										<div class="col-md-5">
-											<div class="row">
-												<div class="col-md-12" style="padding-bottom: 5px;">
-													<span>관리부서</span>
-												</div>
-												<div class="col-md-12" style="padding-bottom: 10px;">
-													<select class="custom-select" id="DIVISION_NAME"
-														name="DIVISION_NAME">
-														<option value="">모두 보기</option>
-														<c:choose>
-															<c:when test="${dto.DIVISION_NAME eq '입학취업처'}">
-																<option value="입학취업처" selected="selected">입학취업처</option>
-															</c:when>
-															<c:otherwise>
-																<option value="입학취업처">입학취업처</option>
-															</c:otherwise>
-														</c:choose>
-														<c:choose>
-															<c:when test="${dto.DIVISION_NAME eq '교무학생처'}">
-																<option value="교무학생처" selected="selected">교무학생처</option>
-															</c:when>
-															<c:otherwise>
-																<option value="교무학생처">교무학생처</option>
-															</c:otherwise>
-														</c:choose>
-														<c:choose>
-															<c:when test="${dto.DIVISION_NAME eq '행정지원처'}">
-																<option value="행정지원처" selected="selected">행정지원처</option>
-															</c:when>
-															<c:otherwise>
-																<option value="행정지원처">행정지원처</option>
-															</c:otherwise>
-														</c:choose>
-														<c:choose>
-															<c:when test="${dto.DIVISION_NAME eq '대학발전운영실'}">
-																<option value="대학발전운영실" selected="selected">대학발전운영실</option>
-															</c:when>
-															<c:otherwise>
-																<option value="대학발전운영실">대학발전운영실</option>
-															</c:otherwise>
-														</c:choose>
-														<c:choose>
-															<c:when test="${dto.DIVISION_NAME eq '산학협력처'}">
-																<option value="산학협력처" selected="selected">산학협력처</option>
-															</c:when>
-															<c:otherwise>
-																<option value="산학협력처">산학협력처</option>
-															</c:otherwise>
-														</c:choose>
-													</select>
-												</div>
-											</div>
-										</div>
+
 										<!-- 활용 사업 -->
-										<div class="col-md-7" style="padding-bottom: 5px;">
+										<div class="col-md-6" style="padding-bottom: 5px;">
 											<div class="row">
 												<div class="col-md-12" style="padding-bottom: 5px;">
 													<span>활용 사업</span>
 												</div>
-												<div class="col-md-4"
+												<div class="col-md-12"
 													style="padding: 5px; padding-left: 15px;">
 													<div class="custom-control custom-checkbox">
 														<c:choose>
@@ -228,7 +267,7 @@
 														</label>
 													</div>
 												</div>
-												<div class="col-md-4"
+												<div class="col-md-12"
 													style="padding: 5px; padding-left: 15px;">
 
 													<div class="custom-control custom-checkbox">
@@ -251,7 +290,7 @@
 														</label>
 													</div>
 												</div>
-												<div class="col-md-4"
+												<div class="col-md-12"
 													style="padding: 5px; padding-left: 15px;">
 													<div class="custom-control custom-checkbox">
 														<c:choose>
@@ -273,7 +312,7 @@
 														</label>
 													</div>
 												</div>
-												<div class="col-md-4"
+												<div class="col-md-12"
 													style="padding: 5px; padding-left: 15px;">
 													<div class="custom-control custom-checkbox">
 														<c:choose>
@@ -295,7 +334,7 @@
 														</label>
 													</div>
 												</div>
-												<div class="col-md-4"
+												<div class="col-md-12"
 													style="padding: 5px; padding-left: 15px;">
 													<div class="custom-control custom-checkbox">
 														<c:choose>
@@ -319,44 +358,7 @@
 												</div>
 											</div>
 										</div>
-										<!-- 수집 방법 -->
-										<div class="col-md-5" style="padding-bottom: 5px;">
-											<div class="row">
-												<div class="col-md-12" style="padding-bottom: 5px;">
-													<span>수집방법</span>
-												</div>
-												<div class="col-md-12" style="padding-bottom: 10px;">
-													<select class="custom-select" id="COL_METHOD"
-														name="COL_METHOD">
-														<option value="">수집방법 선택</option>
-														<c:choose>
-															<c:when test="${dto.COL_METHOD eq '정보공시'}">
-																<option value="정보공시" selected="selected">정보공시</option>
-															</c:when>
-															<c:otherwise>
-																<option value="정보공시">정보공시</option>
-															</c:otherwise>
-														</c:choose>
-														<c:choose>
-															<c:when test="${dto.COL_METHOD eq '대학자료'}">
-																<option value="대학자료" selected="selected">대학자료</option>
-															</c:when>
-															<c:otherwise>
-																<option value="대학자료">대학자료</option>
-															</c:otherwise>
-														</c:choose>
-														<c:choose>
-															<c:when test="${dto.COL_METHOD eq '외부의뢰'}">
-																<option value="외부의뢰" selected="selected">외부의뢰</option>
-															</c:when>
-															<c:otherwise>
-																<option value="외부의뢰">외부의뢰</option>
-															</c:otherwise>
-														</c:choose>
-													</select>
-												</div>
-											</div>
-										</div>
+
 										<!-- 목표 값 -->
 										<div class="col-md-2" style="padding-bottom: 5px;">
 											<div class="row">
@@ -365,7 +367,8 @@
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
 													<input type="text" class="form-control"
-														value="${dto.TARGET_VAL}" style="text-align: right;" name="TARGET_VAL" id="TARGET_VAL">
+														value="${dto.TARGET_VAL}" style="text-align: right;"
+														name="TARGET_VAL" id="TARGET_VAL">
 												</div>
 											</div>
 										</div>
@@ -406,8 +409,8 @@
 													<span>평가기준</span>
 												</div>
 												<div class="col-md-12" style="padding-bottom: 10px;">
-													<input type="text" class="form-control"
-														id="EVAL_STANDARD" name="EVAL_STANDARD" value="${dto.EVAL_STANDARD}">
+													<input type="text" class="form-control" id="EVAL_STANDARD"
+														name="EVAL_STANDARD" value="${dto.EVAL_STANDARD}">
 												</div>
 											</div>
 										</div>
@@ -430,13 +433,13 @@
 														</c:choose>
 														<c:choose>
 															<c:when test="${dto.IS_NEGATIVE == 1}">
-																<option value=1 selected="selected" >Negative</option>
+																<option value=1 selected="selected">Negative</option>
 															</c:when>
 															<c:otherwise>
 																<option value=1>Negative</option>
 															</c:otherwise>
 														</c:choose>
-														
+
 													</select>
 												</div>
 											</div>
@@ -445,10 +448,10 @@
 										<div class="col-md-12" style="padding-bottom: 5px;">
 											<div class="row">
 												<div class="col-md-5" style="padding-bottom: 5px;">
-													<span>요소 리스트 </span>
+													<span>평가 항목</span>
 												</div>
 												<div class="col-md-7" style="padding-bottom: 5px;">
-													<span>요소 입력</span>
+													<span>항목 입력</span>
 												</div>
 												<div class="col-md-5" style="padding-bottom: 10px;">
 													<input type="text" class="form-control" readonly="readonly"
@@ -496,8 +499,8 @@
 														type="button" style="float: left; margin-left: 5px;">지표
 														사용중지</button>
 													<button class="btn btn-primary waves-effect waves-light"
-														type="button" id="submit_btn" style="float: right; margin-left: 5px;">지표
-														수정</button>
+														type="button" id="submit_btn"
+														style="float: right; margin-left: 5px;">지표 수정</button>
 													<button onclick="history.back(-1);"
 														class="btn btn-light waves-effect waves-light"
 														type="button" style="float: right;">뒤로가기</button>
@@ -729,7 +732,7 @@
 						var newMySkill = oldMySkill.split(',');
 						for ( var i in newMySkill) {
 							if ($('#input_ele').val() == newMySkill[i]) {
-								alert("이미 등록된 요소입니다.");
+								alert("이미 등록된 항목입니다.");
 								return;
 							}
 						}
@@ -744,7 +747,7 @@
 		$('#delEleBtn').click(
 				function() {
 					if ($('#ELEMENTS').val() == "") {
-						alert("제거할 요소가 없습니다.");
+						alert("제거할 항목이 없습니다.");
 					} else {
 						var oldELEMENTS = $('#ELEMENTS').val();
 						var newELEMENTS = oldELEMENTS.split(',');
@@ -771,7 +774,7 @@
 		$('#formulaReg')
 				.click(
 						function() {
-							var str = "<div class=\"col-md-12\"style=\"padding-bottom: 15px; text-align: center;\"><span>산출식 요소 </span></div>";
+							var str = "<div class=\"col-md-12\"style=\"padding-bottom: 15px; text-align: center;\"><span>평가 항목 </span></div>";
 							$(".FORMULA_Dialog").html(str);
 							str = "";
 							var ELEMENTS = $('#ELEMENTS').val();

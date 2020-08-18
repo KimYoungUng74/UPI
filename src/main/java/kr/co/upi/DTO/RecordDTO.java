@@ -13,7 +13,6 @@ public class RecordDTO {
 	private int IS_LINC;			//사회맞춤형 LINC+
 	private int IS_TYPE3;			//3유형
 	private String TARGET_VAL;		//목표 값
-    private String ELEMENT_VAL;		//요소 값
 	private String PRESENT_VAL;		//현재 값
 	private String GRADE;			//등급
 	private String ACHIEVE_VAL;		//달성도
@@ -101,16 +100,6 @@ public class RecordDTO {
 	public void setRECORD_DATE(Date rECORD_DATE) {
 		RECORD_DATE = rECORD_DATE;
 	}
-	
-	
-	public String getELEMENT_VAL() {
-		return ELEMENT_VAL;
-	}
-	public void setELEMENT_VAL(String eLEMENT_VAL) {
-		ELEMENT_VAL = eLEMENT_VAL;
-	}
-	
-	
 	public String getUSER_ID() {
 		return USER_ID;
 	}
@@ -129,15 +118,14 @@ public class RecordDTO {
 	public void setACTION_CODE(int aCTION_CODE) {
 		ACTION_CODE = aCTION_CODE;
 	}
-	
 	@Override
 	public String toString() {
 		return "RecordDTO [RECORD_NUM=" + RECORD_NUM + ", INDICATORS_NUM=" + INDICATORS_NUM + ", INDICATORS_NAME="
 				+ INDICATORS_NAME + ", IS_BEST=" + IS_BEST + ", IS_AGENCY=" + IS_AGENCY + ", IS_AHA=" + IS_AHA
-				+ ", IS_LINC=" + IS_LINC + ", IS_TYPE3=" + IS_TYPE3 + ", TARGET_VAL=" + TARGET_VAL + ", ELEMENT_VAL="
-				+ ELEMENT_VAL + ", PRESENT_VAL=" + PRESENT_VAL + ", GRADE=" + GRADE + ", ACHIEVE_VAL=" + ACHIEVE_VAL
-				+ ", RECORD_DATE=" + RECORD_DATE + "]";
+				+ ", IS_LINC=" + IS_LINC + ", IS_TYPE3=" + IS_TYPE3 + ", TARGET_VAL=" + TARGET_VAL + ", PRESENT_VAL="
+				+ PRESENT_VAL + ", GRADE=" + GRADE + ", ACHIEVE_VAL=" + ACHIEVE_VAL + ", USER_ID=" + USER_ID
+				+ ", USER_NAME=" + USER_NAME + ", ACTION_CODE=" + ACTION_CODE + ", RECORD_DATE=" + RECORD_DATE + "]";
 	}
-
+	
 	
 }

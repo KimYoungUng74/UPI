@@ -1,13 +1,10 @@
 package kr.co.upi.controller;
 
-import java.text.DateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.co.upi.DTO.GradeDTO;
 import kr.co.upi.DTO.IndicatorsDTO;
 import kr.co.upi.DTO.RecordDTO;
 import kr.co.upi.Service.IndicatorsService;
-import kr.co.upi.Service.ResultService;
-import kr.co.upi.Service.TestService;
+
 
 /**
  * Handles requests for the application home page.
@@ -27,26 +24,81 @@ import kr.co.upi.Service.TestService;
 @Controller
 public class LogController {
 
-	private static final Logger logger = LoggerFactory.getLogger(LogController.class);
-
-	@Autowired
-	TestService testSer;
-	
 	@Autowired
 	IndicatorsService indcSer;
-	
-	@Autowired
-	ResultService resultSer;
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 
-	@RequestMapping(value = "log_view.lo")
-	public ModelAndView log_view(Locale locale, Model model) {
+	// 로그 리스트 페이지
+	@RequestMapping(value = "log_view.lo", produces = "application/text; charset=utf8")
+	public ModelAndView log_view(Locale locale, Model model, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
+		mav = go_log_list(mav);
+		return mav;
+	}
+	
+	// 지표 되돌리기
+	@RequestMapping(value = "log_back_indicator.lo", method = RequestMethod.POST, produces = "application/text; charset=utf8")
+	public ModelAndView log_back_indicator(IndicatorsDTO dto,Locale locale, Model model, HttpSession session) {
+		ModelAndView mav = new ModelAndView();
+		dto.setUSER_ID(session.getAttribute("USER_ID").toString());
+		dto.setUSER_NAME(session.getAttribute("USER_NAME").toString());
+		dto.setACTION_CODE(4);
+
+		if (1 != indcSer.indicators_write(dto)) {
+			mav.addObject("msg", "DB_ERROR");
+			System.out.println("에러");
+		}
+		
+		mav = go_log_list(mav);
+		return mav;
+	}
+	
+	// 보고서 되돌리기
+	@RequestMapping(value = "log_back_report.lo", method = RequestMethod.POST, produces = "application/text; charset=utf8")
+	public ModelAndView log_back_report(RecordDTO dto, Locale locale, Model model, HttpSession session) {
+		ModelAndView mav = new ModelAndView();
+		dto.setUSER_ID(session.getAttribute("USER_ID").toString());
+		dto.setUSER_NAME(session.getAttribute("USER_NAME").toString());
+		dto.setACTION_CODE(4);
+
+		if (1 != indcSer.report_write(dto)) {
+			mav.addObject("msg", "DB_ERROR");
+			System.out.println("에러");
+		}
+		mav = go_log_list(mav);
+		return mav;
+	}
+	
+	// 등급 되돌리기
+	@RequestMapping(value = "log_back_grade.lo", method = RequestMethod.POST, produces = "application/text; charset=utf8")
+	public ModelAndView log_back_grade(GradeDTO dto, Locale locale, Model model, HttpSession session) {
+		ModelAndView mav = new ModelAndView();
+		dto.setUSER_ID(session.getAttribute("USER_ID").toString());
+		dto.setUSER_NAME(session.getAttribute("USER_NAME").toString());
+		dto.setACTION_CODE(4);
+
+		if (indcSer.modifyGrade(dto) != 1) {
+			mav.addObject("msg", "DB_ERROR");
+			System.out.println("에러");
+		}
+		mav = go_log_list(mav);
+		return mav;
+	}
+	
+	ModelAndView go_log_list(ModelAndView mav) {
+		List<IndicatorsDTO> indiDto = indcSer.selectIndiLog();
+		List<RecordDTO> recordDto = indcSer.selectRecordLog();
+		List<GradeDTO> gradeDto = indcSer.selectGradeLog();
+		
+		mav.addObject("indiDto", indiDto);
+		mav.addObject("recordDto", recordDto);
+		mav.addObject("gradeDto", gradeDto);
 		mav.setViewName("log/logList");
 		return mav;
 	}
+
 
 }
