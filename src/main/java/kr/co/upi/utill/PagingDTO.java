@@ -2,14 +2,14 @@ package kr.co.upi.utill;
 
 public class PagingDTO {
 
-	private int nowPage; // ?˜„?¬?˜?´ì§?
-	private int startPage; // ?‹œ?‘?˜?´ì§?
-	private int endPage; // ??˜?´ì§?
-	private int total; // ê²Œì‹œê¸? ì´? ê°??ˆ˜
-	private int cntPerPage; // ?˜?´ì§??‹¹ ê¸? ê°??ˆ˜
-	private int lastPage; // ë§ˆì?ë§‰í˜?´ì§?
-	private int start; // SQL?— ?“¸ start
-	private int end; // SQL?— ?“¸ end
+	private int nowPage; // í˜„ì¬í˜ì´ì§€
+	private int startPage; // ì‹œì‘í˜ì´ì§€
+	private int endPage; // ëí˜ì´ì§€
+	private int total; // ê²Œì‹œê¸€ ì´ ê°¯ìˆ˜
+	private int cntPerPage; // í˜ì´ì§€ë‹¹ ê¸€ ê°¯ìˆ˜
+	private int lastPage; // ë§ˆì§€ë§‰í˜ì´ì§€
+	private int start; // SQLì— ì“¸ start
+	private int end; // SQLì— ì“¸ end
 	
 	private int cntPage = 5;
 	
@@ -26,12 +26,12 @@ public class PagingDTO {
 		calcStartEnd(getNowPage(), getCntPerPage());
 	}
 	
-	// ë§ˆì?ë§? ?˜?´ì§? ê³„ì‚°
+	// ë§ˆì§€ë§‰ í˜ì´ì§€ ê³„ì‚°
 	public void calcLastPage(int total, int cntPerPage) {
 		setLastPage((int) Math.ceil((double)total / (double)cntPerPage));
 	}
 	
-	// ?‹œ?‘, ? ?˜?´ì§? ê³„ì‚°
+	// ì‹œì‘, ë í˜ì´ì§€ ê³„ì‚°
 	public void calcStartEndPage(int nowPage, int cntPage) {
 		setEndPage(((int)Math.ceil((double)nowPage / (double)cntPage)) * cntPage);
 		if (getLastPage() < getEndPage()) {
@@ -43,7 +43,7 @@ public class PagingDTO {
 		}
 	}
 	
-	// DB?— ?‚¬?š©?•  start, end ê°?
+	// DBì— ì‚¬ìš©í•  start, end ê°’
 	public void calcStartEnd(int nowPage, int cntPerPage) {
 		setEnd(nowPage * cntPerPage);
 		setStart(getEnd() - cntPerPage + 1);

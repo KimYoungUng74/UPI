@@ -125,4 +125,14 @@ public class UserController {
 		}
 		return mav;
 	}
+	
+	@RequestMapping(value = "userReg.do")
+	public ModelAndView userReg(Locale locale, Model model,HttpServletRequest request,HttpServletResponse response, UserDTO dto) throws IOException {
+		
+		ModelAndView mav = new ModelAndView();
+		
+		mav.setViewName("user/userReg");
+		return mav;
+	}
+	
 }
