@@ -313,12 +313,12 @@
 													<c:forEach var="gradeDto" items="${gradeDto}">
 														<tr>
 															<td>${gradeDto.GRADE_NUM}</td>
-															<td>${gradeDto.A_GRADE}</td>
-															<td>${gradeDto.B_GRADE}</td>
-															<td>${gradeDto.D_GRADE}</td>
-															<td>${gradeDto.A_MEASURE}</td>
-															<td>${gradeDto.B_MEASURE}</td>
-															<td>${gradeDto.D_MEASURE}</td>
+															<td>${gradeDto.a_GRADE}</td>
+															<td>${gradeDto.b_GRADE}</td>
+															<td>${gradeDto.d_GRADE}</td>
+															<td>${gradeDto.a_MEASURE}</td>
+															<td>${gradeDto.b_MEASURE}</td>
+															<td>${gradeDto.d_MEASURE}</td>
 															<td>${gradeDto.USER_ID}</td>
 															<td>${gradeDto.USER_NAME}</td>
 															<c:choose>
