@@ -181,13 +181,13 @@
                                 <div class="tab-content">
                                     <div class="tab-pane show active" id="all_tab">
 										<div class="table-responsive">
-											<h3>전체 현황 ${StatusDTOs.size()}개</h3>
 											<div class="d-flex align-items-center row">
 												<c:forEach var="dto" items="${StatusDTOs}">
-													<div class="col-md-4" style="padding: 30px;">
+													<div class="col-md-4">
 														<div class="card">
-															<div class="card-body">
-																<span class="font-20">[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}</span>
+															<div class="card-body bigcard" onclick="location.href='report_view.do?INDICATORS_NUM=${dto.INDICATORS_NUM}'">
+																<span class="badge badge-info">${dto.INDICATORS_NUM}</span>&nbsp;&nbsp;&nbsp;
+																<span class="font-16">${dto.INDICATORS_NAME}</span>
 																<div class="row mb-3 align-items-center mt-1 mt-5">
 																	<div class="col-4 text-right">
 																		<span class="font-14">목표값</span>
@@ -202,7 +202,7 @@
 																			class="mb-0 font-14 text-dark font-weight-medium">${Double.parseDouble(dto.TARGET_VAL.split(":")[0])}</span>
 																	</div>
 																</div>
-																<div class="row mb-3 align-items-center mt-1 mt-5">
+																<div class="row mb-3 align-items-center">
 																	<div class="col-4 text-right">
 																		<span class="font-14">현재값</span>
 																	</div>
@@ -229,13 +229,13 @@
 									</div>
 									<div class="tab-pane" id="BEST_tab">
 										<div class="table-responsive">
-											<h3>중장기 발전계획 BEST 현황 ${BEST.size()}개</h3>
 											<div class="d-flex align-items-center row">
 												<c:forEach var="dto" items="${BEST}">
-													<div class="col-md-4" style="padding: 30px;">
+													<div class="col-md-4"">
 														<div class="card">
-															<div class="card-body">
-																<span class="font-20">[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}</span>
+															<div class="card-body bigcard" onclick="location.href='report_view.do?INDICATORS_NUM=${dto.INDICATORS_NUM}'">
+																<span class="badge badge-info">${dto.INDICATORS_NUM}</span>&nbsp;&nbsp;&nbsp;
+																<span class="font-16">${dto.INDICATORS_NAME}</span>
 																<div class="row mb-3 align-items-center mt-1 mt-5">
 																	<div class="col-4 text-right">
 																		<span class="font-14">목표값</span>
@@ -250,7 +250,7 @@
 																			class="mb-0 font-14 text-dark font-weight-medium">${Double.parseDouble(dto.TARGET_VAL.split(":")[0])}</span>
 																	</div>
 																</div>
-																<div class="row mb-3 align-items-center mt-1 mt-5">
+																<div class="row mb-3 align-items-center">
 																	<div class="col-4 text-right">
 																		<span class="font-14">현재값</span>
 																	</div>
@@ -277,13 +277,13 @@
 									</div>
 									<div class="tab-pane" id="AGENCY_tab">
 										<div class="table-responsive">
-											<h3>기관평가인증 현황 ${AGENCY.size()}개</h3>
 											<div class="d-flex align-items-center row">
 												<c:forEach var="dto" items="${AGENCY}">
-													<div class="col-md-4" style="padding: 30px;">
+													<div class="col-md-4">
 														<div class="card">
-															<div class="card-body">
-																<span class="font-20">[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}</span>
+															<div class="card-body bigcard" onclick="location.href='report_view.do?INDICATORS_NUM=${dto.INDICATORS_NUM}'">
+																<span class="badge badge-info">${dto.INDICATORS_NUM}</span>&nbsp;&nbsp;&nbsp;
+																<span class="font-16">${dto.INDICATORS_NAME}</span>
 																<div class="row mb-3 align-items-center mt-1 mt-5">
 																	<div class="col-4 text-right">
 																		<span class="font-14">목표값</span>
@@ -298,7 +298,7 @@
 																			class="mb-0 font-14 text-dark font-weight-medium">${Double.parseDouble(dto.TARGET_VAL.split(":")[0])}</span>
 																	</div>
 																</div>
-																<div class="row mb-3 align-items-center mt-1 mt-5">
+																<div class="row mb-3 align-items-center">
 																	<div class="col-4 text-right">
 																		<span class="font-14">현재값</span>
 																	</div>
@@ -325,13 +325,13 @@
 									</div>
 									<div class="tab-pane" id="AHA_tab">
 										<div class="table-responsive">
-											<h3>혁신지원 AHA 현황 ${AHA.size()}개</h3>
 											<div class="d-flex align-items-center row">
 												<c:forEach var="dto" items="${AHA}">
-													<div class="col-md-4" style="padding: 30px;">
+													<div class="col-md-4">
 														<div class="card">
-															<div class="card-body">
-																<span class="font-20">[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}</span>
+															<div class="card-body bigcard" onclick="location.href='report_view.do?INDICATORS_NUM=${dto.INDICATORS_NUM}'">
+																<span class="badge badge-info">${dto.INDICATORS_NUM}</span>&nbsp;&nbsp;&nbsp;
+																<span class="font-16">${dto.INDICATORS_NAME}</span>
 																<div class="row mb-3 align-items-center mt-1 mt-5">
 																	<div class="col-4 text-right">
 																		<span class="font-14">목표값</span>
@@ -346,7 +346,7 @@
 																			class="mb-0 font-14 text-dark font-weight-medium">${Double.parseDouble(dto.TARGET_VAL.split(":")[0])}</span>
 																	</div>
 																</div>
-																<div class="row mb-3 align-items-center mt-1 mt-5">
+																<div class="row mb-3 align-items-center">
 																	<div class="col-4 text-right">
 																		<span class="font-14">현재값</span>
 																	</div>
@@ -373,13 +373,13 @@
 									</div>
 									<div class="tab-pane" id="LINC_tab">
 										<div class="table-responsive">
-											<h3>사회맞춤형 LINC+ 현황 ${LINC.size()}개</h3>
 											<div class="d-flex align-items-center row">
 												<c:forEach var="dto" items="${LINC}">
-													<div class="col-md-4" style="padding: 30px;">
+													<div class="col-md-4">
 														<div class="card">
-															<div class="card-body">
-																<span class="font-20">[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}</span>
+															<div class="card-body bigcard" onclick="location.href='report_view.do?INDICATORS_NUM=${dto.INDICATORS_NUM}'">
+																<span class="badge badge-info">${dto.INDICATORS_NUM}</span>&nbsp;&nbsp;&nbsp;
+																<span class="font-16">${dto.INDICATORS_NAME}</span>
 																<div class="row mb-3 align-items-center mt-1 mt-5">
 																	<div class="col-4 text-right">
 																		<span class="font-14">목표값</span>
@@ -394,7 +394,7 @@
 																			class="mb-0 font-14 text-dark font-weight-medium">${Double.parseDouble(dto.TARGET_VAL.split(":")[0])}</span>
 																	</div>
 																</div>
-																<div class="row mb-3 align-items-center mt-1 mt-5">
+																<div class="row mb-3 align-items-center">
 																	<div class="col-4 text-right">
 																		<span class="font-14">현재값</span>
 																	</div>
@@ -421,13 +421,13 @@
 									</div>
 									<div class="tab-pane" id="TYPE3_tab">
 										<div class="table-responsive">
-											<h3>3유형 현황 ${TYPE3.size()}개</h3>
 											<div class="d-flex align-items-center row">
 												<c:forEach var="dto" items="${TYPE3}">
-													<div class="col-md-4" style="padding: 30px;">
+													<div class="col-md-4">
 														<div class="card">
-															<div class="card-body">
-																<span class="font-20">[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}</span>
+															<div class="card-body bigcard" onclick="location.href='report_view.do?INDICATORS_NUM=${dto.INDICATORS_NUM}'">
+																<span class="badge badge-info">${dto.INDICATORS_NUM}</span>&nbsp;&nbsp;&nbsp;
+																<span class="font-16">${dto.INDICATORS_NAME}</span>
 																<div class="row mb-3 align-items-center mt-1 mt-5">
 																	<div class="col-4 text-right">
 																		<span class="font-14">목표값</span>
@@ -442,7 +442,7 @@
 																			class="mb-0 font-14 text-dark font-weight-medium">${Double.parseDouble(dto.TARGET_VAL.split(":")[0])}</span>
 																	</div>
 																</div>
-																<div class="row mb-3 align-items-center mt-1 mt-5">
+																<div class="row mb-3 align-items-center">
 																	<div class="col-4 text-right">
 																		<span class="font-14">현재값</span>
 																	</div>
@@ -510,6 +510,13 @@
     </body>
 	<c:import url="../import/javascript.jsp" charEncoding="UTF-8" >
     </c:import>
-    
+    <script>
+    $( ".bigcard" ).hover(function() {
+	    $(this).addClass('alert-primary').css('cursor', 'pointer'); 
+	  }, function() {
+	    $(this).removeClass('alert-primary');
+	  }
+	);
+    </script>
     
 </html>
