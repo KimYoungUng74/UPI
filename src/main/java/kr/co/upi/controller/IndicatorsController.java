@@ -157,10 +157,9 @@ public class IndicatorsController {
 
 		dto = indicatorsSer.selectOne(dto);
 		List<RecordDTO> recordDTOs = resultSer.selectListIncd(dto.getINDICATORS_NUM());
-		System.out.println(recordDTOs.get(0));
+		if(recordDTOs.size() != 0) mav.addObject("recordDTO", recordDTOs.get(0));
 		System.out.println(dto);
 		mav.addObject("dto", dto);
-		mav.addObject("recordDTO", recordDTOs.get(0));
 		mav.setViewName("report_view/reportWrite");
 		return mav;
 	}
