@@ -263,6 +263,25 @@
 															<div class="card-body bigcard" onclick="location.href='report_view.do?INDICATORS_NUM=${dto.INDICATORS_NUM}'">
 																<span class="badge badge-info">${dto.INDICATORS_NUM}</span>&nbsp;&nbsp;&nbsp;
 																<span class="font-16">${dto.INDICATORS_NAME}</span>
+																<c:choose>
+																	<c:when test="${dto.GRADE=='A'}">
+																		<button type="button"
+																			class="btn btn-success btn-circle btn-sm"
+																			style="float: right;">A</button>
+																	</c:when>
+																	<c:when test="${dto.GRADE=='B'}">
+																		<button type="button"
+																			class="btn btn-primary btn-circle btn-sm"
+																			style="float: right;">B</button>
+																	</c:when>
+																	<c:when test="${dto.GRADE=='D'}">
+																		<button type="button"
+																			class="btn btn-warning btn-circle btn-sm"
+																			style="float: right;">D</button>
+																	</c:when>
+																	<c:otherwise>
+																	</c:otherwise>
+																</c:choose>
 																<div class="row mb-3 align-items-center mt-1 mt-5">
 																	<div class="col-4 text-right">
 																		<span class="font-14">목표값</span>
@@ -284,7 +303,14 @@
 																	<div class="col-6">
 																		<div class="progress">
 																			<div
-																			class="progress-bar progress-bar-striped progress-bar-animated"
+																			<c:choose>
+																				<c:when test="${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0]) >= 1}">
+																					class="progress-bar progress-bar-striped bg-success"
+																				</c:when>
+																				<c:otherwise>
+																					class="progress-bar progress-bar-striped progress-bar-animated"
+																				</c:otherwise>
+																			</c:choose>
 																			role="progressbar" aria-valuenow="75"
 																			aria-valuemin="0" aria-valuemax="100"
 																			style="width: ${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0])*100}%"></div>
@@ -311,6 +337,25 @@
 															<div class="card-body bigcard" onclick="location.href='report_view.do?INDICATORS_NUM=${dto.INDICATORS_NUM}'">
 																<span class="badge badge-info">${dto.INDICATORS_NUM}</span>&nbsp;&nbsp;&nbsp;
 																<span class="font-16">${dto.INDICATORS_NAME}</span>
+																<c:choose>
+																	<c:when test="${dto.GRADE=='A'}">
+																		<button type="button"
+																			class="btn btn-success btn-circle btn-sm"
+																			style="float: right;">A</button>
+																	</c:when>
+																	<c:when test="${dto.GRADE=='B'}">
+																		<button type="button"
+																			class="btn btn-primary btn-circle btn-sm"
+																			style="float: right;">B</button>
+																	</c:when>
+																	<c:when test="${dto.GRADE=='D'}">
+																		<button type="button"
+																			class="btn btn-warning btn-circle btn-sm"
+																			style="float: right;">D</button>
+																	</c:when>
+																	<c:otherwise>
+																	</c:otherwise>
+																</c:choose>
 																<div class="row mb-3 align-items-center mt-1 mt-5">
 																	<div class="col-4 text-right">
 																		<span class="font-14">목표값</span>
@@ -332,7 +377,14 @@
 																	<div class="col-6">
 																		<div class="progress">
 																			<div
-																			class="progress-bar progress-bar-striped progress-bar-animated"
+																			<c:choose>
+																				<c:when test="${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0]) >= 1}">
+																					class="progress-bar progress-bar-striped bg-success"
+																				</c:when>
+																				<c:otherwise>
+																					class="progress-bar progress-bar-striped progress-bar-animated"
+																				</c:otherwise>
+																			</c:choose>
 																			role="progressbar" aria-valuenow="75"
 																			aria-valuemin="0" aria-valuemax="100"
 																			style="width: ${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0])*100}%"></div>
@@ -359,6 +411,25 @@
 															<div class="card-body bigcard" onclick="location.href='report_view.do?INDICATORS_NUM=${dto.INDICATORS_NUM}'">
 																<span class="badge badge-info">${dto.INDICATORS_NUM}</span>&nbsp;&nbsp;&nbsp;
 																<span class="font-16">${dto.INDICATORS_NAME}</span>
+																<c:choose>
+																	<c:when test="${dto.GRADE=='A'}">
+																		<button type="button"
+																			class="btn btn-success btn-circle btn-sm"
+																			style="float: right;">A</button>
+																	</c:when>
+																	<c:when test="${dto.GRADE=='B'}">
+																		<button type="button"
+																			class="btn btn-primary btn-circle btn-sm"
+																			style="float: right;">B</button>
+																	</c:when>
+																	<c:when test="${dto.GRADE=='D'}">
+																		<button type="button"
+																			class="btn btn-warning btn-circle btn-sm"
+																			style="float: right;">D</button>
+																	</c:when>
+																	<c:otherwise>
+																	</c:otherwise>
+																</c:choose>
 																<div class="row mb-3 align-items-center mt-1 mt-5">
 																	<div class="col-4 text-right">
 																		<span class="font-14">목표값</span>
@@ -380,7 +451,14 @@
 																	<div class="col-6">
 																		<div class="progress">
 																			<div
-																			class="progress-bar progress-bar-striped progress-bar-animated"
+																			<c:choose>
+																				<c:when test="${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0]) >= 1}">
+																					class="progress-bar progress-bar-striped bg-success"
+																				</c:when>
+																				<c:otherwise>
+																					class="progress-bar progress-bar-striped progress-bar-animated"
+																				</c:otherwise>
+																			</c:choose>
 																			role="progressbar" aria-valuenow="75"
 																			aria-valuemin="0" aria-valuemax="100"
 																			style="width: ${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0])*100}%"></div>
@@ -407,6 +485,25 @@
 															<div class="card-body bigcard" onclick="location.href='report_view.do?INDICATORS_NUM=${dto.INDICATORS_NUM}'">
 																<span class="badge badge-info">${dto.INDICATORS_NUM}</span>&nbsp;&nbsp;&nbsp;
 																<span class="font-16">${dto.INDICATORS_NAME}</span>
+																<c:choose>
+																	<c:when test="${dto.GRADE=='A'}">
+																		<button type="button"
+																			class="btn btn-success btn-circle btn-sm"
+																			style="float: right;">A</button>
+																	</c:when>
+																	<c:when test="${dto.GRADE=='B'}">
+																		<button type="button"
+																			class="btn btn-primary btn-circle btn-sm"
+																			style="float: right;">B</button>
+																	</c:when>
+																	<c:when test="${dto.GRADE=='D'}">
+																		<button type="button"
+																			class="btn btn-warning btn-circle btn-sm"
+																			style="float: right;">D</button>
+																	</c:when>
+																	<c:otherwise>
+																	</c:otherwise>
+																</c:choose>
 																<div class="row mb-3 align-items-center mt-1 mt-5">
 																	<div class="col-4 text-right">
 																		<span class="font-14">목표값</span>
@@ -428,7 +525,14 @@
 																	<div class="col-6">
 																		<div class="progress">
 																			<div
-																			class="progress-bar progress-bar-striped progress-bar-animated"
+																			<c:choose>
+																				<c:when test="${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0]) >= 1}">
+																					class="progress-bar progress-bar-striped bg-success"
+																				</c:when>
+																				<c:otherwise>
+																					class="progress-bar progress-bar-striped progress-bar-animated"
+																				</c:otherwise>
+																			</c:choose>
 																			role="progressbar" aria-valuenow="75"
 																			aria-valuemin="0" aria-valuemax="100"
 																			style="width: ${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0])*100}%"></div>
@@ -455,6 +559,25 @@
 															<div class="card-body bigcard" onclick="location.href='report_view.do?INDICATORS_NUM=${dto.INDICATORS_NUM}'">
 																<span class="badge badge-info">${dto.INDICATORS_NUM}</span>&nbsp;&nbsp;&nbsp;
 																<span class="font-16">${dto.INDICATORS_NAME}</span>
+																<c:choose>
+																	<c:when test="${dto.GRADE=='A'}">
+																		<button type="button"
+																			class="btn btn-success btn-circle btn-sm"
+																			style="float: right;">A</button>
+																	</c:when>
+																	<c:when test="${dto.GRADE=='B'}">
+																		<button type="button"
+																			class="btn btn-primary btn-circle btn-sm"
+																			style="float: right;">B</button>
+																	</c:when>
+																	<c:when test="${dto.GRADE=='D'}">
+																		<button type="button"
+																			class="btn btn-warning btn-circle btn-sm"
+																			style="float: right;">D</button>
+																	</c:when>
+																	<c:otherwise>
+																	</c:otherwise>
+																</c:choose>
 																<div class="row mb-3 align-items-center mt-1 mt-5">
 																	<div class="col-4 text-right">
 																		<span class="font-14">목표값</span>
@@ -476,7 +599,14 @@
 																	<div class="col-6">
 																		<div class="progress">
 																			<div
-																			class="progress-bar progress-bar-striped progress-bar-animated"
+																			<c:choose>
+																				<c:when test="${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0]) >= 1}">
+																					class="progress-bar progress-bar-striped bg-success"
+																				</c:when>
+																				<c:otherwise>
+																					class="progress-bar progress-bar-striped progress-bar-animated"
+																				</c:otherwise>
+																			</c:choose>
 																			role="progressbar" aria-valuenow="75"
 																			aria-valuemin="0" aria-valuemax="100"
 																			style="width: ${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0])*100}%"></div>
