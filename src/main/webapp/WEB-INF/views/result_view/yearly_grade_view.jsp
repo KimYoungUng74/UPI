@@ -179,8 +179,8 @@
 	                                                <th class="text-center" scope="row">${row}</th>                                           
 	                                                                                  
 	                                                 <c:choose>  
-		                                                <c:when  test="${two_year_ago[status.index].GRADE != null }">                                  
-		                                                	<td class="text-center" id="two_year_ago">${two_year_ago[status.index].GC } (${p_two_year[status.index] }%)</td>
+		                                                <c:when  test="${p_two_year[status.index] != 'NaN' }">                                  
+		                                                	<td class="text-center" id="two_year_ago">${p_two_year_ago[status.index] } (${p_two_year[status.index] }%)</td>
 		                                                </c:when >
 		                                                
 		                                                <c:otherwise>
@@ -189,8 +189,8 @@
 	                                                </c:choose>
 	                                                
 	                                                <c:choose>  
-		                                                <c:when  test="${one_year_ago[status.index].GRADE != null }">                                  
-		                                                	<td class="text-center" id="one_year_ago">${one_year_ago[status.index].GC }  (${p_one_year[status.index] })%</td>
+		                                                <c:when  test="${p_one_year[status.index] != 'NaN' }">                                  
+		                                                	<td class="text-center" id="one_year_ago">${p_one_year_ago[status.index] }  (${p_one_year[status.index] })%</td>
 		                                                </c:when >
 		                                                
 		                                                <c:otherwise>
@@ -199,8 +199,8 @@
 	                                                </c:choose>
 	                                                
 	                                                <c:choose>  
-		                                                <c:when  test="${now_year[status.index].GRADE != null }">                                  
-		                                                	<td class="text-center" id="now_year">${now_year[status.index].GC} (${p_now[status.index] }%)</td>
+		                                                <c:when  test="${p_now[status.index]!= 'NaN' }">                                  
+		                                                	<td class="text-center" id="now_year">${p_now_year[status.index]} (${p_now[status.index] }%)</td>
 
 		                                                </c:when >
 		                                                

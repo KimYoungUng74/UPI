@@ -116,21 +116,29 @@ public class ResultController {
 		ArrayList<Integer> pGrade = new ArrayList<Integer>();
 		List<GradeDTO> gDto = resultSer.selectResultGradeStandard(); // 평가 등급 기준
 		
+		// 제작년도 퍼센트
 		int pA = 0;
 		int pB = 0;
 		int pD = 0;
 		int pEtc = 0;
 
-		// 제작년도 퍼센트
 		for (int i = 0; i < p_two_year_ago.size(); i++) {
 			pA += p_two_year_ago.get(i).getA();
 			pB += p_two_year_ago.get(i).getB();
 			pD += p_two_year_ago.get(i).getD();
 			pEtc += p_two_year_ago.get(i).getETC();
 		}
+		
+		//실제 등급별 갯수
+		List<Integer> p_two_year_ago1 = new ArrayList<Integer>();
+		p_two_year_ago1.add(pA);
+		p_two_year_ago1.add(pB);
+		p_two_year_ago1.add(pD);
+		p_two_year_ago1.add(pEtc);
 
+		//퍼센트 계산 및 리스트에 담기
 		List<String> p_two_year = cal.calPer(pA, pB, pD, pEtc);
-
+		
 		// 작년도 퍼센트
 		pA = 0;
 		pB = 0;
@@ -144,7 +152,19 @@ public class ResultController {
 			pEtc += p_one_year_ago.get(i).getETC();
 		}
 
+		//실제 등급별 갯수
+		List<Integer> p_one_year_ago1 = new ArrayList<Integer>();
+		p_one_year_ago1.add(pA);
+		p_one_year_ago1.add(pB);
+		p_one_year_ago1.add(pD);
+		p_one_year_ago1.add(pEtc);
+		
+		//퍼센트 계산 및 리스트에 담기
 		List<String> p_one_year = cal.calPer(pA, pB, pD, pEtc);
+		
+		for(int i=0; i<p_one_year.size(); i++) {
+			System.out.println("두번째 " + p_one_year.get(i));
+		}
 
 		// 이번년도 퍼센트
 		pA = 0;
@@ -159,6 +179,14 @@ public class ResultController {
 			pEtc += p_now_year.get(i).getETC();
 		}
 
+		//실제 등급별 갯수
+		List<Integer> p_now_year1 = new ArrayList<Integer>();
+		p_now_year1.add(pA);
+		p_now_year1.add(pB);
+		p_now_year1.add(pD);
+		p_now_year1.add(pEtc);
+		
+		//퍼센트 계산 및 리스트에 담기
 		List<String> p_now = cal.calPer(pA, pB, pD, pEtc);
 
 		ModelAndView mav = new ModelAndView();
@@ -167,6 +195,10 @@ public class ResultController {
 		mav.addObject("now_year", now_year);
 		mav.addObject("one_year_ago", one_year_ago);
 		mav.addObject("two_year_ago", two_year_ago);
+		
+		mav.addObject("p_now_year", p_now_year1);
+		mav.addObject("p_one_year_ago", p_one_year_ago1);
+		mav.addObject("p_two_year_ago", p_two_year_ago1);
 
 		// 년도 등급별총합 등급 표기
 		mav.addObject("year", YEAR);
