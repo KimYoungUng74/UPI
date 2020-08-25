@@ -121,8 +121,6 @@
                             	<div class="col-md-6">
                                 	<span>년도 선택</span>
                                 	<select class="form-control" id="Years" onChange="location.href='status_list_view.do?Years='+value">
-                                			<option value="2022" <c:if test="${Years=='2022'}" >selected="selected"</c:if>>2022</option>
-                                            <option value="2021" <c:if test="${Years=='2021'}" >selected="selected"</c:if>>2021</option>
                                             <option value="2020" <c:if test="${Years=='2020'}" >selected="selected"</c:if>>2020</option>
                                             <option value="2019" <c:if test="${Years=='2019'}" >selected="selected"</c:if>>2019</option>
                                             <option value="2018" <c:if test="${Years=='2018'}" >selected="selected"</c:if>>2018</option>
@@ -144,13 +142,8 @@
                     <div class="col-lg-12" id="all">
                         <div class="card">
                             <div class="card-body">
-                                <h3>전체 현황 ${StatusDTOs.size()}개</h3>
-                                <div class="d-flex align-items-center row">
-                                	<c:forEach var="dto" items="${StatusDTOs}">
-                                	<div class="col-md-4" style="padding: 30px;">
-                                		<div id="${dto.INDICATORS_NAME}_all" class="chart2" style="margin: 0 auto"></div>
-                                	</div>
-                                    </c:forEach>
+                                <div class="d-flex align-items-center">
+                                    <div id="sub1" class="chart2" style="width:1000px;height:${StatusDTOs.size()*200}px; margin: 0 auto"></div>
                                 </div>
                             </div>
                         </div>
@@ -158,13 +151,8 @@
                     <div class="col-lg-12" id="IS_BEST" style="display: none;">
                         <div class="card">
                             <div class="card-body">
-                        		<h3>중장기 발전계획 BEST 현황 ${BEST.size()}개</h3>
-                                <div class="d-flex align-items-center row">
-                                	<c:forEach var="dto" items="${BEST}">
-                                	<div class="col-md-4" style="padding: 30px;">
-                                		<div id="${dto.INDICATORS_NAME}_BEST" class="chart2" style="margin: 0 auto"></div>
-                                	</div>
-                                    </c:forEach>
+                                <div class="d-flex align-items-center">
+                                    <div id="sub2" class="chart2" style="width:1000px;height:${BEST.size()*200}px; margin: 0 auto"></div>
                                 </div>
                             </div>
                         </div>
@@ -172,13 +160,8 @@
                     <div class="col-lg-12" id="IS_AGENCY" style="display: none;">
                         <div class="card">
                             <div class="card-body">
-                        		<h3>기관평가인증 현황 ${AGENCY.size()}개</h3>
-                                <div class="d-flex align-items-center row">
-                                	<c:forEach var="dto" items="${AGENCY}">
-                                	<div class="col-md-4" style="padding: 30px;">
-                                		<div id="${dto.INDICATORS_NAME}_AGENCY" class="chart2" style="margin: 0 auto"></div>
-                                	</div>
-                                    </c:forEach>
+                                <div class="d-flex align-items-center">
+                                    <div id="sub3" class="chart2" style="width:1000px;height:${AGENCY.size()*200}px; margin: 0 auto"></div>
                                 </div>
                             </div>
                         </div>
@@ -186,13 +169,8 @@
                     <div class="col-lg-12" id="IS_AHA" style="display: none;">
                         <div class="card">
                             <div class="card-body">
-                        		<h3>혁신지원 AHA 현황 ${AHA.size()}개</h3>
-                                <div class="d-flex align-items-center row">
-                                	<c:forEach var="dto" items="${AHA}">
-                                	<div class="col-md-4" style="padding: 30px;">
-                                		<div id="${dto.INDICATORS_NAME}_AHA" class="chart2" style="margin: 0 auto"></div>
-                                	</div>
-                                    </c:forEach>
+                                <div class="d-flex align-items-center">
+                                    <div id="sub4" class="chart2" style="width:1000px;height:${AHA.size()*200}px; margin: 0 auto"></div>
                                 </div>
                             </div>
                         </div>
@@ -200,13 +178,8 @@
                     <div class="col-lg-12" id="IS_LINC" style="display: none;">
                         <div class="card">
                             <div class="card-body">
-                            	<h3>사회맞춤형 LINC+ 현황 ${LINC.size()}개</h3>
-                                <div class="d-flex align-items-center row">
-                                	<c:forEach var="dto" items="${LINC}">
-                                	<div class="col-md-4" style="padding: 30px;">
-                                		<div id="${dto.INDICATORS_NAME}_LINC" class="chart2" style="margin: 0 auto"></div>
-                                	</div>
-                                    </c:forEach>
+                                <div class="d-flex align-items-center">
+                                    <div id="sub5" class="chart2" style="width:1000px;height:${LINC.size()*200}px; margin: 0 auto"></div>
                                 </div>
                             </div>
                         </div>
@@ -214,13 +187,8 @@
                     <div class="col-lg-12" id="IS_TYPE3" style="display: none;">
                         <div class="card">
                             <div class="card-body">
-                            	<h3>3유형 현황 ${TYPE3.size()}개</h3>
-                                <div class="d-flex align-items-center row">
-                                	<c:forEach var="dto" items="${TYPE3}">
-                                	<div class="col-md-4" style="padding: 30px;">
-                                		<div id="${dto.INDICATORS_NAME}_TYPE3" class="chart2" style="margin: 0 auto"></div>
-                                	</div>
-                                    </c:forEach>
+                                <div class="d-flex align-items-center">
+                                    <div id="sub6" class="chart2" style="width:1000px;height:${TYPE3.size()*200}px; margin: 0 auto"></div>
                                 </div>
                             </div>
                         </div>
@@ -317,16 +285,20 @@
     });
     </script>
     
-    <c:forEach var="dto" items="${StatusDTOs}">
+    
     <script type="text/javascript">
     	
     	//배열추가
+        var INDICATORS_NAME = new Array(); // 지표명
         var TARGET_VAL= new Array();	   // 목표값
         var PRESENT_VAL = new Array();	   // 현재값
-        TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
-        PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
-        
-    Highcharts.chart('${dto.INDICATORS_NAME}_all', {
+        <c:forEach var="dto" items="${StatusDTOs}">
+        	INDICATORS_NAME.push("${dto.INDICATORS_NAME} [${dto.INDICATORS_NUM}]");
+        	TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
+        	PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
+        </c:forEach>
+    
+    Highcharts.chart('sub1', {
         chart: {
         	plotBorderWidth: null,
             plotShadow: false,
@@ -334,10 +306,10 @@
             
         },
         title: {
-            text: '[${dto.INDICATORS_NUM}]${dto.INDICATORS_NAME}'
+            text: '전체 현황 ${StatusDTOs.size()}개'
         },
         xAxis: {
-            categories: null,
+            categories: INDICATORS_NAME,
             title: {
                 text: null
             },
@@ -375,131 +347,20 @@
     });
                   
     </script>
-    </c:forEach>
-    <c:forEach var="dto" items="${BEST}">
-    <script type="text/javascript">
-    	
-    	//배열추가
-        var TARGET_VAL= new Array();	   // 목표값
-        var PRESENT_VAL = new Array();	   // 현재값
-        TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
-        PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
-    Highcharts.chart('${dto.INDICATORS_NAME}_BEST', {
-        chart: {
-        	plotBorderWidth: null,
-            plotShadow: false,
-            type: 'bar'
-            
-        },
-        title: {
-            text: "[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}"
-        },
-        xAxis: {
-            categories: null,
-            title: {
-                text: null
-            },
-            labels: {
-                style: {
-                   fontWeight: 'bold',
-                   fontSize:'15px'
-                }
-            }
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: null
-            },
-            labels: {
-                overflow: 'justify'
-            }
-        },
-        plotOptions: {
-            bar: {
-            	colors: ['#fdc16a', '#22ca80'],
-                dataLabels: {
-                    enabled: true
-                }
-            }
-        },
-        series: [{
-            name: '목표값',
-            data: TARGET_VAL
-        }, {
-            name: '현재값',
-            data: PRESENT_VAL
-        }]
-    });        
-    </script>
-    </c:forEach>
-    <c:forEach var="dto" items="${AGENCY}">
-    <script type="text/javascript">
-    	
-    	//배열추가
-        var TARGET_VAL= new Array();	   // 목표값
-        var PRESENT_VAL = new Array();	   // 현재값
-        TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
-        PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
-    Highcharts.chart('${dto.INDICATORS_NAME}_AGENCY', {
-        chart: {
-        	plotBorderWidth: null,
-            plotShadow: false,
-            type: 'bar'
-            
-        },
-        title: {
-            text: "[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}"
-        },
-        xAxis: {
-            categories: null,
-            title: {
-                text: null
-            },
-            labels: {
-                style: {
-                   fontWeight: 'bold',
-                   fontSize:'15px'
-                }
-            }
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: null
-            },
-            labels: {
-                overflow: 'justify'
-            }
-        },
-        plotOptions: {
-            bar: {
-            	colors: ['#fdc16a', '#22ca80'],
-                dataLabels: {
-                    enabled: true
-                }
-            }
-        },
-        series: [{
-            name: '목표값',
-            data: TARGET_VAL
-        }, {
-            name: '현재값',
-            data: PRESENT_VAL
-        }]
-    });        
-    </script>
-    </c:forEach>
     
-    <c:forEach var="dto" items="${AHA}">
     <script type="text/javascript">
     	
     	//배열추가
+        var INDICATORS_NAME = new Array(); // 지표명
         var TARGET_VAL= new Array();	   // 목표값
         var PRESENT_VAL = new Array();	   // 현재값
-        TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
-        PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
-    Highcharts.chart('${dto.INDICATORS_NAME}_AHA', {
+        <c:forEach var="bestdto" items="${BEST}">
+        	INDICATORS_NAME.push("${bestdto.INDICATORS_NAME} [${bestdto.INDICATORS_NUM}]");
+        	TARGET_VAL.push(${Double.parseDouble(bestdto.TARGET_VAL.split(":")[0])});
+        	PRESENT_VAL.push(${Double.parseDouble(bestdto.PRESENT_VAL.split(":")[0])});
+        </c:forEach>
+    
+    Highcharts.chart('sub2', {
         chart: {
         	plotBorderWidth: null,
             plotShadow: false,
@@ -507,10 +368,10 @@
             
         },
         title: {
-            text: "[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}"
+            text: '중장기 발전계획 BEST ${BEST.size()}개'
         },
         xAxis: {
-            categories: null,
+            categories: INDICATORS_NAME,
             title: {
                 text: null
             },
@@ -547,17 +408,19 @@
         }]
     });        
     </script>
-    </c:forEach>
-    
-    <c:forEach var="dto" items="${LINC}">
     <script type="text/javascript">
     	
     	//배열추가
+        var INDICATORS_NAME = new Array(); // 지표명
         var TARGET_VAL= new Array();	   // 목표값
         var PRESENT_VAL = new Array();	   // 현재값
-        TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
-        PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
-    Highcharts.chart('${dto.INDICATORS_NAME}_LINC', {
+        <c:forEach var="dto" items="${AGENCY}">
+        	INDICATORS_NAME.push("${dto.INDICATORS_NAME} [${dto.INDICATORS_NUM}]");
+        	TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
+        	PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
+        </c:forEach>
+    
+    Highcharts.chart('sub3', {
         chart: {
         	plotBorderWidth: null,
             plotShadow: false,
@@ -565,10 +428,10 @@
             
         },
         title: {
-            text: "[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}"
+            text: '기간평가 인증 ${AGENCY.size()}개'
         },
         xAxis: {
-            categories: null,
+            categories: INDICATORS_NAME,
             title: {
                 text: null
             },
@@ -605,17 +468,19 @@
         }]
     });        
     </script>
-    </c:forEach>
-    
-    <c:forEach var="dto" items="${TYPE3}">
     <script type="text/javascript">
     	
     	//배열추가
+        var INDICATORS_NAME = new Array(); // 지표명
         var TARGET_VAL= new Array();	   // 목표값
         var PRESENT_VAL = new Array();	   // 현재값
-        TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
-        PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
-    Highcharts.chart('${dto.INDICATORS_NAME}_TYPE3', {
+        <c:forEach var="dto" items="${AHA}">
+        	INDICATORS_NAME.push("${dto.INDICATORS_NAME} [${dto.INDICATORS_NUM}]");
+        	TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
+        	PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
+        </c:forEach>
+    
+    Highcharts.chart('sub4', {
         chart: {
         	plotBorderWidth: null,
             plotShadow: false,
@@ -623,10 +488,10 @@
             
         },
         title: {
-            text: "[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}"
+            text: '혁신지원 AHA ${AHA.size()}개'
         },
         xAxis: {
-            categories: null,
+            categories: INDICATORS_NAME,
             title: {
                 text: null
             },
@@ -663,8 +528,126 @@
         }]
     });        
     </script>
-    </c:forEach>
+    <script type="text/javascript">
+    	
+    	//배열추가
+        var INDICATORS_NAME = new Array(); // 지표명
+        var TARGET_VAL= new Array();	   // 목표값
+        var PRESENT_VAL = new Array();	   // 현재값
+        <c:forEach var="dto" items="${LINC}">
+        	INDICATORS_NAME.push("${dto.INDICATORS_NAME} [${dto.INDICATORS_NUM}]");
+        	TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
+        	PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
+        </c:forEach>
     
+    Highcharts.chart('sub5', {
+        chart: {
+        	plotBorderWidth: null,
+            plotShadow: false,
+            type: 'bar'
+            
+        },
+        title: {
+            text: '사회맞춤형 LINC ${LINC.size()}개'
+        },
+        xAxis: {
+            categories: INDICATORS_NAME,
+            title: {
+                text: null
+            },
+            labels: {
+                style: {
+                   fontWeight: 'bold',
+                   fontSize:'15px'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: null
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        plotOptions: {
+            bar: {
+            	colors: ['#fdc16a', '#22ca80'],
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        series: [{
+            name: '목표값',
+            data: TARGET_VAL
+        }, {
+            name: '현재값',
+            data: PRESENT_VAL
+        }]
+    });        
+    </script>
+    <script type="text/javascript">
+    	
+    	//배열추가
+        var INDICATORS_NAME = new Array(); // 지표명
+        var TARGET_VAL= new Array();	   // 목표값
+        var PRESENT_VAL = new Array();	   // 현재값
+        <c:forEach var="dto" items="${TYPE3}">
+        	INDICATORS_NAME.push("${dto.INDICATORS_NAME} [${dto.INDICATORS_NUM}]");
+        	TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
+        	PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
+        </c:forEach>
+    
+    Highcharts.chart('sub6', {
+        chart: {
+        	plotBorderWidth: null,
+            plotShadow: false,
+            type: 'bar'
+            
+        },
+        title: {
+            text: '제 3유형 ${TYPE3.size()}개'
+        },
+        xAxis: {
+            categories: INDICATORS_NAME,
+            title: {
+                text: null
+            },
+            labels: {
+                style: {
+                   fontWeight: 'bold',
+                   fontSize:'15px'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: null
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        plotOptions: {
+            bar: {
+            	colors: ['#fdc16a', '#22ca80'],
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        series: [{
+            name: '목표값',
+            data: TARGET_VAL
+        }, {
+            name: '현재값',
+            data: PRESENT_VAL
+        }]
+    });        
+    </script>
     <script>
     $('div.chart1').find('.highcharts-color-0').click(function(){
         

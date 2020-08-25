@@ -184,8 +184,8 @@
 												<tbody>
 													<c:forEach var="indiDto" items="${indiDto}">
 														<tr>
-															<td>${indiDto.INDICATORS_NUM}</td>
 															<td>${indiDto.CONTROL_NUM}</td>
+															<td>${indiDto.INDICATORS_NUM}</td>
 															<td>${indiDto.INDICATORS_NAME}</td>
 															<td>${indiDto.IS_BEST}</td>
 															<td>${indiDto.IS_AGENCY}</td>
