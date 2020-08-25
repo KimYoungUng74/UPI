@@ -135,93 +135,343 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
+                            	<ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
+                                    <li class="nav-item">
+                                        <a href="#all_tab" data-toggle="tab" aria-expanded="true" class="nav-link active">
+                                            <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                            <span class="d-none d-lg-block">전체 현황</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#BEST_tab" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                            <span class="d-none d-lg-block">대학중장기 발전계획 BEST</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#AGENCY_tab" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                            <span class="d-none d-lg-block">기관평가인증 현황</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#AHA_tab" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                            <span class="d-none d-lg-block">혁신지원 AHA 현황</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#LINC_tab" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                            <span class="d-none d-lg-block">사회맞춤형 LINC+ 현황</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#TYPE3_tab" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                            <span class="d-none d-lg-block">3유형 현황</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            	
                                 <div class="d-flex align-items-center mb-4">
                                     <div id="container" class="chart1" style="margin: 0 auto"></div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12" id="all">
-                        <div class="card">
-                            <div class="card-body">
-                                <h3>전체 현황 ${StatusDTOs.size()}개</h3>
-                                <div class="d-flex align-items-center row">
-                                	<c:forEach var="dto" items="${StatusDTOs}">
-                                	<div class="col-md-4" style="padding: 30px;">
-                                		<div id="${dto.INDICATORS_NAME}_all" class="chart2" style="margin: 0 auto"></div>
-                                	</div>
-                                    </c:forEach>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12" id="IS_BEST" style="display: none;">
-                        <div class="card">
-                            <div class="card-body">
-                        		<h3>중장기 발전계획 BEST 현황 ${BEST.size()}개</h3>
-                                <div class="d-flex align-items-center row">
-                                	<c:forEach var="dto" items="${BEST}">
-                                	<div class="col-md-4" style="padding: 30px;">
-                                		<div id="${dto.INDICATORS_NAME}_BEST" class="chart2" style="margin: 0 auto"></div>
-                                	</div>
-                                    </c:forEach>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12" id="IS_AGENCY" style="display: none;">
-                        <div class="card">
-                            <div class="card-body">
-                        		<h3>기관평가인증 현황 ${AGENCY.size()}개</h3>
-                                <div class="d-flex align-items-center row">
-                                	<c:forEach var="dto" items="${AGENCY}">
-                                	<div class="col-md-4" style="padding: 30px;">
-                                		<div id="${dto.INDICATORS_NAME}_AGENCY" class="chart2" style="margin: 0 auto"></div>
-                                	</div>
-                                    </c:forEach>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12" id="IS_AHA" style="display: none;">
-                        <div class="card">
-                            <div class="card-body">
-                        		<h3>혁신지원 AHA 현황 ${AHA.size()}개</h3>
-                                <div class="d-flex align-items-center row">
-                                	<c:forEach var="dto" items="${AHA}">
-                                	<div class="col-md-4" style="padding: 30px;">
-                                		<div id="${dto.INDICATORS_NAME}_AHA" class="chart2" style="margin: 0 auto"></div>
-                                	</div>
-                                    </c:forEach>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12" id="IS_LINC" style="display: none;">
-                        <div class="card">
-                            <div class="card-body">
-                            	<h3>사회맞춤형 LINC+ 현황 ${LINC.size()}개</h3>
-                                <div class="d-flex align-items-center row">
-                                	<c:forEach var="dto" items="${LINC}">
-                                	<div class="col-md-4" style="padding: 30px;">
-                                		<div id="${dto.INDICATORS_NAME}_LINC" class="chart2" style="margin: 0 auto"></div>
-                                	</div>
-                                    </c:forEach>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12" id="IS_TYPE3" style="display: none;">
-                        <div class="card">
-                            <div class="card-body">
-                            	<h3>3유형 현황 ${TYPE3.size()}개</h3>
-                                <div class="d-flex align-items-center row">
-                                	<c:forEach var="dto" items="${TYPE3}">
-                                	<div class="col-md-4" style="padding: 30px;">
-                                		<div id="${dto.INDICATORS_NAME}_TYPE3" class="chart2" style="margin: 0 auto"></div>
-                                	</div>
-                                    </c:forEach>
-                                </div>
+                                
+                                <div class="tab-content">
+                                    <div class="tab-pane show active" id="all_tab">
+										<div class="table-responsive">
+											<h3>전체 현황 ${StatusDTOs.size()}개</h3>
+											<div class="d-flex align-items-center row">
+												<c:forEach var="dto" items="${StatusDTOs}">
+													<div class="col-md-4" style="padding: 30px;">
+														<div class="card">
+															<div class="card-body">
+																<span class="font-20">[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}</span>
+																<div class="row mb-3 align-items-center mt-1 mt-5">
+																	<div class="col-4 text-right">
+																		<span class="font-14">목표값</span>
+																	</div>
+																	<div class="col-6">
+																		<div class="progress">
+																			<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																	</div>
+																	<div class="col-2 text-right">
+																		<span
+																			class="mb-0 font-14 text-dark font-weight-medium">${Double.parseDouble(dto.TARGET_VAL.split(":")[0])}</span>
+																	</div>
+																</div>
+																<div class="row mb-3 align-items-center mt-1 mt-5">
+																	<div class="col-4 text-right">
+																		<span class="font-14">현재값</span>
+																	</div>
+																	<div class="col-6">
+																		<div class="progress">
+																			<div
+																			class="progress-bar progress-bar-striped progress-bar-animated"
+																			role="progressbar" aria-valuenow="75"
+																			aria-valuemin="0" aria-valuemax="100"
+																			style="width: ${Double.parseDouble(dto.TARGET_VAL.split(':')[0])/Double.parseDouble(dto.PRESENT_VAL.split(':')[0])*100}%"></div>
+																		</div>
+																	</div>
+																	<div class="col-2 text-right">
+																		<span
+																			class="mb-0 font-14 text-dark font-weight-medium">${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])}</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</c:forEach>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="BEST_tab">
+										<div class="table-responsive">
+											<h3>중장기 발전계획 BEST 현황 ${BEST.size()}개</h3>
+											<div class="d-flex align-items-center row">
+												<c:forEach var="dto" items="${BEST}">
+													<div class="col-md-4" style="padding: 30px;">
+														<div class="card">
+															<div class="card-body">
+																<span class="font-20">[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}</span>
+																<div class="row mb-3 align-items-center mt-1 mt-5">
+																	<div class="col-4 text-right">
+																		<span class="font-14">목표값</span>
+																	</div>
+																	<div class="col-6">
+																		<div class="progress">
+																			<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																	</div>
+																	<div class="col-2 text-right">
+																		<span
+																			class="mb-0 font-14 text-dark font-weight-medium">${Double.parseDouble(dto.TARGET_VAL.split(":")[0])}</span>
+																	</div>
+																</div>
+																<div class="row mb-3 align-items-center mt-1 mt-5">
+																	<div class="col-4 text-right">
+																		<span class="font-14">현재값</span>
+																	</div>
+																	<div class="col-6">
+																		<div class="progress">
+																			<div
+																			class="progress-bar progress-bar-striped progress-bar-animated"
+																			role="progressbar" aria-valuenow="75"
+																			aria-valuemin="0" aria-valuemax="100"
+																			style="width: ${Double.parseDouble(dto.TARGET_VAL.split(':')[0])/Double.parseDouble(dto.PRESENT_VAL.split(':')[0])*100}%"></div>
+																		</div>
+																	</div>
+																	<div class="col-2 text-right">
+																		<span
+																			class="mb-0 font-14 text-dark font-weight-medium">${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])}</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</c:forEach>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="AGENCY_tab">
+										<div class="table-responsive">
+											<h3>기관평가인증 현황 ${AGENCY.size()}개</h3>
+											<div class="d-flex align-items-center row">
+												<c:forEach var="dto" items="${AGENCY}">
+													<div class="col-md-4" style="padding: 30px;">
+														<div class="card">
+															<div class="card-body">
+																<span class="font-20">[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}</span>
+																<div class="row mb-3 align-items-center mt-1 mt-5">
+																	<div class="col-4 text-right">
+																		<span class="font-14">목표값</span>
+																	</div>
+																	<div class="col-6">
+																		<div class="progress">
+																			<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																	</div>
+																	<div class="col-2 text-right">
+																		<span
+																			class="mb-0 font-14 text-dark font-weight-medium">${Double.parseDouble(dto.TARGET_VAL.split(":")[0])}</span>
+																	</div>
+																</div>
+																<div class="row mb-3 align-items-center mt-1 mt-5">
+																	<div class="col-4 text-right">
+																		<span class="font-14">현재값</span>
+																	</div>
+																	<div class="col-6">
+																		<div class="progress">
+																			<div
+																			class="progress-bar progress-bar-striped progress-bar-animated"
+																			role="progressbar" aria-valuenow="75"
+																			aria-valuemin="0" aria-valuemax="100"
+																			style="width: ${Double.parseDouble(dto.TARGET_VAL.split(':')[0])/Double.parseDouble(dto.PRESENT_VAL.split(':')[0])*100}%"></div>
+																		</div>
+																	</div>
+																	<div class="col-2 text-right">
+																		<span
+																			class="mb-0 font-14 text-dark font-weight-medium">${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])}</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</c:forEach>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="AHA_tab">
+										<div class="table-responsive">
+											<h3>혁신지원 AHA 현황 ${AHA.size()}개</h3>
+											<div class="d-flex align-items-center row">
+												<c:forEach var="dto" items="${AHA}">
+													<div class="col-md-4" style="padding: 30px;">
+														<div class="card">
+															<div class="card-body">
+																<span class="font-20">[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}</span>
+																<div class="row mb-3 align-items-center mt-1 mt-5">
+																	<div class="col-4 text-right">
+																		<span class="font-14">목표값</span>
+																	</div>
+																	<div class="col-6">
+																		<div class="progress">
+																			<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																	</div>
+																	<div class="col-2 text-right">
+																		<span
+																			class="mb-0 font-14 text-dark font-weight-medium">${Double.parseDouble(dto.TARGET_VAL.split(":")[0])}</span>
+																	</div>
+																</div>
+																<div class="row mb-3 align-items-center mt-1 mt-5">
+																	<div class="col-4 text-right">
+																		<span class="font-14">현재값</span>
+																	</div>
+																	<div class="col-6">
+																		<div class="progress">
+																			<div
+																			class="progress-bar progress-bar-striped progress-bar-animated"
+																			role="progressbar" aria-valuenow="75"
+																			aria-valuemin="0" aria-valuemax="100"
+																			style="width: ${Double.parseDouble(dto.TARGET_VAL.split(':')[0])/Double.parseDouble(dto.PRESENT_VAL.split(':')[0])*100}%"></div>
+																		</div>
+																	</div>
+																	<div class="col-2 text-right">
+																		<span
+																			class="mb-0 font-14 text-dark font-weight-medium">${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])}</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</c:forEach>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="LINC_tab">
+										<div class="table-responsive">
+											<h3>사회맞춤형 LINC+ 현황 ${LINC.size()}개</h3>
+											<div class="d-flex align-items-center row">
+												<c:forEach var="dto" items="${LINC}">
+													<div class="col-md-4" style="padding: 30px;">
+														<div class="card">
+															<div class="card-body">
+																<span class="font-20">[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}</span>
+																<div class="row mb-3 align-items-center mt-1 mt-5">
+																	<div class="col-4 text-right">
+																		<span class="font-14">목표값</span>
+																	</div>
+																	<div class="col-6">
+																		<div class="progress">
+																			<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																	</div>
+																	<div class="col-2 text-right">
+																		<span
+																			class="mb-0 font-14 text-dark font-weight-medium">${Double.parseDouble(dto.TARGET_VAL.split(":")[0])}</span>
+																	</div>
+																</div>
+																<div class="row mb-3 align-items-center mt-1 mt-5">
+																	<div class="col-4 text-right">
+																		<span class="font-14">현재값</span>
+																	</div>
+																	<div class="col-6">
+																		<div class="progress">
+																			<div
+																			class="progress-bar progress-bar-striped progress-bar-animated"
+																			role="progressbar" aria-valuenow="75"
+																			aria-valuemin="0" aria-valuemax="100"
+																			style="width: ${Double.parseDouble(dto.TARGET_VAL.split(':')[0])/Double.parseDouble(dto.PRESENT_VAL.split(':')[0])*100}%"></div>
+																		</div>
+																	</div>
+																	<div class="col-2 text-right">
+																		<span
+																			class="mb-0 font-14 text-dark font-weight-medium">${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])}</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</c:forEach>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="TYPE3_tab">
+										<div class="table-responsive">
+											<h3>3유형 현황 ${TYPE3.size()}개</h3>
+											<div class="d-flex align-items-center row">
+												<c:forEach var="dto" items="${TYPE3}">
+													<div class="col-md-4" style="padding: 30px;">
+														<div class="card">
+															<div class="card-body">
+																<span class="font-20">[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}</span>
+																<div class="row mb-3 align-items-center mt-1 mt-5">
+																	<div class="col-4 text-right">
+																		<span class="font-14">목표값</span>
+																	</div>
+																	<div class="col-6">
+																		<div class="progress">
+																			<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+																		</div>
+																	</div>
+																	<div class="col-2 text-right">
+																		<span
+																			class="mb-0 font-14 text-dark font-weight-medium">${Double.parseDouble(dto.TARGET_VAL.split(":")[0])}</span>
+																	</div>
+																</div>
+																<div class="row mb-3 align-items-center mt-1 mt-5">
+																	<div class="col-4 text-right">
+																		<span class="font-14">현재값</span>
+																	</div>
+																	<div class="col-6">
+																		<div class="progress">
+																			<div
+																			class="progress-bar progress-bar-striped progress-bar-animated"
+																			role="progressbar" aria-valuenow="75"
+																			aria-valuemin="0" aria-valuemax="100"
+																			style="width: ${Double.parseDouble(dto.TARGET_VAL.split(':')[0])/Double.parseDouble(dto.PRESENT_VAL.split(':')[0])*100}%"></div>
+																		</div>
+																	</div>
+																	<div class="col-2 text-right">
+																		<span
+																			class="mb-0 font-14 text-dark font-weight-medium">${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])}</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</c:forEach>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+                                
+                                
+                                
                             </div>
                         </div>
                     </div>
@@ -260,455 +510,6 @@
     </body>
 	<c:import url="../import/javascript.jsp" charEncoding="UTF-8" >
     </c:import>
-    <script>
-  //사업별 갯수 
-  var pieColors = ['#5F76E8', '#ff4f70', '#fdc16a', '#22ca80', '#6c757d'] ;
-    Highcharts.chart('container', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: '사업별 성과지표 ${Years}'
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                colors: pieColors,
-                dataLabels: {
-                    enabled: false
-                },
-                showInLegend: true
-            }
-        },
-        series: [{
-            name: '비율',
-            colorByPoint: true,
-            data: [{
-                name: 'BEST - ${BEST.size()}개',
-                y: ${BEST.size()},
-                sliced: true,
-                selected: true
-            }, {
-                name: '기관 평가 인증 - ${AGENCY.size()}개',
-                y: ${AGENCY.size()},
-            }, {
-                name: '혁신 지원 AHA - ${AHA.size()}개',
-                y: ${AHA.size()},
-            }, {
-                name: '사회 맞춤형 LINC+ - ${LINC.size()}개',
-                y: ${LINC.size()},
-            },{
-                name: '3유형 - ${TYPE3.size()}개',
-                y: ${TYPE3.size()},
-            }]
-        }]
-    });
-    </script>
     
-    <c:forEach var="dto" items="${StatusDTOs}">
-    <script type="text/javascript">
-    	
-    	//배열추가
-        var TARGET_VAL= new Array();	   // 목표값
-        var PRESENT_VAL = new Array();	   // 현재값
-        TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
-        PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
-        
-    Highcharts.chart('${dto.INDICATORS_NAME}_all', {
-        chart: {
-        	plotBorderWidth: null,
-            plotShadow: false,
-            type: 'bar'
-            
-        },
-        title: {
-            text: '[${dto.INDICATORS_NUM}]${dto.INDICATORS_NAME}'
-        },
-        xAxis: {
-            categories: null,
-            title: {
-                text: null
-            },
-            labels: {
-                style: {
-                   fontWeight: 'bold',
-                   fontSize:'15px'
-                }
-            }
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: null
-            },
-            labels: {
-                overflow: 'justify'
-            }
-        },
-        plotOptions: {
-            bar: {
-            	colors: ['#fdc16a', '#22ca80'],
-                dataLabels: {
-                    enabled: true
-                }
-            }
-        },
-        series: [{
-            name: '목표값',
-            data: TARGET_VAL
-        }, {
-            name: '현재값',
-            data: PRESENT_VAL
-        }]
-    });
-                  
-    </script>
-    </c:forEach>
-    <c:forEach var="dto" items="${BEST}">
-    <script type="text/javascript">
-    	
-    	//배열추가
-        var TARGET_VAL= new Array();	   // 목표값
-        var PRESENT_VAL = new Array();	   // 현재값
-        TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
-        PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
-    Highcharts.chart('${dto.INDICATORS_NAME}_BEST', {
-        chart: {
-        	plotBorderWidth: null,
-            plotShadow: false,
-            type: 'bar'
-            
-        },
-        title: {
-            text: "[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}"
-        },
-        xAxis: {
-            categories: null,
-            title: {
-                text: null
-            },
-            labels: {
-                style: {
-                   fontWeight: 'bold',
-                   fontSize:'15px'
-                }
-            }
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: null
-            },
-            labels: {
-                overflow: 'justify'
-            }
-        },
-        plotOptions: {
-            bar: {
-            	colors: ['#fdc16a', '#22ca80'],
-                dataLabels: {
-                    enabled: true
-                }
-            }
-        },
-        series: [{
-            name: '목표값',
-            data: TARGET_VAL
-        }, {
-            name: '현재값',
-            data: PRESENT_VAL
-        }]
-    });        
-    </script>
-    </c:forEach>
-    <c:forEach var="dto" items="${AGENCY}">
-    <script type="text/javascript">
-    	
-    	//배열추가
-        var TARGET_VAL= new Array();	   // 목표값
-        var PRESENT_VAL = new Array();	   // 현재값
-        TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
-        PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
-    Highcharts.chart('${dto.INDICATORS_NAME}_AGENCY', {
-        chart: {
-        	plotBorderWidth: null,
-            plotShadow: false,
-            type: 'bar'
-            
-        },
-        title: {
-            text: "[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}"
-        },
-        xAxis: {
-            categories: null,
-            title: {
-                text: null
-            },
-            labels: {
-                style: {
-                   fontWeight: 'bold',
-                   fontSize:'15px'
-                }
-            }
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: null
-            },
-            labels: {
-                overflow: 'justify'
-            }
-        },
-        plotOptions: {
-            bar: {
-            	colors: ['#fdc16a', '#22ca80'],
-                dataLabels: {
-                    enabled: true
-                }
-            }
-        },
-        series: [{
-            name: '목표값',
-            data: TARGET_VAL
-        }, {
-            name: '현재값',
-            data: PRESENT_VAL
-        }]
-    });        
-    </script>
-    </c:forEach>
     
-    <c:forEach var="dto" items="${AHA}">
-    <script type="text/javascript">
-    	
-    	//배열추가
-        var TARGET_VAL= new Array();	   // 목표값
-        var PRESENT_VAL = new Array();	   // 현재값
-        TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
-        PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
-    Highcharts.chart('${dto.INDICATORS_NAME}_AHA', {
-        chart: {
-        	plotBorderWidth: null,
-            plotShadow: false,
-            type: 'bar'
-            
-        },
-        title: {
-            text: "[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}"
-        },
-        xAxis: {
-            categories: null,
-            title: {
-                text: null
-            },
-            labels: {
-                style: {
-                   fontWeight: 'bold',
-                   fontSize:'15px'
-                }
-            }
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: null
-            },
-            labels: {
-                overflow: 'justify'
-            }
-        },
-        plotOptions: {
-            bar: {
-            	colors: ['#fdc16a', '#22ca80'],
-                dataLabels: {
-                    enabled: true
-                }
-            }
-        },
-        series: [{
-            name: '목표값',
-            data: TARGET_VAL
-        }, {
-            name: '현재값',
-            data: PRESENT_VAL
-        }]
-    });        
-    </script>
-    </c:forEach>
-    
-    <c:forEach var="dto" items="${LINC}">
-    <script type="text/javascript">
-    	
-    	//배열추가
-        var TARGET_VAL= new Array();	   // 목표값
-        var PRESENT_VAL = new Array();	   // 현재값
-        TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
-        PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
-    Highcharts.chart('${dto.INDICATORS_NAME}_LINC', {
-        chart: {
-        	plotBorderWidth: null,
-            plotShadow: false,
-            type: 'bar'
-            
-        },
-        title: {
-            text: "[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}"
-        },
-        xAxis: {
-            categories: null,
-            title: {
-                text: null
-            },
-            labels: {
-                style: {
-                   fontWeight: 'bold',
-                   fontSize:'15px'
-                }
-            }
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: null
-            },
-            labels: {
-                overflow: 'justify'
-            }
-        },
-        plotOptions: {
-            bar: {
-            	colors: ['#fdc16a', '#22ca80'],
-                dataLabels: {
-                    enabled: true
-                }
-            }
-        },
-        series: [{
-            name: '목표값',
-            data: TARGET_VAL
-        }, {
-            name: '현재값',
-            data: PRESENT_VAL
-        }]
-    });        
-    </script>
-    </c:forEach>
-    
-    <c:forEach var="dto" items="${TYPE3}">
-    <script type="text/javascript">
-    	
-    	//배열추가
-        var TARGET_VAL= new Array();	   // 목표값
-        var PRESENT_VAL = new Array();	   // 현재값
-        TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
-        PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
-    Highcharts.chart('${dto.INDICATORS_NAME}_TYPE3', {
-        chart: {
-        	plotBorderWidth: null,
-            plotShadow: false,
-            type: 'bar'
-            
-        },
-        title: {
-            text: "[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}"
-        },
-        xAxis: {
-            categories: null,
-            title: {
-                text: null
-            },
-            labels: {
-                style: {
-                   fontWeight: 'bold',
-                   fontSize:'15px'
-                }
-            }
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: null
-            },
-            labels: {
-                overflow: 'justify'
-            }
-        },
-        plotOptions: {
-            bar: {
-            	colors: ['#fdc16a', '#22ca80'],
-                dataLabels: {
-                    enabled: true
-                }
-            }
-        },
-        series: [{
-            name: '목표값',
-            data: TARGET_VAL
-        }, {
-            name: '현재값',
-            data: PRESENT_VAL
-        }]
-    });        
-    </script>
-    </c:forEach>
-    
-    <script>
-    $('div.chart1').find('.highcharts-color-0').click(function(){
-        
-  	  	$('#all').hide();
-    	$('#IS_TYPE3').hide();
-    	$('#IS_LINC').hide();
-    	$('#IS_AHA').hide();
-  	  	$('#IS_AGENCY').hide();
-  	  	$('#IS_BEST').show();
-  	});
-    $('div.chart1').find('.highcharts-color-1').click(function(){
-    	
-    	$('#all').hide();
-    	$('#IS_TYPE3').hide();
-    	$('#IS_LINC').hide();
-    	$('#IS_AHA').hide();
-  	  	$('#IS_AGENCY').show();
-  	  	$('#IS_BEST').hide();
-    });
-    $('div.chart1').find('.highcharts-color-2').click(function(){
-    	
-    	$('#all').hide();
-    	$('#IS_TYPE3').hide();
-    	$('#IS_LINC').hide();
-    	$('#IS_AHA').show();
-  	  	$('#IS_AGENCY').hide();
-  	  	$('#IS_BEST').hide();
-    });
-    $('div.chart1').find('.highcharts-color-3').click(function(){
-        
-    	$('#all').hide();
-    	$('#IS_TYPE3').hide();
-    	$('#IS_LINC').show();
-    	$('#IS_AHA').hide();
-  	  	$('#IS_AGENCY').hide();
-  	  	$('#IS_BEST').hide();
-  	});
-    $('div.chart1').find('.highcharts-color-4').click(function(){
-    	$('#all').hide();
-    	$('#IS_TYPE3').show();
-    	$('#IS_LINC').hide();
-    	$('#IS_AHA').hide();
-  	  	$('#IS_AGENCY').hide();
-  	  	$('#IS_BEST').hide();
-  	});
-    </script>
 </html>

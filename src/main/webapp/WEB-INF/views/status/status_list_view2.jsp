@@ -121,6 +121,8 @@
                             	<div class="col-md-6">
                                 	<span>년도 선택</span>
                                 	<select class="form-control" id="Years" onChange="location.href='status_list_view.do?Years='+value">
+                                			<option value="2022" <c:if test="${Years=='2022'}" >selected="selected"</c:if>>2022</option>
+                                            <option value="2021" <c:if test="${Years=='2021'}" >selected="selected"</c:if>>2021</option>
                                             <option value="2020" <c:if test="${Years=='2020'}" >selected="selected"</c:if>>2020</option>
                                             <option value="2019" <c:if test="${Years=='2019'}" >selected="selected"</c:if>>2019</option>
                                             <option value="2018" <c:if test="${Years=='2018'}" >selected="selected"</c:if>>2018</option>
@@ -133,63 +135,133 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
+                            	<ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
+                                    <li class="nav-item">
+                                        <a href="#all_tab" data-toggle="tab" aria-expanded="true" class="nav-link active">
+                                            <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                            <span class="d-none d-lg-block">전체 현황</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#BEST_tab" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                            <span class="d-none d-lg-block">대학중장기 발전계획 BEST</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#AGENCY_tab" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                            <span class="d-none d-lg-block">기관평가인증 현황</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#AHA_tab" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                            <span class="d-none d-lg-block">혁신지원 AHA 현황</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#LINC_tab" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                            <span class="d-none d-lg-block">사회맞춤형 LINC+ 현황</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#TYPE3_tab" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                            <span class="d-none d-lg-block">3유형 현황</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            	
                                 <div class="d-flex align-items-center mb-4">
                                     <div id="container" class="chart1" style="margin: 0 auto"></div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12" id="all">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <div id="sub1" class="chart2" style="width:1000px;height:${StatusDTOs.size()*200}px; margin: 0 auto"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12" id="IS_BEST" style="display: none;">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <div id="sub2" class="chart2" style="width:1000px;height:${BEST.size()*200}px; margin: 0 auto"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12" id="IS_AGENCY" style="display: none;">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <div id="sub3" class="chart2" style="width:1000px;height:${AGENCY.size()*200}px; margin: 0 auto"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12" id="IS_AHA" style="display: none;">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <div id="sub4" class="chart2" style="width:1000px;height:${AHA.size()*200}px; margin: 0 auto"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12" id="IS_LINC" style="display: none;">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <div id="sub5" class="chart2" style="width:1000px;height:${LINC.size()*200}px; margin: 0 auto"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12" id="IS_TYPE3" style="display: none;">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <div id="sub6" class="chart2" style="width:1000px;height:${TYPE3.size()*200}px; margin: 0 auto"></div>
-                                </div>
+                                
+                                <div class="tab-content">
+                                    <div class="tab-pane show active" id="all_tab">
+										<div class="table-responsive">
+											<h3>전체 현황 ${StatusDTOs.size()}개</h3>
+											<div class="d-flex align-items-center row">
+												<c:forEach var="dto" items="${StatusDTOs}">
+													<div class="col-md-4" style="padding: 30px;">
+														<div id="${dto.INDICATORS_NAME}_all" class="chart2"
+															style="margin: 0 auto"></div>
+													</div>
+												</c:forEach>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="BEST_tab">
+										<div class="table-responsive">
+											<h3>중장기 발전계획 BEST 현황 ${BEST.size()}개</h3>
+											<div class="d-flex align-items-center row">
+												<c:forEach var="dto" items="${BEST}">
+													<div class="col-md-4" style="padding: 30px;">
+														<div id="${dto.INDICATORS_NAME}_BEST" class="chart2"
+															style="margin: 0 auto"></div>
+													</div>
+												</c:forEach>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="AGENCY_tab">
+										<div class="table-responsive">
+											<h3>기관평가인증 현황 ${AGENCY.size()}개</h3>
+											<div class="d-flex align-items-center row">
+												<c:forEach var="dto" items="${AGENCY}">
+													<div class="col-md-4" style="padding: 30px;">
+														<div id="${dto.INDICATORS_NAME}_AGENCY" class="chart2"
+															style="margin: 0 auto"></div>
+													</div>
+												</c:forEach>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="AHA_tab">
+										<div class="table-responsive">
+											<h3>혁신지원 AHA 현황 ${AHA.size()}개</h3>
+											<div class="d-flex align-items-center row">
+												<c:forEach var="dto" items="${AHA}">
+													<div class="col-md-4" style="padding: 30px;">
+														<div id="${dto.INDICATORS_NAME}_AHA" class="chart2"
+															style="margin: 0 auto"></div>
+													</div>
+												</c:forEach>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="LINC_tab">
+										<div class="table-responsive">
+											<h3>사회맞춤형 LINC+ 현황 ${LINC.size()}개</h3>
+											<div class="d-flex align-items-center row">
+												<c:forEach var="dto" items="${LINC}">
+													<div class="col-md-4" style="padding: 30px;">
+														<div id="${dto.INDICATORS_NAME}_LINC" class="chart2"
+															style="margin: 0 auto"></div>
+													</div>
+												</c:forEach>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="TYPE3_tab">
+										<div class="table-responsive">
+											<h3>3유형 현황 ${TYPE3.size()}개</h3>
+											<div class="d-flex align-items-center row">
+												<c:forEach var="dto" items="${TYPE3}">
+													<div class="col-md-4" style="padding: 30px;">
+														<div id="${dto.INDICATORS_NAME}_TYPE3" class="chart2"
+															style="margin: 0 auto"></div>
+													</div>
+												</c:forEach>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+                                
+                                
+                                
                             </div>
                         </div>
                     </div>
@@ -229,76 +301,29 @@
 	<c:import url="../import/javascript.jsp" charEncoding="UTF-8" >
     </c:import>
     <script>
-  //사업별 갯수 
-  var pieColors = ['#5F76E8', '#ff4f70', '#fdc16a', '#22ca80', '#6c757d'] ;
-    Highcharts.chart('container', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: '사업별 성과지표 ${Years}'
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                colors: pieColors,
-                dataLabels: {
-                    enabled: false
-                },
-                showInLegend: true
-            }
-        },
-        series: [{
-            name: '비율',
-            colorByPoint: true,
-            data: [{
-                name: 'BEST - ${BEST.size()}개',
-                y: ${BEST.size()},
-                sliced: true,
-                selected: true
-            }, {
-                name: '기관 평가 인증 - ${AGENCY.size()}개',
-                y: ${AGENCY.size()},
-            }, {
-                name: '혁신 지원 AHA - ${AHA.size()}개',
-                y: ${AHA.size()},
-            }, {
-                name: '사회 맞춤형 LINC+ - ${LINC.size()}개',
-                y: ${LINC.size()},
-            },{
-                name: '3유형 - ${TYPE3.size()}개',
-                y: ${TYPE3.size()},
-            }]
-        }]
+  	//무한스크롤 부분
+	var listcnt=0;
+	$(window).scroll(function(){
+		console.log('/문서높이'+$(document).height()+'/창높이'+$(window).outerHeight()+'/스크롤'+$(window).scrollTop());
+		if ($(document).height() - $(window).outerHeight() - 500 < $(window).scrollTop()) {
+			listcnt = listcnt+6;
+			console.log(listcnt);
+        }
     });
     </script>
+    
+    <c:forEach var="dto" items="${StatusDTOs}">
     
     
     <script type="text/javascript">
     	
     	//배열추가
-        var INDICATORS_NAME = new Array(); // 지표명
         var TARGET_VAL= new Array();	   // 목표값
         var PRESENT_VAL = new Array();	   // 현재값
-        <c:forEach var="dto" items="${StatusDTOs}">
-        	INDICATORS_NAME.push("${dto.INDICATORS_NAME} [${dto.INDICATORS_NUM}]");
-        	TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
-        	PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
-        </c:forEach>
-    
-    Highcharts.chart('sub1', {
+        TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
+        PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
+        
+    Highcharts.chart('${dto.INDICATORS_NAME}_all', {
         chart: {
         	plotBorderWidth: null,
             plotShadow: false,
@@ -306,10 +331,10 @@
             
         },
         title: {
-            text: '전체 현황 ${StatusDTOs.size()}개'
+            text: '[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}'
         },
         xAxis: {
-            categories: INDICATORS_NAME,
+            categories: null,
             title: {
                 text: null
             },
@@ -347,20 +372,16 @@
     });
                   
     </script>
-    
+    </c:forEach>
+    <c:forEach var="dto" items="${BEST}">
     <script type="text/javascript">
     	
     	//배열추가
-        var INDICATORS_NAME = new Array(); // 지표명
         var TARGET_VAL= new Array();	   // 목표값
         var PRESENT_VAL = new Array();	   // 현재값
-        <c:forEach var="bestdto" items="${BEST}">
-        	INDICATORS_NAME.push("${bestdto.INDICATORS_NAME} [${bestdto.INDICATORS_NUM}]");
-        	TARGET_VAL.push(${Double.parseDouble(bestdto.TARGET_VAL.split(":")[0])});
-        	PRESENT_VAL.push(${Double.parseDouble(bestdto.PRESENT_VAL.split(":")[0])});
-        </c:forEach>
-    
-    Highcharts.chart('sub2', {
+        TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
+        PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
+    Highcharts.chart('${dto.INDICATORS_NAME}_BEST', {
         chart: {
         	plotBorderWidth: null,
             plotShadow: false,
@@ -368,10 +389,10 @@
             
         },
         title: {
-            text: '중장기 발전계획 BEST ${BEST.size()}개'
+            text: "[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}"
         },
         xAxis: {
-            categories: INDICATORS_NAME,
+            categories: null,
             title: {
                 text: null
             },
@@ -408,19 +429,16 @@
         }]
     });        
     </script>
+    </c:forEach>
+    <c:forEach var="dto" items="${AGENCY}">
     <script type="text/javascript">
     	
     	//배열추가
-        var INDICATORS_NAME = new Array(); // 지표명
         var TARGET_VAL= new Array();	   // 목표값
         var PRESENT_VAL = new Array();	   // 현재값
-        <c:forEach var="dto" items="${AGENCY}">
-        	INDICATORS_NAME.push("${dto.INDICATORS_NAME} [${dto.INDICATORS_NUM}]");
-        	TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
-        	PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
-        </c:forEach>
-    
-    Highcharts.chart('sub3', {
+        TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
+        PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
+    Highcharts.chart('${dto.INDICATORS_NAME}_AGENCY', {
         chart: {
         	plotBorderWidth: null,
             plotShadow: false,
@@ -428,10 +446,10 @@
             
         },
         title: {
-            text: '기간평가 인증 ${AGENCY.size()}개'
+            text: "[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}"
         },
         xAxis: {
-            categories: INDICATORS_NAME,
+            categories: null,
             title: {
                 text: null
             },
@@ -468,19 +486,17 @@
         }]
     });        
     </script>
+    </c:forEach>
+    
+    <c:forEach var="dto" items="${AHA}">
     <script type="text/javascript">
     	
     	//배열추가
-        var INDICATORS_NAME = new Array(); // 지표명
         var TARGET_VAL= new Array();	   // 목표값
         var PRESENT_VAL = new Array();	   // 현재값
-        <c:forEach var="dto" items="${AHA}">
-        	INDICATORS_NAME.push("${dto.INDICATORS_NAME} [${dto.INDICATORS_NUM}]");
-        	TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
-        	PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
-        </c:forEach>
-    
-    Highcharts.chart('sub4', {
+        TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
+        PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
+    Highcharts.chart('${dto.INDICATORS_NAME}_AHA', {
         chart: {
         	plotBorderWidth: null,
             plotShadow: false,
@@ -488,10 +504,10 @@
             
         },
         title: {
-            text: '혁신지원 AHA ${AHA.size()}개'
+            text: "[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}"
         },
         xAxis: {
-            categories: INDICATORS_NAME,
+            categories: null,
             title: {
                 text: null
             },
@@ -528,19 +544,17 @@
         }]
     });        
     </script>
+    </c:forEach>
+    
+    <c:forEach var="dto" items="${LINC}">
     <script type="text/javascript">
     	
     	//배열추가
-        var INDICATORS_NAME = new Array(); // 지표명
         var TARGET_VAL= new Array();	   // 목표값
         var PRESENT_VAL = new Array();	   // 현재값
-        <c:forEach var="dto" items="${LINC}">
-        	INDICATORS_NAME.push("${dto.INDICATORS_NAME} [${dto.INDICATORS_NUM}]");
-        	TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
-        	PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
-        </c:forEach>
-    
-    Highcharts.chart('sub5', {
+        TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
+        PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
+    Highcharts.chart('${dto.INDICATORS_NAME}_LINC', {
         chart: {
         	plotBorderWidth: null,
             plotShadow: false,
@@ -548,10 +562,10 @@
             
         },
         title: {
-            text: '사회맞춤형 LINC ${LINC.size()}개'
+            text: "[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}"
         },
         xAxis: {
-            categories: INDICATORS_NAME,
+            categories: null,
             title: {
                 text: null
             },
@@ -588,19 +602,17 @@
         }]
     });        
     </script>
+    </c:forEach>
+    
+    <c:forEach var="dto" items="${TYPE3}">
     <script type="text/javascript">
     	
     	//배열추가
-        var INDICATORS_NAME = new Array(); // 지표명
         var TARGET_VAL= new Array();	   // 목표값
         var PRESENT_VAL = new Array();	   // 현재값
-        <c:forEach var="dto" items="${TYPE3}">
-        	INDICATORS_NAME.push("${dto.INDICATORS_NAME} [${dto.INDICATORS_NUM}]");
-        	TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
-        	PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
-        </c:forEach>
-    
-    Highcharts.chart('sub6', {
+        TARGET_VAL.push(${Double.parseDouble(dto.TARGET_VAL.split(":")[0])});
+        PRESENT_VAL.push(${Double.parseDouble(dto.PRESENT_VAL.split(":")[0])});
+    Highcharts.chart('${dto.INDICATORS_NAME}_TYPE3', {
         chart: {
         	plotBorderWidth: null,
             plotShadow: false,
@@ -608,10 +620,10 @@
             
         },
         title: {
-            text: '제 3유형 ${TYPE3.size()}개'
+            text: "[${dto.INDICATORS_NUM}] ${dto.INDICATORS_NAME}"
         },
         xAxis: {
-            categories: INDICATORS_NAME,
+            categories: null,
             title: {
                 text: null
             },
@@ -648,50 +660,6 @@
         }]
     });        
     </script>
-    <script>
-    $('div.chart1').find('.highcharts-color-0').click(function(){
-        
-  	  	$('#all').hide();
-    	$('#IS_TYPE3').hide();
-    	$('#IS_LINC').hide();
-    	$('#IS_AHA').hide();
-  	  	$('#IS_AGENCY').hide();
-  	  	$('#IS_BEST').show();
-  	});
-    $('div.chart1').find('.highcharts-color-1').click(function(){
-    	
-    	$('#all').hide();
-    	$('#IS_TYPE3').hide();
-    	$('#IS_LINC').hide();
-    	$('#IS_AHA').hide();
-  	  	$('#IS_AGENCY').show();
-  	  	$('#IS_BEST').hide();
-    });
-    $('div.chart1').find('.highcharts-color-2').click(function(){
-    	
-    	$('#all').hide();
-    	$('#IS_TYPE3').hide();
-    	$('#IS_LINC').hide();
-    	$('#IS_AHA').show();
-  	  	$('#IS_AGENCY').hide();
-  	  	$('#IS_BEST').hide();
-    });
-    $('div.chart1').find('.highcharts-color-3').click(function(){
-        
-    	$('#all').hide();
-    	$('#IS_TYPE3').hide();
-    	$('#IS_LINC').show();
-    	$('#IS_AHA').hide();
-  	  	$('#IS_AGENCY').hide();
-  	  	$('#IS_BEST').hide();
-  	});
-    $('div.chart1').find('.highcharts-color-4').click(function(){
-    	$('#all').hide();
-    	$('#IS_TYPE3').show();
-    	$('#IS_LINC').hide();
-    	$('#IS_AHA').hide();
-  	  	$('#IS_AGENCY').hide();
-  	  	$('#IS_BEST').hide();
-  	});
-    </script>
+    </c:forEach>
+    
 </html>
