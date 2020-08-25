@@ -125,7 +125,15 @@
 			WHERE rtb.INDICATORS_NUM = itb.INDICATORS_NUM
 			AND to_char(RECORD_DATE, 'yyyy') = #{Years}
 			AND ROWNUM = 1
-			),0) PRESENT_VAL
+			),0) PRESENT_VAL,
+			NVL(
+			(
+			SELECT GRADE
+			FROM RECORD_TB rtb
+			WHERE rtb.INDICATORS_NUM = itb.INDICATORS_NUM
+			AND to_char(RECORD_DATE, 'yyyy') = #{Years}
+			AND ROWNUM = 1
+			),0) GRADE
 		FROM
 		INDICATORS_TB itb
 		where (INDICATORS_NUM, RECORD_DATE, to_char(RECORD_DATE, 'yyyy')) in (
