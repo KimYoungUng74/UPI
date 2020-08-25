@@ -28,10 +28,12 @@ public class loginCheck extends HandlerInterceptorAdapter{
 		response.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         String userid = (String) session.getAttribute("USER_ID");
-        
-    	if(userid == null){
-    		modelAndView.setViewName("user/login");
-        }
+        String userpw = (String) session.getAttribute("USER_PW");
+		if (userid == null) {
+			modelAndView.setViewName("user/login");
+		} else if (userpw.equals("d8f01284fda46e5584a444a23ea4d977b89b1ebb586812b3cad97662270e4aed")) { // 암호가 12346578일
+			modelAndView.setViewName("user/pwUpdate");
+		}
         super.postHandle(request, response, handler, modelAndView);
     }
     
