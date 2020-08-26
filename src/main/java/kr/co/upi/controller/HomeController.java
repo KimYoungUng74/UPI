@@ -108,7 +108,7 @@ public class HomeController {
 		return "index";
 	}
 	
-	// 사업별 현황 페이지
+	// 홈 페이지
 		@RequestMapping(value = "index.do")
 		public ModelAndView status_list_view(Locale locale, Model model, String Years) {
 			//년도정보가 없으면 그냥 최신으로 가져와~
