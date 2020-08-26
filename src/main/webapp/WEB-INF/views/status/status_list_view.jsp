@@ -192,17 +192,17 @@
 																	<c:when test="${dto.GRADE=='A'}">
 																		<button type="button"
 																			class="btn btn-success btn-circle btn-sm"
-																			style="float: right;">A</button>
+																			style="float: right;">A</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='B'}">
 																		<button type="button"
 																			class="btn btn-primary btn-circle btn-sm"
-																			style="float: right;">B</button>
+																			style="float: right;">B</button>  (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='D'}">
 																		<button type="button"
 																			class="btn btn-warning btn-circle btn-sm"
-																			style="float: right;">D</button>
+																			style="float: right;">D</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:otherwise>
 																	</c:otherwise>
@@ -233,7 +233,7 @@
 																					class="progress-bar progress-bar-striped bg-success"
 																				</c:when>
 																				<c:otherwise>
-																					class="progress-bar progress-bar-striped progress-bar-animated"
+																					class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
 																				</c:otherwise>
 																			</c:choose>
 																			
@@ -267,17 +267,17 @@
 																	<c:when test="${dto.GRADE=='A'}">
 																		<button type="button"
 																			class="btn btn-success btn-circle btn-sm"
-																			style="float: right;">A</button>
+																			style="float: right;">A</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='B'}">
 																		<button type="button"
 																			class="btn btn-primary btn-circle btn-sm"
-																			style="float: right;">B</button>
+																			style="float: right;">B</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='D'}">
 																		<button type="button"
 																			class="btn btn-warning btn-circle btn-sm"
-																			style="float: right;">D</button>
+																			style="float: right;">D</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:otherwise>
 																	</c:otherwise>
@@ -308,7 +308,7 @@
 																					class="progress-bar progress-bar-striped bg-success"
 																				</c:when>
 																				<c:otherwise>
-																					class="progress-bar progress-bar-striped progress-bar-animated"
+																					class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
 																				</c:otherwise>
 																			</c:choose>
 																			role="progressbar" aria-valuenow="75"
@@ -341,17 +341,17 @@
 																	<c:when test="${dto.GRADE=='A'}">
 																		<button type="button"
 																			class="btn btn-success btn-circle btn-sm"
-																			style="float: right;">A</button>
+																			style="float: right;">A</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='B'}">
 																		<button type="button"
 																			class="btn btn-primary btn-circle btn-sm"
-																			style="float: right;">B</button>
+																			style="float: right;">B</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='D'}">
 																		<button type="button"
 																			class="btn btn-warning btn-circle btn-sm"
-																			style="float: right;">D</button>
+																			style="float: right;">D</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:otherwise>
 																	</c:otherwise>
@@ -382,7 +382,7 @@
 																					class="progress-bar progress-bar-striped bg-success"
 																				</c:when>
 																				<c:otherwise>
-																					class="progress-bar progress-bar-striped progress-bar-animated"
+																					class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
 																				</c:otherwise>
 																			</c:choose>
 																			role="progressbar" aria-valuenow="75"
@@ -415,17 +415,17 @@
 																	<c:when test="${dto.GRADE=='A'}">
 																		<button type="button"
 																			class="btn btn-success btn-circle btn-sm"
-																			style="float: right;">A</button>
+																			style="float: right;">A</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='B'}">
 																		<button type="button"
 																			class="btn btn-primary btn-circle btn-sm"
-																			style="float: right;">B</button>
+																			style="float: right;">B</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='D'}">
 																		<button type="button"
 																			class="btn btn-warning btn-circle btn-sm"
-																			style="float: right;">D</button>
+																			style="float: right;">D</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:otherwise>
 																	</c:otherwise>
@@ -456,7 +456,7 @@
 																					class="progress-bar progress-bar-striped bg-success"
 																				</c:when>
 																				<c:otherwise>
-																					class="progress-bar progress-bar-striped progress-bar-animated"
+																					class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
 																				</c:otherwise>
 																			</c:choose>
 																			role="progressbar" aria-valuenow="75"
@@ -489,17 +489,17 @@
 																	<c:when test="${dto.GRADE=='A'}">
 																		<button type="button"
 																			class="btn btn-success btn-circle btn-sm"
-																			style="float: right;">A</button>
+																			style="float: right;">A</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='B'}">
 																		<button type="button"
 																			class="btn btn-primary btn-circle btn-sm"
-																			style="float: right;">B</button>
+																			style="float: right;">B</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='D'}">
 																		<button type="button"
 																			class="btn btn-warning btn-circle btn-sm"
-																			style="float: right;">D</button>
+																			style="float: right;">D</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:otherwise>
 																	</c:otherwise>
@@ -530,7 +530,7 @@
 																					class="progress-bar progress-bar-striped bg-success"
 																				</c:when>
 																				<c:otherwise>
-																					class="progress-bar progress-bar-striped progress-bar-animated"
+																					class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
 																				</c:otherwise>
 																			</c:choose>
 																			role="progressbar" aria-valuenow="75"
@@ -563,17 +563,17 @@
 																	<c:when test="${dto.GRADE=='A'}">
 																		<button type="button"
 																			class="btn btn-success btn-circle btn-sm"
-																			style="float: right;">A</button>
+																			style="float: right;">A</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='B'}">
 																		<button type="button"
 																			class="btn btn-primary btn-circle btn-sm"
-																			style="float: right;">B</button>
+																			style="float: right;">B</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='D'}">
 																		<button type="button"
 																			class="btn btn-warning btn-circle btn-sm"
-																			style="float: right;">D</button>
+																			style="float: right;">D</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:otherwise>
 																	</c:otherwise>
@@ -604,7 +604,7 @@
 																					class="progress-bar progress-bar-striped bg-success"
 																				</c:when>
 																				<c:otherwise>
-																					class="progress-bar progress-bar-striped progress-bar-animated"
+																					class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
 																				</c:otherwise>
 																			</c:choose>
 																			role="progressbar" aria-valuenow="75"

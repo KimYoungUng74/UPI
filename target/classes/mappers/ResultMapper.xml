@@ -118,22 +118,27 @@
 	<!-- 년도별 지표 현황 -->
 	<select id="StatusList" parameterType="String" resultType="RecordDTO">
 		SELECT INDICATORS_NUM,INDICATORS_NAME,IS_BEST,IS_AGENCY,IS_AHA,IS_LINC,IS_TYPE3,
-			NVL(
-			(
-			SELECT TARGET_VAL
-			FROM RECORD_TB rtb
-			WHERE rtb.INDICATORS_NUM = itb.INDICATORS_NUM
-			AND to_char(RECORD_DATE, 'yyyy') = #{Years}
-			AND ROWNUM = 1
+			NVL((
+				SELECT TARGET_VAL
+					FROM RECORD_TB rtb
+					WHERE rtb.INDICATORS_NUM = itb.INDICATORS_NUM
+					AND to_char(RECORD_DATE, 'yyyy') = #{Years}
+					AND ROWNUM = 1
 			),0) TARGET_VAL,
-			NVL(
-			(
+			NVL((
 			SELECT PRESENT_VAL
 			FROM RECORD_TB rtb
 			WHERE rtb.INDICATORS_NUM = itb.INDICATORS_NUM
 			AND to_char(RECORD_DATE, 'yyyy') = #{Years}
 			AND ROWNUM = 1
 			),0) PRESENT_VAL,
+			NVL((
+			SELECT ACHIEVE_VAL
+			FROM RECORD_TB rtb
+			WHERE rtb.INDICATORS_NUM = itb.INDICATORS_NUM
+			AND to_char(RECORD_DATE, 'yyyy') = #{Years}
+			AND ROWNUM = 1
+			),0) ACHIEVE_VAL,
 			NVL(
 			(
 			SELECT GRADE
