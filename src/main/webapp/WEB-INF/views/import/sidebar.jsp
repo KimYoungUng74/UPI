@@ -10,11 +10,11 @@
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index.do"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                     class="hide-menu">홈</span></a></li>
-                        <li class="list-divider"></li>
+                        <!-- <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">현황</span></li>
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="status_list_view.do"
                                 aria-expanded="false"><i data-feather="bar-chart" class="feather-icon"></i><span
-                                    class="hide-menu">사업별 현황</span></a></li>
+                                    class="hide-menu">사업별 현황</span></a></li> -->
                                     
                         <c:if test="${sessionScope.USER_GRANT > 0}">            
                         <li class="list-divider"></li>

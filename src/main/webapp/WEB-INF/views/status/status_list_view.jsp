@@ -120,7 +120,7 @@
                             <div class="card-body row">
                             	<div class="col-md-6">
                                 	<span>년도 선택</span>
-                                	<select class="form-control" id="Years" onChange="location.href='status_list_view.do?Years='+value">
+                                	<select class="form-control" id="Years" onChange="location.href='index.do?Years='+value">
                                 			<option value="2022" <c:if test="${Years=='2022'}" >selected="selected"</c:if>>2022</option>
                                             <option value="2021" <c:if test="${Years=='2021'}" >selected="selected"</c:if>>2021</option>
                                             <option value="2020" <c:if test="${Years=='2020'}" >selected="selected"</c:if>>2020</option>
