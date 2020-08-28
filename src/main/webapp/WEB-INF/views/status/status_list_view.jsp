@@ -99,7 +99,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">사업별 현황</h3>
+                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">지표 현황</h3>
                         
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body row">
-                            	<div class="col-md-6">
+                            	<div class="col-md-2">
                                 	<span>년도 선택</span>
                                 	<select class="form-control" id="Years" onChange="location.href='index.do?Years='+value">
                                 			<option value="2022" <c:if test="${Years=='2022'}" >selected="selected"</c:if>>2022</option>
@@ -127,6 +127,16 @@
                                             <option value="2019" <c:if test="${Years=='2019'}" >selected="selected"</c:if>>2019</option>
                                             <option value="2018" <c:if test="${Years=='2018'}" >selected="selected"</c:if>>2018</option>
                                             <option value="2017" <c:if test="${Years=='2017'}" >selected="selected"</c:if>>2017</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                	<span>분기 선택</span>
+                                	<select class="form-control" id="divive" >
+                                			<option value="전체" selected="selected">전체</option>
+                                			<option value="1">1분기</option>
+                                            <option value="2">2분기</option>
+                                            <option value="3">3분기</option>
+                                            <option value="4">4분기</option>
                                     </select>
                                 </div>
                         	</div>
@@ -229,7 +239,7 @@
 																		<div class="progress">
 																			<div
 																			<c:choose>
-																				<c:when test="${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0]) >= 1}">
+																				<c:when test="${dto.ACHIEVE_VAL >=100}">
 																					class="progress-bar progress-bar-striped bg-success"
 																				</c:when>
 																				<c:otherwise>
@@ -239,7 +249,7 @@
 																			
 																			role="progressbar" aria-valuenow="75"
 																			aria-valuemin="0" aria-valuemax="100"
-																			style="width: ${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0])*100}%"></div>
+																			style="width: ${dto.ACHIEVE_VAL}%"></div>
 																		</div>
 																	</div>
 																	<div class="col-2 text-right">
@@ -304,7 +314,7 @@
 																		<div class="progress">
 																			<div
 																			<c:choose>
-																				<c:when test="${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0]) >= 1}">
+																				<c:when test="${dto.ACHIEVE_VAL >=100}">
 																					class="progress-bar progress-bar-striped bg-success"
 																				</c:when>
 																				<c:otherwise>
@@ -313,7 +323,7 @@
 																			</c:choose>
 																			role="progressbar" aria-valuenow="75"
 																			aria-valuemin="0" aria-valuemax="100"
-																			style="width: ${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0])*100}%"></div>
+																			style="width: ${dto.ACHIEVE_VAL}%"></div>
 																		</div>
 																	</div>
 																	<div class="col-2 text-right">
@@ -378,7 +388,7 @@
 																		<div class="progress">
 																			<div
 																			<c:choose>
-																				<c:when test="${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0]) >= 1}">
+																				<c:when test="${dto.ACHIEVE_VAL >=100}">
 																					class="progress-bar progress-bar-striped bg-success"
 																				</c:when>
 																				<c:otherwise>
@@ -387,7 +397,7 @@
 																			</c:choose>
 																			role="progressbar" aria-valuenow="75"
 																			aria-valuemin="0" aria-valuemax="100"
-																			style="width: ${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0])*100}%"></div>
+																			style="width: ${dto.ACHIEVE_VAL}%"></div>
 																		</div>
 																	</div>
 																	<div class="col-2 text-right">
@@ -452,7 +462,7 @@
 																		<div class="progress">
 																			<div
 																			<c:choose>
-																				<c:when test="${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0]) >= 1}">
+																				<c:when test="${dto.ACHIEVE_VAL >=100}">
 																					class="progress-bar progress-bar-striped bg-success"
 																				</c:when>
 																				<c:otherwise>
@@ -461,7 +471,7 @@
 																			</c:choose>
 																			role="progressbar" aria-valuenow="75"
 																			aria-valuemin="0" aria-valuemax="100"
-																			style="width: ${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0])*100}%"></div>
+																			style="width: ${dto.ACHIEVE_VAL}%"></div>
 																		</div>
 																	</div>
 																	<div class="col-2 text-right">
@@ -526,7 +536,7 @@
 																		<div class="progress">
 																			<div
 																			<c:choose>
-																				<c:when test="${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0]) >= 1}">
+																				<c:when test="${dto.ACHIEVE_VAL >=100}">
 																					class="progress-bar progress-bar-striped bg-success"
 																				</c:when>
 																				<c:otherwise>
@@ -535,7 +545,7 @@
 																			</c:choose>
 																			role="progressbar" aria-valuenow="75"
 																			aria-valuemin="0" aria-valuemax="100"
-																			style="width: ${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0])*100}%"></div>
+																			style="width: ${dto.ACHIEVE_VAL}%"></div>
 																		</div>
 																	</div>
 																	<div class="col-2 text-right">
@@ -600,7 +610,7 @@
 																		<div class="progress">
 																			<div
 																			<c:choose>
-																				<c:when test="${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0]) >= 1}">
+																				<c:when test="${dto.ACHIEVE_VAL >= 100}">
 																					class="progress-bar progress-bar-striped bg-success"
 																				</c:when>
 																				<c:otherwise>
@@ -609,7 +619,7 @@
 																			</c:choose>
 																			role="progressbar" aria-valuenow="75"
 																			aria-valuemin="0" aria-valuemax="100"
-																			style="width: ${Double.parseDouble(dto.PRESENT_VAL.split(':')[0])/Double.parseDouble(dto.TARGET_VAL.split(':')[0])*100}%"></div>
+																			style="width: ${dto.ACHIEVE_VAL}%"></div>
 																		</div>
 																	</div>
 																	<div class="col-2 text-right">

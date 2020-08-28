@@ -29,6 +29,7 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="http://www.kyungmin.ac.kr/site/kmc/main.do" target="_blank"
                                 aria-haspopup="true" aria-expanded="false">
@@ -37,5 +38,23 @@
                                         class="text-dark">경민대학교 홈페이지</span></span>
                             </a>
                         </li>
+                        
+                        <c:if test="${not empty sessionScope.USER_NAME}">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)" aria-haspopup="true" aria-expanded="false">
+                                <span class="ml-2 d-none d-lg-inline-block"><span class="text-dark">${sessionScope.USER_NAME}님 로그인</span></span>
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="logout.do" target="_blank" aria-haspopup="true" aria-expanded="false">
+                        		
+                        		<span class="hide-menu">Log-Out</span>
+                        	</a>
+                        </li>
+                        </c:if>
+                        
+                        
+                        
                     </ul>
                 </div>

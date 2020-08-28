@@ -9,7 +9,7 @@
                     <ul id="sidebarnav">
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index.do"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
-                                    class="hide-menu">홈</span></a></li>
+                                    class="hide-menu">HOME</span></a></li>
                         <!-- <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">현황</span></li>
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="status_list_view.do"
@@ -65,14 +65,6 @@
                             </ul>
                         </li>
                         
-                        <li class="list-divider"></li>
-                        <c:if test="${not empty sessionScope.USER_NAME}">
-                        <li class="nav-small-cap"><span class="hide-menu">${sessionScope.USER_NAME}님 로그인</span></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="logout.do"
-                                aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
-                                    class="hide-menu">Log-Out</span></a>
-                        </li>
-                       	</c:if>
                         
                     </ul>
                 </nav>
