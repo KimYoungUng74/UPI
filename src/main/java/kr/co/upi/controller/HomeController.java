@@ -113,20 +113,33 @@ public class HomeController {
 	
 	// 홈 페이지
 		@RequestMapping(value = "index.do")
-		public ModelAndView status_list_view(HttpServletRequest request,Locale locale, Model model, String Years) {
-			//년도정보가 없으면 그냥 최신으로 가져와~
-			if(Years==null){
-				Years = (new java.util.Date().getYear()+1900)+"";
-			}
+		public ModelAndView status_list_view(HttpServletRequest request,Locale locale, Model model, String Years,String Divive, HttpSession session) {
 			
-			//세션에 년도 추가
-			HttpSession session = request.getSession();
-			String years = Years;
-			session.setAttribute("sYears", years);
+			//Years 지정 년도
+			if(Years==null){ // 뷰에서 지정한 년도 값이 없는 경우
+				if(session.getAttribute("sYears") != null) { //세션값이 있을 경우
+					Years = (String)session.getAttribute("sYears");  //년도 정보를 세션값에서 가져옴
+				}else {
+					Years = (new java.util.Date().getYear()+1900)+""; // 세션값도 없다면 걍 최신년도 가져옴
+				}
+			}else {
+				session.setAttribute("sYears", Years); // 지정 값이 있는 경우 세션에 지정년도를 지정합니다.
+			}
+			int Divive_int = 0;
+			if(Divive != null) {
+				Divive_int = Integer.parseInt(Divive);
+			}
 			
 			//년도정보 추가
 			model.addAttribute("Years", Years);
-			List<RecordDTO> StatusDTOs = resultSer.StatusList(Years);
+			//년도정보 추가
+			model.addAttribute("Divive", Divive_int);
+			
+			RecordDTO dto = new RecordDTO();
+			
+			dto.setTARGET_VAL(Years); //년도값
+			dto.setACTION_CODE(Divive_int); //분기값
+			List<RecordDTO> StatusDTOs = resultSer.StatusList(dto); // 년도와 분기로 검색
 			//전체 현황 추가
 			model.addAttribute("StatusDTOs", StatusDTOs);
 			

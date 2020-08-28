@@ -131,12 +131,12 @@
                                 </div>
                                 <div class="col-md-2">
                                 	<span>분기 선택</span>
-                                	<select class="form-control" id="divive" >
-                                			<option value="전체" selected="selected">전체</option>
-                                			<option value="1">1분기</option>
-                                            <option value="2">2분기</option>
-                                            <option value="3">3분기</option>
-                                            <option value="4">4분기</option>
+                                	<select class="form-control" id="Divive" onChange="location.href='index.do?Divive='+value" >
+                                			<option value="0" <c:if test="${Divive==0}" >selected="selected"</c:if>>전체</option>
+                                			<option value="1" <c:if test="${Divive==1}" >selected="selected"</c:if>>1분기</option>
+                                            <option value="2" <c:if test="${Divive==2}" >selected="selected"</c:if>>2분기</option>
+                                            <option value="3" <c:if test="${Divive==3}" >selected="selected"</c:if>>3분기</option>
+                                            <option value="4" <c:if test="${Divive==4}" >selected="selected"</c:if>>4분기</option>
                                     </select>
                                 </div>
                         	</div>

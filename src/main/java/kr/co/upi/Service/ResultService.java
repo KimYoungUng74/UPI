@@ -68,7 +68,7 @@ public class ResultService {
 	}
 	
 	// 연도별 현황 리스트 가져오기
-	public List<RecordDTO> StatusList(String Years) {
-		return dao.StatusList(Years);
+	public List<RecordDTO> StatusList(RecordDTO dto) {
+		return dao.StatusList(dto);
 	}
 }

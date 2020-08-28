@@ -115,42 +115,132 @@
 		WHERE RECORD_DATE = (SELECT MAX(RECORD_DATE) FROM GRADE_TB)
 	</select>
 	
-	<!-- 년도별 지표 현황 -->
-	<select id="StatusList" parameterType="String" resultType="RecordDTO">
+	<!-- 년도별 지표 현황 //#{TARGET_VAL}을 년도로 사용 , #{ACTION_CODE}을 분기로 사용 -->
+	<select id="StatusList" parameterType="RecordDTO" resultType="RecordDTO">
 		SELECT INDICATORS_NUM,INDICATORS_NAME,IS_BEST,IS_AGENCY,IS_AHA,IS_LINC,IS_TYPE3,
 			NVL(
 			(
 			SELECT  MAX(TARGET_VAL) KEEP (DENSE_RANK LAST ORDER BY rtb.RECORD_NUM)
 			FROM RECORD_TB rtb
 			WHERE rtb.INDICATORS_NUM = itb.INDICATORS_NUM
-			AND to_char(RECORD_DATE, 'yyyy') = #{Years}
+			AND to_char(RECORD_DATE, 'yyyy') = #{TARGET_VAL}
+			<choose>
+               <when test="ACTION_CODE == 1"> <!-- 1분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 1 AND 3
+               </when> 
+               <when test="ACTION_CODE == 2"> <!-- 2분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 4 AND 6
+               </when>
+               <when test="ACTION_CODE == 3"> <!-- 3분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 7 AND 9
+               </when>
+               <when test="ACTION_CODE == 4"> <!-- 4분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 10 AND 12
+               </when>
+               <otherwise>
+               		<!-- 분기로 나누지 않음 -->
+               </otherwise>
+            </choose> 
 			),0) TARGET_VAL,
 			NVL(
 			(
 			SELECT MAX(PRESENT_VAL) KEEP (DENSE_RANK LAST ORDER BY rtb.RECORD_NUM)
 			FROM RECORD_TB rtb
 			WHERE rtb.INDICATORS_NUM = itb.INDICATORS_NUM
-			AND to_char(RECORD_DATE, 'yyyy') = #{Years}
+			AND to_char(RECORD_DATE, 'yyyy') = #{TARGET_VAL}
+			<choose>
+               <when test="ACTION_CODE == 1"> <!-- 1분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 1 AND 3
+               </when> 
+               <when test="ACTION_CODE == 2"> <!-- 2분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 4 AND 6
+               </when>
+               <when test="ACTION_CODE == 3"> <!-- 3분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 7 AND 9
+               </when>
+               <when test="ACTION_CODE == 4"> <!-- 4분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 10 AND 12
+               </when>
+               <otherwise>
+               		<!-- 분기로 나누지 않음 -->
+               </otherwise>
+            </choose> 
 			),0) PRESENT_VAL,
 			NVL(
 			(
 			SELECT MAX(ACHIEVE_VAL) KEEP (DENSE_RANK LAST ORDER BY rtb.RECORD_NUM)
 			FROM RECORD_TB rtb
 			WHERE rtb.INDICATORS_NUM = itb.INDICATORS_NUM
-			AND to_char(RECORD_DATE, 'yyyy') = #{Years}
+			AND to_char(RECORD_DATE, 'yyyy') = #{TARGET_VAL}
+			<choose>
+               <when test="ACTION_CODE == 1"> <!-- 1분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 1 AND 3
+               </when> 
+               <when test="ACTION_CODE == 2"> <!-- 2분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 4 AND 6
+               </when>
+               <when test="ACTION_CODE == 3"> <!-- 3분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 7 AND 9
+               </when>
+               <when test="ACTION_CODE == 4"> <!-- 4분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 10 AND 12
+               </when>
+               <otherwise>
+               		<!-- 분기로 나누지 않음 -->
+               </otherwise>
+            </choose> 
 			),0) ACHIEVE_VAL,
 			NVL(
 			(
 			SELECT MAX(GRADE) KEEP (DENSE_RANK LAST ORDER BY rtb.RECORD_NUM)
 			FROM RECORD_TB rtb
 			WHERE rtb.INDICATORS_NUM = itb.INDICATORS_NUM
-			AND to_char(RECORD_DATE, 'yyyy') = #{Years}
-			),0) GRADE
+			AND to_char(RECORD_DATE, 'yyyy') = #{TARGET_VAL}
+			<choose>
+               <when test="ACTION_CODE == 1"> <!-- 1분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 1 AND 3
+               </when> 
+               <when test="ACTION_CODE == 2"> <!-- 2분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 4 AND 6
+               </when>
+               <when test="ACTION_CODE == 3"> <!-- 3분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 7 AND 9
+               </when>
+               <when test="ACTION_CODE == 4"> <!-- 4분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 10 AND 12
+               </when>
+               <otherwise>
+               		<!-- 분기로 나누지 않음 -->
+               </otherwise>
+            </choose> 
+			),0) GRADE,
+            (SELECT MAX(rtb.RECORD_DATE) KEEP (DENSE_RANK LAST ORDER BY rtb.RECORD_NUM)
+			FROM RECORD_TB rtb
+			WHERE rtb.INDICATORS_NUM = itb.INDICATORS_NUM
+			AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'yyyy') = #{TARGET_VAL}
+			<choose>
+               <when test="ACTION_CODE == 1"> <!-- 1분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 1 AND 3
+               </when> 
+               <when test="ACTION_CODE == 2"> <!-- 2분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 4 AND 6
+               </when>
+               <when test="ACTION_CODE == 3"> <!-- 3분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 7 AND 9
+               </when>
+               <when test="ACTION_CODE == 4"> <!-- 4분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 10 AND 12
+               </when>
+               <otherwise>
+               		<!-- 분기로 나누지 않음 -->
+               </otherwise>
+            </choose>
+            
+			) RECORD_DATE
 		FROM
 		INDICATORS_TB itb
 		where (INDICATORS_NUM, RECORD_DATE, to_char(RECORD_DATE, 'yyyy')) in (
     		select INDICATORS_NUM, max(RECORD_DATE),to_char(RECORD_DATE, 'yyyy') from INDICATORS_TB
-    		WHERE to_char(RECORD_DATE, 'yyyy') = to_char(sysdate, 'yyyy')
     		group by INDICATORS_NUM,to_char(RECORD_DATE, 'yyyy')
 		)
 		ORDER BY INDICATORS_NUM, to_char(RECORD_DATE, 'yyyy') DESC

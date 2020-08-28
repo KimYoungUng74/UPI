@@ -75,7 +75,7 @@ public class ResultDAO {
 	
 	
 	// 연도별 현황 리스트 가져오기
-	public List<RecordDTO> StatusList(String Years) {
-		return mybatis.selectList("ResultMapper.StatusList", Years);
+	public List<RecordDTO> StatusList(RecordDTO dto) {
+		return mybatis.selectList("ResultMapper.StatusList", dto);
 	}
 }
