@@ -6,6 +6,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -110,11 +113,17 @@ public class HomeController {
 	
 	// 홈 페이지
 		@RequestMapping(value = "index.do")
-		public ModelAndView status_list_view(Locale locale, Model model, String Years) {
+		public ModelAndView status_list_view(HttpServletRequest request,Locale locale, Model model, String Years) {
 			//년도정보가 없으면 그냥 최신으로 가져와~
 			if(Years==null){
 				Years = (new java.util.Date().getYear()+1900)+"";
 			}
+			
+			//세션에 년도 추가
+			HttpSession session = request.getSession();
+			String years = Years;
+			session.setAttribute("sYears", years);
+			
 			//년도정보 추가
 			model.addAttribute("Years", Years);
 			List<RecordDTO> StatusDTOs = resultSer.StatusList(Years);

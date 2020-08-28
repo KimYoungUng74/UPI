@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.apache.commons.collections4.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -221,13 +224,28 @@ public class ResultController {
 
 	// 총괄 결과표 페이지
 	@RequestMapping(value = "result_grid_view.do")
-	public ModelAndView resultGrid(Locale locale, Model model) {
+	public ModelAndView resultGrid(HttpServletRequest request,Locale locale, Model model, String Years) {
 
-		List<RecordDTO> dto = resultSer.selectResultListAll(YEAR);
+		//세션에 저장된 년도값 가져옴
+		HttpSession session = request.getSession();
+		String name = "sYears";
+		String sYears = (String) session.getAttribute(name);
+		List<RecordDTO> dto = null;
+		
+		
+		if(Years == null) { //메인에서 선택된 년도 총괄결과표 페이지로 넘어와서 적용
+			dto = resultSer.selectResultListAll(sYears);
+		}else { //총괄결과표에서 년도를 선택했을 시
+			dto = resultSer.selectResultListAll(Years);
+		}
+
 		List<GradeDTO> gDto = resultSer.selectResultGradeStandard(); // 평가 등급 기준
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("result_view/result_grid_view");
+		
+		//년도정보 추가
+		model.addAttribute("Years", Years);
 		
 		//현재 년도 총괄 결과
 		mav.addObject("viewAll", dto);

@@ -99,7 +99,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">${year }년도 지표 총괄 결과</h3>
+                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">지표 총괄 결과표</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
@@ -142,6 +142,35 @@
 						</div>
 					</div>
                  	
+                 	<!-- 년도 선택 -->
+                 	<div class="col-md-12">
+                 	<div class="card">
+                            <div class="card-body row">
+                            	<div class="col-md-6">
+                                	<span>년도 선택 </span>
+                                	<select class="form-control" id="Years" onChange="location.href='result_grid_view.do?Years='+value">
+                                			<c:if test="${Years == null }">
+                                			<option value="2022" <c:if test="${YEAR1=='2022'}" >selected="selected"</c:if>>2022</option>
+                                            <option value="2021" <c:if test="${YEAR1=='2021'}" >selected="selected"</c:if>>2021</option>
+                                            <option value="2020" <c:if test="${YEAR1=='2020'}" >selected="selected"</c:if>>2020</option>
+                                            <option value="2019" <c:if test="${YEAR1=='2019'}" >selected="selected"</c:if>>2019</option>
+                                            <option value="2018" <c:if test="${YEAR1=='2018'}" >selected="selected"</c:if>>2018</option>
+                                            <option value="2017" <c:if test="${YEAR1=='2017'}" >selected="selected"</c:if>>2017</option>
+                                            </c:if>
+                                            
+                                            <c:if test="${Years != null }">
+                                			<option value="2022" <c:if test="${Years=='2022'}" >selected="selected"</c:if>>2022</option>
+                                            <option value="2021" <c:if test="${Years=='2021'}" >selected="selected"</c:if>>2021</option>
+                                            <option value="2020" <c:if test="${Years=='2020'}" >selected="selected"</c:if>>2020</option>
+                                            <option value="2019" <c:if test="${Years=='2019'}" >selected="selected"</c:if>>2019</option>
+                                            <option value="2018" <c:if test="${Years=='2018'}" >selected="selected"</c:if>>2018</option>
+                                            <option value="2017" <c:if test="${Years=='2017'}" >selected="selected"</c:if>>2017</option>
+                                            </c:if>
+                                    </select>
+                                </div>
+                        	</div>
+                    </div>
+                 	</div>
                     <div class="col-12" id="all-list">
                     <!-- css링크들 임포트 -->
     				<c:import url="../import/csslink.jsp" charEncoding="UTF-8" >
