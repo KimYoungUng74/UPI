@@ -224,21 +224,21 @@ public class ResultController {
 
 	// 총괄 결과표 페이지
 	@RequestMapping(value = "result_grid_view.do")
-	public ModelAndView resultGrid(HttpServletRequest request,Locale locale, Model model, String Years) {
+	public ModelAndView resultGrid(HttpServletRequest request,Locale locale, Model model, String Years, HttpSession session) {
 
-		//세션에 저장된 년도값 가져옴
-		HttpSession session = request.getSession();
-		String name = "sYears";
-		String sYears = (String) session.getAttribute(name);
-		List<RecordDTO> dto = null;
-		
-		
-		if(Years == null) { //메인에서 선택된 년도 총괄결과표 페이지로 넘어와서 적용
-			dto = resultSer.selectResultListAll(sYears);
-		}else { //총괄결과표에서 년도를 선택했을 시
-			dto = resultSer.selectResultListAll(Years);
+		//Years 지정 년도
+		if(Years==null){ // 뷰에서 지정한 년도 값이 없는 경우
+			if(session.getAttribute("sYears") != null) { //세션값이 있을 경우
+				Years = (String)session.getAttribute("sYears");  //년도 정보를 세션값에서 가져옴
+			}else {
+				Years = (new java.util.Date().getYear()+1900)+""; // 세션값도 없다면 걍 최신년도 가져옴
+			}
+		}else {
+			session.setAttribute("sYears", Years); // 지정 값이 있는 경우 세션에 지정년도를 지정합니다.
 		}
-
+		List<RecordDTO> dto = resultSer.selectResultListAll(Years); // 정해진 년도로 리스트를 가져옵니다.
+		
+		
 		List<GradeDTO> gDto = resultSer.selectResultGradeStandard(); // 평가 등급 기준
 		
 		ModelAndView mav = new ModelAndView();
