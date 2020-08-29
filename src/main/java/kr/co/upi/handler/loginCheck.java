@@ -30,7 +30,11 @@ public class loginCheck extends HandlerInterceptorAdapter{
         String userid = (String) session.getAttribute("USER_ID");
         String userpw = (String) session.getAttribute("USER_PW");
 		if (userid == null) {
-			modelAndView.setViewName("user/login");
+			try {
+				modelAndView.setViewName("user/login");
+			}catch(NullPointerException e) {
+				System.out.println("인터럽트/모델&뷰가 존재하지 않는요청");
+			}
 		} else if (userpw.equals("d8f01284fda46e5584a444a23ea4d977b89b1ebb586812b3cad97662270e4aed")) { // 암호가 12346578일
 			modelAndView.setViewName("user/pwUpdate");
 		}
