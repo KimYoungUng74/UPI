@@ -71,15 +71,15 @@
 	
 	
 	
-	<!-- 특정 지표의 년도별 최신보고서들 가져오기 -->
+	<!-- 특정 지표의 년도별 최신보고서들 가져오기 (정의서 내용에 사용)-->
 	<select id="ResultListIncd" parameterType="int" resultType="RecordDTO">
 		SELECT *
 		FROM
 		RECORD_TB
-		where (INDICATORS_NUM, RECORD_DATE, to_char(RECORD_DATE, 'yyyy')) in (
-    		select INDICATORS_NUM, max(RECORD_DATE),to_char(RECORD_DATE, 'yyyy') from RECORD_TB group by INDICATORS_NUM,to_char(RECORD_DATE, 'yyyy')
+		where (INDICATORS_NUM, RECORD_DATE, to_char(ADD_MONTHS(RECORD_DATE,-2), 'yyyy')) in (
+    		select INDICATORS_NUM, max(RECORD_DATE),to_char(ADD_MONTHS(RECORD_DATE,-2), 'yyyy') from RECORD_TB group by INDICATORS_NUM,to_char(ADD_MONTHS(RECORD_DATE,-2), 'yyyy')
 		) AND INDICATORS_NUM = #{INDICATORS_NUM}
-		ORDER BY to_char(RECORD_DATE, 'yyyy') DESC
+		ORDER BY to_char(ADD_MONTHS(RECORD_DATE,-2), 'yyyy') DESC
 	</select>
 	
 	<!-- 해당 등급 최신보고서들 가져오기 -->
