@@ -145,7 +145,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                            	<ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
+                            	<ul class="nav nav-pills bg-nav-pills nav-justified">
                                     <li class="nav-item">
                                         <a href="#all_tab" data-toggle="tab" aria-expanded="true" class="nav-link active">
                                             <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
@@ -161,37 +161,39 @@
                                     <li class="nav-item">
                                         <a href="#AGENCY_tab" data-toggle="tab" aria-expanded="false" class="nav-link">
                                             <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
-                                            <span class="d-none d-lg-block">기관평가인증 현황</span>
+                                            <span class="d-none d-lg-block">기관평가인증</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#AHA_tab" data-toggle="tab" aria-expanded="false" class="nav-link">
                                             <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
-                                            <span class="d-none d-lg-block">혁신지원 AHA 현황</span>
+                                            <span class="d-none d-lg-block">혁신지원 AHA</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#LINC_tab" data-toggle="tab" aria-expanded="false" class="nav-link">
                                             <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
-                                            <span class="d-none d-lg-block">사회맞춤형 LINC+ 현황</span>
+                                            <span class="d-none d-lg-block">사회맞춤형 LINC+</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#TYPE3_tab" data-toggle="tab" aria-expanded="false" class="nav-link">
                                             <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
-                                            <span class="d-none d-lg-block">3유형 현황</span>
+                                            <span class="d-none d-lg-block">3유형</span>
                                         </a>
                                     </li>
                                 </ul>
+                    		</div>
+                    	</div>
+                    </div>        	
                             	
-                                <div class="d-flex align-items-center mb-4">
-                                    <div id="container" class="chart1" style="margin: 0 auto"></div>
-                                </div>
-                                
+                            	
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
                                 <div class="tab-content">
                                     <div class="tab-pane show active" id="all_tab">
-										<div class="table-responsive">
-											<div class="d-flex align-items-center row">
+											<div class="d-flex align-items-center row mb-0">
 												<c:forEach var="dto" items="${StatusDTOs}">
 													<div class="col-md-4">
 														<div class="card">
@@ -262,10 +264,8 @@
 													</div>
 												</c:forEach>
 											</div>
-										</div>
 									</div>
 									<div class="tab-pane" id="BEST_tab">
-										<div class="table-responsive">
 											<div class="d-flex align-items-center row">
 												<c:forEach var="dto" items="${BEST}">
 													<div class="col-md-4"">
@@ -336,10 +336,8 @@
 													</div>
 												</c:forEach>
 											</div>
-										</div>
 									</div>
 									<div class="tab-pane" id="AGENCY_tab">
-										<div class="table-responsive">
 											<div class="d-flex align-items-center row">
 												<c:forEach var="dto" items="${AGENCY}">
 													<div class="col-md-4">
@@ -410,10 +408,8 @@
 													</div>
 												</c:forEach>
 											</div>
-										</div>
 									</div>
 									<div class="tab-pane" id="AHA_tab">
-										<div class="table-responsive">
 											<div class="d-flex align-items-center row">
 												<c:forEach var="dto" items="${AHA}">
 													<div class="col-md-4">
@@ -484,10 +480,8 @@
 													</div>
 												</c:forEach>
 											</div>
-										</div>
 									</div>
 									<div class="tab-pane" id="LINC_tab">
-										<div class="table-responsive">
 											<div class="d-flex align-items-center row">
 												<c:forEach var="dto" items="${LINC}">
 													<div class="col-md-4">
@@ -558,10 +552,8 @@
 													</div>
 												</c:forEach>
 											</div>
-										</div>
 									</div>
 									<div class="tab-pane" id="TYPE3_tab">
-										<div class="table-responsive">
 											<div class="d-flex align-items-center row">
 												<c:forEach var="dto" items="${TYPE3}">
 													<div class="col-md-4">
@@ -635,10 +627,6 @@
 										</div>
 									</div>
 									
-								</div>
-                                
-                                
-                                
                             </div>
                         </div>
                     </div>
