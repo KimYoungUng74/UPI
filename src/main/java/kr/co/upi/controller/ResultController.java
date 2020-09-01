@@ -30,7 +30,7 @@ public class ResultController {
 
 	@Autowired
 	ResultService resultSer;
-	
+
 	@Autowired
 	IndicatorsService indcSer;
 
@@ -38,7 +38,6 @@ public class ResultController {
 	String YEAR = Integer.toString(cal.get(Calendar.YEAR)); // 현재 년도 계산
 	String ONE_YEAR_AGO = Integer.toString(cal.get(Calendar.YEAR) - 1); // 1년전 계산
 	String TWO_YEAR_AGO = Integer.toString(cal.get(Calendar.YEAR) - 2); // 2년전 계산
-	
 
 	// 전년도 대비 평가 비교 페이지
 	@RequestMapping(value = "yearly_result_view.do")
@@ -66,9 +65,9 @@ public class ResultController {
 		mav.addObject("year", YEAR);
 		mav.addObject("one_year", ONE_YEAR_AGO);
 		mav.addObject("two_year", TWO_YEAR_AGO);
-		
-		//평가 등급 기준
-		mav.addObject("viewGrade",gDto);
+
+		// 평가 등급 기준
+		mav.addObject("viewGrade", gDto);
 
 		mav.setViewName("result_view/yearly_result_view");
 		return mav;
@@ -118,7 +117,7 @@ public class ResultController {
 		List<GradeCountDTO> p_now_year = resultSer.BusinessGradePer(YEAR);
 		ArrayList<Integer> pGrade = new ArrayList<Integer>();
 		List<GradeDTO> gDto = resultSer.selectResultGradeStandard(); // 평가 등급 기준
-		
+
 		// 제작년도 퍼센트
 		int pA = 0;
 		int pB = 0;
@@ -131,17 +130,17 @@ public class ResultController {
 			pD += p_two_year_ago.get(i).getD();
 			pEtc += p_two_year_ago.get(i).getETC();
 		}
-		
-		//실제 등급별 갯수
+
+		// 실제 등급별 갯수
 		List<Integer> p_two_year_ago1 = new ArrayList<Integer>();
 		p_two_year_ago1.add(pA);
 		p_two_year_ago1.add(pB);
 		p_two_year_ago1.add(pD);
 		p_two_year_ago1.add(pEtc);
 
-		//퍼센트 계산 및 리스트에 담기
+		// 퍼센트 계산 및 리스트에 담기
 		List<String> p_two_year = cal.calPer(pA, pB, pD, pEtc);
-		
+
 		// 작년도 퍼센트
 		pA = 0;
 		pB = 0;
@@ -155,17 +154,17 @@ public class ResultController {
 			pEtc += p_one_year_ago.get(i).getETC();
 		}
 
-		//실제 등급별 갯수
+		// 실제 등급별 갯수
 		List<Integer> p_one_year_ago1 = new ArrayList<Integer>();
 		p_one_year_ago1.add(pA);
 		p_one_year_ago1.add(pB);
 		p_one_year_ago1.add(pD);
 		p_one_year_ago1.add(pEtc);
-		
-		//퍼센트 계산 및 리스트에 담기
+
+		// 퍼센트 계산 및 리스트에 담기
 		List<String> p_one_year = cal.calPer(pA, pB, pD, pEtc);
-		
-		for(int i=0; i<p_one_year.size(); i++) {
+
+		for (int i = 0; i < p_one_year.size(); i++) {
 			System.out.println("두번째 " + p_one_year.get(i));
 		}
 
@@ -182,14 +181,14 @@ public class ResultController {
 			pEtc += p_now_year.get(i).getETC();
 		}
 
-		//실제 등급별 갯수
+		// 실제 등급별 갯수
 		List<Integer> p_now_year1 = new ArrayList<Integer>();
 		p_now_year1.add(pA);
 		p_now_year1.add(pB);
 		p_now_year1.add(pD);
 		p_now_year1.add(pEtc);
-		
-		//퍼센트 계산 및 리스트에 담기
+
+		// 퍼센트 계산 및 리스트에 담기
 		List<String> p_now = cal.calPer(pA, pB, pD, pEtc);
 
 		ModelAndView mav = new ModelAndView();
@@ -198,7 +197,7 @@ public class ResultController {
 		mav.addObject("now_year", now_year);
 		mav.addObject("one_year_ago", one_year_ago);
 		mav.addObject("two_year_ago", two_year_ago);
-		
+
 		mav.addObject("p_now_year", p_now_year1);
 		mav.addObject("p_one_year_ago", p_one_year_ago1);
 		mav.addObject("p_two_year_ago", p_two_year_ago1);
@@ -214,54 +213,67 @@ public class ResultController {
 		mav.addObject("p_two_year", p_two_year);
 		mav.addObject("p_one_year", p_one_year);
 		mav.addObject("p_now", p_now);
-		
-		//평가 등급 기준
-		mav.addObject("viewGrade",gDto);
-		
+
+		// 평가 등급 기준
+		mav.addObject("viewGrade", gDto);
+
 		mav.setViewName("result_view/yearly_grade_view");
 		return mav;
 	}
 
 	// 총괄 결과표 페이지
 	@RequestMapping(value = "result_grid_view.do")
-	public ModelAndView resultGrid(HttpServletRequest request,Locale locale, Model model, String Years, HttpSession session) {
+	public ModelAndView resultGrid(HttpServletRequest request, Locale locale, Model model, String Years,
+			HttpSession session) {
 
-		//Years 지정 년도
-		if(Years==null){ // 뷰에서 지정한 년도 값이 없는 경우
-			if(session.getAttribute("sYears") != null) { //세션값이 있을 경우
-				Years = (String)session.getAttribute("sYears");  //년도 정보를 세션값에서 가져옴
-			}else {
-				Years = (new java.util.Date().getYear()+1900)+""; // 세션값도 없다면 걍 최신년도 가져옴
+		// Years 지정 년도
+		if (Years == null) { // 뷰에서 지정한 년도 값이 없는 경우
+			if (session.getAttribute("sYears") != null) { // 세션값이 있을 경우
+				Years = (String) session.getAttribute("sYears"); // 년도 정보를 세션값에서 가져옴
+			} else {
+				Years = (new java.util.Date().getYear() + 1900) + ""; // 세션값도 없다면 걍 최신년도 가져옴
 			}
-		}else {
+		} else {
 			session.setAttribute("sYears", Years); // 지정 값이 있는 경우 세션에 지정년도를 지정합니다.
 		}
+		
 		List<RecordDTO> dto = resultSer.selectResultListAll(Years); // 정해진 년도로 리스트를 가져옵니다.
-		
-		
+
 		List<GradeDTO> gDto = resultSer.selectResultGradeStandard(); // 평가 등급 기준
-		
+
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("result_view/result_grid_view");
-		
-		//년도정보 추가
+
+		// 년도정보 추가
 		model.addAttribute("Years", Years);
-		
-		//현재 년도 총괄 결과
+
+		// 현재 년도 총괄 결과
 		mav.addObject("viewAll", dto);
-		
-		//평가 등급 기준
-		mav.addObject("viewGrade",gDto);
-		
-		//현재 년도
+
+		// 평가 등급 기준
+		mav.addObject("viewGrade", gDto);
+
+		// 현재 년도
 		mav.addObject("year", YEAR);
 		return mav;
 	}
 
 	// 사업별 등급 표 페이지
 	@RequestMapping(value = "business_grade_view.do")
-	public ModelAndView businessGrade(Locale locale, Model model) {
+	public ModelAndView businessGrade(HttpServletRequest request, Locale locale, Model model, String Years,
+			HttpSession session) {
 
+		// Years 지정 년도
+		if (Years == null) { // 뷰에서 지정한 년도 값이 없는 경우
+			if (session.getAttribute("sYears") != null) { // 세션값이 있을 경우
+				Years = (String) session.getAttribute("sYears"); // 년도 정보를 세션값에서 가져옴
+			} else {
+				Years = (new java.util.Date().getYear() + 1900) + ""; // 세션값도 없다면 걍 최신년도 가져옴
+			}
+		} else {
+			session.setAttribute("sYears", Years); // 지정 값이 있는 경우 세션에 지정년도를 지정합니다.
+		}
+		
 		List<RecordDTO> dto = resultSer.selectBusinessGrade(YEAR);
 		List<GradeCountDTO> now_year = resultSer.selectYearGrade(YEAR);
 		List<Integer> total = new ArrayList<Integer>();
@@ -290,7 +302,7 @@ public class ResultController {
 		int all = 0;
 
 		for (int i = 0; i < now_year.size(); i++) {
-			all_Best += dto.get(i).getIS_BEST();	
+			all_Best += dto.get(i).getIS_BEST();
 			all_Agency += dto.get(i).getIS_AGENCY();
 			all_AHA += dto.get(i).getIS_AHA();
 			all_Linc += dto.get(i).getIS_LINC();
@@ -307,14 +319,14 @@ public class ResultController {
 		total.add(all);
 
 		// 퍼센트 계산
-		
+
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("viewAll", dto);
 		mav.addObject("now_year", now_year);
 		mav.addObject("grade", grade);
 		mav.addObject("business", business);
-		mav.addObject("total", total);		
-		mav.addObject("viewGrade",gDto);
+		mav.addObject("total", total);
+		mav.addObject("viewGrade", gDto);
 		mav.setViewName("result_view/business_grade_view");
 		return mav;
 	}
@@ -324,9 +336,9 @@ public class ResultController {
 	public ModelAndView indicatorFomula(Locale locale, Model model) {
 
 		List<IndicatorsDTO> dto = indcSer.selectAll();
-		
+
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("viewAll",dto);
+		mav.addObject("viewAll", dto);
 		mav.setViewName("result_view/indicator_formula_view");
 		return mav;
 	}
@@ -339,7 +351,5 @@ public class ResultController {
 		mav.setViewName("result_view/indicator_grade_standard");
 		return mav;
 	}
-	
-	
-	
+
 }

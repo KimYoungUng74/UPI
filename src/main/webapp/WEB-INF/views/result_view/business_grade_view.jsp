@@ -151,13 +151,44 @@
 							</div>
 						</div>
 					</div>
+					
+					<!-- 년도 선택 -->
+                 	<div class="col-md-12">
+                 	<div class="card">
+                            <div class="card-body row">
+                            	<div class="col-md-6">
+                                	<span>년도 선택 </span>
+                                	<select class="form-control" id="Years" onChange="location.href='business_grade_view.do?Years='+value">
+                                			<c:if test="${Years == null }">
+                                			<option value="2022" <c:if test="${YEAR1=='2022'}" >selected="selected"</c:if>>2022</option>
+                                            <option value="2021" <c:if test="${YEAR1=='2021'}" >selected="selected"</c:if>>2021</option>
+                                            <option value="2020" <c:if test="${YEAR1=='2020'}" >selected="selected"</c:if>>2020</option>
+                                            <option value="2019" <c:if test="${YEAR1=='2019'}" >selected="selected"</c:if>>2019</option>
+                                            <option value="2018" <c:if test="${YEAR1=='2018'}" >selected="selected"</c:if>>2018</option>
+                                            <option value="2017" <c:if test="${YEAR1=='2017'}" >selected="selected"</c:if>>2017</option>
+                                            </c:if>
+                                            
+                                            <c:if test="${Years != null }">
+                                			<option value="2022" <c:if test="${Years=='2022'}" >selected="selected"</c:if>>2022</option>
+                                            <option value="2021" <c:if test="${Years=='2021'}" >selected="selected"</c:if>>2021</option>
+                                            <option value="2020" <c:if test="${Years=='2020'}" >selected="selected"</c:if>>2020</option>
+                                            <option value="2019" <c:if test="${Years=='2019'}" >selected="selected"</c:if>>2019</option>
+                                            <option value="2018" <c:if test="${Years=='2018'}" >selected="selected"</c:if>>2018</option>
+                                            <option value="2017" <c:if test="${Years=='2017'}" >selected="selected"</c:if>>2017</option>
+                                            </c:if>
+                                    </select>
+                                </div>
+                        	</div>
+                    </div>
+                 	</div>
+                 	
                     <div class="col-12">
                         <div class="card" id="all-list">
                         <!-- css링크들 임포트 -->
     					<c:import url="../import/csslink.jsp" charEncoding="UTF-8" >
     					</c:import>
                             <div class="card-body">
-                                <h4 class="card-title"><b>2020년도 사업별 지표 등급</b></h4>
+                                <h4 class="card-title"><b>사업별 지표 등급</b></h4>
                                 <p class="text-muted font-13">
                                     	경민대학교
                                 </p>
