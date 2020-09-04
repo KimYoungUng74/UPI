@@ -80,7 +80,7 @@ public class IndicatorsController {
 		dto.setUSER_ID(session.getAttribute("USER_ID").toString());
 		dto.setUSER_NAME(session.getAttribute("USER_NAME").toString());
 		dto.setACTION_CODE(1);
-
+		dto.setIS_USE(0);
 		System.out.println(dto);
 
 		if (1 != indicatorsSer.indicators_write(dto)) {
@@ -113,13 +113,14 @@ public class IndicatorsController {
 		dto.setUSER_ID(session.getAttribute("USER_ID").toString());
 		dto.setUSER_NAME(session.getAttribute("USER_NAME").toString());
 		dto.setACTION_CODE(2);
+		dto.setIS_USE(0);
 		System.out.println(dto);
 
 		if (1 != indicatorsSer.indicators_modify(dto)) {
 			mav.addObject("msg", "DB_ERROR");
 			System.out.println("에러");
 		}
-
+		
 		dto = indicatorsSer.selectOne(dto);
 		List<RecordDTO> recordDTOs = resultSer.selectListIncd(dto.getINDICATORS_NUM());
 		System.out.println(recordDTOs.get(0));

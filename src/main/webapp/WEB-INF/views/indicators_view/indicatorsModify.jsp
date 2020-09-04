@@ -118,7 +118,7 @@
 				<!-- *************************************************************** -->
 				<!-- Start Sales Charts Section -->
 				<!-- *************************************************************** -->
-				<form id="submitform" action="indicators_modifyOk.mg" id="frm"
+				<form id="submitform" action="indicators_modifyOk.mg"
 					method="post">
 					<input type="hidden" name="INDICATORS_NUM"
 						value="${dto.INDICATORS_NUM}">
@@ -494,7 +494,7 @@
 												<div class="col-md-12" style="padding-top: 5px;">
 													<hr>
 													<button
-														onclick="changeURL(); return confirm('정말 사용중지 하시겠습니까?')?document.getElementById('frm').submit():''"
+														onclick="changeURL();"
 														class="btn btn-danger waves-effect waves-light"
 														type="button" style="float: left; margin-left: 5px;">지표
 														사용중지</button>
@@ -688,7 +688,10 @@
 
 	/* 요소 버튼 클릭 */
 	function changeURL() {
-		document.getElementById('frm').action = "indicators_delete.mg";
+		if(confirm('정말 사용중지 하시겠습니까?')) {
+			document.getElementById('submitform').action = "indicators_delete.mg";
+			document.getElementById('submitform').submit();
+		}
 	};
 
 	/* 요소 버튼 클릭 */
