@@ -149,23 +149,12 @@
                             	<div class="col-md-6">
                                 	<span>년도 선택 </span>
                                 	<select class="form-control" id="Years" onChange="location.href='result_grid_view.do?Years='+value">
-                                			<c:if test="${Years == null }">
-                                			<option value="2022" <c:if test="${YEAR1=='2022'}" >selected="selected"</c:if>>2022</option>
-                                            <option value="2021" <c:if test="${YEAR1=='2021'}" >selected="selected"</c:if>>2021</option>
-                                            <option value="2020" <c:if test="${YEAR1=='2020'}" >selected="selected"</c:if>>2020</option>
-                                            <option value="2019" <c:if test="${YEAR1=='2019'}" >selected="selected"</c:if>>2019</option>
-                                            <option value="2018" <c:if test="${YEAR1=='2018'}" >selected="selected"</c:if>>2018</option>
-                                            <option value="2017" <c:if test="${YEAR1=='2017'}" >selected="selected"</c:if>>2017</option>
-                                            </c:if>
-                                            
-                                            <c:if test="${Years != null }">
                                 			<option value="2022" <c:if test="${Years=='2022'}" >selected="selected"</c:if>>2022</option>
                                             <option value="2021" <c:if test="${Years=='2021'}" >selected="selected"</c:if>>2021</option>
                                             <option value="2020" <c:if test="${Years=='2020'}" >selected="selected"</c:if>>2020</option>
                                             <option value="2019" <c:if test="${Years=='2019'}" >selected="selected"</c:if>>2019</option>
                                             <option value="2018" <c:if test="${Years=='2018'}" >selected="selected"</c:if>>2018</option>
                                             <option value="2017" <c:if test="${Years=='2017'}" >selected="selected"</c:if>>2017</option>
-                                            </c:if>
                                     </select>
                                 </div>
                         	</div>

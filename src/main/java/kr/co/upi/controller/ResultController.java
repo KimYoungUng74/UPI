@@ -274,8 +274,9 @@ public class ResultController {
 			session.setAttribute("sYears", Years); // 지정 값이 있는 경우 세션에 지정년도를 지정합니다.
 		}
 		
-		List<RecordDTO> dto = resultSer.selectBusinessGrade(YEAR);
-		List<GradeCountDTO> now_year = resultSer.selectYearGrade(YEAR);
+		System.out.println("현재 년도 값 : " + Years);
+		List<RecordDTO> dto = resultSer.selectBusinessGrade(Years);
+		List<GradeCountDTO> now_year = resultSer.selectYearGrade(Years);
 		List<Integer> total = new ArrayList<Integer>();
 		List<String> grade = new ArrayList<String>();
 		List<String> business = new ArrayList<String>();
@@ -321,6 +322,9 @@ public class ResultController {
 		// 퍼센트 계산
 
 		ModelAndView mav = new ModelAndView();
+		// 년도정보 추가
+		model.addAttribute("Years", Years);
+		
 		mav.addObject("viewAll", dto);
 		mav.addObject("now_year", now_year);
 		mav.addObject("grade", grade);
