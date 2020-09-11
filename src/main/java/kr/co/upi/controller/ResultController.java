@@ -94,15 +94,16 @@ public class ResultController {
 		int c_two_year_ago = 0;
 
 		for (int i = 0; i < now_year.size(); i++) {
-			c_now_year += now_year.get(i).getGC();
+			c_now_year += (now_year.get(i).getA() + now_year.get(i).getB() + now_year.get(i).getD() + now_year.get(i).getETC());
 		}
 
 		for (int i = 0; i < one_year_ago.size(); i++) {
-			c_one_year_ago += one_year_ago.get(i).getGC();
+			c_one_year_ago += (one_year_ago.get(i).getA() + one_year_ago.get(i).getB() + one_year_ago.get(i).getD() + one_year_ago.get(i).getETC());
+			
 		}
-
+	
 		for (int i = 0; i < two_year_ago.size(); i++) {
-			c_two_year_ago += two_year_ago.get(i).getGC();
+			c_two_year_ago += (two_year_ago.get(i).getA() + two_year_ago.get(i).getB() + two_year_ago.get(i).getD() + two_year_ago.get(i).getETC());
 		}
 
 		total.add(c_two_year_ago);
