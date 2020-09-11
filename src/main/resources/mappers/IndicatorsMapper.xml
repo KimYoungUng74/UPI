@@ -214,7 +214,7 @@
 		#{TARGET_VAL},
 		#{FORMULA},
 		#{IS_NEGATIVE},
-		0,
+		#{IS_USE},
 		#{USER_ID},
 		#{USER_NAME},
 		#{ACTION_CODE},
