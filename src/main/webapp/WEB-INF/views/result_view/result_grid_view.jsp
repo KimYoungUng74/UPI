@@ -157,6 +157,17 @@
                                             <option value="2017" <c:if test="${Years=='2017'}" >selected="selected"</c:if>>2017</option>
                                     </select>
                                 </div>
+                                
+                                <div class="col-md-2">
+                                	<span>분기 선택</span>
+                                	<select class="form-control" id="Divive" onChange="location.href='result_grid_view.do?Divive='+value" >
+                                			<option value="0" <c:if test="${Divive==0}" >selected="selected"</c:if>>전체</option>
+                                			<option value="1" <c:if test="${Divive==1}" >selected="selected"</c:if>>1분기</option>
+                                            <option value="2" <c:if test="${Divive==2}" >selected="selected"</c:if>>2분기</option>
+                                            <option value="3" <c:if test="${Divive==3}" >selected="selected"</c:if>>3분기</option>
+                                            <option value="4" <c:if test="${Divive==4}" >selected="selected"</c:if>>4분기</option>
+                                    </select>
+                                </div>
                         	</div>
                     </div>
                  	</div>
@@ -224,7 +235,7 @@
                                                 <td class="text-center" > ${row.GRADE }</td>
                                                 <c:choose>
                                                 	<c:when  test="${row.ACHIEVE_VAL != null }">                                  
-		                                                <td class="text-center">${row.ACHIEVE_VAL }</td>
+		                                                <td class="text-center">${row.ACHIEVE_VAL }%</td>
 		                                            </c:when >
 		                                                
 		                                            <c:otherwise>
