@@ -262,6 +262,7 @@
     		select INDICATORS_NUM, max(RECORD_DATE),to_char(RECORD_DATE, 'yyyy') from INDICATORS_TB
     		group by INDICATORS_NUM,to_char(RECORD_DATE, 'yyyy')
 		)
+		AND IS_USE = 0
 		ORDER BY INDICATORS_NUM, to_char(RECORD_DATE, 'yyyy') DESC
 	</select>
 </mapper>

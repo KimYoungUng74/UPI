@@ -343,7 +343,19 @@
 		},
 
 		xAxis : {
-			categories : ['${Record_3.getRECORD_DATE().getYear()+1900}', '${Record_2.getRECORD_DATE().getYear()+1900}', '${Record_1.getRECORD_DATE().getYear()+1900}' ],
+			categories : [
+				<c:if test="${Record_3.getRECORD_DATE().getYear()!=null}">
+					'${Record_3.getRECORD_DATE().getYear()+1900}'
+				</c:if>+''
+				, 
+				<c:if test="${Record_2.getRECORD_DATE().getYear()!=null}">
+					'${Record_2.getRECORD_DATE().getYear()+1900}'
+				</c:if>+''
+				, 
+				<c:if test="${Record_1.getRECORD_DATE().getYear()!=null}">
+					'${Record_1.getRECORD_DATE().getYear()+1900}'
+				</c:if>+''
+					],
 			labels : {
 				x : -10
 			}
@@ -381,7 +393,19 @@
 		},
 
 		xAxis : {
-			categories : [ '${Record_3.getRECORD_DATE().getYear()+1900}', '${Record_2.getRECORD_DATE().getYear()+1900}', '${Record_1.getRECORD_DATE().getYear()+1900}' ],
+			categories : [ 
+				<c:if test="${Record_3.getRECORD_DATE().getYear()!=null}">
+					'${Record_3.getRECORD_DATE().getYear()+1900}'
+				</c:if>+''
+				, 
+				<c:if test="${Record_2.getRECORD_DATE().getYear()!=null}">
+					'${Record_2.getRECORD_DATE().getYear()+1900}'
+				</c:if>+''
+				,
+				<c:if test="${Record_1.getRECORD_DATE().getYear()!=null}">
+					'${Record_1.getRECORD_DATE().getYear()+1900}'
+				</c:if>+''
+					],
 			labels : {
 				x : -10
 			}
