@@ -17,9 +17,9 @@ public class ResultService {
 	public ResultDAO dao;
 
 	// 해당 년도 지표값들 가져오기
-	public List<RecordDTO> selectResultListAll(String YEAR) {
+	public List<RecordDTO> selectResultListAll(RecordDTO dto) {
 
-		return dao.selectResultListAll(YEAR);
+		return dao.selectResultListAll(dto);
 	}
 
 	// 해당 년도별 지표값들 가져오기 ( NULL 포함 )

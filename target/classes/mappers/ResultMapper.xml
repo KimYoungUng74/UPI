@@ -6,7 +6,7 @@
 	<!-- id는 마음대로 작성 prarameter는 실제DTO클래스 -->
 
 	<!-- 총괄 결과 리스트 보기 -->
-	<select id="ResultGridList" parameterType="String"
+	<select id="ResultGridList" parameterType="RecordDTO"
 		resultType="RecordDTO">
 		<!-- SELECT * FROM RECORD_TB WHERE EXTRACT(YEAR FROM RECORD_DATE) = '${YEAR}' 
 			ORDER BY RECORD_NUM -->
@@ -18,8 +18,26 @@
 		NVL(MAX(PRESENT_VAL) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE),'-') as PRESENT_VAL,
 		NVL(MAX(GRADE) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE),'-') as GRADE,
 		MAX(ACHIEVE_VAL) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE) as ACHIEVE_VAL
-		FROM RECORD_TB
-		WHERE to_char(ADD_MONTHS(RECORD_DATE,-2), 'yyyy') = #{YEAR}
+		FROM RECORD_TB rt
+		WHERE to_char(ADD_MONTHS(RECORD_DATE,-2), 'yyyy') = #{TARGET_VAL}
+		<choose>
+               <when test="ACTION_CODE == 1"> <!-- 1분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 1 AND 3
+               </when> 
+               <when test="ACTION_CODE == 2"> <!-- 2분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 4 AND 6
+               </when>
+               <when test="ACTION_CODE == 3"> <!-- 3분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 7 AND 9
+               </when>
+               <when test="ACTION_CODE == 4"> <!-- 4분기 -->
+                    AND to_char(ADD_MONTHS(RECORD_DATE,-2), 'mm') BETWEEN 10 AND 12
+               </when>
+               <otherwise>
+               		<!-- 분기로 나누지 않음 -->
+               </otherwise>
+            </choose> 
+        AND rt.INDICATORS_NUM in(SELECT MAX(it.INDICATORS_NUM) KEEP (DENSE_RANK LAST ORDER BY it.RECORD_DATE) FROM INDICATORS_TB it GROUP BY it.INDICATORS_NUM HAVING SUM(IS_USE) = 0)
 		GROUP BY INDICATORS_NUM, INDICATORS_NAME
 	</select>
 	

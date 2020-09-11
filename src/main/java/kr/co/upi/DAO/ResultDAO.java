@@ -22,9 +22,9 @@ public class ResultDAO {
 	public SqlSessionTemplate mybatis;
 
 	// 해당 년도 지표값들 가져오기
-	public List<RecordDTO> selectResultListAll(String YEAR) {
+	public List<RecordDTO> selectResultListAll(RecordDTO dto) {
 
-		return mybatis.selectList("ResultMapper.ResultGridList", YEAR);
+		return mybatis.selectList("ResultMapper.ResultGridList", dto);
 	}
 
 	// 해당 년도별 지표값들 가져오기 ( NULL 포함 )

@@ -241,7 +241,14 @@ public class ResultController {
 		if(Divive != null) {
 			Divive_int = Integer.parseInt(Divive);
 		}
-		List<RecordDTO> dto = resultSer.selectResultListAll(Years); // 정해진 년도로 리스트를 가져옵니다.
+		
+		RecordDTO sample_dto = new RecordDTO();
+		
+		sample_dto.setTARGET_VAL(Years); //년도값
+		sample_dto.setACTION_CODE(Divive_int); //분기값
+		
+		
+		List<RecordDTO> dto = resultSer.selectResultListAll(sample_dto); // 정해진 년도로 리스트를 가져옵니다.
 
 		List<GradeDTO> gDto = resultSer.selectResultGradeStandard(); // 평가 등급 기준
 
