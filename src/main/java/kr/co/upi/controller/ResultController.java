@@ -223,7 +223,7 @@ public class ResultController {
 
 	// 총괄 결과표 페이지
 	@RequestMapping(value = "result_grid_view.do")
-	public ModelAndView resultGrid(HttpServletRequest request, Locale locale, Model model, String Years,
+	public ModelAndView resultGrid(HttpServletRequest request, Locale locale, Model model, String Years,String Divive,
 			HttpSession session) {
 
 		// Years 지정 년도
@@ -237,6 +237,10 @@ public class ResultController {
 			session.setAttribute("sYears", Years); // 지정 값이 있는 경우 세션에 지정년도를 지정합니다.
 		}
 		
+		int Divive_int = 0;
+		if(Divive != null) {
+			Divive_int = Integer.parseInt(Divive);
+		}
 		List<RecordDTO> dto = resultSer.selectResultListAll(Years); // 정해진 년도로 리스트를 가져옵니다.
 
 		List<GradeDTO> gDto = resultSer.selectResultGradeStandard(); // 평가 등급 기준
@@ -246,6 +250,9 @@ public class ResultController {
 
 		// 년도정보 추가
 		model.addAttribute("Years", Years);
+		
+		//분기정보 추가
+		model.addAttribute("Divive", Divive_int);
 
 		// 현재 년도 총괄 결과
 		mav.addObject("viewAll", dto);

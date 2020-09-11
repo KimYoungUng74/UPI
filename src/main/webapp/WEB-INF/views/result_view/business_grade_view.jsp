@@ -17,6 +17,7 @@
 	<!-- TOAST UI CHART CDN LINK END -->
 	
 	
+	
 </head>
 
 <body>
@@ -167,7 +168,18 @@
                                             <option value="2017" <c:if test="${Years=='2017'}" >selected="selected"</c:if>>2017</option>
                                     </select>
                                 </div>
-                        	</div>
+                                
+                                <div class="col-md-2">
+                                	<span>분기 선택</span>
+                                	<select class="form-control" id="Divive" onChange="location.href='business_grade_view.do?Divive='+value" >
+                                			<option value="0" <c:if test="${Divive==0}" >selected="selected"</c:if>>전체</option>
+                                			<option value="1" <c:if test="${Divive==1}" >selected="selected"</c:if>>1분기</option>
+                                            <option value="2" <c:if test="${Divive==2}" >selected="selected"</c:if>>2분기</option>
+                                            <option value="3" <c:if test="${Divive==3}" >selected="selected"</c:if>>3분기</option>
+                                            <option value="4" <c:if test="${Divive==4}" >selected="selected"</c:if>>4분기</option>
+                                    </select>
+                            	</div>
+                        	</div>         
                     </div>
                  	</div>
                  	
@@ -370,6 +382,12 @@
 	<c:import url="../import/javascript.jsp" charEncoding="UTF-8" >
     </c:import>
    
+   <script>
+      $( document ).ready( function() {
+        $( 'td:empty' ).append( '0' );
+      } );
+    </script>
+    
 	<!-- Toast PIE Chart  -->
 	<script type="text/javascript">
 	/* BEST */
