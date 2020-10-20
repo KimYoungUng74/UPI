@@ -169,7 +169,7 @@
                                     </select>
                                 </div>
                                 
-                                <div class="col-md-2">
+                                <%-- <div class="col-md-2">
                                 	<span>분기 선택</span>
                                 	<select class="form-control" id="Divive" onChange="location.href='business_grade_view.do?Divive='+value" >
                                 			<option value="0" <c:if test="${Divive==0}" >selected="selected"</c:if>>전체</option>
@@ -178,7 +178,7 @@
                                             <option value="3" <c:if test="${Divive==3}" >selected="selected"</c:if>>3분기</option>
                                             <option value="4" <c:if test="${Divive==4}" >selected="selected"</c:if>>4분기</option>
                                     </select>
-                            	</div>
+                            	</div> --%>
                         	</div>         
                     </div>
                  	</div>
@@ -189,7 +189,7 @@
     					<c:import url="../import/csslink.jsp" charEncoding="UTF-8" >
     					</c:import>
                             <div class="card-body">
-                                <h4 class="card-title"><b>사업별 지표 등급</b></h4>
+                                <h4 class="card-title"><b>${Years }년도 사업별 지표 등급</b></h4>
                                 <p class="text-muted font-13">
                                     	경민대학교
                                 </p>
@@ -210,16 +210,73 @@
                                            
                                         </thead>
                                         <tbody>
-                                        	<c:forEach items="${grade}" var="row" varStatus="status">        
-	                                            <tr>
+             	 
+                                        	
+                                        	<c:forEach items="${grade}" var="row" varStatus="status">    
+                                        		 
+	                                           <tr>
 	                                                <th class="text-center" scope="row">${row}</th>
-	                                                <td class="text-center" id="IS_BEST">${viewAll[status.index].IS_BEST }</td>
-	                                                <td class="text-center" id="IS_AGENCY">${viewAll[status.index].IS_AGENCY }</td>
-	                                                <td class="text-center" id="IS_AHA">${viewAll[status.index].IS_AHA }</td>
-	                                                <td class="text-center" id="IS_LINC">${viewAll[status.index].IS_LINC }</td>
-	                                                <td class="text-center" id="IS_TYPE3">${viewAll[status.index].IS_TYPE3 }</td>                                                                                    
-	                                                <td class="text-center" id="IS_ALL">${now_year[status.index].GC }</td>                                                                                    
-	                                                                                                                                  
+	                                                
+	                                                <c:choose>
+	                                                	<c:when test="${p_IS_BEST[status.index] != 'NaN'}">
+	                                                		<td class="text-center" id="IS_BEST">${viewAll[status.index].IS_BEST } (${p_IS_BEST[status.index]}%)</td>
+	                                                	</c:when>
+	                                                	
+	                                                	<c:otherwise>
+		                                                	<td class="text-center" id="IS_BEST">0 (0%)</td>
+		                                                </c:otherwise>
+	                                                </c:choose>
+	                                                
+	                                                <c:choose>
+	                                                	<c:when test="${p_IS_AGENCY[status.index] != 'NaN'}">
+	                                                		<td class="text-center" id="IS_AGENCY">${viewAll[status.index].IS_AGENCY } (${p_IS_AGENCY[status.index]}%)</td>
+	                                                	</c:when>
+	                                                	
+	                                                	<c:otherwise>
+		                                                	<td class="text-center" id="IS_AGENCY">0 (0%)</td>
+		                                                </c:otherwise>
+	                                                </c:choose>
+	                                                
+	                                                <c:choose>
+	                                                	<c:when test="${p_IS_AHA[status.index] != 'NaN'}">
+	                                                		<td class="text-center" id="IS_AHA">${viewAll[status.index].IS_AHA } (${p_IS_AHA[status.index] }%)</td>
+	                                                	</c:when>
+	                                                	
+	                                                	<c:otherwise>
+		                                                	<td class="text-center" id="IS_AHA">0 (0%)</td>
+		                                                </c:otherwise>
+	                                                </c:choose>
+	                                                
+	                                                <c:choose>
+	                                                	<c:when test="${p_IS_LINC[status.index] != 'NaN'}">
+	                                                		<td class="text-center" id="IS_LINC">${viewAll[status.index].IS_LINC } (${p_IS_LINC[status.index] }%)</td>
+	                                                	</c:when>
+	                                                	
+	                                                	<c:otherwise>
+		                                                	<td class="text-center" id="IS_LINC">0 (0%)</td>
+		                                                </c:otherwise>
+	                                                </c:choose>
+	                                                
+	                                                <c:choose>
+	                                                	<c:when test="${p_IS_TYPE3[status.index] != 'NaN'}">
+	                                                		<td class="text-center" id="IS_TYPE3">${viewAll[status.index].IS_TYPE3 } (${p_IS_TYPE3[status.index]}%)</td>  
+	                                                	</c:when>
+	                                                	
+	                                                	<c:otherwise>
+		                                                	<td class="text-center" id="IS_TYPE3">0 (0%)</td>
+		                                                </c:otherwise>
+	                                                </c:choose>	
+	                                                
+	                                                <c:choose>
+	                                                	<c:when test="${p_total[status.index] != 'NaN'}">
+	                                                		<td class="text-center" id="IS_ALL">${total_grade[status.index]} (${p_total[status.index] }%)</td>   
+	                                                	</c:when>
+	                                                	
+	                                                	<c:otherwise>
+		                                                	<td class="text-center" id="IS_ALL">0 (0%)</td>
+		                                                </c:otherwise>
+	                                                </c:choose>                                                
+                                                                                    
 	                                            </tr>
                                              </c:forEach>
                                     
@@ -230,10 +287,10 @@
                                             	    
 	                                            <th class="text-center font-weight-bold">합계</th>
 	                                            <c:forEach items="${total}" var="tRow" varStatus="status">  
-	                                                <th class="text-center">${tRow }</th>
+	                                                <th class="text-center">${tRow } (100%)</th>
 	                                                
                                                 </c:forEach>
-                                                
+
                                             </tr>
                                            
                                         </thead>

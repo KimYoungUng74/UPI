@@ -52,6 +52,7 @@
         MAX(t2.ACHIEVE_VAL) KEEP (DENSE_RANK LAST  ORDER BY t2.RECORD_DATE) as ACHIEVE_VAL
 		FROM INDICATORS_TB t1 LEFT OUTER JOIN RECORD_TB t2 ON t1.INDICATORS_NUM = t2.INDICATORS_NUM AND to_char(ADD_MONTHS(t2.RECORD_DATE,-2), 'yyyy') = '${YEAR}'
 		GROUP BY t1.INDICATORS_NUM, t1.INDICATORS_NAME
+		HAVING SUM(IS_USE) = 0
 		ORDER BY  t1.INDICATORS_NUM
 			
 	</select>
@@ -76,7 +77,7 @@
 	<select id="BusinessGradePer" parameterType="String" resultType="GradeCountDTO">
 		SELECT  NVL(MAX(GRADE) KEEP (DENSE_RANK LAST ORDER BY RECORD_DATE),'etc') as GRADE,decode(grade,'A',count(*),0) as A, decode(grade,'B',count(*),0) as B, decode(grade,'D',count(*),0) as D, decode(grade,'',count(*),0) as ETC
 		FROM RECORD_TB
-		WHERE to_char(RECORD_DATE, 'yyyy') = '${YEAR}' AND (INDICATORS_NUM, RECORD_DATE) in (select indicators_num,MAX(record_date) from RECORD_TB  where to_char(RECORD_DATE, 'yyyy') = '${YEAR}' GROUP BY indicators_num)
+		WHERE to_char(ADD_MONTHS(RECORD_DATE,-2), 'yyyy') = '${YEAR}' AND (INDICATORS_NUM, RECORD_DATE) in (select indicators_num,MAX(record_date) from RECORD_TB  where to_char(ADD_MONTHS(RECORD_DATE,-2), 'yyyy') = '${YEAR}' GROUP BY indicators_num)
 		GROUP BY GRADE
         ORDER BY GRADE
 	</select>
@@ -90,7 +91,7 @@
 		NVL(count(decode(is_linc,1,1)), 0) as IS_LINC, 
 		NVL(count(decode(is_type3,1,1)), 0) as IS_TYPE3
 		FROM RECORD_TB
-		WHERE to_char(RECORD_DATE, 'yyyy') = '${YEAR}' AND (INDICATORS_NUM, RECORD_DATE) in (select indicators_num,MAX(record_date) from RECORD_TB  where to_char(RECORD_DATE, 'yyyy') = '${YEAR}' GROUP BY indicators_num)
+		WHERE to_char(ADD_MONTHS(RECORD_DATE,-2), 'yyyy') = '${YEAR}' AND (INDICATORS_NUM, RECORD_DATE) in (select indicators_num,MAX(record_date) from RECORD_TB  where to_char(ADD_MONTHS(RECORD_DATE,-2), 'yyyy') = '${YEAR}' GROUP BY indicators_num)
 		GROUP BY GRADE
         ORDER BY GRADE
 	</select>

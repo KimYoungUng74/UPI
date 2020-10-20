@@ -103,7 +103,7 @@
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="index.html">경민대학교</a>
+                                    <li class="breadcrumb-item"><a href="index.html">총괄 결과표를 작년, 재작년과 비교하여 확인하실 수 있습니다.</a>
                                     </li>
                                 </ol>
                             </nav>
@@ -149,7 +149,7 @@
                             <div class="card-body">
                                 <h4 class="card-title"><b>전년도 대비 총괄 결과표</b></h4>
                                 <p class="text-muted font-13">
-                                    	총괄 결과표를 작년, 재작년과 비교하여 확인하실 수 있습니다.
+                                    	경민대학교
                                 </p>
 					
                                 <div class="table-responsive">
@@ -234,7 +234,7 @@
 		                                                
 		                                                <c:choose>
 			                                                <c:when  test="${two_year_ago[status.index].ACHIEVE_VAL != null }">                                  
-			                                                	<td class="text-center">${two_year_ago[status.index].ACHIEVE_VAL }</td>
+			                                                	<td class="text-center">${two_year_ago[status.index].ACHIEVE_VAL }%</td>
 			                                                </c:when >
 			                                                
 			                                                <c:otherwise>
@@ -244,7 +244,7 @@
 		                                                
 		                                                <c:choose>
 			                                                <c:when  test="${one_year_ago[status.index].ACHIEVE_VAL != null }">                                  
-			                                                	<td class="text-center">${one_year_ago[status.index].ACHIEVE_VAL }</td>
+			                                                	<td class="text-center">${one_year_ago[status.index].ACHIEVE_VAL }%</td>
 			                                                </c:when >
 			                                                
 			                                                <c:otherwise>
@@ -255,7 +255,7 @@
 		                                                <c:choose>
 		                                                
 			                                                <c:when  test="${row.ACHIEVE_VAL != null }">                                  
-			                                                	<td class="text-center">${row.ACHIEVE_VAL }</td>
+			                                                	<td class="text-center">${row.ACHIEVE_VAL }%</td>
 			                                                </c:when >
 			                                                
 			                                                <c:otherwise>
