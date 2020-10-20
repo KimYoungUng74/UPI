@@ -103,7 +103,7 @@
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="index.html">경민대학교</a>
+                                    <li class="breadcrumb-item"><a href="index.html">이번년도 총괄 결과를 표로 확인하실 수 있습니다.</a>
                                     </li>
                                 </ol>
                             </nav>
@@ -177,9 +177,9 @@
     				</c:import>
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title"><b>총괄 결과표</b></h4>
+                                <h4 class="card-title"><b>${Years }년도 총괄 결과표</b></h4>
                                 <p class="text-muted font-13">
-                                    	이번년도 총괄 결과를 표로 확인하실 수 있습니다.
+                                    	경민대학교
                                 </p>
 					
                                 <div class="table-responsive">

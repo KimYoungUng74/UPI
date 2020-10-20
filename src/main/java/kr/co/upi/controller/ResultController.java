@@ -275,7 +275,7 @@ public class ResultController {
 
 	// 사업별 등급 표 페이지
 	@RequestMapping(value = "business_grade_view.do")
-	public ModelAndView businessGrade(HttpServletRequest request, Locale locale, Model model, String Years,
+	public ModelAndView businessGrade(HttpServletRequest request, Locale locale, Model model, String Years,String Divive,
 			HttpSession session) {
 
 		// Years 지정 년도
@@ -289,10 +289,22 @@ public class ResultController {
 			session.setAttribute("sYears", Years); // 지정 값이 있는 경우 세션에 지정년도를 지정합니다.
 		}
 		
+		int Divive_int = 0;
+		if(Divive != null) {
+			Divive_int = Integer.parseInt(Divive);
+		}
+		
+		RecordDTO sample_dto = new RecordDTO();
+		
+		sample_dto.setTARGET_VAL(Years); //년도값
+		sample_dto.setACTION_CODE(Divive_int); //분기값
+		
 		System.out.println("현재 년도 값 : " + Years);
 		List<RecordDTO> dto = resultSer.selectBusinessGrade(Years);
 		List<GradeCountDTO> now_year = resultSer.selectYearGrade(Years);
+		List<RecordDTO> business_total = new ArrayList<RecordDTO>();
 		List<Integer> total = new ArrayList<Integer>();
+		List<Integer> total_grade = new ArrayList<Integer>();
 		List<String> grade = new ArrayList<String>();
 		List<String> business = new ArrayList<String>();
 		List<Integer> pGrade = new ArrayList<Integer>();
@@ -309,6 +321,80 @@ public class ResultController {
 		business.add("IS_LINC");
 		business.add("IS_TYPE3");
 
+		// 각각 계산
+		int is_Best = 0;
+		int is_Agency = 0;
+		int is_AHA = 0;
+		int is_Linc = 0;
+		int is_Type3 = 0;
+		
+		RecordDTO cal_a = new RecordDTO();
+		cal_a.setGRADE("A"); cal_a.setIS_BEST(0); cal_a.setIS_AGENCY(0); cal_a.setIS_AHA(0); cal_a.setIS_LINC(0); cal_a.setIS_TYPE3(0);
+		RecordDTO cal_b = new RecordDTO();
+		cal_a.setGRADE("B"); cal_b.setIS_BEST(0); cal_b.setIS_AGENCY(0); cal_b.setIS_AHA(0); cal_b.setIS_LINC(0); cal_b.setIS_TYPE3(0);
+		RecordDTO cal_d = new RecordDTO();
+		cal_a.setGRADE("D"); cal_d.setIS_BEST(0); cal_d.setIS_AGENCY(0); cal_d.setIS_AHA(0); cal_d.setIS_LINC(0); cal_d.setIS_TYPE3(0);
+		RecordDTO cal_etc = new RecordDTO();
+		cal_a.setGRADE("etc"); cal_d.setIS_BEST(0); cal_d.setIS_AGENCY(0); cal_d.setIS_AHA(0); cal_d.setIS_LINC(0); cal_d.setIS_TYPE3(0);
+		
+		for(int i = 0; i < dto.size(); i++) {
+			System.out.println("반복문 시작");
+			System.out.println("등급표기 : " + dto.get(i).getGRADE());
+			if(dto.get(i).getGRADE().equals("A")) {
+				cal_a.setIS_BEST(dto.get(i).getIS_BEST()); 
+				cal_a.setIS_AGENCY(dto.get(i).getIS_AGENCY()); 
+				cal_a.setIS_AHA(dto.get(i).getIS_AHA()); 
+				cal_a.setIS_LINC(dto.get(i).getIS_LINC()); 
+				cal_a.setIS_TYPE3(dto.get(i).getIS_TYPE3());
+				System.out.println("a 완료");
+			}
+			
+			if(dto.get(i).getGRADE().equals("B")) {
+				cal_b.setIS_BEST(dto.get(i).getIS_BEST()); 
+				cal_b.setIS_AGENCY(dto.get(i).getIS_AGENCY()); 
+				cal_b.setIS_AHA(dto.get(i).getIS_AHA()); 
+				cal_b.setIS_LINC(dto.get(i).getIS_LINC()); 
+				cal_b.setIS_TYPE3(dto.get(i).getIS_TYPE3());
+				System.out.println("b 완료");
+			}
+			
+			if(dto.get(i).getGRADE().equals("D")) {
+				cal_d.setIS_BEST(dto.get(i).getIS_BEST()); 
+				cal_d.setIS_AGENCY(dto.get(i).getIS_AGENCY()); 
+				cal_d.setIS_AHA(dto.get(i).getIS_AHA()); 
+				cal_d.setIS_LINC(dto.get(i).getIS_LINC()); 
+				cal_d.setIS_TYPE3(dto.get(i).getIS_TYPE3());
+				System.out.println("d 완료");
+			}
+			
+			if(dto.get(i).getGRADE().equals("etc")) {
+				cal_etc.setIS_BEST(dto.get(i).getIS_BEST()); 
+				cal_etc.setIS_AGENCY(dto.get(i).getIS_AGENCY()); 
+				cal_etc.setIS_AHA(dto.get(i).getIS_AHA()); 
+				cal_etc.setIS_LINC(dto.get(i).getIS_LINC()); 
+				cal_etc.setIS_TYPE3(dto.get(i).getIS_TYPE3());
+				System.out.println("etc 완료");
+			}
+		}
+		
+		business_total.add(cal_a);
+		business_total.add(cal_b);
+		business_total.add(cal_d);
+		business_total.add(cal_etc);
+		
+		//각 사업별 등급 총 갯수
+		int total_a = cal_a.getIS_BEST() + cal_a.getIS_AGENCY() + cal_a.getIS_AHA() + cal_a.getIS_LINC() + cal_a.getIS_TYPE3();
+		int total_b = cal_b.getIS_BEST() + cal_b.getIS_AGENCY() + cal_b.getIS_AHA() + cal_b.getIS_LINC() + cal_b.getIS_TYPE3();
+		int total_d = cal_d.getIS_BEST() + cal_d.getIS_AGENCY() + cal_d.getIS_AHA() + cal_d.getIS_LINC() + cal_d.getIS_TYPE3();
+		int total_etc = cal_etc.getIS_BEST() + cal_etc.getIS_AGENCY() + cal_etc.getIS_AHA() + cal_etc.getIS_LINC() + cal_etc.getIS_TYPE3();
+		
+		System.out.println("a : " + total_a + "b : " + total_b + "d : " + total_d + "etc : " +total_etc);
+		total_grade.add(total_a);
+		total_grade.add(total_b);
+		total_grade.add(total_d);
+		total_grade.add(total_etc);
+		
+		System.out.println("테스트중 : " + business_total);
 		// 총합 계산
 		int all_Best = 0;
 		int all_Agency = 0;
@@ -323,10 +409,11 @@ public class ResultController {
 			all_AHA += dto.get(i).getIS_AHA();
 			all_Linc += dto.get(i).getIS_LINC();
 			all_Type3 += dto.get(i).getIS_TYPE3();
-			all += now_year.get(i).getGC();
 
 		}
 
+		all = all_Best + all_Agency + all_AHA + all_Linc + all_Type3;
+		
 		total.add(all_Best);
 		total.add(all_Agency);
 		total.add(all_AHA);
@@ -335,18 +422,32 @@ public class ResultController {
 		total.add(all);
 
 		// 퍼센트 계산
-
+		List<String> p_IS_BEST = cal.calPer(cal_a.getIS_BEST(), cal_b.getIS_BEST(), cal_d.getIS_BEST(), cal_etc.getIS_BEST());
+		List<String> p_IS_AGENCY = cal.calPer(cal_a.getIS_AGENCY(), cal_b.getIS_AGENCY(), cal_d.getIS_AGENCY(), cal_etc.getIS_AGENCY());
+		List<String> p_IS_AHA = cal.calPer(cal_a.getIS_AHA(), cal_b.getIS_AHA(), cal_d.getIS_AHA(), cal_etc.getIS_AHA());
+		List<String> p_IS_LINC = cal.calPer(cal_a.getIS_LINC(), cal_b.getIS_LINC(), cal_d.getIS_LINC(), cal_etc.getIS_LINC());
+		List<String> p_IS_TYPE3 = cal.calPer(cal_a.getIS_TYPE3(), cal_b.getIS_TYPE3(), cal_d.getIS_TYPE3(), cal_etc.getIS_TYPE3());
+		List<String> p_total = cal.calPer(total_a, total_b, total_d, total_etc);
+		
 		ModelAndView mav = new ModelAndView();
 		// 년도정보 추가
 		model.addAttribute("Years", Years);
 		
-		mav.addObject("viewAll", dto);
-		mav.addObject("now_year", now_year);
+		mav.addObject("viewAll", business_total);
+		mav.addObject("total_grade",total_grade);
 		mav.addObject("grade", grade);
 		mav.addObject("business", business);
 		mav.addObject("total", total);
 		mav.addObject("viewGrade", gDto);
 		mav.setViewName("result_view/business_grade_view");
+		
+		//퍼센트 표기 
+		mav.addObject("p_IS_BEST", p_IS_BEST);
+		mav.addObject("p_IS_AGENCY", p_IS_AGENCY);
+		mav.addObject("p_IS_AHA", p_IS_AHA);
+		mav.addObject("p_IS_LINC", p_IS_LINC);
+		mav.addObject("p_IS_TYPE3", p_IS_TYPE3);
+		mav.addObject("p_total", p_total);
 		return mav;
 	}
 
