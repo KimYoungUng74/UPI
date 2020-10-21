@@ -203,17 +203,17 @@
 																<c:choose>
 																	<c:when test="${dto.GRADE=='A'}">
 																		<button type="button"
-																			class="btn btn-success btn-circle btn-sm"
+																			class="btn btn-primary btn-circle btn-sm"
 																			style="float: right;">A</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='B'}">
 																		<button type="button"
-																			class="btn btn-primary btn-circle btn-sm"
+																			class="btn btn-secondary btn-circle btn-sm"
 																			style="float: right;">B</button>  (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='D'}">
 																		<button type="button"
-																			class="btn btn-warning btn-circle btn-sm"
+																			class="btn btn-danger btn-circle btn-sm"
 																			style="float: right;">D</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:otherwise>
@@ -276,12 +276,12 @@
 																<c:choose>
 																	<c:when test="${dto.GRADE=='A'}">
 																		<button type="button"
-																			class="btn btn-success btn-circle btn-sm"
+																			class="btn btn-primary btn-circle btn-sm"
 																			style="float: right;">A</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='B'}">
 																		<button type="button"
-																			class="btn btn-primary btn-circle btn-sm"
+																			class="btn btn-secondary btn-circle btn-sm"
 																			style="float: right;">B</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='D'}">
@@ -348,12 +348,12 @@
 																<c:choose>
 																	<c:when test="${dto.GRADE=='A'}">
 																		<button type="button"
-																			class="btn btn-success btn-circle btn-sm"
+																			class="btn btn-primary btn-circle btn-sm"
 																			style="float: right;">A</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='B'}">
 																		<button type="button"
-																			class="btn btn-primary btn-circle btn-sm"
+																			class="btn btn-secondary btn-circle btn-sm"
 																			style="float: right;">B</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='D'}">
@@ -420,12 +420,12 @@
 																<c:choose>
 																	<c:when test="${dto.GRADE=='A'}">
 																		<button type="button"
-																			class="btn btn-success btn-circle btn-sm"
+																			class="btn btn-primary btn-circle btn-sm"
 																			style="float: right;">A</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='B'}">
 																		<button type="button"
-																			class="btn btn-primary btn-circle btn-sm"
+																			class="btn btn-secondary btn-circle btn-sm"
 																			style="float: right;">B</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='D'}">
@@ -492,12 +492,12 @@
 																<c:choose>
 																	<c:when test="${dto.GRADE=='A'}">
 																		<button type="button"
-																			class="btn btn-success btn-circle btn-sm"
+																			class="btn btn-primary btn-circle btn-sm"
 																			style="float: right;">A</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='B'}">
 																		<button type="button"
-																			class="btn btn-primary btn-circle btn-sm"
+																			class="btn btn-secondary btn-circle btn-sm"
 																			style="float: right;">B</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='D'}">
@@ -564,12 +564,12 @@
 																<c:choose>
 																	<c:when test="${dto.GRADE=='A'}">
 																		<button type="button"
-																			class="btn btn-success btn-circle btn-sm"
+																			class="btn btn-primary btn-circle btn-sm"
 																			style="float: right;">A</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='B'}">
 																		<button type="button"
-																			class="btn btn-primary btn-circle btn-sm"
+																			class="btn btn-secondary btn-circle btn-sm"
 																			style="float: right;">B</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:when test="${dto.GRADE=='D'}">
