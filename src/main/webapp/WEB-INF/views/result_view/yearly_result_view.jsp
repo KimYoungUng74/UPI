@@ -263,35 +263,49 @@
 				                                        </c:choose>
 		                                                
 		                                                <c:choose>
-			                                                <c:when  test="${two_year_ago[status.index].ACHIEVE_VAL != null }">                                  
+			                                                <c:when  test="${two_year_ago[status.index].ACHIEVE_VAL != null and two_year_ago[status.index].ACHIEVE_VAL > 105}">                                  
+			                                                	<td class="text-center"><b>${two_year_ago[status.index].ACHIEVE_VAL }%</b></td>
+			                                                </c:when >
+			                                                <c:when  test="${two_year_ago[status.index].ACHIEVE_VAL != null and two_year_ago[status.index].GRADE == 'D'}">                                  
+			                                                	<td class="text-center" style="color: red"><b>${two_year_ago[status.index].ACHIEVE_VAL }%</b></td>
+			                                                </c:when >
+			                                                <c:when  test="${two_year_ago[status.index].ACHIEVE_VAL != null}">                                  
 			                                                	<td class="text-center">${two_year_ago[status.index].ACHIEVE_VAL }%</td>
 			                                                </c:when >
-			                                                
 			                                                <c:otherwise>
 			                                                	<td class="text-center">-</td>
 			                                                </c:otherwise>
 		                                               </c:choose>
 		                                                
 		                                                <c:choose>
-			                                                <c:when  test="${one_year_ago[status.index].ACHIEVE_VAL != null }">                                  
+		                                                	<c:when  test="${one_year_ago[status.index].ACHIEVE_VAL != null and one_year_ago[status.index].ACHIEVE_VAL > 105}">                                  
+			                                                	<td class="text-center"><b>${one_year_ago[status.index].ACHIEVE_VAL }%</b></td>
+			                                                </c:when >
+			                                                <c:when  test="${one_year_ago[status.index].ACHIEVE_VAL != null and one_year_ago[status.index].GRADE == 'D'}">                                  
+			                                                	<td class="text-center" style="color: red"><b>${one_year_ago[status.index].ACHIEVE_VAL }%</b></td>
+			                                                </c:when >
+			                                                <c:when  test="${one_year_ago[status.index].ACHIEVE_VAL != null}">                                  
 			                                                	<td class="text-center">${one_year_ago[status.index].ACHIEVE_VAL }%</td>
 			                                                </c:when >
-			                                                
 			                                                <c:otherwise>
 			                                                	<td class="text-center">-</td>
 			                                                </c:otherwise>
+			                                        
 		                                                </c:choose>
 		                                                
 		                                                <c:choose>
-		                                                
-			                                                <c:when  test="${row.ACHIEVE_VAL != null }">                                  
+		                                                	<c:when  test="${row.ACHIEVE_VAL != null and row.ACHIEVE_VAL > 105}">                                  
+			                                                	<td class="text-center"><b>${row.ACHIEVE_VAL }%</b></td>
+			                                                </c:when >
+			                                                <c:when  test="${row.ACHIEVE_VAL != null and row.GRADE == 'D'}">                                  
+			                                                	<td class="text-center" style="color: red"><b>${row.ACHIEVE_VAL }%</b></td>
+			                                                </c:when >
+			                                                <c:when  test="${row.ACHIEVE_VAL != null}">                                  
 			                                                	<td class="text-center">${row.ACHIEVE_VAL }%</td>
 			                                                </c:when >
-			                                                
 			                                                <c:otherwise>
 			                                                	<td class="text-center">-</td>
 			                                                </c:otherwise>
-		                                              
 	                                               	 	</c:choose>  
 		                                     </tr>		
 										</c:forEach>
