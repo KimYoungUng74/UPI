@@ -232,7 +232,17 @@
                                                 <td>${row.INDICATORS_NAME }</td>
                                                 <td class="text-center" >${row.TARGET_VAL }</td>
                                                 <td class="text-center"> ${row.PRESENT_VAL}</td>                                                
-                                                <td class="text-center" > ${row.GRADE }</td>
+                                                <c:choose>
+                                                	<c:when  test="${row.GRADE eq 'A' and row.ACHIEVE_VAL > 105}">                                  
+		                                                <td class="text-center"><b>${row.GRADE }</b></td>
+		                                            </c:when >
+		                                             <c:when  test="${row.GRADE == 'D'}">                                  
+		                                                <td class="text-center" style="color:red"><b>${row.GRADE }</b></td>
+		                                            </c:when >  
+		                                            <c:otherwise>
+		                                                <td class="text-center">${row.GRADE }</td>
+		                                        	</c:otherwise>
+		                                        </c:choose>
                                                 <c:choose>
                                                 	<c:when  test="${row.ACHIEVE_VAL != null }">                                  
 		                                                <td class="text-center">${row.ACHIEVE_VAL }%</td>

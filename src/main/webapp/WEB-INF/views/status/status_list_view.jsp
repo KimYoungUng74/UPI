@@ -286,7 +286,7 @@
 																	</c:when>
 																	<c:when test="${dto.GRADE=='D'}">
 																		<button type="button"
-																			class="btn btn-warning btn-circle btn-sm"
+																			class="btn btn-danger btn-circle btn-sm"
 																			style="float: right;">D</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:otherwise>
@@ -358,7 +358,7 @@
 																	</c:when>
 																	<c:when test="${dto.GRADE=='D'}">
 																		<button type="button"
-																			class="btn btn-warning btn-circle btn-sm"
+																			class="btn btn-danger btn-circle btn-sm"
 																			style="float: right;">D</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:otherwise>
@@ -430,7 +430,7 @@
 																	</c:when>
 																	<c:when test="${dto.GRADE=='D'}">
 																		<button type="button"
-																			class="btn btn-warning btn-circle btn-sm"
+																			class="btn btn-danger btn-circle btn-sm"
 																			style="float: right;">D</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:otherwise>
@@ -502,7 +502,7 @@
 																	</c:when>
 																	<c:when test="${dto.GRADE=='D'}">
 																		<button type="button"
-																			class="btn btn-warning btn-circle btn-sm"
+																			class="btn btn-danger btn-circle btn-sm"
 																			style="float: right;">D</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:otherwise>
@@ -574,7 +574,7 @@
 																	</c:when>
 																	<c:when test="${dto.GRADE=='D'}">
 																		<button type="button"
-																			class="btn btn-warning btn-circle btn-sm"
+																			class="btn btn-danger btn-circle btn-sm"
 																			style="float: right;">D</button> (${dto.ACHIEVE_VAL}%)
 																	</c:when>
 																	<c:otherwise>
