@@ -242,7 +242,13 @@
                                             	<option value="산학협력처">산학협력처</option>
                                         	</select>
                                         </div>
-                                        
+                                        <div class="col-md-12"  style="padding: 10px;">
+                                			<span>지표명으로 검색 </span>
+                                		</div>
+                                		<div class="col-md-12" style="padding-bottom: 10px;">
+                                			<input name="INDICATORS_NAME" class="form-control custom-shadow border-1 bg-white"
+                                            type="search" placeholder="지표명으로 검색" aria-label="Search" value="${kategorie.INDICATORS_NAME}">
+                                		</div>
                                 		<div class="col-md-12" style="padding: 10px;">
                                     		<button class="btn btn-info waves-effect waves-light" type="submit" style="float: right;"><span class="btn-label"><i class="fas fa-search"></i></span> 검색</button>
                                 		</div>
