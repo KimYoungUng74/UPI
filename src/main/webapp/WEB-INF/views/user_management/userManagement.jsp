@@ -196,7 +196,7 @@
 														onclick="userReg();" type="button" id="userReg_btn"
 														style="float: right; margin-left: 5px;">유저 등록</button>
 													<button class="btn btn-primary waves-effect waves-light"
-														onclick="userUpdate();" type="button" id="userReg_btn"
+														onclick="userModify();" type="button" id="userReg_btn"
 														style="float: right; margin-left: 5px;">수정 하기</button>
 													<button class="btn btn-primary waves-effect waves-light"
 														onclick="pwInit();" type="button" id="userReg_btn"
@@ -387,7 +387,7 @@
 	/* 유저 삭제 클릭 */
 	function userDelete() {
 		if (confirm('정말 삭제 하시겠습니까?')) {
-			document.getElementById('submitform').action = "user_delete.lo";
+			document.getElementById('submitform').action = "user_deleteOk.lo";
 			document.getElementById('submitform').submit();
 		}
 	};
@@ -395,20 +395,20 @@
 	/* 비밀번호 초기화 클릭 */
 	function pwInit() {
 		if (confirm('비밀번호를 초기화 하겠습니까?')) {
-			document.getElementById('submitform').action = "pw_init.lo";
+			document.getElementById('submitform').action = "pw_initOk.lo";
 			document.getElementById('submitform').submit();
 		}
 	};
 	
 	/* 유저 수정 클릭 */
-	function pwInit() {
-			document.getElementById('submitform').action = "user_update.lo";
+	function userModify() {
+			document.getElementById('submitform').action = "user_modifyOk.lo";
 			document.getElementById('submitform').submit();
 	};
 	
 	/* 유저 등록 클릭 */
-	function pwInit() {
-			document.getElementById('submitform').action = "user_reg.lo";
+	function userReg() {
+			document.getElementById('submitform').action = "user_regOk.lo";
 			document.getElementById('submitform').submit();
 	};
 	
