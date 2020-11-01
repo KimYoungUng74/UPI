@@ -494,7 +494,7 @@
 												<div class="col-md-12" style="padding-top: 5px;">
 													<hr>
 													<button
-														onclick="changeURL();"
+														onclick="changeUSE();"
 														class="btn btn-danger waves-effect waves-light"
 														type="button" style="float: left; margin-left: 5px;">지표
 														사용중지</button>
@@ -687,7 +687,7 @@
 	var ELEMENT_LEN = 0;
 
 	/* 요소 버튼 클릭 */
-	function changeURL() {
+	function changeUSE() {
 		if(confirm('정말 사용중지 하시겠습니까?')) {
 			document.getElementById('submitform').action = "indicators_delete.mg";
 			document.getElementById('submitform').submit();
