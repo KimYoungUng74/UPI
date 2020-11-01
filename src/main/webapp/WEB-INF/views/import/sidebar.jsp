@@ -25,10 +25,16 @@
                                 </span></a>
                         </li>
                         </c:if>
-                        
+                        <c:if test="${sessionScope.USER_GRANT > 1}">
+                        <li class="sidebar-item"> <a class="sidebar-link" href="user_management.lo"
+                                aria-expanded="false"><i data-feather="user" class="feather-icon"></i><span
+                                    class="hide-menu">유저 관리
+                                </span></a>
+                        </li>
+                        </c:if>
                         <c:if test="${sessionScope.USER_GRANT > 1}">
                         <li class="sidebar-item"> <a class="sidebar-link" href="log_view.lo"
-                                aria-expanded="false"><i data-feather="edit-3" class="feather-icon"></i><span
+                                aria-expanded="false"><i data-feather="lock" class="feather-icon"></i><span
                                     class="hide-menu">로그정보 관리
                                 </span></a>
                         </li>
