@@ -240,6 +240,7 @@
                         		<h4 class="card-title"><b>연도별 평가 등급추이</b></h4>
                         		<center>
 			                    <div id="chart-area"> </div>
+			                    <div id="container1" style="margin: 0 auto;"></div>
 			               		</center>
                             </div> <!-- end card-body-->
                         </div> <!-- end card-->
@@ -358,7 +359,7 @@
     </c:import>
    
 	<!-- Toast Bar Chart  -->
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 	var container = document.getElementById('chart-area');
 	var data = {
 	    categories: ['A 등급', 'B 등급', 'D 등급'],
@@ -374,7 +375,7 @@
 	        {
 	            name: '${year}',
 	            data: [${p_now[0]}, ${p_now[1]}, ${p_now[2]}]
-	        },
+	        }
 	        
 	    ]
 	};
@@ -396,6 +397,7 @@
 	    legend: {
 	        align: 'top'
 	    }
+	    
 	};
 	var theme = {
 	    series: {
@@ -411,8 +413,69 @@
 	tui.chart.columnChart(container, data, options);
 	
 	
-	</script>
+	</script> -->
+   <script>
+   
+   Highcharts.chart('container1', {
+		chart : {
+			type : 'column'
+		},
 
+		title : {
+			text : ''
+		},
+
+		legend : {
+			align : 'right',
+			verticalAlign : 'middle',
+			layout : 'vertical'
+		},
+		accessibility: {
+	        announceNewData: {
+	            enabled: true
+	        }
+	    },
+		plotOptions: {
+	        series: {
+	            borderWidth: 0,
+	            dataLabels: {
+	                enabled: true,
+	                format: '{point.y:.1f}%'
+	            }
+	        }
+	    },
+		xAxis : {
+			categories : ['A 등급', 'B 등급', 'D 등급'],
+			labels : {
+				x : -10
+			}
+		},
+
+		yAxis : {
+			allowDecimals : false,
+			title : {
+				text : 'Amount'
+			}
+		},
+
+		series : [{
+			color: '#00a9ff',
+            name: '${two_year}',
+            data: [${p_two_year[0]}, ${p_two_year[1]}, ${p_two_year[2]}]
+        },
+        {
+        	color: '#ffb840',
+            name: '${one_year}',
+            data: [${p_one_year[0]}, ${p_one_year[1]}, ${p_one_year[2]}]
+        },
+        {
+        	color: '#ff5a46',
+            name: '${year}',
+            data: [${p_now[0]}, ${p_now[1]}, ${p_now[2]}]
+        }]
+	});
+   </script>	 
+	
    <script>
     $('.btn-print-1').click(function() {
 		var win = window.open();
