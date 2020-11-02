@@ -327,7 +327,7 @@
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <script type="text/javascript">
-	chartcolor =['#83b14e', '#458a3f', '#295ba0']
+	chartcolor =['#00a9ff', '#ffb840', '#ff5a46']
 	Highcharts.chart('container1', {
 		chart : {
 			type : 'column'
@@ -448,6 +448,7 @@
 		},
 
 		series : [ {
+			color: chartcolor[0],
 			name : '달성도',
 			data : [ ${Record_3.getACHIEVE_VAL()+0}, ${Record_2.getACHIEVE_VAL()+0}, ${Record_1.getACHIEVE_VAL()+0} ]
 		} ]
