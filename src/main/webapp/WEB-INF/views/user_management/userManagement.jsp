@@ -13,6 +13,11 @@
 		alert("등록되었습니다");
 	</script>
 </c:if>
+<c:if test="${msg eq 'user_already'}">
+	<script type="text/javascript">
+		alert("해당 아이디가 이미 존재합니다.");
+	</script>
+</c:if>
 <c:if test="${msg eq 'pw_initOk'}">
 	<script type="text/javascript">
 		alert("초기화 되었습니다");
@@ -25,7 +30,12 @@
 </c:if>
 <c:if test="${msg eq 'user_delectOk'}">
 	<script type="text/javascript">
-		alert("회원을 삭제 했습니다.");
+		alert("유저를 삭제 했습니다.");
+	</script>
+</c:if>
+<c:if test="${msg eq 'isNotUser'}">
+	<script type="text/javascript">
+		alert("해당 유저가 존재하지 않습니다");
 	</script>
 </c:if>
 </head>

@@ -49,12 +49,17 @@ public class ManagementController {
 		dto.setUSER_PW(SHA256.getSHA256("12345678"));
 		System.out.println(dto);
 
-		if (1 != manageSer.user_reg(dto)) {
-			mav.addObject("msg", "reg_ERROR");
-			System.out.println("에러");
+		if (1 != manageSer.isUser(dto)) {
+			if (1 != manageSer.user_reg(dto)) {
+				mav.addObject("msg", "reg_ERROR");
+				System.out.println("에러");
+			} else {
+				mav.addObject("msg", "user_regOk");
+			}
 		} else {
-			mav.addObject("msg", "user_regOk");
+			mav.addObject("msg", "user_already");
 		}
+		
 
 		mav.setViewName("user_management/userManagement");
 		return mav;
@@ -69,12 +74,18 @@ public class ManagementController {
 		dto.setUSER_PW(SHA256.getSHA256("12345678"));
 		System.out.println(dto);
 
-		if (1 != manageSer.pw_init(dto)) {
-			mav.addObject("msg", "init_ERROR");
-			System.out.println("에러");
+		
+		if (0 != manageSer.isUser(dto)) {
+			if (1 != manageSer.pw_init(dto)) {
+				mav.addObject("msg", "init_ERROR");
+				System.out.println("에러");
+			} else {
+				mav.addObject("msg", "pw_initOk");
+			}
 		} else {
-			mav.addObject("msg", "pw_initOk");
+			mav.addObject("msg", "isNotUser");
 		}
+		
 
 		mav.setViewName("user_management/userManagement");
 		return mav;
@@ -88,12 +99,17 @@ public class ManagementController {
 
 		System.out.println(dto);
 
-		if (1 != manageSer.user_modify(dto)) {
-			mav.addObject("msg", "modify_ERROR");
-			System.out.println("에러");
+		if (0 != manageSer.isUser(dto)) {
+			if (1 != manageSer.user_modify(dto)) {
+				mav.addObject("msg", "modify_ERROR");
+				System.out.println("에러");
+			} else {
+				mav.addObject("msg", "user_modifyOk");
+			}
 		} else {
-			mav.addObject("msg", "user_modifyOk");
+			mav.addObject("msg", "isNotUser");
 		}
+		
 
 		mav.setViewName("user_management/userManagement");
 		return mav;
@@ -107,12 +123,17 @@ public class ManagementController {
 
 		System.out.println(dto);
 
-		if (1 != manageSer.user_delete(dto)) {
-			mav.addObject("msg", "modify_ERROR");
-			System.out.println("에러");
+		if (0 != manageSer.isUser(dto)) {
+			if (1 != manageSer.user_delete(dto)) {
+				mav.addObject("msg", "modify_ERROR");
+				System.out.println("에러");
+			} else {
+				mav.addObject("msg", "user_delectOk");
+			}
 		} else {
-			mav.addObject("msg", "user_delectOk");
+			mav.addObject("msg", "isNotUser");
 		}
+		
 
 		mav.setViewName("user_management/userManagement");
 		return mav;

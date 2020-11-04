@@ -19,6 +19,13 @@
 		#{USER_GRANT})
 	</insert>
 	
+	<!-- 회원 존재 여부 -->
+	<select id="is_User" parameterType="UserDTO" resultType="String">
+		SELECT USER_ID
+		FROM USER_TB
+		WHERE USER_ID=#{USER_ID}
+	</select>
+	
 	<!-- 암호 초기화 -->
 	<update id="PW_init" parameterType="UserDTO">
 		UPDATE USER_TB SET
@@ -39,4 +46,6 @@
 		DELETE FROM USER_TB
 		WHERE USER_ID=#{USER_ID}
 	</delete>
+	
+	
 </mapper>
