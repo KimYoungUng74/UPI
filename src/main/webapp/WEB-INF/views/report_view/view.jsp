@@ -327,6 +327,7 @@
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <script type="text/javascript">
+	chartcolor =['#00a9ff', '#ffb840', '#ff5a46']
 	Highcharts.chart('container1', {
 		chart : {
 			type : 'column'
@@ -341,11 +342,24 @@
 			verticalAlign : 'middle',
 			layout : 'vertical'
 		},
-
+		accessibility: {
+	        announceNewData: {
+	            enabled: true
+	        }
+	    },
+		plotOptions: {
+	        series: {
+	            borderWidth: 0,
+	            dataLabels: {
+	                enabled: true,
+	                format: '{point.y:.1f}'
+	            }
+	        }
+	    },
 		xAxis : {
 			categories : [
 				<c:if test="${Record_3.getRECORD_DATE().getYear()!=null}">
-					'${Record_3.getRECORD_DATE().getYear()+1900}'
+					'${Record_3.getRECORD_DATE().getYear()+1900}' 
 				</c:if>+''
 				, 
 				<c:if test="${Record_2.getRECORD_DATE().getYear()!=null}">
@@ -369,9 +383,11 @@
 		},
 
 		series : [ {
+			color: chartcolor[0],
 			name : '목표값',
 			data : [ ${Record_3.getTARGET_VAL().split(":")[0]+0}, ${Record_2.getTARGET_VAL().split(":")[0]+0}, ${Record_1.getTARGET_VAL().split(":")[0]+0} ]
 		}, {
+			color: chartcolor[1],
 			name : '현재값',
 			data : [ ${Record_3.getPRESENT_VAL().split(":")[0]+0}, ${Record_2.getPRESENT_VAL().split(":")[0]+0}, ${Record_1.getPRESENT_VAL().split(":")[0]+0} ]
 		} ]
@@ -391,7 +407,20 @@
 			verticalAlign : 'middle',
 			layout : 'vertical'
 		},
-
+		accessibility: {
+	        announceNewData: {
+	            enabled: true
+	        }
+	    },
+		plotOptions: {
+	        series: {
+	            borderWidth: 0,
+	            dataLabels: {
+	                enabled: true,
+	                format: '{point.y:.1f}%'
+	            }
+	        }
+	    },
 		xAxis : {
 			categories : [ 
 				<c:if test="${Record_3.getRECORD_DATE().getYear()!=null}">
@@ -419,6 +448,7 @@
 		},
 
 		series : [ {
+			color: chartcolor[0],
 			name : '달성도',
 			data : [ ${Record_3.getACHIEVE_VAL()+0}, ${Record_2.getACHIEVE_VAL()+0}, ${Record_1.getACHIEVE_VAL()+0} ]
 		} ]
