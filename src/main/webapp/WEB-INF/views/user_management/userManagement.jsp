@@ -8,7 +8,11 @@
 <!-- css링크들 임포트 -->
 <c:import url="../import/csslink.jsp" charEncoding="UTF-8">
 </c:import>
-
+<c:if test="${msg eq 'user_regOk'}">
+	<script type="text/javascript">
+		alert("등록되었습니다");
+	</script>
+</c:if>
 
 </head>
 
@@ -383,6 +387,7 @@
 </body>
 <c:import url="../import/javascript.jsp" charEncoding="UTF-8">
 </c:import>
+
 <script type="text/javascript">
 	/* 유저 삭제 클릭 */
 	function userDelete() {
@@ -400,7 +405,8 @@
 		}
 	};
 	
-	/* 유저 수정 클릭 */
+	
+	/* 유저 수정 클릭 */ 
 	function userModify() {
 			document.getElementById('submitform').action = "user_modifyOk.lo";
 			document.getElementById('submitform').submit();

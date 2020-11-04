@@ -35,7 +35,7 @@ public class ManagementController {
 		return mav;
 	}
 
-	// 새 지표 등록
+	// 회원 등록
 	@RequestMapping(value = "user_regOk.lo")
 	public ModelAndView user_regOk(UserDTO dto, Locale locale, Model model, HttpSession session) {
 
@@ -45,8 +45,50 @@ public class ManagementController {
 		System.out.println(dto);
 
 		if (1 != manageSer.user_reg(dto)) {
-			mav.addObject("msg", "DB_ERROR");
+			mav.addObject("msg", "reg_ERROR");
 			System.out.println("에러");
+		} else {
+			mav.addObject("msg", "user_regOk");
+		}
+
+		mav.setViewName("user_management/userManagement");
+		return mav;
+	}
+
+	// 회원 등록
+	@RequestMapping(value = "pw_initOk.lo")
+	public ModelAndView pw_initOk(UserDTO dto, Locale locale, Model model, HttpSession session) {
+
+		ModelAndView mav = new ModelAndView();
+
+		dto.setUSER_PW(SHA256.getSHA256("12345678"));
+		System.out.println(dto);
+
+		if (1 != manageSer.pw_init(dto)) {
+			mav.addObject("msg", "init_ERROR");
+			System.out.println("에러");
+		} else {
+			mav.addObject("msg", "pw_initOk");
+		}
+
+		mav.setViewName("user_management/userManagement");
+		return mav;
+	}
+
+	// 회원 등록
+	@RequestMapping(value = "user_modifyOk.lo")
+	public ModelAndView user_modifyOk(UserDTO dto, Locale locale, Model model, HttpSession session) {
+
+		ModelAndView mav = new ModelAndView();
+
+		dto.setUSER_PW(SHA256.getSHA256("12345678"));
+		System.out.println(dto);
+
+		if (1 != manageSer.user_modify(dto)) {
+			mav.addObject("msg", "modify_ERROR");
+			System.out.println("에러");
+		} else {
+			mav.addObject("msg", "user_modifyOk");
 		}
 
 		mav.setViewName("user_management/userManagement");
