@@ -19,10 +19,24 @@
 		#{USER_GRANT})
 	</insert>
 	
-	<!-- 암호 변경 -->
-	<update id="pwInit" parameterType="UserDTO">
+	<!-- 암호 초기화 -->
+	<update id="PW_init" parameterType="UserDTO">
 		UPDATE USER_TB SET
 		USER_PW=#{USER_PW}
 		WHERE USER_ID=#{USER_ID}
 	</update>
+	
+	<!-- 회원 정보 수정-->
+	<update id="User_modify" parameterType="UserDTO">
+		UPDATE USER_TB SET
+		USER_NAME=#{USER_NAME},
+		USER_GRANT=#{USER_GRANT}
+		WHERE USER_ID=#{USER_ID}
+	</update>
+	
+	<!-- 회원 정보 수정-->
+	<delete id="User_delete" parameterType="UserDTO">
+		DELETE FROM USER_TB
+		WHERE USER_ID=#{USER_ID}
+	</delete>
 </mapper>

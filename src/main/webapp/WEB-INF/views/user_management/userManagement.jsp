@@ -13,7 +13,21 @@
 		alert("등록되었습니다");
 	</script>
 </c:if>
-
+<c:if test="${msg eq 'pw_initOk'}">
+	<script type="text/javascript">
+		alert("초기화 되었습니다");
+	</script>
+</c:if>
+<c:if test="${msg eq 'user_modifyOk'}">
+	<script type="text/javascript">
+		alert("수정 되었습니다.");
+	</script>
+</c:if>
+<c:if test="${msg eq 'user_delectOk'}">
+	<script type="text/javascript">
+		alert("회원을 삭제 했습니다.");
+	</script>
+</c:if>
 </head>
 
 <body>
@@ -205,9 +219,11 @@
 													<button class="btn btn-primary waves-effect waves-light"
 														onclick="pwInit();" type="button" id="userReg_btn"
 														style="float: right; margin-left: 5px;">비밀번호 초기화</button>
-													<button class="btn btn-light waves-effect waves-light"
+													<!-- <button class="btn btn-light waves-effect waves-light"
 														onclick="userSerch();" type="button" id="userReg_btn"
-														style="float: right; margin-left: 5px;">유저 검색</button>
+														style="float: right; margin-left: 5px;">유저 검색</button> -->
+													<button type="button" onclick="userSerch();" class="btn btn-light" style="float: right; margin-left: 5px;"
+														data-toggle="modal" data-target="#myModal" id="formulaReg">유저 검색</button>
 												</div>
 											</div>
 
@@ -257,124 +273,14 @@
 		<div class="modal-dialog modal-lg ">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="myModalLabel">산출식 등록</h4>
+					<h4 class="modal-title" id="myModalLabel">유저 검색</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">×</button>
 				</div>
 				<div class="modal-body">
-
-					<p>
-						<span style="float: center;">산출식</span>
-					</p>
-					<p>
-						<input type="text" id="FORMULA_INPUT" class="form-control"
-							readonly="readonly" value="">
-					</p>
-					<hr>
-
-					<div class="row">
-
-						<div class="col-md-9" style="padding-bottom: 10px; width: 100%">
-							<div class="row">
-
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('(');" name="FORMULA_BTN" value="(">(</button>
-								</div>
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN(')');" name="FORMULA_BTN" value=")">)</button>
-								</div>
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_ALL_CLEAR_BTN();" name="FORMULA_BTN">C</button>
-								</div>
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('7');" name="FORMULA_BTN" value="7">7</button>
-								</div>
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('8');" name="FORMULA_BTN" value="8">8</button>
-								</div>
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('9');" name="FORMULA_BTN" value="9">9</button>
-								</div>
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('4');" name="FORMULA_BTN" value="4">4</button>
-								</div>
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('5');" name="FORMULA_BTN" value="5">5</button>
-								</div>
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('6');" name="FORMULA_BTN" value="6">6</button>
-								</div>
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('1');" name="FORMULA_BTN" value="1">1</button>
-								</div>
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('2');" name="FORMULA_BTN" value="2">2</button>
-								</div>
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('3');" name="FORMULA_BTN" value="3">3</button>
-								</div>
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('00');" name="FORMULA_BTN" value="00">00</button>
-								</div>
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('0');" name="FORMULA_BTN" value="0">0</button>
-								</div>
-								<div class="col-md-4" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('.');" name="FORMULA_BTN" value=".">.</button>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-3" style="padding-bottom: 10px; width: 100%">
-							<div class="row">
-								<div class="col-md-12" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_DELET_BTN();" id="FORMULA_BACK_BTN">←</button>
-								</div>
-								<div class="col-md-12" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('/');" name="FORMULA_BTN" value="/">/</button>
-								</div>
-								<div class="col-md-12" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('*');" name="FORMULA_BTN" value="*">*</button>
-								</div>
-								<div class="col-md-12" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('-');" name="FORMULA_BTN" value="-">-</button>
-								</div>
-								<div class="col-md-12" style="padding-bottom: 10px; width: 100%">
-									<button type="button" class="btn btn-block btn-primary"
-										onclick="FORMULA_BTN('+');" name="FORMULA_BTN" value="+">+</button>
-								</div>
-							</div>
-						</div>
-
-
-						<div class="col-md-12" style="padding-bottom: 10px; width: 100%">
-							<div class="row FORMULA_Dialog"></div>
-						</div>
-					</div>
-
+					
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary"
-						onclick="Reg_FORMULA();">산출식 등록</button>
 					<button id="Close_Formula" type="button" class="btn btn-light"
 						data-dismiss="modal">닫기</button>
 				</div>
@@ -384,6 +290,46 @@
 		<!-- /.modal-dialog -->
 	</div>
 	<!-- /.modal -->
+	<div id="userList2" hidden="true">
+		<div>가져온 값 : [${userlist}]</div>
+	</div>
+	
+	<div id="userList" hidden="true">
+		<div class="table-responsive table-hover">
+            <table class="table no-wrap v-middle mb-0 text-center">
+                <thead>
+                    <tr class="border-0">
+                    	<th class="font-14 font-weight-medium  px-2">아이디</th>
+                        <th class="font-14 font-weight-medium  px-2">이름</th>
+                        <th class="font-14 font-weight-medium  px-2">권한</th>
+                    </tr>
+                </thead>
+                <tbody style="height: 200px; overflow: auto;">
+                	<c:if test="${list.size() == 0}">
+                		<tr>
+                			<td colspan="5">조건에 맞는 회원이 존재하지 않습니다.</td>
+                		</tr>
+                	</c:if>
+                    <c:forEach items="${list}" var="list">
+                    <tr onclick="location.href='report_write.mg?INDICATORS_NUM=${list.USER_ID}'">
+                    	<td class="border-top-0  px-2 py-4 font-14">${list.USER_ID}</td>
+                        <td class="border-top-0  px-2 py-4 font-14">${list.USER_NAME}</td>
+                        <c:if test="${list.USER_GRANT eq 0}">
+                		<tr>
+                			<td class="border-top-0  px-2 py-4 font-14">일반</td>
+                		</tr>
+                		</c:if>
+                        <c:if test="${list.USER_GRANT eq 1}">
+                		<tr>
+                			<td class="border-top-0  px-2 py-4 font-14">관리자</td>
+                		</tr>
+                		</c:if>
+                    </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+        </div>
+	</div>
 </body>
 <c:import url="../import/javascript.jsp" charEncoding="UTF-8">
 </c:import>
@@ -418,6 +364,23 @@
 			document.getElementById('submitform').submit();
 	};
 	
+	/* 유저 검색 클릭 */
+	function userSerch() {
+		alert("유저검색 시작");
+		$.ajax({
+	        type:"POST",
+	        url:"userSearch.lo",
+	        data : {name : "홍길동"},
+	        dataType : "text",
+	        success: function(text){
+				var html = $("div#userList").html();
+				$(".modal-body").html(html);
+	        },
+	        error: function(xhr, status, error) {
+	            alert(error);
+	        }  
+	    });
+	};
 </script>
 <script src="<c:url value='/resources/js/IndicatorsCheck.js'/>"></script>
 </html>
