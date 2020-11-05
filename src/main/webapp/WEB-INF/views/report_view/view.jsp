@@ -178,7 +178,7 @@
 										<td class="border-top-0  px-8 py-4 font-14 table-active">기관평가</td>
 										<td class="border-top-0  px-8 py-4 font-14 table-active">AHA</td>
 										<td class="border-top-0  px-8 py-4 font-14 table-active">LINC+</td>
-										<td class="border-top-0  px-8 py-4 font-14 table-active">3유형</td>
+										<td class="border-top-0  px-8 py-4 font-14 table-active">후진학사업</td>
 									</tr>
 									<tr>
 										<td class="border-top-0  px-8 py-4 font-14"><c:if test="${Indicators.getIS_BEST()==1}">O</c:if></td>

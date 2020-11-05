@@ -179,7 +179,7 @@
                                     <li class="nav-item">
                                         <a href="#TYPE3_tab" data-toggle="tab" aria-expanded="false" class="nav-link">
                                             <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
-                                            <span class="d-none d-lg-block">3유형</span>
+                                            <span class="d-none d-lg-block">후진학사업</span>
                                         </a>
                                     </li>
                                 </ul>

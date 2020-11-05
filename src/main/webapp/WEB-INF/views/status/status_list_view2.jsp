@@ -169,7 +169,7 @@
                                     <li class="nav-item">
                                         <a href="#TYPE3_tab" data-toggle="tab" aria-expanded="false" class="nav-link">
                                             <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
-                                            <span class="d-none d-lg-block">3유형 현황</span>
+                                            <span class="d-none d-lg-block">후진학사업 현황</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -246,7 +246,7 @@
 									</div>
 									<div class="tab-pane" id="TYPE3_tab">
 										<div class="table-responsive">
-											<h3>3유형 현황 ${TYPE3.size()}개</h3>
+											<h3>후진학사업 현황 ${TYPE3.size()}개</h3>
 											<div class="d-flex align-items-center row">
 												<c:forEach var="dto" items="${TYPE3}">
 													<div class="col-md-4" style="padding: 30px;">

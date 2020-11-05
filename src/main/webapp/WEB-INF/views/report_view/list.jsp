@@ -212,7 +212,7 @@
                                     			<label class="custom-control-label" for="IS_TYPE3">
                                 			<a class="btn btn-secondary rounded-circle btn-circle " style="width: 25px; height: 25px;"
                                                             href="javascript:void(0)"></a>
-                                                 3유형</label>
+                                                 후진학사업</label>
                                 			</div>
                                             
                                          </div>
@@ -289,24 +289,24 @@
                                                  <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
                                                     	<c:if test="${list.IS_BEST == 1}">
-                                                    		<a class="btn btn-primary rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">B</a>
+                                                    		<a class="btn btn-primary rounded-circle btn-circle font-10 popover-item"
+                                                            href="javascript:void(0)">중장</a>
                                                     	</c:if>
                                                         <c:if test="${list.IS_AGENCY == 1}">
-                                                    		<a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">E</a>
+                                                    		<a class="btn btn-danger rounded-circle btn-circle font-10 popover-item"
+                                                            href="javascript:void(0)">기관</a>
                                                     	</c:if>
                                                         <c:if test="${list.IS_AHA == 1}">
-                                                    		<a class="btn btn-warning rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">A</a>
+                                                    		<a class="btn btn-warning rounded-circle btn-circle font-10 popover-item"
+                                                            href="javascript:void(0)">혁신</a>
                                                     	</c:if>
                                                     	<c:if test="${list.IS_LINC == 1}">
-                                                    		<a class="btn btn-success rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">L</a>
+                                                    		<a class="btn btn-success rounded-circle btn-circle font-10 popover-item"
+                                                            href="javascript:void(0)">사회</a>
                                                     	</c:if>
                                                     	<c:if test="${list.IS_TYPE3 == 1}">
-                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">3</a>
+                                                    		<a class="btn btn-secondary rounded-circle btn-circle font-10 popover-item"
+                                                            href="javascript:void(0)">후학</a>
                                                     	</c:if>
                                                     </div>
                                                 </td>
