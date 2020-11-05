@@ -36,7 +36,7 @@ public class ManagementController {
 	@RequestMapping(value = "user_management.lo", produces = "application/text; charset=utf8")
 	public ModelAndView user_management(Locale locale, Model model, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("user_management/userManagement");
+		mav = userlist(mav);
 		return mav;
 	}
 
@@ -47,7 +47,6 @@ public class ManagementController {
 		ModelAndView mav = new ModelAndView();
 
 		dto.setUSER_PW(SHA256.getSHA256("12345678"));
-		System.out.println(dto);
 
 		if (1 != manageSer.isUser(dto)) {
 			if (1 != manageSer.user_reg(dto)) {
@@ -61,7 +60,7 @@ public class ManagementController {
 		}
 		
 
-		mav.setViewName("user_management/userManagement");
+		mav = userlist(mav);
 		return mav;
 	}
 
@@ -72,8 +71,6 @@ public class ManagementController {
 		ModelAndView mav = new ModelAndView();
 
 		dto.setUSER_PW(SHA256.getSHA256("12345678"));
-		System.out.println(dto);
-
 		
 		if (0 != manageSer.isUser(dto)) {
 			if (1 != manageSer.pw_init(dto)) {
@@ -87,7 +84,7 @@ public class ManagementController {
 		}
 		
 
-		mav.setViewName("user_management/userManagement");
+		mav = userlist(mav);
 		return mav;
 	}
 
@@ -96,8 +93,6 @@ public class ManagementController {
 	public ModelAndView user_modifyOk(UserDTO dto, Locale locale, Model model, HttpSession session) {
 
 		ModelAndView mav = new ModelAndView();
-
-		System.out.println(dto);
 
 		if (0 != manageSer.isUser(dto)) {
 			if (1 != manageSer.user_modify(dto)) {
@@ -111,7 +106,7 @@ public class ManagementController {
 		}
 		
 
-		mav.setViewName("user_management/userManagement");
+		mav = userlist(mav);
 		return mav;
 	}
 	
@@ -120,8 +115,6 @@ public class ManagementController {
 	public ModelAndView user_deleteOk(UserDTO dto, Locale locale, Model model, HttpSession session) {
 
 		ModelAndView mav = new ModelAndView();
-
-		System.out.println(dto);
 
 		if (0 != manageSer.isUser(dto)) {
 			if (1 != manageSer.user_delete(dto)) {
@@ -135,18 +128,25 @@ public class ManagementController {
 		}
 		
 
-		mav.setViewName("user_management/userManagement");
+		mav = userlist(mav);
 		return mav;
 	}
 	
-	// 유저 검색 Ajax
-	@RequestMapping(value = "/userSearch.lo", method = RequestMethod.POST, produces = "application/text; charset=utf8")
-	public @ResponseBody String virtualUploadAjax(String name, ModelAndView mav, HttpSession session)
-			throws IOException, Exception {
-		System.out.println("fileUploadAjax에 접근함");
+	// 회원 검색
+		@RequestMapping(value = "userSearch.lo")
+		public ModelAndView userSearch(UserDTO dto, Locale locale, Model model, HttpSession session) {
+
+			ModelAndView mav = new ModelAndView();
+			mav.addObject("list", manageSer.user_search(dto));
+			mav.setViewName("user_management/userManagement");
+			return mav;
+		}
 	
-		mav.addObject("userlist", "성공");
-		return "success"; // mypage.jsp(결과화면)로 포워딩
+	public ModelAndView userlist(ModelAndView mav) {
+		mav.addObject("list", manageSer.user_list());
+		System.out.println(manageSer.user_list());
+		mav.setViewName("user_management/userManagement");
+		return mav;
 	}
 
 }

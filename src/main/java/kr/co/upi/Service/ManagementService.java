@@ -1,9 +1,12 @@
 package kr.co.upi.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.co.upi.DAO.ManagementDAO;
+import kr.co.upi.DTO.IndicatorsDTO;
 import kr.co.upi.DTO.UserDTO;
 
 @Service("IManagementService")
@@ -35,6 +38,17 @@ public class ManagementService {
 	// 유저 삭제
 	public int user_delete(UserDTO dto) {
 		return dao.user_delete(dto);
+	}
+
+	// 유저 리스트
+	public List<UserDTO> user_list() {
+		
+		return dao.user_list();
+	}
+
+	public List<UserDTO> user_search(UserDTO dto) {
+		// TODO Auto-generated method stub
+		return dao.user_search(dto);
 	}
 
 }

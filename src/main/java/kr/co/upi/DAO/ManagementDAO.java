@@ -1,5 +1,7 @@
 package kr.co.upi.DAO;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -59,6 +61,14 @@ public class ManagementDAO {
 			return 0;
 		}
 		return 1;
+	}
+
+	public List<UserDTO> user_list() {
+		 return mybatis.selectList("ManagementMapper.User_list");
+	}
+
+	public List<UserDTO> user_search(UserDTO dto) {
+		return mybatis.selectList("ManagementMapper.User_Search", dto);
 	}
 
 }
