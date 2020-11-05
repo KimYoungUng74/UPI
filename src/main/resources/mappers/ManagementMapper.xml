@@ -21,10 +21,10 @@
 		FROM USER_TB
 		WHERE 1=1
 		<if test="USER_ID != ''">
-			AND USER_ID = #{USER_ID} 
+			AND USER_ID like '%'||#{USER_ID}||'%'
 		</if>
 		<if test="USER_NAME != ''">
-			AND USER_NAME = #{USER_NAME}
+			AND USER_NAME like '%'||#{USER_NAME}||'%'
 		</if>
 		
 	</select>

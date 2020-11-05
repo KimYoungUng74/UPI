@@ -205,14 +205,9 @@
 													<button class="btn btn-primary waves-effect waves-light"
 														onclick="pwInit();" type="button" id="userReg_btn"
 														style="float: right; margin-left: 5px;">비밀번호 초기화</button>
-													<!-- <button class="btn btn-light waves-effect waves-light"
+													<button class="btn btn-light waves-effect waves-light"
 														onclick="userSerch();" type="button" id="userReg_btn"
-														style="float: right; margin-left: 5px;">유저 검색</button> -->
-													<button type="button" onclick="userSerch();"
-														class="btn btn-light"
-														style="float: right; margin-left: 5px;"
-														data-toggle="modal" data-target="#myModal" id="formulaReg">유저
-														검색</button>
+														style="float: right; margin-left: 5px;">유저 검색</button>
 												</div>
 											</div>
 
