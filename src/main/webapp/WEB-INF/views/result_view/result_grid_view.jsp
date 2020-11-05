@@ -250,10 +250,10 @@
 													<c:choose>
 														<c:when
 															test="${row.GRADE eq 'A' and row.ACHIEVE_VAL > 105}">
-															<td class="text-center"><b>${row.GRADE }</b></td>
+															<td class="text-center" style="font-size: 20px"><b>${row.GRADE }</b></td>
 														</c:when>
 														<c:when test="${row.GRADE == 'D'}">
-															<td class="text-center" style="color: red"><b>${row.GRADE }</b></td>
+															<td class="text-center" style="color: red; font-size: 20px"><b>${row.GRADE }</b></td>
 														</c:when>
 														<c:otherwise>
 															<td class="text-center">${row.GRADE }</td>
@@ -262,11 +262,11 @@
 													<c:choose>
 														<c:when
 															test="${row.ACHIEVE_VAL != null and row.ACHIEVE_VAL > 105}">
-															<td class="text-center"><b>${row.ACHIEVE_VAL }%</b></td>
+															<td class="text-center" style="font-size: 20px"><b>${row.ACHIEVE_VAL }%</b></td>
 														</c:when>
 														<c:when
 															test="${row.ACHIEVE_VAL != null and row.GRADE == 'D'}">
-															<td class="text-center" style="color: red"><b>${row.ACHIEVE_VAL }%</b></td>
+															<td class="text-center" style="color: red; font-size: 20px"><b>${row.ACHIEVE_VAL }%</b></td>
 														</c:when>
 														<c:when test="${row.ACHIEVE_VAL != null}">
 															<td class="text-center">${row.ACHIEVE_VAL }%</td>
