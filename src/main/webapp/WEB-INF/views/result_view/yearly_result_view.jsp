@@ -161,6 +161,12 @@
                                                     	지 표 명<br><br><br>
                                                     
                                                 </th>
+                                                
+                                                <th class="text-center" colspan="3">
+                                                    	현 재 값<br>
+                                                    
+                                                </th>
+                                                
                                                 <th class="text-center" colspan="3">
                                                     	등 급<br>
                                                     
@@ -173,6 +179,19 @@
                                             </tr>
                                             <tr>
                                                 
+                                                
+                                                <th class="text-center">
+                                                    	${two_year }<br>
+                                                   
+                                                </th>
+                                                <th class="text-center">
+                                                    	${one_year }<br>
+                                                   
+                                                </th>
+                                                <th class="text-center">
+                                                    ${year }<br>
+                                                    
+                                                </th>
                                                 
                                                 <th class="text-center">
                                                     	${two_year }<br>
@@ -227,7 +246,42 @@
 		                                                <td>${row.INDICATORS_NAME }</td>
 		                                                
 		                                                
-		                                                
+		                                                <!-- 현재값 -->
+		                                       		 	<c:choose>
+                                                			<c:when  test="${two_year_ago[status.index].GRADE eq 'A' and two_year_ago[status.index].ACHIEVE_VAL > 105}">                                  
+		                                                		<td class="text-center"><b>${two_year_ago[status.index].PRESENT_VAL }</b></td>
+		                                           			</c:when >
+		                                             		<c:when  test="${two_year_ago[status.index].GRADE == 'D'}">                                  
+		                                                		<td class="text-center" style="color:red"><b>${two_year_ago[status.index].PRESENT_VAL }</b></td>
+		                                            		</c:when >  
+		                                            		<c:otherwise>
+		                                             		   <td class="text-center">${two_year_ago[status.index].PRESENT_VAL }</td>
+		                                        			</c:otherwise>
+		                                       		 	</c:choose>
+		                                       		 	 <c:choose>
+                                                			<c:when  test="${one_year_ago[status.index].GRADE eq 'A' and one_year_ago[status.index].ACHIEVE_VAL > 105}">                                  
+		                                                		<td class="text-center"><b>${one_year_ago[status.index].PRESENT_VAL }</b></td>
+		                                           			</c:when >
+		                                             		<c:when  test="${one_year_ago[status.index].GRADE == 'D'}">                                  
+		                                                		<td class="text-center" style="color:red"><b>${one_year_ago[status.index].PRESENT_VAL }</b></td>
+		                                            		</c:when >  
+		                                            		<c:otherwise>
+		                                             		   <td class="text-center">${one_year_ago[status.index].PRESENT_VAL }</td>
+		                                        			</c:otherwise>
+		                                       		 	</c:choose>
+		                                       		 	 <c:choose>
+                                                			<c:when  test="${row.GRADE eq 'A' and row.ACHIEVE_VAL > 105}">                                  
+		                                                		<td class="text-center"><b>${row.PRESENT_VAL }</b></td>
+				                                            </c:when >
+				                                             <c:when  test="${row.GRADE == 'D'}">                                  
+				                                                <td class="text-center" style="color:red"><b>${row.PRESENT_VAL }</b></td>
+				                                            </c:when >  
+				                                            <c:otherwise>
+				                                                <td class="text-center">${row.PRESENT_VAL }</td>
+				                                        	</c:otherwise>
+				                                        </c:choose>
+				                                        
+				                                        <!-- 등급 -->
 		                                                <c:choose>
                                                 			<c:when  test="${two_year_ago[status.index].GRADE eq 'A' and two_year_ago[status.index].ACHIEVE_VAL > 105}">                                  
 		                                                		<td class="text-center"><b>${two_year_ago[status.index].GRADE }</b></td>
@@ -262,6 +316,7 @@
 				                                        	</c:otherwise>
 				                                        </c:choose>
 		                                                
+		                                                <!-- 달성도 -->
 		                                                <c:choose>
 			                                                <c:when  test="${two_year_ago[status.index].ACHIEVE_VAL != null and two_year_ago[status.index].ACHIEVE_VAL > 105}">                                  
 			                                                	<td class="text-center"><b>${two_year_ago[status.index].ACHIEVE_VAL }%</b></td>
