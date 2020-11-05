@@ -165,7 +165,7 @@
 														<th>기간평가인증</th>
 														<th>AHA</th>
 														<th>LINC+</th>
-														<th>3유형</th>
+														<th>후진학사업</th>
 														<th>요소값</th>
 														<th>수집방법</th>
 														<th>평가방법</th>
@@ -240,7 +240,7 @@
 														<th>기간평가인증</th>
 														<th>AHA</th>
 														<th>LINC+</th>
-														<th>3유형</th>
+														<th>후진학사업</th>
 														<th>목표값</th>
 														<th>현재 값</th>
 														<th>등급</th>
