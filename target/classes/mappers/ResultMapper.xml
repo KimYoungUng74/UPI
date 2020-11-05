@@ -88,10 +88,17 @@
         NVL(count(decode(is_best,1,1)) ,0) as IS_BEST,
 		NVL(count(decode(is_agency,1,1)), 0) as IS_AGENCY, 
 		NVL(count(decode(is_aha,1,1)), 0) as IS_AHA, 
-		NVL(count(decode(is_linc,1,1)), 0) as IS_LINC, 
+		NVL(count(decode(is_linc,1,1)), 0) as IS_LINC,
 		NVL(count(decode(is_type3,1,1)), 0) as IS_TYPE3
 		FROM RECORD_TB
-		WHERE to_char(ADD_MONTHS(RECORD_DATE,-2), 'yyyy') = '${YEAR}' AND (INDICATORS_NUM, RECORD_DATE) in (select indicators_num,MAX(record_date) from RECORD_TB  where to_char(ADD_MONTHS(RECORD_DATE,-2), 'yyyy') = '${YEAR}' GROUP BY indicators_num)
+		WHERE to_char(ADD_MONTHS(RECORD_DATE,-2), 'yyyy') = '${YEAR}' 
+		AND (INDICATORS_NUM, RECORD_DATE) in (
+			select indicators_num,MAX(record_date) 
+			from RECORD_TB rtb
+			where to_char(ADD_MONTHS(RECORD_DATE,-2), 'yyyy') = '${YEAR}'
+			and (select SUM(IS_USE) from indicators_tb itb where rtb.INDICATORS_NUM = itb.INDICATORS_NUM) = 0 
+			GROUP BY indicators_num
+		)
 		GROUP BY GRADE
         ORDER BY GRADE
 	</select>
