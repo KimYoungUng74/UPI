@@ -160,6 +160,7 @@
 							<div class="card">
 								<div class="card-body">
 									<div class="row">
+										<div class="col-md-2" style="padding-bottom: 5px;"></div>
 										<!-- 유저 아이디 -->
 										<div class="col-md-4" style="padding-bottom: 5px;">
 											<div class="row">
@@ -185,32 +186,7 @@
 											</div>
 										</div>
 
-										<!-- 권한 관리 -->
-										<div class="col-md-4" style="padding-bottom: 5px;">
-											<div class="row">
-												<div class="col-md-12" style="padding-bottom: 5px;">
-													<span>권한 관리</span>
-												</div>
-												<div class="col-md-12" style="padding-bottom: 10px;">
-													<div class="form-check form-check-inline">
-														<div class="custom-control custom-radio">
-															<input type="radio" class="custom-control-input"
-																id="USER_GRANT1" name="USER_GRANT" value="0"
-																checked="checked"> <label
-																class="custom-control-label" for="USER_GRANT1">일반</label>
-														</div>
-													</div>
-													<div class="form-check form-check-inline">
-														<div class="custom-control custom-radio">
-															<input type="radio" class="custom-control-input"
-																id="USER_GRANT2" name="USER_GRANT" value="1"> <label
-																class="custom-control-label" for="USER_GRANT2">관리자</label>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-
+										<div class="col-md-2" style="padding-bottom: 5px;"></div>
 										<!-- 버튼 -->
 										<div class="col-md-12">
 											<div class="row">
@@ -232,14 +208,49 @@
 													<!-- <button class="btn btn-light waves-effect waves-light"
 														onclick="userSerch();" type="button" id="userReg_btn"
 														style="float: right; margin-left: 5px;">유저 검색</button> -->
-													<button type="button" onclick="userSerch();" class="btn btn-light" style="float: right; margin-left: 5px;"
-														data-toggle="modal" data-target="#myModal" id="formulaReg">유저 검색</button>
+													<button type="button" onclick="userSerch();"
+														class="btn btn-light"
+														style="float: right; margin-left: 5px;"
+														data-toggle="modal" data-target="#myModal" id="formulaReg">유저
+														검색</button>
 												</div>
 											</div>
 
 										</div>
 
 
+
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-body">
+									<div class="row">
+										<div class="col-md-12" style="margin-top: 15px;">
+											<table class="table no-wrap v-middle mb-0 text-center"
+												id="user_list_tb">
+												<thead>
+													<tr class="border-0">
+														<th class="font-14 font-weight-medium  px-2">아이디</th>
+														<th class="font-14 font-weight-medium  px-2">이 름</th>
+													</tr>
+												</thead>
+												<tbody style="height: 200px; overflow: auto;">
+													<c:if test="${list.size() == 0}">
+														<tr>
+															<td colspan="5">유저가 존재하지 않습니다.</td>
+														</tr>
+													</c:if>
+													<c:forEach items="${list}" var="list">
+														<tr onclick="clickUser">
+															<td class="border-top-0  px-2 py-4 font-14">${list.USER_ID}</td>
+															<td class="border-top-0  px-2 py-4 font-14">${list.USER_NAME}</td>
+														</tr>
+													</c:forEach>
+												</tbody>
+											</table>
+
+										</div>
 									</div>
 								</div>
 							</div>
@@ -287,9 +298,7 @@
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">×</button>
 				</div>
-				<div class="modal-body">
-					
-				</div>
+				<div class="modal-body"></div>
 				<div class="modal-footer">
 					<button id="Close_Formula" type="button" class="btn btn-light"
 						data-dismiss="modal">닫기</button>
@@ -303,42 +312,43 @@
 	<div id="userList2" hidden="true">
 		<div>가져온 값 : [${userlist}]</div>
 	</div>
-	
+
 	<div id="userList" hidden="true">
 		<div class="table-responsive table-hover">
-            <table class="table no-wrap v-middle mb-0 text-center">
-                <thead>
-                    <tr class="border-0">
-                    	<th class="font-14 font-weight-medium  px-2">아이디</th>
-                        <th class="font-14 font-weight-medium  px-2">이름</th>
-                        <th class="font-14 font-weight-medium  px-2">권한</th>
-                    </tr>
-                </thead>
-                <tbody style="height: 200px; overflow: auto;">
-                	<c:if test="${list.size() == 0}">
-                		<tr>
-                			<td colspan="5">조건에 맞는 회원이 존재하지 않습니다.</td>
-                		</tr>
-                	</c:if>
-                    <c:forEach items="${list}" var="list">
-                    <tr onclick="location.href='report_write.mg?INDICATORS_NUM=${list.USER_ID}'">
-                    	<td class="border-top-0  px-2 py-4 font-14">${list.USER_ID}</td>
-                        <td class="border-top-0  px-2 py-4 font-14">${list.USER_NAME}</td>
-                        <c:if test="${list.USER_GRANT eq 0}">
-                		<tr>
-                			<td class="border-top-0  px-2 py-4 font-14">일반</td>
-                		</tr>
-                		</c:if>
-                        <c:if test="${list.USER_GRANT eq 1}">
-                		<tr>
-                			<td class="border-top-0  px-2 py-4 font-14">관리자</td>
-                		</tr>
-                		</c:if>
-                    </tr>
-                    </c:forEach>
-                </tbody>
-            </table>
-        </div>
+			<table class="table no-wrap v-middle mb-0 text-center">
+				<thead>
+					<tr class="border-0">
+						<th class="font-14 font-weight-medium  px-2">아이디</th>
+						<th class="font-14 font-weight-medium  px-2">이름</th>
+						<th class="font-14 font-weight-medium  px-2">권한</th>
+					</tr>
+				</thead>
+				<tbody style="height: 200px; overflow: auto;">
+					<c:if test="${list.size() == 0}">
+						<tr>
+							<td colspan="5">조건에 맞는 회원이 존재하지 않습니다.</td>
+						</tr>
+					</c:if>
+					<c:forEach items="${list}" var="list">
+						<tr
+							onclick="location.href='report_write.mg?INDICATORS_NUM=${list.USER_ID}'">
+							<td class="border-top-0  px-2 py-4 font-14">${list.USER_ID}</td>
+							<td class="border-top-0  px-2 py-4 font-14">${list.USER_NAME}</td>
+							<c:if test="${list.USER_GRANT eq 0}">
+								<tr>
+									<td class="border-top-0  px-2 py-4 font-14">일반</td>
+								</tr>
+							</c:if>
+							<c:if test="${list.USER_GRANT eq 1}">
+								<tr>
+									<td class="border-top-0  px-2 py-4 font-14">관리자</td>
+								</tr>
+							</c:if>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
 	</div>
 </body>
 <c:import url="../import/javascript.jsp" charEncoding="UTF-8">
@@ -352,7 +362,7 @@
 			document.getElementById('submitform').submit();
 		}
 	};
-	
+
 	/* 비밀번호 초기화 클릭 */
 	function pwInit() {
 		if (confirm('비밀번호를 초기화 하겠습니까?')) {
@@ -360,37 +370,36 @@
 			document.getElementById('submitform').submit();
 		}
 	};
-	
-	
-	/* 유저 수정 클릭 */ 
+
+	/* 유저 수정 클릭 */
 	function userModify() {
-			document.getElementById('submitform').action = "user_modifyOk.lo";
-			document.getElementById('submitform').submit();
+		document.getElementById('submitform').action = "user_modifyOk.lo";
+		document.getElementById('submitform').submit();
 	};
-	
+
 	/* 유저 등록 클릭 */
 	function userReg() {
-			document.getElementById('submitform').action = "user_regOk.lo";
-			document.getElementById('submitform').submit();
+		document.getElementById('submitform').action = "user_regOk.lo";
+		document.getElementById('submitform').submit();
 	};
-	
+
 	/* 유저 검색 클릭 */
 	function userSerch() {
-		alert("유저검색 시작");
-		$.ajax({
-	        type:"POST",
-	        url:"userSearch.lo",
-	        data : {name : "홍길동"},
-	        dataType : "text",
-	        success: function(text){
-				var html = $("div#userList").html();
-				$(".modal-body").html(html);
-	        },
-	        error: function(xhr, status, error) {
-	            alert(error);
-	        }  
-	    });
+		document.getElementById('submitform').action = "userSearch.lo";
+		document.getElementById('submitform').submit();
 	};
+	
+	$(function() {
+		$("#user_list_tb tr").click(function() {
+			var list = $(this).children();
+
+			var id = list.eq(0).text();
+			var name = list.eq(1).text();
+
+			$('#USER_ID').val(id);
+			$('#USER_NAME').val(name);
+		});
+	});
 </script>
 <script src="<c:url value='/resources/js/IndicatorsCheck.js'/>"></script>
 </html>
