@@ -203,7 +203,7 @@
                                                 <th class="text-center">기관평가 인증<br><br></th>
                                                 <th class="text-center">혁신지원 AHA<br><br></th>
                                                 <th class="text-center">사회맞춤형 LINC+<br><br></th>
-                                                <th class="text-center">3유형<br><br></th>
+                                                <th class="text-center">후진학사업<br><br></th>
                                                 <th class="text-center">대학 전체<br><br></th>
                                                 
                                             </tr>
@@ -647,10 +647,10 @@
 	tui.chart.pieChart(container, data, options);
 	/* linc+ */
 	
-	/* 3유형 */
+	/* 후진학사업 */
 	var container = document.getElementById('chart-type3');
 	var data = {
-	    categories: ['3유형'],
+	    categories: ['후진학사업'],
 	    series: [
 	        {
 	            name: 'A등급',
@@ -674,7 +674,7 @@
 	    chart: {
 	        width: 460,
 	        height: 460,
-	        title: '3유형'
+	        title: '후진학사업'
 	    },
 	    tooltip: {
 	        suffix: '개'
@@ -695,7 +695,7 @@
 	// options.theme = 'myTheme';
 
 	tui.chart.pieChart(container, data, options);
-	/* 3유형 */
+	/* 후진학사업 */
 
 	/* 전체 */
 	var container = document.getElementById('chart-univ-all');

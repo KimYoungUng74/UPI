@@ -5,18 +5,18 @@
 
 	<table border="1" width="560" style="text-align: center;" id="report">
                                             <tr height="50">
-                                            	<td>°ü¸®¹øÈ£</td>
+                                            	<td>ê´€ë¦¬ë²ˆí˜¸</td>
                                                 <td>001</td>
-                                                <td>ÁöÇ¥¸í</td>
-                                                <td colspan="3">Ãë¾÷·ü</td>
+                                                <td>ì§€í‘œëª…</td>
+                                                <td colspan="3">ì·¨ì—…ë¥ </td>
                                             </tr>
                                             <tr>
-                                            	<td rowspan="2" height="50">È°¿ë</td>
+                                            	<td rowspan="2" height="50">í™œìš©</td>
                                                 <td height="25">BEST</td>
-                                                <td height="25">±â°üÆò°¡</td>
+                                                <td height="25">ê¸°ê´€í‰ê°€</td>
                                                 <td height="25">AHA</td>
                                                 <td height="25">LINC+</td>
-                                                <td height="25">3À¯Çü</td>
+                                                <td height="25">í›„ì§„í•™ì‚¬ì—…</td>
                                             </tr>
                                             <tr height="25">
                                             	<td>O</td>
@@ -26,59 +26,59 @@
                                             	<td>O</td>
                                             </tr>
                                             <tr height="50">
-                                            	<td>±âÁØÀÏ</td>
-                                                <td>2018³â 12¿ù</td>
-                                                <td>Æò°¡¹æ¹ý</td>
-                                                <td colspan="3">Á¤·®</td>
+                                            	<td>ê¸°ì¤€ì¼</td>
+                                                <td>2018ë…„ 12ì›”</td>
+                                                <td>í‰ê°€ë°©ë²•</td>
+                                                <td colspan="3">ì •ëŸ‰</td>
                                             </tr>
                                             <tr height="50">
-                                            	<td>¼öÁý¹æ¹ý</td>
-                                                <td>Á¤º¸°ø½Ã</td>
-                                                <td>Æò°¡±âÁØ</td>
-                                                <td colspan="3">ÁßÀå±â¹ßÀü°èÈ¹ ¸ñÇ¥ ÃøÁ¤°ª</td>
+                                            	<td>ìˆ˜ì§‘ë°©ë²•</td>
+                                                <td>ì •ë³´ê³µì‹œ</td>
+                                                <td>í‰ê°€ê¸°ì¤€</td>
+                                                <td colspan="3">ì¤‘ìž¥ê¸°ë°œì „ê³„íš ëª©í‘œ ì¸¡ì •ê°’</td>
                                             </tr>
                                             <tr height="50">
-                                            	<td>°ü¸®ºÎ¼­</td>
-                                                <td colspan="5">ÀÔÇÐÃë¾÷Ã³</td>
+                                            	<td>ê´€ë¦¬ë¶€ì„œ</td>
+                                                <td colspan="5">ìž…í•™ì·¨ì—…ì²˜</td>
                                             </tr>
                                             <tr height="50">
-                                            	<td>»êÃâ½Ä</td>
-                                                <td colspan="5">(Ãë¾÷ÀÚ/Ãë¾÷´ë»óÀÚ)/100</td>
+                                            	<td>ì‚°ì¶œì‹</td>
+                                                <td colspan="5">(ì·¨ì—…ìž/ì·¨ì—…ëŒ€ìƒìž)/100</td>
                                             </tr>
                                             <tr height="150">
-                                            	<td>µî±Þ<br>±âÁØ</td>
+                                            	<td>ë“±ê¸‰<br>ê¸°ì¤€</td>
                                                 <td colspan="5">
-                                                	<span>A(°æ¹Î´ëÇÐ±³ ÀÎÁõµî±Þ):Æò°¡ÁöÇ¥º° ¸ñÇ¥ °ª ´ëºñ ´Þ¼ºµµ 100% ÀÌ»ó</span><br>
-                                                	<span>B(ÀáÀçÀû ÀÎÁõµî±Þ): Æò°¡ÁöÇ¥º° ¸ñÇ¥°ª ´ëºñ ´Þ¼ºµµ 70% ÀÌ»ó</span><br>
-                                                	<span>D(ºÎÀûÇÕµî±Þ): Æò°¡ ÁöÇ¥º° ¸ñÇ¥°ª ´ëºñ ´Þ¼ºµµ 70% ÀÌÇÏ</span><br>
-                                                	<span>´Þ¼ºµµ : ½Ç½Ã³âµµ ½ÇÀû°ª / Àü³âµµ ½ÇÀû°ª</span>
+                                                	<span>A(ê²½ë¯¼ëŒ€í•™êµ ì¸ì¦ë“±ê¸‰):í‰ê°€ì§€í‘œë³„ ëª©í‘œ ê°’ ëŒ€ë¹„ ë‹¬ì„±ë„ 100% ì´ìƒ</span><br>
+                                                	<span>B(ìž ìž¬ì  ì¸ì¦ë“±ê¸‰): í‰ê°€ì§€í‘œë³„ ëª©í‘œê°’ ëŒ€ë¹„ ë‹¬ì„±ë„ 70% ì´ìƒ</span><br>
+                                                	<span>D(ë¶€ì í•©ë“±ê¸‰): í‰ê°€ ì§€í‘œë³„ ëª©í‘œê°’ ëŒ€ë¹„ ë‹¬ì„±ë„ 70% ì´í•˜</span><br>
+                                                	<span>ë‹¬ì„±ë„ : ì‹¤ì‹œë…„ë„ ì‹¤ì ê°’ / ì „ë…„ë„ ì‹¤ì ê°’</span>
                                                 </td>
                                             </tr>
                                             <tr height="150">
                                                 <td colspan="6" align="center">
                                                 	<table border="1" width="550" id="report_grade">
                                                 		<tr height="25">
-                                                			<td>¸ñÇ¥°ª</td>
+                                                			<td>ëª©í‘œê°’</td>
                                                 			<td colspan="3">75.6</td>
                                                 		</tr>
                                                 		<tr height="25">
-                                                			<td>ÇöÀç°ª</td>
+                                                			<td>í˜„ìž¬ê°’</td>
                                                 			<td colspan="3">67.9</td>
                                                 		</tr>
                                                 		<tr height="25">
-                                                			<td>Æò°¡³âµµ</td>
-                                                			<td>2017³âµµ</td>
-                                                			<td>2018³âµµ</td>
-                                                			<td>2019³âµµ</td>
+                                                			<td>í‰ê°€ë…„ë„</td>
+                                                			<td>2017ë…„ë„</td>
+                                                			<td>2018ë…„ë„</td>
+                                                			<td>2019ë…„ë„</td>
                                                 		</tr>
                                                 		<tr height="25">
-                                                			<td>µî±Þ</td>
+                                                			<td>ë“±ê¸‰</td>
                                                 			<td>A</td>
                                                 			<td>B</td>
                                                 			<td>B</td>
                                                 		</tr>
                                                 		<tr height="25">
-                                                			<td>´Þ¼ºµµ</td>
+                                                			<td>ë‹¬ì„±ë„</td>
                                                 			<td>100</td>
                                                 			<td>95</td>
                                                 			<td>89.81</td>
@@ -89,23 +89,23 @@
                                             
                                             <tr height="50">
                                                 <td colspan="3">
-                                                	¸ñÇ¥ ¹× ÇöÀç °ª 
+                                                	ëª©í‘œ ë° í˜„ìž¬ ê°’ 
                                                 </td>
                                                 <td colspan="3">
-                                                	´Þ¼ºµµ
+                                                	ë‹¬ì„±ë„
                                                 </td>
                                             </tr>
                                             <tr height="150">
                                                 <td class="border-top-0  px-8 py-16 font-14" colspan="3" align="center">
-                                                	<img width="300" height="200" src="<c:url value='http://localhost:8181/img/chart1.png'/>" alt="Â÷Æ®">
+                                                	<img width="300" height="200" src="<c:url value='http://localhost:8181/img/chart1.png'/>" alt="ì°¨íŠ¸">
                                                  </td>
                                                 <td class="border-top-0  px-8 py-16 font-14" colspan="3" align="center">
-                                                	<img width="300" height="200" src="<c:url value='http://localhost:8181/img/chart1.png'/>" alt="Â÷Æ®">
+                                                	<img width="300" height="200" src="<c:url value='http://localhost:8181/img/chart1.png'/>" alt="ì°¨íŠ¸">
                                                 </td>
                                             </tr>
                                             <tr height="25">
                                                 <td>
-                                                	ºñ°í 
+                                                	ë¹„ê³  
                                                 </td>
                                                 <td colspan="5" id="container3"></td>
                                             </tr>
@@ -124,7 +124,7 @@
         },
 
         title: {
-            text: '¸ñÇ¥ ÇöÀç °ª Â÷Æ®'
+            text: 'ëª©í‘œ í˜„ìž¬ ê°’ ì°¨íŠ¸'
         },
 
 
@@ -149,10 +149,10 @@
         },
 
         series: [{
-            name: '¸ñÇ¥°ª',
+            name: 'ëª©í‘œê°’',
             data: [100, 95, 89]
         }, {
-            name: 'ÇöÀç°ª',
+            name: 'í˜„ìž¬ê°’',
             data: [120, 90, 88]
         }]
     });
@@ -163,7 +163,7 @@
         },
 
         title: {
-            text: '´Þ¼ºµµ Â÷Æ®'
+            text: 'ë‹¬ì„±ë„ ì°¨íŠ¸'
         },
 
 
@@ -188,7 +188,7 @@
         },
 
         series: [{
-            name: '´Þ¼ºµµ',
+            name: 'ë‹¬ì„±ë„',
             data: [120,90, 92]
         }]
     });

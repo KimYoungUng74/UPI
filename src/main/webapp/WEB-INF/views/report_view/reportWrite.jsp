@@ -366,7 +366,7 @@
 															<label class="custom-control-label" for="customCheck5">
 																<a class="btn btn-secondary rounded-circle btn-circle "
 																style="width: 25px; height: 25px;"
-																href="javascript:void(0)"></a> 3유형
+																href="javascript:void(0)"></a> 후진학사업
 															</label>
 														</div>
 													</div>
